@@ -2,7 +2,13 @@
 import { z } from 'zod'
 import { CefrSchema, type DictionaryEntry } from './content'
 import { channel, NoInput } from './ipc'
-import { IMAGE_PROVIDERS, type TelegramStatus } from './telegram'
+import {
+  IMAGE_PROVIDERS,
+  TELEGRAM_MODES,
+  type TelegramLinkCode,
+  type TelegramServerStatus,
+  type TelegramStatus,
+} from './telegram'
 import type {
   Achievement,
   ActivityEntry,
@@ -114,6 +120,42 @@ export interface CloudStatusView {
   userId: string | null
   deviceId: string | null
 }
+
+export interface SyncSettingsView {
+  autoSync: boolean
+  dailyCloudBackup: boolean
+}
+
+export interface SyncStatusView extends SyncSettingsView {
+  signedIn: boolean
+  active: boolean
+  running: boolean
+  lastSyncAt: string | null
+  lastError: string | null
+  pending: number
+  lastPushed: number
+  lastPulled: number
+  lastCloudBackupAt: string | null
+  deviceId: string | null
+  deviceName: string
+}
+
+export interface CloudBackupView {
+  name: string
+  sizeBytes: number
+  createdAt: string
+}
+
+export interface CloudDeviceView {
+  id: string
+  name: string
+  platform: string
+  appVersion: string
+  lastSeenAt: string
+  current: boolean
+}
+
+const CloudBackupName = z.object({ name: z.string().regex(/^lingua-quest-[0-9A-Za-z_-]{1,80}\.sqlite$/) })
 
 export interface BootstrapData {
   version: string
@@ -280,6 +322,26 @@ export const kernelContract = {
         .optional(),
     }),
   ),
+  // Server mode: the central bot on Supabase (needs the online account).
+  /** Link status from telegram_links (no network call when signed out). */
+  'telegram:serverStatus': channel<TelegramServerStatus>()(NoInput),
+  /** 'local' = this app polls the learner's own bot; 'server' = the central bot (local polling stops). */
+  'telegram:setMode': channel<TelegramServerStatus>()(
+    z.object({
+      mode: z.enum(TELEGRAM_MODES),
+      serverBot: z
+        .string()
+        .trim()
+        .max(65)
+        .regex(/^@?[A-Za-z0-9_]*$/)
+        .optional(),
+    }),
+  ),
+  /** Fresh 6-digit code (RPC create_link_code, valid 15 minutes) to send as /start <code> to the server bot. */
+  'telegram:createLinkCode': channel<TelegramLinkCode>()(NoInput),
+  'telegram:unlinkServer': channel<TelegramServerStatus>()(NoInput),
+  /** Pushes the coach schedules to notification_schedules now. */
+  'telegram:pushSchedules': channel<{ pushed: boolean; at: string | null }>()(NoInput),
 
   // ---------- online account (Supabase) ----------
   'cloud:status': channel<CloudStatusView>()(NoInput),
@@ -291,6 +353,22 @@ export const kernelContract = {
     z.object({ email: z.email().max(200), code: z.string().regex(/^[0-9]{6,8}$/) }),
   ),
   'cloud:signOut': channel<CloudStatusView>()(NoInput),
+  /** Deletes every row, device and backup stored for this account on the server, then signs out. */
+  'cloud:deleteMyData': channel<CloudStatusView>()(NoInput),
+  'cloud:devices': channel<CloudDeviceView[]>()(NoInput),
+  'cloud:backups': channel<CloudBackupView[]>()(NoInput),
+  'cloud:createBackup': channel<CloudBackupView>()(NoInput),
+  /** Downloads + validates, writes a local safety copy, replaces the database and relaunches the app. */
+  'cloud:restoreBackup': channel<null>()(CloudBackupName),
+  'cloud:deleteBackup': channel<CloudBackupView[]>()(CloudBackupName),
+
+  // ---------- multi-device sync ----------
+  'sync:status': channel<SyncStatusView>()(NoInput),
+  'sync:now': channel<SyncStatusView>()(NoInput),
+  /** Reads the sync settings; pass fields to change them. */
+  'sync:settings': channel<SyncSettingsView>()(
+    z.object({ autoSync: z.boolean().optional(), dailyCloudBackup: z.boolean().optional() }).optional(),
+  ),
 
   // ---------- data ----------
   'data:backups': channel<BackupInfo[]>()(NoInput),

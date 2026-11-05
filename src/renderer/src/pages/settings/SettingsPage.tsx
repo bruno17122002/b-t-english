@@ -1,9 +1,10 @@
-// Settings hub: general preferences, AI providers, Telegram bot, data (backup/restore/import/export) and diagnostics.
-import { Bot, Database, Info, Send, SlidersHorizontal } from 'lucide-react'
+// Settings hub: general preferences, AI providers, Telegram bot, online account (sync + cloud backup), data (backup/restore/import/export) and diagnostics.
+import { Bot, Cloud, Database, Info, Send, SlidersHorizontal } from 'lucide-react'
 import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
 import { PageHeader, cx } from '../../components/ui'
 import { useL } from '../../i18n'
 import { AboutSettings } from './AboutSettings'
+import { AccountSettings } from './AccountSettings'
 import { AiSettings } from './AiSettings'
 import { DataSettings } from './DataSettings'
 import { GeneralSettings } from './GeneralSettings'
@@ -15,6 +16,7 @@ export function SettingsPage() {
     { to: '/settings/general', label: L('General', 'Chung'), icon: SlidersHorizontal },
     { to: '/settings/ai', label: L('AI providers', 'Nhà cung cấp AI'), icon: Bot },
     { to: '/settings/telegram', label: L('Telegram', 'Telegram'), icon: Send },
+    { to: '/settings/account', label: L('Account & sync', 'Tài khoản'), icon: Cloud },
     { to: '/settings/data', label: L('Data & backup', 'Dữ liệu & sao lưu'), icon: Database },
     { to: '/settings/about', label: L('Diagnostics & about', 'Chẩn đoán & giới thiệu'), icon: Info },
   ]
@@ -48,6 +50,7 @@ export function SettingsPage() {
             <Route path="general" element={<GeneralSettings />} />
             <Route path="ai" element={<AiSettings />} />
             <Route path="telegram" element={<TelegramSettings />} />
+            <Route path="account" element={<AccountSettings />} />
             <Route path="data" element={<DataSettings />} />
             <Route path="about" element={<AboutSettings />} />
           </Routes>

@@ -2,6 +2,39 @@
 
 Định dạng theo [Keep a Changelog](https://keepachangelog.com/), phiên bản theo SemVer.
 
+## [1.2.0] – 2026-11-05
+### Sửa lỗi
+- **Âm thanh bị phát chồng khi bấm nhiều lần:** trình phát mới theo "thế hệ"; mỗi lệnh phát mới hủy mọi lệnh cũ, kể cả bản đang tải (B14).
+- **Âm thanh phát chậm (B15):**
+  - Ưu tiên giọng Windows offline.
+  - Lưu giọng AI trên đĩa (tối đa 150 MB).
+  - Tải trước câu kế tiếp và chia câu dài.
+- **Nhãn trạng thái và ô (B16):**
+  - Màu nhãn CEFR theo chủ đề sáng/tối.
+  - Tiêu đề viết chữ thường kiểu Fluent.
+  - Nút tắt màu xám trung tính.
+  - Ô chọn có mũi tên riêng.
+
+### Thêm mới – Lingua Quest Online (tùy chọn)
+- **GĐ1 – Tài khoản:**
+  - Đăng nhập bằng mã email; phiên đăng nhập mã hóa DPAPI.
+  - Sao lưu, khôi phục cloud; tự sao lưu hằng ngày.
+  - Xóa toàn bộ dữ liệu cloud.
+- **GĐ2 – Server:**
+  - Bot Telegram chạy trên Supabase, vẫn hoạt động khi máy tắt.
+  - Lịch gửi brief, nhắc học và báo cáo theo múi giờ.
+  - Function gia sư cho điện thoại.
+  - App có công tắc "Bot chạy trên máy này / trên server".
+- **GĐ3 – Đồng bộ nhiều máy:**
+  - Ghi nhận thay đổi bằng trigger, push/pull theo `seq`.
+  - Bản sửa sau cùng được giữ; log chỉ được ghi thêm nên không trùng; thống kê được tính lại.
+- **GĐ4 – App điện thoại (PWA, thư mục `web/`):** Hôm nay, ôn thẻ FSRS (ôn được cả khi offline), thống kê, báo cáo AI, gia sư.
+- **Tài liệu:**
+  - `docs/ONLINE_PLAN.md`: thiết kế và hợp đồng dữ liệu đồng bộ.
+  - `supabase/README.md`: hướng dẫn triển khai.
+  - `web/README.md`.
+- **Kiểm thử:** 522/522 Vitest, 23/23 E2E.
+
 ## [1.1.0] – 2026-11-05
 ### Thay đổi
 - **Giao diện Windows 11 (Fluent):**

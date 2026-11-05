@@ -22,6 +22,7 @@ import { BotFeatures, errorReply, type CallbackHandler, type Replies } from './b
 import { BOT_TOKEN_RE, CAPTION_LIMIT, escapeHtml, isImageRequest, parseCommand, redactToken, truncate } from './format'
 import { TELEGRAM_FLAGS } from './legacy'
 import type { TelegramCommand, TelegramContext, TelegramPort, TelegramReply } from './port'
+import { TelegramServerLink } from './server'
 
 export interface TelegramServiceOptions {
   fetchImpl?: typeof fetch
@@ -59,6 +60,9 @@ export class TelegramService implements TelegramPort {
   private readonly ignoredChats = new Set<string>()
   readonly fetchImpl: typeof fetch
   readonly features: BotFeatures
+  /** "Bot chạy trên server" mode: link status, pairing codes and schedule push through the online account. */
+  readonly server: TelegramServerLink
+  private stopWatch: (() => void) | null = null
 
   constructor(
     readonly k: Kernel,
@@ -67,6 +71,21 @@ export class TelegramService implements TelegramPort {
     this.fetchImpl = opts.fetchImpl ?? ((...args: Parameters<typeof fetch>) => fetch(...args))
     this.features = new BotFeatures(this)
     this.features.register()
+    this.server = new TelegramServerLink(k)
+  }
+
+  /** True while the central server bot is used: this app neither polls nor sends. */
+  serverMode(): boolean {
+    return this.server.mode() === 'server'
+  }
+
+  /** Switches between the local bot and the server bot (wakes the polling loop). */
+  async setMode(mode: 'local' | 'server', serverBot?: string): Promise<void> {
+    if (serverBot !== undefined) this.server.setServerBot(serverBot)
+    await this.server.setMode(mode)
+    if (mode === 'server') this.state = 'stopped'
+    else if (this.running) this.state = 'running'
+    this.wake()
   }
 
   // ---------- configuration ----------
@@ -109,20 +128,22 @@ export class TelegramService implements TelegramPort {
   }
 
   isConnected(): boolean {
-    return this.token() !== null && this.chatId() !== null
+    return !this.serverMode() && this.token() !== null && this.chatId() !== null
   }
 
   status(): TelegramStatus {
     const hasToken = this.token() !== null
     const chatLinked = this.chatId() !== null
+    const server = this.serverMode()
     return {
-      connected: hasToken && chatLinked,
+      mode: server ? 'server' : 'local',
+      connected: !server && hasToken && chatLinked,
       hasToken,
       tokenHint: this.k.keys.hint('telegram'),
       botUsername: hasToken ? this.k.settings.getFlag(TELEGRAM_FLAGS.botUsername) || null : null,
       chatLinked,
       pairingCode: hasToken && !chatLinked ? this.currentPairingCode() : null,
-      polling: hasToken ? this.state : this.running ? 'idle' : 'stopped',
+      polling: server ? 'stopped' : hasToken ? this.state : this.running ? 'idle' : 'stopped',
       lastError: this.lastError?.message ?? null,
       lastErrorCode: this.lastError?.code ?? null,
       imageProvider: this.imageProvider(),
@@ -215,6 +236,8 @@ export class TelegramService implements TelegramPort {
   }
 
   async send(reply: TelegramReply | TelegramReply[]): Promise<boolean> {
+    // Server mode: the server scheduler delivers Telegram messages; sending here too would double them.
+    if (this.serverMode()) return false
     const api = this.api()
     const chat = this.chatId()
     if (!api || !chat) return false
@@ -253,6 +276,7 @@ export class TelegramService implements TelegramPort {
       this.stopped = false
       this.state = 'running'
       void this.loop()
+      this.stopWatch = this.server.watch()
     }
     return () => this.stop()
   }
@@ -261,6 +285,8 @@ export class TelegramService implements TelegramPort {
     this.running = false
     this.stopped = true
     this.state = 'stopped'
+    this.stopWatch?.()
+    this.stopWatch = null
     this.wake()
   }
 
@@ -286,6 +312,11 @@ export class TelegramService implements TelegramPort {
     let backoff = 3_000
     this.k.log.info('Telegram polling started')
     while (this.running) {
+      if (this.serverMode()) {
+        // The central server bot answers (webhook); polling here would steal nothing but must not run anyway.
+        await this.idle(10 * 60_000)
+        continue
+      }
       if (!this.token()) {
         await this.idle(10 * 60_000)
         continue
@@ -343,6 +374,7 @@ export class TelegramService implements TelegramPort {
 
   /** One getUpdates round: fetches, persists the offset and handles every update. Never throws. */
   async pollOnce(timeoutSec = this.opts.pollTimeoutSec ?? 25): Promise<PollResult> {
+    if (this.serverMode()) return { ok: false, code: 'server_mode', handled: 0 }
     const api = this.api()
     if (!api) return { ok: false, code: 'no_token', handled: 0 }
     let updates: TgUpdate[]

@@ -373,6 +373,50 @@ export class ProgressService {
     }
   }
 
+  /**
+   * Recomputes daily_stats for the given days from activity_log and xp_events (used after a sync pull
+   * merged logs from other devices), then unlocks any achievements the merged history now earns.
+   */
+  recomputeDerived(dates: Iterable<string>): Achievement[] {
+    return this.db.transaction(() => {
+      for (const date of new Set(dates)) {
+        const a = this.db.get<{ n: number; minutes: number; words: number; reviews: number; lessons: number }>(
+          `SELECT COUNT(*) AS n, COALESCE(SUM(minutes), 0) AS minutes,
+             SUM(action = 'word_saved') AS words, SUM(action = 'review_done') AS reviews,
+             SUM(action = 'lesson_completed') AS lessons
+           FROM activity_log WHERE date = ?`,
+          [date],
+        )
+        const xp = Number(this.db.value('SELECT COALESCE(SUM(amount), 0) FROM xp_events WHERE date = ?', [date]) ?? 0)
+        if (!a?.n && !xp) {
+          this.db.run('DELETE FROM daily_stats WHERE date = ?', [date])
+          continue
+        }
+        const skillMinutes: Record<string, number> = {}
+        for (const r of this.db.all<{ skill: string; m: number }>(
+          'SELECT skill, SUM(minutes) AS m FROM activity_log WHERE date = ? AND skill IS NOT NULL AND minutes > 0 GROUP BY skill',
+          [date],
+        ))
+          skillMinutes[r.skill] = r.m
+        this.db.run(
+          `INSERT INTO daily_stats(date, minutes, xp, words_saved, reviews, lessons, skill_minutes) VALUES (?, ?, ?, ?, ?, ?, ?)
+           ON CONFLICT(date) DO UPDATE SET minutes = excluded.minutes, xp = excluded.xp, words_saved = excluded.words_saved,
+           reviews = excluded.reviews, lessons = excluded.lessons, skill_minutes = excluded.skill_minutes`,
+          [
+            date,
+            Number(a?.minutes ?? 0),
+            xp,
+            Number(a?.words ?? 0),
+            Number(a?.reviews ?? 0),
+            Number(a?.lessons ?? 0),
+            JSON.stringify(skillMinutes),
+          ],
+        )
+      }
+      return this.unlockAchievements(this.now().toISOString())
+    })
+  }
+
   private unlockAchievements(nowIso: string): Achievement[] {
     const unlockedKeys = new Set(this.db.all<{ key: string }>('SELECT key FROM achievements').map((r) => r.key))
     const evals = evaluateAchievements(this.achievementStats(), unlockedKeys)

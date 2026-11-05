@@ -25,6 +25,7 @@ import { Logger } from './kernel/logger'
 import { IpcRouter } from './ipc/router'
 import { registerKernelHandlers, type HostBridge } from './ipc/kernelHandlers'
 import { importLegacyTelegramConfig } from './kernel/telegram/legacy'
+import { startCloudServices } from './kernel/cloud/background'
 
 const isDev = !app.isPackaged && !!process.env.ELECTRON_RENDERER_URL
 const isE2E = process.env.LQ_E2E === '1'
@@ -281,7 +282,18 @@ async function bootstrap() {
       const stop = m.start?.(k)
       if (stop) stopBackground.push(stop)
     }
+    // Online account: sync on start, every 5 minutes and the daily cloud backup (no-op when signed out).
+    stopBackground.push(startCloudServices(k))
   }
+}
+
+/** Uploads pending sync changes (bounded wait) before the database closes on quit. */
+let syncFlushed = false
+function flushSyncThen(done: () => void): boolean {
+  if (syncFlushed || !kernel || isE2E) return false
+  syncFlushed = true
+  void kernel.sync.flushBeforeQuit(4000).finally(done)
+  return true
 }
 
 app.on('second-instance', () => showWindow())
@@ -304,11 +316,18 @@ app
 
 app.on('window-all-closed', () => {
   // With "run in background" the window is only hidden, so this fires only on a real quit.
-  kernel?.db.close()
-  app.quit()
+  const close = () => {
+    kernel?.db.close()
+    app.quit()
+  }
+  if (!flushSyncThen(close)) close()
 })
 
-app.on('before-quit', () => {
+app.on('before-quit', (event) => {
+  if (flushSyncThen(() => app.quit())) {
+    event.preventDefault()
+    return
+  }
   quitting = true
   for (const stop of stopBackground.splice(0)) {
     try {

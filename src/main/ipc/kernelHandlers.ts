@@ -8,6 +8,7 @@ import { currentSchemaVersion } from '../db/migrations'
 import type { Kernel } from '../kernel'
 import { TtsCache } from '../kernel/ai/ttsCache'
 import { norm } from '../kernel/search/search'
+import { registerCloudHandlers, restoreDatabaseFrom } from './cloudHandlers'
 import { UserError, type IpcRouter } from './router'
 import { registerTelegramHandlers } from './telegramHandlers'
 
@@ -235,21 +236,8 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   // ---------- Telegram ----------
   registerTelegramHandlers(r, k)
 
-  // ---------- online account ----------
-  r.handle('cloud:status', () => k.cloud.status())
-  r.handle('cloud:configure', ({ url, anonKey }) => {
-    k.cloud.configure(url, anonKey)
-    return k.cloud.status()
-  })
-  r.handle('cloud:sendCode', async ({ email }) => {
-    await k.cloud.sendCode(email)
-    return null
-  })
-  r.handle('cloud:verifyCode', ({ email, code }) => k.cloud.verifyCode(email, code))
-  r.handle('cloud:signOut', async () => {
-    await k.cloud.signOut()
-    return k.cloud.status()
-  })
+  // ---------- online account, sync and cloud backups ----------
+  registerCloudHandlers(r, k, host)
 
   // ---------- data ----------
   r.handle('data:backups', () => k.data.listBackups())
@@ -266,19 +254,7 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
         filters: [{ name: 'Lingua Quest backup', extensions: ['sqlite'] }],
       }))
     if (!chosen) return null
-    if (!k.paths.dbFile) throw new UserError('no_db_file', 'Database đang chạy trong bộ nhớ, không thể khôi phục.')
-    try {
-      await k.data.validateBackup(chosen)
-    } catch (err) {
-      throw new UserError(
-        'invalid_backup',
-        `File sao lưu không hợp lệ: ${err instanceof Error ? err.message : String(err)}`,
-      )
-    }
-    k.db.flush()
-    await k.data.restoreBackup(chosen, k.paths.dbFile)
-    k.log.info(`database restored from ${path.basename(chosen)}; relaunching`)
-    setTimeout(() => host.relaunch(), 300)
+    await restoreDatabaseFrom(k, host, chosen)
     return null
   })
   r.handle('data:exportJson', async () => {

@@ -74,8 +74,10 @@ export class CloudClient {
 
   constructor(private readonly deps: CloudClientDeps) {}
 
-  private get fetch() {
-    return this.deps.fetchImpl ?? fetch
+  /** Called as a plain function (never as a method), so the global fetch keeps a valid receiver. */
+  private get fetch(): typeof fetch {
+    const impl = this.deps.fetchImpl ?? globalThis.fetch
+    return (input, init) => impl(input, init)
   }
   private now() {
     return (this.deps.now ?? (() => new Date()))().getTime()
@@ -89,7 +91,12 @@ export class CloudClient {
   }
 
   configure(url: string, anonKey: string): void {
-    const u = new URL(url.trim())
+    let u: URL
+    try {
+      u = new URL(url.trim())
+    } catch {
+      throw new CloudError('bad_request', 'URL máy chủ không hợp lệ.')
+    }
     if (u.protocol !== 'https:' && u.hostname !== 'localhost' && u.hostname !== '127.0.0.1')
       throw new CloudError('bad_request', 'URL máy chủ phải dùng https://')
     if (!/^[A-Za-z0-9._-]{20,}$/.test(anonKey.trim()))
@@ -145,6 +152,10 @@ export class CloudClient {
     }
   }
 
+  userId(): string | null {
+    return this.session()?.user.id ?? null
+  }
+
   isSignedIn(): boolean {
     return !!this.config() && !!this.session()
   }
@@ -175,20 +186,25 @@ export class CloudClient {
   }
 
   private async raw(path: string, init: RequestInit & { auth?: 'user' | 'anon' } = {}): Promise<Response> {
+    return (await this.send(path, init)).res
+  }
+
+  /** Sends one request; returns the response and the access token it used (null for anon calls). */
+  private async send(
+    path: string,
+    init: RequestInit & { auth?: 'user' | 'anon' } = {},
+  ): Promise<{ res: Response; token: string | null }> {
     const cfg = this.requireConfig()
-    const headers = new Headers(init.headers)
+    const { auth, ...rest } = init
+    const headers = new Headers(rest.headers)
     headers.set('apikey', cfg.anonKey)
-    if (init.auth !== 'anon') {
-      const token = await this.accessToken()
-      headers.set('authorization', `Bearer ${token}`)
-    } else headers.set('authorization', `Bearer ${cfg.anonKey}`)
-    let res: Response
+    const token = auth === 'anon' ? null : await this.accessToken()
+    headers.set('authorization', `Bearer ${token ?? cfg.anonKey}`)
     try {
-      res = await this.fetch(`${cfg.url}${path}`, { ...init, headers })
+      return { res: await this.fetch(`${cfg.url}${path}`, { ...rest, headers }), token }
     } catch {
       throw new CloudError('network', MESSAGES_VI.network)
     }
-    return res
   }
 
   private static async fail(res: Response): Promise<never> {
@@ -215,10 +231,12 @@ export class CloudClient {
 
   /** Authenticated request; refreshes the token once on 401. */
   async request(path: string, init: RequestInit = {}): Promise<Response> {
-    let res = await this.raw(path, init)
+    const first = await this.send(path, init)
+    let res = first.res
     if (res.status === 401 && this.session()) {
-      await this.refresh(true)
-      res = await this.raw(path, init)
+      // Another request may already have refreshed the token while this one was in flight.
+      if (this.session()?.accessToken === first.token) await this.refresh(true)
+      res = (await this.send(path, init)).res
     }
     if (!res.ok) await CloudClient.fail(res)
     return res
@@ -289,7 +307,7 @@ export class CloudClient {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ type: 'email', email: email.trim().toLowerCase(), token: code.trim() }),
     })
-    if (res.status === 400 || res.status === 403 || res.status === 401)
+    if (res.status === 400 || res.status === 401 || res.status === 403 || res.status === 422)
       throw new CloudError('invalid_code', MESSAGES_VI.invalid_code)
     if (!res.ok) await CloudClient.fail(res)
     this.saveSession(this.toSession(await res.json()))

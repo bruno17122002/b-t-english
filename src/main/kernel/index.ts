@@ -1,10 +1,13 @@
 // Platform Kernel: shared services every feature module builds on. Free of Electron imports so the
 // whole kernel (and every module service) runs under Vitest with an in-memory database.
+import path from 'node:path'
 import type { PushEvent } from '@shared/ipc'
 import { AppDatabase } from '../db/database'
 import { runMigrations, runModuleMigrations, type Migration } from '../db/migrations'
 import { AiGateway } from './ai/gateway'
+import { CloudBackupService } from './cloud/backup'
 import { CloudClient } from './cloud/client'
+import { SyncEngine } from './cloud/sync'
 import { ContentRegistry } from './content/registry'
 import { DataService } from './data/dataService'
 import { LearnerService } from './learner/learner'
@@ -53,6 +56,10 @@ export interface Kernel {
   telegram: TelegramPort
   /** Optional online account (Supabase): auth session, REST/RPC/Storage helpers. */
   cloud: CloudClient
+  /** Multi-device sync through Supabase sync_rows (push outbox, pull by seq cursor). */
+  sync: SyncEngine
+  /** Cloud backups in Supabase Storage (backups/<uid>/…). */
+  cloudBackups: CloudBackupService
 }
 
 export interface CreateKernelOptions {
@@ -108,6 +115,27 @@ export async function createKernel(opts: CreateKernelOptions): Promise<Kernel> {
   if (content.issues.length) log.warn(`content issues: ${JSON.stringify(content.issues.slice(0, 5))}`)
 
   const cloud = new CloudClient({ keys, settings, fetchImpl: opts.fetchImpl, now, defaults: opts.cloudDefaults })
+  // Created after all migrations so the outbox triggers also cover module tables (coach_*).
+  let onPulled: () => void = () => undefined
+  const sync = new SyncEngine({
+    db,
+    cloud,
+    settings,
+    learner,
+    progress,
+    userData: opts.paths.userData,
+    now,
+    log,
+    onPulled: () => onPulled(),
+  })
+  const cloudBackups = new CloudBackupService({
+    db,
+    cloud,
+    data,
+    sync,
+    tmpDir: path.join(opts.paths.userData, 'cache', 'cloud-restore'),
+    now,
+  })
 
   const kernel: Kernel = {
     db,
@@ -127,7 +155,10 @@ export async function createKernel(opts: CreateKernelOptions): Promise<Kernel> {
     notify: () => undefined,
     telegram: null as unknown as TelegramPort,
     cloud,
+    sync,
+    cloudBackups,
   }
+  onPulled = () => kernel.push('data-changed', { module: 'sync', what: 'pull' })
   // The bot needs the finished kernel; it makes no network request until start() or a settings action.
   kernel.telegram = new TelegramService(kernel, { fetchImpl: opts.fetchImpl })
   return kernel

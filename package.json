@@ -1,7 +1,7 @@
 {
   "name": "lingua-quest",
   "productName": "Lingua Quest",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Personalized AI English learning adventure for Vietnamese learners",
   "author": "Lingua Quest",
   "license": "UNLICENSED",
@@ -11,7 +11,7 @@
     "dev": "electron-vite dev",
     "build": "electron-vite build",
     "start": "electron-vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json && tsc --noEmit -p tsconfig.e2e.json",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json && tsc --noEmit -p tsconfig.e2e.json && tsc --noEmit -p web/tsconfig.json",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -21,6 +21,9 @@
     "test:e2e": "electron-vite build && playwright test",
     "test:all": "npm run typecheck && npm run lint && npm run test && npm run test:e2e",
     "icons": "python -I scripts/make_icons.py",
+    "web:dev": "vite --config web/vite.config.ts",
+    "web:build": "vite build --config web/vite.config.ts",
+    "web:preview": "vite preview --config web/vite.config.ts",
     "dist": "electron-vite build && electron-builder --win --x64 --publish never",
     "dist:dir": "electron-vite build && electron-builder --win --x64 --dir --publish never"
   },

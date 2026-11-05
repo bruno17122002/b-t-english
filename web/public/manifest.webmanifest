@@ -1,0 +1,18 @@
+{
+  "name": "Lingua Quest",
+  "short_name": "Lingua Quest",
+  "description": "Ôn từ vựng FSRS, xem tiến độ và hỏi gia sư AI – bản điện thoại của Lingua Quest.",
+  "lang": "vi",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#202020",
+  "theme_color": "#202020",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

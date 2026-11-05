@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "paths": {
+      "@shared/*": ["src/shared/*"],
+      "@core/*": ["src/core/*"],
+      "@web/*": ["web/src/*"]
+    }
+  },
+  "include": ["src/**/*", "../src/core/**/*", "../src/shared/**/*", "../tests/unit/web-*.test.ts"]
+}

@@ -13,6 +13,12 @@ export const TELEGRAM_FLAGS = {
   offset: 'telegram.offset',
   /** Cached @username of the bot (not secret), refreshed by getMe. */
   botUsername: 'telegram.botUsername',
+  /** 'local' (default, this app polls the learner's own bot) or 'server' (central bot on Supabase). */
+  mode: 'telegram.mode',
+  /** @username of the central server bot, shown in the server-mode instructions. */
+  serverBot: 'telegram.serverBot',
+  /** JSON {hash, userId, at} of the last coach-schedule push to notification_schedules. */
+  schedulesPushed: 'telegram.schedulesPushed',
 } as const
 
 interface LegacyConfig {

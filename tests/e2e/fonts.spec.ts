@@ -42,6 +42,7 @@ const ROUTES = [
   '/settings/data',
   '/settings/about',
   '/settings/telegram',
+  '/settings/account',
 ]
 
 let lq: LaunchedApp

@@ -3,12 +3,14 @@
   "compilerOptions": {
     "composite": true,
     "lib": ["ES2023"],
-    "types": ["node"]
+    "types": ["node"],
+    "rewriteRelativeImportExtensions": true
   },
   "include": [
     "electron.vite.config.ts",
     "vitest.config.ts",
     "playwright.config.ts",
+    "web/vite.config.ts",
     "src/main/**/*",
     "src/preload/**/*",
     "src/shared/**/*",
@@ -22,7 +24,8 @@
     "src/modules/*/main/**/*",
     "src/content/*.json",
     "src/content/packs/**/*.json",
-    "tests/**/*"
+    "tests/**/*",
+    "supabase/functions/_shared/**/*.ts"
   ],
-  "exclude": ["tests/renderer/**/*", "tests/e2e/**/*"]
+  "exclude": ["tests/renderer/**/*", "tests/e2e/**/*", "tests/unit/web-*.test.ts"]
 }

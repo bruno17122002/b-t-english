@@ -24,4 +24,19 @@ export function registerTelegramHandlers(r: IpcRouter, k: Kernel): void {
   r.handle('telegram:unlink', () => service().unlink())
   r.handle('telegram:test', () => service().sendTest())
   r.handle('telegram:updateSettings', (patch) => service().updateSettings(patch))
+
+  // ---------- server mode (central bot on Supabase) ----------
+  r.handle('telegram:serverStatus', () => service().server.status())
+  r.handle('telegram:setMode', async ({ mode, serverBot }) => {
+    const s = service()
+    await s.setMode(mode, serverBot)
+    return s.server.status()
+  })
+  r.handle('telegram:createLinkCode', () => service().server.createLinkCode())
+  r.handle('telegram:unlinkServer', async () => {
+    const s = service()
+    await s.server.unlink()
+    return s.server.status()
+  })
+  r.handle('telegram:pushSchedules', () => service().server.pushSchedules(true))
 }

@@ -4,9 +4,11 @@
 import {
   AlertTriangle,
   CheckCircle2,
+  Cloud,
   ExternalLink,
   ImageIcon,
   KeyRound,
+  Laptop,
   Link2Off,
   Power,
   Send,
@@ -15,7 +17,7 @@ import {
 } from 'lucide-react'
 import { useEffect, useState, type ReactNode } from 'react'
 import type { AppSettings } from '@shared/types'
-import type { ImageProvider, TelegramStatus } from '@shared/telegram'
+import type { ImageProvider, TelegramMode, TelegramStatus } from '@shared/telegram'
 import {
   Badge,
   Button,
@@ -31,6 +33,7 @@ import {
 import { useL } from '../../i18n'
 import { api, toApiError, useApi } from '../../lib/api'
 import { useApp } from '../../lib/store'
+import { TelegramServerPanel } from './TelegramServerPanel'
 
 function Step({ n, title, done, children }: { n: number; title: ReactNode; done?: boolean; children: ReactNode }) {
   return (
@@ -74,10 +77,11 @@ export function TelegramSettings() {
   const [testing, setTesting] = useState(false)
   const [confirm, setConfirm] = useState<'remove' | 'unlink' | null>(null)
   const [model, setModel] = useState('')
+  const [switching, setSwitching] = useState(false)
 
   const st = status.data
   const reload = status.reload
-  const waitingForPairing = !!st?.hasToken && !st.chatLinked
+  const waitingForPairing = st?.mode === 'local' && !!st?.hasToken && !st.chatLinked
   const imageModel = st?.imageModel
 
   // While the pairing code is shown, refresh until the learner has sent it to the bot.
@@ -96,6 +100,78 @@ export function TelegramSettings() {
   if (!st) return null
 
   const open = (url: string) => api('app:openExternal', { url }).catch(() => undefined)
+
+  const switchMode = async (mode: TelegramMode) => {
+    if (mode === st.mode) return
+    setSwitching(true)
+    try {
+      await api('telegram:setMode', { mode })
+      await reload()
+    } catch (err) {
+      toast({ kind: 'error', title: toApiError(err).message })
+    } finally {
+      setSwitching(false)
+    }
+  }
+
+  const modes: { id: TelegramMode; title: string; desc: string; icon: ReactNode }[] = [
+    {
+      id: 'local',
+      title: L('Bot on this computer', 'Bot chạy trên máy này'),
+      desc: L(
+        'Your own bot from @BotFather, polled by Lingua Quest. Works only while the app runs; uses your AI keys; can draw pictures.',
+        'Bot riêng tạo bằng @BotFather, do Lingua Quest nhận tin. Chỉ hoạt động khi app đang chạy; dùng key AI của bạn; tạo được ảnh.',
+      ),
+      icon: <Laptop className="size-4" />,
+    },
+    {
+      id: 'server',
+      title: L('Bot on the server (online account)', 'Bot chạy trên server (cần tài khoản online)'),
+      desc: L(
+        'The central Lingua Quest bot on Supabase. Works even when the computer is off and sends scheduled reminders; uses the server’s AI with a daily limit.',
+        'Bot Lingua Quest trung tâm trên Supabase. Hoạt động cả khi tắt máy và tự gửi nhắc học theo lịch; dùng AI của server, có hạn mức mỗi ngày.',
+      ),
+      icon: <Cloud className="size-4" />,
+    },
+  ]
+  const modeSwitch = (
+    <Card data-testid="tg-mode">
+      <h3 className="mb-3 font-semibold">{L('Where should the bot run?', 'Bot chạy ở đâu?')}</h3>
+      <div role="radiogroup" aria-label={L('Bot mode', 'Chế độ bot')} className="grid gap-2 md:grid-cols-2">
+        {modes.map((m) => {
+          const active = st.mode === m.id
+          return (
+            <button
+              key={m.id}
+              role="radio"
+              aria-checked={active}
+              disabled={switching}
+              onClick={() => void switchMode(m.id)}
+              data-testid={`tg-mode-${m.id}`}
+              className={cx(
+                'rounded-md border p-3 text-left transition-colors disabled:opacity-60',
+                active ? 'border-accent bg-accent/10' : 'border-line bg-surface-2 hover:border-line-strong',
+              )}
+            >
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                <span className={cx(active ? 'text-accent' : 'text-muted')}>{m.icon}</span>
+                {m.title}
+              </div>
+              <p className="mt-1 text-xs text-muted">{m.desc}</p>
+            </button>
+          )
+        })}
+      </div>
+    </Card>
+  )
+
+  if (st.mode === 'server')
+    return (
+      <div className="space-y-6" data-testid="telegram-settings">
+        {modeSwitch}
+        <TelegramServerPanel />
+      </div>
+    )
 
   const saveToken = async () => {
     setSaving(true)
@@ -184,6 +260,7 @@ export function TelegramSettings() {
 
   return (
     <div className="space-y-6" data-testid="telegram-settings">
+      {modeSwitch}
       {/* ---------- status ---------- */}
       <Card data-testid="tg-status">
         <div className="flex flex-wrap items-start justify-between gap-4">

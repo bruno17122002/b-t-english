@@ -351,6 +351,7 @@ export function ErrorState({
   const navigate = useNavigate()
   const message = typeof error === 'string' ? error : error.message
   const needsAi = typeof error === 'object' && 'needsAiSettings' in error && (error as ApiError).needsAiSettings
+  const needsAccount = typeof error === 'object' && 'hint' in error && (error as ApiError).hint === 'account-settings'
   return (
     <div
       role="alert"
@@ -362,7 +363,7 @@ export function ErrorState({
       <AlertTriangle className="mt-0.5 size-5 shrink-0 text-danger" />
       <div className="flex-1">
         <p className="text-text">{message}</p>
-        {(needsAi || onRetry) && (
+        {(needsAi || needsAccount || onRetry) && (
           <div className="mt-2 flex gap-2">
             {needsAi && (
               <Button
@@ -372,6 +373,16 @@ export function ErrorState({
                 onClick={() => navigate('/settings/ai')}
               >
                 {L('Open AI Settings', 'Mở Cài đặt AI')}
+              </Button>
+            )}
+            {needsAccount && (
+              <Button
+                size="sm"
+                variant="secondary"
+                icon={<Settings2 className="size-4" />}
+                onClick={() => navigate('/settings/account')}
+              >
+                {L('Open account settings', 'Mở Cài đặt tài khoản')}
               </Button>
             )}
             {onRetry && (

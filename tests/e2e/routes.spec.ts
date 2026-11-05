@@ -25,6 +25,7 @@ const ROUTES: { route: string; testId: string; name: string }[] = [
   { route: '/settings/ai', testId: 'page-settings', name: 'settings-ai' },
   { route: '/settings/about', testId: 'page-settings', name: 'settings-about' },
   { route: '/settings/telegram', testId: 'page-settings', name: 'settings-telegram' },
+  { route: '/settings/account', testId: 'page-settings', name: 'settings-account' },
 ]
 
 const SHOTS = path.resolve(__dirname, '../../docs/screenshots')

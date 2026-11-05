@@ -15,6 +15,9 @@ export default tseslint.config(
       'playwright-report/**',
       'coverage/**',
       'scripts/**',
+      'web/dist/**',
+      // Deno entrypoints of the Edge Functions (Deno globals); their logic in supabase/functions/_shared is linted.
+      'supabase/functions/*/index.ts',
     ],
   },
   js.configs.recommended,
@@ -30,11 +33,16 @@ export default tseslint.config(
     },
   },
   {
-    files: ['src/renderer/**/*.{ts,tsx}', 'src/modules/**/renderer/**/*.{ts,tsx}'],
+    files: ['src/renderer/**/*.{ts,tsx}', 'src/modules/**/renderer/**/*.{ts,tsx}', 'web/src/**/*.{ts,tsx}'],
     plugins: { 'react-hooks': reactHooks },
     rules: {
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
     },
+  },
+  {
+    // Hand-written PWA service worker (plain JS, service worker globals).
+    files: ['web/public/sw.js'],
+    languageOptions: { globals: { ...globals.serviceworker }, sourceType: 'script' },
   },
 )

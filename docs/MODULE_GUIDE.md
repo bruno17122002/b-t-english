@@ -26,6 +26,7 @@ src/modules/listening/
   ```
 
   Không có input thì dùng `NoInput`.
+
 - **Đăng ký handler:**
 
   ```ts
@@ -33,21 +34,24 @@ src/modules/listening/
   ```
 
   Input đã được validate, kiểu được suy ra tự động. Muốn trả lỗi cho người dùng thì `throw new UserError(code, messageVi)` (import từ `src/main/ipc/router`).
+
 - **Bảng riêng:** chỉ tạo khi bảng sẵn có không đủ. Khai báo qua `migrations: [{ version: 1, name, sql }]` và đặt tên bảng bắt đầu bằng `<module>_`.
+- **Đồng bộ nhiều máy:** bảng riêng mặc định không được đồng bộ. Muốn đồng bộ thì thêm một dòng vào `SYNC_TABLES` (`src/main/kernel/cloud/syncTables.ts`), trigger sẽ được tự cài lúc chạy. Quy tắc khóa xem mục "Hợp đồng dữ liệu đồng bộ" trong `docs/ONLINE_PLAN.md`. Không đồng bộ dữ liệu bí mật, cache hay dữ liệu tính lại được.
 
 ## 2. Kernel API (main) – `kernel: Kernel`
 
-| Thành phần | Dùng để |
-|---|---|
-| `kernel.content` | Nội dung gốc đã validate: `reading()`, `listening()`, `grammar()`, `writingPrompts()`, `speakingPrompts()`, `stories()`, `assessment()`, `dictionary()`, `lookup(word)` |
-| `kernel.learner` | Hồ sơ và trình độ: `profile()`, `skillLevels()`, `setSkillLevel()`, `addSkillProgress(skill, delta)`, `overallCefr()`, `recordMistake({category, pattern, example, correction})`, `mistakes()`, `summary()` |
-| `kernel.progress.record(event)` | **Cách duy nhất** để cộng XP, tính quest, achievement, streak và thống kê. `event` gồm `{ type: ActivityType, module, skill, minutes, score (0..1), ref, title, speakingSeconds }`. Trả về `Reward`; UI tự hiện hiệu ứng nhận thưởng qua push event |
-| `kernel.vocab` | Kho từ chung: `save({...sourceModule})`, `findByWord`, `lookup` |
-| `kernel.ai` | `isAvailable()` và `run(prompt, input, { level? })`, trả `{ data, provider, model }`. Lỗi là `AiError`, router tự đổi thành thông báo tiếng Việt kèm nút mở Cài đặt AI. Ngoài ra có `transcribe(...)` |
-| `kernel.db` | SQLite: `all`, `get`, `value`, `run`, `transaction(fn)` (fn phải đồng bộ) |
-| `kernel.settings` | `get()`, `getFlag()`, `setFlag()` |
-| `kernel.now()` | Thời gian hiện tại (dùng hàm này thay vì `new Date()` để test được) |
-| `kernel.log` | `info`, `warn`, `error`. Không bao giờ log nội dung API key |
+| Thành phần                                           | Dùng để                                                                                                                                                                                                                                             |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `kernel.content`                                     | Nội dung gốc đã validate: `reading()`, `listening()`, `grammar()`, `writingPrompts()`, `speakingPrompts()`, `stories()`, `assessment()`, `dictionary()`, `lookup(word)`                                                                             |
+| `kernel.learner`                                     | Hồ sơ và trình độ: `profile()`, `skillLevels()`, `setSkillLevel()`, `addSkillProgress(skill, delta)`, `overallCefr()`, `recordMistake({category, pattern, example, correction})`, `mistakes()`, `summary()`                                         |
+| `kernel.progress.record(event)`                      | **Cách duy nhất** để cộng XP, tính quest, achievement, streak và thống kê. `event` gồm `{ type: ActivityType, module, skill, minutes, score (0..1), ref, title, speakingSeconds }`. Trả về `Reward`; UI tự hiện hiệu ứng nhận thưởng qua push event |
+| `kernel.vocab`                                       | Kho từ chung: `save({...sourceModule})`, `findByWord`, `lookup`                                                                                                                                                                                     |
+| `kernel.ai`                                          | `isAvailable()` và `run(prompt, input, { level? })`, trả `{ data, provider, model }`. Lỗi là `AiError`, router tự đổi thành thông báo tiếng Việt kèm nút mở Cài đặt AI. Ngoài ra có `transcribe(...)`                                               |
+| `kernel.db`                                          | SQLite: `all`, `get`, `value`, `run`, `transaction(fn)` (fn phải đồng bộ)                                                                                                                                                                           |
+| `kernel.settings`                                    | `get()`, `getFlag()`, `setFlag()`                                                                                                                                                                                                                   |
+| `kernel.cloud`, `kernel.sync`, `kernel.cloudBackups` | Tài khoản online tùy chọn (Supabase): `cloud.isSignedIn()`, `cloud.rpc/json/invoke`; `sync.syncNow()`, `sync.status()`; `cloudBackups.create/list`                                                                                                  |
+| `kernel.now()`                                       | Thời gian hiện tại (dùng hàm này thay vì `new Date()` để test được)                                                                                                                                                                                 |
+| `kernel.log`                                         | `info`, `warn`, `error`. Không bao giờ log nội dung API key                                                                                                                                                                                         |
 
 Bảng sẵn có trong `src/main/db/migrations/v1_initial.ts`:
 
@@ -60,16 +64,16 @@ Bảng sẵn có trong `src/main/db/migrations/v1_initial.ts`:
 
 **ActivityType tương ứng:**
 
-| Module | ActivityType |
-|---|---|
-| listening | `listening_done` |
-| speaking | `speaking_done` (kèm `speakingSeconds`) |
-| reading | `reading_done` |
-| writing | `writing_submitted` |
-| grammar | `grammar_done` |
-| cinema | `cinema_scene`; `story_completed` khi kết thúc phim |
-| tutor | `tutor_message` |
-| journey | `lesson_completed`, `assessment_done` |
+| Module    | ActivityType                                        |
+| --------- | --------------------------------------------------- |
+| listening | `listening_done`                                    |
+| speaking  | `speaking_done` (kèm `speakingSeconds`)             |
+| reading   | `reading_done`                                      |
+| writing   | `writing_submitted`                                 |
+| grammar   | `grammar_done`                                      |
+| cinema    | `cinema_scene`; `story_completed` khi kết thúc phim |
+| tutor     | `tutor_message`                                     |
+| journey   | `lesson_completed`, `assessment_done`               |
 
 Sau mỗi hoạt động có kết quả, gọi `kernel.learner.addSkillProgress(skill, delta)` với `delta` từ 0.5 đến 3 tùy chất lượng.
 
@@ -135,18 +139,18 @@ export const feedbackPrompt = jsonPrompt<Input, Output>({
 
 **Phân chia route** (không dùng route của module khác):
 
-| Module | Route |
-|---|---|
-| journey | `/`, `/onboarding`, `/journey/*`, `/assessment` |
-| listening | `/listening`, `/listening/:id` |
-| speaking | `/speaking/*` |
-| reading | `/reading`, `/reading/:id` |
-| writing | `/writing/*` |
-| grammar | `/grammar`, `/grammar/:id` |
-| cinema | `/cinema`, `/cinema/:id` |
-| tutor | `/tutor`, `/tutor/:id` |
+| Module     | Route                                                |
+| ---------- | ---------------------------------------------------- |
+| journey    | `/`, `/onboarding`, `/journey/*`, `/assessment`      |
+| listening  | `/listening`, `/listening/:id`                       |
+| speaking   | `/speaking/*`                                        |
+| reading    | `/reading`, `/reading/:id`                           |
+| writing    | `/writing/*`                                         |
+| grammar    | `/grammar`, `/grammar/:id`                           |
+| cinema     | `/cinema`, `/cinema/:id`                             |
+| tutor      | `/tutor`, `/tutor/:id`                               |
 | vocabulary | `/vocabulary`, `/vocabulary/review`, `/vocabulary/*` |
-| game | `/game`, `/stats` |
+| game       | `/game`, `/stats`                                    |
 
 **Route mà tìm kiếm toàn cục và quest sẽ mở:**
 
@@ -156,12 +160,12 @@ export const feedbackPrompt = jsonPrompt<Input, Output>({
 
 **Thứ tự menu (`nav.order`):**
 
-| Nhóm | Mục và thứ tự |
-|---|---|
-| `home` | Dashboard 0, Journey 1 |
-| `skills` | Listening 10, Speaking 11, Reading 12, Writing 13, Grammar 14 |
-| `play` | Vocabulary 20 (`badge: 'dueCards'`), Cinema 21, Tutor 22 |
-| `progress` | Game 30, Stats 31 |
+| Nhóm       | Mục và thứ tự                                                 |
+| ---------- | ------------------------------------------------------------- |
+| `home`     | Dashboard 0, Journey 1                                        |
+| `skills`   | Listening 10, Speaking 11, Reading 12, Writing 13, Grammar 14 |
+| `play`     | Vocabulary 20 (`badge: 'dueCards'`), Cinema 21, Tutor 22      |
+| `progress` | Game 30, Stats 31                                             |
 
 ## 5. Kiểm thử
 

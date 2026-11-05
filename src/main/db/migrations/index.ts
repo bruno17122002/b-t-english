@@ -5,6 +5,7 @@ import { V1_INITIAL } from './v1_initial'
 import { V2_GENERATED_CONTENT_INDEX } from './v2_indexes'
 import { V3_SRS_LEARNING_STEPS } from './v3_srs_learning_steps'
 import { V4_TELEGRAM_MESSAGES } from './v4_telegram_messages'
+import { V5_SYNC_OUTBOX } from './v5_sync_outbox'
 
 export interface Migration {
   version: number
@@ -18,6 +19,7 @@ export const MIGRATIONS: Migration[] = [
   { version: 2, name: 'search and history indexes', sql: V2_GENERATED_CONTENT_INDEX },
   { version: 3, name: 'srs learning steps and module migrations', sql: V3_SRS_LEARNING_STEPS },
   { version: 4, name: 'telegram bot chat memory', sql: V4_TELEGRAM_MESSAGES },
+  { version: 5, name: 'multi-device sync outbox and triggers', sql: V5_SYNC_OUTBOX },
 ]
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1]?.version ?? 0
