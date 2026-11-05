@@ -44,7 +44,10 @@ export function MistakesPanel({ limit = 50, compact }: { limit?: number; compact
     <ul className="space-y-2" data-testid="tutor-mistakes">
       {items.map((m) => (
         <li key={m.id} className="group flex items-start gap-3 rounded-xl border border-line bg-surface-2 p-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-warning/15 text-sm font-bold text-warning" title={L('Times seen', 'Số lần gặp')}>
+          <div
+            className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-warning/15 text-sm font-bold text-warning"
+            title={L('Times seen', 'Số lần gặp')}
+          >
             ×{m.count}
           </div>
           <div className="min-w-0 flex-1 text-sm">
@@ -59,7 +62,11 @@ export function MistakesPanel({ limit = 50, compact }: { limit?: number; compact
                 {m.correction && <span className="text-success">{m.correction}</span>}
               </div>
             )}
-            {!compact && <div className="mt-1 text-xs text-faint">{L('Last seen', 'Gặp lần cuối')} {fmt.relative(m.lastSeenAt)}</div>}
+            {!compact && (
+              <div className="mt-1 text-xs text-faint">
+                {L('Last seen', 'Gặp lần cuối')} {fmt.relative(m.lastSeenAt)}
+              </div>
+            )}
           </div>
           <IconButton
             label={L('Forget this mistake', 'Xóa lỗi này')}

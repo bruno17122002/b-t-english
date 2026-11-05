@@ -19,7 +19,10 @@ export class ApiError extends Error {
   }
 }
 
-export async function api<K extends Channel>(channel: K, ...args: undefined extends In<K> ? [In<K>?] : [In<K>]): Promise<Out<K>> {
+export async function api<K extends Channel>(
+  channel: K,
+  ...args: undefined extends In<K> ? [In<K>?] : [In<K>]
+): Promise<Out<K>> {
   if (!window.lq) throw new ApiError({ code: 'no_bridge', message: 'Lingua Quest bridge is not available.' })
   const res = await window.lq.invoke(channel, args[0])
   if (!res.ok) throw new ApiError(res.error)
@@ -27,7 +30,9 @@ export async function api<K extends Channel>(channel: K, ...args: undefined exte
 }
 
 export const toApiError = (err: unknown): ApiError =>
-  err instanceof ApiError ? err : new ApiError({ code: 'internal', message: err instanceof Error ? err.message : String(err) })
+  err instanceof ApiError
+    ? err
+    : new ApiError({ code: 'internal', message: err instanceof Error ? err.message : String(err) })
 
 export interface Query<T> {
   data: T | undefined
@@ -72,7 +77,9 @@ export function useApi<K extends Channel>(channel: K, input: In<K> | null, deps:
   }, [reload])
 
   const setData = useCallback((updater: Out<K> | ((prev: Out<K> | undefined) => Out<K>)) => {
-    setDataState((prev) => (typeof updater === 'function' ? (updater as (p: Out<K> | undefined) => Out<K>)(prev) : updater))
+    setDataState((prev) =>
+      typeof updater === 'function' ? (updater as (p: Out<K> | undefined) => Out<K>)(prev) : updater,
+    )
   }, [])
 
   return { data, error, loading, reload, setData }

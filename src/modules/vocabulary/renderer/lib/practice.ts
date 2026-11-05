@@ -52,7 +52,12 @@ export interface Mcq {
  * (word bank first, then dictionary extras) and never repeat the right meaning or each other.
  * Returns null when no distractor is available.
  */
-export function buildMeaningMcq(target: WordLike, pool: readonly WordLike[], rng: Rng = Math.random, size = 4): Mcq | null {
+export function buildMeaningMcq(
+  target: WordLike,
+  pool: readonly WordLike[],
+  rng: Rng = Math.random,
+  size = 4,
+): Mcq | null {
   const right = target.meaningVi.trim()
   if (!right) return null
   const seen = new Set([normMeaning(right)])
@@ -82,7 +87,12 @@ function closeness(a: string, b: string): number {
  * Listening match: the learner hears `target.word` and picks the written word. Distractors are
  * preferably words that look/sound similar (shared beginning, similar length).
  */
-export function buildListeningMcq(target: WordLike, pool: readonly WordLike[], rng: Rng = Math.random, size = 4): Mcq | null {
+export function buildListeningMcq(
+  target: WordLike,
+  pool: readonly WordLike[],
+  rng: Rng = Math.random,
+  size = 4,
+): Mcq | null {
   const t = normWord(target.word)
   const candidates = [...new Map(pool.map((w) => [normWord(w.word), w.word.trim()])).entries()]
     .filter(([k]) => k && k !== t)
@@ -122,7 +132,11 @@ export function buildCloze(word: string, sentence: string): Cloze | null {
 }
 
 /** First example (or context sentence) of an item that can be turned into a cloze. */
-export function pickCloze(item: { word: string; examples: readonly string[]; context?: string }): (Cloze & { sentence: string }) | null {
+export function pickCloze(item: {
+  word: string
+  examples: readonly string[]
+  context?: string
+}): (Cloze & { sentence: string }) | null {
   for (const s of [...item.examples, item.context ?? '']) {
     const c = buildCloze(item.word, s)
     if (c) return { ...c, sentence: s }
@@ -161,9 +175,7 @@ export function gradeSpelling(expected: string, input: string): SpellingGrade {
 /** "resilient" → "r _ _ _ _ _ _ _ t" (keeps spaces and hyphens of phrases). */
 export function letterHint(word: string): string {
   const w = word.trim()
-  return [...w]
-    .map((ch, i) => (i === 0 || i === w.length - 1 || !/[\p{L}]/u.test(ch) ? ch : '_'))
-    .join(' ')
+  return [...w].map((ch, i) => (i === 0 || i === w.length - 1 || !/[\p{L}]/u.test(ch) ? ch : '_')).join(' ')
 }
 
 export type Strength = 'new' | 'weak' | 'fair' | 'strong'
@@ -177,7 +189,10 @@ export function strengthOf(review: { state: string; retrievability: number; reps
 }
 
 /** Bars for the review forecast mini chart: heights scaled to `height`, with a minimum visible stub. */
-export function forecastBars(forecast: readonly { date: string; count: number }[], height: number): { date: string; count: number; h: number }[] {
+export function forecastBars(
+  forecast: readonly { date: string; count: number }[],
+  height: number,
+): { date: string; count: number; h: number }[] {
   const max = Math.max(1, ...forecast.map((f) => f.count))
   return forecast.map((f) => ({ ...f, h: f.count ? Math.max(3, Math.round((f.count / max) * height)) : 1 }))
 }

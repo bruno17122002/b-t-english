@@ -19,7 +19,10 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, State> {
   override render() {
     if (!this.state.error) return this.props.children
     return (
-      <div role="alert" className="mx-auto mt-16 max-w-lg rounded-2xl border border-danger/30 bg-danger/10 p-6 text-center">
+      <div
+        role="alert"
+        className="mx-auto mt-16 max-w-lg rounded-2xl border border-danger/30 bg-danger/10 p-6 text-center"
+      >
         <h2 className="font-display text-xl font-semibold">Đã có lỗi hiển thị · Something went wrong</h2>
         <p className="mt-2 text-sm text-muted">{this.state.error.message}</p>
         <button

@@ -64,7 +64,12 @@ function speakSystem(text: string, opts: SpeakOptions, rate: number, voiceUri: s
   })
 }
 
-async function speakAi(engine: 'openai' | 'gemini', text: string, rate: number, gender?: 'female' | 'male'): Promise<void> {
+async function speakAi(
+  engine: 'openai' | 'gemini',
+  text: string,
+  rate: number,
+  gender?: 'female' | 'male',
+): Promise<void> {
   const voice = engine === 'openai' ? (gender === 'male' ? 'onyx' : 'nova') : gender === 'male' ? 'Charon' : 'Kore'
   const key = `${engine}|${voice}|${rate}|${text}`
   let url = ttsCache.get(key)
@@ -108,7 +113,10 @@ export async function speak(text: string, opts: SpeakOptions = {}): Promise<void
 }
 
 /** Speaks lines one after another (dialogues). Returns a cancel function. */
-export function speakSequence(lines: { text: string; gender?: 'female' | 'male' }[], opts: SpeakOptions & { onLine?: (i: number) => void } = {}) {
+export function speakSequence(
+  lines: { text: string; gender?: 'female' | 'male' }[],
+  opts: SpeakOptions & { onLine?: (i: number) => void } = {},
+) {
   let cancelled = false
   void (async () => {
     for (let i = 0; i < lines.length && !cancelled; i++) {

@@ -17,7 +17,10 @@ export const SOURCE_LABEL: Record<string, Bi> = {
   dictionary: { en: 'Dictionary', vi: 'Từ điển' },
 }
 
-export const STATE_FILTERS: { value: '' | 'new' | 'learning' | 'review' | 'relearning' | 'difficult' | 'due' | 'favorite'; label: Bi }[] = [
+export const STATE_FILTERS: {
+  value: '' | 'new' | 'learning' | 'review' | 'relearning' | 'difficult' | 'due' | 'favorite'
+  label: Bi
+}[] = [
   { value: '', label: { en: 'All words', vi: 'Tất cả' } },
   { value: 'due', label: { en: 'Due now', vi: 'Đến hạn' } },
   { value: 'new', label: { en: 'New', vi: 'Mới' } },
@@ -50,9 +53,24 @@ export const STRENGTH_LABEL: Record<Strength, Bi> = {
 }
 
 export const RATINGS: { value: 1 | 2 | 3 | 4; label: Bi; tone: string; key: string }[] = [
-  { value: 1, label: { en: 'Again', vi: 'Lại' }, tone: 'border-danger/40 bg-danger/10 text-danger hover:bg-danger/20', key: '1' },
-  { value: 2, label: { en: 'Hard', vi: 'Khó' }, tone: 'border-warning/40 bg-warning/10 text-warning hover:bg-warning/20', key: '2' },
-  { value: 3, label: { en: 'Good', vi: 'Tốt' }, tone: 'border-success/40 bg-success/10 text-success hover:bg-success/20', key: '3' },
+  {
+    value: 1,
+    label: { en: 'Again', vi: 'Lại' },
+    tone: 'border-danger/40 bg-danger/10 text-danger hover:bg-danger/20',
+    key: '1',
+  },
+  {
+    value: 2,
+    label: { en: 'Hard', vi: 'Khó' },
+    tone: 'border-warning/40 bg-warning/10 text-warning hover:bg-warning/20',
+    key: '2',
+  },
+  {
+    value: 3,
+    label: { en: 'Good', vi: 'Tốt' },
+    tone: 'border-success/40 bg-success/10 text-success hover:bg-success/20',
+    key: '3',
+  },
   { value: 4, label: { en: 'Easy', vi: 'Dễ' }, tone: 'border-info/40 bg-info/10 text-info hover:bg-info/20', key: '4' },
 ]
 

@@ -30,7 +30,9 @@ const OPENAI_KEY = 'sk-proj-FAKEKEY1234567890abcdefgh'
 describe('HTTP helpers', () => {
   it('classifies vendor errors', () => {
     expect(classifyHttpError(401, '')).toBe('invalid_key')
-    expect(classifyHttpError(400, '{"error":{"message":"API key not valid. Please pass a valid API key."}}')).toBe('invalid_key')
+    expect(classifyHttpError(400, '{"error":{"message":"API key not valid. Please pass a valid API key."}}')).toBe(
+      'invalid_key',
+    )
     expect(classifyHttpError(429, '{"error":{"code":"insufficient_quota"}}')).toBe('quota')
     expect(classifyHttpError(429, 'slow down')).toBe('rate_limited')
     expect(classifyHttpError(404, '')).toBe('model_not_found')
@@ -59,7 +61,9 @@ describe('HTTP helpers', () => {
 
   it('maps network failures and does not retry invalid keys', async () => {
     const net = fakeFetch([new TypeError('fetch failed'), new TypeError('fetch failed')])
-    await expect(httpRequest('https://x.test', { fetchImpl: net.impl, retries: 1 })).rejects.toMatchObject({ code: 'network' })
+    await expect(httpRequest('https://x.test', { fetchImpl: net.impl, retries: 1 })).rejects.toMatchObject({
+      code: 'network',
+    })
     const bad = fakeFetch([json({ error: { message: 'bad key' } }, 401)])
     await expect(httpRequest('https://x.test', { fetchImpl: bad.impl })).rejects.toMatchObject({ code: 'invalid_key' })
     expect(bad.calls).toHaveLength(1)
@@ -75,19 +79,30 @@ describe('providers', () => {
     const call = f.calls[0] as Call
     expect(call.url).not.toContain(GEMINI_KEY)
     expect((call.init.headers as Record<string, string>)['x-goog-api-key']).toBe(GEMINI_KEY)
-    const body = JSON.parse(String(call.init.body)) as { generationConfig: { responseMimeType?: string }; systemInstruction: unknown }
+    const body = JSON.parse(String(call.init.body)) as {
+      generationConfig: { responseMimeType?: string }
+      systemInstruction: unknown
+    }
     expect(body.generationConfig.responseMimeType).toBe('application/json')
     expect(body.systemInstruction).toEqual({ parts: [{ text: 'sys' }] })
   })
 
   it('Gemini reports safety blocks', async () => {
     const f = fakeFetch([json({ promptFeedback: { blockReason: 'SAFETY' } })])
-    await expect(new GeminiProvider(GEMINI_KEY, 'm', f.impl).generate({ system: '', messages: [{ role: 'user', content: 'x' }] })).rejects.toMatchObject({ code: 'safety_blocked' })
+    await expect(
+      new GeminiProvider(GEMINI_KEY, 'm', f.impl).generate({ system: '', messages: [{ role: 'user', content: 'x' }] }),
+    ).rejects.toMatchObject({ code: 'safety_blocked' })
   })
 
   it('Gemini TTS wraps PCM into a WAV file', async () => {
     const pcm = Buffer.alloc(480).toString('base64')
-    const f = fakeFetch([json({ candidates: [{ content: { parts: [{ inlineData: { mimeType: 'audio/L16;codec=pcm;rate=24000', data: pcm } }] } }] })])
+    const f = fakeFetch([
+      json({
+        candidates: [
+          { content: { parts: [{ inlineData: { mimeType: 'audio/L16;codec=pcm;rate=24000', data: pcm } }] } },
+        ],
+      }),
+    ])
     const res = await new GeminiProvider(GEMINI_KEY, 'm', f.impl).synthesize({ text: 'Hello' })
     expect(res.mimeType).toBe('audio/wav')
     expect(Buffer.from(res.audio).subarray(0, 4).toString()).toBe('RIFF')
@@ -103,11 +118,24 @@ describe('providers', () => {
     const body = JSON.parse(String(call.init.body)) as Record<string, unknown>
     expect(body.temperature).toBeUndefined()
     expect(body.response_format).toEqual({ type: 'json_object' })
-    expect(body.messages).toEqual([{ role: 'system', content: 's' }, { role: 'user', content: 'u' }])
+    expect(body.messages).toEqual([
+      { role: 'system', content: 's' },
+      { role: 'user', content: 'u' },
+    ])
   })
 
   it('OpenAI lists only chat models', async () => {
-    const f = fakeFetch([json({ data: [{ id: 'gpt-4.1-mini' }, { id: 'whisper-1' }, { id: 'gpt-4o-mini-tts' }, { id: 'text-embedding-3-small' }, { id: 'o4-mini' }] })])
+    const f = fakeFetch([
+      json({
+        data: [
+          { id: 'gpt-4.1-mini' },
+          { id: 'whisper-1' },
+          { id: 'gpt-4o-mini-tts' },
+          { id: 'text-embedding-3-small' },
+          { id: 'o4-mini' },
+        ],
+      }),
+    ])
     const models = await new OpenAIProvider(OPENAI_KEY, 'gpt-4.1-mini', f.impl).listModels()
     expect(models.map((m) => m.id)).toEqual(['gpt-4.1-mini', 'o4-mini'])
   })
@@ -119,7 +147,10 @@ describe('AI gateway', () => {
     id: 'test.prompt',
     version: 1,
     schema: Schema,
-    build: (input, ctx) => ({ system: `${ctx.constraints}\n${ctx.languageInstruction}`, messages: [{ role: 'user', content: input.q }] }),
+    build: (input, ctx) => ({
+      system: `${ctx.constraints}\n${ctx.languageInstruction}`,
+      messages: [{ role: 'user', content: input.q }],
+    }),
     check: (_input, out) => (leaksAnswer(out.answer, 'secret') ? 'leaked' : null),
     mock: () => ({ answer: 'mock', score: 5 }),
   })
@@ -151,7 +182,10 @@ describe('AI gateway', () => {
   })
 
   it('rejects outputs that fail the prompt check twice', async () => {
-    const f = fakeFetch([gemini('{"answer":"the secret is here","score":1}'), gemini('{"answer":"secret again","score":1}')])
+    const f = fakeFetch([
+      gemini('{"answer":"the secret is here","score":1}'),
+      gemini('{"answer":"secret again","score":1}'),
+    ])
     const { kernel } = await makeKernel({ mockAi: false, fetchImpl: f.impl })
     kernel.ai.setKey('gemini', GEMINI_KEY)
     await expect(kernel.ai.run(prompt, { q: 'x' })).rejects.toMatchObject({ code: 'bad_response' })
@@ -184,7 +218,12 @@ describe('AI gateway', () => {
     const f = fakeFetch([gemini('  Nice job!  ')])
     const { kernel } = await makeKernel({ mockAi: false, fetchImpl: f.impl })
     kernel.ai.setKey('gemini', GEMINI_KEY)
-    const tp = textPrompt<string>({ id: 't', version: 1, build: (i) => ({ system: '', messages: [{ role: 'user', content: i }] }), mock: () => 'm' })
+    const tp = textPrompt<string>({
+      id: 't',
+      version: 1,
+      build: (i) => ({ system: '', messages: [{ role: 'user', content: i }] }),
+      mock: () => 'm',
+    })
     expect((await kernel.ai.run(tp, 'hi')).data).toBe('Nice job!')
   })
 })

@@ -199,7 +199,8 @@ export class ProgressService {
     const increments: [QuestMetric, number][] = []
     const metric = EVENT_METRICS[event.type]
     if (metric) increments.push([metric, 1])
-    if (event.type === 'speaking_done') increments.push(['speaking_seconds', Math.round(event.speakingSeconds ?? minutes * 60)])
+    if (event.type === 'speaking_done')
+      increments.push(['speaking_seconds', Math.round(event.speakingSeconds ?? minutes * 60)])
     if (minutes) increments.push(['minutes', minutes])
     if (xp) increments.push(['xp', xp])
     const completed: Quest[] = []
@@ -272,7 +273,12 @@ export class ProgressService {
     insert(
       'daily',
       daily,
-      generateDailyQuests({ dateKey: daily, dailyMinutes, dueCards: this.dueCards(), weakestSkills: weakestSkills(levels, 2) }),
+      generateDailyQuests({
+        dateKey: daily,
+        dailyMinutes,
+        dueCards: this.dueCards(),
+        weakestSkills: weakestSkills(levels, 2),
+      }),
     )
     insert('weekly', weekly, generateWeeklyQuests({ weekKey: weekly, dailyMinutes }))
   }
@@ -314,7 +320,11 @@ export class ProgressService {
     const done: Quest[] = []
     for (const r of rows) {
       const complete = days >= r.target
-      this.db.run('UPDATE quests SET progress = ?, completed_at = ? WHERE id = ?', [days, complete ? nowIso : null, r.id])
+      this.db.run('UPDATE quests SET progress = ?, completed_at = ? WHERE id = ?', [
+        days,
+        complete ? nowIso : null,
+        r.id,
+      ])
       if (complete) done.push(toQuest({ ...r, progress: days, completed_at: nowIso }))
     }
     return done
@@ -349,7 +359,9 @@ export class ProgressService {
       cinemaScenes: count('cinema_scene'),
       storiesCompleted: count('story_completed'),
       // Counted from history so replaying a film never lowers it (a good ending is recorded with score 1).
-      goodEndings: Number(this.db.value("SELECT COUNT(*) FROM activity_log WHERE action = 'story_completed' AND score >= 1") ?? 0),
+      goodEndings: Number(
+        this.db.value("SELECT COUNT(*) FROM activity_log WHERE action = 'story_completed' AND score >= 1") ?? 0,
+      ),
       longestStreak: computeStreak(days, this.today()).longest,
       level: levelFromXp(this.totalXp()).level,
       assessments: count('assessment_done'),
@@ -375,9 +387,13 @@ export class ProgressService {
 
   achievements(): Achievement[] {
     const unlocked = new Map(
-      this.db.all<{ key: string; unlocked_at: string }>('SELECT * FROM achievements').map((r) => [r.key, r.unlocked_at]),
+      this.db
+        .all<{ key: string; unlocked_at: string }>('SELECT * FROM achievements')
+        .map((r) => [r.key, r.unlocked_at]),
     )
-    const evals = new Map(evaluateAchievements(this.achievementStats(), new Set(unlocked.keys())).map((e) => [e.key, e]))
+    const evals = new Map(
+      evaluateAchievements(this.achievementStats(), new Set(unlocked.keys())).map((e) => [e.key, e]),
+    )
     return ACHIEVEMENTS.map((a) => {
       const e = evals.get(a.key)
       return {
@@ -415,7 +431,9 @@ export class ProgressService {
       xpForNextLevel: lvl.xpForNextLevel,
       streak: computeStreak(days, this.today()),
       totalActiveDays: days.length,
-      todayXp: Number(this.db.value('SELECT COALESCE(SUM(amount), 0) FROM xp_events WHERE date = ?', [this.today()]) ?? 0),
+      todayXp: Number(
+        this.db.value('SELECT COALESCE(SUM(amount), 0) FROM xp_events WHERE date = ?', [this.today()]) ?? 0,
+      ),
       regions: computeRegions(xpBySkill),
       unlockedAccents: unlockedAccents(lvl.level),
     }
@@ -475,7 +493,9 @@ export class ProgressService {
         reading: count('reading_done'),
         writing: count('writing_submitted'),
         speakingMinutes: Math.round(
-          Number(this.db.value("SELECT COALESCE(SUM(minutes), 0) FROM activity_log WHERE action = 'speaking_done'") ?? 0),
+          Number(
+            this.db.value("SELECT COALESCE(SUM(minutes), 0) FROM activity_log WHERE action = 'speaking_done'") ?? 0,
+          ),
         ),
         cinemaScenes: count('cinema_scene'),
         storiesCompleted: count('story_completed'),

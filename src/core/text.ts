@@ -96,7 +96,10 @@ export function heuristicCefr(m: Omit<TextMetrics, 'heuristicCefr'>, uniqueWords
 const round = (v: number, d: number) => Math.round(v * 10 ** d) / 10 ** d
 
 /** Word-level alignment (Levenshtein on tokens) between a target sentence and what was recognised. */
-export function compareWords(target: string, spoken: string): { accuracy: number; matched: number; missing: string[]; extra: string[] } {
+export function compareWords(
+  target: string,
+  spoken: string,
+): { accuracy: number; matched: number; missing: string[]; extra: string[] } {
   const a = tokenizeWords(target)
   const b = tokenizeWords(spoken)
   const dp: number[][] = Array.from({ length: a.length + 1 }, () => new Array<number>(b.length + 1).fill(0))
@@ -186,7 +189,24 @@ export function normalizeAnswer(s: string): string {
 /** Pick blanks for a fill-in-the-gaps exercise: content words of 4+ letters, deterministic per seed. */
 export function pickBlanks(sentence: string, count: number, seed: number): number[] {
   const tokens = sentence.split(/\s+/)
-  const STOP = new Set(['this', 'that', 'with', 'have', 'from', 'they', 'them', 'there', 'their', 'what', 'when', 'your', 'would', 'could', 'were', 'been'])
+  const STOP = new Set([
+    'this',
+    'that',
+    'with',
+    'have',
+    'from',
+    'they',
+    'them',
+    'there',
+    'their',
+    'what',
+    'when',
+    'your',
+    'would',
+    'could',
+    'were',
+    'been',
+  ])
   const candidates = tokens
     .map((t, idx) => ({ idx, w: t.replace(/[^A-Za-z']/g, '') }))
     .filter((x) => x.w.length >= 4 && !STOP.has(x.w.toLowerCase()))

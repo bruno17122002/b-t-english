@@ -107,7 +107,10 @@ export class ContentRegistry {
   }
 
   /** Looks a word up in the offline dictionary, then in glossaries of bundled content. */
-  lookup(word: string): { entry: DictionaryEntry | (ReadingPassage['glossary'][number] & { topic?: string }); source: 'offline' | 'content' } | null {
+  lookup(word: string): {
+    entry: DictionaryEntry | (ReadingPassage['glossary'][number] & { topic?: string })
+    source: 'offline' | 'content'
+  } | null {
     const key = word.trim().toLowerCase()
     if (!key) return null
     const dict = this.dictionary().find((e) => e.word.toLowerCase() === key)

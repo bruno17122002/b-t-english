@@ -27,12 +27,14 @@ export function classifyHttpError(status: number, bodyText: string): AiErrorCode
   if (body.includes('api_key_invalid') || body.includes('api key not valid') || body.includes('invalid api key'))
     return 'invalid_key'
   if (status === 429) {
-    return body.includes('insufficient_quota') || body.includes('exceeded your current quota') || body.includes('billing')
+    return body.includes('insufficient_quota') ||
+      body.includes('exceeded your current quota') ||
+      body.includes('billing')
       ? 'quota'
       : 'rate_limited'
   }
   if (status === 404) return 'model_not_found'
-  if (status === 400 && (body.includes('model') && (body.includes('not found') || body.includes('does not exist'))))
+  if (status === 400 && body.includes('model') && (body.includes('not found') || body.includes('does not exist')))
     return 'model_not_found'
   if (status >= 500) return 'server_error'
   return 'bad_response'

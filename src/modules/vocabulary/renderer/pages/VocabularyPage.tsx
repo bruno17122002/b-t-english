@@ -18,7 +18,11 @@ import { WordEditor } from '../components/WordEditor'
 type Tab = 'bank' | 'practice' | 'dictionary'
 
 const tabFromPath = (path: string): Tab =>
-  path.startsWith('/vocabulary/practice') ? 'practice' : path.startsWith('/vocabulary/dictionary') ? 'dictionary' : 'bank'
+  path.startsWith('/vocabulary/practice')
+    ? 'practice'
+    : path.startsWith('/vocabulary/dictionary')
+      ? 'dictionary'
+      : 'bank'
 
 export default function VocabularyPage() {
   const L = useL()
@@ -45,7 +49,11 @@ export default function VocabularyPage() {
       .then((item) => {
         if (!alive) return
         if (item) setDetail(item)
-        else useApp.getState().toast({ kind: 'info', title: L('That word is no longer in your word bank.', 'Từ này không còn trong kho từ.') })
+        else
+          useApp.getState().toast({
+            kind: 'info',
+            title: L('That word is no longer in your word bank.', 'Từ này không còn trong kho từ.'),
+          })
       })
       .catch((err) => alive && useApp.getState().toast({ kind: 'error', title: toApiError(err).message }))
     return () => {
@@ -70,13 +78,21 @@ export default function VocabularyPage() {
       <PageHeader
         icon={<Library />}
         title={L('Vocabulary', 'Từ vựng')}
-        subtitle={L('Every word you save is scheduled with spaced repetition (FSRS).', 'Mọi từ bạn lưu đều được lên lịch ôn theo phương pháp lặp lại ngắt quãng (FSRS).')}
+        subtitle={L(
+          'Every word you save is scheduled with spaced repetition (FSRS).',
+          'Mọi từ bạn lưu đều được lên lịch ôn theo phương pháp lặp lại ngắt quãng (FSRS).',
+        )}
         actions={
           <>
             <Button icon={<Plus className="size-4" />} onClick={() => setAdding(true)} data-testid="vocab-add">
               {L('Add word', 'Thêm từ')}
             </Button>
-            <Button variant="primary" icon={<Play className="size-4" />} onClick={() => navigate('/vocabulary/review')} data-testid="vocab-review-start">
+            <Button
+              variant="primary"
+              icon={<Play className="size-4" />}
+              onClick={() => navigate('/vocabulary/review')}
+              data-testid="vocab-review-start"
+            >
               {due ? L(`Review ${due} due`, `Ôn ${due} thẻ đến hạn`) : L('Review', 'Ôn tập')}
             </Button>
           </>
@@ -100,16 +116,21 @@ export default function VocabularyPage() {
         items={[
           { value: 'bank', label: L('Word bank', 'Kho từ'), count: stats.data?.total },
           { value: 'practice', label: L('Practice', 'Luyện tập') },
-          { value: 'dictionary', label: (
+          {
+            value: 'dictionary',
+            label: (
               <span className="flex items-center gap-1.5">
                 <BookOpen className="size-4" />
                 {L('Dictionary', 'Từ điển')}
               </span>
-            ) },
+            ),
+          },
         ]}
       />
 
-      {tab === 'bank' && <WordBank version={version} onOpen={setDetail} onAdd={() => setAdding(true)} onChanged={bump} />}
+      {tab === 'bank' && (
+        <WordBank version={version} onOpen={setDetail} onAdd={() => setAdding(true)} onChanged={bump} />
+      )}
       {tab === 'practice' && <PracticePanel onGoToBank={() => goTab('bank')} />}
       {tab === 'dictionary' && <DictionaryPanel initialWord={lookup || undefined} onSaved={bump} />}
 

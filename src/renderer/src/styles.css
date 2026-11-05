@@ -1,6 +1,8 @@
 @import '@fontsource-variable/fraunces';
 @import '@fontsource-variable/manrope';
 @import 'tailwindcss';
+/* Feature modules live outside the renderer root; scan them for class names too. */
+@source '../../modules';
 
 /* ---------- Design tokens ----------
    Components use Tailwind utilities mapped to these variables (bg-surface, text-muted, border-line, …),

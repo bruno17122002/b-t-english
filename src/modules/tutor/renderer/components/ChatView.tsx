@@ -5,7 +5,18 @@ import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import type { TutorStyle } from '@shared/types'
 import { AiBadge, RecordButton, SaveWordButton, SpeakButton } from '@/components/learning'
-import { Badge, Button, cx, ErrorState, IconButton, LoadingBlock, Modal, Select, Spinner, Textarea } from '@/components/ui'
+import {
+  Badge,
+  Button,
+  cx,
+  ErrorState,
+  IconButton,
+  LoadingBlock,
+  Modal,
+  Select,
+  Spinner,
+  Textarea,
+} from '@/components/ui'
 import { useFormat, useL, useTx } from '@/i18n'
 import { api, ApiError, toApiError, useApi } from '@/lib/api'
 import { transcribe, type Recording } from '@/lib/audio'
@@ -156,7 +167,9 @@ export function ChatView({ id, noKey, onChanged }: { id: number; noKey: boolean;
         {!messages.length && !pending && (
           <div className="mx-auto max-w-xl py-8 text-center">
             <Sparkles className="mx-auto mb-3 size-8 text-accent" />
-            <div className="font-display text-lg font-semibold">{L('Say hello to your tutor', 'Chào gia sư của bạn')}</div>
+            <div className="font-display text-lg font-semibold">
+              {L('Say hello to your tutor', 'Chào gia sư của bạn')}
+            </div>
             <p className="mt-1 text-sm text-muted">{tx({ en: mode.descEn, vi: mode.descVi })}</p>
             <div className="mt-5 grid gap-2">
               {mode.starters.map((s) => (
@@ -174,11 +187,27 @@ export function ChatView({ id, noKey, onChanged }: { id: number; noKey: boolean;
           </div>
         )}
         {messages.map((m) =>
-          m.role === 'user' ? <UserBubble key={m.id} m={m} /> : <TutorBubble key={m.id} m={m} conversationId={id} onAnswer={() => inputRef.current?.focus()} />,
+          m.role === 'user' ? (
+            <UserBubble key={m.id} m={m} />
+          ) : (
+            <TutorBubble key={m.id} m={m} conversationId={id} onAnswer={() => inputRef.current?.focus()} />
+          ),
         )}
         {pending && (
           <>
-            <UserBubble m={{ id: -1, conversationId: id, role: 'user', content: pending, createdAt: new Date().toISOString(), corrections: [], newWords: [], followUpQuestion: '' }} pending />
+            <UserBubble
+              m={{
+                id: -1,
+                conversationId: id,
+                role: 'user',
+                content: pending,
+                createdAt: new Date().toISOString(),
+                corrections: [],
+                newWords: [],
+                followUpQuestion: '',
+              }}
+              pending
+            />
             <TypingIndicator />
           </>
         )}
@@ -210,16 +239,29 @@ export function ChatView({ id, noKey, onChanged }: { id: number; noKey: boolean;
         )}
         <AnimatePresence>
           {showMic && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="mb-3 overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mb-3 overflow-hidden"
+            >
               <div className="relative flex items-center justify-center rounded-xl border border-line bg-surface-2 py-4">
                 {transcribing ? (
                   <div className="flex items-center gap-2 text-sm text-muted">
                     <Spinner /> {L('Transcribing…', 'Đang chuyển giọng nói thành chữ…')}
                   </div>
                 ) : (
-                  <RecordButton onRecorded={(r) => void onRecorded(r)} maxSeconds={60} label={L('Speak your message', 'Nói tin nhắn của bạn')} />
+                  <RecordButton
+                    onRecorded={(r) => void onRecorded(r)}
+                    maxSeconds={60}
+                    label={L('Speak your message', 'Nói tin nhắn của bạn')}
+                  />
                 )}
-                <IconButton label={L('Close', 'Đóng')} className="absolute top-2 right-2" onClick={() => setShowMic(false)}>
+                <IconButton
+                  label={L('Close', 'Đóng')}
+                  className="absolute top-2 right-2"
+                  onClick={() => setShowMic(false)}
+                >
                   <X className="size-4" />
                 </IconButton>
               </div>
@@ -245,7 +287,10 @@ export function ChatView({ id, noKey, onChanged }: { id: number; noKey: boolean;
             onKeyDown={onKeyDown}
             rows={1}
             maxLength={2000}
-            placeholder={L('Write in English… (Enter to send, Shift+Enter for a new line)', 'Viết bằng tiếng Anh… (Enter để gửi, Shift+Enter xuống dòng)')}
+            placeholder={L(
+              'Write in English… (Enter to send, Shift+Enter for a new line)',
+              'Viết bằng tiếng Anh… (Enter để gửi, Shift+Enter xuống dòng)',
+            )}
             className="max-h-40 min-h-10 flex-1 resize-none"
             data-testid="tutor-input"
           />
@@ -260,10 +305,19 @@ export function ChatView({ id, noKey, onChanged }: { id: number; noKey: boolean;
             {L('Send', 'Gửi')}
           </Button>
         </div>
-        {viaVoice && <div className="mt-1.5 text-xs text-faint">{L('From voice input – check it before sending.', 'Từ giọng nói – kiểm tra trước khi gửi.')}</div>}
+        {viaVoice && (
+          <div className="mt-1.5 text-xs text-faint">
+            {L('From voice input – check it before sending.', 'Từ giọng nói – kiểm tra trước khi gửi.')}
+          </div>
+        )}
       </div>
 
-      <Modal open={mistakesOpen} onClose={() => setMistakesOpen(false)} title={L('My recurring mistakes', 'Lỗi hay lặp lại của tôi')} wide>
+      <Modal
+        open={mistakesOpen}
+        onClose={() => setMistakesOpen(false)}
+        title={L('My recurring mistakes', 'Lỗi hay lặp lại của tôi')}
+        wide
+      >
         <MistakesPanel />
       </Modal>
     </div>
@@ -273,8 +327,18 @@ export function ChatView({ id, noKey, onChanged }: { id: number; noKey: boolean;
 function UserBubble({ m, pending }: { m: TutorChatMessage; pending?: boolean }) {
   const fmt = useFormat()
   return (
-    <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-end" data-testid="tutor-msg-user">
-      <div className={cx('max-w-[78%] rounded-2xl rounded-br-md bg-accent/15 px-4 py-2.5 text-sm whitespace-pre-wrap', pending && 'opacity-60')}>
+    <motion.div
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="flex flex-col items-end"
+      data-testid="tutor-msg-user"
+    >
+      <div
+        className={cx(
+          'max-w-[78%] rounded-2xl rounded-br-md bg-accent/15 px-4 py-2.5 text-sm whitespace-pre-wrap',
+          pending && 'opacity-60',
+        )}
+      >
         {m.content}
       </div>
       {m.corrections.length > 0 && <Corrections items={m.corrections} />}
@@ -287,7 +351,10 @@ function Corrections({ items }: { items: TutorCorrection[] }) {
   const L = useL()
   const tx = useTx()
   return (
-    <div className="mt-1.5 w-full max-w-[78%] space-y-1.5 rounded-xl border border-warning/25 bg-warning/5 p-3 text-sm" data-testid="tutor-corrections">
+    <div
+      className="mt-1.5 w-full max-w-[78%] space-y-1.5 rounded-xl border border-warning/25 bg-warning/5 p-3 text-sm"
+      data-testid="tutor-corrections"
+    >
       <div className="flex items-center gap-1.5 text-xs font-semibold text-warning">
         <Lightbulb className="size-3.5" />
         {L(`${items.length} correction${items.length > 1 ? 's' : ''}`, `${items.length} chỗ cần sửa`)}
@@ -309,16 +376,32 @@ function Corrections({ items }: { items: TutorCorrection[] }) {
   )
 }
 
-function TutorBubble({ m, conversationId, onAnswer }: { m: TutorChatMessage; conversationId: number; onAnswer: () => void }) {
+function TutorBubble({
+  m,
+  conversationId,
+  onAnswer,
+}: {
+  m: TutorChatMessage
+  conversationId: number
+  onAnswer: () => void
+}) {
   const L = useL()
   const fmt = useFormat()
   const speakText = useMemo(() => plainText(parseMarkdownLite(m.content)), [m.content])
   return (
-    <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-start" data-testid="tutor-msg-assistant">
+    <motion.div
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="flex flex-col items-start"
+      data-testid="tutor-msg-assistant"
+    >
       <div className="max-w-[85%] rounded-2xl rounded-bl-md border border-line bg-surface-2 px-4 py-3 text-sm">
         <RichText text={m.content} interactive sourceRef={`tutor:${conversationId}`} />
         {m.followUpQuestion && (
-          <button onClick={onAnswer} className="mt-3 block w-full rounded-lg bg-accent/10 px-3 py-2 text-left text-sm text-accent transition hover:bg-accent/15">
+          <button
+            onClick={onAnswer}
+            className="mt-3 block w-full rounded-lg bg-accent/10 px-3 py-2 text-left text-sm text-accent transition hover:bg-accent/15"
+          >
             {m.followUpQuestion}
           </button>
         )}
@@ -362,7 +445,14 @@ function NewWords({ words, conversationId }: { words: TutorNewWord[]; conversati
       <div className="mb-2 flex items-center justify-between gap-2">
         <span className="text-xs font-semibold tracking-wide text-muted uppercase">{L('New words', 'Từ mới')}</span>
         {words.length > 1 && (
-          <Button size="sm" variant="ghost" loading={savingAll} disabled={savedAll} icon={<BookmarkPlus className="size-4" />} onClick={() => void saveAll()}>
+          <Button
+            size="sm"
+            variant="ghost"
+            loading={savingAll}
+            disabled={savedAll}
+            icon={<BookmarkPlus className="size-4" />}
+            onClick={() => void saveAll()}
+          >
             {savedAll ? L('All saved', 'Đã lưu hết') : L('Save all', 'Lưu tất cả')}
           </Button>
         )}
@@ -370,7 +460,12 @@ function NewWords({ words, conversationId }: { words: TutorNewWord[]; conversati
       <ul className="space-y-1.5">
         {words.map((w) => (
           <li key={w.word} className="flex items-start gap-2">
-            <SaveWordButton compact seed={{ word: w.word, meaningVi: w.meaningVi, example: w.example }} sourceModule="tutor" sourceRef={`tutor:${conversationId}`} />
+            <SaveWordButton
+              compact
+              seed={{ word: w.word, meaningVi: w.meaningVi, example: w.example }}
+              sourceModule="tutor"
+              sourceRef={`tutor:${conversationId}`}
+            />
             <div className="min-w-0 pt-1.5">
               <span className="font-semibold">{w.word}</span> <span className="text-muted">– {w.meaningVi}</span>
               {w.example && <div className="text-xs text-faint italic">{w.example}</div>}
@@ -385,7 +480,11 @@ function NewWords({ words, conversationId }: { words: TutorNewWord[]; conversati
 function TypingIndicator() {
   const L = useL()
   return (
-    <div className="flex items-center gap-2" aria-label={L('Tutor is typing', 'Gia sư đang trả lời')} data-testid="tutor-typing">
+    <div
+      className="flex items-center gap-2"
+      aria-label={L('Tutor is typing', 'Gia sư đang trả lời')}
+      data-testid="tutor-typing"
+    >
       <div className="flex gap-1 rounded-2xl rounded-bl-md border border-line bg-surface-2 px-4 py-3">
         {[0, 1, 2].map((i) => (
           <motion.span

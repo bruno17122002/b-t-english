@@ -55,7 +55,8 @@ export class GeminiProvider implements AiProvider {
     if (data.promptFeedback?.blockReason) throw new AiError('safety_blocked')
     const cand = data.candidates?.[0]
     if (!cand) throw new AiError('bad_response', 'Gemini returned no candidates')
-    if (cand.finishReason === 'SAFETY' || cand.finishReason === 'PROHIBITED_CONTENT') throw new AiError('safety_blocked')
+    if (cand.finishReason === 'SAFETY' || cand.finishReason === 'PROHIBITED_CONTENT')
+      throw new AiError('safety_blocked')
     return data
   }
 
@@ -89,7 +90,9 @@ export class GeminiProvider implements AiProvider {
     const instruction =
       'Transcribe this English speech by a Vietnamese learner exactly as spoken (keep their mistakes, do not correct grammar). ' +
       'Return only the transcript text, no quotes or commentary.' +
-      (req.hint ? ` The learner was trying to say: "${req.hint.slice(0, 500)}". Use it only to resolve unclear sounds.` : '')
+      (req.hint
+        ? ` The learner was trying to say: "${req.hint.slice(0, 500)}". Use it only to resolve unclear sounds.`
+        : '')
     const data = await this.call(
       this.model,
       {

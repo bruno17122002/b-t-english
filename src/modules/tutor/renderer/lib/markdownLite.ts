@@ -10,9 +10,7 @@ export type Inline =
   | { type: 'code'; text: string }
   | { type: 'br' }
 
-export type Block =
-  | { type: 'paragraph'; children: Inline[] }
-  | { type: 'list'; ordered: boolean; items: Inline[][] }
+export type Block = { type: 'paragraph'; children: Inline[] } | { type: 'list'; ordered: boolean; items: Inline[][] }
 
 const BULLET = /^\s*(?:[-*•])\s+(.*)$/
 const NUMBERED = /^\s*\d{1,3}[.)]\s+(.*)$/

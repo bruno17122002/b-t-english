@@ -3,7 +3,19 @@ import { MessagesSquare, Pencil, Plus, Search, Trash } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import type { TutorStyle } from '@shared/types'
-import { Badge, Button, ConfirmDialog, cx, ErrorState, Field, IconButton, Input, Modal, Section, Skeleton } from '@/components/ui'
+import {
+  Badge,
+  Button,
+  ConfirmDialog,
+  cx,
+  ErrorState,
+  Field,
+  IconButton,
+  Input,
+  Modal,
+  Section,
+  Skeleton,
+} from '@/components/ui'
 import { useFormat, useL, useTx } from '@/i18n'
 import { api, ApiError, toApiError, useApi } from '@/lib/api'
 import { useApp } from '@/lib/store'
@@ -52,7 +64,13 @@ export default function TutorPage() {
             <MessagesSquare className="size-5 text-accent" />
             {L('AI Tutor', 'Gia sư AI')}
           </div>
-          <Button size="sm" variant="primary" icon={<Plus className="size-4" />} onClick={() => navigate('/tutor')} data-testid="tutor-new">
+          <Button
+            size="sm"
+            variant="primary"
+            icon={<Plus className="size-4" />}
+            onClick={() => navigate('/tutor')}
+            data-testid="tutor-new"
+          >
             {L('New', 'Mới')}
           </Button>
         </div>
@@ -77,12 +95,21 @@ export default function TutorPage() {
             <ErrorState compact error={list.error} onRetry={list.reload} />
           ) : !list.data?.length ? (
             <p className="px-3 py-6 text-center text-sm text-muted">
-              {debounced ? L('No conversation matches.', 'Không có cuộc hội thoại phù hợp.') : L('No conversations yet.', 'Chưa có cuộc hội thoại nào.')}
+              {debounced
+                ? L('No conversation matches.', 'Không có cuộc hội thoại phù hợp.')
+                : L('No conversations yet.', 'Chưa có cuộc hội thoại nào.')}
             </p>
           ) : (
             <ul className="space-y-1">
               {list.data.map((c) => (
-                <ConversationItem key={c.id} c={c} active={c.id === id} onOpen={() => navigate(`/tutor/${c.id}`)} onRename={() => setRenaming(c)} onDelete={() => setDeleting(c)} />
+                <ConversationItem
+                  key={c.id}
+                  c={c}
+                  active={c.id === id}
+                  onOpen={() => navigate(`/tutor/${c.id}`)}
+                  onRename={() => setRenaming(c)}
+                  onDelete={() => setDeleting(c)}
+                />
               ))}
             </ul>
           )}
@@ -93,7 +120,11 @@ export default function TutorPage() {
         {id ? (
           <ChatView key={id} id={id} noKey={noKey} onChanged={() => void list.reload()} />
         ) : (
-          <TutorHome noKey={noKey} defaultMode={config.data?.tutorStyle ?? 'friendly'} onCreated={() => void list.reload()} />
+          <TutorHome
+            noKey={noKey}
+            defaultMode={config.data?.tutorStyle ?? 'friendly'}
+            onCreated={() => void list.reload()}
+          />
         )}
       </section>
 
@@ -122,7 +153,19 @@ export default function TutorPage() {
   )
 }
 
-function ConversationItem({ c, active, onOpen, onRename, onDelete }: { c: TutorConversationView; active: boolean; onOpen: () => void; onRename: () => void; onDelete: () => void }) {
+function ConversationItem({
+  c,
+  active,
+  onOpen,
+  onRename,
+  onDelete,
+}: {
+  c: TutorConversationView
+  active: boolean
+  onOpen: () => void
+  onRename: () => void
+  onDelete: () => void
+}) {
   const L = useL()
   const fmt = useFormat()
   const Icon = MODE_ICONS[c.mode]
@@ -133,13 +176,18 @@ function ConversationItem({ c, active, onOpen, onRename, onDelete }: { c: TutorC
         tabIndex={0}
         onClick={onOpen}
         onKeyDown={(e) => e.key === 'Enter' && onOpen()}
-        className={cx('group flex cursor-pointer items-start gap-2.5 rounded-xl px-2.5 py-2 transition', active ? 'bg-surface-3' : 'hover:bg-surface-2')}
+        className={cx(
+          'group flex cursor-pointer items-start gap-2.5 rounded-xl px-2.5 py-2 transition',
+          active ? 'bg-surface-3' : 'hover:bg-surface-2',
+        )}
         data-testid="tutor-conversation"
       >
         <Icon className="mt-0.5 size-4 shrink-0 text-accent" />
         <div className="min-w-0 flex-1">
           <div className="truncate text-sm font-medium">{c.title}</div>
-          <div className="truncate text-xs text-faint">{c.match || c.lastMessage || L('No messages yet', 'Chưa có tin nhắn')}</div>
+          <div className="truncate text-xs text-faint">
+            {c.match || c.lastMessage || L('No messages yet', 'Chưa có tin nhắn')}
+          </div>
           <div className="text-[11px] text-faint">{fmt.relative(c.updatedAt)}</div>
         </div>
         <div className="flex opacity-0 transition group-hover:opacity-100 group-focus-within:opacity-100">
@@ -169,7 +217,15 @@ function ConversationItem({ c, active, onOpen, onRename, onDelete }: { c: TutorC
   )
 }
 
-function RenameDialog({ conv, onClose, onSaved }: { conv: TutorConversationView | null; onClose: () => void; onSaved: (title: string) => void }) {
+function RenameDialog({
+  conv,
+  onClose,
+  onSaved,
+}: {
+  conv: TutorConversationView | null
+  onClose: () => void
+  onSaved: (title: string) => void
+}) {
   const L = useL()
   const [title, setTitle] = useState('')
   const [saving, setSaving] = useState(false)
@@ -203,13 +259,27 @@ function RenameDialog({ conv, onClose, onSaved }: { conv: TutorConversationView 
       }
     >
       <Field label={L('Title', 'Tiêu đề')}>
-        <Input value={title} maxLength={80} autoFocus onChange={(e) => setTitle(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && void save()} />
+        <Input
+          value={title}
+          maxLength={80}
+          autoFocus
+          onChange={(e) => setTitle(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && void save()}
+        />
       </Field>
     </Modal>
   )
 }
 
-function TutorHome({ noKey, defaultMode, onCreated }: { noKey: boolean; defaultMode: TutorStyle; onCreated: () => void }) {
+function TutorHome({
+  noKey,
+  defaultMode,
+  onCreated,
+}: {
+  noKey: boolean
+  defaultMode: TutorStyle
+  onCreated: () => void
+}) {
   const L = useL()
   const tx = useTx()
   const navigate = useNavigate()
@@ -236,7 +306,9 @@ function TutorHome({ noKey, defaultMode, onCreated }: { noKey: boolean; defaultM
   return (
     <div className="min-h-0 flex-1 overflow-y-auto pr-1">
       <div className="mb-6">
-        <h1 className="font-display text-3xl font-semibold tracking-tight">{L('Chat with your AI tutor', 'Trò chuyện với gia sư AI')}</h1>
+        <h1 className="font-display text-3xl font-semibold tracking-tight">
+          {L('Chat with your AI tutor', 'Trò chuyện với gia sư AI')}
+        </h1>
         <p className="mt-1 text-sm text-muted">
           {L(
             'Choose a tutor style. Every message gets a natural reply, corrections with Vietnamese explanations and useful new words.',
@@ -265,7 +337,11 @@ function TutorHome({ noKey, defaultMode, onCreated }: { noKey: boolean; defaultM
           <ErrorState error={error} compact />
         </div>
       )}
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" role="radiogroup" aria-label={L('Tutor mode', 'Chế độ gia sư')}>
+      <div
+        className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3"
+        role="radiogroup"
+        aria-label={L('Tutor mode', 'Chế độ gia sư')}
+      >
         {MODE_LIST.map((m) => {
           const Icon = MODE_ICONS[m]
           const mi = MODES[m]
@@ -283,7 +359,12 @@ function TutorHome({ noKey, defaultMode, onCreated }: { noKey: boolean; defaultM
               )}
             >
               <div className="flex items-center gap-3">
-                <div className={cx('flex size-10 items-center justify-center rounded-xl', selected ? 'bg-accent-gradient text-accent-ink' : 'bg-accent/15 text-accent')}>
+                <div
+                  className={cx(
+                    'flex size-10 items-center justify-center rounded-xl',
+                    selected ? 'bg-accent-gradient text-accent-ink' : 'bg-accent/15 text-accent',
+                  )}
+                >
                   <Icon className="size-5" />
                 </div>
                 <div className="min-w-0">
@@ -303,7 +384,14 @@ function TutorHome({ noKey, defaultMode, onCreated }: { noKey: boolean; defaultM
       </div>
 
       <div className="mt-5 flex flex-wrap items-center gap-3">
-        <Button variant="primary" size="lg" loading={creating} icon={<Plus className="size-5" />} onClick={() => void start()} data-testid="tutor-start">
+        <Button
+          variant="primary"
+          size="lg"
+          loading={creating}
+          icon={<Plus className="size-5" />}
+          onClick={() => void start()}
+          data-testid="tutor-start"
+        >
           {L('Start a conversation', 'Bắt đầu trò chuyện')}
         </Button>
         <span className="text-sm text-muted">{L('or try a starter:', 'hoặc thử câu mở đầu:')}</span>

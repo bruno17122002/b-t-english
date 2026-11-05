@@ -12,7 +12,21 @@ import { useApp } from '../../lib/store'
 import { Badge, Button, cx, IconButton, Spinner } from '../ui'
 
 // ---------- speech ----------
-export function SpeakButton({ text, accent, rate, label, size = 'icon', gender }: { text: string; accent?: Accent; rate?: number; label?: string; size?: 'icon' | 'sm'; gender?: 'female' | 'male' }) {
+export function SpeakButton({
+  text,
+  accent,
+  rate,
+  label,
+  size = 'icon',
+  gender,
+}: {
+  text: string
+  accent?: Accent
+  rate?: number
+  label?: string
+  size?: 'icon' | 'sm'
+  gender?: 'female' | 'male'
+}) {
   const L = useL()
   const [playing, setPlaying] = useState(false)
   const onClick = async (e: React.MouseEvent) => {
@@ -28,7 +42,12 @@ export function SpeakButton({ text, accent, rate, label, size = 'icon', gender }
   }
   if (size === 'sm')
     return (
-      <Button size="sm" variant="secondary" onClick={onClick} icon={playing ? <Square className="size-3.5" /> : <Volume2 className="size-4" />}>
+      <Button
+        size="sm"
+        variant="secondary"
+        onClick={onClick}
+        icon={playing ? <Square className="size-3.5" /> : <Volume2 className="size-4" />}
+      >
         {label ?? L('Listen', 'Nghe')}
       </Button>
     )
@@ -62,7 +81,17 @@ export interface WordSeed {
   cefr?: DictionaryResult['entry']['cefr']
 }
 
-export function SaveWordButton({ seed, sourceModule, sourceRef, compact }: { seed: WordSeed; sourceModule: ModuleId | 'manual' | 'dictionary'; sourceRef?: string; compact?: boolean }) {
+export function SaveWordButton({
+  seed,
+  sourceModule,
+  sourceRef,
+  compact,
+}: {
+  seed: WordSeed
+  sourceModule: ModuleId | 'manual' | 'dictionary'
+  sourceRef?: string
+  compact?: boolean
+}) {
   const L = useL()
   const toast = useApp((s) => s.toast)
   const refreshGame = useApp((s) => s.refreshGame)
@@ -87,7 +116,9 @@ export function SaveWordButton({ seed, sourceModule, sourceRef, compact }: { see
       setState('saved')
       toast({
         kind: 'success',
-        title: res.created ? L(`Saved “${seed.word}”`, `Đã lưu “${seed.word}”`) : L(`“${seed.word}” is already in your word bank`, `“${seed.word}” đã có trong kho từ`),
+        title: res.created
+          ? L(`Saved “${seed.word}”`, `Đã lưu “${seed.word}”`)
+          : L(`“${seed.word}” is already in your word bank`, `“${seed.word}” đã có trong kho từ`),
       })
       void refreshGame()
     } catch (err) {
@@ -98,18 +129,47 @@ export function SaveWordButton({ seed, sourceModule, sourceRef, compact }: { see
   if (compact)
     return (
       <IconButton label={L('Save word', 'Lưu từ')} onClick={save} disabled={state !== 'idle'}>
-        {state === 'saving' ? <Loader2 className="size-4 animate-spin" /> : state === 'saved' ? <Check className="size-4 text-success" /> : <BookmarkPlus className="size-4" />}
+        {state === 'saving' ? (
+          <Loader2 className="size-4 animate-spin" />
+        ) : state === 'saved' ? (
+          <Check className="size-4 text-success" />
+        ) : (
+          <BookmarkPlus className="size-4" />
+        )}
       </IconButton>
     )
   return (
-    <Button size="sm" variant={state === 'saved' ? 'success' : 'secondary'} loading={state === 'saving'} disabled={state === 'saved'} onClick={save} icon={state === 'saved' ? <Check className="size-4" /> : <BookmarkPlus className="size-4" />}>
+    <Button
+      size="sm"
+      variant={state === 'saved' ? 'success' : 'secondary'}
+      loading={state === 'saving'}
+      disabled={state === 'saved'}
+      onClick={save}
+      icon={state === 'saved' ? <Check className="size-4" /> : <BookmarkPlus className="size-4" />}
+    >
       {state === 'saved' ? L('Saved', 'Đã lưu') : L('Save word', 'Lưu từ')}
     </Button>
   )
 }
 
 /** Popover with dictionary lookup for a clicked word (offline first, AI on demand). */
-export function WordPopover({ word, context, sourceModule, sourceRef, glossary, onClose, accent }: { word: string; context?: string; sourceModule: ModuleId; sourceRef?: string; glossary?: WordSeed[]; onClose: () => void; accent?: Accent }) {
+export function WordPopover({
+  word,
+  context,
+  sourceModule,
+  sourceRef,
+  glossary,
+  onClose,
+  accent,
+}: {
+  word: string
+  context?: string
+  sourceModule: ModuleId
+  sourceRef?: string
+  glossary?: WordSeed[]
+  onClose: () => void
+  accent?: Accent
+}) {
   const L = useL()
   const [result, setResult] = useState<DictionaryResult | null | undefined>(undefined)
   const [aiLoading, setAiLoading] = useState(false)
@@ -140,7 +200,19 @@ export function WordPopover({ word, context, sourceModule, sourceRef, glossary, 
     }
   }
 
-  const entry: WordSeed | null = local ?? (result ? { word: result.entry.word, ipa: result.entry.ipa, pos: result.entry.pos, meaningVi: result.entry.meaningVi, meaningEn: result.entry.meaningEn, example: result.entry.example, cefr: result.entry.cefr } : null)
+  const entry: WordSeed | null =
+    local ??
+    (result
+      ? {
+          word: result.entry.word,
+          ipa: result.entry.ipa,
+          pos: result.entry.pos,
+          meaningVi: result.entry.meaningVi,
+          meaningEn: result.entry.meaningEn,
+          example: result.entry.example,
+          cefr: result.entry.cefr,
+        }
+      : null)
 
   return (
     <motion.div
@@ -152,7 +224,11 @@ export function WordPopover({ word, context, sourceModule, sourceRef, glossary, 
       <div className="flex items-start justify-between gap-2">
         <div>
           <div className="font-display text-xl font-semibold">{entry?.word ?? word}</div>
-          {entry?.ipa && <div className="font-mono text-sm text-muted">{entry.ipa} {entry.pos && <span className="italic">· {entry.pos}</span>}</div>}
+          {entry?.ipa && (
+            <div className="font-mono text-sm text-muted">
+              {entry.ipa} {entry.pos && <span className="italic">· {entry.pos}</span>}
+            </div>
+          )}
         </div>
         <div className="flex">
           <SpeakButton text={entry?.word ?? word} accent={accent} />
@@ -162,7 +238,9 @@ export function WordPopover({ word, context, sourceModule, sourceRef, glossary, 
         </div>
       </div>
       {result === undefined && !local ? (
-        <div className="py-4"><Spinner /></div>
+        <div className="py-4">
+          <Spinner />
+        </div>
       ) : entry ? (
         <div className="mt-3 space-y-2 text-sm">
           {entry.meaningVi && <p className="font-medium">{entry.meaningVi}</p>}
@@ -171,11 +249,17 @@ export function WordPopover({ word, context, sourceModule, sourceRef, glossary, 
           {result?.source === 'ai' && <AiBadge estimated={false} />}
         </div>
       ) : (
-        <p className="mt-3 text-sm text-muted">{L('Not in the offline dictionary.', 'Chưa có trong từ điển offline.')}</p>
+        <p className="mt-3 text-sm text-muted">
+          {L('Not in the offline dictionary.', 'Chưa có trong từ điển offline.')}
+        </p>
       )}
       {error && <p className="mt-2 text-xs text-danger">{error}</p>}
       <div className="mt-4 flex flex-wrap gap-2">
-        <SaveWordButton seed={{ ...(entry ?? { word }), context: context ?? entry?.context }} sourceModule={sourceModule} sourceRef={sourceRef} />
+        <SaveWordButton
+          seed={{ ...(entry ?? { word }), context: context ?? entry?.context }}
+          sourceModule={sourceModule}
+          sourceRef={sourceRef}
+        />
         {result?.source !== 'ai' && (
           <Button size="sm" variant="ghost" loading={aiLoading} onClick={askAi} icon={<Sparkles className="size-4" />}>
             {L('Explain with AI', 'Giải thích bằng AI')}
@@ -192,7 +276,23 @@ const TOKEN_RE = /([A-Za-z][A-Za-z'’-]*)/g
  * Renders English text where every word is clickable for a dictionary popover.
  * `highlight` marks glossary words; `savedWords` underlines words already in the word bank.
  */
-export function InteractiveText({ text, sourceModule, sourceRef, glossary, className, accent, savedWords }: { text: string; sourceModule: ModuleId; sourceRef?: string; glossary?: WordSeed[]; className?: string; accent?: Accent; savedWords?: Set<string> }) {
+export function InteractiveText({
+  text,
+  sourceModule,
+  sourceRef,
+  glossary,
+  className,
+  accent,
+  savedWords,
+}: {
+  text: string
+  sourceModule: ModuleId
+  sourceRef?: string
+  glossary?: WordSeed[]
+  className?: string
+  accent?: Accent
+  savedWords?: Set<string>
+}) {
   const [open, setOpen] = useState<{ word: string; key: number } | null>(null)
   const glossarySet = useMemo(() => new Set((glossary ?? []).map((g) => g.word.toLowerCase())), [glossary])
   const parts = useMemo(() => text.split(TOKEN_RE), [text])
@@ -206,7 +306,9 @@ export function InteractiveText({ text, sourceModule, sourceRef, glossary, class
   const sentenceOf = (idx: number) => {
     const before = parts.slice(0, idx).join('')
     const after = parts.slice(idx).join('')
-    const start = Math.max(before.lastIndexOf('. '), before.lastIndexOf('? '), before.lastIndexOf('! '), before.lastIndexOf('\n')) + 1
+    const start =
+      Math.max(before.lastIndexOf('. '), before.lastIndexOf('? '), before.lastIndexOf('! '), before.lastIndexOf('\n')) +
+      1
     const endRel = after.search(/[.?!]\s|\n|$/)
     return (before.slice(start) + after.slice(0, endRel + 1)).trim()
   }
@@ -221,14 +323,26 @@ export function InteractiveText({ text, sourceModule, sourceRef, glossary, class
               role="button"
               tabIndex={-1}
               onClick={() => setOpen(open?.key === i ? null : { word: p.replace(/[’']s$/, ''), key: i })}
-              className={cx('word-token', glossarySet.has(lower) && 'font-semibold text-accent', savedWords?.has(lower) && 'word-saved')}
+              className={cx(
+                'word-token',
+                glossarySet.has(lower) && 'font-semibold text-accent',
+                savedWords?.has(lower) && 'word-saved',
+              )}
             >
               {p}
             </span>
             <AnimatePresence>
               {open?.key === i && (
                 <span className="absolute top-full left-0 z-40 mt-2 block">
-                  <WordPopover word={open.word} context={sentenceOf(i)} sourceModule={sourceModule} sourceRef={sourceRef} glossary={glossary} accent={accent} onClose={() => setOpen(null)} />
+                  <WordPopover
+                    word={open.word}
+                    context={sentenceOf(i)}
+                    sourceModule={sourceModule}
+                    sourceRef={sourceRef}
+                    glossary={glossary}
+                    accent={accent}
+                    onClose={() => setOpen(null)}
+                  />
                 </span>
               )}
             </AnimatePresence>
@@ -260,7 +374,17 @@ export function FavoriteButton({ kind, refId, title }: { kind: string; refId: st
 }
 
 // ---------- recording ----------
-export function RecordButton({ onRecorded, maxSeconds = 120, disabled, label }: { onRecorded: (rec: Recording) => void; maxSeconds?: number; disabled?: boolean; label?: string }) {
+export function RecordButton({
+  onRecorded,
+  maxSeconds = 120,
+  disabled,
+  label,
+}: {
+  onRecorded: (rec: Recording) => void
+  maxSeconds?: number
+  disabled?: boolean
+  label?: string
+}) {
   const L = useL()
   const rec = useRecorder(maxSeconds, (r) => r && onRecorded(r))
   const recording = rec.state === 'recording'
@@ -281,11 +405,28 @@ export function RecordButton({ onRecorded, maxSeconds = 120, disabled, label }: 
           recording ? 'bg-danger' : 'bg-accent-gradient',
         )}
       >
-        {recording && <span className="absolute inset-0 rounded-full bg-danger/40" style={{ transform: `scale(${1 + rec.level * 0.6})`, transition: 'transform 80ms' }} />}
-        <span className="relative">{rec.state === 'processing' ? <Loader2 className="size-8 animate-spin" /> : recording ? <Square className="size-7" /> : <Mic className="size-8" />}</span>
+        {recording && (
+          <span
+            className="absolute inset-0 rounded-full bg-danger/40"
+            style={{ transform: `scale(${1 + rec.level * 0.6})`, transition: 'transform 80ms' }}
+          />
+        )}
+        <span className="relative">
+          {rec.state === 'processing' ? (
+            <Loader2 className="size-8 animate-spin" />
+          ) : recording ? (
+            <Square className="size-7" />
+          ) : (
+            <Mic className="size-8" />
+          )}
+        </span>
       </button>
       <div className="text-xs text-muted tabular-nums">
-        {recording ? `${Math.floor(rec.elapsed)}s / ${maxSeconds}s` : rec.state === 'processing' ? L('Processing…', 'Đang xử lý…') : (label ?? L('Tap to speak', 'Nhấn để nói'))}
+        {recording
+          ? `${Math.floor(rec.elapsed)}s / ${maxSeconds}s`
+          : rec.state === 'processing'
+            ? L('Processing…', 'Đang xử lý…')
+            : (label ?? L('Tap to speak', 'Nhấn để nói'))}
       </div>
       {rec.error && <p className="max-w-sm text-center text-xs text-danger">{rec.error}</p>}
     </div>
@@ -293,7 +434,19 @@ export function RecordButton({ onRecorded, maxSeconds = 120, disabled, label }: 
 }
 
 // ---------- quiz ----------
-export function QuizQuestion({ q, index, onAnswer, answered, showVietnameseHint }: { q: Question; index?: number; onAnswer: (choice: number, correct: boolean) => void; answered?: number | null; showVietnameseHint?: ReactNode }) {
+export function QuizQuestion({
+  q,
+  index,
+  onAnswer,
+  answered,
+  showVietnameseHint,
+}: {
+  q: Question
+  index?: number
+  onAnswer: (choice: number, correct: boolean) => void
+  answered?: number | null
+  showVietnameseHint?: ReactNode
+}) {
   const L = useL()
   const done = answered !== undefined && answered !== null
   return (
@@ -326,7 +479,9 @@ export function QuizQuestion({ q, index, onAnswer, answered, showVietnameseHint 
       </div>
       {done && (
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-3 text-sm text-muted">
-          <span className={answered === q.answerIndex ? 'text-success' : 'text-danger'}>{answered === q.answerIndex ? L('Correct! ', 'Chính xác! ') : L('Not quite. ', 'Chưa đúng. ')}</span>
+          <span className={answered === q.answerIndex ? 'text-success' : 'text-danger'}>
+            {answered === q.answerIndex ? L('Correct! ', 'Chính xác! ') : L('Not quite. ', 'Chưa đúng. ')}
+          </span>
           {q.explanation}
           {showVietnameseHint}
         </motion.p>

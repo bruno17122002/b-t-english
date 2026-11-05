@@ -19,7 +19,12 @@ export function StatsHeader({ stats }: { stats: VocabStats }) {
           sub={L(`${stats.dueToday} due today`, `${stats.dueToday} từ trong hôm nay`)}
         />
         <StatTile icon={<Sprout />} label={L('Learning', 'Đang học')} value={fmt.number(stats.learning)} />
-        <StatTile icon={<Brain />} label={L('Mature', 'Nhớ lâu')} value={fmt.number(stats.mature)} sub={L('interval ≥ 21 days', 'khoảng ôn ≥ 21 ngày')} />
+        <StatTile
+          icon={<Brain />}
+          label={L('Mature', 'Nhớ lâu')}
+          value={fmt.number(stats.mature)}
+          sub={L('interval ≥ 21 days', 'khoảng ôn ≥ 21 ngày')}
+        />
         <StatTile icon={<TriangleAlert />} label={L('Difficult', 'Khó nhớ')} value={fmt.number(stats.difficult)} />
         <StatTile
           icon={<Flame />}
@@ -27,8 +32,17 @@ export function StatsHeader({ stats }: { stats: VocabStats }) {
           value={stats.total ? `${Math.round(stats.averageRetention * 100)}%` : '–'}
           sub={L('average recall chance', 'xác suất nhớ trung bình')}
         />
-        <StatTile icon={<Repeat />} label={L('Reviews today', 'Lượt ôn hôm nay')} value={fmt.number(stats.reviewsToday)} />
-        <StatTile icon={<CalendarDays />} label={L('Next 7 days', '7 ngày tới')} value={fmt.number(stats.forecast.slice(0, 7).reduce((s, f) => s + f.count, 0))} sub={L('cards to review', 'thẻ cần ôn')} />
+        <StatTile
+          icon={<Repeat />}
+          label={L('Reviews today', 'Lượt ôn hôm nay')}
+          value={fmt.number(stats.reviewsToday)}
+        />
+        <StatTile
+          icon={<CalendarDays />}
+          label={L('Next 7 days', '7 ngày tới')}
+          value={fmt.number(stats.forecast.slice(0, 7).reduce((s, f) => s + f.count, 0))}
+          sub={L('cards to review', 'thẻ cần ôn')}
+        />
       </div>
       <ForecastChart forecast={stats.forecast} />
     </div>
@@ -52,14 +66,29 @@ function ForecastChart({ forecast }: { forecast: VocabStats['forecast'] }) {
         <span className="font-normal normal-case">{L(`${total} reviews`, `${total} lượt ôn`)}</span>
       </div>
       {days.length ? (
-        <svg viewBox={`0 0 ${W} ${H}`} className="h-28 w-full" role="img" aria-label={L('Reviews due per day for the next 14 days', 'Số thẻ đến hạn mỗi ngày trong 14 ngày tới')}>
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          className="h-28 w-full"
+          role="img"
+          aria-label={L('Reviews due per day for the next 14 days', 'Số thẻ đến hạn mỗi ngày trong 14 ngày tới')}
+        >
           {bars.map((b, i) => {
             const x = i * (bw + gap)
             const y = H - 16 - b.h
             return (
               <g key={b.date}>
                 <title>{`${fmt.date(b.date)}: ${b.count}`}</title>
-                <rect x={x} y={y} width={bw} height={b.h} rx={3} style={{ fill: i === 0 ? 'var(--accent)' : 'var(--accent-2)', opacity: b.count ? (i === 0 ? 1 : 0.7) : 0.25 }} />
+                <rect
+                  x={x}
+                  y={y}
+                  width={bw}
+                  height={b.h}
+                  rx={3}
+                  style={{
+                    fill: i === 0 ? 'var(--accent)' : 'var(--accent-2)',
+                    opacity: b.count ? (i === 0 ? 1 : 0.7) : 0.25,
+                  }}
+                />
                 {b.count > 0 && (
                   <text x={x + bw / 2} y={y - 3} textAnchor="middle" className="fill-muted" style={{ fontSize: 8 }}>
                     {b.count}

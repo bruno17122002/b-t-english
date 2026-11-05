@@ -40,7 +40,9 @@ export class AppDatabase {
   }
 
   static async open(opts: OpenOptions): Promise<AppDatabase> {
-    const SQL = await initSqlJs(opts.wasmDir ? { locateFile: (f: string) => path.join(opts.wasmDir as string, f) } : undefined)
+    const SQL = await initSqlJs(
+      opts.wasmDir ? { locateFile: (f: string) => path.join(opts.wasmDir as string, f) } : undefined,
+    )
     let db: SqlJsDatabase
     if (opts.filePath && fs.existsSync(opts.filePath)) {
       db = new SQL.Database(fs.readFileSync(opts.filePath))

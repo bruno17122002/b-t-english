@@ -3,7 +3,15 @@ import { Fragment, useMemo, type ReactNode } from 'react'
 import { InteractiveText } from '@/components/learning'
 import { parseMarkdownLite, type Inline } from '../lib/markdownLite'
 
-export function RichText({ text, interactive, sourceRef }: { text: string; interactive?: boolean; sourceRef?: string }) {
+export function RichText({
+  text,
+  interactive,
+  sourceRef,
+}: {
+  text: string
+  interactive?: boolean
+  sourceRef?: string
+}) {
   const blocks = useMemo(() => parseMarkdownLite(text), [text])
   // Word popovers render block elements, which are not allowed inside <p>.
   const Para = interactive ? 'div' : 'p'

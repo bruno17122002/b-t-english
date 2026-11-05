@@ -20,7 +20,10 @@ export const MODES: Record<TutorStyle, ModeInfo> = {
     descVi: 'Ấm áp, hay động viên. Chỉ sửa những lỗi quan trọng để bạn tự tin nói tiếp.',
     bestFor: { en: 'Beginners, building confidence', vi: 'Người mới, xây dựng sự tự tin' },
     starters: [
-      { text: 'Hi! Can you help me practise English every day?', vi: 'Chào! Bạn giúp mình luyện tiếng Anh mỗi ngày nhé?' },
+      {
+        text: 'Hi! Can you help me practise English every day?',
+        vi: 'Chào! Bạn giúp mình luyện tiếng Anh mỗi ngày nhé?',
+      },
       { text: 'Let me tell you about my family.', vi: 'Để mình kể về gia đình mình.' },
       { text: 'What should I say when I meet someone new?', vi: 'Khi gặp người mới thì nên nói gì?' },
     ],
@@ -34,7 +37,10 @@ export const MODES: Record<TutorStyle, ModeInfo> = {
     starters: [
       { text: 'Check my sentence: Yesterday I have went to the cinema with my friends.', vi: 'Kiểm tra câu của mình…' },
       { text: 'Give me 5 sentences to correct, one by one.', vi: 'Cho mình 5 câu để sửa, từng câu một.' },
-      { text: 'I want to describe my job. Correct every mistake, please.', vi: 'Mình muốn tả công việc. Sửa mọi lỗi nhé.' },
+      {
+        text: 'I want to describe my job. Correct every mistake, please.',
+        vi: 'Mình muốn tả công việc. Sửa mọi lỗi nhé.',
+      },
     ],
   },
   grammar: {
@@ -44,7 +50,10 @@ export const MODES: Record<TutorStyle, ModeInfo> = {
     descVi: 'Mỗi câu trả lời kèm một quy tắc ngắn và ví dụ cho điểm ngữ pháp bạn vừa dùng.',
     bestFor: { en: 'Tenses, articles, conditionals', vi: 'Thì, mạo từ, câu điều kiện' },
     starters: [
-      { text: 'When do I use present perfect instead of past simple?', vi: 'Khi nào dùng hiện tại hoàn thành thay vì quá khứ đơn?' },
+      {
+        text: 'When do I use present perfect instead of past simple?',
+        vi: 'Khi nào dùng hiện tại hoàn thành thay vì quá khứ đơn?',
+      },
       { text: 'Can you explain "a", "an" and "the" with examples?', vi: 'Giải thích a/an/the kèm ví dụ được không?' },
       { text: 'If I had more time, I will learn the guitar. Is this correct?', vi: 'Câu này đúng không?' },
     ],
@@ -56,7 +65,10 @@ export const MODES: Record<TutorStyle, ModeInfo> = {
     descVi: 'Tập trung vào âm khó với người Việt: phụ âm cuối, /θ/ /ð/, trọng âm, kèm mẹo và IPA.',
     bestFor: { en: 'Clear speaking, Speaking test', vi: 'Nói rõ ràng, phần thi Nói' },
     starters: [
-      { text: 'How do I pronounce "three" and "tree" differently?', vi: 'Phát âm "three" và "tree" khác nhau thế nào?' },
+      {
+        text: 'How do I pronounce "three" and "tree" differently?',
+        vi: 'Phát âm "three" và "tree" khác nhau thế nào?',
+      },
       { text: 'Which words do Vietnamese speakers often say wrong?', vi: 'Người Việt hay phát âm sai từ nào?' },
       { text: 'Help me with word stress in "photograph" and "photography".', vi: 'Giúp mình trọng âm của hai từ này.' },
     ],
@@ -68,7 +80,10 @@ export const MODES: Record<TutorStyle, ModeInfo> = {
     descVi: 'Email, cuộc họp, phỏng vấn với văn phong lịch sự, chuyên nghiệp.',
     bestFor: { en: 'Work, interviews', vi: 'Công việc, phỏng vấn' },
     starters: [
-      { text: 'Can we practise a job interview for a marketing position?', vi: 'Luyện phỏng vấn vị trí marketing nhé?' },
+      {
+        text: 'Can we practise a job interview for a marketing position?',
+        vi: 'Luyện phỏng vấn vị trí marketing nhé?',
+      },
       { text: 'How do I politely ask my manager for a day off?', vi: 'Xin sếp nghỉ một ngày thế nào cho lịch sự?' },
       { text: 'Help me start a meeting in English.', vi: 'Giúp mình mở đầu cuộc họp bằng tiếng Anh.' },
     ],

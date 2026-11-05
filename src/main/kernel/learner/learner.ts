@@ -121,7 +121,14 @@ export class LearnerService {
     return SKILLS.map((skill) => {
       const r = byKey.get(skill)
       return r
-        ? { skill, cefr: r.cefr, score: r.score, source: r.source, estimated: r.estimated === 1, updatedAt: r.updated_at }
+        ? {
+            skill,
+            cefr: r.cefr,
+            score: r.score,
+            source: r.source,
+            estimated: r.estimated === 1,
+            updatedAt: r.updated_at,
+          }
         : { skill, cefr: fallback, score: 0, source: 'self' as const, estimated: true, updatedAt: '' }
     })
   }
@@ -193,7 +200,15 @@ export class LearnerService {
     } else {
       this.db.run(
         'INSERT INTO learning_goals(kind, title, metric, target_value, target_date, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
-        [goal.kind, goal.title.trim(), goal.metric, goal.targetValue, goal.targetDate, goal.status, this.now().toISOString()],
+        [
+          goal.kind,
+          goal.title.trim(),
+          goal.metric,
+          goal.targetValue,
+          goal.targetDate,
+          goal.status,
+          this.now().toISOString(),
+        ],
       )
     }
     return this.goals()

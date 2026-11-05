@@ -16,7 +16,15 @@ import {
 } from '../../src/core/game'
 import { buildDailyPlan, buildOfflineRoadmap, projectProgress, weakestSkills } from '../../src/core/roadmap'
 import { FsrsScheduler, formatInterval, newCard, retrievability } from '../../src/core/srs'
-import { compareWords, normalizeAnswer, pickBlanks, readingWpm, speakingMetrics, splitSentences, textMetrics } from '../../src/core/text'
+import {
+  compareWords,
+  normalizeAnswer,
+  pickBlanks,
+  readingWpm,
+  speakingMetrics,
+  splitSentences,
+  textMetrics,
+} from '../../src/core/text'
 
 const T0 = new Date('2026-03-02T09:00:00Z')
 const DAY = 86_400_000
@@ -107,22 +115,48 @@ describe('XP, levels and streaks', () => {
   })
 
   it('unlocks the mastery region only when every skill region reaches stage 2', () => {
-    const low = computeRegions({ vocabulary: 500, grammar: 500, reading: 500, listening: 500, writing: 500, speaking: 100 })
+    const low = computeRegions({
+      vocabulary: 500,
+      grammar: 500,
+      reading: 500,
+      listening: 500,
+      writing: 500,
+      speaking: 100,
+    })
     expect(low.find((r) => r.key === 'mastery-challenge')?.unlocked).toBe(false)
-    const high = computeRegions({ vocabulary: 400, grammar: 400, reading: 400, listening: 400, writing: 400, speaking: 400 })
+    const high = computeRegions({
+      vocabulary: 400,
+      grammar: 400,
+      reading: 400,
+      listening: 400,
+      writing: 400,
+      speaking: 400,
+    })
     const mastery = high.find((r) => r.key === 'mastery-challenge')
     expect(mastery?.unlocked).toBe(true)
     expect(high.find((r) => r.key === 'vocabulary-forest')).toMatchObject({ stage: 2, stageXp: 0, nextStageXp: 500 })
   })
 
   it('generates stable, personalised quests', () => {
-    const a = generateDailyQuests({ dateKey: '2026-03-10', dailyMinutes: 20, dueCards: 12, weakestSkills: ['speaking', 'listening'] })
-    const b = generateDailyQuests({ dateKey: '2026-03-10', dailyMinutes: 20, dueCards: 12, weakestSkills: ['speaking', 'listening'] })
+    const a = generateDailyQuests({
+      dateKey: '2026-03-10',
+      dailyMinutes: 20,
+      dueCards: 12,
+      weakestSkills: ['speaking', 'listening'],
+    })
+    const b = generateDailyQuests({
+      dateKey: '2026-03-10',
+      dailyMinutes: 20,
+      dueCards: 12,
+      weakestSkills: ['speaking', 'listening'],
+    })
     expect(a).toEqual(b)
     expect(a).toHaveLength(3)
     expect(a[0]?.key).toBe('review-words')
     expect(a[1]?.key).toBe('speak')
-    expect(generateDailyQuests({ dateKey: '2026-03-10', dailyMinutes: 20, dueCards: 0, weakestSkills: [] })[0]?.key).toBe('learn-words')
+    expect(
+      generateDailyQuests({ dateKey: '2026-03-10', dailyMinutes: 20, dueCards: 0, weakestSkills: [] })[0]?.key,
+    ).toBe('learn-words')
     const weekly = generateWeeklyQuests({ weekKey: '2026-W11', dailyMinutes: 30 })
     expect(weekly[0]?.key).toBe('week-active')
     expect(new Set(weekly.map((q) => q.key)).size).toBe(3)
@@ -130,8 +164,23 @@ describe('XP, levels and streaks', () => {
 
   it('evaluates achievements against real stats', () => {
     const stats: AchievementStats = {
-      words: 30, reviews: 0, listening: 0, reading: 0, writing: 1, speakingSeconds: 0, cinemaScenes: 0, storiesCompleted: 0,
-      goodEndings: 0, longestStreak: 3, level: 1, assessments: 1, tutorMessages: 0, grammar: 0, activeDays: 3, perfectQuizzes: 0, questsCompleted: 0,
+      words: 30,
+      reviews: 0,
+      listening: 0,
+      reading: 0,
+      writing: 1,
+      speakingSeconds: 0,
+      cinemaScenes: 0,
+      storiesCompleted: 0,
+      goodEndings: 0,
+      longestStreak: 3,
+      level: 1,
+      assessments: 1,
+      tutorMessages: 0,
+      grammar: 0,
+      activeDays: 3,
+      perfectQuizzes: 0,
+      questsCompleted: 0,
     }
     const res = evaluateAchievements(stats, new Set(['first-steps']))
     const unlocked = res.filter((r) => r.newlyUnlocked).map((r) => r.key)
@@ -151,7 +200,14 @@ describe('CEFR, assessment and roadmap', () => {
   })
 
   const bank: AssessmentItem[] = (['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const).flatMap((cefr) =>
-    [1, 2].map((n) => ({ id: `${cefr}-${n}`, skill: 'grammar' as const, cefr, prompt: 'q', options: ['a', 'b', 'c'], answerIndex: 0 })),
+    [1, 2].map((n) => ({
+      id: `${cefr}-${n}`,
+      skill: 'grammar' as const,
+      cefr,
+      prompt: 'q',
+      options: ['a', 'b', 'c'],
+      answerIndex: 0,
+    })),
   )
 
   it('adapts difficulty up after a correct answer and down after a wrong one', () => {
@@ -161,7 +217,11 @@ describe('CEFR, assessment and roadmap', () => {
     expect(up?.cefr).toBe('B1')
     const down = nextAssessmentItem(bank, [{ itemId: 'A2-1', cefr: 'A2', correct: false }], 'A2')
     expect(down?.cefr).toBe('A1')
-    const done = nextAssessmentItem(bank, Array.from({ length: 6 }, (_, i) => ({ itemId: `x${i}`, cefr: 'A1' as const, correct: true })), 'A2')
+    const done = nextAssessmentItem(
+      bank,
+      Array.from({ length: 6 }, (_, i) => ({ itemId: `x${i}`, cefr: 'A1' as const, correct: true })),
+      'A2',
+    )
     expect(done).toBeNull()
   })
 
@@ -193,7 +253,15 @@ describe('CEFR, assessment and roadmap', () => {
       { skill: 'listening' as const, cefr: 'A1' as const, score: 50 },
     ]
     expect(weakestSkills(skills, 1)).toEqual(['speaking'])
-    const r = buildOfflineRoadmap({ displayName: 'Lan', dailyMinutes: 20, targetCefr: 'B2', interests: ['travel'], purposes: ['ielts'], skills, grammarTopics: [{ id: 'g', title: 'Present simple', cefr: 'A1' }] })
+    const r = buildOfflineRoadmap({
+      displayName: 'Lan',
+      dailyMinutes: 20,
+      targetCefr: 'B2',
+      interests: ['travel'],
+      purposes: ['ielts'],
+      skills,
+      grammarTopics: [{ id: 'g', title: 'Present simple', cefr: 'A1' }],
+    })
     expect(r.weeks).toHaveLength(12)
     expect(r.weeks[0]?.status).toBe('current')
     expect(r.summary.prioritySkills[0]).toBe('speaking')
@@ -240,7 +308,15 @@ describe('text metrics', () => {
   })
 
   it('measures speaking from voiced segments', () => {
-    const m = speakingMetrics({ durationSec: 10, segments: [{ start: 0.5, end: 3 }, { start: 4, end: 8 }], transcript: 'one two three four five six seven eight nine ten', target: null })
+    const m = speakingMetrics({
+      durationSec: 10,
+      segments: [
+        { start: 0.5, end: 3 },
+        { start: 4, end: 8 },
+      ],
+      transcript: 'one two three four five six seven eight nine ten',
+      target: null,
+    })
     expect(m.speakingSec).toBe(6.5)
     expect(m.pauseCount).toBe(1)
     expect(m.longestPauseSec).toBe(1)

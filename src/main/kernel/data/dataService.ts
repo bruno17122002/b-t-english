@@ -191,17 +191,29 @@ export class DataService {
       } catch {
         /* ignore */
       }
-      return [r.word, r.ipa, r.pos, r.meaning_vi, r.meaning_en, example, r.topic, r.cefr, r.notes].map(csvCell).join(',')
+      return [r.word, r.ipa, r.pos, r.meaning_vi, r.meaning_en, example, r.topic, r.cefr, r.notes]
+        .map(csvCell)
+        .join(',')
     })
     return BOM + [header.join(','), ...lines].join('\r\n')
   }
 
   /** Imports words from a Lingua Quest JSON export or a CSV (first column = word). Existing words are merged. */
   importVocabulary(text: string, kind: 'json' | 'csv'): { added: number; merged: number; skipped: number } {
-    const items: { word: string; ipa?: string; pos?: string; meaningVi?: string; meaningEn?: string; example?: string; topic?: string; notes?: string }[] = []
+    const items: {
+      word: string
+      ipa?: string
+      pos?: string
+      meaningVi?: string
+      meaningEn?: string
+      example?: string
+      topic?: string
+      notes?: string
+    }[] = []
     if (kind === 'json') {
       const parsed = JSON.parse(text) as Partial<ExportFile>
-      if (parsed.format !== 'lingua-quest-export' || !parsed.tables?.vocabulary) throw new Error('Not a Lingua Quest export file')
+      if (parsed.format !== 'lingua-quest-export' || !parsed.tables?.vocabulary)
+        throw new Error('Not a Lingua Quest export file')
       for (const r of parsed.tables.vocabulary) {
         let example = ''
         try {

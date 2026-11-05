@@ -115,7 +115,10 @@ export const wordLookupPrompt = jsonPrompt<{ word: string; context?: string }, W
       JSON_ONLY,
     ].join('\n'),
     messages: [
-      { role: 'user', content: `Word: ${input.word}${input.context ? `\nContext: ${input.context.slice(0, 400)}` : ''}` },
+      {
+        role: 'user',
+        content: `Word: ${input.word}${input.context ? `\nContext: ${input.context.slice(0, 400)}` : ''}`,
+      },
     ],
   }),
   mock: (input) => ({
@@ -283,7 +286,10 @@ export class VocabHub {
     return { item: this.get(id) as VocabItem, created: true }
   }
 
-  update(id: number, patch: Partial<Omit<SaveWordInput, 'sourceModule' | 'word'>> & { isFavorite?: boolean }): VocabItem {
+  update(
+    id: number,
+    patch: Partial<Omit<SaveWordInput, 'sourceModule' | 'word'>> & { isFavorite?: boolean },
+  ): VocabItem {
     const cur = this.get(id)
     if (!cur) throw new Error('Word not found')
     const n = { ...cur, ...patch }
@@ -377,17 +383,19 @@ export class VocabHub {
   }
 
   dueCount(): number {
-    return Number(this.db.value('SELECT COUNT(*) FROM review_schedules WHERE due_at <= ?', [this.now().toISOString()]) ?? 0)
+    return Number(
+      this.db.value('SELECT COUNT(*) FROM review_schedules WHERE due_at <= ?', [this.now().toISOString()]) ?? 0,
+    )
   }
 
   /** Due cards (oldest first), with interval previews for the four rating buttons. */
   due(limit = 30): DueCard[] {
     const now = this.now()
     return this.db
-      .all<VocabRow>(`${SELECT} WHERE r.due_at <= ? ORDER BY CASE r.state WHEN 'new' THEN 1 ELSE 0 END, r.due_at LIMIT ?`, [
-        now.toISOString(),
-        Math.min(200, limit),
-      ])
+      .all<VocabRow>(
+        `${SELECT} WHERE r.due_at <= ? ORDER BY CASE r.state WHEN 'new' THEN 1 ELSE 0 END, r.due_at LIMIT ?`,
+        [now.toISOString(), Math.min(200, limit)],
+      )
       .map((r) => {
         const p = this.scheduler.preview(this.toCard(r), now)
         return { ...this.toItem(r), preview: { 1: p[1].label, 2: p[2].label, 3: p[3].label, 4: p[4].label } }
@@ -451,7 +459,10 @@ export class VocabHub {
       const date = addDays(today, i)
       const start = i === 0 ? '0000' : new Date(`${date}T00:00:00`).toISOString()
       const end = new Date(`${date}T23:59:59.999`).toISOString()
-      forecast.push({ date, count: n('SELECT COUNT(*) FROM review_schedules WHERE due_at > ? AND due_at <= ?', [start, end]) })
+      forecast.push({
+        date,
+        count: n('SELECT COUNT(*) FROM review_schedules WHERE due_at > ? AND due_at <= ?', [start, end]),
+      })
     }
     return {
       total: n('SELECT COUNT(*) FROM vocabulary'),
@@ -461,7 +472,9 @@ export class VocabHub {
       mature: n('SELECT COUNT(*) FROM review_schedules WHERE stability >= 21'),
       difficult: n('SELECT COUNT(*) FROM review_schedules WHERE lapses >= 2 OR difficulty >= 7'),
       averageRetention: Math.round(retention * 1000) / 1000,
-      reviewsToday: n('SELECT COUNT(*) FROM review_logs WHERE reviewed_at >= ?', [new Date(`${today}T00:00:00`).toISOString()]),
+      reviewsToday: n('SELECT COUNT(*) FROM review_logs WHERE reviewed_at >= ?', [
+        new Date(`${today}T00:00:00`).toISOString(),
+      ]),
       forecast,
     }
   }

@@ -63,7 +63,11 @@ describe('vocabulary practice helpers', () => {
   })
 
   it('cloze finds the word, inflections and phrases', () => {
-    expect(buildCloze('resilient', 'She is very resilient.')).toEqual({ before: 'She is very ', after: '.', answer: 'resilient' })
+    expect(buildCloze('resilient', 'She is very resilient.')).toEqual({
+      before: 'She is very ',
+      after: '.',
+      answer: 'resilient',
+    })
     expect(buildCloze('book', 'I booked a table.')?.answer).toBe('booked')
     expect(buildCloze('make', 'She is making tea.')?.answer).toBe('making')
     expect(buildCloze('study', 'He studies hard.')?.answer).toBe('studies')
@@ -77,7 +81,9 @@ describe('vocabulary practice helpers', () => {
   })
 
   it('pickCloze uses examples first, then the context sentence', () => {
-    expect(pickCloze({ word: 'tide', examples: ['No match here.'], context: 'The tide is high.' })?.sentence).toBe('The tide is high.')
+    expect(pickCloze({ word: 'tide', examples: ['No match here.'], context: 'The tide is high.' })?.sentence).toBe(
+      'The tide is high.',
+    )
     expect(pickCloze({ word: 'tide', examples: [], context: '' })).toBeNull()
   })
 
@@ -116,7 +122,10 @@ describe('vocabulary practice helpers', () => {
   })
 
   it('practice set prefers weaker words', () => {
-    const items = Array.from({ length: 40 }, (_, i) => ({ id: i, review: { retrievability: i / 40, state: 'review', reps: 2 } }))
+    const items = Array.from({ length: 40 }, (_, i) => ({
+      id: i,
+      review: { retrievability: i / 40, state: 'review', reps: 2 },
+    }))
     const set = pickPracticeSet(items, 5, mulberry32(7))
     expect(set).toHaveLength(5)
     expect(set.every((x) => x.review.retrievability < 0.5)).toBe(true)
@@ -124,6 +133,10 @@ describe('vocabulary practice helpers', () => {
 
   it('splits list input', () => {
     expect(splitList('a\n b \n\na')).toEqual(['a', 'b'])
-    expect(splitList('make a decision, take a break; do homework', true)).toEqual(['make a decision', 'take a break', 'do homework'])
+    expect(splitList('make a decision, take a break; do homework', true)).toEqual([
+      'make a decision',
+      'take a break',
+      'do homework',
+    ])
   })
 })

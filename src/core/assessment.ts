@@ -44,7 +44,12 @@ export function nextAssessmentItem(
  * half the time; levels below a demonstrated level are assumed mastered. Score (0–100) expresses
  * how secure the learner is inside that level.
  */
-export function estimateLevel(answered: AnsweredItem[]): { cefr: Cefr; score: number; correct: number; answered: number } {
+export function estimateLevel(answered: AnsweredItem[]): {
+  cefr: Cefr
+  score: number
+  correct: number
+  answered: number
+} {
   const correct = answered.filter((a) => a.correct).length
   if (answered.length === 0) return { cefr: 'A1', score: 0, correct: 0, answered: 0 }
   let best = -1
@@ -57,7 +62,8 @@ export function estimateLevel(answered: AnsweredItem[]): { cefr: Cefr; score: nu
       bestAccuracy = ok / atLevel.length
     }
   }
-  if (best < 0) return { cefr: 'A1', score: Math.round((correct / answered.length) * 50), correct, answered: answered.length }
+  if (best < 0)
+    return { cefr: 'A1', score: Math.round((correct / answered.length) * 50), correct, answered: answered.length }
   // Being right one level above would have promoted; failing above lowers confidence.
   const above = answered.filter((a) => cefrIndex(a.cefr) === best + 1)
   const aboveOk = above.filter((a) => a.correct).length

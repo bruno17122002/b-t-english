@@ -22,7 +22,15 @@ export type ProviderId = (typeof PROVIDERS)[number]
 export const USER_PROVIDERS = ['gemini', 'openai'] as const
 export type UserProviderId = (typeof USER_PROVIDERS)[number]
 
-export const TUTOR_STYLES = ['friendly', 'strict', 'grammar', 'pronunciation', 'professional', 'ielts', 'casual'] as const
+export const TUTOR_STYLES = [
+  'friendly',
+  'strict',
+  'grammar',
+  'pronunciation',
+  'professional',
+  'ielts',
+  'casual',
+] as const
 export type TutorStyle = (typeof TUTOR_STYLES)[number]
 
 export type ResponseLanguage = 'en' | 'vi' | 'mixed'
@@ -551,7 +559,16 @@ export interface ActivityEntry {
 }
 
 export interface SearchResult {
-  kind: 'reading' | 'listening' | 'story' | 'grammar' | 'vocab' | 'writing-prompt' | 'speaking-prompt' | 'page' | 'dictionary'
+  kind:
+    | 'reading'
+    | 'listening'
+    | 'story'
+    | 'grammar'
+    | 'vocab'
+    | 'writing-prompt'
+    | 'speaking-prompt'
+    | 'page'
+    | 'dictionary'
   id: string
   title: string
   subtitle: string

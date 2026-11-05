@@ -242,7 +242,10 @@ export class AiGateway {
           if (parsed.success) {
             const issue = spec.check?.(input, parsed.data) ?? null
             if (!issue) {
-              this.deps.log?.('info', `ai ${spec.id}@v${spec.version} ok via ${provider.id} in ${Date.now() - started}ms`)
+              this.deps.log?.(
+                'info',
+                `ai ${spec.id}@v${spec.version} ok via ${provider.id} in ${Date.now() - started}ms`,
+              )
               return { data: parsed.data, provider: provider.id, model: provider.model }
             }
             problem = issue
@@ -255,7 +258,10 @@ export class AiGateway {
         } catch {
           problem = 'The answer was not valid JSON.'
         }
-        this.deps.log?.('warn', `ai ${spec.id}@v${spec.version} attempt ${attempt + 1} rejected: ${problem.slice(0, 200)}`)
+        this.deps.log?.(
+          'warn',
+          `ai ${spec.id}@v${spec.version} attempt ${attempt + 1} rejected: ${problem.slice(0, 200)}`,
+        )
         messages = [
           ...built.messages,
           { role: 'assistant', content: res.text.slice(0, 6000) },
@@ -283,7 +289,11 @@ export class AiGateway {
     return null
   }
 
-  async transcribe(audio: Uint8Array, mimeType: string, hint?: string): Promise<{ text: string; provider: ProviderId }> {
+  async transcribe(
+    audio: Uint8Array,
+    mimeType: string,
+    hint?: string,
+  ): Promise<{ text: string; provider: ProviderId }> {
     const id = this.sttProviderId()
     if (!id) throw new AiError('no_key')
     const p = id === 'mock' ? new MockProvider() : this.provider(id)

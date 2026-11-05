@@ -39,7 +39,8 @@ export function toIpcError(err: unknown, log?: KernelLog, channel?: string): Ipc
     return { code: `ai_${err.code}`, message: err.userMessage, ...(hint ? { hint } : {}) }
   }
   if (err instanceof UserError) return { code: err.code, message: err.message, ...(err.hint ? { hint: err.hint } : {}) }
-  if (err instanceof InvalidKeyFormatError) return { code: 'invalid_key_format', message: 'API key không đúng định dạng.' }
+  if (err instanceof InvalidKeyFormatError)
+    return { code: 'invalid_key_format', message: 'API key không đúng định dạng.' }
   if (err instanceof ZodError) {
     const first = err.issues[0]
     return {
@@ -48,8 +49,13 @@ export function toIpcError(err: unknown, log?: KernelLog, channel?: string): Ipc
     }
   }
   const msg = err instanceof Error ? err.message : String(err)
-  log?.error(`ipc ${channel ?? '?'} failed: ${redactSecrets(msg)}${err instanceof Error && err.stack ? ` ${redactSecrets(err.stack.split('\n').slice(0, 4).join(' | '))}` : ''}`)
-  return { code: 'internal', message: 'Đã xảy ra lỗi không mong muốn. Chi tiết đã được ghi vào nhật ký (Cài đặt → Chẩn đoán).' }
+  log?.error(
+    `ipc ${channel ?? '?'} failed: ${redactSecrets(msg)}${err instanceof Error && err.stack ? ` ${redactSecrets(err.stack.split('\n').slice(0, 4).join(' | '))}` : ''}`,
+  )
+  return {
+    code: 'internal',
+    message: 'Đã xảy ra lỗi không mong muốn. Chi tiết đã được ghi vào nhật ký (Cài đặt → Chẩn đoán).',
+  }
 }
 
 export class IpcRouter {
@@ -75,7 +81,8 @@ export class IpcRouter {
   async dispatch(channel: string, payload: unknown): Promise<IpcResult<unknown>> {
     const handler = this.handlers.get(channel)
     const def = (CONTRACT as Record<string, { input: z.ZodType } | undefined>)[channel]
-    if (!handler || !def) return { ok: false, error: { code: 'unknown_channel', message: `Unknown channel ${channel}` } }
+    if (!handler || !def)
+      return { ok: false, error: { code: 'unknown_channel', message: `Unknown channel ${channel}` } }
     try {
       const input = def.input.parse(payload)
       const data = await handler(input)

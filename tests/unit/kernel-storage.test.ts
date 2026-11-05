@@ -2,7 +2,13 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { AppDatabase, writeFileAtomic } from '../../src/main/db/database'
-import { currentSchemaVersion, LATEST_SCHEMA_VERSION, MIGRATIONS, runMigrations, runModuleMigrations } from '../../src/main/db/migrations'
+import {
+  currentSchemaVersion,
+  LATEST_SCHEMA_VERSION,
+  MIGRATIONS,
+  runMigrations,
+  runModuleMigrations,
+} from '../../src/main/db/migrations'
 import { parseCsv } from '../../src/main/kernel/data/dataService'
 import { Logger } from '../../src/main/kernel/logger'
 import { KeyStore, normalizeKey, type Cipher } from '../../src/main/kernel/secure/keyStore'
@@ -15,8 +21,11 @@ describe('database layer', () => {
     const old = await AppDatabase.open({ filePath: file, autosaveMs: 0 })
     runMigrations(old, MIGRATIONS.slice(0, 2))
     const ts = new Date().toISOString()
-    old.run("INSERT INTO vocabulary(word, word_key, created_at, updated_at) VALUES ('harbor', 'harbor', ?, ?)", [ts, ts])
-    old.run("INSERT INTO review_schedules(vocab_id, due_at) VALUES (1, ?)", [ts])
+    old.run("INSERT INTO vocabulary(word, word_key, created_at, updated_at) VALUES ('harbor', 'harbor', ?, ?)", [
+      ts,
+      ts,
+    ])
+    old.run('INSERT INTO review_schedules(vocab_id, due_at) VALUES (1, ?)', [ts])
     old.close()
 
     const db = await AppDatabase.open({ filePath: file, autosaveMs: 0 })
@@ -119,7 +128,11 @@ describe('key store', () => {
 
   it('keeps keys in memory only when OS encryption is unavailable', () => {
     const dir = tempDir()
-    const noCrypto: Cipher = { isEncryptionAvailable: () => false, encryptString: () => Buffer.alloc(0), decryptString: () => '' }
+    const noCrypto: Cipher = {
+      isEncryptionAvailable: () => false,
+      encryptString: () => Buffer.alloc(0),
+      decryptString: () => '',
+    }
     const ks = new KeyStore(path.join(dir, 'keys.bin'), noCrypto)
     expect(ks.set('gemini', 'AIzaSyMEMORYONLY_1234567890abcdefgh')).toEqual({ persisted: false })
     expect(ks.has('gemini')).toBe(true)
@@ -129,7 +142,12 @@ describe('key store', () => {
   it('treats keys encrypted by another Windows account as missing', () => {
     const dir = tempDir()
     new KeyStore(path.join(dir, 'keys.bin'), fakeCipher).set('gemini', 'AIzaSyOTHERUSER_1234567890abcdefgh')
-    const broken: Cipher = { ...fakeCipher, decryptString: () => { throw new Error('DPAPI failure') } }
+    const broken: Cipher = {
+      ...fakeCipher,
+      decryptString: () => {
+        throw new Error('DPAPI failure')
+      },
+    }
     expect(new KeyStore(path.join(dir, 'keys.bin'), broken).get('gemini')).toBeNull()
   })
 
@@ -146,7 +164,10 @@ describe('logger', () => {
     const log = new Logger(dir, 200, 2)
     log.info('using key AIzaSyLEAKLEAKLEAK_1234567890abcdef now')
     for (let i = 0; i < 10; i++) log.info(`line ${i} ${'x'.repeat(40)}`)
-    const all = fs.readdirSync(dir).map((f) => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n')
+    const all = fs
+      .readdirSync(dir)
+      .map((f) => fs.readFileSync(path.join(dir, f), 'utf8'))
+      .join('\n')
     expect(all).not.toContain('LEAKLEAK')
     expect(fs.existsSync(path.join(dir, 'lingua-quest.log.1'))).toBe(true)
     expect(fs.existsSync(path.join(dir, 'lingua-quest.log.4'))).toBe(false)
@@ -162,7 +183,9 @@ describe('progress kernel', () => {
     expect(tutorXp).toBe(20)
     now = new Date('2026-03-11T10:00:00')
     kernel.progress.record({ type: 'tutor_message', module: 'tutor', skill: 'writing' })
-    expect(kernel.db.value("SELECT SUM(amount) FROM xp_events WHERE source = 'tutor_message' AND date = '2026-03-11'")).toBe(2)
+    expect(
+      kernel.db.value("SELECT SUM(amount) FROM xp_events WHERE source = 'tutor_message' AND date = '2026-03-11'"),
+    ).toBe(2)
   })
 
   it('records daily stats, streak and achievements from events', async () => {

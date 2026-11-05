@@ -19,7 +19,9 @@ function useThemeSync() {
     if (!settings) return
     const root = document.documentElement
     const apply = () => {
-      const dark = settings.theme === 'dark' || (settings.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      const dark =
+        settings.theme === 'dark' ||
+        (settings.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
       root.dataset.theme = dark ? 'dark' : 'light'
     }
     apply()

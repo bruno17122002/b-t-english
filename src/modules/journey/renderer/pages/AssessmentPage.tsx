@@ -582,7 +582,12 @@ function WritingTask({
             {session.writing ? L('Continue', 'Tiếp tục') : L('Skip writing', 'Bỏ qua phần viết')}
           </Button>
           {session.writing ? (
-            <Button variant="primary" onClick={onNext} icon={<ArrowRight className="size-4" />}>
+            <Button
+              variant="primary"
+              onClick={onNext}
+              icon={<ArrowRight className="size-4" />}
+              data-testid="assessment-next-speaking"
+            >
               {L('Next: speaking', 'Tiếp: phần nói')}
             </Button>
           ) : (

@@ -63,7 +63,9 @@ export const tutorContract = {
   'tutor:list': channel<TutorConversationView[]>()(z.object({ query: z.string().max(100).optional() }).optional()),
   'tutor:create': channel<TutorConversation>()(z.object({ mode: Mode, title: z.string().trim().max(80).optional() })),
   'tutor:get': channel<TutorThread | null>()(Id),
-  'tutor:rename': channel<TutorConversation>()(z.object({ id: z.number().int().positive(), title: z.string().trim().min(1).max(80) })),
+  'tutor:rename': channel<TutorConversation>()(
+    z.object({ id: z.number().int().positive(), title: z.string().trim().min(1).max(80) }),
+  ),
   'tutor:setMode': channel<TutorConversation>()(z.object({ id: z.number().int().positive(), mode: Mode })),
   'tutor:delete': channel<null>()(Id),
   'tutor:send': channel<TutorSendResult>()(

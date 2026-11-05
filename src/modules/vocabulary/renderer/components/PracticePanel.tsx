@@ -1,11 +1,31 @@
 // Practice modes over the word bank (no scheduling changes): spelling, meaning quiz, context cloze and
 // listening match. Results are tracked for the session only.
 import { motion } from 'framer-motion'
-import { ArrowRight, Ear, Keyboard, ListChecks, Puzzle, RotateCcw, Trophy, Volume2, type LucideIcon } from 'lucide-react'
+import {
+  ArrowRight,
+  Ear,
+  Keyboard,
+  ListChecks,
+  Puzzle,
+  RotateCcw,
+  Trophy,
+  Volume2,
+  type LucideIcon,
+} from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { VocabItem } from '@shared/types'
 import { QuizQuestion, SpeakButton } from '@/components/learning'
-import { Badge, Button, cx, EmptyState, ErrorState, Input, LoadingBlock, ProgressBar, ProgressRing } from '@/components/ui'
+import {
+  Badge,
+  Button,
+  cx,
+  EmptyState,
+  ErrorState,
+  Input,
+  LoadingBlock,
+  ProgressBar,
+  ProgressRing,
+} from '@/components/ui'
 import { useL } from '@/i18n'
 import { api, useApi } from '@/lib/api'
 import { speak } from '@/lib/audio'
@@ -25,10 +45,38 @@ import {
 type Mode = 'spelling' | 'meaning' | 'cloze' | 'listening'
 
 const MODES: { id: Mode; icon: LucideIcon; en: string; vi: string; descEn: string; descVi: string }[] = [
-  { id: 'spelling', icon: Keyboard, en: 'Spelling', vi: 'Chính tả', descEn: 'Hear the word, then type it.', descVi: 'Nghe từ rồi gõ lại cho đúng.' },
-  { id: 'meaning', icon: ListChecks, en: 'Meaning quiz', vi: 'Trắc nghiệm nghĩa', descEn: 'Pick the right Vietnamese meaning.', descVi: 'Chọn nghĩa tiếng Việt đúng.' },
-  { id: 'cloze', icon: Puzzle, en: 'Context cloze', vi: 'Điền từ vào câu', descEn: 'Fill the gap in a real example sentence.', descVi: 'Điền từ còn thiếu trong câu ví dụ.' },
-  { id: 'listening', icon: Ear, en: 'Listening match', vi: 'Nghe và chọn', descEn: 'Listen and choose the word you heard.', descVi: 'Nghe và chọn đúng từ vừa nghe.' },
+  {
+    id: 'spelling',
+    icon: Keyboard,
+    en: 'Spelling',
+    vi: 'Chính tả',
+    descEn: 'Hear the word, then type it.',
+    descVi: 'Nghe từ rồi gõ lại cho đúng.',
+  },
+  {
+    id: 'meaning',
+    icon: ListChecks,
+    en: 'Meaning quiz',
+    vi: 'Trắc nghiệm nghĩa',
+    descEn: 'Pick the right Vietnamese meaning.',
+    descVi: 'Chọn nghĩa tiếng Việt đúng.',
+  },
+  {
+    id: 'cloze',
+    icon: Puzzle,
+    en: 'Context cloze',
+    vi: 'Điền từ vào câu',
+    descEn: 'Fill the gap in a real example sentence.',
+    descVi: 'Điền từ còn thiếu trong câu ví dụ.',
+  },
+  {
+    id: 'listening',
+    icon: Ear,
+    en: 'Listening match',
+    vi: 'Nghe và chọn',
+    descEn: 'Listen and choose the word you heard.',
+    descVi: 'Nghe và chọn đúng từ vừa nghe.',
+  },
 ]
 
 const ROUNDS = 10
@@ -73,10 +121,9 @@ export function PracticePanel({ onGoToBank }: { onGoToBank: () => void }) {
   // Dictionary entries widen the distractor pool when the word bank is small.
   useEffect(() => {
     let alive = true
-    Promise.all(['a', 'c', 'm', 's', 't'].map((q) => api('search:query', { q }).catch(() => [])))
-      .then((lists) => {
-        if (!alive) return
-        setExtras(lists.flat().filter((r) => r.kind === 'dictionary').map((r) => ({ word: r.title, meaningVi: r.subtitle })))
+    api('vocab:dictionary', { limit: 200 })
+      .then((res) => {
+        if (alive) setExtras(res.items.map((e) => ({ word: e.word, meaningVi: e.meaningVi })))
       })
       .catch(() => undefined)
     return () => {
@@ -92,7 +139,10 @@ export function PracticePanel({ onGoToBank }: { onGoToBank: () => void }) {
     if (!r.length) {
       setMessage(
         m === 'cloze'
-          ? L('None of your words has an example sentence containing it yet. Add examples to your words first.', 'Chưa có từ nào có câu ví dụ chứa chính từ đó. Hãy thêm ví dụ cho từ trước.')
+          ? L(
+              'None of your words has an example sentence containing it yet. Add examples to your words first.',
+              'Chưa có từ nào có câu ví dụ chứa chính từ đó. Hãy thêm ví dụ cho từ trước.',
+            )
           : L('Not enough words to build questions yet.', 'Chưa đủ từ để tạo câu hỏi.'),
       )
       return
@@ -109,7 +159,10 @@ export function PracticePanel({ onGoToBank }: { onGoToBank: () => void }) {
       <EmptyState
         icon={<Puzzle />}
         title={L('Save a few words first', 'Hãy lưu vài từ trước')}
-        body={L('Practice modes use the words in your word bank.', 'Các chế độ luyện tập dùng từ trong kho từ của bạn.')}
+        body={L(
+          'Practice modes use the words in your word bank.',
+          'Các chế độ luyện tập dùng từ trong kho từ của bạn.',
+        )}
         action={<Button onClick={onGoToBank}>{L('Go to word bank', 'Đến kho từ')}</Button>}
       />
     )
@@ -197,7 +250,12 @@ function Session({ rounds, onExit, onAgain }: { rounds: Round[]; onExit: () => v
     const correct = results.filter((r) => r.correct).length
     const missed = results.filter((r) => !r.correct)
     return (
-      <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="mx-auto max-w-lg rounded-2xl border border-line bg-surface p-8 text-center" data-testid="practice-summary">
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="mx-auto max-w-lg rounded-2xl border border-line bg-surface p-8 text-center"
+        data-testid="practice-summary"
+      >
         <Trophy className="mx-auto size-10 text-warning" />
         <h2 className="mt-3 font-display text-2xl font-semibold">{L('Practice complete!', 'Hoàn thành luyện tập!')}</h2>
         <div className="mt-5 flex justify-center">
@@ -209,7 +267,9 @@ function Session({ rounds, onExit, onAgain }: { rounds: Round[]; onExit: () => v
         </div>
         {missed.length > 0 && (
           <div className="mt-5">
-            <div className="mb-2 text-xs font-semibold tracking-wide text-muted uppercase">{L('Words to look at again', 'Từ cần xem lại')}</div>
+            <div className="mb-2 text-xs font-semibold tracking-wide text-muted uppercase">
+              {L('Words to look at again', 'Từ cần xem lại')}
+            </div>
             <div className="flex flex-wrap justify-center gap-1.5">
               {missed.map((m, i) => (
                 <Badge key={`${m.word}-${i}`} tone="danger">
@@ -241,15 +301,23 @@ function Session({ rounds, onExit, onAgain }: { rounds: Round[]; onExit: () => v
           {index + 1}/{rounds.length}
         </span>
       </div>
-      <motion.div key={index} initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} className="rounded-2xl border border-line bg-surface p-6">
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, x: 12 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="rounded-2xl border border-line bg-surface p-6"
+      >
         {round.mode === 'spelling' && <SpellingRound item={round.item} onResult={record} answered={answered} />}
-        {round.mode === 'cloze' && <ClozeRound item={round.item} cloze={round.cloze} onResult={record} answered={answered} />}
+        {round.mode === 'cloze' && (
+          <ClozeRound item={round.item} cloze={round.cloze} onResult={record} answered={answered} />
+        )}
         {(round.mode === 'meaning' || round.mode === 'listening') && <McqRound round={round} onResult={record} />}
       </motion.div>
       {answered && (
         <div className="mt-4 flex justify-end">
           <Button variant="primary" icon={<ArrowRight className="size-4" />} onClick={next} data-testid="practice-next">
-            {index + 1 >= rounds.length ? L('See results', 'Xem kết quả') : L('Next', 'Tiếp')} <span className="text-xs opacity-70">↵</span>
+            {index + 1 >= rounds.length ? L('See results', 'Xem kết quả') : L('Next', 'Tiếp')}{' '}
+            <span className="text-xs opacity-70">↵</span>
           </Button>
         </div>
       )}
@@ -260,15 +328,30 @@ function Session({ rounds, onExit, onAgain }: { rounds: Round[]; onExit: () => v
 function Feedback({ grade, expected }: { grade: SpellingGrade; expected: string }) {
   const L = useL()
   return (
-    <p className={cx('mt-3 text-sm font-medium', grade === 'wrong' ? 'text-danger' : grade === 'close' ? 'text-warning' : 'text-success')} role="status">
+    <p
+      className={cx(
+        'mt-3 text-sm font-medium',
+        grade === 'wrong' ? 'text-danger' : grade === 'close' ? 'text-warning' : 'text-success',
+      )}
+      role="status"
+    >
       {grade === 'correct' && L('Correct!', 'Chính xác!')}
-      {grade === 'close' && L(`Almost – one small typo. Correct spelling: ${expected}`, `Gần đúng – sai một chút. Viết đúng: ${expected}`)}
+      {grade === 'close' &&
+        L(`Almost – one small typo. Correct spelling: ${expected}`, `Gần đúng – sai một chút. Viết đúng: ${expected}`)}
       {grade === 'wrong' && L(`Not quite. The answer is “${expected}”.`, `Chưa đúng. Đáp án là “${expected}”.`)}
     </p>
   )
 }
 
-function SpellingRound({ item, onResult, answered }: { item: VocabItem; onResult: (ok: boolean) => void; answered: boolean }) {
+function SpellingRound({
+  item,
+  onResult,
+  answered,
+}: {
+  item: VocabItem
+  onResult: (ok: boolean) => void
+  answered: boolean
+}) {
   const L = useL()
   const [value, setValue] = useState('')
   const [hint, setHint] = useState(false)
@@ -295,7 +378,11 @@ function SpellingRound({ item, onResult, answered }: { item: VocabItem; onResult
       >
         <Volume2 className="size-9" />
       </button>
-      {item.meaningVi && <p className="mt-4 text-sm text-muted">{L('Meaning', 'Nghĩa')}: {item.meaningVi}</p>}
+      {item.meaningVi && (
+        <p className="mt-4 text-sm text-muted">
+          {L('Meaning', 'Nghĩa')}: {item.meaningVi}
+        </p>
+      )}
       <div className="mt-2 h-6 font-mono text-sm tracking-widest text-faint">{hint && letterHint(item.word)}</div>
       <div className="mx-auto mt-2 flex max-w-sm gap-2">
         <Input
@@ -324,7 +411,17 @@ function SpellingRound({ item, onResult, answered }: { item: VocabItem; onResult
   )
 }
 
-function ClozeRound({ item, cloze, onResult, answered }: { item: VocabItem; cloze: Cloze & { sentence: string }; onResult: (ok: boolean) => void; answered: boolean }) {
+function ClozeRound({
+  item,
+  cloze,
+  onResult,
+  answered,
+}: {
+  item: VocabItem
+  cloze: Cloze & { sentence: string }
+  onResult: (ok: boolean) => void
+  answered: boolean
+}) {
   const L = useL()
   const [value, setValue] = useState('')
   const [grade, setGrade] = useState<SpellingGrade | null>(null)
@@ -338,10 +435,17 @@ function ClozeRound({ item, cloze, onResult, answered }: { item: VocabItem; cloz
   }
   return (
     <div>
-      <div className="text-sm text-muted">{L('Fill the gap with the right word', 'Điền từ thích hợp vào chỗ trống')}</div>
+      <div className="text-sm text-muted">
+        {L('Fill the gap with the right word', 'Điền từ thích hợp vào chỗ trống')}
+      </div>
       <p className="mt-4 text-xl leading-relaxed">
         {cloze.before}
-        <span className={cx('mx-1 inline-block min-w-24 border-b-2 px-1 text-center font-semibold', grade ? (grade === 'wrong' ? 'border-danger text-danger' : 'border-success text-success') : 'border-accent')}>
+        <span
+          className={cx(
+            'mx-1 inline-block min-w-24 border-b-2 px-1 text-center font-semibold',
+            grade ? (grade === 'wrong' ? 'border-danger text-danger' : 'border-success text-success') : 'border-accent',
+          )}
+        >
           {grade ? cloze.answer : ' '}
         </span>
         {cloze.after}
@@ -350,7 +454,17 @@ function ClozeRound({ item, cloze, onResult, answered }: { item: VocabItem; cloz
         {L('Hint', 'Gợi ý')}: {item.meaningVi || item.meaningEn} · {letterHint(cloze.answer).split(' ')[0]}…
       </p>
       <div className="mt-4 flex max-w-sm gap-2">
-        <Input autoFocus value={value} disabled={answered} onChange={(e) => setValue(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && check()} autoComplete="off" spellCheck={false} aria-label={L('Missing word', 'Từ còn thiếu')} data-testid="practice-input" />
+        <Input
+          autoFocus
+          value={value}
+          disabled={answered}
+          onChange={(e) => setValue(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && check()}
+          autoComplete="off"
+          spellCheck={false}
+          aria-label={L('Missing word', 'Từ còn thiếu')}
+          data-testid="practice-input"
+        />
         <Button variant="primary" onClick={check} disabled={answered || !value.trim()}>
           {L('Check', 'Kiểm tra')}
         </Button>
@@ -375,10 +489,14 @@ function McqRound({ round, onResult }: { round: Extract<Round, { mcq: Mcq }>; on
   const question = {
     id: `practice-${round.item.id}`,
     type: 'mcq' as const,
-    prompt: listening ? L('Which word did you hear?', 'Bạn vừa nghe từ nào?') : L(`What does “${round.item.word}” mean?`, `“${round.item.word}” nghĩa là gì?`),
+    prompt: listening
+      ? L('Which word did you hear?', 'Bạn vừa nghe từ nào?')
+      : L(`What does “${round.item.word}” mean?`, `“${round.item.word}” nghĩa là gì?`),
     options: round.mcq.options,
     answerIndex: round.mcq.answerIndex,
-    explanation: listening ? `${round.item.word}${round.item.meaningVi ? ` – ${round.item.meaningVi}` : ''}` : round.item.examples[0] ?? round.item.meaningEn,
+    explanation: listening
+      ? `${round.item.word}${round.item.meaningVi ? ` – ${round.item.meaningVi}` : ''}`
+      : (round.item.examples[0] ?? round.item.meaningEn),
   }
   return (
     <div>

@@ -4,7 +4,11 @@ import { cleanCorrections, cleanNewWords } from '../../src/modules/tutor/main/se
 import { mockCorrections } from '../../src/modules/tutor/main/prompts'
 
 const chat = (n: number): HistoryMessage[] =>
-  Array.from({ length: n }, (_, i) => ({ id: i + 1, role: i % 2 === 0 ? 'user' : 'assistant', content: `message ${i + 1}` }))
+  Array.from({ length: n }, (_, i) => ({
+    id: i + 1,
+    role: i % 2 === 0 ? 'user' : 'assistant',
+    content: `message ${i + 1}`,
+  }))
 
 describe('tutor history window', () => {
   it('sends short chats verbatim without a summary', () => {
@@ -45,7 +49,11 @@ describe('tutor history window', () => {
   })
 
   it('bounds the summary size, keeping the newest notes', () => {
-    const long = Array.from({ length: 200 }, (_, i): HistoryMessage => ({ id: i + 1, role: 'user', content: `note ${i + 1} `.repeat(30) }))
+    const long = Array.from({ length: 200 }, (_, i): HistoryMessage => ({
+      id: i + 1,
+      role: 'user',
+      content: `note ${i + 1} `.repeat(30),
+    }))
     const w = windowHistory(long, { window: 12, maxSummaryChars: 500 })
     expect(w.summary.length).toBeLessThanOrEqual(500)
     expect(w.summary).toContain('note 188')
@@ -73,11 +81,13 @@ describe('tutor output cleaning', () => {
   })
 
   it('dedupes new words', () => {
-    expect(cleanNewWords([
-      { word: 'Routine', meaningVi: 'a', example: '' },
-      { word: 'routine', meaningVi: 'b', example: '' },
-      { word: '  daily  life ', meaningVi: 'c', example: 'x' },
-    ]).map((w) => w.word)).toEqual(['Routine', 'daily life'])
+    expect(
+      cleanNewWords([
+        { word: 'Routine', meaningVi: 'a', example: '' },
+        { word: 'routine', meaningVi: 'b', example: '' },
+        { word: '  daily  life ', meaningVi: 'c', example: 'x' },
+      ]).map((w) => w.word),
+    ).toEqual(['Routine', 'daily life'])
   })
 
   it('mock corrections are deterministic', () => {

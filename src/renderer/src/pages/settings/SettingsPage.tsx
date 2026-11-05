@@ -18,7 +18,10 @@ export function SettingsPage() {
   ]
   return (
     <div data-testid="page-settings">
-      <PageHeader title={L('Settings', 'Cài đặt')} subtitle={L('Make Lingua Quest yours.', 'Tùy chỉnh Lingua Quest theo cách của bạn.')} />
+      <PageHeader
+        title={L('Settings', 'Cài đặt')}
+        subtitle={L('Make Lingua Quest yours.', 'Tùy chỉnh Lingua Quest theo cách của bạn.')}
+      />
       <div className="flex gap-8">
         <nav className="w-56 shrink-0 space-y-1" aria-label={L('Settings sections', 'Mục cài đặt')}>
           {tabs.map((t) => (
@@ -26,7 +29,10 @@ export function SettingsPage() {
               key={t.to}
               to={t.to}
               className={({ isActive }) =>
-                cx('flex items-center gap-2.5 rounded-xl px-3 py-2 text-sm font-medium', isActive ? 'bg-surface-3 text-text' : 'text-muted hover:bg-surface-2 hover:text-text')
+                cx(
+                  'flex items-center gap-2.5 rounded-xl px-3 py-2 text-sm font-medium',
+                  isActive ? 'bg-surface-3 text-text' : 'text-muted hover:bg-surface-2 hover:text-text',
+                )
               }
             >
               <t.icon className="size-4" />

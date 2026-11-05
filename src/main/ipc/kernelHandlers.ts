@@ -12,7 +12,11 @@ import { UserError, type IpcRouter } from './router'
 export interface HostBridge {
   version: string
   versions: { electron: string; chrome: string; node: string }
-  saveFile(opts: { title: string; defaultName: string; filters: { name: string; extensions: string[] }[] }): Promise<string | null>
+  saveFile(opts: {
+    title: string
+    defaultName: string
+    filters: { name: string; extensions: string[] }[]
+  }): Promise<string | null>
   openFile(opts: { title: string; filters: { name: string; extensions: string[] }[] }): Promise<string | null>
   openExternal(url: string): Promise<void>
   openPath(dir: string): Promise<void>
@@ -49,7 +53,16 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   })
 
   r.handle('app:diagnostics', () => {
-    const tables = ['vocabulary', 'review_logs', 'activity_log', 'xp_events', 'writing_submissions', 'speaking_sessions', 'tutor_messages', 'story_progress']
+    const tables = [
+      'vocabulary',
+      'review_logs',
+      'activity_log',
+      'xp_events',
+      'writing_submissions',
+      'speaking_sessions',
+      'tutor_messages',
+      'story_progress',
+    ]
     const tableCounts: Record<string, number> = {}
     for (const t of tables) tableCounts[t] = Number(k.db.value(`SELECT COUNT(*) FROM ${t}`) ?? 0)
     const cfg = k.ai.getConfig()
@@ -92,7 +105,12 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   })
 
   r.handle('app:openFolder', async ({ which }) => {
-    const dir = which === 'backups' ? k.paths.backups : which === 'logs' ? k.paths.logs : path.dirname(k.paths.dbFile ?? k.paths.userData)
+    const dir =
+      which === 'backups'
+        ? k.paths.backups
+        : which === 'logs'
+          ? k.paths.logs
+          : path.dirname(k.paths.dbFile ?? k.paths.userData)
     fs.mkdirSync(dir, { recursive: true })
     await host.openPath(dir)
     return null
@@ -162,7 +180,10 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
     const q = norm(input?.query?.trim() ?? '')
     const all = k.content
       .dictionary()
-      .filter((e) => (!input?.cefr || e.cefr === input.cefr) && (!q || norm(e.word).includes(q) || norm(e.meaningVi).includes(q)))
+      .filter(
+        (e) =>
+          (!input?.cefr || e.cefr === input.cefr) && (!q || norm(e.word).includes(q) || norm(e.meaningVi).includes(q)),
+      )
       .sort((a, b) => {
         // Words starting with the query first, then alphabetical.
         const pa = q && norm(a.word).startsWith(q) ? 0 : 1
@@ -206,13 +227,19 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   r.handle('data:restoreBackup', async ({ file }) => {
     const chosen =
       file ??
-      (await host.openFile({ title: 'Chọn bản sao lưu Lingua Quest', filters: [{ name: 'Lingua Quest backup', extensions: ['sqlite'] }] }))
+      (await host.openFile({
+        title: 'Chọn bản sao lưu Lingua Quest',
+        filters: [{ name: 'Lingua Quest backup', extensions: ['sqlite'] }],
+      }))
     if (!chosen) return null
     if (!k.paths.dbFile) throw new UserError('no_db_file', 'Database đang chạy trong bộ nhớ, không thể khôi phục.')
     try {
       await k.data.validateBackup(chosen)
     } catch (err) {
-      throw new UserError('invalid_backup', `File sao lưu không hợp lệ: ${err instanceof Error ? err.message : String(err)}`)
+      throw new UserError(
+        'invalid_backup',
+        `File sao lưu không hợp lệ: ${err instanceof Error ? err.message : String(err)}`,
+      )
     }
     k.db.flush()
     await k.data.restoreBackup(chosen, k.paths.dbFile)

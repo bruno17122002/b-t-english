@@ -10,12 +10,29 @@ import { useApp } from '@/lib/store'
 import { REVIEW_STATE_LABEL, SOURCE_LABEL } from '../lib/labels'
 import { Highlight, StrengthMeter } from './bits'
 
-export function WordDetail({ item, onClose, onEdit, onChanged, onDeleted }: { item: VocabItem | null; onClose: () => void; onEdit: (v: VocabItem) => void; onChanged: (v: VocabItem) => void; onDeleted: (id: number) => void }) {
+export function WordDetail({
+  item,
+  onClose,
+  onEdit,
+  onChanged,
+  onDeleted,
+}: {
+  item: VocabItem | null
+  onClose: () => void
+  onEdit: (v: VocabItem) => void
+  onChanged: (v: VocabItem) => void
+  onDeleted: (id: number) => void
+}) {
   const L = useL()
   const tx = useTx()
   const fmt = useFormat()
   const [confirm, setConfirm] = useState(false)
-  if (!item) return <Modal open={false} onClose={onClose} title="">{null}</Modal>
+  if (!item)
+    return (
+      <Modal open={false} onClose={onClose} title="">
+        {null}
+      </Modal>
+    )
 
   const toggleFav = async () => {
     try {
@@ -50,11 +67,19 @@ export function WordDetail({ item, onClose, onEdit, onChanged, onDeleted }: { it
         }
         footer={
           <>
-            <Button variant="danger" icon={<Trash className="size-4" />} onClick={() => setConfirm(true)} data-testid="vocab-delete">
+            <Button
+              variant="danger"
+              icon={<Trash className="size-4" />}
+              onClick={() => setConfirm(true)}
+              data-testid="vocab-delete"
+            >
               {L('Delete', 'Xóa')}
             </Button>
             <div className="flex-1" />
-            <Button icon={<Heart className={cx('size-4', item.isFavorite && 'fill-danger text-danger')} />} onClick={() => void toggleFav()}>
+            <Button
+              icon={<Heart className={cx('size-4', item.isFavorite && 'fill-danger text-danger')} />}
+              onClick={() => void toggleFav()}
+            >
               {item.isFavorite ? L('Unfavorite', 'Bỏ yêu thích') : L('Favorite', 'Yêu thích')}
             </Button>
             <Button variant="primary" icon={<Pencil className="size-4" />} onClick={() => onEdit(item)}>
@@ -68,7 +93,9 @@ export function WordDetail({ item, onClose, onEdit, onChanged, onDeleted }: { it
             <SpeakButton text={item.word} size="sm" />
             {item.ipa && <span className="font-mono text-muted">{item.ipa}</span>}
             {item.pos && <span className="text-muted italic">{item.pos}</span>}
-            <Badge tone="neutral">{tx(SOURCE_LABEL[item.sourceModule] ?? { en: item.sourceModule, vi: item.sourceModule })}</Badge>
+            <Badge tone="neutral">
+              {tx(SOURCE_LABEL[item.sourceModule] ?? { en: item.sourceModule, vi: item.sourceModule })}
+            </Badge>
             {item.topic && <Badge tone="accent">{item.topic}</Badge>}
           </div>
           <div>
@@ -77,7 +104,9 @@ export function WordDetail({ item, onClose, onEdit, onChanged, onDeleted }: { it
           </div>
           {item.examples.length > 0 && (
             <div>
-              <h3 className="mb-1.5 text-xs font-semibold tracking-wide text-muted uppercase">{L('Examples', 'Ví dụ')}</h3>
+              <h3 className="mb-1.5 text-xs font-semibold tracking-wide text-muted uppercase">
+                {L('Examples', 'Ví dụ')}
+              </h3>
               <ul className="space-y-1.5">
                 {item.examples.map((e) => (
                   <li key={e} className="flex items-start gap-2">
@@ -90,7 +119,9 @@ export function WordDetail({ item, onClose, onEdit, onChanged, onDeleted }: { it
           )}
           {item.context && (
             <div>
-              <h3 className="mb-1.5 text-xs font-semibold tracking-wide text-muted uppercase">{L('Where you met it', 'Ngữ cảnh gặp từ')}</h3>
+              <h3 className="mb-1.5 text-xs font-semibold tracking-wide text-muted uppercase">
+                {L('Where you met it', 'Ngữ cảnh gặp từ')}
+              </h3>
               <p className="border-l-2 border-accent/50 pl-3 text-muted italic">
                 <Highlight text={item.context} word={item.word} />
               </p>
@@ -108,18 +139,33 @@ export function WordDetail({ item, onClose, onEdit, onChanged, onDeleted }: { it
           {item.notes && <p className="rounded-xl bg-surface-2 p-3 text-muted">{item.notes}</p>}
           <div className="grid grid-cols-2 gap-3 rounded-xl border border-line p-3 sm:grid-cols-4">
             <Info label={L('Memory', 'Trí nhớ')} value={<StrengthMeter review={r} showLabel />} />
-            <Info label={L('State', 'Trạng thái')} value={tx(REVIEW_STATE_LABEL[r.state] ?? { en: r.state, vi: r.state })} />
-            <Info label={L('Next review', 'Lần ôn tới')} value={due.getTime() <= Date.now() ? L('Due now', 'Đến hạn') : fmt.date(r.dueAt, { day: 'numeric', month: 'short', year: 'numeric' })} />
+            <Info
+              label={L('State', 'Trạng thái')}
+              value={tx(REVIEW_STATE_LABEL[r.state] ?? { en: r.state, vi: r.state })}
+            />
+            <Info
+              label={L('Next review', 'Lần ôn tới')}
+              value={
+                due.getTime() <= Date.now()
+                  ? L('Due now', 'Đến hạn')
+                  : fmt.date(r.dueAt, { day: 'numeric', month: 'short', year: 'numeric' })
+              }
+            />
             <Info label={L('Reviews / lapses', 'Lượt ôn / quên')} value={`${r.reps} / ${r.lapses}`} />
           </div>
-          <p className="text-xs text-faint">{L(`Saved ${fmt.relative(item.createdAt)}`, `Đã lưu ${fmt.relative(item.createdAt)}`)}</p>
+          <p className="text-xs text-faint">
+            {L(`Saved ${fmt.relative(item.createdAt)}`, `Đã lưu ${fmt.relative(item.createdAt)}`)}
+          </p>
         </div>
       </Modal>
       <ConfirmDialog
         open={confirm}
         danger
         title={L('Delete this word?', 'Xóa từ này?')}
-        body={L(`“${item.word}” and its review history will be removed.`, `“${item.word}” và lịch sử ôn tập sẽ bị xóa.`)}
+        body={L(
+          `“${item.word}” and its review history will be removed.`,
+          `“${item.word}” và lịch sử ôn tập sẽ bị xóa.`,
+        )}
         confirmLabel={L('Delete', 'Xóa')}
         onConfirm={() => void remove()}
         onCancel={() => setConfirm(false)}

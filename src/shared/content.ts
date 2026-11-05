@@ -133,9 +133,7 @@ export const SceneSchema = z.object({
   backdrop: BackdropSchema,
   mood: z.enum(['calm', 'tense', 'warm', 'mysterious', 'upbeat', 'serious']),
   lines: z.array(SceneLineSchema).min(1),
-  choice: z
-    .object({ prompt: z.string().min(1), options: z.array(SceneChoiceOptionSchema).min(2).max(4) })
-    .optional(),
+  choice: z.object({ prompt: z.string().min(1), options: z.array(SceneChoiceOptionSchema).min(2).max(4) }).optional(),
   nextSceneId: z.string().optional(), // linear continuation when there is no choice
   quiz: z.array(QuestionSchema).optional(),
   ending: z
@@ -168,14 +166,20 @@ export const CinemaStorySchema = z
   .superRefine((story, ctx) => {
     const ids = new Set(story.scenes.map((s) => s.id))
     const chars = new Set(story.characters.map((c) => c.id))
-    if (!ids.has(story.startSceneId)) ctx.addIssue({ code: 'custom', message: `missing start scene ${story.startSceneId}` })
+    if (!ids.has(story.startSceneId))
+      ctx.addIssue({ code: 'custom', message: `missing start scene ${story.startSceneId}` })
     for (const scene of story.scenes) {
       const exits = (scene.choice ? 1 : 0) + (scene.nextSceneId ? 1 : 0) + (scene.ending ? 1 : 0)
-      if (exits !== 1) ctx.addIssue({ code: 'custom', message: `scene ${scene.id} must have exactly one of choice/nextSceneId/ending` })
+      if (exits !== 1)
+        ctx.addIssue({
+          code: 'custom',
+          message: `scene ${scene.id} must have exactly one of choice/nextSceneId/ending`,
+        })
       if (scene.nextSceneId && !ids.has(scene.nextSceneId))
         ctx.addIssue({ code: 'custom', message: `scene ${scene.id} -> unknown ${scene.nextSceneId}` })
       for (const opt of scene.choice?.options ?? [])
-        if (!ids.has(opt.nextSceneId)) ctx.addIssue({ code: 'custom', message: `scene ${scene.id} option -> unknown ${opt.nextSceneId}` })
+        if (!ids.has(opt.nextSceneId))
+          ctx.addIssue({ code: 'custom', message: `scene ${scene.id} option -> unknown ${opt.nextSceneId}` })
       for (const line of scene.lines)
         if (line.characterId !== 'narrator' && !chars.has(line.characterId))
           ctx.addIssue({ code: 'custom', message: `scene ${scene.id} unknown character ${line.characterId}` })
@@ -212,7 +216,9 @@ export const GrammarTopicSchema = z.object({
   explanationVi: z.string().min(1),
   patterns: z.array(z.string().min(1)).min(1),
   examples: z.array(z.object({ en: z.string().min(1), vi: z.string().min(1) })).min(2),
-  commonMistakes: z.array(z.object({ wrong: z.string().min(1), right: z.string().min(1), why: z.string().min(1) })).min(1),
+  commonMistakes: z
+    .array(z.object({ wrong: z.string().min(1), right: z.string().min(1), why: z.string().min(1) }))
+    .min(1),
   exercises: z
     .array(
       z

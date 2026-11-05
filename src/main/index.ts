@@ -1,4 +1,5 @@
 // Electron entry: creates the kernel, registers module IPC, opens a hardened window and runs reminders.
+import fs from 'node:fs'
 import path from 'node:path'
 import {
   app,
@@ -38,9 +39,10 @@ let logger: Logger | null = null
 const allowedChannels = new Set<string>(CHANNELS)
 
 function wasmDir(): string {
-  return app.isPackaged
-    ? path.join(process.resourcesPath, 'sql-wasm')
-    : path.join(app.getAppPath(), 'node_modules', 'sql.js', 'dist')
+  if (app.isPackaged) return path.join(process.resourcesPath, 'sql-wasm')
+  const fromAppPath = path.join(app.getAppPath(), 'node_modules', 'sql.js', 'dist')
+  // Fall back to Node resolution when the app was started from another folder (e.g. `electron out/main`).
+  return fs.existsSync(path.join(fromAppPath, 'sql-wasm.wasm')) ? fromAppPath : path.dirname(require.resolve('sql.js'))
 }
 
 function isAppUrl(url: string): boolean {
@@ -191,7 +193,9 @@ async function bootstrap() {
   process.on('uncaughtException', (err) => logger?.error(`uncaught: ${err.stack ?? err.message}`))
   process.on('unhandledRejection', (err) => logger?.error(`unhandled rejection: ${String(err)}`))
 
-  const moduleMigrations = Object.fromEntries(MODULES_MAIN.filter((m) => m.migrations?.length).map((m) => [m.id, m.migrations ?? []]))
+  const moduleMigrations = Object.fromEntries(
+    MODULES_MAIN.filter((m) => m.migrations?.length).map((m) => [m.id, m.migrations ?? []]),
+  )
   kernel = await createKernel({
     paths: {
       userData,
@@ -253,14 +257,17 @@ app.on('web-contents-created', (_e, contents) => {
   contents.on('will-attach-webview', (e) => e.preventDefault())
 })
 
-app.whenReady().then(bootstrap).catch((err: unknown) => {
-  logger?.error(`fatal startup error: ${err instanceof Error ? (err.stack ?? err.message) : String(err)}`)
-  dialog.showErrorBox(
-    'Lingua Quest',
-    `Không thể khởi động ứng dụng.\n\n${err instanceof Error ? err.message : String(err)}\n\nNhật ký: ${app.getPath('userData')}\\logs`,
-  )
-  app.exit(1)
-})
+app
+  .whenReady()
+  .then(bootstrap)
+  .catch((err: unknown) => {
+    logger?.error(`fatal startup error: ${err instanceof Error ? (err.stack ?? err.message) : String(err)}`)
+    dialog.showErrorBox(
+      'Lingua Quest',
+      `Không thể khởi động ứng dụng.\n\n${err instanceof Error ? err.message : String(err)}\n\nNhật ký: ${app.getPath('userData')}\\logs`,
+    )
+    app.exit(1)
+  })
 
 app.on('window-all-closed', () => {
   kernel?.db.close()

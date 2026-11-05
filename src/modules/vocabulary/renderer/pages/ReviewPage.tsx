@@ -6,7 +6,19 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { DueCard } from '@shared/types'
 import { SpeakButton } from '@/components/learning'
-import { Badge, Button, CefrBadge, cx, EmptyState, ErrorState, Kbd, LoadingBlock, ProgressBar, StatTile, Toggle } from '@/components/ui'
+import {
+  Badge,
+  Button,
+  CefrBadge,
+  cx,
+  EmptyState,
+  ErrorState,
+  Kbd,
+  LoadingBlock,
+  ProgressBar,
+  StatTile,
+  Toggle,
+} from '@/components/ui'
 import { useFormat, useL, useTx } from '@/i18n'
 import { api, toApiError, useApi } from '@/lib/api'
 import { speak, stopSpeaking } from '@/lib/audio'
@@ -95,7 +107,12 @@ export default function ReviewPage() {
   return (
     <div data-testid="page-vocabulary" data-view="review" className="mx-auto max-w-3xl">
       <div className="mb-5 flex items-center gap-3">
-        <Button size="sm" variant="ghost" icon={<ArrowLeft className="size-4" />} onClick={() => navigate('/vocabulary')}>
+        <Button
+          size="sm"
+          variant="ghost"
+          icon={<ArrowLeft className="size-4" />}
+          onClick={() => navigate('/vocabulary')}
+        >
           {L('Word bank', 'Kho từ')}
         </Button>
         <div className="flex-1">
@@ -167,13 +184,18 @@ function Flashcard({ card, flipped, onFlip }: { card: DueCard; flipped: boolean;
       tabIndex={0}
       onClick={() => !flipped && onFlip()}
       onKeyDown={(e) => e.key === 'Enter' && !flipped && onFlip()}
-      className={cx('relative min-h-80 rounded-3xl border border-line bg-surface p-8 shadow-card transition', !flipped && 'cursor-pointer hover:border-line-strong')}
+      className={cx(
+        'relative min-h-80 rounded-3xl border border-line bg-surface p-8 shadow-card transition',
+        !flipped && 'cursor-pointer hover:border-line-strong',
+      )}
       data-testid="review-card"
     >
       <div className="absolute top-4 right-4 flex items-center gap-2">
         {card.review.state === 'new' && <Badge tone="info">{L('New', 'Mới')}</Badge>}
         {card.review.lapses >= 2 && <Badge tone="danger">{L('Tricky', 'Hay quên')}</Badge>}
-        <Badge tone="neutral">{tx(SOURCE_LABEL[card.sourceModule] ?? { en: card.sourceModule, vi: card.sourceModule })}</Badge>
+        <Badge tone="neutral">
+          {tx(SOURCE_LABEL[card.sourceModule] ?? { en: card.sourceModule, vi: card.sourceModule })}
+        </Badge>
       </div>
       <div className="flex flex-col items-center pt-6 text-center">
         <div className="flex items-center gap-2">
@@ -190,7 +212,12 @@ function Flashcard({ card, flipped, onFlip }: { card: DueCard; flipped: boolean;
       </div>
       <AnimatePresence>
         {flipped && (
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="mt-6 space-y-4 border-t border-line pt-6" data-testid="review-back">
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-6 space-y-4 border-t border-line pt-6"
+            data-testid="review-back"
+          >
             <div className="text-center">
               {card.meaningVi && <p className="text-xl font-semibold">{card.meaningVi}</p>}
               {card.meaningEn && <p className="mt-1 text-muted">{card.meaningEn}</p>}
@@ -227,7 +254,15 @@ function Flashcard({ card, flipped, onFlip }: { card: DueCard; flipped: boolean;
   )
 }
 
-function RatingButtons({ card, disabled, onRate }: { card: DueCard; disabled: boolean; onRate: (r: 1 | 2 | 3 | 4) => void }) {
+function RatingButtons({
+  card,
+  disabled,
+  onRate,
+}: {
+  card: DueCard
+  disabled: boolean
+  onRate: (r: 1 | 2 | 3 | 4) => void
+}) {
   const tx = useTx()
   return (
     <div className="grid grid-cols-4 gap-2" data-testid="review-ratings">
@@ -236,7 +271,10 @@ function RatingButtons({ card, disabled, onRate }: { card: DueCard; disabled: bo
           key={r.value}
           disabled={disabled}
           onClick={() => onRate(r.value)}
-          className={cx('flex flex-col items-center rounded-2xl border px-3 py-3 transition disabled:opacity-50', r.tone)}
+          className={cx(
+            'flex flex-col items-center rounded-2xl border px-3 py-3 transition disabled:opacity-50',
+            r.tone,
+          )}
           data-testid={`review-rate-${r.value}`}
         >
           <span className="font-semibold">{tx(r.label)}</span>
@@ -259,18 +297,32 @@ function Summary({ results, onMore }: { results: Rated[]; onMore: () => void }) 
   const avgSec = total ? results.reduce((s, r) => s + r.ms, 0) / total / 1000 : 0
   const again = results.filter((r) => r.rating === 1)
   return (
-    <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="rounded-3xl border border-line bg-surface p-8 text-center" data-testid="review-summary">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="rounded-3xl border border-line bg-surface p-8 text-center"
+      data-testid="review-summary"
+    >
       <PartyPopper className="mx-auto size-10 text-accent" />
       <h2 className="mt-3 font-display text-2xl font-semibold">{L('Session complete!', 'Hoàn thành phiên ôn!')}</h2>
-      <p className="mt-1 text-sm text-muted">{L('Your next reviews are scheduled automatically.', 'Lịch ôn tiếp theo đã được tự động sắp xếp.')}</p>
+      <p className="mt-1 text-sm text-muted">
+        {L('Your next reviews are scheduled automatically.', 'Lịch ôn tiếp theo đã được tự động sắp xếp.')}
+      </p>
       <div className="mt-6 grid grid-cols-3 gap-3 text-left">
         <StatTile label={L('Cards', 'Thẻ')} value={total} />
-        <StatTile label={L('Remembered', 'Nhớ được')} value={`${total ? Math.round((remembered / total) * 100) : 0}%`} sub={L('rated Good or Easy', 'chấm Tốt hoặc Dễ')} />
+        <StatTile
+          label={L('Remembered', 'Nhớ được')}
+          value={`${total ? Math.round((remembered / total) * 100) : 0}%`}
+          sub={L('rated Good or Easy', 'chấm Tốt hoặc Dễ')}
+        />
         <StatTile icon={<Clock />} label={L('Avg. time', 'TB mỗi thẻ')} value={`${avgSec.toFixed(1)}s`} />
       </div>
       <div className="mt-4 flex justify-center gap-2">
         {RATINGS.map((r) => (
-          <Badge key={r.value} tone={r.value === 1 ? 'danger' : r.value === 2 ? 'warning' : r.value === 3 ? 'success' : 'info'}>
+          <Badge
+            key={r.value}
+            tone={r.value === 1 ? 'danger' : r.value === 2 ? 'warning' : r.value === 3 ? 'success' : 'info'}
+          >
             {tx(r.label)}: {results.filter((x) => x.rating === r.value).length}
           </Badge>
         ))}
@@ -303,9 +355,15 @@ function NothingDue() {
       body={
         stats.data?.total
           ? next
-            ? L(`Next reviews: ${next.count} card(s) on ${fmt.date(next.date)}. Great job keeping up!`, `Lần ôn tới: ${next.count} thẻ vào ${fmt.date(next.date)}. Bạn đang theo kịp rất tốt!`)
+            ? L(
+                `Next reviews: ${next.count} card(s) on ${fmt.date(next.date)}. Great job keeping up!`,
+                `Lần ôn tới: ${next.count} thẻ vào ${fmt.date(next.date)}. Bạn đang theo kịp rất tốt!`,
+              )
             : L('Everything is reviewed. Great job!', 'Bạn đã ôn hết. Tuyệt vời!')
-          : L('Save words from lessons, the dictionary or the tutor and they will show up here.', 'Lưu từ từ bài học, từ điển hoặc gia sư và chúng sẽ xuất hiện ở đây.')
+          : L(
+              'Save words from lessons, the dictionary or the tutor and they will show up here.',
+              'Lưu từ từ bài học, từ điển hoặc gia sư và chúng sẽ xuất hiện ở đây.',
+            )
       }
       action={
         <div className="flex gap-2">

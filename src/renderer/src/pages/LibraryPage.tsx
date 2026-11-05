@@ -52,7 +52,11 @@ export function LibraryPage() {
 
   return (
     <div data-testid="page-library">
-      <PageHeader icon={<Heart />} title={L('Favorites & bookmarks', 'Yêu thích & đánh dấu')} subtitle={L('Everything you saved to come back to.', 'Mọi thứ bạn đã lưu để quay lại.')} />
+      <PageHeader
+        icon={<Heart />}
+        title={L('Favorites & bookmarks', 'Yêu thích & đánh dấu')}
+        subtitle={L('Everything you saved to come back to.', 'Mọi thứ bạn đã lưu để quay lại.')}
+      />
       <Tabs
         value={tab}
         onChange={setTab}
@@ -68,11 +72,22 @@ export function LibraryPage() {
         ) : favorites.error ? (
           <ErrorState error={favorites.error} onRetry={favorites.reload} />
         ) : !favorites.data?.length ? (
-          <EmptyState icon={<Heart />} title={L('No favorites yet', 'Chưa có mục yêu thích')} body={L('Tap the heart on any lesson, story or track.', 'Nhấn biểu tượng trái tim trên bài học, phim hay bài nghe bất kỳ.')} />
+          <EmptyState
+            icon={<Heart />}
+            title={L('No favorites yet', 'Chưa có mục yêu thích')}
+            body={L(
+              'Tap the heart on any lesson, story or track.',
+              'Nhấn biểu tượng trái tim trên bài học, phim hay bài nghe bất kỳ.',
+            )}
+          />
         ) : (
           <div className="grid gap-3 md:grid-cols-2">
             {favorites.data.map((fav) => (
-              <Card key={fav.id} onClick={() => navigate(routeFor(fav.kind, fav.ref))} className="flex items-center gap-3 p-4">
+              <Card
+                key={fav.id}
+                onClick={() => navigate(routeFor(fav.kind, fav.ref))}
+                className="flex items-center gap-3 p-4"
+              >
                 <Heart className="size-4 shrink-0 fill-danger text-danger" />
                 <div className="min-w-0 flex-1">
                   <div className="truncate font-medium">{fav.title}</div>
@@ -101,7 +116,14 @@ export function LibraryPage() {
       ) : bookmarks.error ? (
         <ErrorState error={bookmarks.error} onRetry={bookmarks.reload} />
       ) : !bookmarks.data?.length ? (
-        <EmptyState icon={<Bookmark />} title={L('No bookmarks yet', 'Chưa có đánh dấu')} body={L('Bookmark a passage or scene to continue later.', 'Đánh dấu một đoạn đọc hoặc cảnh phim để học tiếp sau.')} />
+        <EmptyState
+          icon={<Bookmark />}
+          title={L('No bookmarks yet', 'Chưa có đánh dấu')}
+          body={L(
+            'Bookmark a passage or scene to continue later.',
+            'Đánh dấu một đoạn đọc hoặc cảnh phim để học tiếp sau.',
+          )}
+        />
       ) : (
         <div className="space-y-3">
           {bookmarks.data.map((b) => (

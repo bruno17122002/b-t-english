@@ -24,7 +24,18 @@ interface Draft {
   cefr: Cefr | ''
 }
 
-const EMPTY: Draft = { word: '', ipa: '', pos: '', meaningVi: '', meaningEn: '', examples: '', collocations: '', topic: '', notes: '', cefr: '' }
+const EMPTY: Draft = {
+  word: '',
+  ipa: '',
+  pos: '',
+  meaningVi: '',
+  meaningEn: '',
+  examples: '',
+  collocations: '',
+  topic: '',
+  notes: '',
+  cefr: '',
+}
 
 const fromItem = (v: VocabItem): Draft => ({
   word: v.word,
@@ -39,12 +50,28 @@ const fromItem = (v: VocabItem): Draft => ({
   cefr: v.cefr ?? '',
 })
 
-export function WordEditor({ open, item, initialWord, onClose, onSaved }: { open: boolean; item?: VocabItem | null; initialWord?: string; onClose: () => void; onSaved: (item: VocabItem) => void }) {
+export function WordEditor({
+  open,
+  item,
+  initialWord,
+  onClose,
+  onSaved,
+}: {
+  open: boolean
+  item?: VocabItem | null
+  initialWord?: string
+  onClose: () => void
+  onSaved: (item: VocabItem) => void
+}) {
   const L = useL()
   const editing = !!item
   const [d, setD] = useState<Draft>(EMPTY)
   const [saving, setSaving] = useState(false)
-  const [lookup, setLookup] = useState<{ loading: 'offline' | 'ai' | null; result: DictionaryResult | null | undefined; error: ApiError | null }>({ loading: null, result: undefined, error: null })
+  const [lookup, setLookup] = useState<{
+    loading: 'offline' | 'ai' | null
+    result: DictionaryResult | null | undefined
+    error: ApiError | null
+  }>({ loading: null, result: undefined, error: null })
   const topics = useApi('vocab:topics', open ? undefined : null, [open])
 
   useEffect(() => {
@@ -90,8 +117,12 @@ export function WordEditor({ open, item, initialWord, onClose, onSaved }: { open
       pos: d.pos.trim().slice(0, 40),
       meaningVi: d.meaningVi.trim().slice(0, 300),
       meaningEn: d.meaningEn.trim().slice(0, 300),
-      examples: splitList(d.examples).slice(0, 8).map((s) => s.slice(0, 400)),
-      collocations: splitList(d.collocations, true).slice(0, 10).map((s) => s.slice(0, 80)),
+      examples: splitList(d.examples)
+        .slice(0, 8)
+        .map((s) => s.slice(0, 400)),
+      collocations: splitList(d.collocations, true)
+        .slice(0, 10)
+        .map((s) => s.slice(0, 80)),
       topic: d.topic.trim().slice(0, 60),
       notes: d.notes.trim().slice(0, 1000),
       cefr: d.cefr || null,
@@ -103,7 +134,9 @@ export function WordEditor({ open, item, initialWord, onClose, onSaved }: { open
         const res = await api('vocab:save', { word: d.word.trim(), sourceModule: 'manual', ...common })
         useApp.getState().toast({
           kind: 'success',
-          title: res.created ? L(`Added “${res.item.word}”`, `Đã thêm “${res.item.word}”`) : L(`“${res.item.word}” was already saved – details merged`, `“${res.item.word}” đã có – đã gộp thông tin`),
+          title: res.created
+            ? L(`Added “${res.item.word}”`, `Đã thêm “${res.item.word}”`)
+            : L(`“${res.item.word}” was already saved – details merged`, `“${res.item.word}” đã có – đã gộp thông tin`),
         })
         void useApp.getState().refreshGame()
         onSaved(res.item)
@@ -126,7 +159,13 @@ export function WordEditor({ open, item, initialWord, onClose, onSaved }: { open
           <Button variant="ghost" onClick={onClose}>
             {L('Cancel', 'Hủy')}
           </Button>
-          <Button variant="primary" loading={saving} disabled={!d.word.trim()} onClick={() => void save()} data-testid="vocab-editor-save">
+          <Button
+            variant="primary"
+            loading={saving}
+            disabled={!d.word.trim()}
+            onClick={() => void save()}
+            data-testid="vocab-editor-save"
+          >
             {editing ? L('Save changes', 'Lưu thay đổi') : L('Add to word bank', 'Thêm vào kho từ')}
           </Button>
         </>
@@ -145,20 +184,41 @@ export function WordEditor({ open, item, initialWord, onClose, onSaved }: { open
                   onKeyDown={(e) => e.key === 'Enter' && void doLookup(false)}
                   placeholder="e.g. resilient"
                 />
-                <Button icon={<BookOpen className="size-4" />} loading={lookup.loading === 'offline'} disabled={!d.word.trim()} onClick={() => void doLookup(false)}>
+                <Button
+                  icon={<BookOpen className="size-4" />}
+                  loading={lookup.loading === 'offline'}
+                  disabled={!d.word.trim()}
+                  onClick={() => void doLookup(false)}
+                >
                   {L('Look up', 'Tra từ')}
                 </Button>
-                <Button variant="ghost" icon={<Sparkles className="size-4" />} loading={lookup.loading === 'ai'} disabled={!d.word.trim()} onClick={() => void doLookup(true)}>
+                <Button
+                  variant="ghost"
+                  icon={<Sparkles className="size-4" />}
+                  loading={lookup.loading === 'ai'}
+                  disabled={!d.word.trim()}
+                  onClick={() => void doLookup(true)}
+                >
                   {L('Ask AI', 'Hỏi AI')}
                 </Button>
               </div>
             </Field>
             <div className="mt-2 text-xs text-faint">
-              {lookup.result === null && L('Not in the offline dictionary – fill in the details yourself or ask AI.', 'Không có trong từ điển offline – tự điền hoặc hỏi AI.')}
+              {lookup.result === null &&
+                L(
+                  'Not in the offline dictionary – fill in the details yourself or ask AI.',
+                  'Không có trong từ điển offline – tự điền hoặc hỏi AI.',
+                )}
               {lookup.result && (
                 <span className="flex items-center gap-2">
-                  {lookup.result.source === 'ai' ? <AiBadge estimated={false} /> : L('Filled from the offline dictionary.', 'Đã điền từ từ điển offline.')}
-                  {lookup.result.saved && <span className="text-warning">{L('Already in your word bank.', 'Đã có trong kho từ.')}</span>}
+                  {lookup.result.source === 'ai' ? (
+                    <AiBadge estimated={false} />
+                  ) : (
+                    L('Filled from the offline dictionary.', 'Đã điền từ từ điển offline.')
+                  )}
+                  {lookup.result.saved && (
+                    <span className="text-warning">{L('Already in your word bank.', 'Đã có trong kho từ.')}</span>
+                  )}
                 </span>
               )}
             </div>
@@ -199,12 +259,27 @@ export function WordEditor({ open, item, initialWord, onClose, onSaved }: { open
           <Textarea value={d.examples} onChange={(e) => set('examples', e.target.value)} className="min-h-20" />
         </Field>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label={L('Collocations (one per line or comma separated)', 'Cụm từ đi kèm (mỗi dòng hoặc cách nhau dấu phẩy)')}>
-            <Textarea value={d.collocations} onChange={(e) => set('collocations', e.target.value)} className="min-h-20" />
+          <Field
+            label={L(
+              'Collocations (one per line or comma separated)',
+              'Cụm từ đi kèm (mỗi dòng hoặc cách nhau dấu phẩy)',
+            )}
+          >
+            <Textarea
+              value={d.collocations}
+              onChange={(e) => set('collocations', e.target.value)}
+              className="min-h-20"
+            />
           </Field>
           <div className="space-y-3">
             <Field label={L('Topic', 'Chủ đề')}>
-              <Input value={d.topic} maxLength={60} list="vocab-topics" onChange={(e) => set('topic', e.target.value)} placeholder={L('e.g. travel', 'vd. du lịch')} />
+              <Input
+                value={d.topic}
+                maxLength={60}
+                list="vocab-topics"
+                onChange={(e) => set('topic', e.target.value)}
+                placeholder={L('e.g. travel', 'vd. du lịch')}
+              />
               <datalist id="vocab-topics">
                 {(topics.data ?? []).map((t) => (
                   <option key={t} value={t} />

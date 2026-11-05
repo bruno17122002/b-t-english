@@ -88,12 +88,20 @@ export function buildOfflineRoadmap(input: RoadmapInput): {
   })
   // Fill missing skills at the overall level so there are always three priorities to rotate through.
   const known = new Set(input.skills.map((s) => s.skill))
-  const allSkills = [...input.skills, ...SKILLS.filter((s) => !known.has(s)).map((s) => ({ skill: s, cefr: overall, score: 50 }))]
+  const allSkills = [
+    ...input.skills,
+    ...SKILLS.filter((s) => !known.has(s)).map((s) => ({ skill: s, cefr: overall, score: 50 })),
+  ]
   const priority = weakestSkills(allSkills, 3)
-  const themes = (input.interests.length ? input.interests : ['daily', 'travel', 'movies']).map((i) => THEME_LABELS[i] ?? i)
+  const themes = (input.interests.length ? input.interests : ['daily', 'travel', 'movies']).map(
+    (i) => THEME_LABELS[i] ?? i,
+  )
   const weeks: Omit<RoadmapWeek, 'id'>[] = []
   const grammarPool = [...input.grammarTopics].sort((a, b) => cefrIndex(a.cefr) - cefrIndex(b.cefr))
-  const startGrammar = Math.max(0, grammarPool.findIndex((g) => cefrIndex(g.cefr) >= cefrIndex(overall)))
+  const startGrammar = Math.max(
+    0,
+    grammarPool.findIndex((g) => cefrIndex(g.cefr) >= cefrIndex(overall)),
+  )
   const wordsPerWeek = Math.round((input.dailyMinutes / 20) * 50)
   for (let w = 0; w < 12; w++) {
     const theme = themes[w % themes.length] as string
@@ -115,7 +123,11 @@ export function buildOfflineRoadmap(input: RoadmapInput): {
     { skill: 'review', minutes: Math.max(5, Math.round(minutes * 0.2)), activity: 'Flashcard review (FSRS)' },
     { skill: priority[0] as Skill, minutes: Math.round(minutes * 0.35), activity: `Focus on ${priority[0]}` },
     { skill: priority[1] as Skill, minutes: Math.round(minutes * 0.25), activity: `Practice ${priority[1]}` },
-    { skill: 'cinema', minutes: Math.max(5, Math.round(minutes * 0.2)), activity: 'Cinema Mode scene or AI tutor chat' },
+    {
+      skill: 'cinema',
+      minutes: Math.max(5, Math.round(minutes * 0.2)),
+      activity: 'Cinema Mode scene or AI tutor chat',
+    },
   ]
   const target = input.targetCefr
   return {
@@ -215,10 +227,22 @@ export function buildDailyPlan(input: {
     const level = input.levels[skill] ?? 'A1'
     const item = pick(module, level)
     if (item) {
-      plan.push({ module, title: item.title, description: describe(module), contentRef: item.ref, estimatedMinutes: item.minutes })
+      plan.push({
+        module,
+        title: item.title,
+        description: describe(module),
+        contentRef: item.ref,
+        estimatedMinutes: item.minutes,
+      })
       budget -= item.minutes
     } else if (module === 'vocabulary') {
-      plan.push({ module, title: 'Collect 10 new words', description: describe(module), contentRef: null, estimatedMinutes: 10 })
+      plan.push({
+        module,
+        title: 'Collect 10 new words',
+        description: describe(module),
+        contentRef: null,
+        estimatedMinutes: 10,
+      })
       budget -= 10
     }
   }
@@ -226,7 +250,13 @@ export function buildDailyPlan(input: {
     const level = input.levels.listening ?? 'A1'
     const story = pick('cinema', level)
     if (story)
-      plan.push({ module: 'cinema', title: story.title, description: describe('cinema'), contentRef: story.ref, estimatedMinutes: Math.min(15, budget) })
+      plan.push({
+        module: 'cinema',
+        title: story.title,
+        description: describe('cinema'),
+        contentRef: story.ref,
+        estimatedMinutes: Math.min(15, budget),
+      })
   }
   return plan
 }

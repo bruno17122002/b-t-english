@@ -20,12 +20,22 @@ describe('markdown-lite parser', () => {
 
   it('nests italic inside bold and bold inside italic', () => {
     expect(parseInline('**very *good***')).toEqual([
-      { type: 'bold', children: [{ type: 'text', text: 'very ' }, { type: 'italic', children: [{ type: 'text', text: 'good' }] }] },
+      {
+        type: 'bold',
+        children: [
+          { type: 'text', text: 'very ' },
+          { type: 'italic', children: [{ type: 'text', text: 'good' }] },
+        ],
+      },
     ])
     expect(parseInline('*a **b** c*')).toEqual([
       {
         type: 'italic',
-        children: [{ type: 'text', text: 'a ' }, { type: 'bold', children: [{ type: 'text', text: 'b' }] }, { type: 'text', text: ' c' }],
+        children: [
+          { type: 'text', text: 'a ' },
+          { type: 'bold', children: [{ type: 'text', text: 'b' }] },
+          { type: 'text', text: ' c' },
+        ],
       },
     ])
   })
@@ -51,7 +61,9 @@ describe('markdown-lite parser', () => {
   })
 
   it('splits paragraphs, line breaks and lists', () => {
-    const blocks = parseMarkdownLite('Hello!\nHow are you?\n\nTips:\n- one\n* **two**\n• three\n\n1. first\n2) second\nAfter')
+    const blocks = parseMarkdownLite(
+      'Hello!\nHow are you?\n\nTips:\n- one\n* **two**\n• three\n\n1. first\n2) second\nAfter',
+    )
     expect(blocks.map((b) => b.type)).toEqual(['paragraph', 'paragraph', 'list', 'list', 'paragraph'])
     expect(blocks[0]).toEqual({
       type: 'paragraph',
@@ -66,8 +78,15 @@ describe('markdown-lite parser', () => {
 
   it('turns headings into bold paragraphs and handles CRLF and continuation lines', () => {
     const blocks = parseMarkdownLite('## Title\r\n- item one\r\n   continues here\r\n')
-    expect(blocks[0]).toEqual({ type: 'paragraph', children: [{ type: 'bold', children: [{ type: 'text', text: 'Title' }] }] })
-    expect(blocks[1]).toEqual({ type: 'list', ordered: false, items: [[{ type: 'text', text: 'item one continues here' }]] })
+    expect(blocks[0]).toEqual({
+      type: 'paragraph',
+      children: [{ type: 'bold', children: [{ type: 'text', text: 'Title' }] }],
+    })
+    expect(blocks[1]).toEqual({
+      type: 'list',
+      ordered: false,
+      items: [[{ type: 'text', text: 'item one continues here' }]],
+    })
   })
 
   it('returns no blocks for empty input', () => {

@@ -43,11 +43,13 @@ export type TutorReplyOutput = z.infer<typeof TutorReplySchema>
 const MODE_FOCUS: Record<TutorStyle, string> = {
   friendly: 'Correct only the mistakes that matter most; keep the chat flowing.',
   strict: 'List every meaningful mistake in corrections and ask the learner to rewrite the sentence correctly.',
-  grammar: 'In the reply, add a mini-rule (one line) and one example for the main grammar point of the learner message.',
+  grammar:
+    'In the reply, add a mini-rule (one line) and one example for the main grammar point of the learner message.',
   pronunciation:
     'In the reply, pick 1–2 words from the conversation that Vietnamese speakers often mispronounce and give IPA plus a tip. Use category "pronunciation" only for clear spelling-based evidence.',
   professional: 'Keep a professional, polite register; suggest more formal alternatives as "style" corrections.',
-  ielts: 'Ask IELTS Speaking-style questions (Part 1–3). When useful, mention which band descriptor an improvement helps (Fluency, Lexical Resource, Grammar, Pronunciation).',
+  ielts:
+    'Ask IELTS Speaking-style questions (Part 1–3). When useful, mention which band descriptor an improvement helps (Fluency, Lexical Resource, Grammar, Pronunciation).',
   casual: 'Sound like a relaxed native friend; teach natural everyday expressions; correct gently.',
 }
 
@@ -64,7 +66,7 @@ export const tutorReplyPrompt = jsonPrompt<TutorReplyInput, TutorReplyOutput>({
       .map((m) => `- [${m.category}] ${m.pattern}${m.correction ? ` → ${m.correction}` : ''} (seen ${m.count}×)`)
     return {
       system: [
-        "You are the AI English tutor inside Lingua Quest, chatting with a Vietnamese learner who is working towards IELTS 6.5 (CEFR B2).",
+        'You are the AI English tutor inside Lingua Quest, chatting with a Vietnamese learner who is working towards IELTS 6.5 (CEFR B2).',
         `Tutor mode: ${TUTOR_STYLE_RULES[input.mode]} ${MODE_FOCUS[input.mode]}`,
         ctx.learnerLine,
         ctx.constraints,
@@ -104,14 +106,48 @@ export const tutorReplyPrompt = jsonPrompt<TutorReplyInput, TutorReplyOutput>({
 /** Deterministic corrections used by the offline mock (and therefore by E2E tests). */
 export function mockCorrections(message: string): TutorReplyOutput['corrections'] {
   const rules: (TutorCorrection & { re: RegExp; pattern: string })[] = [
-    { re: /\bgoed\b/i, original: 'goed', correction: 'went', category: 'grammar', explanationVi: '"go" là động từ bất quy tắc: quá khứ là "went".', pattern: 'past simple of irregular verbs' },
-    { re: /\bhe go\b/i, original: 'he go', correction: 'he goes', category: 'grammar', explanationVi: 'Ngôi thứ ba số ít ở hiện tại đơn cần thêm "-s/-es".', pattern: 'third person -s' },
-    { re: /\bpeoples\b/i, original: 'peoples', correction: 'people', category: 'vocabulary', explanationVi: '"people" đã là số nhiều.', pattern: 'irregular plurals' },
-    { re: /(^|\s)i(\s|$)/, original: 'i', correction: 'I', category: 'spelling', explanationVi: 'Đại từ "I" luôn viết hoa.', pattern: 'capital I' },
+    {
+      re: /\bgoed\b/i,
+      original: 'goed',
+      correction: 'went',
+      category: 'grammar',
+      explanationVi: '"go" là động từ bất quy tắc: quá khứ là "went".',
+      pattern: 'past simple of irregular verbs',
+    },
+    {
+      re: /\bhe go\b/i,
+      original: 'he go',
+      correction: 'he goes',
+      category: 'grammar',
+      explanationVi: 'Ngôi thứ ba số ít ở hiện tại đơn cần thêm "-s/-es".',
+      pattern: 'third person -s',
+    },
+    {
+      re: /\bpeoples\b/i,
+      original: 'peoples',
+      correction: 'people',
+      category: 'vocabulary',
+      explanationVi: '"people" đã là số nhiều.',
+      pattern: 'irregular plurals',
+    },
+    {
+      re: /(^|\s)i(\s|$)/,
+      original: 'i',
+      correction: 'I',
+      category: 'spelling',
+      explanationVi: 'Đại từ "I" luôn viết hoa.',
+      pattern: 'capital I',
+    },
   ]
   return rules
     .filter((r) => r.re.test(message))
-    .map(({ original, correction, category, explanationVi, pattern }) => ({ original, correction, category, explanationVi, pattern }))
+    .map(({ original, correction, category, explanationVi, pattern }) => ({
+      original,
+      correction,
+      category,
+      explanationVi,
+      pattern,
+    }))
 }
 
 export interface TutorSummaryInput {
@@ -141,7 +177,10 @@ export const tutorSummaryPrompt = textPrompt<TutorSummaryInput>({
   }),
   mock: (input) => {
     const first = input.lines.find((l) => l.startsWith('Learner:')) ?? input.lines[0] ?? ''
-    return [input.previous, `Earlier the learner and tutor exchanged ${input.lines.length} messages. ${first.slice(0, 120)}`]
+    return [
+      input.previous,
+      `Earlier the learner and tutor exchanged ${input.lines.length} messages. ${first.slice(0, 120)}`,
+    ]
       .filter(Boolean)
       .join(' ')
       .slice(0, 600)

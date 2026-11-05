@@ -48,8 +48,13 @@ const parseList = <T>(s: string | null): T[] => {
   }
 }
 
-const asMode = (m: string): TutorStyle => ((TUTOR_STYLES as readonly string[]).includes(m) ? (m as TutorStyle) : 'friendly')
-const norm = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}']+/gu, ' ').trim()
+const asMode = (m: string): TutorStyle =>
+  (TUTOR_STYLES as readonly string[]).includes(m) ? (m as TutorStyle) : 'friendly'
+const norm = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}']+/gu, ' ')
+    .trim()
 const likeEscape = (s: string) => s.replace(/[\\%_]/g, (c) => `\\${c}`)
 
 /** Drops empty, unchanged and duplicate corrections and caps their number. */
@@ -85,7 +90,11 @@ export function cleanNewWords(raw: TutorReplyOutput['newWords']): TutorNewWord[]
     const key = word.toLowerCase()
     if (!word || seen.has(key)) continue
     seen.add(key)
-    out.push({ word: word.slice(0, 80), meaningVi: w.meaningVi.trim().slice(0, 300), example: w.example.trim().slice(0, 400) })
+    out.push({
+      word: word.slice(0, 80),
+      meaningVi: w.meaningVi.trim().slice(0, 300),
+      example: w.example.trim().slice(0, 400),
+    })
     if (out.length >= 4) break
   }
   return out
@@ -239,7 +248,11 @@ export class TutorService {
   }
 
   /** Builds the model input for a new learner message (exposed for tests: history must stay bounded). */
-  buildPromptInput(conversationId: number, text: string, viaVoice = false): { input: TutorReplyInput; window: HistoryWindow } {
+  buildPromptInput(
+    conversationId: number,
+    text: string,
+    viaVoice = false,
+  ): { input: TutorReplyInput; window: HistoryWindow } {
     const conv = this.requireConversation(conversationId)
     const win = this.window(conversationId)
     return {
@@ -264,26 +277,37 @@ export class TutorService {
         'INSERT INTO tutor_messages(conversation_id, role, content, created_at) VALUES (?, ?, ?, ?)',
         [conversationId, 'user', message, nowIso],
       ).lastInsertRowid
-      this.k.db.run('INSERT INTO tutor_message_meta(message_id, corrections, new_words, follow_up, provider) VALUES (?, ?, ?, ?, ?)', [
-        user,
-        JSON.stringify(corrections.map(({ original, correction, explanationVi, category }) => ({ original, correction, explanationVi, category }))),
-        '[]',
-        '',
-        provider,
-      ])
+      this.k.db.run(
+        'INSERT INTO tutor_message_meta(message_id, corrections, new_words, follow_up, provider) VALUES (?, ?, ?, ?, ?)',
+        [
+          user,
+          JSON.stringify(
+            corrections.map(({ original, correction, explanationVi, category }) => ({
+              original,
+              correction,
+              explanationVi,
+              category,
+            })),
+          ),
+          '[]',
+          '',
+          provider,
+        ],
+      )
       const assistant = this.k.db.run(
         'INSERT INTO tutor_messages(conversation_id, role, content, created_at) VALUES (?, ?, ?, ?)',
         [conversationId, 'assistant', data.reply.trim(), nowIso],
       ).lastInsertRowid
-      this.k.db.run('INSERT INTO tutor_message_meta(message_id, corrections, new_words, follow_up, provider) VALUES (?, ?, ?, ?, ?)', [
-        assistant,
-        '[]',
-        JSON.stringify(newWords),
-        followUp,
-        provider,
-      ])
+      this.k.db.run(
+        'INSERT INTO tutor_message_meta(message_id, corrections, new_words, follow_up, provider) VALUES (?, ?, ?, ?, ?)',
+        [assistant, '[]', JSON.stringify(newWords), followUp, provider],
+      )
       const title = conv.title === DEFAULT_TITLE ? clip(message, 48) : conv.title
-      this.k.db.run('UPDATE tutor_conversations SET updated_at = ?, title = ? WHERE id = ?', [nowIso, title, conversationId])
+      this.k.db.run('UPDATE tutor_conversations SET updated_at = ?, title = ? WHERE id = ?', [
+        nowIso,
+        title,
+        conversationId,
+      ])
       for (const c of corrections) {
         this.k.learner.recordMistake({
           category: c.category,
@@ -306,7 +330,9 @@ export class TutorService {
     })
     // Small, rate-limited skill credit: every 5th substantial learner message of a conversation.
     const learnerTurns = Number(
-      this.k.db.value("SELECT COUNT(*) FROM tutor_messages WHERE conversation_id = ? AND role = 'user'", [conversationId]) ?? 0,
+      this.k.db.value("SELECT COUNT(*) FROM tutor_messages WHERE conversation_id = ? AND role = 'user'", [
+        conversationId,
+      ]) ?? 0,
     )
     if (message.split(/\s+/).length >= 6 && learnerTurns % 5 === 0) {
       this.k.learner.addSkillProgress(skill, corrections.length <= 1 ? 1 : 0.5)

@@ -63,7 +63,8 @@ export function cefrConstraintBlock(level: Cefr): string {
 
 export function languageInstruction(lang: ResponseLanguage, level: Cefr): string {
   if (lang === 'en') return 'Write explanations in simple English.'
-  if (lang === 'vi') return 'Write explanations and feedback in Vietnamese (tiếng Việt có dấu). Keep English examples in English.'
+  if (lang === 'vi')
+    return 'Write explanations and feedback in Vietnamese (tiếng Việt có dấu). Keep English examples in English.'
   const beginner = level === 'A1' || level === 'A2'
   return beginner
     ? 'Write explanations mainly in Vietnamese (tiếng Việt có dấu) with key English phrases; keep English examples in English.'
@@ -73,10 +74,12 @@ export function languageInstruction(lang: ResponseLanguage, level: Cefr): string
 export const TUTOR_STYLE_RULES: Record<TutorStyle, string> = {
   friendly: 'You are a warm, encouraging tutor. Celebrate progress, keep the mood light, ask follow-up questions.',
   strict: 'You are a demanding but fair coach. Point out every meaningful mistake and ask the learner to retry.',
-  grammar: 'You are a grammar coach. After each learner message, explain the key grammar point with a mini-rule and example.',
+  grammar:
+    'You are a grammar coach. After each learner message, explain the key grammar point with a mini-rule and example.',
   pronunciation:
     'You are a pronunciation coach. Highlight words Vietnamese speakers often mispronounce (final consonants, /θ/ /ð/, stress) with simple IPA and tips.',
-  professional: 'You are a business English coach. Use professional scenarios (emails, meetings, interviews) and formal register.',
+  professional:
+    'You are a business English coach. Use professional scenarios (emails, meetings, interviews) and formal register.',
   ielts: 'You are an IELTS examiner-coach. Use IELTS-style questions, mention band descriptors and strategies.',
   casual: 'You are a friendly native speaker chatting casually. Use natural everyday English and common expressions.',
 }

@@ -12,7 +12,12 @@ import { MODULES_MAIN } from '../../src/modules/registry.main'
 export const fakeCipher: Cipher = {
   isEncryptionAvailable: () => true,
   encryptString: (s) => Buffer.from(s.split('').reverse().join(''), 'utf8').map((b) => b ^ 0x5a) as Buffer,
-  decryptString: (b) => Buffer.from(b.map((x) => x ^ 0x5a)).toString('utf8').split('').reverse().join(''),
+  decryptString: (b) =>
+    Buffer.from(b.map((x) => x ^ 0x5a))
+      .toString('utf8')
+      .split('')
+      .reverse()
+      .join(''),
 }
 
 export function tempDir(prefix = 'lq-test-'): string {
@@ -29,7 +34,9 @@ export interface TestKernelOptions {
 
 export async function makeKernel(opts: TestKernelOptions = {}): Promise<{ kernel: Kernel; dir: string }> {
   const dir = opts.dir ?? tempDir()
-  const moduleMigrations = Object.fromEntries(MODULES_MAIN.filter((m) => m.migrations?.length).map((m) => [m.id, m.migrations ?? []]))
+  const moduleMigrations = Object.fromEntries(
+    MODULES_MAIN.filter((m) => m.migrations?.length).map((m) => [m.id, m.migrations ?? []]),
+  )
   const kernel = await createKernel({
     paths: {
       userData: dir,
@@ -47,7 +54,9 @@ export async function makeKernel(opts: TestKernelOptions = {}): Promise<{ kernel
   return { kernel, dir }
 }
 
-export function fakeHost(overrides: Partial<HostBridge> = {}): HostBridge & { notifications: string[]; opened: string[] } {
+export function fakeHost(
+  overrides: Partial<HostBridge> = {},
+): HostBridge & { notifications: string[]; opened: string[] } {
   const notifications: string[] = []
   const opened: string[] = []
   return {
@@ -79,7 +88,8 @@ export async function makeApp(opts: TestKernelOptions & { host?: Partial<HostBri
   for (const m of MODULES_MAIN) m.register(router, kernel)
   const call = async <T = unknown>(channel: string, payload?: unknown): Promise<T> => {
     const res = await router.dispatch(channel, payload)
-    if (!res.ok) throw Object.assign(new Error(`${channel}: ${res.error.code} ${res.error.message}`), { ipc: res.error })
+    if (!res.ok)
+      throw Object.assign(new Error(`${channel}: ${res.error.code} ${res.error.message}`), { ipc: res.error })
     return res.data as T
   }
   return { kernel, dir, host, router, call }

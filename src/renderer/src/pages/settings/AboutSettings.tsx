@@ -20,14 +20,32 @@ export function AboutSettings() {
     ['Electron / Chromium / Node', `${data.electron} / ${data.chrome} / ${data.node}`],
     [L('Platform', 'Nền tảng'), data.platform],
     [L('Data folder', 'Thư mục dữ liệu'), data.userDataPath],
-    [L('Database', 'Cơ sở dữ liệu'), `${data.dbPath} (${Math.round(data.dbSizeBytes / 1024)} KB, schema v${data.schemaVersion})`],
-    [L('Key encryption', 'Mã hóa key'), data.encryptionAvailable ? 'Windows DPAPI ✓' : L('Unavailable', 'Không khả dụng')],
-    ['Gemini', `${data.aiProviders.gemini.hasKey ? L('key set', 'đã có key') : L('no key', 'chưa có key')} · ${data.aiProviders.gemini.model}`],
-    ['OpenAI', `${data.aiProviders.openai.hasKey ? L('key set', 'đã có key') : L('no key', 'chưa có key')} · ${data.aiProviders.openai.model}`],
-    [L('Internet', 'Internet'), data.online === null ? '?' : data.online ? L('online', 'đang kết nối') : L('offline', 'ngoại tuyến')],
+    [
+      L('Database', 'Cơ sở dữ liệu'),
+      `${data.dbPath} (${Math.round(data.dbSizeBytes / 1024)} KB, schema v${data.schemaVersion})`,
+    ],
+    [
+      L('Key encryption', 'Mã hóa key'),
+      data.encryptionAvailable ? 'Windows DPAPI ✓' : L('Unavailable', 'Không khả dụng'),
+    ],
+    [
+      'Gemini',
+      `${data.aiProviders.gemini.hasKey ? L('key set', 'đã có key') : L('no key', 'chưa có key')} · ${data.aiProviders.gemini.model}`,
+    ],
+    [
+      'OpenAI',
+      `${data.aiProviders.openai.hasKey ? L('key set', 'đã có key') : L('no key', 'chưa có key')} · ${data.aiProviders.openai.model}`,
+    ],
+    [
+      L('Internet', 'Internet'),
+      data.online === null ? '?' : data.online ? L('online', 'đang kết nối') : L('offline', 'ngoại tuyến'),
+    ],
     [L('Log file', 'File nhật ký'), data.logPath],
   ]
-  const report = [...rows.map(([k, v]) => `${k}: ${v}`), ...Object.entries(data.tableCounts).map(([k, v]) => `${k}: ${v}`)].join('\n')
+  const report = [
+    ...rows.map(([k, v]) => `${k}: ${v}`),
+    ...Object.entries(data.tableCounts).map(([k, v]) => `${k}: ${v}`),
+  ].join('\n')
 
   return (
     <div className="space-y-6" data-testid="diagnostics">
@@ -44,7 +62,11 @@ export function AboutSettings() {
             <Button
               size="sm"
               icon={<Copy className="size-4" />}
-              onClick={() => navigator.clipboard.writeText(report).then(() => toast({ kind: 'success', title: L('Copied', 'Đã sao chép') }))}
+              onClick={() =>
+                navigator.clipboard
+                  .writeText(report)
+                  .then(() => toast({ kind: 'success', title: L('Copied', 'Đã sao chép') }))
+              }
             >
               {L('Copy report', 'Sao chép báo cáo')}
             </Button>
@@ -69,7 +91,12 @@ export function AboutSettings() {
           <Button size="sm" icon={<FileText className="size-4" />} onClick={async () => setLogs(await api('app:logs'))}>
             {L('View log', 'Xem nhật ký')}
           </Button>
-          <Button size="sm" variant="ghost" icon={<FolderOpen className="size-4" />} onClick={() => api('app:openFolder', { which: 'data' }).catch(() => undefined)}>
+          <Button
+            size="sm"
+            variant="ghost"
+            icon={<FolderOpen className="size-4" />}
+            onClick={() => api('app:openFolder', { which: 'data' }).catch(() => undefined)}
+          >
             {L('Open data folder', 'Mở thư mục dữ liệu')}
           </Button>
         </div>
@@ -85,15 +112,26 @@ export function AboutSettings() {
         </p>
         <ul className="mt-3 space-y-1 text-sm text-muted">
           <li>• Sprigo (MIT) — {L('course outline A1→C2', 'khung giáo trình A1→C2')}</li>
-          <li>• Cadence (MIT) — {L('pronunciation path and phoneme alignment', 'lộ trình phát âm và căn chỉnh âm vị')}</li>
+          <li>
+            • Cadence (MIT) — {L('pronunciation path and phoneme alignment', 'lộ trình phát âm và căn chỉnh âm vị')}
+          </li>
           <li>• ts-fsrs (MIT) — {L('spaced-repetition scheduling', 'thuật toán ôn tập ngắt quãng')}</li>
-          <li>• VocabReader (MIT) — {L('ideas for contextual review prompts', 'ý tưởng prompt ôn từ theo ngữ cảnh')}</li>
+          <li>
+            • VocabReader (MIT) — {L('ideas for contextual review prompts', 'ý tưởng prompt ôn từ theo ngữ cảnh')}
+          </li>
         </ul>
-        <p className="mt-2 text-xs text-faint">{L('Full license texts: THIRD_PARTY_NOTICES.md in the installation folder.', 'Toàn văn giấy phép: THIRD_PARTY_NOTICES.md trong thư mục cài đặt.')}</p>
+        <p className="mt-2 text-xs text-faint">
+          {L(
+            'Full license texts: THIRD_PARTY_NOTICES.md in the installation folder.',
+            'Toàn văn giấy phép: THIRD_PARTY_NOTICES.md trong thư mục cài đặt.',
+          )}
+        </p>
       </Card>
 
       <Modal open={logs !== null} onClose={() => setLogs(null)} title={L('Application log', 'Nhật ký ứng dụng')} wide>
-        <pre className="max-h-[60vh] overflow-auto rounded-xl bg-surface-2 p-3 font-mono text-[11px] leading-relaxed whitespace-pre-wrap text-muted">{logs || L('(empty)', '(trống)')}</pre>
+        <pre className="max-h-[60vh] overflow-auto rounded-xl bg-surface-2 p-3 font-mono text-[11px] leading-relaxed whitespace-pre-wrap text-muted">
+          {logs || L('(empty)', '(trống)')}
+        </pre>
       </Modal>
     </div>
   )

@@ -22,20 +22,32 @@ export function DictionaryPanel({ initialWord, onSaved }: { initialWord?: string
     }
   }, [initialWord])
 
+  // Browse (empty query) or search the whole offline dictionary; saved words are merged in by the lookup itself.
   useEffect(() => {
     const term = q.trim()
-    if (!term) {
-      setHits(null)
-      return
-    }
     let alive = true
     setSearching(true)
-    const t = setTimeout(() => {
-      api('search:query', { q: term.slice(0, 100) })
-        .then((res) => alive && setHits(res.filter((r) => r.kind === 'dictionary' || r.kind === 'vocab')))
-        .catch(() => alive && setHits([]))
-        .finally(() => alive && setSearching(false))
-    }, 200)
+    const t = setTimeout(
+      () => {
+        api('vocab:dictionary', { query: term.slice(0, 80) || undefined, limit: 200 })
+          .then(
+            (res) =>
+              alive &&
+              setHits(
+                res.items.map((e) => ({
+                  kind: 'dictionary' as const,
+                  id: e.word,
+                  title: e.word,
+                  subtitle: e.meaningVi,
+                  route: '',
+                })),
+              ),
+          )
+          .catch(() => alive && setHits([]))
+          .finally(() => alive && setSearching(false))
+      },
+      term ? 200 : 0,
+    )
     return () => {
       alive = false
       clearTimeout(t)
@@ -66,12 +78,17 @@ export function DictionaryPanel({ initialWord, onSaved }: { initialWord?: string
               <Spinner />
             </div>
           ) : hits === null ? (
-            <p className="p-4 text-sm text-muted">{L('Type to search the offline dictionary.', 'Gõ để tra từ điển offline.')}</p>
+            <p className="p-4 text-sm text-muted">
+              {L('Type to search the offline dictionary.', 'Gõ để tra từ điển offline.')}
+            </p>
           ) : (
             <ul className="space-y-0.5 pt-1">
               {q.trim() && !exactListed && (
                 <li>
-                  <button onClick={() => setSelected(q.trim())} className="w-full rounded-lg px-3 py-2 text-left text-sm text-accent hover:bg-surface-2">
+                  <button
+                    onClick={() => setSelected(q.trim())}
+                    className="w-full rounded-lg px-3 py-2 text-left text-sm text-accent hover:bg-surface-2"
+                  >
                     {L(`Look up “${q.trim()}”`, `Tra “${q.trim()}”`)}
                   </button>
                 </li>
@@ -80,20 +97,42 @@ export function DictionaryPanel({ initialWord, onSaved }: { initialWord?: string
                 <li key={`${h.kind}:${h.id}`}>
                   <button
                     onClick={() => setSelected(h.title)}
-                    className={cx('flex w-full items-baseline gap-2 rounded-lg px-3 py-2 text-left text-sm hover:bg-surface-2', selected?.toLowerCase() === h.title.toLowerCase() && 'bg-surface-3')}
+                    className={cx(
+                      'flex w-full items-baseline gap-2 rounded-lg px-3 py-2 text-left text-sm hover:bg-surface-2',
+                      selected?.toLowerCase() === h.title.toLowerCase() && 'bg-surface-3',
+                    )}
                   >
                     <span className="font-semibold">{h.title}</span>
                     <span className="min-w-0 flex-1 truncate text-muted">{h.subtitle}</span>
-                    {h.kind === 'vocab' && <Check className="size-3.5 shrink-0 text-success" aria-label={L('Saved', 'Đã lưu')} />}
+                    {h.kind === 'vocab' && (
+                      <Check className="size-3.5 shrink-0 text-success" aria-label={L('Saved', 'Đã lưu')} />
+                    )}
                   </button>
                 </li>
               ))}
-              {!hits.length && !searching && <li className="px-3 py-2 text-sm text-muted">{L('No dictionary matches.', 'Không tìm thấy trong từ điển.')}</li>}
+              {!hits.length && !searching && (
+                <li className="px-3 py-2 text-sm text-muted">
+                  {L('No dictionary matches.', 'Không tìm thấy trong từ điển.')}
+                </li>
+              )}
             </ul>
           )}
         </div>
       </div>
-      <div>{selected ? <Entry key={selected} word={selected} onSaved={onSaved} /> : <EmptyState icon={<BookOpen />} title={L('Pick a word', 'Chọn một từ')} body={L('Meanings, IPA, examples and collocations appear here.', 'Nghĩa, phiên âm, ví dụ và cụm từ đi kèm sẽ hiện ở đây.')} />}</div>
+      <div>
+        {selected ? (
+          <Entry key={selected} word={selected} onSaved={onSaved} />
+        ) : (
+          <EmptyState
+            icon={<BookOpen />}
+            title={L('Pick a word', 'Chọn một từ')}
+            body={L(
+              'Meanings, IPA, examples and collocations appear here.',
+              'Nghĩa, phiên âm, ví dụ và cụm từ đi kèm sẽ hiện ở đây.',
+            )}
+          />
+        )}
+      </div>
     </div>
   )
 }
@@ -151,7 +190,9 @@ function Entry({ word, onSaved }: { word: string; onSaved: () => void }) {
       setResult({ ...result, saved: true })
       useApp.getState().toast({
         kind: 'success',
-        title: res.created ? L(`Saved “${e.word}”`, `Đã lưu “${e.word}”`) : L(`“${e.word}” is already in your word bank`, `“${e.word}” đã có trong kho từ`),
+        title: res.created
+          ? L(`Saved “${e.word}”`, `Đã lưu “${e.word}”`)
+          : L(`“${e.word}” is already in your word bank`, `“${e.word}” đã có trong kho từ`),
       })
       void useApp.getState().refreshGame()
       onSaved()
@@ -178,7 +219,15 @@ function Entry({ word, onSaved }: { word: string; onSaved: () => void }) {
               <div className="flex flex-wrap items-center gap-2">
                 <h2 className="font-display text-3xl font-semibold">{e.word}</h2>
                 {e.cefr && <CefrBadge level={e.cefr} />}
-                {result.source === 'ai' ? <AiBadge estimated={false} /> : <Badge tone="neutral">{result.source === 'offline' ? L('Offline dictionary', 'Từ điển offline') : L('From a lesson', 'Từ bài học')}</Badge>}
+                {result.source === 'ai' ? (
+                  <AiBadge estimated={false} />
+                ) : (
+                  <Badge tone="neutral">
+                    {result.source === 'offline'
+                      ? L('Offline dictionary', 'Từ điển offline')
+                      : L('From a lesson', 'Từ bài học')}
+                  </Badge>
+                )}
               </div>
               <div className="mt-1 font-mono text-muted">
                 {e.ipa !== '-' && e.ipa} {e.pos !== '-' && <span className="italic">· {e.pos}</span>}
@@ -211,7 +260,10 @@ function Entry({ word, onSaved }: { word: string; onSaved: () => void }) {
         <EmptyState
           icon={<BookOpen />}
           title={L(`“${word}” is not in the offline dictionary`, `“${word}” chưa có trong từ điển offline`)}
-          body={L('Ask AI for a learner-friendly explanation, then save it.', 'Hỏi AI để có giải thích dễ hiểu, rồi lưu lại.')}
+          body={L(
+            'Ask AI for a learner-friendly explanation, then save it.',
+            'Hỏi AI để có giải thích dễ hiểu, rồi lưu lại.',
+          )}
         />
       )}
       {error && (
@@ -221,12 +273,24 @@ function Entry({ word, onSaved }: { word: string; onSaved: () => void }) {
       )}
       <div className="mt-6 flex flex-wrap gap-2">
         {e && (
-          <Button variant={result.saved ? 'success' : 'primary'} disabled={result.saved} loading={saving} icon={<Check className="size-4" />} onClick={() => void save()} data-testid="dictionary-save">
+          <Button
+            variant={result.saved ? 'success' : 'primary'}
+            disabled={result.saved}
+            loading={saving}
+            icon={<Check className="size-4" />}
+            onClick={() => void save()}
+            data-testid="dictionary-save"
+          >
             {result.saved ? L('In your word bank', 'Đã có trong kho từ') : L('Save to word bank', 'Lưu vào kho từ')}
           </Button>
         )}
         {result?.source !== 'ai' && (
-          <Button variant="secondary" loading={aiLoading} icon={<Sparkles className="size-4" />} onClick={() => void askAi()}>
+          <Button
+            variant="secondary"
+            loading={aiLoading}
+            icon={<Sparkles className="size-4" />}
+            onClick={() => void askAi()}
+          >
             {L('Explain with AI', 'Giải thích bằng AI')}
           </Button>
         )}

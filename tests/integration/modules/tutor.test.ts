@@ -27,7 +27,10 @@ describe('tutor module', () => {
   it('sends a message: reply and corrections persisted, mistakes recorded, words saveable', async () => {
     const { call } = await makeApp()
     const conv = await call<TutorConversation>('tutor:create', { mode: 'friendly' })
-    const res = await call<TutorSendResult>('tutor:send', { conversationId: conv.id, text: 'Yesterday i goed to the market' })
+    const res = await call<TutorSendResult>('tutor:send', {
+      conversationId: conv.id,
+      text: 'Yesterday i goed to the market',
+    })
     expect(res.assistantMessage.content).toContain('Thanks for your message')
     expect(res.userMessage.corrections.map((c) => c.correction).sort()).toEqual(['I', 'went'])
     expect(res.assistantMessage.newWords[0]?.word).toBe('routine')
@@ -43,7 +46,9 @@ describe('tutor module', () => {
     expect(thread.messages[0]?.corrections[0]?.explanationVi).toBeTruthy()
 
     const mistakes = await call<LearnerMistake[]>('learner:mistakes')
-    expect(mistakes.map((m) => m.pattern)).toEqual(expect.arrayContaining(['past simple of irregular verbs', 'capital I']))
+    expect(mistakes.map((m) => m.pattern)).toEqual(
+      expect.arrayContaining(['past simple of irregular verbs', 'capital I']),
+    )
     // Same mistake again → counted, not duplicated.
     await call('tutor:send', { conversationId: conv.id, text: 'Then he goed home' })
     const again = await call<LearnerMistake[]>('learner:mistakes')
@@ -67,8 +72,11 @@ describe('tutor module', () => {
   it('caps tutor XP per day', async () => {
     const { call, kernel } = await makeApp()
     const conv = await call<TutorConversation>('tutor:create', { mode: 'casual' })
-    for (let i = 0; i < 30; i++) await call('tutor:send', { conversationId: conv.id, text: `Message number ${i} about my day` })
-    const tutorXp = Number(kernel.db.value("SELECT COALESCE(SUM(amount), 0) FROM xp_events WHERE source = 'tutor_message'") ?? 0)
+    for (let i = 0; i < 30; i++)
+      await call('tutor:send', { conversationId: conv.id, text: `Message number ${i} about my day` })
+    const tutorXp = Number(
+      kernel.db.value("SELECT COALESCE(SUM(amount), 0) FROM xp_events WHERE source = 'tutor_message'") ?? 0,
+    )
     expect(tutorXp).toBeGreaterThan(0)
     expect(tutorXp).toBeLessThanOrEqual(20)
     const thread = await call<TutorThread>('tutor:get', { id: conv.id })
@@ -79,7 +87,8 @@ describe('tutor module', () => {
     const { call, kernel } = await makeApp()
     const service = new TutorService(kernel)
     const conv = await call<TutorConversation>('tutor:create', { mode: 'friendly' })
-    for (let i = 0; i < 20; i++) await call('tutor:send', { conversationId: conv.id, text: `Turn ${i}: I like football and music` })
+    for (let i = 0; i < 20; i++)
+      await call('tutor:send', { conversationId: conv.id, text: `Turn ${i}: I like football and music` })
     await service.summarizeIfNeeded(conv.id)
     const { input, window } = service.buildPromptInput(conv.id, 'And what about you?')
     expect(input.history.length).toBeLessThanOrEqual(HISTORY_WINDOW)
@@ -112,7 +121,11 @@ describe('tutor module', () => {
     const count = (sql: string) => Number(kernel.db.value(sql, [conv.id]) ?? 0)
     expect(count('SELECT COUNT(*) FROM tutor_messages WHERE conversation_id = ?')).toBe(0)
     expect(
-      Number(kernel.db.value('SELECT COUNT(*) FROM tutor_message_meta WHERE message_id NOT IN (SELECT id FROM tutor_messages)') ?? 0),
+      Number(
+        kernel.db.value(
+          'SELECT COUNT(*) FROM tutor_message_meta WHERE message_id NOT IN (SELECT id FROM tutor_messages)',
+        ) ?? 0,
+      ),
     ).toBe(0)
     expect(count('SELECT COUNT(*) FROM tutor_conversation_state WHERE conversation_id = ?')).toBe(0)
     const other = await call<TutorThread>('tutor:get', { id: keep.id })

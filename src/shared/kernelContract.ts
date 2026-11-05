@@ -133,7 +133,9 @@ export const kernelContract = {
   'learner:goals': channel<LearningGoal[]>()(NoInput),
   'learner:saveGoal': channel<LearningGoal[]>()(GoalSchema),
   'learner:deleteGoal': channel<LearningGoal[]>()(Id),
-  'learner:mistakes': channel<LearnerMistake[]>()(z.object({ limit: z.number().int().min(1).max(100).optional() }).optional()),
+  'learner:mistakes': channel<LearnerMistake[]>()(
+    z.object({ limit: z.number().int().min(1).max(100).optional() }).optional(),
+  ),
   'learner:deleteMistake': channel<null>()(Id),
 
   // ---------- settings ----------
@@ -179,7 +181,9 @@ export const kernelContract = {
   'vocab:update': channel<VocabItem>()(
     z.object({
       id: z.number().int().positive(),
-      patch: SaveWordSchema.omit({ word: true, sourceModule: true }).partial().extend({ isFavorite: z.boolean().optional() }),
+      patch: SaveWordSchema.omit({ word: true, sourceModule: true })
+        .partial()
+        .extend({ isFavorite: z.boolean().optional() }),
     }),
   ),
   'vocab:delete': channel<null>()(Id),
@@ -204,7 +208,11 @@ export const kernelContract = {
       .optional(),
   ),
   'vocab:lookup': channel<DictionaryResult | null>()(
-    z.object({ word: z.string().trim().min(1).max(80), context: shortText(500).optional(), useAi: z.boolean().optional() }),
+    z.object({
+      word: z.string().trim().min(1).max(80),
+      context: shortText(500).optional(),
+      useAi: z.boolean().optional(),
+    }),
   ),
 
   // ---------- progress / game ----------

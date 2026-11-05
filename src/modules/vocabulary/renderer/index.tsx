@@ -15,6 +15,13 @@ export const vocabularyRenderer: ModuleRenderer = {
     { path: '/vocabulary/*', Component: VocabularyPage },
   ],
   nav: [
-    { path: '/vocabulary', label: { en: 'Vocabulary', vi: 'Từ vựng' }, icon: Library, group: 'play', order: 20, badge: 'dueCards' },
+    {
+      path: '/vocabulary',
+      label: { en: 'Vocabulary', vi: 'Từ vựng' },
+      icon: Library,
+      group: 'play',
+      order: 20,
+      badge: 'dueCards',
+    },
   ],
 }

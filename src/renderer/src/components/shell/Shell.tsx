@@ -40,7 +40,10 @@ function Sidebar() {
   const L = useL()
   const nav = useNav()
   const dueCards = useApp((s) => s.dueCards)
-  const groups = (['home', 'skills', 'play', 'progress'] as const).map((g) => ({ g, items: nav.filter((n) => n.group === g) }))
+  const groups = (['home', 'skills', 'play', 'progress'] as const).map((g) => ({
+    g,
+    items: nav.filter((n) => n.group === g),
+  }))
   const linkCls = ({ isActive }: { isActive: boolean }) =>
     cx(
       'group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition',
@@ -60,14 +63,20 @@ function Sidebar() {
         {groups.map(({ g, items }) =>
           items.length ? (
             <div key={g}>
-              {GROUP_LABEL[g].en && <div className="mb-1 px-3 text-[11px] font-semibold tracking-wider text-faint uppercase">{tx(GROUP_LABEL[g])}</div>}
+              {GROUP_LABEL[g].en && (
+                <div className="mb-1 px-3 text-[11px] font-semibold tracking-wider text-faint uppercase">
+                  {tx(GROUP_LABEL[g])}
+                </div>
+              )}
               <div className="space-y-0.5">
                 {items.map((n) => (
                   <NavLink key={n.path} to={n.path} end={n.path === '/'} className={linkCls}>
                     <n.icon className="size-[18px]" />
                     <span className="flex-1">{tx(n.label)}</span>
                     {n.badge === 'dueCards' && dueCards > 0 && (
-                      <span className="rounded-full bg-accent px-1.5 text-[11px] font-bold text-accent-ink">{dueCards > 99 ? '99+' : dueCards}</span>
+                      <span className="rounded-full bg-accent px-1.5 text-[11px] font-bold text-accent-ink">
+                        {dueCards > 99 ? '99+' : dueCards}
+                      </span>
                     )}
                   </NavLink>
                 ))}
@@ -105,7 +114,12 @@ function TopBar({ onSearch, onShortcuts }: { onSearch: () => void; onShortcuts: 
         <Kbd>Ctrl K</Kbd>
       </button>
       <div className="flex-1" />
-      <button onClick={onShortcuts} className="text-faint hover:text-text" aria-label={L('Keyboard shortcuts', 'Phím tắt')} title={L('Keyboard shortcuts (F1)', 'Phím tắt (F1)')}>
+      <button
+        onClick={onShortcuts}
+        className="text-faint hover:text-text"
+        aria-label={L('Keyboard shortcuts', 'Phím tắt')}
+        title={L('Keyboard shortcuts (F1)', 'Phím tắt (F1)')}
+      >
         <Keyboard className="size-5" />
       </button>
       {game && (
@@ -113,13 +127,22 @@ function TopBar({ onSearch, onShortcuts }: { onSearch: () => void; onShortcuts: 
           <button
             onClick={() => navigate('/game')}
             title={L(`${game.streak.current}-day streak`, `Chuỗi ${game.streak.current} ngày`)}
-            className={cx('flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm font-bold', game.streak.activeToday ? 'text-warning' : 'text-faint')}
+            className={cx(
+              'flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm font-bold',
+              game.streak.activeToday ? 'text-warning' : 'text-faint',
+            )}
           >
             <Flame className={cx('size-5', game.streak.activeToday && 'fill-warning/30')} />
             {game.streak.current}
           </button>
-          <button onClick={() => navigate('/game')} className="flex w-44 items-center gap-2.5 text-left" title={`${game.xpIntoLevel}/${game.xpForNextLevel} XP`}>
-            <div className="flex size-9 items-center justify-center rounded-xl bg-accent/15 text-sm font-bold text-accent">{game.level}</div>
+          <button
+            onClick={() => navigate('/game')}
+            className="flex w-44 items-center gap-2.5 text-left"
+            title={`${game.xpIntoLevel}/${game.xpForNextLevel} XP`}
+          >
+            <div className="flex size-9 items-center justify-center rounded-xl bg-accent/15 text-sm font-bold text-accent">
+              {game.level}
+            </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between text-xs">
                 <span className="truncate font-semibold">{game.levelTitle}</span>
@@ -179,7 +202,12 @@ export function Shell({ children, bare }: { children: ReactNode; bare?: boolean 
         {!bare && <TopBar onSearch={() => setPaletteOpen(true)} onShortcuts={() => setShortcutsOpen(true)} />}
         <main className="flex-1 overflow-y-auto" id="main-scroll">
           <AnimatePresence mode="wait">
-            <motion.div key={bare ? 'bare' : 'app'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={bare ? 'h-full' : 'mx-auto max-w-6xl px-8 py-8'}>
+            <motion.div
+              key={bare ? 'bare' : 'app'}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className={bare ? 'h-full' : 'mx-auto max-w-6xl px-8 py-8'}
+            >
               {children}
             </motion.div>
           </AnimatePresence>

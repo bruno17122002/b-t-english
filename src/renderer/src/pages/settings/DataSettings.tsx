@@ -7,7 +7,8 @@ import { useFormat, useL } from '../../i18n'
 import { api, toApiError, useApi } from '../../lib/api'
 import { useApp } from '../../lib/store'
 
-const size = (b: number) => (b > 1_048_576 ? `${(b / 1_048_576).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`)
+const size = (b: number) =>
+  b > 1_048_576 ? `${(b / 1_048_576).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`
 
 export function DataSettings() {
   const L = useL()
@@ -60,7 +61,11 @@ export function DataSettings() {
           <Button icon={<Upload className="size-4" />} onClick={() => setRestore('file')}>
             {L('Restore from file…', 'Khôi phục từ file…')}
           </Button>
-          <Button variant="ghost" icon={<FolderOpen className="size-4" />} onClick={() => api('app:openFolder', { which: 'backups' }).catch(() => undefined)}>
+          <Button
+            variant="ghost"
+            icon={<FolderOpen className="size-4" />}
+            onClick={() => api('app:openFolder', { which: 'backups' }).catch(() => undefined)}
+          >
             {L('Open folder', 'Mở thư mục')}
           </Button>
         </div>
@@ -78,13 +83,25 @@ export function DataSettings() {
                   <div className="min-w-0 flex-1">
                     <div className="truncate font-medium">{b.name}</div>
                     <div className="text-xs text-muted">
-                      {f.date(b.createdAt, { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })} · {size(b.sizeBytes)}
+                      {f.date(b.createdAt, {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}{' '}
+                      · {size(b.sizeBytes)}
                     </div>
                   </div>
                   <Button size="sm" onClick={() => setRestore(b)}>
                     {L('Restore', 'Khôi phục')}
                   </Button>
-                  <Button size="sm" variant="ghost" aria-label={L('Delete backup', 'Xóa bản sao lưu')} onClick={() => setRemove(b)}>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    aria-label={L('Delete backup', 'Xóa bản sao lưu')}
+                    onClick={() => setRemove(b)}
+                  >
                     <Trash2 className="size-4" />
                   </Button>
                 </li>
@@ -128,7 +145,14 @@ export function DataSettings() {
               run('import', async () => {
                 const res = await api('data:importVocab')
                 if (res) {
-                  toast({ kind: 'success', title: L(`Imported ${res.added} new words`, `Đã nhập ${res.added} từ mới`), body: L(`${res.merged} merged, ${res.skipped} skipped`, `${res.merged} từ gộp, ${res.skipped} dòng bỏ qua`) })
+                  toast({
+                    kind: 'success',
+                    title: L(`Imported ${res.added} new words`, `Đã nhập ${res.added} từ mới`),
+                    body: L(
+                      `${res.merged} merged, ${res.skipped} skipped`,
+                      `${res.merged} từ gộp, ${res.skipped} dòng bỏ qua`,
+                    ),
+                  })
                   void useApp.getState().refreshGame()
                 }
               })
@@ -138,7 +162,10 @@ export function DataSettings() {
           </Button>
         </div>
         <p className="mt-3 text-xs text-faint">
-          {L('CSV columns: word, meaning_vi, meaning_en, example (header row optional). Existing words are merged, never duplicated.', 'Cột CSV: word, meaning_vi, meaning_en, example (dòng tiêu đề không bắt buộc). Từ đã có sẽ được gộp, không bị trùng.')}
+          {L(
+            'CSV columns: word, meaning_vi, meaning_en, example (header row optional). Existing words are merged, never duplicated.',
+            'Cột CSV: word, meaning_vi, meaning_en, example (dòng tiêu đề không bắt buộc). Từ đã có sẽ được gộp, không bị trùng.',
+          )}
         </p>
       </Card>
 

@@ -41,7 +41,8 @@ export function clip(text: string, max: number): string {
   return t.length <= max ? t : `${t.slice(0, Math.max(0, max - 1)).trimEnd()}…`
 }
 
-export const compressLine = (m: HistoryMessage, max = 110) => `${m.role === 'user' ? 'Learner' : 'Tutor'}: ${clip(m.content, max)}`
+export const compressLine = (m: HistoryMessage, max = 110) =>
+  `${m.role === 'user' ? 'Learner' : 'Tutor'}: ${clip(m.content, max)}`
 
 export function windowHistory(messages: HistoryMessage[], opts: WindowOptions = {}): HistoryWindow {
   const size = Math.max(2, opts.window ?? HISTORY_WINDOW)

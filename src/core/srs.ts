@@ -1,15 +1,6 @@
 // Spaced repetition scheduler. A thin adapter over ts-fsrs (MIT, open-spaced-repetition) that keeps
 // the plain-data CardMemory shape stored in SQLite and the API the rest of the app already uses.
-import {
-  createEmptyCard,
-  default_w,
-  fsrs,
-  generatorParameters,
-  State,
-  type Card,
-  type FSRS,
-  type Grade,
-} from 'ts-fsrs'
+import { createEmptyCard, default_w, fsrs, generatorParameters, State, type Card, type FSRS, type Grade } from 'ts-fsrs'
 
 export type Rating = 1 | 2 | 3 | 4 // Again, Hard, Good, Easy
 export type CardState = 'new' | 'learning' | 'review' | 'relearning'

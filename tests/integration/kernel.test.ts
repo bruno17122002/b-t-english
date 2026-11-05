@@ -28,7 +28,11 @@ describe('kernel IPC', () => {
     expect(boot.isFirstRun).toBe(true)
     expect(boot.profile.targetCefr).toBe('B2')
     expect(boot.game.level).toBe(1)
-    const updated = await call<Profile>('learner:updateProfile', { displayName: 'Lan', dailyMinutes: 30, onboardingCompleted: true })
+    const updated = await call<Profile>('learner:updateProfile', {
+      displayName: 'Lan',
+      dailyMinutes: 30,
+      onboardingCompleted: true,
+    })
     expect(updated.displayName).toBe('Lan')
     expect(updated.onboardingCompletedAt).not.toBeNull()
   })
@@ -107,6 +111,17 @@ describe('kernel IPC', () => {
     expect(res.some((r) => r.kind === 'vocab')).toBe(true)
     const pages = await call<{ kind: string; route: string }[]>('search:query', { q: 'cai dat' })
     expect(pages.some((r) => r.route === '/settings')).toBe(true)
+  })
+
+  it('browses and searches the full offline dictionary with paging', async () => {
+    const { call, kernel } = await makeApp()
+    const all = await call<{ items: { word: string }[]; total: number }>('vocab:dictionary', { limit: 500 })
+    expect(all.total).toBe(kernel.content.dictionary().length)
+    const page2 = await call<{ items: { word: string }[] }>('vocab:dictionary', { offset: 50, limit: 50 })
+    expect(page2.items[0]?.word).toBe(all.items[50]?.word)
+    const first = kernel.content.dictionary()[0]
+    const found = await call<{ items: { word: string }[] }>('vocab:dictionary', { query: first?.word.slice(0, 4) })
+    expect(found.items[0]?.word.toLowerCase().startsWith(first?.word.slice(0, 4).toLowerCase() ?? '')).toBe(true)
   })
 
   it('loads all bundled content without validation issues', async () => {

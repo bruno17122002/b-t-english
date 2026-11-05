@@ -56,10 +56,10 @@ export class SettingsService {
   }
 
   setFlag(key: string, value: string): void {
-    this.db.run('INSERT INTO app_settings(key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value', [
-      `flag:${key}`,
-      value,
-    ])
+    this.db.run(
+      'INSERT INTO app_settings(key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value',
+      [`flag:${key}`, value],
+    )
   }
 
   // ---------- favorites ----------
@@ -103,7 +103,15 @@ export class SettingsService {
       params.push(ref)
     }
     return this.db
-      .all<{ id: number; kind: string; ref: string; title: string; note: string; position: string; created_at: string }>(
+      .all<{
+        id: number
+        kind: string
+        ref: string
+        title: string
+        note: string
+        position: string
+        created_at: string
+      }>(
         `SELECT * FROM bookmarks ${where.length ? `WHERE ${where.join(' AND ')}` : ''} ORDER BY created_at DESC`,
         params,
       )

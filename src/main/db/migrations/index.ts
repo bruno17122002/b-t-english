@@ -62,7 +62,9 @@ export function runMigrations(db: AppDatabase, migrations: Migration[] = MIGRATI
  */
 export function runModuleMigrations(db: AppDatabase, moduleId: string, migrations: Migration[]): number {
   const applied = new Set(
-    db.all<{ version: number }>('SELECT version FROM module_migrations WHERE module = ?', [moduleId]).map((r) => r.version),
+    db
+      .all<{ version: number }>('SELECT version FROM module_migrations WHERE module = ?', [moduleId])
+      .map((r) => r.version),
   )
   let count = 0
   for (const m of [...migrations].sort((a, b) => a.version - b.version)) {

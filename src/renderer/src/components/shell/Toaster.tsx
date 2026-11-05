@@ -29,7 +29,10 @@ export function Toaster() {
                 <p className="font-medium">{t.title}</p>
                 {t.body && <p className="mt-0.5 text-muted">{t.body}</p>}
                 {t.action && (
-                  <button className="mt-1 text-xs font-semibold text-accent" onClick={() => (navigate(t.action?.route ?? '/'), dismiss(t.id))}>
+                  <button
+                    className="mt-1 text-xs font-semibold text-accent"
+                    onClick={() => (navigate(t.action?.route ?? '/'), dismiss(t.id))}
+                  >
                     {t.action.label}
                   </button>
                 )}

@@ -21,7 +21,7 @@ export async function launchApp(userData?: string): Promise<LaunchedApp> {
   delete env.ELECTRON_RENDERER_URL
   delete env.ELECTRON_RUN_AS_NODE
   const app = await electron.launch({
-    args: [path.join(ROOT, 'out/main/index.js'), '--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream'],
+    args: [ROOT, '--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream'],
     cwd: ROOT,
     env,
   })
@@ -50,4 +50,14 @@ export function seriousErrors(errors: string[]): string[] {
 
 export async function expectNoSeriousErrors(errors: string[]) {
   expect(seriousErrors(errors), seriousErrors(errors).join('\n')).toEqual([])
+}
+
+/** Closes any reward celebration (level-up / achievement / quest) that may cover the page. */
+export async function dismissRewards(page: Page) {
+  for (let i = 0; i < 5; i++) {
+    const btn = page.getByTestId('reward-continue')
+    if (!(await btn.isVisible().catch(() => false))) return
+    await btn.click()
+    await page.waitForTimeout(350)
+  }
 }

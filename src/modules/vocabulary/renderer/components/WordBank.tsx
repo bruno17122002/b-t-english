@@ -3,7 +3,18 @@ import { Heart, LayoutGrid, Library, List, Plus, Search } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import type { VocabItem } from '@shared/types'
 import { SpeakButton } from '@/components/learning'
-import { Badge, Button, CefrBadge, cx, EmptyState, ErrorState, IconButton, Input, LoadingBlock, Select } from '@/components/ui'
+import {
+  Badge,
+  Button,
+  CefrBadge,
+  cx,
+  EmptyState,
+  ErrorState,
+  IconButton,
+  Input,
+  LoadingBlock,
+  Select,
+} from '@/components/ui'
 import { useFormat, useL, useTx } from '@/i18n'
 import { api, toApiError, useApi } from '@/lib/api'
 import { useApp } from '@/lib/store'
@@ -15,7 +26,17 @@ const PAGE = 60
 type StateFilter = (typeof STATE_FILTERS)[number]['value']
 type Sort = (typeof SORTS)[number]['value']
 
-export function WordBank({ version, onOpen, onAdd, onChanged }: { version: number; onOpen: (v: VocabItem) => void; onAdd: () => void; onChanged: (v: VocabItem) => void }) {
+export function WordBank({
+  version,
+  onOpen,
+  onAdd,
+  onChanged,
+}: {
+  version: number
+  onOpen: (v: VocabItem) => void
+  onAdd: () => void
+  onChanged: (v: VocabItem) => void
+}) {
   const L = useL()
   const tx = useTx()
   const [query, setQuery] = useState('')
@@ -50,7 +71,11 @@ export function WordBank({ version, onOpen, onAdd, onChanged }: { version: numbe
   const toggleFav = async (v: VocabItem) => {
     try {
       const updated = await api('vocab:update', { id: v.id, patch: { isFavorite: !v.isFavorite } })
-      list.setData((prev) => (prev ? { ...prev, items: prev.items.map((x) => (x.id === v.id ? updated : x)) } : prev ?? { items: [], total: 0 }))
+      list.setData((prev) =>
+        prev
+          ? { ...prev, items: prev.items.map((x) => (x.id === v.id ? updated : x)) }
+          : (prev ?? { items: [], total: 0 }),
+      )
       onChanged(updated)
     } catch (err) {
       useApp.getState().toast({ kind: 'error', title: toApiError(err).message })
@@ -62,16 +87,33 @@ export function WordBank({ version, onOpen, onAdd, onChanged }: { version: numbe
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <div className="relative min-w-56 flex-1">
           <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-faint" />
-          <Input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={L('Search words or meanings…', 'Tìm từ hoặc nghĩa…')} className="pl-9" aria-label={L('Search words', 'Tìm từ')} data-testid="vocab-search" />
+          <Input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={L('Search words or meanings…', 'Tìm từ hoặc nghĩa…')}
+            className="pl-9"
+            aria-label={L('Search words', 'Tìm từ')}
+            data-testid="vocab-search"
+          />
         </div>
-        <Select value={state} onChange={(e) => setState(e.target.value as StateFilter)} className="w-40" aria-label={L('Filter', 'Lọc')}>
+        <Select
+          value={state}
+          onChange={(e) => setState(e.target.value as StateFilter)}
+          className="w-40"
+          aria-label={L('Filter', 'Lọc')}
+        >
           {STATE_FILTERS.map((f) => (
             <option key={f.value} value={f.value}>
               {tx(f.label)}
             </option>
           ))}
         </Select>
-        <Select value={topic} onChange={(e) => setTopic(e.target.value)} className="w-40" aria-label={L('Topic', 'Chủ đề')}>
+        <Select
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+          className="w-40"
+          aria-label={L('Topic', 'Chủ đề')}
+        >
           <option value="">{L('All topics', 'Mọi chủ đề')}</option>
           {(topics.data ?? []).map((t) => (
             <option key={t} value={t}>
@@ -79,7 +121,12 @@ export function WordBank({ version, onOpen, onAdd, onChanged }: { version: numbe
             </option>
           ))}
         </Select>
-        <Select value={source} onChange={(e) => setSource(e.target.value)} className="w-40" aria-label={L('Source', 'Nguồn')}>
+        <Select
+          value={source}
+          onChange={(e) => setSource(e.target.value)}
+          className="w-40"
+          aria-label={L('Source', 'Nguồn')}
+        >
           <option value="">{L('All sources', 'Mọi nguồn')}</option>
           {Object.entries(SOURCE_LABEL).map(([k, v]) => (
             <option key={k} value={k}>
@@ -87,7 +134,12 @@ export function WordBank({ version, onOpen, onAdd, onChanged }: { version: numbe
             </option>
           ))}
         </Select>
-        <Select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="w-44" aria-label={L('Sort', 'Sắp xếp')}>
+        <Select
+          value={sort}
+          onChange={(e) => setSort(e.target.value as Sort)}
+          className="w-44"
+          aria-label={L('Sort', 'Sắp xếp')}
+        >
           {SORTS.map((s) => (
             <option key={s.value} value={s.value}>
               {tx(s.label)}
@@ -118,7 +170,11 @@ export function WordBank({ version, onOpen, onAdd, onChanged }: { version: numbe
       ) : !items.length ? (
         <EmptyState
           icon={<Library />}
-          title={filtered ? L('No words match these filters', 'Không có từ phù hợp bộ lọc') : L('Your word bank is empty', 'Kho từ đang trống')}
+          title={
+            filtered
+              ? L('No words match these filters', 'Không có từ phù hợp bộ lọc')
+              : L('Your word bank is empty', 'Kho từ đang trống')
+          }
           body={
             filtered
               ? L('Try another search or clear the filters.', 'Thử từ khóa khác hoặc bỏ bộ lọc.')
@@ -183,7 +239,11 @@ function DueLabel({ v }: { v: VocabItem }) {
   const fmt = useFormat()
   if (v.review.state === 'new') return <Badge tone="info">{L('New', 'Mới')}</Badge>
   const due = new Date(v.review.dueAt).getTime() <= Date.now()
-  return due ? <Badge tone="warning">{L('Due', 'Đến hạn')}</Badge> : <span className="text-xs text-faint">{fmt.relative(v.review.dueAt).replace(/^-/, '')}</span>
+  return due ? (
+    <Badge tone="warning">{L('Due', 'Đến hạn')}</Badge>
+  ) : (
+    <span className="text-xs text-faint">{fmt.relative(v.review.dueAt).replace(/^-/, '')}</span>
+  )
 }
 
 function WordTile({ v, onOpen, onFav }: { v: VocabItem; onOpen: () => void; onFav: () => void }) {

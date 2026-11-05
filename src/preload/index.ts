@@ -9,7 +9,10 @@ const events = new Set<string>(PUSH_EVENTS)
 const bridge: LqBridge = {
   invoke(channel, payload) {
     if (!allowed.has(channel)) {
-      return Promise.resolve({ ok: false, error: { code: 'unknown_channel', message: `Channel ${channel} is not allowed` } })
+      return Promise.resolve({
+        ok: false,
+        error: { code: 'unknown_channel', message: `Channel ${channel} is not allowed` },
+      })
     }
     return ipcRenderer.invoke('lq:invoke', channel, payload)
   },
