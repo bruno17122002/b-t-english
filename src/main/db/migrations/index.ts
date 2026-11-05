@@ -3,6 +3,7 @@ import type { AppDatabase } from '../database'
 import { writeFileAtomic } from '../database'
 import { V1_INITIAL } from './v1_initial'
 import { V2_GENERATED_CONTENT_INDEX } from './v2_indexes'
+import { V3_SRS_LEARNING_STEPS } from './v3_srs_learning_steps'
 
 export interface Migration {
   version: number
@@ -14,6 +15,7 @@ export interface Migration {
 export const MIGRATIONS: Migration[] = [
   { version: 1, name: 'initial schema', sql: V1_INITIAL },
   { version: 2, name: 'search and history indexes', sql: V2_GENERATED_CONTENT_INDEX },
+  { version: 3, name: 'srs learning steps and module migrations', sql: V3_SRS_LEARNING_STEPS },
 ]
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1]?.version ?? 0
@@ -52,4 +54,30 @@ export function runMigrations(db: AppDatabase, migrations: Migration[] = MIGRATI
   }
   db.flush()
   return { from, to: pending.length ? (pending[pending.length - 1] as Migration).version : from }
+}
+
+/**
+ * Applies a feature module's own migrations (namespaced by module id). Must run after the kernel
+ * migrations, which create the bookkeeping table.
+ */
+export function runModuleMigrations(db: AppDatabase, moduleId: string, migrations: Migration[]): number {
+  const applied = new Set(
+    db.all<{ version: number }>('SELECT version FROM module_migrations WHERE module = ?', [moduleId]).map((r) => r.version),
+  )
+  let count = 0
+  for (const m of [...migrations].sort((a, b) => a.version - b.version)) {
+    if (applied.has(m.version)) continue
+    db.transaction(() => {
+      db.exec(m.sql)
+      db.run('INSERT INTO module_migrations(module, version, name, applied_at) VALUES (?, ?, ?, ?)', [
+        moduleId,
+        m.version,
+        m.name,
+        new Date().toISOString(),
+      ])
+    })
+    count++
+  }
+  if (count) db.flush()
+  return count
 }

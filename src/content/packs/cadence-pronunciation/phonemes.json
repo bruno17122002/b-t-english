@@ -1,0 +1,1453 @@
+[
+  {
+    "symbol": "æ",
+    "ipa": "æ",
+    "label": "Short A",
+    "category": "short_vowels",
+    "difficulty": "intermediate",
+    "keywords": [
+      "trap",
+      "bath"
+    ],
+    "exampleWords": [
+      "cat",
+      "bat",
+      "hand",
+      "trap",
+      "black",
+      "glass"
+    ],
+    "spellingPatterns": [
+      "a"
+    ],
+    "articulation": "Low front vowel. Open your mouth wide, spread your lips slightly, and keep the tongue low and pushed forward.",
+    "learnerTip": "Think of the sound a surprised person makes — short, open, forward. Longer than /ɛ/, wider than /ɑ/.",
+    "commonErrors": [
+      "Raised too high, sounding like /ɛ/ (especially before nasals)",
+      "Replaced with /ɑː/ by Spanish or Portuguese speakers",
+      "Pin-pen merger: sounds like /ɪ/ before nasals in Southern American English"
+    ],
+    "minimalPairs": [
+      [
+        "cat",
+        "cut"
+      ],
+      [
+        "bat",
+        "bit"
+      ],
+      [
+        "man",
+        "men"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Tiếng Việt không có âm này; người Việt hay đọc thành \"e\" hoặc \"a\". Mở miệng rộng như \"a\" nhưng đẩy lưỡi ra trước như \"e\": cat, man, bad."
+  },
+  {
+    "symbol": "ɛ",
+    "ipa": "ɛ",
+    "label": "Short E",
+    "category": "short_vowels",
+    "difficulty": "beginner",
+    "keywords": [
+      "dress",
+      "bed"
+    ],
+    "exampleWords": [
+      "bed",
+      "pen",
+      "red",
+      "let",
+      "best",
+      "friend"
+    ],
+    "spellingPatterns": [
+      "e",
+      "ea (dead)",
+      "a (any)",
+      "ie (friend)"
+    ],
+    "articulation": "Mid front vowel. Mouth half-open, lips slightly spread, tongue mid-height and forward.",
+    "learnerTip": "Relax your jaw halfway between /iː/ and /æ/. Think of 'eh?' — a questioning sound.",
+    "commonErrors": [
+      "Confused with /æ/ — /ɛ/ is higher and less open",
+      "Confused with /eɪ/ — keep it short and pure, no glide",
+      "Replaced with /e/ (tenser version) by European speakers"
+    ],
+    "minimalPairs": [
+      [
+        "bed",
+        "bad"
+      ],
+      [
+        "pen",
+        "pan"
+      ],
+      [
+        "red",
+        "rid"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần với \"e\" trong \"mẹ\". Giữ âm ngắn, không lướt thành \"ây\": bed khác bayed."
+  },
+  {
+    "symbol": "ɪ",
+    "ipa": "ɪ",
+    "label": "Short I",
+    "category": "short_vowels",
+    "difficulty": "beginner",
+    "keywords": [
+      "kit",
+      "sit"
+    ],
+    "exampleWords": [
+      "sit",
+      "bit",
+      "fish",
+      "thing",
+      "busy",
+      "build"
+    ],
+    "spellingPatterns": [
+      "i",
+      "y (gym)",
+      "e (pretty)",
+      "ui (build)",
+      "o (women)"
+    ],
+    "articulation": "High front lax vowel. Tongue near the top of the mouth but relaxed, slightly lower than /iː/. Lips spread but loose.",
+    "learnerTip": "Say /iː/ then relax and lower your tongue slightly. The sound is shorter and less tense.",
+    "commonErrors": [
+      "Replaced with /iː/ — keep it short and lax, not tense",
+      "Confused with /ɛ/ by French or Spanish speakers",
+      "Merged with /iː/ in some dialects (e.g. feel/fill)"
+    ],
+    "minimalPairs": [
+      [
+        "sit",
+        "seat"
+      ],
+      [
+        "bit",
+        "beat"
+      ],
+      [
+        "bin",
+        "bean"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Ngắn và lỏng hơn \"i\" tiếng Việt. Đừng kéo dài thành /iː/, nếu không ship sẽ nghe như sheep."
+  },
+  {
+    "symbol": "ɒ",
+    "ipa": "ɒ",
+    "label": "Short O (RP)",
+    "category": "short_vowels",
+    "difficulty": "intermediate",
+    "keywords": [
+      "lot",
+      "hot"
+    ],
+    "exampleWords": [
+      "hot",
+      "dot",
+      "top",
+      "dog",
+      "stop",
+      "rock"
+    ],
+    "spellingPatterns": [
+      "o",
+      "a (was)",
+      "ou (cough)"
+    ],
+    "articulation": "Open back rounded vowel (RP). Mouth open, tongue low and back, lips loosely rounded.",
+    "learnerTip": "In GA this vowel merges with /ɑː/ (the lot-palm merger). In RP it is short and rounded. Think of a British 'pot'.",
+    "commonErrors": [
+      "GA speakers may not distinguish this from /ɑː/",
+      "Over-rounded by learners aiming for RP"
+    ],
+    "minimalPairs": [
+      [
+        "hot",
+        "hat"
+      ],
+      [
+        "dot",
+        "dart"
+      ]
+    ],
+    "dialectNote": "In General American, /ɒ/ and /ɑː/ are merged. This phoneme is primarily an RP distinction.",
+    "viNote": "Gần \"o\" trong \"có\" nhưng ngắn hơn. Giọng Mỹ thường mở rộng thành /ɑ/: hot, stop."
+  },
+  {
+    "symbol": "ʌ",
+    "ipa": "ʌ",
+    "label": "Short U",
+    "category": "short_vowels",
+    "difficulty": "intermediate",
+    "keywords": [
+      "strut",
+      "cup"
+    ],
+    "exampleWords": [
+      "cup",
+      "bus",
+      "love",
+      "blood",
+      "young",
+      "enough"
+    ],
+    "spellingPatterns": [
+      "u",
+      "o (love)",
+      "ou (young)",
+      "oo (blood)"
+    ],
+    "articulation": "Open-mid central to back vowel. Mouth half-open, tongue central, no lip rounding.",
+    "learnerTip": "Relax everything. Neutral, unstressed sound in the middle of the mouth. Like a short grunt.",
+    "commonErrors": [
+      "Confused with /ʊ/ — /ʌ/ has no lip rounding",
+      "Replaced with /ɑː/ or /a/ by European speakers",
+      "Not distinguished from /ʊ/ in some dialects (foot-strut merger)"
+    ],
+    "minimalPairs": [
+      [
+        "cup",
+        "cap"
+      ],
+      [
+        "bus",
+        "boss"
+      ],
+      [
+        "cut",
+        "cot"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"â\" hoặc \"ơ\" ngắn (cup gần \"cấp\"). Môi thả lỏng, không tròn môi."
+  },
+  {
+    "symbol": "ʊ",
+    "ipa": "ʊ",
+    "label": "Short OO",
+    "category": "short_vowels",
+    "difficulty": "intermediate",
+    "keywords": [
+      "foot",
+      "book"
+    ],
+    "exampleWords": [
+      "book",
+      "put",
+      "good",
+      "could",
+      "wolf",
+      "full"
+    ],
+    "spellingPatterns": [
+      "oo (book)",
+      "u (put)",
+      "ou (could)",
+      "o (wolf)"
+    ],
+    "articulation": "High back lax rounded vowel. Tongue high and back, lips loosely rounded. Less tense than /uː/.",
+    "learnerTip": "Like /uː/ but shorter and with less lip rounding. Say 'oo' then relax your lips and tongue.",
+    "commonErrors": [
+      "Replaced with /uː/ — keep it short and lax",
+      "Confused with /ʌ/ — /ʊ/ has lip rounding",
+      "Not distinguished from /uː/ in some dialects (pool-pull merger)"
+    ],
+    "minimalPairs": [
+      [
+        "book",
+        "boot"
+      ],
+      [
+        "good",
+        "food"
+      ],
+      [
+        "full",
+        "fool"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"u\" nhưng ngắn và lỏng hơn, môi tròn nhẹ. Đừng kéo dài: full khác fool."
+  },
+  {
+    "symbol": "ə",
+    "ipa": "ə",
+    "label": "Schwa",
+    "category": "schwa",
+    "difficulty": "advanced",
+    "keywords": [
+      "comma",
+      "about"
+    ],
+    "exampleWords": [
+      "about",
+      "ago",
+      "sofa",
+      "suppose",
+      "the",
+      "a"
+    ],
+    "spellingPatterns": [
+      "a (about)",
+      "e (the)",
+      "o (suppose)",
+      "u (support)",
+      "er (butter)",
+      "or (doctor)"
+    ],
+    "articulation": "Mid central neutral vowel. Fully relaxed mouth, tongue in the center, no lip rounding. The most common English sound.",
+    "learnerTip": "The schwa only appears in unstressed syllables. Never stress a schwa — it should be quick and throwaway.",
+    "commonErrors": [
+      "Over-pronouncing it as a full vowel (common in speakers whose L1 lacks schwa reduction)",
+      "Spelling-based pronunciation: saying 'sup-PORT' with a clear /o/ instead of schwa",
+      "Missing it in consonant clusters"
+    ],
+    "minimalPairs": [
+      [
+        "about (ə)",
+        "a boot (eɪ)"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Âm yếu nhất tiếng Anh, gần \"ơ\" rất nhẹ và ngắn. Người Việt hay đọc rõ mọi âm tiết; hãy đọc lướt âm tiết không nhấn: about, banana."
+  },
+  {
+    "symbol": "iː",
+    "ipa": "iː",
+    "label": "Long E",
+    "category": "long_vowels",
+    "difficulty": "beginner",
+    "keywords": [
+      "fleece",
+      "meet"
+    ],
+    "exampleWords": [
+      "feet",
+      "keep",
+      "read",
+      "sea",
+      "machine",
+      "people"
+    ],
+    "spellingPatterns": [
+      "ee (feet)",
+      "ea (read)",
+      "e (be)",
+      "ie (believe)",
+      "ei (receive)",
+      "i (machine)"
+    ],
+    "articulation": "Close front tense vowel. Tongue high and forward, lips spread into a smile position. Hold it longer than /ɪ/.",
+    "learnerTip": "Spread your lips like a big smile and hold the sound. Your tongue should feel near the roof of your mouth.",
+    "commonErrors": [
+      "Shortened to /ɪ/ — hold the length and tension",
+      "Not distinguished from /ɪ/ in some dialects"
+    ],
+    "minimalPairs": [
+      [
+        "feet",
+        "fit"
+      ],
+      [
+        "seat",
+        "sit"
+      ],
+      [
+        "bean",
+        "bin"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Giống \"i\" tiếng Việt nhưng kéo dài, môi hơi bè. Phân biệt độ dài: sheep /iː/ khác ship /ɪ/."
+  },
+  {
+    "symbol": "uː",
+    "ipa": "uː",
+    "label": "Long OO",
+    "category": "long_vowels",
+    "difficulty": "beginner",
+    "keywords": [
+      "goose",
+      "food"
+    ],
+    "exampleWords": [
+      "food",
+      "cool",
+      "moon",
+      "true",
+      "blue",
+      "through"
+    ],
+    "spellingPatterns": [
+      "oo (food)",
+      "u (true)",
+      "ue (blue)",
+      "ou (through)",
+      "o (do)"
+    ],
+    "articulation": "Close back tense rounded vowel. Tongue high and back, lips strongly rounded and protruded.",
+    "learnerTip": "Round your lips into a tight circle as if kissing. The sound is long and tense.",
+    "commonErrors": [
+      "Shortened to /ʊ/ — hold the length and rounding",
+      "Under-rounded by speakers whose L1 lacks rounded vowels"
+    ],
+    "minimalPairs": [
+      [
+        "food",
+        "foot"
+      ],
+      [
+        "pool",
+        "pull"
+      ],
+      [
+        "fool",
+        "full"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Giống \"u\" tiếng Việt nhưng dài hơn, môi tròn. food /uː/ khác foot /ʊ/."
+  },
+  {
+    "symbol": "ɑː",
+    "ipa": "ɑː",
+    "label": "Long AH",
+    "category": "long_vowels",
+    "difficulty": "beginner",
+    "keywords": [
+      "palm",
+      "start"
+    ],
+    "exampleWords": [
+      "card",
+      "dark",
+      "park",
+      "heart",
+      "father",
+      "calm"
+    ],
+    "spellingPatterns": [
+      "ar (card)",
+      "a (calm)",
+      "ear (heart)",
+      "al (calm)"
+    ],
+    "articulation": "Open back unrounded vowel. Mouth wide open, tongue low and back, no lip rounding. Like saying 'ah' at the doctor.",
+    "learnerTip": "Drop your jaw completely and say 'ah'. Keep it long and open, no movement of tongue or lips.",
+    "commonErrors": [
+      "Shortened by non-rhotic speakers adding /r/ where none exists",
+      "Confused with /æ/ — /ɑː/ is further back and longer"
+    ],
+    "minimalPairs": [
+      [
+        "cart",
+        "cat"
+      ],
+      [
+        "park",
+        "pack"
+      ],
+      [
+        "barn",
+        "ban"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Giống \"a\" tiếng Việt nhưng sâu và dài hơn, miệng mở rộng: father, car."
+  },
+  {
+    "symbol": "ɔː",
+    "ipa": "ɔː",
+    "label": "AW Sound",
+    "category": "long_vowels",
+    "difficulty": "intermediate",
+    "keywords": [
+      "thought",
+      "law"
+    ],
+    "exampleWords": [
+      "law",
+      "more",
+      "walk",
+      "water",
+      "taught",
+      "caught"
+    ],
+    "spellingPatterns": [
+      "aw (law)",
+      "or (more)",
+      "al (walk)",
+      "au (taught)",
+      "ough (thought)",
+      "aught (caught)"
+    ],
+    "articulation": "Open-mid back rounded vowel. Mouth open, tongue mid-back, lips loosely rounded.",
+    "learnerTip": "Round your lips loosely and push the tongue back slightly. Similar to /ɒ/ but longer and more rounded.",
+    "commonErrors": [
+      "Merged with /ɑː/ in GA (cot-caught merger) — many American speakers don't distinguish these",
+      "Under-rounded by non-native speakers"
+    ],
+    "minimalPairs": [
+      [
+        "law",
+        "la"
+      ],
+      [
+        "caught",
+        "cot"
+      ],
+      [
+        "thought",
+        "that"
+      ]
+    ],
+    "dialectNote": "In many American dialects, /ɔː/ and /ɑː/ have merged (cot-caught merger).",
+    "viNote": "Gần \"o\" tiếng Việt kéo dài, môi tròn: law, saw, talk."
+  },
+  {
+    "symbol": "ɜː",
+    "ipa": "ɜː",
+    "label": "ER Sound",
+    "category": "long_vowels",
+    "difficulty": "advanced",
+    "keywords": [
+      "nurse",
+      "bird"
+    ],
+    "exampleWords": [
+      "bird",
+      "turn",
+      "word",
+      "learn",
+      "earth",
+      "work"
+    ],
+    "spellingPatterns": [
+      "ir (bird)",
+      "ur (turn)",
+      "er (her)",
+      "or (word)",
+      "ear (learn)",
+      "ar (work)"
+    ],
+    "articulation": "Open-mid central unrounded vowel. Tongue in mid-central position. In GA it is r-colored (retroflex).",
+    "learnerTip": "In American English, curl the tip of your tongue back slightly while making this sound — it's an r-colored vowel.",
+    "commonErrors": [
+      "Missing the r-color in GA — it should sound like 'er' not 'uh'",
+      "Adding too much r-color in RP, where /ɜː/ is non-rhotic",
+      "Confused with /ʌ/ — /ɜː/ is longer and often r-colored"
+    ],
+    "minimalPairs": [
+      [
+        "bird",
+        "bed"
+      ],
+      [
+        "turn",
+        "tan"
+      ],
+      [
+        "word",
+        "wad"
+      ]
+    ],
+    "dialectNote": "In RP (British English) the final r is not pronounced — 'bird' sounds like /bɜːd/. In GA it is rhotic — /bɜːrd/.",
+    "viNote": "Gần \"ơ\" kéo dài (bird, work). Giọng Mỹ có thêm âm r cong lưỡi ở cuối."
+  },
+  {
+    "symbol": "eɪ",
+    "ipa": "eɪ",
+    "label": "Long A",
+    "category": "diphthongs",
+    "difficulty": "beginner",
+    "keywords": [
+      "face",
+      "day"
+    ],
+    "exampleWords": [
+      "face",
+      "day",
+      "rain",
+      "lane",
+      "cake",
+      "say"
+    ],
+    "spellingPatterns": [
+      "a_e (face)",
+      "ay (day)",
+      "ai (rain)",
+      "ey (they)",
+      "ei (vein)",
+      "a (table)"
+    ],
+    "articulation": "Starting position: mid front /e/. Glide upward to /ɪ/. The tongue rises and the jaw closes slightly.",
+    "learnerTip": "Start with a relaxed /e/ sound then let your tongue glide up. Feel the two positions — don't stop in the middle.",
+    "commonErrors": [
+      "Shortened to a pure /e/ without the glide (common in Spanish/Italian speakers)",
+      "Over-gliding so it sounds like 'ay-ee'"
+    ],
+    "minimalPairs": [
+      [
+        "face",
+        "fess"
+      ],
+      [
+        "lake",
+        "lack"
+      ],
+      [
+        "late",
+        "let"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"ây\" (day gần \"đây\"). Phải lướt đủ sang /ɪ/, đừng đọc thành \"e\" đơn."
+  },
+  {
+    "symbol": "aɪ",
+    "ipa": "aɪ",
+    "label": "Long I",
+    "category": "diphthongs",
+    "difficulty": "beginner",
+    "keywords": [
+      "price",
+      "my"
+    ],
+    "exampleWords": [
+      "night",
+      "right",
+      "pie",
+      "buy",
+      "rice",
+      "fire"
+    ],
+    "spellingPatterns": [
+      "i_e (rice)",
+      "igh (night)",
+      "ie (pie)",
+      "y (my)",
+      "i (find)",
+      "uy (buy)"
+    ],
+    "articulation": "Starting position: open /a/ (or /ɑ/). Glide up to /ɪ/. Jaw closes, tongue rises.",
+    "learnerTip": "Start with an open mouth /ah/, then close and raise your tongue toward /ee/. It's a big movement.",
+    "commonErrors": [
+      "Starting too high — begin with a genuinely open mouth",
+      "Monophthongization: reduced to just /aː/ in some Southern American dialects"
+    ],
+    "minimalPairs": [
+      [
+        "buy",
+        "bay"
+      ],
+      [
+        "night",
+        "net"
+      ],
+      [
+        "ride",
+        "red"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"ai\" tiếng Việt (my gần \"mai\"). Nhớ đọc rõ phụ âm cuối phía sau: time, nice."
+  },
+  {
+    "symbol": "ɔɪ",
+    "ipa": "ɔɪ",
+    "label": "OY Sound",
+    "category": "diphthongs",
+    "difficulty": "beginner",
+    "keywords": [
+      "choice",
+      "boy"
+    ],
+    "exampleWords": [
+      "boy",
+      "coin",
+      "voice",
+      "join",
+      "toy",
+      "loyal"
+    ],
+    "spellingPatterns": [
+      "oy (boy)",
+      "oi (coin)"
+    ],
+    "articulation": "Starting position: /ɔː/ (back rounded). Glide forward and up to /ɪ/. Lips start rounded then spread.",
+    "learnerTip": "Start with rounded lips like /ɔː/, then glide your tongue forward and up. Feel the rounding release.",
+    "commonErrors": [
+      "Under-rounding the start position",
+      "Not completing the glide to /ɪ/"
+    ],
+    "minimalPairs": [
+      [
+        "boy",
+        "bay"
+      ],
+      [
+        "coin",
+        "can"
+      ],
+      [
+        "voice",
+        "vase"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"oi\" tiếng Việt (boy gần \"bói\"). Lướt nhanh từ \"o\" sang \"i\"."
+  },
+  {
+    "symbol": "aʊ",
+    "ipa": "aʊ",
+    "label": "OW Sound",
+    "category": "diphthongs",
+    "difficulty": "intermediate",
+    "keywords": [
+      "mouth",
+      "now"
+    ],
+    "exampleWords": [
+      "mouth",
+      "town",
+      "down",
+      "about",
+      "loud",
+      "house"
+    ],
+    "spellingPatterns": [
+      "ou (mouth)",
+      "ow (town)",
+      "ough (plough)"
+    ],
+    "articulation": "Starting position: open /a/. Glide back and up to /ʊ/. Lips start spread and become rounded.",
+    "learnerTip": "Begin open and spread, then round your lips as the tongue moves back and up. Feel the lip movement.",
+    "commonErrors": [
+      "Starting too far back like /ɔ/",
+      "Not completing the glide — the oo ending is important"
+    ],
+    "minimalPairs": [
+      [
+        "town",
+        "tone"
+      ],
+      [
+        "down",
+        "dawn"
+      ],
+      [
+        "mouth",
+        "math"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"ao\" tiếng Việt (now gần \"nao\"), kết thúc bằng môi tròn."
+  },
+  {
+    "symbol": "oʊ",
+    "ipa": "oʊ",
+    "label": "Long O",
+    "category": "diphthongs",
+    "difficulty": "beginner",
+    "keywords": [
+      "goat",
+      "home"
+    ],
+    "exampleWords": [
+      "home",
+      "note",
+      "road",
+      "load",
+      "vote",
+      "scroll"
+    ],
+    "spellingPatterns": [
+      "o_e (home)",
+      "oa (road)",
+      "ow (snow)",
+      "o (go)",
+      "oe (toe)"
+    ],
+    "articulation": "Starting position: mid back /o/. Glide up and back to /ʊ/. Lips begin slightly rounded and increase.",
+    "learnerTip": "Begin with rounded lips and let them tighten as the sound glides. Think 'oh-oo' in one smooth motion.",
+    "commonErrors": [
+      "Realized as pure /oː/ without the glide (many European speakers)",
+      "Starting position too open like /ɑ/"
+    ],
+    "minimalPairs": [
+      [
+        "note",
+        "not"
+      ],
+      [
+        "road",
+        "rod"
+      ],
+      [
+        "coat",
+        "caught"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"âu\" hoặc \"ô\" lướt sang \"u\" (go). Đừng đọc thành \"ô\" đơn. Giọng Anh-Anh là /əʊ/."
+  },
+  {
+    "symbol": "ɪə",
+    "ipa": "ɪə",
+    "label": "EAR Sound",
+    "category": "diphthongs",
+    "difficulty": "advanced",
+    "keywords": [
+      "near",
+      "here"
+    ],
+    "exampleWords": [
+      "near",
+      "here",
+      "ear",
+      "fear",
+      "real",
+      "beard"
+    ],
+    "spellingPatterns": [
+      "ear (near)",
+      "eer (beer)",
+      "ere (here)",
+      "ia (idea)",
+      "ier (tier)"
+    ],
+    "articulation": "Starting position: /ɪ/ (high front). Glide to /ə/ (center). Tongue relaxes and moves back.",
+    "learnerTip": "Start with /ɪ/ and let your tongue relax down and back to schwa. It should flow naturally.",
+    "commonErrors": [
+      "GA speakers often produce this as /ɪr/ (rhotic): 'near' = /nɪr/",
+      "Over-separating into two distinct vowels"
+    ],
+    "minimalPairs": [
+      [
+        "near",
+        "knee"
+      ],
+      [
+        "hear",
+        "hay"
+      ],
+      [
+        "fear",
+        "fair"
+      ]
+    ],
+    "dialectNote": "In GA this is typically /ɪr/ (rhotic). /ɪə/ is an RP distinction.",
+    "viNote": "Gần \"ia\" tiếng Việt (here gần \"hia\"), chủ yếu trong giọng Anh-Anh; giọng Mỹ đọc /ɪr/."
+  },
+  {
+    "symbol": "eə",
+    "ipa": "eə",
+    "label": "AIR Sound",
+    "category": "diphthongs",
+    "difficulty": "advanced",
+    "keywords": [
+      "square",
+      "air"
+    ],
+    "exampleWords": [
+      "air",
+      "care",
+      "bear",
+      "where",
+      "there",
+      "hair"
+    ],
+    "spellingPatterns": [
+      "air (hair)",
+      "are (care)",
+      "ear (bear)",
+      "ere (where)",
+      "er (there)"
+    ],
+    "articulation": "Starting position: /e/ (mid front). Glide to /ə/. Tongue relaxes toward center.",
+    "learnerTip": "Begin at /e/ then let everything relax. The movement is subtle — don't over-exaggerate.",
+    "commonErrors": [
+      "GA speakers produce this as /ɛr/ — 'care' = /kɛr/",
+      "Confused with /eɪ/ by forgetting the schwa glide"
+    ],
+    "minimalPairs": [
+      [
+        "hair",
+        "hay"
+      ],
+      [
+        "care",
+        "key"
+      ],
+      [
+        "bear",
+        "bay"
+      ]
+    ],
+    "dialectNote": "In GA this merges with /ɛr/ (rhotic). /eə/ is primarily an RP distinction.",
+    "viNote": "Gần \"e\" lướt sang \"ơ\" (hair, care), chủ yếu trong giọng Anh-Anh; giọng Mỹ đọc /ɛr/."
+  },
+  {
+    "symbol": "θ",
+    "ipa": "θ",
+    "label": "TH (Voiceless)",
+    "category": "th_sounds",
+    "difficulty": "advanced",
+    "keywords": [
+      "think",
+      "thin"
+    ],
+    "exampleWords": [
+      "think",
+      "three",
+      "thank",
+      "thin",
+      "throw",
+      "mouth",
+      "math",
+      "both"
+    ],
+    "spellingPatterns": [
+      "th (most words)"
+    ],
+    "articulation": "Voiceless dental fricative. Place the tip of your tongue lightly against or between your upper and lower teeth. Push air through — do NOT vibrate your vocal cords.",
+    "learnerTip": "Stick your tongue tip slightly between your teeth and blow air. Feel that it is silent — no buzz from your throat.",
+    "commonErrors": [
+      "Replaced with /s/ (common in Japanese, Spanish, Asian language speakers): 'think' → 'sink'",
+      "Replaced with /t/ (common in many L1s): 'think' → 'tink'",
+      "Voiced incorrectly as /ð/: 'thin' → 'then'"
+    ],
+    "minimalPairs": [
+      [
+        "think",
+        "sink"
+      ],
+      [
+        "three",
+        "tree"
+      ],
+      [
+        "thank",
+        "tank"
+      ],
+      [
+        "thin",
+        "tin"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Tiếng Việt không có. Người Việt hay thay bằng \"th\" bật hơi, \"t\" hoặc \"s\". Đặt đầu lưỡi giữa hai hàm răng rồi thổi hơi, không rung dây thanh: think, three."
+  },
+  {
+    "symbol": "ð",
+    "ipa": "ð",
+    "label": "TH (Voiced)",
+    "category": "th_sounds",
+    "difficulty": "advanced",
+    "keywords": [
+      "the",
+      "this"
+    ],
+    "exampleWords": [
+      "the",
+      "this",
+      "that",
+      "them",
+      "those",
+      "breathe",
+      "father",
+      "smooth"
+    ],
+    "spellingPatterns": [
+      "th (function words and some content words)"
+    ],
+    "articulation": "Voiced dental fricative. Same tongue position as /θ/ but add vocal cord vibration — you should feel a buzz.",
+    "learnerTip": "Same as /θ/ but hum while you do it. Place your fingers on your throat — you should feel vibration.",
+    "commonErrors": [
+      "Replaced with /d/ (very common): 'the' → 'de'",
+      "Replaced with /z/ (common in European speakers): 'this' → 'zis'",
+      "Devoiced to /θ/: 'breathe' → 'breeth'"
+    ],
+    "minimalPairs": [
+      [
+        "this",
+        "dis"
+      ],
+      [
+        "those",
+        "doze"
+      ],
+      [
+        "breathe",
+        "breed"
+      ],
+      [
+        "then",
+        "den"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Tiếng Việt không có; hay bị đọc thành \"đ\", \"d\" hoặc /z/. Lưỡi giữa hai hàm răng và rung dây thanh: this, the, mother."
+  },
+  {
+    "symbol": "ʃ",
+    "ipa": "ʃ",
+    "label": "SH Sound",
+    "category": "fricatives",
+    "difficulty": "beginner",
+    "keywords": [
+      "ship",
+      "shoe"
+    ],
+    "exampleWords": [
+      "ship",
+      "shoe",
+      "fish",
+      "wish",
+      "machine",
+      "sugar",
+      "nation"
+    ],
+    "spellingPatterns": [
+      "sh (ship)",
+      "ti (nation)",
+      "si (session)",
+      "ci (special)",
+      "ch (machine)"
+    ],
+    "articulation": "Voiceless postalveolar fricative. Tongue behind the alveolar ridge (not touching), lips slightly rounded. Air rushes through a wider opening than /s/.",
+    "learnerTip": "Like /s/ but pull your tongue back slightly and round your lips. It's a hushing sound — 'shh!'",
+    "commonErrors": [
+      "Confused with /s/ — /ʃ/ is further back and has lip rounding",
+      "Confused with /tʃ/ — /ʃ/ is continuous, no stop"
+    ],
+    "minimalPairs": [
+      [
+        "ship",
+        "sip"
+      ],
+      [
+        "shoe",
+        "sue"
+      ],
+      [
+        "fish",
+        "fist"
+      ],
+      [
+        "wish",
+        "wits"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"s\" cong lưỡi khi đọc chuẩn (như \"sẽ\") nhưng môi tròn và đưa ra trước: she, fish. Đừng đọc thành /s/: she khác see."
+  },
+  {
+    "symbol": "ʒ",
+    "ipa": "ʒ",
+    "label": "ZH Sound",
+    "category": "fricatives",
+    "difficulty": "advanced",
+    "keywords": [
+      "measure",
+      "vision"
+    ],
+    "exampleWords": [
+      "measure",
+      "vision",
+      "pleasure",
+      "usual",
+      "genre",
+      "beige"
+    ],
+    "spellingPatterns": [
+      "si (vision)",
+      "su (measure)",
+      "ge (beige)",
+      "j (genre)"
+    ],
+    "articulation": "Voiced postalveolar fricative. Same as /ʃ/ but with vocal cord vibration.",
+    "learnerTip": "Say /ʃ/ then add voice from your throat. Feel the buzz. It sounds like the middle of 'measure'.",
+    "commonErrors": [
+      "Devoiced to /ʃ/",
+      "Replaced with /dʒ/ by adding a stop at the start"
+    ],
+    "minimalPairs": [
+      [
+        "measure",
+        "mesher"
+      ],
+      [
+        "leisure",
+        "leash-er"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Không có trong tiếng Việt. Là /ʃ/ có rung dây thanh: vision, measure. Người Việt hay thay bằng /z/ hoặc /ʃ/."
+  },
+  {
+    "symbol": "tʃ",
+    "ipa": "tʃ",
+    "label": "CH Sound",
+    "category": "affricates",
+    "difficulty": "intermediate",
+    "keywords": [
+      "church",
+      "cheese"
+    ],
+    "exampleWords": [
+      "chip",
+      "choose",
+      "cheese",
+      "watch",
+      "which",
+      "catch",
+      "beach"
+    ],
+    "spellingPatterns": [
+      "ch (chip)",
+      "tch (watch)",
+      "t (nature)",
+      "c (cello)"
+    ],
+    "articulation": "Voiceless postalveolar affricate. Start with the tongue against the ridge like /t/, then release into /ʃ/. It is one sound, not two.",
+    "learnerTip": "Press your tongue to the ridge, build pressure, then release into a hush. 'ch' in 'cheese' is one quick motion.",
+    "commonErrors": [
+      "Replaced with /ʃ/ alone (missing the stop onset)",
+      "Replaced with /ts/ (common in Japanese speakers)"
+    ],
+    "minimalPairs": [
+      [
+        "cheap",
+        "sheep"
+      ],
+      [
+        "chin",
+        "shin"
+      ],
+      [
+        "cheese",
+        "she's"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Gần \"ch\" tiếng Việt nhưng môi tròn và bật hơi mạnh hơn: chair, watch. Ở cuối từ phải đọc rõ, không nuốt âm."
+  },
+  {
+    "symbol": "dʒ",
+    "ipa": "dʒ",
+    "label": "J Sound",
+    "category": "affricates",
+    "difficulty": "intermediate",
+    "keywords": [
+      "judge",
+      "jump"
+    ],
+    "exampleWords": [
+      "jump",
+      "judge",
+      "bridge",
+      "age",
+      "George",
+      "village"
+    ],
+    "spellingPatterns": [
+      "j (jump)",
+      "ge (age)",
+      "dge (bridge)",
+      "g (George)",
+      "di (soldier)"
+    ],
+    "articulation": "Voiced postalveolar affricate. Same as /tʃ/ but with vocal cord vibration throughout.",
+    "learnerTip": "Like /tʃ/ but add voice. Feel the buzz as you release. 'Jump' starts with the tongue on the ridge.",
+    "commonErrors": [
+      "Devoiced to /tʃ/",
+      "Replaced with /y/ by some speakers (common in German L1): 'jump' → 'yump'"
+    ],
+    "minimalPairs": [
+      [
+        "jump",
+        "chump"
+      ],
+      [
+        "jar",
+        "char"
+      ],
+      [
+        "age",
+        "H"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Không có trong tiếng Việt; hay bị đọc thành \"gi\" hoặc \"ch\". Là /tʃ/ có rung dây thanh: job, age, bridge."
+  },
+  {
+    "symbol": "ŋ",
+    "ipa": "ŋ",
+    "label": "NG Sound",
+    "category": "nasals",
+    "difficulty": "intermediate",
+    "keywords": [
+      "sing",
+      "thing"
+    ],
+    "exampleWords": [
+      "sing",
+      "think",
+      "thank",
+      "spring",
+      "strong",
+      "ring",
+      "long"
+    ],
+    "spellingPatterns": [
+      "ng (sing)",
+      "n before k/g (think, finger)"
+    ],
+    "articulation": "Velar nasal. Tongue back presses against the soft palate (velum). Air flows through the nose. No lip or tongue-tip movement.",
+    "learnerTip": "Say 'ng' like the end of 'sing' — feel the back of your tongue raised and touching the roof. No /g/ at the end in most GA words.",
+    "commonErrors": [
+      "Adding a /g/ at the end: 'sing' → 'sing-g' (hypercorrection)",
+      "Replacing with /n/: 'sing' → 'sin'",
+      "Nasalizing the preceding vowel instead of producing a proper nasal stop"
+    ],
+    "minimalPairs": [
+      [
+        "sing",
+        "sin"
+      ],
+      [
+        "ring",
+        "rin"
+      ],
+      [
+        "bang",
+        "ban"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Giống \"ng\" tiếng Việt. Lưu ý đuôi -ing: không thêm /g/ và không đổi thành /n/: sing, thinking."
+  },
+  {
+    "symbol": "ɹ",
+    "ipa": "ɹ",
+    "label": "R Sound",
+    "category": "approximants",
+    "difficulty": "advanced",
+    "keywords": [
+      "red",
+      "road"
+    ],
+    "exampleWords": [
+      "red",
+      "road",
+      "rain",
+      "rice",
+      "right",
+      "read",
+      "three",
+      "pretty"
+    ],
+    "spellingPatterns": [
+      "r",
+      "rr (carry)",
+      "wr (write)",
+      "rh (rhyme)"
+    ],
+    "articulation": "Voiced alveolar approximant (GA). Curl the tongue tip back (retroflex) or bunch the tongue body up without touching the palate. Lips may be slightly rounded.",
+    "learnerTip": "Never let your tongue touch anything for /ɹ/. Curl the tip back or pull the body up — it floats. This is the most uniquely American sound.",
+    "commonErrors": [
+      "Replaced with a tap /ɾ/ (flap) by Spanish speakers: 'red' → 'ɾed'",
+      "Replaced with a trill /r/ by European speakers",
+      "Replaced with /l/ by some East Asian speakers: 'rice' → 'lice'",
+      "Over-rhotic: too much curl causing a 'pirate' sound"
+    ],
+    "minimalPairs": [
+      [
+        "red",
+        "led"
+      ],
+      [
+        "rice",
+        "lice"
+      ],
+      [
+        "right",
+        "light"
+      ],
+      [
+        "rain",
+        "lane"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Khác \"r\" rung hay \"r\" giọng miền Nam. Rút hoặc cong lưỡi về sau, không chạm vòm miệng, môi hơi tròn: red, right. Người Việt hay nhầm với /z/ hoặc /l/."
+  },
+  {
+    "symbol": "l",
+    "ipa": "l",
+    "label": "L Sound",
+    "category": "approximants",
+    "difficulty": "intermediate",
+    "keywords": [
+      "light",
+      "led"
+    ],
+    "exampleWords": [
+      "light",
+      "led",
+      "lane",
+      "load",
+      "left",
+      "full",
+      "tall"
+    ],
+    "spellingPatterns": [
+      "l",
+      "ll (tall)",
+      "le (table)"
+    ],
+    "articulation": "Voiced alveolar lateral approximant. Tongue tip touches the alveolar ridge (behind upper teeth). Air flows around the sides. In syllable-final position, it is 'dark' /ɫ/ — the tongue body raises at the back.",
+    "learnerTip": "Touch the ridge behind your upper teeth with your tongue tip. The tip stays up. For 'dark L' (final position), push the tongue body back as well.",
+    "commonErrors": [
+      "Replaced with /r/ (especially by East Asian speakers): 'light' → 'right'",
+      "Missing the 'dark L' in final position: 'full' → 'fuh'",
+      "Vocalized dark L: 'full' → 'fouw'"
+    ],
+    "minimalPairs": [
+      [
+        "light",
+        "right"
+      ],
+      [
+        "led",
+        "red"
+      ],
+      [
+        "load",
+        "road"
+      ],
+      [
+        "lane",
+        "rain"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Đầu từ giống \"l\" tiếng Việt. Cuối từ (feel, school) phải đưa đầu lưỡi chạm lợi trên; tiếng Việt không có \"l\" cuối nên người học hay bỏ mất âm này."
+  },
+  {
+    "symbol": "v",
+    "ipa": "v",
+    "label": "V Sound",
+    "category": "fricatives",
+    "difficulty": "intermediate",
+    "keywords": [
+      "vine",
+      "very"
+    ],
+    "exampleWords": [
+      "vine",
+      "very",
+      "vet",
+      "van",
+      "voice",
+      "vote",
+      "live",
+      "love"
+    ],
+    "spellingPatterns": [
+      "v",
+      "f (of)",
+      "ph (Stephen)"
+    ],
+    "articulation": "Voiced labiodental fricative. Upper teeth lightly touch the lower lip. Air flows through creating friction, with vocal cord vibration.",
+    "learnerTip": "Rest your upper teeth on your lower lip and push air through while humming. Feel the lip vibrating.",
+    "commonErrors": [
+      "Replaced with /w/ (common in Japanese and some South Asian speakers): 'very' → 'wery'",
+      "Replaced with /b/ (common in Spanish speakers): 'van' → 'ban'",
+      "Devoiced to /f/: 'live' → 'life'"
+    ],
+    "minimalPairs": [
+      [
+        "vine",
+        "wine"
+      ],
+      [
+        "vet",
+        "wet"
+      ],
+      [
+        "very",
+        "wary"
+      ],
+      [
+        "van",
+        "ban"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Răng trên chạm môi dưới và rung dây thanh: very, voice. Đừng thay bằng /w/, /b/ hoặc \"d\" kiểu giọng miền Nam."
+  },
+  {
+    "symbol": "w",
+    "ipa": "w",
+    "label": "W Sound",
+    "category": "approximants",
+    "difficulty": "beginner",
+    "keywords": [
+      "wine",
+      "walk"
+    ],
+    "exampleWords": [
+      "wine",
+      "wet",
+      "walk",
+      "worry",
+      "well",
+      "away",
+      "swim"
+    ],
+    "spellingPatterns": [
+      "w",
+      "wh (where, in GA)",
+      "u after q (quick)",
+      "o (one)"
+    ],
+    "articulation": "Voiced labial-velar approximant. Lips are tightly rounded and protruded, tongue is raised toward the velum. Then open into the following vowel.",
+    "learnerTip": "Start with very rounded lips like /uː/, then quickly open into the next vowel. It is a glide — no friction.",
+    "commonErrors": [
+      "Confused with /v/: not a fricative — no teeth involved",
+      "Under-rounded so it sounds like a plain vowel"
+    ],
+    "minimalPairs": [
+      [
+        "wine",
+        "vine"
+      ],
+      [
+        "wet",
+        "vet"
+      ],
+      [
+        "walk",
+        "vat"
+      ],
+      [
+        "will",
+        "bill"
+      ]
+    ],
+    "dialectNote": null,
+    "viNote": "Tròn môi rồi mở ra, gần âm đầu của \"oa\"/\"uy\" (we gần \"uy\"). Răng không chạm môi."
+  }
+]

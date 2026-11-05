@@ -7,6 +7,7 @@ const alias = {
   '@shared': resolve(__dirname, 'src/shared'),
   '@core': resolve(__dirname, 'src/core'),
   '@content': resolve(__dirname, 'src/content'),
+  '@modules': resolve(__dirname, 'src/modules'),
 }
 
 export default defineConfig({

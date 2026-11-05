@@ -19,7 +19,8 @@
     "paths": {
       "@shared/*": ["src/shared/*"],
       "@core/*": ["src/core/*"],
-      "@content/*": ["src/content/*"]
+      "@content/*": ["src/content/*"],
+      "@modules/*": ["src/modules/*"]
     }
   }
 }

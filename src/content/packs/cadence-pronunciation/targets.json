@@ -1,0 +1,2966 @@
+{
+  "categories": {
+    "short_vowels": "Short monophthong vowels: /æ ɛ ɪ ɒ ʌ/",
+    "long_vowels": "Long monophthong vowels: /iː ɑː ɔː uː ɜː/",
+    "diphthongs": "Gliding vowels: /eɪ aɪ ɔɪ aʊ oʊ/",
+    "schwa": "Unstressed central vowel /ə/ in connected speech",
+    "th_voiceless": "Voiceless dental fricative /θ/ as in 'think'",
+    "th_voiced": "Voiced dental fricative /ð/ as in 'the'",
+    "v_w_distinction": "Labiodental /v/ vs bilabial /w/ contrast",
+    "r_l_distinction": "Approximants /ɹ/ vs /l/ contrast",
+    "consonant_clusters": "Complex onset or coda consonant sequences",
+    "schwa_unstressed": "Schwa reduction in unstressed syllables of polysyllabic words"
+  },
+  "words": [
+    {
+      "word": "cat",
+      "ipa": "k æ t",
+      "phonemes": [
+        "k",
+        "æ",
+        "t"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "æ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "c",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "bed",
+      "ipa": "b ɛ d",
+      "phonemes": [
+        "b",
+        "ɛ",
+        "d"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɛ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "sit",
+      "ipa": "s ɪ t",
+      "phonemes": [
+        "s",
+        "ɪ",
+        "t"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "s",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "hot",
+      "ipa": "h ɒ t",
+      "phonemes": [
+        "h",
+        "ɒ",
+        "t"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɒ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "h",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "cup",
+      "ipa": "k ʌ p",
+      "phonemes": [
+        "k",
+        "ʌ",
+        "p"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ʌ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "c",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "u",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "p",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "bat",
+      "ipa": "b æ t",
+      "phonemes": [
+        "b",
+        "æ",
+        "t"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "æ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "pen",
+      "ipa": "p ɛ n",
+      "phonemes": [
+        "p",
+        "ɛ",
+        "n"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɛ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "p",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "bit",
+      "ipa": "b ɪ t",
+      "phonemes": [
+        "b",
+        "ɪ",
+        "t"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "dot",
+      "ipa": "d ɒ t",
+      "phonemes": [
+        "d",
+        "ɒ",
+        "t"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɒ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "d",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "bus",
+      "ipa": "b ʌ s",
+      "phonemes": [
+        "b",
+        "ʌ",
+        "s"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ʌ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "u",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "s",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "pat",
+      "ipa": "p æ t",
+      "phonemes": [
+        "p",
+        "æ",
+        "t"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "æ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "P",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "top",
+      "ipa": "t ɒ p",
+      "phonemes": [
+        "t",
+        "ɒ",
+        "p"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɒ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "T",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "p",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "dog",
+      "ipa": "d ɒ ɡ",
+      "phonemes": [
+        "d",
+        "ɒ",
+        "ɡ"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɒ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "D",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "g",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "cap",
+      "ipa": "k æ p",
+      "phonemes": [
+        "k",
+        "æ",
+        "p"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "æ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "C",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "p",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "gap",
+      "ipa": "ɡ æ p",
+      "phonemes": [
+        "ɡ",
+        "æ",
+        "p"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "æ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "G",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "p",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "tin",
+      "ipa": "t ɪ n",
+      "phonemes": [
+        "t",
+        "ɪ",
+        "n"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "T",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "din",
+      "ipa": "d ɪ n",
+      "phonemes": [
+        "d",
+        "ɪ",
+        "n"
+      ],
+      "category": "short_vowels",
+      "focusPhoneme": "ɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "D",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "feet",
+      "ipa": "f iː t",
+      "phonemes": [
+        "f",
+        "iː",
+        "t"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "iː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "f",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ee",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "card",
+      "ipa": "k ɑː d",
+      "phonemes": [
+        "k",
+        "ɑː",
+        "d"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "ɑː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "c",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ar",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "law",
+      "ipa": "l ɔː",
+      "phonemes": [
+        "l",
+        "ɔː"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "ɔː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "l",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "aw",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "word": "food",
+      "ipa": "f uː d",
+      "phonemes": [
+        "f",
+        "uː",
+        "d"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "uː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "f",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "oo",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "bird",
+      "ipa": "b ɜː d",
+      "phonemes": [
+        "b",
+        "ɜː",
+        "d"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "ɜː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ir",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "keep",
+      "ipa": "k iː p",
+      "phonemes": [
+        "k",
+        "iː",
+        "p"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "iː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "k",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ee",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "p",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "dark",
+      "ipa": "d ɑː k",
+      "phonemes": [
+        "d",
+        "ɑː",
+        "k"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "ɑː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "d",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ar",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "k",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "more",
+      "ipa": "m ɔː",
+      "phonemes": [
+        "m",
+        "ɔː"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "ɔː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "m",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ore",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "word": "cool",
+      "ipa": "k uː l",
+      "phonemes": [
+        "k",
+        "uː",
+        "l"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "uː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "c",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "oo",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "l",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "turn",
+      "ipa": "t ɜː n",
+      "phonemes": [
+        "t",
+        "ɜː",
+        "n"
+      ],
+      "category": "long_vowels",
+      "focusPhoneme": "ɜː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "t",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ur",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "face",
+      "ipa": "f eɪ s",
+      "phonemes": [
+        "f",
+        "eɪ",
+        "s"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "eɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "f",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ce",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "fire",
+      "ipa": "f aɪ ɹ",
+      "phonemes": [
+        "f",
+        "aɪ",
+        "ɹ"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "f",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ire",
+          "start": 1,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "boy",
+      "ipa": "b ɔɪ",
+      "phonemes": [
+        "b",
+        "ɔɪ"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "ɔɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "oy",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "word": "mouth",
+      "ipa": "m aʊ θ",
+      "phonemes": [
+        "m",
+        "aʊ",
+        "θ"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aʊ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "m",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ou",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "th",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "note",
+      "ipa": "n oʊ t",
+      "phonemes": [
+        "n",
+        "oʊ",
+        "t"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "oʊ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "n",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "te",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "night",
+      "ipa": "n aɪ t",
+      "phonemes": [
+        "n",
+        "aɪ",
+        "t"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "n",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "igh",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "coin",
+      "ipa": "k ɔɪ n",
+      "phonemes": [
+        "k",
+        "ɔɪ",
+        "n"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "ɔɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "c",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "oi",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "town",
+      "ipa": "t aʊ n",
+      "phonemes": [
+        "t",
+        "aʊ",
+        "n"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aʊ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "t",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ow",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "day",
+      "ipa": "d eɪ",
+      "phonemes": [
+        "d",
+        "eɪ"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "eɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "d",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ay",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "word": "home",
+      "ipa": "h oʊ m",
+      "phonemes": [
+        "h",
+        "oʊ",
+        "m"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "oʊ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "h",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "me",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "pie",
+      "ipa": "p aɪ",
+      "phonemes": [
+        "p",
+        "aɪ"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "P",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ie",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "word": "buy",
+      "ipa": "b aɪ",
+      "phonemes": [
+        "b",
+        "aɪ"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "B",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "uy",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "word": "rain",
+      "ipa": "ɹ eɪ n",
+      "phonemes": [
+        "ɹ",
+        "eɪ",
+        "n"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "eɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "R",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ai",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "lane",
+      "ipa": "l eɪ n",
+      "phonemes": [
+        "l",
+        "eɪ",
+        "n"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "eɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "L",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ne",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "right",
+      "ipa": "ɹ aɪ t",
+      "phonemes": [
+        "ɹ",
+        "aɪ",
+        "t"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "R",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "igh",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "light",
+      "ipa": "l aɪ t",
+      "phonemes": [
+        "l",
+        "aɪ",
+        "t"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "L",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "igh",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "rice",
+      "ipa": "ɹ aɪ s",
+      "phonemes": [
+        "ɹ",
+        "aɪ",
+        "s"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "aɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "R",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ce",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "road",
+      "ipa": "ɹ oʊ d",
+      "phonemes": [
+        "ɹ",
+        "oʊ",
+        "d"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "oʊ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "R",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "oa",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "load",
+      "ipa": "l oʊ d",
+      "phonemes": [
+        "l",
+        "oʊ",
+        "d"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "oʊ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "L",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "oa",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "voice",
+      "ipa": "v ɔɪ s",
+      "phonemes": [
+        "v",
+        "ɔɪ",
+        "s"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "ɔɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "V",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "oi",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ce",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "vote",
+      "ipa": "v oʊ t",
+      "phonemes": [
+        "v",
+        "oʊ",
+        "t"
+      ],
+      "category": "diphthongs",
+      "focusPhoneme": "oʊ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "V",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "te",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "think",
+      "ipa": "θ ɪ ŋ k",
+      "phonemes": [
+        "θ",
+        "ɪ",
+        "ŋ",
+        "k"
+      ],
+      "category": "th_voiceless",
+      "focusPhoneme": "θ",
+      "cue": "Stretch the air through the th, then keep the vowel short and relaxed.",
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "nk",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "three",
+      "ipa": "θ ɹ iː",
+      "phonemes": [
+        "θ",
+        "ɹ",
+        "iː"
+      ],
+      "category": "th_voiceless",
+      "focusPhoneme": "θ",
+      "cue": "Start with a soft th, then keep the r light before opening into the long ee.",
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "r",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ee",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "thank",
+      "ipa": "θ æ ŋ k",
+      "phonemes": [
+        "θ",
+        "æ",
+        "ŋ",
+        "k"
+      ],
+      "category": "th_voiceless",
+      "focusPhoneme": "θ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "nk",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "thin",
+      "ipa": "θ ɪ n",
+      "phonemes": [
+        "θ",
+        "ɪ",
+        "n"
+      ],
+      "category": "th_voiceless",
+      "focusPhoneme": "θ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "throw",
+      "ipa": "θ ɹ oʊ",
+      "phonemes": [
+        "θ",
+        "ɹ",
+        "oʊ"
+      ],
+      "category": "th_voiceless",
+      "focusPhoneme": "θ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "r",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ow",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "the",
+      "ipa": "ð ə",
+      "phonemes": [
+        "ð",
+        "ə"
+      ],
+      "category": "th_voiced",
+      "focusPhoneme": "ð",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "word": "this",
+      "ipa": "ð ɪ s",
+      "phonemes": [
+        "ð",
+        "ɪ",
+        "s"
+      ],
+      "category": "th_voiced",
+      "focusPhoneme": "ð",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "s",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "that",
+      "ipa": "ð æ t",
+      "phonemes": [
+        "ð",
+        "æ",
+        "t"
+      ],
+      "category": "th_voiced",
+      "focusPhoneme": "ð",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "them",
+      "ipa": "ð ɛ m",
+      "phonemes": [
+        "ð",
+        "ɛ",
+        "m"
+      ],
+      "category": "th_voiced",
+      "focusPhoneme": "ð",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "m",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "those",
+      "ipa": "ð oʊ z",
+      "phonemes": [
+        "ð",
+        "oʊ",
+        "z"
+      ],
+      "category": "th_voiced",
+      "focusPhoneme": "ð",
+      "cue": null,
+      "segments": [
+        {
+          "text": "Th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "o",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "se",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "vine",
+      "ipa": "v aɪ n",
+      "phonemes": [
+        "v",
+        "aɪ",
+        "n"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "v",
+      "cue": null,
+      "segments": [
+        {
+          "text": "V",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ne",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "wine",
+      "ipa": "w aɪ n",
+      "phonemes": [
+        "w",
+        "aɪ",
+        "n"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "w",
+      "cue": null,
+      "segments": [
+        {
+          "text": "W",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ne",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "vet",
+      "ipa": "v ɛ t",
+      "phonemes": [
+        "v",
+        "ɛ",
+        "t"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "v",
+      "cue": null,
+      "segments": [
+        {
+          "text": "V",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "wet",
+      "ipa": "w ɛ t",
+      "phonemes": [
+        "w",
+        "ɛ",
+        "t"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "w",
+      "cue": null,
+      "segments": [
+        {
+          "text": "W",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "t",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "van",
+      "ipa": "v æ n",
+      "phonemes": [
+        "v",
+        "æ",
+        "n"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "v",
+      "cue": null,
+      "segments": [
+        {
+          "text": "V",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "n",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "very",
+      "ipa": "v ɛ ɹ i",
+      "phonemes": [
+        "v",
+        "ɛ",
+        "ɹ",
+        "i"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "v",
+      "cue": "Let the lower lip touch lightly for the v, then keep the ending clear and forward.",
+      "segments": [
+        {
+          "text": "V",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ry",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "worry",
+      "ipa": "w ɜː ɹ i",
+      "phonemes": [
+        "w",
+        "ɜː",
+        "ɹ",
+        "i"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "w",
+      "cue": null,
+      "segments": [
+        {
+          "text": "W",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "orr",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "text": "y",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "walk",
+      "ipa": "w ɔː k",
+      "phonemes": [
+        "w",
+        "ɔː",
+        "k"
+      ],
+      "category": "v_w_distinction",
+      "focusPhoneme": "w",
+      "cue": null,
+      "segments": [
+        {
+          "text": "W",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "al",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "k",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "red",
+      "ipa": "ɹ ɛ d",
+      "phonemes": [
+        "ɹ",
+        "ɛ",
+        "d"
+      ],
+      "category": "r_l_distinction",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "R",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "led",
+      "ipa": "l ɛ d",
+      "phonemes": [
+        "l",
+        "ɛ",
+        "d"
+      ],
+      "category": "r_l_distinction",
+      "focusPhoneme": "l",
+      "cue": null,
+      "segments": [
+        {
+          "text": "L",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "read",
+      "ipa": "ɹ iː d",
+      "phonemes": [
+        "ɹ",
+        "iː",
+        "d"
+      ],
+      "category": "r_l_distinction",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "R",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ea",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "d",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "street",
+      "ipa": "s t ɹ iː t",
+      "phonemes": [
+        "s",
+        "t",
+        "ɹ",
+        "iː",
+        "t"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "str",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "eet",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "splash",
+      "ipa": "s p l æ ʃ",
+      "phonemes": [
+        "s",
+        "p",
+        "l",
+        "æ",
+        "ʃ"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "l",
+      "cue": null,
+      "segments": [
+        {
+          "text": "spl",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "ash",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "screen",
+      "ipa": "s k ɹ iː n",
+      "phonemes": [
+        "s",
+        "k",
+        "ɹ",
+        "iː",
+        "n"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "scr",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "een",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "strap",
+      "ipa": "s t ɹ æ p",
+      "phonemes": [
+        "s",
+        "t",
+        "ɹ",
+        "æ",
+        "p"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "str",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "ap",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "split",
+      "ipa": "s p l ɪ t",
+      "phonemes": [
+        "s",
+        "p",
+        "l",
+        "ɪ",
+        "t"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "l",
+      "cue": null,
+      "segments": [
+        {
+          "text": "spl",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "it",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "strong",
+      "ipa": "s t ɹ ɒ ŋ",
+      "phonemes": [
+        "s",
+        "t",
+        "ɹ",
+        "ɒ",
+        "ŋ"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "str",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "ong",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "spring",
+      "ipa": "s p ɹ ɪ ŋ",
+      "phonemes": [
+        "s",
+        "p",
+        "ɹ",
+        "ɪ",
+        "ŋ"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "spr",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "ing",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "scroll",
+      "ipa": "s k ɹ oʊ l",
+      "phonemes": [
+        "s",
+        "k",
+        "ɹ",
+        "oʊ",
+        "l"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "scr",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "oll",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "spread",
+      "ipa": "s p ɹ ɛ d",
+      "phonemes": [
+        "s",
+        "p",
+        "ɹ",
+        "ɛ",
+        "d"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "spr",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "ead",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "stream",
+      "ipa": "s t ɹ iː m",
+      "phonemes": [
+        "s",
+        "t",
+        "ɹ",
+        "iː",
+        "m"
+      ],
+      "category": "consonant_clusters",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "str",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "eam",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "about",
+      "ipa": "ə b aʊ t",
+      "phonemes": [
+        "ə",
+        "b",
+        "aʊ",
+        "t"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "a",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "bou",
+          "start": 1,
+          "end": 3
+        },
+        {
+          "text": "t",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "above",
+      "ipa": "ə b ʌ v",
+      "phonemes": [
+        "ə",
+        "b",
+        "ʌ",
+        "v"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "a",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "b",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ove",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "ago",
+      "ipa": "ə ɡ oʊ",
+      "phonemes": [
+        "ə",
+        "ɡ",
+        "oʊ"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "a",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "g",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "o",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "suppose",
+      "ipa": "s ə p oʊ z",
+      "phonemes": [
+        "s",
+        "ə",
+        "p",
+        "oʊ",
+        "z"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "su",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "pp",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "ose",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "occur",
+      "ipa": "ə k ɜː",
+      "phonemes": [
+        "ə",
+        "k",
+        "ɜː"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "o",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "cc",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ur",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "word": "suggest",
+      "ipa": "s ə dʒ ɛ s t",
+      "phonemes": [
+        "s",
+        "ə",
+        "dʒ",
+        "ɛ",
+        "s",
+        "t"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "su",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "gg",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "est",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "word": "collect",
+      "ipa": "k ə l ɛ k t",
+      "phonemes": [
+        "k",
+        "ə",
+        "l",
+        "ɛ",
+        "k",
+        "t"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "co",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "ll",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "ect",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "word": "correct",
+      "ipa": "k ə ɹ ɛ k t",
+      "phonemes": [
+        "k",
+        "ə",
+        "ɹ",
+        "ɛ",
+        "k",
+        "t"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "co",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "rr",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "ect",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "word": "connect",
+      "ipa": "k ə n ɛ k t",
+      "phonemes": [
+        "k",
+        "ə",
+        "n",
+        "ɛ",
+        "k",
+        "t"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "co",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "nn",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "ect",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "word": "support",
+      "ipa": "s ə p ɔː t",
+      "phonemes": [
+        "s",
+        "ə",
+        "p",
+        "ɔː",
+        "t"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "su",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "pp",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "ort",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "succeed",
+      "ipa": "s ə k s iː d",
+      "phonemes": [
+        "s",
+        "ə",
+        "k",
+        "s",
+        "iː",
+        "d"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "su",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "cc",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "eed",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "word": "suffer",
+      "ipa": "s ə f ə",
+      "phonemes": [
+        "s",
+        "ə",
+        "f",
+        "ə"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "su",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "ff",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "er",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "supper",
+      "ipa": "s ə p ə",
+      "phonemes": [
+        "s",
+        "ə",
+        "p",
+        "ə"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "su",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "pp",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "er",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "supply",
+      "ipa": "s ə p l aɪ",
+      "phonemes": [
+        "s",
+        "ə",
+        "p",
+        "l",
+        "aɪ"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "su",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "pp",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "ly",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "word": "butter",
+      "ipa": "b ʌ t ə",
+      "phonemes": [
+        "b",
+        "ʌ",
+        "t",
+        "ə"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "u",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "tter",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "water",
+      "ipa": "w ɔː t ə",
+      "phonemes": [
+        "w",
+        "ɔː",
+        "t",
+        "ə"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "w",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ter",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "better",
+      "ipa": "b ɛ t ə",
+      "phonemes": [
+        "b",
+        "ɛ",
+        "t",
+        "ə"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ə",
+      "cue": null,
+      "segments": [
+        {
+          "text": "b",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "tter",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "matter",
+      "ipa": "m æ t ə",
+      "phonemes": [
+        "m",
+        "æ",
+        "t",
+        "ə"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "æ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "m",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "a",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "tter",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "letter",
+      "ipa": "l ɛ t ə",
+      "phonemes": [
+        "l",
+        "ɛ",
+        "t",
+        "ə"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ɛ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "l",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "e",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "tter",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "city",
+      "ipa": "s ɪ t i",
+      "phonemes": [
+        "s",
+        "ɪ",
+        "t",
+        "i"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ɪ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "c",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "i",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ty",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "party",
+      "ipa": "p ɑː t i",
+      "phonemes": [
+        "p",
+        "ɑː",
+        "t",
+        "i"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ɑː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "p",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ar",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ty",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "dirty",
+      "ipa": "d ɜː t i",
+      "phonemes": [
+        "d",
+        "ɜː",
+        "t",
+        "i"
+      ],
+      "category": "schwa_unstressed",
+      "focusPhoneme": "ɜː",
+      "cue": null,
+      "segments": [
+        {
+          "text": "d",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ir",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ty",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "thirty",
+      "ipa": "θ ɜː t i",
+      "phonemes": [
+        "θ",
+        "ɜː",
+        "t",
+        "i"
+      ],
+      "category": "th_voiceless",
+      "focusPhoneme": "θ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "th",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "text": "ir",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "text": "ty",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "word": "pretty",
+      "ipa": "p ɹ ɪ t i",
+      "phonemes": [
+        "p",
+        "ɹ",
+        "ɪ",
+        "t",
+        "i"
+      ],
+      "category": "r_l_distinction",
+      "focusPhoneme": "ɹ",
+      "cue": null,
+      "segments": [
+        {
+          "text": "pr",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "text": "e",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "text": "tty",
+          "start": 3,
+          "end": 5
+        }
+      ]
+    }
+  ]
+}

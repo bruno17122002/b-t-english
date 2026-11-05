@@ -8,8 +8,18 @@
     "paths": {
       "@shared/*": ["src/shared/*"],
       "@core/*": ["src/core/*"],
+      "@modules/*": ["src/modules/*"],
       "@/*": ["src/renderer/src/*"]
     }
   },
-  "include": ["src/renderer/src/**/*", "src/shared/**/*", "src/core/**/*", "src/preload/api.d.ts"]
+  "include": [
+    "src/renderer/src/**/*",
+    "src/shared/**/*",
+    "src/core/**/*",
+    "src/modules/contract.ts",
+    "src/modules/registry.renderer.tsx",
+    "src/modules/*/contract.ts",
+    "src/modules/*/renderer/**/*",
+    "src/preload/api.d.ts"
+  ]
 }

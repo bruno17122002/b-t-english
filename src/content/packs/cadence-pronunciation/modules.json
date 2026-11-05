@@ -1,0 +1,1964 @@
+[
+  {
+    "id": "basic-short-vowels",
+    "order": 1,
+    "title": "Basic Short Vowels",
+    "description": "Master the five core short vowel sounds: /æ/, /ɛ/, /ɪ/, /ɒ/, /ʌ/.",
+    "phonemeFocus": [
+      "/æ/",
+      "/ɛ/",
+      "/ɪ/",
+      "/ɒ/",
+      "/ʌ/"
+    ],
+    "focusSymbols": [
+      "æ",
+      "ɛ",
+      "ɪ",
+      "ɒ",
+      "ʌ"
+    ],
+    "lessons": [
+      {
+        "id": "m1-theory",
+        "title": "Short Vowels — How They Work",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>Short Vowels</h2><p>English has five core short vowels. Each lives in a different part of your mouth.</p><ul><li><strong>/æ/</strong> — <em>cat</em>. Jaw drops, tongue flat and forward.</li><li><strong>/ɛ/</strong> — <em>bed</em>. Mid-front, relaxed.</li><li><strong>/ɪ/</strong> — <em>sit</em>. High-front, lax.</li><li><strong>/ɒ/</strong> — <em>hot</em>. Low-back, rounded lips.</li><li><strong>/ʌ/</strong> — <em>cup</em>. Central, neutral lips.</li></ul><p>The key is <strong>not</strong> to extend these sounds into diphthongs — keep them short and crisp.</p>",
+        "words": []
+      },
+      {
+        "id": "m1-practice-a",
+        "title": "Practice A — /æ/, /ɛ/, /ɪ/",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "cat",
+            "ipa": "k æ t",
+            "phonemes": [
+              "k",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "bed",
+            "ipa": "b ɛ d",
+            "phonemes": [
+              "b",
+              "ɛ",
+              "d"
+            ]
+          },
+          {
+            "word": "sit",
+            "ipa": "s ɪ t",
+            "phonemes": [
+              "s",
+              "ɪ",
+              "t"
+            ]
+          },
+          {
+            "word": "pen",
+            "ipa": "p ɛ n",
+            "phonemes": [
+              "p",
+              "ɛ",
+              "n"
+            ]
+          },
+          {
+            "word": "bit",
+            "ipa": "b ɪ t",
+            "phonemes": [
+              "b",
+              "ɪ",
+              "t"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m1-practice-b",
+        "title": "Practice B — /ɒ/ and /ʌ/",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "hot",
+            "ipa": "h ɒ t",
+            "phonemes": [
+              "h",
+              "ɒ",
+              "t"
+            ]
+          },
+          {
+            "word": "cup",
+            "ipa": "k ʌ p",
+            "phonemes": [
+              "k",
+              "ʌ",
+              "p"
+            ]
+          },
+          {
+            "word": "dot",
+            "ipa": "d ɒ t",
+            "phonemes": [
+              "d",
+              "ɒ",
+              "t"
+            ]
+          },
+          {
+            "word": "bus",
+            "ipa": "b ʌ s",
+            "phonemes": [
+              "b",
+              "ʌ",
+              "s"
+            ]
+          },
+          {
+            "word": "bat",
+            "ipa": "b æ t",
+            "phonemes": [
+              "b",
+              "æ",
+              "t"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m1-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "cat",
+            "ipa": "k æ t",
+            "phonemes": [
+              "k",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "bed",
+            "ipa": "b ɛ d",
+            "phonemes": [
+              "b",
+              "ɛ",
+              "d"
+            ]
+          },
+          {
+            "word": "hot",
+            "ipa": "h ɒ t",
+            "phonemes": [
+              "h",
+              "ɒ",
+              "t"
+            ]
+          },
+          {
+            "word": "cup",
+            "ipa": "k ʌ p",
+            "phonemes": [
+              "k",
+              "ʌ",
+              "p"
+            ]
+          },
+          {
+            "word": "sit",
+            "ipa": "s ɪ t",
+            "phonemes": [
+              "s",
+              "ɪ",
+              "t"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "basic-long-vowels",
+    "order": 2,
+    "title": "Basic Long Vowels",
+    "description": "Command the five long vowel sounds: /iː/, /ɑː/, /ɔː/, /uː/, /ɜː/.",
+    "phonemeFocus": [
+      "/iː/",
+      "/ɑː/",
+      "/ɔː/",
+      "/uː/",
+      "/ɜː/"
+    ],
+    "focusSymbols": [
+      "iː",
+      "ɑː",
+      "ɔː",
+      "uː",
+      "ɜː"
+    ],
+    "lessons": [
+      {
+        "id": "m2-theory",
+        "title": "Long Vowels — Length Matters",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>Long Vowels</h2><p>Long vowels are held roughly twice as long as short ones — that length is meaningful in English.</p><ul><li><strong>/iː/</strong> — <em>feet</em>. High-front, tense lips.</li><li><strong>/ɑː/</strong> — <em>card</em>. Low-back, open jaw.</li><li><strong>/ɔː/</strong> — <em>law</em>. Mid-back, rounded lips.</li><li><strong>/uː/</strong> — <em>food</em>. High-back, rounded lips.</li><li><strong>/ɜː/</strong> — <em>bird</em>. Central, lips neutral or slightly spread.</li></ul><p>Hold each sound for a full beat — cutting it short collapses the contrast with the short vowel pair.</p>",
+        "words": []
+      },
+      {
+        "id": "m2-practice-a",
+        "title": "Practice A — /iː/, /ɑː/, /uː/",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "feet",
+            "ipa": "f iː t",
+            "phonemes": [
+              "f",
+              "iː",
+              "t"
+            ]
+          },
+          {
+            "word": "card",
+            "ipa": "k ɑː d",
+            "phonemes": [
+              "k",
+              "ɑː",
+              "d"
+            ]
+          },
+          {
+            "word": "food",
+            "ipa": "f uː d",
+            "phonemes": [
+              "f",
+              "uː",
+              "d"
+            ]
+          },
+          {
+            "word": "keep",
+            "ipa": "k iː p",
+            "phonemes": [
+              "k",
+              "iː",
+              "p"
+            ]
+          },
+          {
+            "word": "dark",
+            "ipa": "d ɑː k",
+            "phonemes": [
+              "d",
+              "ɑː",
+              "k"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m2-practice-b",
+        "title": "Practice B — /ɔː/ and /ɜː/",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "law",
+            "ipa": "l ɔː",
+            "phonemes": [
+              "l",
+              "ɔː"
+            ]
+          },
+          {
+            "word": "bird",
+            "ipa": "b ɜː d",
+            "phonemes": [
+              "b",
+              "ɜː",
+              "d"
+            ]
+          },
+          {
+            "word": "more",
+            "ipa": "m ɔː",
+            "phonemes": [
+              "m",
+              "ɔː"
+            ]
+          },
+          {
+            "word": "turn",
+            "ipa": "t ɜː n",
+            "phonemes": [
+              "t",
+              "ɜː",
+              "n"
+            ]
+          },
+          {
+            "word": "cool",
+            "ipa": "k uː l",
+            "phonemes": [
+              "k",
+              "uː",
+              "l"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m2-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "feet",
+            "ipa": "f iː t",
+            "phonemes": [
+              "f",
+              "iː",
+              "t"
+            ]
+          },
+          {
+            "word": "card",
+            "ipa": "k ɑː d",
+            "phonemes": [
+              "k",
+              "ɑː",
+              "d"
+            ]
+          },
+          {
+            "word": "food",
+            "ipa": "f uː d",
+            "phonemes": [
+              "f",
+              "uː",
+              "d"
+            ]
+          },
+          {
+            "word": "bird",
+            "ipa": "b ɜː d",
+            "phonemes": [
+              "b",
+              "ɜː",
+              "d"
+            ]
+          },
+          {
+            "word": "turn",
+            "ipa": "t ɜː n",
+            "phonemes": [
+              "t",
+              "ɜː",
+              "n"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "th-sounds",
+    "order": 3,
+    "title": "TH Sounds",
+    "description": "Distinguish the voiced /ð/ and voiceless /θ/ — the classic English TH.",
+    "phonemeFocus": [
+      "/θ/",
+      "/ð/"
+    ],
+    "focusSymbols": [
+      "θ",
+      "ð"
+    ],
+    "lessons": [
+      {
+        "id": "m3-theory",
+        "title": "TH — Voiced vs. Voiceless",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>The TH Sounds</h2><p>English uses two unique dental fricatives that most languages lack entirely.</p><ul><li><strong>/θ/</strong> (voiceless) — <em>think, three, thank</em>. Place the tongue tip lightly between or just behind the upper front teeth. Push air through without vibrating your vocal cords.</li><li><strong>/ð/</strong> (voiced) — <em>the, this, that</em>. Same tongue position, but add vocal cord vibration. Feel the buzz on your throat.</li></ul><p><strong>Common mistake:</strong> replacing TH with /s/, /z/, /t/, or /d/. Keep that tongue forward!</p>",
+        "words": []
+      },
+      {
+        "id": "m3-practice-a",
+        "title": "Practice A — Voiceless /θ/",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "think",
+            "ipa": "θ ɪ ŋ k",
+            "phonemes": [
+              "θ",
+              "ɪ",
+              "ŋ",
+              "k"
+            ]
+          },
+          {
+            "word": "three",
+            "ipa": "θ ɹ iː",
+            "phonemes": [
+              "θ",
+              "ɹ",
+              "iː"
+            ]
+          },
+          {
+            "word": "thank",
+            "ipa": "θ æ ŋ k",
+            "phonemes": [
+              "θ",
+              "æ",
+              "ŋ",
+              "k"
+            ]
+          },
+          {
+            "word": "thin",
+            "ipa": "θ ɪ n",
+            "phonemes": [
+              "θ",
+              "ɪ",
+              "n"
+            ]
+          },
+          {
+            "word": "throw",
+            "ipa": "θ ɹ oʊ",
+            "phonemes": [
+              "θ",
+              "ɹ",
+              "oʊ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m3-practice-b",
+        "title": "Practice B — Voiced /ð/",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "the",
+            "ipa": "ð ə",
+            "phonemes": [
+              "ð",
+              "ə"
+            ]
+          },
+          {
+            "word": "this",
+            "ipa": "ð ɪ s",
+            "phonemes": [
+              "ð",
+              "ɪ",
+              "s"
+            ]
+          },
+          {
+            "word": "that",
+            "ipa": "ð æ t",
+            "phonemes": [
+              "ð",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "them",
+            "ipa": "ð ɛ m",
+            "phonemes": [
+              "ð",
+              "ɛ",
+              "m"
+            ]
+          },
+          {
+            "word": "those",
+            "ipa": "ð oʊ z",
+            "phonemes": [
+              "ð",
+              "oʊ",
+              "z"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m3-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "think",
+            "ipa": "θ ɪ ŋ k",
+            "phonemes": [
+              "θ",
+              "ɪ",
+              "ŋ",
+              "k"
+            ]
+          },
+          {
+            "word": "three",
+            "ipa": "θ ɹ iː",
+            "phonemes": [
+              "θ",
+              "ɹ",
+              "iː"
+            ]
+          },
+          {
+            "word": "this",
+            "ipa": "ð ɪ s",
+            "phonemes": [
+              "ð",
+              "ɪ",
+              "s"
+            ]
+          },
+          {
+            "word": "that",
+            "ipa": "ð æ t",
+            "phonemes": [
+              "ð",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "thank",
+            "ipa": "θ æ ŋ k",
+            "phonemes": [
+              "θ",
+              "æ",
+              "ŋ",
+              "k"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v-w-distinction",
+    "order": 4,
+    "title": "V / W Distinction",
+    "description": "Separate the /v/ and /w/ — two sounds that trip up many learners.",
+    "phonemeFocus": [
+      "/v/",
+      "/w/"
+    ],
+    "focusSymbols": [
+      "v",
+      "w"
+    ],
+    "lessons": [
+      {
+        "id": "m4-theory",
+        "title": "V and W — Two Very Different Sounds",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>V vs. W</h2><p>These are frequently confused but are produced in completely different places.</p><ul><li><strong>/v/</strong> — Upper front teeth rest on lower lip. Force voiced air through that narrow gap. (<em>vine, vet, vote</em>)</li><li><strong>/w/</strong> — Lips round tightly, tongue rises toward the back. No teeth contact at all. (<em>wine, wet, walk</em>)</li></ul><p><strong>Test:</strong> Say <em>vine</em> vs. <em>wine</em> — feel the teeth on the lip for /v/ and the rounded lips for /w/.</p>",
+        "words": []
+      },
+      {
+        "id": "m4-practice-a",
+        "title": "Practice A — /v/ words",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "vine",
+            "ipa": "v aɪ n",
+            "phonemes": [
+              "v",
+              "aɪ",
+              "n"
+            ]
+          },
+          {
+            "word": "vet",
+            "ipa": "v ɛ t",
+            "phonemes": [
+              "v",
+              "ɛ",
+              "t"
+            ]
+          },
+          {
+            "word": "van",
+            "ipa": "v æ n",
+            "phonemes": [
+              "v",
+              "æ",
+              "n"
+            ]
+          },
+          {
+            "word": "very",
+            "ipa": "v ɛ ɹ i",
+            "phonemes": [
+              "v",
+              "ɛ",
+              "ɹ",
+              "i"
+            ]
+          },
+          {
+            "word": "vote",
+            "ipa": "v oʊ t",
+            "phonemes": [
+              "v",
+              "oʊ",
+              "t"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m4-practice-b",
+        "title": "Practice B — /w/ words",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "wine",
+            "ipa": "w aɪ n",
+            "phonemes": [
+              "w",
+              "aɪ",
+              "n"
+            ]
+          },
+          {
+            "word": "wet",
+            "ipa": "w ɛ t",
+            "phonemes": [
+              "w",
+              "ɛ",
+              "t"
+            ]
+          },
+          {
+            "word": "walk",
+            "ipa": "w ɔː k",
+            "phonemes": [
+              "w",
+              "ɔː",
+              "k"
+            ]
+          },
+          {
+            "word": "voice",
+            "ipa": "v ɔɪ s",
+            "phonemes": [
+              "v",
+              "ɔɪ",
+              "s"
+            ]
+          },
+          {
+            "word": "worry",
+            "ipa": "w ɜː ɹ i",
+            "phonemes": [
+              "w",
+              "ɜː",
+              "ɹ",
+              "i"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m4-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "vine",
+            "ipa": "v aɪ n",
+            "phonemes": [
+              "v",
+              "aɪ",
+              "n"
+            ]
+          },
+          {
+            "word": "wine",
+            "ipa": "w aɪ n",
+            "phonemes": [
+              "w",
+              "aɪ",
+              "n"
+            ]
+          },
+          {
+            "word": "very",
+            "ipa": "v ɛ ɹ i",
+            "phonemes": [
+              "v",
+              "ɛ",
+              "ɹ",
+              "i"
+            ]
+          },
+          {
+            "word": "walk",
+            "ipa": "w ɔː k",
+            "phonemes": [
+              "w",
+              "ɔː",
+              "k"
+            ]
+          },
+          {
+            "word": "voice",
+            "ipa": "v ɔɪ s",
+            "phonemes": [
+              "v",
+              "ɔɪ",
+              "s"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r-l-distinction",
+    "order": 5,
+    "title": "R / L Distinction",
+    "description": "Nail the /ɹ/ and /l/ contrast — a key clarity marker in English.",
+    "phonemeFocus": [
+      "/ɹ/",
+      "/l/"
+    ],
+    "focusSymbols": [
+      "ɹ",
+      "l"
+    ],
+    "lessons": [
+      {
+        "id": "m5-theory",
+        "title": "R and L — A Critical Distinction",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>R vs. L</h2><p>These two sounds have distinct tongue placements — mixing them changes meaning.</p><ul><li><strong>/ɹ/</strong> (American R) — Tongue tip curls back or bunches in the middle. Sides of tongue touch upper back teeth. Lips may round slightly. (<em>red, right, rice</em>)</li><li><strong>/l/</strong> — Tongue tip touches the ridge just behind your upper front teeth (alveolar ridge). (<em>led, light, lane</em>)</li></ul><p><strong>Key difference:</strong> /l/ has tongue-tip contact with the roof of the mouth; /ɹ/ does not.</p>",
+        "words": []
+      },
+      {
+        "id": "m5-practice-a",
+        "title": "Practice A — R/L minimal pairs",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "red",
+            "ipa": "ɹ ɛ d",
+            "phonemes": [
+              "ɹ",
+              "ɛ",
+              "d"
+            ]
+          },
+          {
+            "word": "led",
+            "ipa": "l ɛ d",
+            "phonemes": [
+              "l",
+              "ɛ",
+              "d"
+            ]
+          },
+          {
+            "word": "right",
+            "ipa": "ɹ aɪ t",
+            "phonemes": [
+              "ɹ",
+              "aɪ",
+              "t"
+            ]
+          },
+          {
+            "word": "light",
+            "ipa": "l aɪ t",
+            "phonemes": [
+              "l",
+              "aɪ",
+              "t"
+            ]
+          },
+          {
+            "word": "rice",
+            "ipa": "ɹ aɪ s",
+            "phonemes": [
+              "ɹ",
+              "aɪ",
+              "s"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m5-practice-b",
+        "title": "Practice B — More R/L words",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "read",
+            "ipa": "ɹ iː d",
+            "phonemes": [
+              "ɹ",
+              "iː",
+              "d"
+            ]
+          },
+          {
+            "word": "road",
+            "ipa": "ɹ oʊ d",
+            "phonemes": [
+              "ɹ",
+              "oʊ",
+              "d"
+            ]
+          },
+          {
+            "word": "load",
+            "ipa": "l oʊ d",
+            "phonemes": [
+              "l",
+              "oʊ",
+              "d"
+            ]
+          },
+          {
+            "word": "rain",
+            "ipa": "ɹ eɪ n",
+            "phonemes": [
+              "ɹ",
+              "eɪ",
+              "n"
+            ]
+          },
+          {
+            "word": "lane",
+            "ipa": "l eɪ n",
+            "phonemes": [
+              "l",
+              "eɪ",
+              "n"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m5-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "red",
+            "ipa": "ɹ ɛ d",
+            "phonemes": [
+              "ɹ",
+              "ɛ",
+              "d"
+            ]
+          },
+          {
+            "word": "led",
+            "ipa": "l ɛ d",
+            "phonemes": [
+              "l",
+              "ɛ",
+              "d"
+            ]
+          },
+          {
+            "word": "right",
+            "ipa": "ɹ aɪ t",
+            "phonemes": [
+              "ɹ",
+              "aɪ",
+              "t"
+            ]
+          },
+          {
+            "word": "light",
+            "ipa": "l aɪ t",
+            "phonemes": [
+              "l",
+              "aɪ",
+              "t"
+            ]
+          },
+          {
+            "word": "rain",
+            "ipa": "ɹ eɪ n",
+            "phonemes": [
+              "ɹ",
+              "eɪ",
+              "n"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "diphthongs",
+    "order": 6,
+    "title": "Diphthongs",
+    "description": "Glide smoothly through the five main English diphthongs.",
+    "phonemeFocus": [
+      "/eɪ/",
+      "/aɪ/",
+      "/ɔɪ/",
+      "/aʊ/",
+      "/oʊ/"
+    ],
+    "focusSymbols": [
+      "eɪ",
+      "aɪ",
+      "ɔɪ",
+      "aʊ",
+      "oʊ"
+    ],
+    "lessons": [
+      {
+        "id": "m6-theory",
+        "title": "Diphthongs — Gliding Vowels",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>Diphthongs</h2><p>A diphthong starts at one vowel position and glides smoothly to another within a single syllable.</p><ul><li><strong>/eɪ/</strong> — <em>face, day</em>. Starts at /ɛ/, glides to /ɪ/.</li><li><strong>/aɪ/</strong> — <em>night, fire</em>. Starts at /a/, glides to /ɪ/.</li><li><strong>/ɔɪ/</strong> — <em>boy, coin</em>. Starts at /ɔ/, glides to /ɪ/.</li><li><strong>/aʊ/</strong> — <em>mouth, town</em>. Starts at /a/, glides to /ʊ/.</li><li><strong>/oʊ/</strong> — <em>note, home</em>. Starts at /o/, glides to /ʊ/.</li></ul><p>The glide must be smooth — both parts belong in one syllable.</p>",
+        "words": []
+      },
+      {
+        "id": "m6-practice-a",
+        "title": "Practice A — /eɪ/, /aɪ/, /ɔɪ/",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "face",
+            "ipa": "f eɪ s",
+            "phonemes": [
+              "f",
+              "eɪ",
+              "s"
+            ]
+          },
+          {
+            "word": "fire",
+            "ipa": "f aɪ ɹ",
+            "phonemes": [
+              "f",
+              "aɪ",
+              "ɹ"
+            ]
+          },
+          {
+            "word": "boy",
+            "ipa": "b ɔɪ",
+            "phonemes": [
+              "b",
+              "ɔɪ"
+            ]
+          },
+          {
+            "word": "night",
+            "ipa": "n aɪ t",
+            "phonemes": [
+              "n",
+              "aɪ",
+              "t"
+            ]
+          },
+          {
+            "word": "day",
+            "ipa": "d eɪ",
+            "phonemes": [
+              "d",
+              "eɪ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m6-practice-b",
+        "title": "Practice B — /aʊ/ and /oʊ/",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "mouth",
+            "ipa": "m aʊ θ",
+            "phonemes": [
+              "m",
+              "aʊ",
+              "θ"
+            ]
+          },
+          {
+            "word": "town",
+            "ipa": "t aʊ n",
+            "phonemes": [
+              "t",
+              "aʊ",
+              "n"
+            ]
+          },
+          {
+            "word": "note",
+            "ipa": "n oʊ t",
+            "phonemes": [
+              "n",
+              "oʊ",
+              "t"
+            ]
+          },
+          {
+            "word": "home",
+            "ipa": "h oʊ m",
+            "phonemes": [
+              "h",
+              "oʊ",
+              "m"
+            ]
+          },
+          {
+            "word": "coin",
+            "ipa": "k ɔɪ n",
+            "phonemes": [
+              "k",
+              "ɔɪ",
+              "n"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m6-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "face",
+            "ipa": "f eɪ s",
+            "phonemes": [
+              "f",
+              "eɪ",
+              "s"
+            ]
+          },
+          {
+            "word": "fire",
+            "ipa": "f aɪ ɹ",
+            "phonemes": [
+              "f",
+              "aɪ",
+              "ɹ"
+            ]
+          },
+          {
+            "word": "mouth",
+            "ipa": "m aʊ θ",
+            "phonemes": [
+              "m",
+              "aʊ",
+              "θ"
+            ]
+          },
+          {
+            "word": "night",
+            "ipa": "n aɪ t",
+            "phonemes": [
+              "n",
+              "aɪ",
+              "t"
+            ]
+          },
+          {
+            "word": "coin",
+            "ipa": "k ɔɪ n",
+            "phonemes": [
+              "k",
+              "ɔɪ",
+              "n"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "consonant-pairs",
+    "order": 7,
+    "title": "Consonant Pairs",
+    "description": "Sharpen voiced/voiceless pairs: P/B, T/D, K/G.",
+    "phonemeFocus": [
+      "/p/-/b/",
+      "/t/-/d/",
+      "/k/-/ɡ/"
+    ],
+    "focusSymbols": [
+      "p",
+      "b",
+      "t",
+      "d",
+      "k",
+      "ɡ"
+    ],
+    "lessons": [
+      {
+        "id": "m7-theory",
+        "title": "Voiced & Voiceless Pairs",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>Consonant Pairs</h2><p>English has three major stop consonant pairs where the only difference is voicing.</p><ul><li><strong>P/B</strong> — Both are bilabial stops. /p/ is voiceless (air only), /b/ adds vocal vibration.</li><li><strong>T/D</strong> — Both are alveolar stops. /t/ is voiceless, /d/ is voiced.</li><li><strong>K/G</strong> — Both are velar stops. /k/ is voiceless, /g/ is voiced.</li></ul><p><strong>Aspiration:</strong> In English, voiceless stops at the start of a stressed syllable get a puff of air — <em>pat</em> = /pʰæt/. Put your hand in front of your mouth to feel it.</p>",
+        "words": []
+      },
+      {
+        "id": "m7-practice-a",
+        "title": "Practice A — P/B and T/D",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "pat",
+            "ipa": "p æ t",
+            "phonemes": [
+              "p",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "bat",
+            "ipa": "b æ t",
+            "phonemes": [
+              "b",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "top",
+            "ipa": "t ɒ p",
+            "phonemes": [
+              "t",
+              "ɒ",
+              "p"
+            ]
+          },
+          {
+            "word": "dog",
+            "ipa": "d ɒ ɡ",
+            "phonemes": [
+              "d",
+              "ɒ",
+              "ɡ"
+            ]
+          },
+          {
+            "word": "tin",
+            "ipa": "t ɪ n",
+            "phonemes": [
+              "t",
+              "ɪ",
+              "n"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m7-practice-b",
+        "title": "Practice B — K/G and mixed",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "cap",
+            "ipa": "k æ p",
+            "phonemes": [
+              "k",
+              "æ",
+              "p"
+            ]
+          },
+          {
+            "word": "gap",
+            "ipa": "ɡ æ p",
+            "phonemes": [
+              "ɡ",
+              "æ",
+              "p"
+            ]
+          },
+          {
+            "word": "pie",
+            "ipa": "p aɪ",
+            "phonemes": [
+              "p",
+              "aɪ"
+            ]
+          },
+          {
+            "word": "buy",
+            "ipa": "b aɪ",
+            "phonemes": [
+              "b",
+              "aɪ"
+            ]
+          },
+          {
+            "word": "din",
+            "ipa": "d ɪ n",
+            "phonemes": [
+              "d",
+              "ɪ",
+              "n"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m7-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "pat",
+            "ipa": "p æ t",
+            "phonemes": [
+              "p",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "bat",
+            "ipa": "b æ t",
+            "phonemes": [
+              "b",
+              "æ",
+              "t"
+            ]
+          },
+          {
+            "word": "top",
+            "ipa": "t ɒ p",
+            "phonemes": [
+              "t",
+              "ɒ",
+              "p"
+            ]
+          },
+          {
+            "word": "cap",
+            "ipa": "k æ p",
+            "phonemes": [
+              "k",
+              "æ",
+              "p"
+            ]
+          },
+          {
+            "word": "gap",
+            "ipa": "ɡ æ p",
+            "phonemes": [
+              "ɡ",
+              "æ",
+              "p"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "consonant-clusters",
+    "order": 8,
+    "title": "Consonant Clusters",
+    "description": "Produce 3-consonant onsets: str-, spl-, scr-, spr- without insertion.",
+    "phonemeFocus": [
+      "/str/",
+      "/spl/",
+      "/skr/",
+      "/spr/"
+    ],
+    "focusSymbols": [
+      "str",
+      "spl",
+      "skr",
+      "spr"
+    ],
+    "lessons": [
+      {
+        "id": "m8-theory",
+        "title": "Consonant Clusters — No Shortcuts",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>Consonant Clusters</h2><p>English allows up to three consonants before the vowel in a syllable. Every consonant must be audible.</p><ul><li><strong>str-</strong> — <em>street, strong, stream</em>. Three distinct sounds: /s/ + /t/ + /ɹ/.</li><li><strong>spl-</strong> — <em>splash, split</em>. /s/ + /p/ + /l/.</li><li><strong>scr-</strong> — <em>screen, scroll</em>. /s/ + /k/ + /ɹ/.</li><li><strong>spr-</strong> — <em>spring, spread</em>. /s/ + /p/ + /ɹ/.</li></ul><p><strong>Common error:</strong> inserting a vowel between consonants (<em>e-street</em> → /ɪstriːt/). Practise slowly, then speed up.</p>",
+        "words": []
+      },
+      {
+        "id": "m8-practice-a",
+        "title": "Practice A — str- and spl-",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "street",
+            "ipa": "s t ɹ iː t",
+            "phonemes": [
+              "s",
+              "t",
+              "ɹ",
+              "iː",
+              "t"
+            ]
+          },
+          {
+            "word": "strong",
+            "ipa": "s t ɹ ɒ ŋ",
+            "phonemes": [
+              "s",
+              "t",
+              "ɹ",
+              "ɒ",
+              "ŋ"
+            ]
+          },
+          {
+            "word": "strap",
+            "ipa": "s t ɹ æ p",
+            "phonemes": [
+              "s",
+              "t",
+              "ɹ",
+              "æ",
+              "p"
+            ]
+          },
+          {
+            "word": "splash",
+            "ipa": "s p l æ ʃ",
+            "phonemes": [
+              "s",
+              "p",
+              "l",
+              "æ",
+              "ʃ"
+            ]
+          },
+          {
+            "word": "split",
+            "ipa": "s p l ɪ t",
+            "phonemes": [
+              "s",
+              "p",
+              "l",
+              "ɪ",
+              "t"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m8-practice-b",
+        "title": "Practice B — scr- and spr-",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "screen",
+            "ipa": "s k ɹ iː n",
+            "phonemes": [
+              "s",
+              "k",
+              "ɹ",
+              "iː",
+              "n"
+            ]
+          },
+          {
+            "word": "scroll",
+            "ipa": "s k ɹ oʊ l",
+            "phonemes": [
+              "s",
+              "k",
+              "ɹ",
+              "oʊ",
+              "l"
+            ]
+          },
+          {
+            "word": "spring",
+            "ipa": "s p ɹ ɪ ŋ",
+            "phonemes": [
+              "s",
+              "p",
+              "ɹ",
+              "ɪ",
+              "ŋ"
+            ]
+          },
+          {
+            "word": "spread",
+            "ipa": "s p ɹ ɛ d",
+            "phonemes": [
+              "s",
+              "p",
+              "ɹ",
+              "ɛ",
+              "d"
+            ]
+          },
+          {
+            "word": "stream",
+            "ipa": "s t ɹ iː m",
+            "phonemes": [
+              "s",
+              "t",
+              "ɹ",
+              "iː",
+              "m"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m8-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "street",
+            "ipa": "s t ɹ iː t",
+            "phonemes": [
+              "s",
+              "t",
+              "ɹ",
+              "iː",
+              "t"
+            ]
+          },
+          {
+            "word": "splash",
+            "ipa": "s p l æ ʃ",
+            "phonemes": [
+              "s",
+              "p",
+              "l",
+              "æ",
+              "ʃ"
+            ]
+          },
+          {
+            "word": "strong",
+            "ipa": "s t ɹ ɒ ŋ",
+            "phonemes": [
+              "s",
+              "t",
+              "ɹ",
+              "ɒ",
+              "ŋ"
+            ]
+          },
+          {
+            "word": "spring",
+            "ipa": "s p ɹ ɪ ŋ",
+            "phonemes": [
+              "s",
+              "p",
+              "ɹ",
+              "ɪ",
+              "ŋ"
+            ]
+          },
+          {
+            "word": "screen",
+            "ipa": "s k ɹ iː n",
+            "phonemes": [
+              "s",
+              "k",
+              "ɹ",
+              "iː",
+              "n"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "flap-t-linking",
+    "order": 9,
+    "title": "Flap T & Linking",
+    "description": "Smooth out the American flap-T and linking patterns in natural speech.",
+    "phonemeFocus": [
+      "/ɾ/",
+      "/t/",
+      "/ə/"
+    ],
+    "focusSymbols": [
+      "ɾ",
+      "t",
+      "ə"
+    ],
+    "lessons": [
+      {
+        "id": "m9-theory",
+        "title": "Flap T — The Heart of American English",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>Flap T &amp; Linking</h2><p>In American English, the /t/ between two vowels (especially unstressed ones) becomes a rapid tap — almost like a /d/. This is called the <strong>flap-T</strong> (/ɾ/).</p><ul><li><em>butter</em> → /ˈbʌɾər/ (sounds like \"budder\")</li><li><em>water</em> → /ˈwɔːɾər/</li><li><em>better</em> → /ˈbɛɾər/</li></ul><p>The flap is produced with a single very quick tongue tap against the alveolar ridge. This is what makes American English sound fluid rather than clipped.</p><p>In words ending in unstressed <strong>-ty</strong>, the same flap applies: <em>city</em> → /ˈsɪɾi/, <em>pretty</em> → /ˈpɹɪɾi/.</p>",
+        "words": []
+      },
+      {
+        "id": "m9-practice-a",
+        "title": "Practice A — -tter words",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "butter",
+            "ipa": "b ʌ t ə",
+            "phonemes": [
+              "b",
+              "ʌ",
+              "t",
+              "ə"
+            ]
+          },
+          {
+            "word": "water",
+            "ipa": "w ɔː t ə",
+            "phonemes": [
+              "w",
+              "ɔː",
+              "t",
+              "ə"
+            ]
+          },
+          {
+            "word": "better",
+            "ipa": "b ɛ t ə",
+            "phonemes": [
+              "b",
+              "ɛ",
+              "t",
+              "ə"
+            ]
+          },
+          {
+            "word": "matter",
+            "ipa": "m æ t ə",
+            "phonemes": [
+              "m",
+              "æ",
+              "t",
+              "ə"
+            ]
+          },
+          {
+            "word": "letter",
+            "ipa": "l ɛ t ə",
+            "phonemes": [
+              "l",
+              "ɛ",
+              "t",
+              "ə"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m9-practice-b",
+        "title": "Practice B — -ty words",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "city",
+            "ipa": "s ɪ t i",
+            "phonemes": [
+              "s",
+              "ɪ",
+              "t",
+              "i"
+            ]
+          },
+          {
+            "word": "party",
+            "ipa": "p ɑː t i",
+            "phonemes": [
+              "p",
+              "ɑː",
+              "t",
+              "i"
+            ]
+          },
+          {
+            "word": "dirty",
+            "ipa": "d ɜː t i",
+            "phonemes": [
+              "d",
+              "ɜː",
+              "t",
+              "i"
+            ]
+          },
+          {
+            "word": "thirty",
+            "ipa": "θ ɜː t i",
+            "phonemes": [
+              "θ",
+              "ɜː",
+              "t",
+              "i"
+            ]
+          },
+          {
+            "word": "pretty",
+            "ipa": "p ɹ ɪ t i",
+            "phonemes": [
+              "p",
+              "ɹ",
+              "ɪ",
+              "t",
+              "i"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m9-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "butter",
+            "ipa": "b ʌ t ə",
+            "phonemes": [
+              "b",
+              "ʌ",
+              "t",
+              "ə"
+            ]
+          },
+          {
+            "word": "water",
+            "ipa": "w ɔː t ə",
+            "phonemes": [
+              "w",
+              "ɔː",
+              "t",
+              "ə"
+            ]
+          },
+          {
+            "word": "better",
+            "ipa": "b ɛ t ə",
+            "phonemes": [
+              "b",
+              "ɛ",
+              "t",
+              "ə"
+            ]
+          },
+          {
+            "word": "city",
+            "ipa": "s ɪ t i",
+            "phonemes": [
+              "s",
+              "ɪ",
+              "t",
+              "i"
+            ]
+          },
+          {
+            "word": "pretty",
+            "ipa": "p ɹ ɪ t i",
+            "phonemes": [
+              "p",
+              "ɹ",
+              "ɪ",
+              "t",
+              "i"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "schwa-reduction",
+    "order": 10,
+    "title": "Schwa & Reduction",
+    "description": "Reduce unstressed syllables to /ə/ for natural connected-speech rhythm.",
+    "phonemeFocus": [
+      "/ə/"
+    ],
+    "focusSymbols": [
+      "ə"
+    ],
+    "lessons": [
+      {
+        "id": "m10-theory",
+        "title": "The Schwa — English Most Common Sound",
+        "type": "theory",
+        "order": 1,
+        "theoryHtml": "<h2>Schwa /ə/ — The Unstressed Vowel</h2><p>The schwa is the most frequent vowel in English. Any vowel letter can reduce to /ə/ in an unstressed syllable.</p><ul><li><em>about</em> → /əˈbaʊt/ — the first \"a\" is a schwa</li><li><em>support</em> → /səˈpɔːt/ — \"su\" reduces</li><li><em>correct</em> → /kəˈɹɛkt/ — \"co\" reduces</li></ul><p>The key is <strong>reducing</strong> unstressed syllables, not pronouncing every letter fully. English rhythm is stress-timed — stressed syllables are strong and clear, unstressed ones are quick and reduced to /ə/.</p><p>This reduction is what makes native English sound flowing, not robotic.</p>",
+        "words": []
+      },
+      {
+        "id": "m10-practice-a",
+        "title": "Practice A — Initial schwa",
+        "type": "practice",
+        "order": 2,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "about",
+            "ipa": "ə b aʊ t",
+            "phonemes": [
+              "ə",
+              "b",
+              "aʊ",
+              "t"
+            ]
+          },
+          {
+            "word": "above",
+            "ipa": "ə b ʌ v",
+            "phonemes": [
+              "ə",
+              "b",
+              "ʌ",
+              "v"
+            ]
+          },
+          {
+            "word": "ago",
+            "ipa": "ə ɡ oʊ",
+            "phonemes": [
+              "ə",
+              "ɡ",
+              "oʊ"
+            ]
+          },
+          {
+            "word": "occur",
+            "ipa": "ə k ɜː",
+            "phonemes": [
+              "ə",
+              "k",
+              "ɜː"
+            ]
+          },
+          {
+            "word": "suppose",
+            "ipa": "s ə p oʊ z",
+            "phonemes": [
+              "s",
+              "ə",
+              "p",
+              "oʊ",
+              "z"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m10-practice-b",
+        "title": "Practice B — Mid-word schwa",
+        "type": "practice",
+        "order": 3,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "suggest",
+            "ipa": "s ə dʒ ɛ s t",
+            "phonemes": [
+              "s",
+              "ə",
+              "dʒ",
+              "ɛ",
+              "s",
+              "t"
+            ]
+          },
+          {
+            "word": "collect",
+            "ipa": "k ə l ɛ k t",
+            "phonemes": [
+              "k",
+              "ə",
+              "l",
+              "ɛ",
+              "k",
+              "t"
+            ]
+          },
+          {
+            "word": "correct",
+            "ipa": "k ə ɹ ɛ k t",
+            "phonemes": [
+              "k",
+              "ə",
+              "ɹ",
+              "ɛ",
+              "k",
+              "t"
+            ]
+          },
+          {
+            "word": "connect",
+            "ipa": "k ə n ɛ k t",
+            "phonemes": [
+              "k",
+              "ə",
+              "n",
+              "ɛ",
+              "k",
+              "t"
+            ]
+          },
+          {
+            "word": "support",
+            "ipa": "s ə p ɔː t",
+            "phonemes": [
+              "s",
+              "ə",
+              "p",
+              "ɔː",
+              "t"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "m10-exam",
+        "title": "Module Exam",
+        "type": "exam",
+        "order": 4,
+        "theoryHtml": null,
+        "words": [
+          {
+            "word": "about",
+            "ipa": "ə b aʊ t",
+            "phonemes": [
+              "ə",
+              "b",
+              "aʊ",
+              "t"
+            ]
+          },
+          {
+            "word": "above",
+            "ipa": "ə b ʌ v",
+            "phonemes": [
+              "ə",
+              "b",
+              "ʌ",
+              "v"
+            ]
+          },
+          {
+            "word": "suppose",
+            "ipa": "s ə p oʊ z",
+            "phonemes": [
+              "s",
+              "ə",
+              "p",
+              "oʊ",
+              "z"
+            ]
+          },
+          {
+            "word": "correct",
+            "ipa": "k ə ɹ ɛ k t",
+            "phonemes": [
+              "k",
+              "ə",
+              "ɹ",
+              "ɛ",
+              "k",
+              "t"
+            ]
+          },
+          {
+            "word": "connect",
+            "ipa": "k ə n ɛ k t",
+            "phonemes": [
+              "k",
+              "ə",
+              "n",
+              "ɛ",
+              "k",
+              "t"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

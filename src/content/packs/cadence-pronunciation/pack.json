@@ -1,0 +1,18 @@
+{
+  "id": "cadence-pronunciation",
+  "name": "Cadence Pronunciation (phonemes, modules, practice words, conversations)",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "https://github.com/pstepanovum/Cadence",
+  "commit": "9d94329239892032a343a1d3e64b60b08419d867",
+  "copyright": "Copyright (c) 2026 Pavel Stepanov",
+  "attribution": "Phoneme catalog, pronunciation modules, practice words and conversation scripts adapted from Cadence (https://github.com/pstepanovum/Cadence), Copyright (c) 2026 Pavel Stepanov, MIT License. Vietnamese notes (viNote) are original Lingua Quest additions.",
+  "files": [
+    "conversations.json",
+    "modules.json",
+    "phonemes.json",
+    "targets.json"
+  ],
+  "content_sha256": "20511e4a627f2f6faa8e5fe3e0ada99b78f8b67d7e46df30848c03bebf915a7c",
+  "converted_at": "2026-11-05"
+}
