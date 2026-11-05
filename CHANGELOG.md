@@ -2,6 +2,38 @@
 
 Định dạng theo [Keep a Changelog](https://keepachangelog.com/), phiên bản theo SemVer.
 
+## [1.1.0] – 2026-11-05
+### Thay đổi
+- **Giao diện Windows 11 (Fluent):**
+  - Màu phẳng, nền Mica, lớp nội dung giống app Settings.
+  - Sidebar kiểu NavigationView, accent xanh Windows, bo góc 4–8 px.
+  - Bỏ toàn bộ gradient, quầng sáng và hiệu ứng kính mờ.
+- **Font:**
+  - Dùng font hệ thống Segoe UI Variable thay cho font web.
+  - IPA cũng dùng Segoe để không bị lẫn font.
+  - Có kiểm tra tự động `scripts/check_text.py` và E2E `fonts.spec.ts`.
+
+### Thêm mới
+- **Huấn luyện AI:**
+  - Ghi lại thói quen học: phiên học, thời gian thực sự học, giờ và ngày hay học, nhịp độ, hiệu quả nhắc nhở.
+  - Thống kê theo ngày, tuần, tháng.
+  - AI phân tích và đưa lời khuyên, kế hoạch "Áp dụng" vào lịch học, mục hỏi đáp về thói quen.
+- **Lịch thông báo:** brief buổi sáng, nhắc buổi tối, báo cáo ngày/tuần/tháng; gửi qua thông báo Windows và Telegram, có gửi bù khi máy tắt.
+- **Bot Telegram trong app:**
+  - Gia sư AI hiểu văn bản, ảnh và giọng nói.
+  - Lệnh: `/today`, `/review` (ôn thẻ bằng nút bấm), `/word`, `/quiz`, `/anh`, `/report`, `/advice`, `/habits`, `/plan`, `/reset`, `/help`.
+  - Liên kết tài khoản bằng mã ghép đôi.
+- **Chạy nền:** biểu tượng ở khay hệ thống, tùy chọn khởi động cùng Windows.
+- **Bản phát hành 1.1.0:**
+
+  | File | Kích thước | SHA-256 |
+  |---|---|---|
+  | `Lingua-Quest-Setup-1.1.0.exe` | 133 163 493 byte | `47f74093b906c47a947711ccbf9aaebbf3bd0ce1819dcd8eb18daecb77556217` |
+  | `Lingua-Quest-Portable-1.1.0.exe` | 116 313 653 byte | `8b671d3d22594c67981f296c0ef309c156e8b5f18305a4f9fc27735bce3cc7d7` |
+
+- **Kiểm thử:** 366/366 test Vitest, 23/23 E2E trên bản đóng gói (gồm 3 test font).
+- **Chuyển từ bot cũ:** tự nhập token, chat_id và key Gemini (mã hóa DPAPI), rồi xóa file cấu hình dạng chữ thường. Bot Python cũ và 2 tác vụ Windows của nó đã được gỡ.
+
 ## [1.0.0] – 2026-11-05
 ### Thêm mới
 - **Platform Kernel:**

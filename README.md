@@ -23,6 +23,8 @@
 | Gia sư AI | 7 phong cách, ghi nhớ lỗi hay lặp lại, sửa lỗi ngay trong câu, nói bằng giọng |
 | Phiêu lưu | XP, level, chuỗi ngày học (mỗi tuần được nghỉ một ngày), bản đồ 7 vùng, nhiệm vụ ngày/tuần, 27 thành tích, mở khóa màu giao diện |
 | Thống kê | Biểu đồ phút học, XP, kỹ năng, tốc độ đọc, độ chính xác khi nghe, điểm viết, lịch hoạt động |
+| Huấn luyện AI | Ghi lại thói quen học, thống kê ngày/tuần/tháng, AI phân tích và khuyên cách học, kế hoạch áp dụng được, lịch nhắc và báo cáo qua Windows và Telegram |
+| Bot Telegram | Gia sư AI (chữ, ảnh, giọng nói), ôn thẻ bằng nút bấm, từ của ngày, quiz, tạo ảnh, báo cáo; nằm ngay trong app (Cài đặt → Telegram) |
 | Tiện ích | Tìm kiếm toàn cục (Ctrl+K), yêu thích và đánh dấu, nhắc học, sao lưu/khôi phục, nhập/xuất CSV/JSON, chẩn đoán, phím tắt (F1), giao diện sáng/tối, giao diện tiếng Anh/tiếng Việt |
 
 ## Cài đặt (người dùng)
