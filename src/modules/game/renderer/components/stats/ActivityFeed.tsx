@@ -110,7 +110,7 @@ export function ActivityFeed({ reloadKey }: { reloadKey: number }) {
       <div className="space-y-5">
         {groups.map((g) => (
           <div key={g.day}>
-            <div className="mb-2 text-xs font-semibold tracking-wide text-faint uppercase">
+            <div className="mb-2 text-xs font-semibold text-faint">
               {g.day === today
                 ? L('Today', 'Hôm nay')
                 : fmt.date(g.day, { weekday: 'long', day: 'numeric', month: 'short' })}

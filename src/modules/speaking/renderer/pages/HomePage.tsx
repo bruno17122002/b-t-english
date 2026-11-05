@@ -97,9 +97,7 @@ function Home() {
               <AudioLines className="size-7" />
             </div>
             <div className="min-w-0 flex-1">
-              <div className="text-xs font-semibold tracking-wider text-accent uppercase">
-                {L('Pronunciation Path', 'Lộ trình phát âm')}
-              </div>
+              <div className="text-xs font-semibold text-accent">{L('Pronunciation Path', 'Lộ trình phát âm')}</div>
               <div className="font-display text-xl font-semibold">
                 {L('10 modules · every English sound', '10 chặng · mọi âm tiếng Anh')}
               </div>

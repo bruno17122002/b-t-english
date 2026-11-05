@@ -194,14 +194,12 @@ export function ExplainModal({
             {result.sentence}
           </blockquote>
           <div>
-            <div className="mb-1 text-xs font-semibold tracking-wide text-muted uppercase">
-              {L('Vietnamese', 'Tiếng Việt')}
-            </div>
+            <div className="mb-1 text-xs font-semibold text-muted">{L('Vietnamese', 'Tiếng Việt')}</div>
             <p>{result.translationVi}</p>
           </div>
           {result.simplified && result.simplified !== result.sentence && (
             <div>
-              <div className="mb-1 text-xs font-semibold tracking-wide text-muted uppercase">
+              <div className="mb-1 text-xs font-semibold text-muted">
                 {L('In simpler English', 'Tiếng Anh đơn giản hơn')}
               </div>
               <p>{result.simplified}</p>
@@ -209,9 +207,7 @@ export function ExplainModal({
           )}
           {result.grammarPoints.length > 0 && (
             <div>
-              <div className="mb-1 text-xs font-semibold tracking-wide text-muted uppercase">
-                {L('Grammar', 'Ngữ pháp')}
-              </div>
+              <div className="mb-1 text-xs font-semibold text-muted">{L('Grammar', 'Ngữ pháp')}</div>
               <ul className="space-y-1.5">
                 {result.grammarPoints.map((g, i) => (
                   <li key={i}>
@@ -223,9 +219,7 @@ export function ExplainModal({
           )}
           {result.keyPhrases.length > 0 && (
             <div>
-              <div className="mb-1 text-xs font-semibold tracking-wide text-muted uppercase">
-                {L('Useful phrases', 'Cụm từ hữu ích')}
-              </div>
+              <div className="mb-1 text-xs font-semibold text-muted">{L('Useful phrases', 'Cụm từ hữu ích')}</div>
               <ul className="flex flex-wrap gap-2">
                 {result.keyPhrases.map((k, i) => (
                   <li key={i} className="rounded-lg border border-line bg-surface-2 px-2 py-1">
@@ -295,14 +289,14 @@ export function RetellPanel({ passageId }: { passageId: string }) {
         <div className="space-y-4 text-sm">
           <div className="flex flex-wrap items-center gap-6">
             <div>
-              <div className="text-xs text-muted uppercase">{L('Score', 'Điểm')}</div>
+              <div className="text-xs text-muted">{L('Score', 'Điểm')}</div>
               <div className="font-display text-3xl font-semibold">
                 {result.score}
                 <span className="text-base text-muted">/10</span>
               </div>
             </div>
             <div className="min-w-48 flex-1">
-              <div className="mb-1 text-xs text-muted uppercase">
+              <div className="mb-1 text-xs text-muted">
                 {L('Main points covered', 'Ý chính đã nêu')} · {Math.round(result.coverage * 100)}%
               </div>
               <ProgressBar value={result.coverage} tone="success" />
@@ -344,9 +338,7 @@ export function RetellPanel({ passageId }: { passageId: string }) {
             </ul>
           )}
           <div>
-            <div className="mb-1 text-xs font-semibold tracking-wide text-muted uppercase">
-              {L('Model retelling', 'Bài kể mẫu')}
-            </div>
+            <div className="mb-1 text-xs font-semibold text-muted">{L('Model retelling', 'Bài kể mẫu')}</div>
             <p className="rounded-xl border border-line bg-surface-2 p-3 leading-relaxed">
               <InteractiveText text={result.improvedVersion} sourceModule="reading" sourceRef={passageId} />
             </p>

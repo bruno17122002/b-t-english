@@ -123,7 +123,7 @@ export function CueCardPractice({
     <div className="space-y-4">
       <Card className="relative overflow-hidden">
         <div className="relative">
-          <div className="text-xs font-semibold tracking-wider text-muted uppercase">{L('Cue card', 'Thẻ đề')}</div>
+          <div className="text-xs font-semibold text-muted">{L('Cue card', 'Thẻ đề')}</div>
           <h2 className="mt-1 font-display text-xl font-semibold">{prompt.title}</h2>
           {prompt.cueCard.length > 0 && (
             <ul className="mt-3 space-y-1.5">

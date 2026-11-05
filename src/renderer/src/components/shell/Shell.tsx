@@ -67,9 +67,7 @@ function Sidebar() {
           items.length ? (
             <div key={g}>
               {GROUP_LABEL[g].en && (
-                <div className="mb-1 px-3 text-[11px] font-semibold tracking-wider text-faint uppercase">
-                  {tx(GROUP_LABEL[g])}
-                </div>
+                <div className="mb-1 px-3 text-[11px] font-semibold text-faint">{tx(GROUP_LABEL[g])}</div>
               )}
               <div className="space-y-0.5">
                 {items.map((n) => (

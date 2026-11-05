@@ -45,7 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       ref={ref}
       disabled={disabled || loading}
       className={cx(
-        'inline-flex items-center justify-center rounded-md transition-colors duration-100 select-none disabled:opacity-50',
+        'inline-flex items-center justify-center rounded-md transition-colors duration-100 select-none disabled:pointer-events-none disabled:border-transparent disabled:bg-surface-3 disabled:text-faint',
         VARIANTS[variant],
         SIZES[size],
         className,
@@ -151,7 +151,7 @@ export function Section({
   return (
     <section className={cx('mb-8', className)}>
       <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 className="text-sm font-semibold tracking-wider text-muted uppercase">{title}</h2>
+        <h2 className="text-sm font-semibold text-muted">{title}</h2>
         {actions}
       </div>
       {children}
@@ -180,7 +180,7 @@ export function Badge({
   return (
     <span
       className={cx(
-        'inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold',
+        'inline-flex items-center gap-1 rounded-[4px] px-2 py-0.5 text-xs font-medium',
         BADGE_TONES[tone],
         className,
       )}
@@ -190,17 +190,15 @@ export function Badge({
   )
 }
 
-const CEFR_COLORS: Record<Cefr, string> = {
-  A1: 'bg-emerald-500/15 text-emerald-400',
-  A2: 'bg-teal-500/15 text-teal-400',
-  B1: 'bg-sky-500/15 text-sky-400',
-  B2: 'bg-indigo-500/15 text-indigo-400',
-  C1: 'bg-violet-500/15 text-violet-400',
-  C2: 'bg-fuchsia-500/15 text-fuchsia-400',
-}
 export function CefrBadge({ level, className }: { level: Cefr; className?: string }) {
   return (
-    <span className={cx('rounded-md px-1.5 py-0.5 font-mono text-xs font-bold', CEFR_COLORS[level], className)}>
+    <span
+      className={cx(
+        'inline-flex items-center rounded-[4px] px-1.5 py-px text-xs font-semibold tabular-nums',
+        `cefr-${level}`,
+        className,
+      )}
+    >
       {level}
     </span>
   )
@@ -289,7 +287,7 @@ export function StatTile({
 }) {
   return (
     <div className="rounded-2xl border border-line bg-surface p-4">
-      <div className="flex items-center gap-2 text-xs font-semibold tracking-wide text-muted uppercase [&>svg]:size-4">
+      <div className="flex items-center gap-2 text-xs font-semibold text-muted [&>svg]:size-4">
         {icon}
         {label}
       </div>
@@ -416,7 +414,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaHTMLAttributes<H
 
 export function Select({ className, children, ...rest }: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
-    <select className={cx(FIELD, fieldWidth(className), 'h-10 pr-8', className)} {...rest}>
+    <select className={cx(FIELD, fieldWidth(className), 'lq-select h-10', className)} {...rest}>
       {children}
     </select>
   )

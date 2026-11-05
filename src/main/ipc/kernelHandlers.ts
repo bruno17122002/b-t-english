@@ -6,6 +6,7 @@ import type { AppSettings, DiagnosticsInfo } from '@shared/types'
 import { USER_PROVIDERS } from '@shared/types'
 import { currentSchemaVersion } from '../db/migrations'
 import type { Kernel } from '../kernel'
+import { TtsCache } from '../kernel/ai/ttsCache'
 import { norm } from '../kernel/search/search'
 import { UserError, type IpcRouter } from './router'
 import { registerTelegramHandlers } from './telegramHandlers'
@@ -166,8 +167,13 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   r.handle('ai:models', ({ provider }) => k.ai.listModels(provider))
 
   // ---------- audio ----------
+  const ttsCache = new TtsCache(path.join(k.paths.userData, 'cache', 'tts'))
   r.handle('audio:tts', async ({ text, engine, voice, speed }) => {
+    const key = `${engine}|${k.ai.getConfig().providers[engine].model}|${voice ?? ''}|${speed ?? 1}|${text}`
+    const hit = ttsCache.get(key)
+    if (hit) return hit
     const res = await k.ai.synthesize(engine, text, voice, speed)
+    ttsCache.set(key, res.audio, res.mimeType)
     return { data: res.audio, mimeType: res.mimeType }
   })
   r.handle('audio:stt', ({ audio, mimeType, hint }) => k.ai.transcribe(audio, mimeType, hint))

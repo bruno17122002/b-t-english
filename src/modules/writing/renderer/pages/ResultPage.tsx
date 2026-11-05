@@ -198,9 +198,7 @@ function OfflineView({
           <Checklist items={view.checklist} />
         </Card>
         <Card>
-          <h2 className="mb-2 text-sm font-semibold tracking-wider text-muted uppercase">
-            {L('Your text', 'Bài của bạn')}
-          </h2>
+          <h2 className="mb-2 text-sm font-semibold text-muted">{L('Your text', 'Bài của bạn')}</h2>
           <p className="leading-loose whitespace-pre-wrap">{view.submission.originalText}</p>
         </Card>
       </div>
@@ -351,7 +349,7 @@ function FeedbackView({ view, feedback: fb }: { view: WritingSubmissionView; fee
 
         <div className="space-y-4">
           <Card className="p-4">
-            <h2 className="mb-3 text-sm font-semibold tracking-wider text-muted uppercase">
+            <h2 className="mb-3 text-sm font-semibold text-muted">
               {L('Mistakes', 'Lỗi sai')} ({fb.errors.length})
             </h2>
             {fb.errors.length === 0 ? (

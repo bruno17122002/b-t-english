@@ -92,7 +92,7 @@ export function SentencePractice({
       </div>
 
       <Card className="text-center">
-        <div className="text-xs font-semibold tracking-wider text-muted uppercase">
+        <div className="text-xs font-semibold text-muted">
           {L('Sentence', 'Câu')} {idx + 1}/{prompt.sentences.length}
         </div>
         <AnimatePresence mode="wait">

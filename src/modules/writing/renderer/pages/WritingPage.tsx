@@ -181,7 +181,7 @@ function Picker({ catalog }: { catalog: Query<WritingCatalog> }) {
                 ))}
               </Select>
               <Select
-                className="w-28"
+                className="w-36"
                 value={level}
                 onChange={(e) => setLevel(e.target.value as Cefr | 'all')}
                 aria-label={L('Level', 'Trình độ')}

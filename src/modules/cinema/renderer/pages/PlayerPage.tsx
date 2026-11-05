@@ -299,10 +299,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
       {/* title bar */}
       <div className="mb-3 flex flex-wrap items-center gap-3">
         <div className="min-w-0 flex-1">
-          <div
-            className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase"
-            style={{ color: g.from }}
-          >
+          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: g.from }}>
             <Clapperboard className="size-4" /> {L(g.en, g.vi)}
             <CefrBadge level={story.cefr} />
             {source === 'ai' && <AiBadge estimated={false} />}
@@ -362,7 +359,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
               <Backdrop backdrop={scene.backdrop} mood={scene.mood} still={reduceMotion} />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-x-0 top-0 flex h-[9%] items-center justify-between bg-black px-5 text-[11px] tracking-[0.3em] text-white/70 uppercase">
+          <div className="absolute inset-x-0 top-0 flex h-[9%] items-center justify-between bg-black px-5 text-[11px] text-white/70">
             <span className="truncate">{scene.title}</span>
             <span>
               {L('Scene', 'Cảnh')} {state.path.length}
@@ -600,7 +597,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
       {state.phase === 'quiz' && scene.quiz && (
         <div ref={quizRef} className="mt-5" data-testid="cinema-quiz">
           <Card>
-            <h3 className="mb-3 text-sm font-semibold tracking-wider text-muted uppercase">
+            <h3 className="mb-3 text-sm font-semibold text-muted">
               {L('Did you follow the scene?', 'Bạn có theo kịp cảnh phim?')}
             </h3>
             <div className="space-y-3">
@@ -631,7 +628,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
 
       <div className="mt-6 grid gap-4 lg:grid-cols-[1.5fr_1fr]">
         <Card>
-          <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted uppercase">
+          <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted">
             <Quote className="size-4" /> {L('Scene script', 'Lời thoại cảnh này')}
           </h3>
           <div className="space-y-2.5" data-testid="cinema-transcript">
@@ -673,7 +670,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
 
         <div className="space-y-4">
           <Card>
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted uppercase">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted">
               <Sparkles className="size-4" /> {L('Expressions', 'Cụm từ hay')}
             </h3>
             {expressions.length === 0 ? (
@@ -717,7 +714,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
           </Card>
 
           <Card>
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted uppercase">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted">
               <Route className="size-4" /> {L('Your path', 'Hành trình của bạn')}
             </h3>
             <ol className="relative space-y-2 border-l border-line pl-4" data-testid="cinema-path">

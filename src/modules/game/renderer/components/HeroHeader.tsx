@@ -28,7 +28,7 @@ function LevelCrest({ level }: { level: number }) {
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center pt-1">
-        <span className="text-[10px] font-semibold tracking-widest text-muted uppercase">Lv</span>
+        <span className="text-[10px] font-semiboldst text-muted">Lv</span>
         <span className="font-display text-3xl leading-none font-semibold">{level}</span>
       </div>
     </div>
@@ -58,7 +58,7 @@ export function HeroHeader({ game }: { game: GameState }) {
         <div className="flex items-center gap-5">
           <LevelCrest level={game.level} />
           <div className="min-w-0 flex-1">
-            <div className="text-xs font-semibold tracking-widest text-muted uppercase">
+            <div className="text-xs font-semiboldst text-muted">
               {L('Level', 'Cấp')} {game.level}
             </div>
             <h2 className="font-display text-3xl font-semibold tracking-tight">
@@ -165,7 +165,7 @@ export function HeroHeader({ game }: { game: GameState }) {
           </div>
 
           <div className="rounded-2xl border border-line bg-surface-2/70 p-4">
-            <div className="text-xs font-semibold tracking-wide text-muted uppercase">{L('Today', 'Hôm nay')}</div>
+            <div className="text-xs font-semibold text-muted">{L('Today', 'Hôm nay')}</div>
             <div className="mt-1 font-display text-2xl font-semibold">
               +{fmt.number(game.todayXp)} <span className="text-sm font-normal text-muted">XP</span>
             </div>

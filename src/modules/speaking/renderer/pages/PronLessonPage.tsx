@@ -91,7 +91,7 @@ function Lesson({ view, aiReady, onDone }: { view: PronLessonView; aiReady: bool
     <>
       <header className="mb-5 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <div className="mb-1 flex items-center gap-2 text-xs font-semibold tracking-wider text-muted uppercase">
+          <div className="mb-1 flex items-center gap-2 text-xs font-semibold text-muted">
             <Icon className="size-4" />
             {L(`Module ${view.module.order} · ${meta.en}`, `Chặng ${view.module.order} · ${meta.vi}`)}
             {view.lesson.completed && (

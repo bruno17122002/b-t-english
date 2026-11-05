@@ -443,7 +443,7 @@ function NewWords({ words, conversationId }: { words: TutorNewWord[]; conversati
   return (
     <div className="mt-3 border-t border-line pt-3" data-testid="tutor-new-words">
       <div className="mb-2 flex items-center justify-between gap-2">
-        <span className="text-xs font-semibold tracking-wide text-muted uppercase">{L('New words', 'Từ mới')}</span>
+        <span className="text-xs font-semibold text-muted">{L('New words', 'Từ mới')}</span>
         {words.length > 1 && (
           <Button
             size="sm"

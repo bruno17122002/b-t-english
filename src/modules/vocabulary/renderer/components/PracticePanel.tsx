@@ -267,9 +267,7 @@ function Session({ rounds, onExit, onAgain }: { rounds: Round[]; onExit: () => v
         </div>
         {missed.length > 0 && (
           <div className="mt-5">
-            <div className="mb-2 text-xs font-semibold tracking-wide text-muted uppercase">
-              {L('Words to look at again', 'Từ cần xem lại')}
-            </div>
+            <div className="mb-2 text-xs font-semibold text-muted">{L('Words to look at again', 'Từ cần xem lại')}</div>
             <div className="flex flex-wrap justify-center gap-1.5">
               {missed.map((m, i) => (
                 <Badge key={`${m.word}-${i}`} tone="danger">

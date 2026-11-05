@@ -188,7 +188,7 @@ function LevelView({
                     {u.icon ?? '📘'}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[11px] tracking-wide text-faint uppercase">
+                    <div className="text-[11px] text-faint">
                       {L('Unit', 'Bài')} {u.order}
                     </div>
                     <div className="font-semibold">{u.title}</div>

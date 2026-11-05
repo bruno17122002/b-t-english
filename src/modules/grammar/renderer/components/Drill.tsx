@@ -191,7 +191,7 @@ export function Drill({
           transition={{ duration: 0.2 }}
         >
           <Card className="p-6">
-            <div className="mb-1 text-xs font-semibold tracking-wider text-muted uppercase">
+            <div className="mb-1 text-xs font-semibold text-muted">
               {ex.type === 'gap' ? L('Fill in the gap', 'Điền vào chỗ trống') : L('Choose the answer', 'Chọn đáp án')}
             </div>
             {ex.type === 'gap' ? (
@@ -492,9 +492,7 @@ function Summary({
 
       {wrong.length > 0 && (
         <Card className="mt-4">
-          <h3 className="mb-3 text-sm font-semibold tracking-wider text-muted uppercase">
-            {L('Review your mistakes', 'Xem lại lỗi sai')}
-          </h3>
+          <h3 className="mb-3 text-sm font-semibold text-muted">{L('Review your mistakes', 'Xem lại lỗi sai')}</h3>
           <div className="space-y-3">
             {wrong.map((a) => (
               <div key={a.exercise.id} className="rounded-xl border border-line bg-surface-2 p-3 text-sm">

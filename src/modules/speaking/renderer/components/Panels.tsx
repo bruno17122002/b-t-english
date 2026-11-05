@@ -21,7 +21,7 @@ export function MetricsPanel({
   const L = useL()
   return (
     <div className="space-y-3" data-testid="speaking-metrics">
-      <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-muted uppercase">
+      <div className="flex items-center gap-2 text-xs font-semibold text-muted">
         <Activity className="size-4" />
         {L('Measured from your recording', 'Đo từ bản ghi âm')}
       </div>
@@ -80,7 +80,7 @@ export function MetricsPanel({
       )}
       {transcript ? (
         <div className="rounded-xl border border-line bg-surface-2 p-3 text-sm">
-          <span className="text-xs font-semibold text-muted uppercase">{L('Recognised', 'Nhận dạng được')}</span>
+          <span className="text-xs font-semibold text-muted">{L('Recognised', 'Nhận dạng được')}</span>
           <p className="mt-1 italic">“{transcript}”</p>
         </div>
       ) : (
@@ -184,9 +184,7 @@ export function FeedbackPanel({
     >
       <div className="flex flex-wrap items-center gap-2">
         <Sparkles className="size-4 text-accent" />
-        <span className="text-xs font-semibold tracking-wider text-muted uppercase">
-          {L('Coach feedback', 'Nhận xét của huấn luyện viên')}
-        </span>
+        <span className="text-xs font-semibold text-muted">{L('Coach feedback', 'Nhận xét của huấn luyện viên')}</span>
         <AiBadge />
         <span className="ml-auto flex items-center gap-1.5 text-sm text-muted">
           {L('Estimated level', 'Trình độ ước lượng')} <CefrBadge level={fb.cefrEstimate} />

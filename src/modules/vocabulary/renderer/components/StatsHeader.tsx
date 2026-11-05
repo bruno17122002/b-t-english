@@ -61,7 +61,7 @@ function ForecastChart({ forecast }: { forecast: VocabStats['forecast'] }) {
   const total = days.reduce((s, d) => s + d.count, 0)
   return (
     <div className="rounded-2xl border border-line bg-surface p-4">
-      <div className="mb-2 flex items-center justify-between text-xs font-semibold tracking-wide text-muted uppercase">
+      <div className="mb-2 flex items-center justify-between text-xs font-semibold text-muted">
         <span>{L('14-day forecast', 'Dự báo 14 ngày')}</span>
         <span className="font-normal normal-case">{L(`${total} reviews`, `${total} lượt ôn`)}</span>
       </div>

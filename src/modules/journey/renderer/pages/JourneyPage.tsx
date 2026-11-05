@@ -344,7 +344,7 @@ function RoadmapContent({
 function Stat({ label, value, sub }: { label: string; value: ReactNode; sub?: string }) {
   return (
     <div className="rounded-xl border border-line bg-surface-2/60 p-3">
-      <div className="text-[11px] tracking-wide text-muted uppercase">{label}</div>
+      <div className="text-[11px] text-muted">{label}</div>
       <div className="mt-1 font-display text-xl font-semibold">{value}</div>
       {sub && <div className="text-[11px] text-faint">{sub}</div>}
     </div>

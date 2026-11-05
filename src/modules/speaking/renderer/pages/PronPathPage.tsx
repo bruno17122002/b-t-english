@@ -115,7 +115,7 @@ export default function PronPathPage() {
                     <Card>
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div>
-                          <div className="text-xs font-semibold tracking-wider text-muted uppercase">
+                          <div className="text-xs font-semibold text-muted">
                             {L('Module', 'Chặng')} {m.order}
                           </div>
                           <h3 className="font-display text-lg font-semibold">{m.title}</h3>

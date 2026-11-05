@@ -338,7 +338,7 @@ export default function DashboardPage() {
         <div className="space-y-6">
           <Card className={dueCards > 0 ? 'border-accent/30' : undefined} data-testid="due-cards">
             <div className="flex items-center gap-4">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-500/12 text-emerald-400">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-500/12 text-emerald-700 dark:text-emerald-400">
                 <Layers className="size-6" />
               </div>
               <div className="flex-1">
@@ -440,7 +440,7 @@ function HeroStat({ icon, value, label }: { icon: ReactNode; value: string; labe
         {icon}
         <span className="font-display text-2xl font-semibold tabular-nums">{value}</span>
       </div>
-      <div className="text-[11px] tracking-wide text-muted uppercase">{label}</div>
+      <div className="text-[11px] text-muted">{label}</div>
     </div>
   )
 }

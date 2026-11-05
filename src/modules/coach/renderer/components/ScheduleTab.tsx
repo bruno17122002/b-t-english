@@ -135,7 +135,7 @@ export function ScheduleTab() {
                 )}
                 {kind === 'monthlyReport' && (
                   <Select
-                    className="w-28"
+                    className="w-36"
                     aria-label={L('Day of month', 'Ngày trong tháng')}
                     value={cfg.dayOfMonth ?? 1}
                     onChange={(e) => void update(kind, { dayOfMonth: Number(e.target.value) })}

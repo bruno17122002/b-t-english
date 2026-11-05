@@ -141,7 +141,7 @@ export default function TopicPage() {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
             <Card>
-              <div className="mb-2 flex items-center gap-2 text-xs font-semibold tracking-wider text-muted uppercase">
+              <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-muted">
                 <Languages className="size-4" /> {L('Explanation (Vietnamese)', 'Giải thích')}
               </div>
               <p className="leading-relaxed whitespace-pre-line">{topic.explanationVi}</p>
@@ -151,7 +151,7 @@ export default function TopicPage() {
               </div>
             </Card>
             <Card>
-              <div className="mb-3 flex items-center gap-2 text-xs font-semibold tracking-wider text-muted uppercase">
+              <div className="mb-3 flex items-center gap-2 text-xs font-semibold text-muted">
                 <ListChecks className="size-4" /> {L('Patterns', 'Cấu trúc')}
               </div>
               <div className="space-y-2">

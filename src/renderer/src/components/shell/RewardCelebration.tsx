@@ -91,7 +91,7 @@ export function RewardCelebration() {
               )}
               {current.achievementsUnlocked.map((a) => (
                 <div key={a.key} className="mt-3">
-                  <div className="text-xs font-semibold tracking-wider text-warning uppercase">
+                  <div className="text-xs font-semibold text-warning">
                     {L('Achievement unlocked', 'Mở khóa thành tích')}
                   </div>
                   <div className="font-display text-xl font-semibold">{lang === 'vi' ? a.titleVi : a.title}</div>

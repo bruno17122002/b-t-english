@@ -178,10 +178,11 @@ export function GeneralSettings() {
               className="w-64"
               aria-label={L('Preferred Windows voice', 'Giọng Windows ưu tiên')}
             >
-              <option value="">{L('Automatic (by accent)', 'Tự động (theo giọng vùng)')}</option>
+              <option value="">{L('Automatic (fast offline voice)', 'Tự động (giọng offline, phát ngay)')}</option>
               {voices.map((v) => (
                 <option key={v.voiceURI} value={v.voiceURI}>
                   {v.name} ({v.lang})
+                  {v.localService ? '' : L(' – online, slower to start', ' – trực tuyến, phát chậm hơn')}
                 </option>
               ))}
             </Select>

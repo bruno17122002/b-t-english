@@ -308,9 +308,7 @@ export function Editor({ prompt, aiAvailable }: { prompt: WritingPromptInfo | nu
         <aside className="space-y-4 lg:sticky lg:top-4 lg:self-start">
           <Card className="p-4">
             <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-sm font-semibold tracking-wider text-muted uppercase">
-                {L('Live analysis', 'Phân tích trực tiếp')}
-              </h2>
+              <h2 className="text-sm font-semibold text-muted">{L('Live analysis', 'Phân tích trực tiếp')}</h2>
             </div>
             <MetricsPanel metrics={metrics} />
           </Card>

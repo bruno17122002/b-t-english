@@ -63,7 +63,7 @@ export default function KingdomPage() {
               <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
                 <Card className="relative h-full overflow-hidden">
                   <div className="relative flex h-full flex-col">
-                    <div className="mb-2 flex items-center gap-2 text-xs font-semibold tracking-wider text-accent uppercase">
+                    <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-accent">
                       {data.recommended.reason === 'mistakes' ? (
                         <Target className="size-4" />
                       ) : (
@@ -119,7 +119,7 @@ export default function KingdomPage() {
                 sub={L(`${data.totals.exercises} exercises`, `${data.totals.exercises} bài tập`)}
               />
               <div className="col-span-2 rounded-2xl border border-line bg-surface p-4">
-                <div className="mb-2 flex items-center justify-between text-xs font-semibold tracking-wide text-muted uppercase">
+                <div className="mb-2 flex items-center justify-between text-xs font-semibold text-muted">
                   <span>{L('Kingdom conquered', 'Đã chinh phục')}</span>
                   <span className="tabular-nums">
                     {Math.round((data.totals.mastered / Math.max(1, data.totals.topics)) * 100)}%

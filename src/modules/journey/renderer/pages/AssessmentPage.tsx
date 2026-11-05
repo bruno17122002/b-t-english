@@ -758,9 +758,7 @@ function ResultView({
         className="relative overflow-hidden rounded-3xl border border-line bg-surface p-8 text-center shadow-card"
       >
         <div className="relative">
-          <div className="text-sm tracking-wider text-muted uppercase">
-            {L('Your overall level', 'Trình độ tổng thể của bạn')}
-          </div>
+          <div className="text-sm text-muted">{L('Your overall level', 'Trình độ tổng thể của bạn')}</div>
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

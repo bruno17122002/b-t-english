@@ -192,7 +192,7 @@ export function ShadowStage({
       <div className="space-y-5">
         <Card className="xl:sticky xl:top-4">
           <div className="mb-2 flex items-center justify-between">
-            <div className="text-xs font-semibold tracking-wider text-muted uppercase">
+            <div className="text-xs font-semibold text-muted">
               {L('Shadow line', 'Nói đuổi câu')} {active + 1}/{track.lines.length}
             </div>
             {aiReady && <AiBadge />}

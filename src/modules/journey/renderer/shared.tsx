@@ -27,16 +27,56 @@ export const SKILL_META: Record<Skill, { label: Bi; icon: LucideIcon }> = {
 }
 
 export const MODULE_META: Record<string, { label: Bi; icon: LucideIcon; tone: string }> = {
-  vocabulary: { label: { en: 'Flashcards', vi: 'Thẻ từ' }, icon: Layers, tone: 'text-emerald-400 bg-emerald-500/12' },
-  grammar: { label: { en: 'Grammar', vi: 'Ngữ pháp' }, icon: Puzzle, tone: 'text-violet-400 bg-violet-500/12' },
-  reading: { label: { en: 'Reading', vi: 'Đọc' }, icon: BookOpen, tone: 'text-sky-400 bg-sky-500/12' },
-  listening: { label: { en: 'Listening', vi: 'Nghe' }, icon: Ear, tone: 'text-cyan-400 bg-cyan-500/12' },
-  writing: { label: { en: 'Writing', vi: 'Viết' }, icon: PenLine, tone: 'text-amber-400 bg-amber-500/12' },
-  speaking: { label: { en: 'Speaking', vi: 'Nói' }, icon: Mic, tone: 'text-rose-400 bg-rose-500/12' },
-  cinema: { label: { en: 'Cinema', vi: 'Điện ảnh' }, icon: Clapperboard, tone: 'text-fuchsia-400 bg-fuchsia-500/12' },
-  tutor: { label: { en: 'AI Tutor', vi: 'Gia sư AI' }, icon: MessageCircle, tone: 'text-indigo-400 bg-indigo-500/12' },
-  journey: { label: { en: 'Course', vi: 'Khóa học' }, icon: GraduationCap, tone: 'text-teal-400 bg-teal-500/12' },
-  review: { label: { en: 'Review', vi: 'Ôn tập' }, icon: BookText, tone: 'text-emerald-400 bg-emerald-500/12' },
+  vocabulary: {
+    label: { en: 'Flashcards', vi: 'Thẻ từ' },
+    icon: Layers,
+    tone: 'text-emerald-700 dark:text-emerald-400 bg-emerald-500/12',
+  },
+  grammar: {
+    label: { en: 'Grammar', vi: 'Ngữ pháp' },
+    icon: Puzzle,
+    tone: 'text-violet-700 dark:text-violet-400 bg-violet-500/12',
+  },
+  reading: {
+    label: { en: 'Reading', vi: 'Đọc' },
+    icon: BookOpen,
+    tone: 'text-sky-700 dark:text-sky-400 bg-sky-500/12',
+  },
+  listening: {
+    label: { en: 'Listening', vi: 'Nghe' },
+    icon: Ear,
+    tone: 'text-cyan-700 dark:text-cyan-400 bg-cyan-500/12',
+  },
+  writing: {
+    label: { en: 'Writing', vi: 'Viết' },
+    icon: PenLine,
+    tone: 'text-amber-700 dark:text-amber-400 bg-amber-500/12',
+  },
+  speaking: {
+    label: { en: 'Speaking', vi: 'Nói' },
+    icon: Mic,
+    tone: 'text-rose-700 dark:text-rose-400 bg-rose-500/12',
+  },
+  cinema: {
+    label: { en: 'Cinema', vi: 'Điện ảnh' },
+    icon: Clapperboard,
+    tone: 'text-fuchsia-700 dark:text-fuchsia-400 bg-fuchsia-500/12',
+  },
+  tutor: {
+    label: { en: 'AI Tutor', vi: 'Gia sư AI' },
+    icon: MessageCircle,
+    tone: 'text-indigo-700 dark:text-indigo-400 bg-indigo-500/12',
+  },
+  journey: {
+    label: { en: 'Course', vi: 'Khóa học' },
+    icon: GraduationCap,
+    tone: 'text-teal-700 dark:text-teal-400 bg-teal-500/12',
+  },
+  review: {
+    label: { en: 'Review', vi: 'Ôn tập' },
+    icon: BookText,
+    tone: 'text-emerald-700 dark:text-emerald-400 bg-emerald-500/12',
+  },
 }
 
 export const moduleMeta = (m: string) => MODULE_META[m] ?? (MODULE_META.journey as (typeof MODULE_META)[string])

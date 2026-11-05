@@ -14,122 +14,265 @@ export interface SpeakOptions {
   onEnd?: () => void
 }
 
-let currentAudio: HTMLAudioElement | null = null
-const ttsCache = new Map<string, string>() // key → object URL
-const MAX_CACHE = 80
+// ---------- playback controller ----------
+// Exactly one thing speaks at a time. Every speak()/speakSequence() call takes a new "generation"; anything
+// belonging to an older generation (a pending AI request, a queued sentence, a running dialogue) is dropped,
+// and its promise resolves immediately so buttons never stay stuck in the "playing" state.
 
-export function stopSpeaking() {
-  if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel()
-  if (currentAudio) {
-    currentAudio.pause()
-    currentAudio = null
+let generation = 0
+let currentAudio: HTMLAudioElement | null = null
+let settleCurrent: (() => void) | null = null
+const listeners = new Set<(speaking: boolean) => void>()
+/** Resolved whenever playback is stopped, so work waiting on a download can give up immediately. */
+let supersededWaiters: (() => void)[] = []
+const superseded = () => new Promise<'superseded'>((r) => supersededWaiters.push(() => r('superseded')))
+
+function setSpeaking(v: boolean) {
+  for (const l of listeners) l(v)
+}
+
+/** Subscribe to "something is speaking" changes (used by buttons and players). */
+export function onSpeakingChange(listener: (speaking: boolean) => void): () => void {
+  listeners.add(listener)
+  return () => {
+    listeners.delete(listener)
   }
 }
 
+export function stopSpeaking() {
+  generation++
+  if (typeof speechSynthesis !== 'undefined' && (speechSynthesis.speaking || speechSynthesis.pending)) {
+    speechSynthesis.cancel()
+  }
+  if (currentAudio) {
+    currentAudio.pause()
+    currentAudio.removeAttribute('src')
+    currentAudio = null
+  }
+  settleCurrent?.()
+  settleCurrent = null
+  const waiters = supersededWaiters
+  supersededWaiters = []
+  for (const w of waiters) w()
+  setSpeaking(false)
+}
+
+// ---------- system (Windows) voices ----------
+
+let voiceCache: SpeechSynthesisVoice[] = []
+function loadVoices() {
+  if (typeof speechSynthesis === 'undefined') return
+  const all = speechSynthesis.getVoices()
+  if (all.length) voiceCache = all.filter((v) => v.lang.toLowerCase().startsWith('en'))
+}
+if (typeof speechSynthesis !== 'undefined') {
+  // Voices load asynchronously; warm the list up at start so the first click is not slow.
+  loadVoices()
+  speechSynthesis.addEventListener('voiceschanged', loadVoices)
+}
+
 export function systemVoices(): SpeechSynthesisVoice[] {
-  if (typeof speechSynthesis === 'undefined') return []
-  return speechSynthesis.getVoices().filter((v) => v.lang.toLowerCase().startsWith('en'))
+  if (!voiceCache.length) loadVoices()
+  return voiceCache
 }
 
 const FEMALE_HINT = /female|zira|aria|jenny|sonia|libby|hazel|susan|natasha|catherine|emma|ava|michelle/i
 const MALE_HINT = /male|david|mark|guy|ryan|george|james|william|christopher|eric|brian|andrew/i
 
-function pickVoice(accent: Accent, gender?: 'female' | 'male', preferredUri?: string): SpeechSynthesisVoice | null {
-  const voices = systemVoices()
+/**
+ * Local (offline) voices start instantly; "Online (Natural)" voices need a network round-trip per sentence,
+ * so they are only used when the learner picked one explicitly in Settings.
+ */
+export function pickVoice(
+  voices: SpeechSynthesisVoice[],
+  accent: Accent,
+  gender?: 'female' | 'male',
+  preferredUri?: string,
+): SpeechSynthesisVoice | null {
   if (!voices.length) return null
-  const sameAccent = voices.filter((v) => v.lang.replace('_', '-').toLowerCase() === accent.toLowerCase())
-  const pool = sameAccent.length ? sameAccent : voices
   if (preferredUri && !gender) {
-    const pref = pool.find((v) => v.voiceURI === preferredUri) ?? voices.find((v) => v.voiceURI === preferredUri)
-    if (pref && (!sameAccent.length || sameAccent.includes(pref))) return pref
+    const pref = voices.find((v) => v.voiceURI === preferredUri)
+    if (pref) return pref
   }
+  const local = voices.filter((v) => v.localService)
+  const base = local.length ? local : voices
+  const sameAccent = base.filter((v) => v.lang.replace('_', '-').toLowerCase() === accent.toLowerCase())
+  const pool = sameAccent.length ? sameAccent : base
   if (gender) {
     const g = pool.find((v) => (gender === 'female' ? FEMALE_HINT : MALE_HINT).test(v.name))
     if (g) return g
   }
-  return pool.find((v) => /natural|online/i.test(v.name)) ?? pool[0] ?? null
+  return pool[0] ?? null
 }
 
-function speakSystem(text: string, opts: SpeakOptions, rate: number, voiceUri: string): Promise<void> {
-  return new Promise((resolve) => {
-    if (typeof speechSynthesis === 'undefined') return resolve()
+/** Chromium stops long utterances after ~15 s, so long text is spoken in sentence-sized chunks. */
+export function splitForSpeech(text: string, max = 220): string[] {
+  const clean = text.replace(/\s+/g, ' ').trim()
+  if (!clean) return []
+  const sentences = clean.match(/[^.!?…]+[.!?…]*["')\]]*\s*/g) ?? [clean]
+  const out: string[] = []
+  let buf = ''
+  for (const s of sentences) {
+    if (buf && (buf + s).length > max) {
+      out.push(buf.trim())
+      buf = ''
+    }
+    buf += s
+  }
+  if (buf.trim()) out.push(buf.trim())
+  return out
+}
+
+function speakSystemChunk(text: string, opts: SpeakOptions, rate: number, voiceUri: string, my: number) {
+  return new Promise<void>((resolve) => {
+    if (typeof speechSynthesis === 'undefined' || my !== generation) return resolve()
     const u = new SpeechSynthesisUtterance(text)
-    const voice = pickVoice(opts.accent ?? 'en-US', opts.gender, voiceUri)
+    const voice = pickVoice(systemVoices(), opts.accent ?? 'en-US', opts.gender, voiceUri)
     if (voice) u.voice = voice
     u.lang = voice?.lang ?? opts.accent ?? 'en-US'
     u.rate = rate
-    u.onend = () => resolve()
-    u.onerror = () => resolve()
+    const done = () => {
+      if (settleCurrent === done) settleCurrent = null
+      resolve()
+    }
+    settleCurrent = done
+    u.onend = done
+    u.onerror = done
     speechSynthesis.speak(u)
+    // Chromium sometimes leaves the queue paused after cancel(); resume() kicks it.
+    if (speechSynthesis.paused) speechSynthesis.resume()
   })
+}
+
+async function speakSystem(text: string, opts: SpeakOptions, rate: number, voiceUri: string, my: number) {
+  for (const chunk of splitForSpeech(text)) {
+    if (my !== generation) return
+    await speakSystemChunk(chunk, opts, rate, voiceUri, my)
+  }
+}
+
+// ---------- AI voices (OpenAI / Gemini) ----------
+
+const ttsCache = new Map<string, string>() // key → object URL (main also keeps a disk cache)
+const inflight = new Map<string, Promise<string>>()
+const MAX_CACHE = 120
+
+function aiVoice(engine: 'openai' | 'gemini', gender?: 'female' | 'male') {
+  return engine === 'openai' ? (gender === 'male' ? 'onyx' : 'nova') : gender === 'male' ? 'Charon' : 'Kore'
+}
+
+/** Fetches (or reuses) the audio for a sentence. Concurrent requests for the same text share one download. */
+function loadAiAudio(engine: 'openai' | 'gemini', text: string, rate: number, gender?: 'female' | 'male') {
+  const voice = aiVoice(engine, gender)
+  // Gemini ignores the speed parameter (playbackRate is used instead), so its audio is cached at speed 1.
+  const speed = engine === 'openai' ? Math.round(rate * 100) / 100 : 1
+  const key = `${engine}|${voice}|${speed}|${text}`
+  const cached = ttsCache.get(key)
+  if (cached) return Promise.resolve(cached)
+  const pending = inflight.get(key)
+  if (pending) return pending
+  const p = api('audio:tts', { text, engine, voice, speed })
+    .then((res) => {
+      const url = URL.createObjectURL(new Blob([res.data as BlobPart], { type: res.mimeType }))
+      ttsCache.set(key, url)
+      if (ttsCache.size > MAX_CACHE) {
+        const first = ttsCache.keys().next().value as string
+        URL.revokeObjectURL(ttsCache.get(first) as string)
+        ttsCache.delete(first)
+      }
+      return url
+    })
+    .finally(() => inflight.delete(key))
+  inflight.set(key, p)
+  return p
+}
+
+/** Starts downloading upcoming sentences so a dialogue plays without gaps (AI voices only). */
+export function prefetchSpeech(texts: { text: string; gender?: 'female' | 'male' }[], rate = 1) {
+  const s = useApp.getState().settings
+  const engine = s?.ttsEngine ?? 'system'
+  if (engine === 'system') return
+  const r = rate * (s?.speechRate ?? 1)
+  for (const t of texts.slice(0, 2)) void loadAiAudio(engine, t.text, r, t.gender).catch(() => undefined)
 }
 
 async function speakAi(
   engine: 'openai' | 'gemini',
   text: string,
   rate: number,
+  my: number,
   gender?: 'female' | 'male',
-): Promise<void> {
-  const voice = engine === 'openai' ? (gender === 'male' ? 'onyx' : 'nova') : gender === 'male' ? 'Charon' : 'Kore'
-  const key = `${engine}|${voice}|${rate}|${text}`
-  let url = ttsCache.get(key)
-  if (!url) {
-    const res = await api('audio:tts', { text, engine, voice, speed: rate })
-    url = URL.createObjectURL(new Blob([res.data as BlobPart], { type: res.mimeType }))
-    ttsCache.set(key, url)
-    if (ttsCache.size > MAX_CACHE) {
-      const first = ttsCache.keys().next().value as string
-      URL.revokeObjectURL(ttsCache.get(first) as string)
-      ttsCache.delete(first)
-    }
-  }
+) {
+  const url = await Promise.race([loadAiAudio(engine, text, rate, gender), superseded()])
+  if (url === 'superseded' || my !== generation) return // superseded while downloading – never play late audio
   await new Promise<void>((resolve) => {
     const audio = new Audio(url)
     currentAudio = audio
     if (engine === 'gemini') audio.playbackRate = rate
-    audio.onended = () => resolve()
-    audio.onerror = () => resolve()
-    void audio.play().catch(() => resolve())
+    const done = () => {
+      if (settleCurrent === done) settleCurrent = null
+      if (currentAudio === audio) currentAudio = null
+      resolve()
+    }
+    settleCurrent = done
+    audio.onended = done
+    audio.onerror = done
+    void audio.play().catch(done)
   })
 }
 
-/**
- * Speaks English text with the learner's chosen engine. AI voices fall back to Windows voices
- * when the key is missing or the request fails, so audio always works offline.
- */
-export async function speak(text: string, opts: SpeakOptions = {}): Promise<void> {
-  stopSpeaking()
+async function speakNow(text: string, opts: SpeakOptions, my: number) {
   const s = useApp.getState().settings
   const rate = (opts.rate ?? 1) * (s?.speechRate ?? 1)
   const engine = s?.ttsEngine ?? 'system'
   try {
-    if (engine !== 'system') await speakAi(engine, text, rate, opts.gender)
-    else await speakSystem(text, opts, rate, s?.systemVoiceUri ?? '')
+    if (engine !== 'system') await speakAi(engine, text, rate, my, opts.gender)
+    else await speakSystem(text, opts, rate, s?.systemVoiceUri ?? '', my)
   } catch {
-    await speakSystem(text, opts, rate, s?.systemVoiceUri ?? '')
+    // AI voice unavailable (no key, offline, quota): fall back to Windows voices.
+    if (my === generation) await speakSystem(text, opts, rate, s?.systemVoiceUri ?? '', my)
+  }
+}
+
+/**
+ * Speaks English text with the learner's chosen engine. Starting a new speak() stops whatever was playing
+ * (including audio still downloading), so repeated clicks never stack up.
+ */
+export async function speak(text: string, opts: SpeakOptions = {}): Promise<void> {
+  stopSpeaking()
+  const my = generation
+  setSpeaking(true)
+  try {
+    await speakNow(text, opts, my)
   } finally {
+    if (my === generation) setSpeaking(false)
     opts.onEnd?.()
   }
 }
 
-/** Speaks lines one after another (dialogues). Returns a cancel function. */
+/** Speaks lines one after another (dialogues). Returns a cancel function. Any other speak() cancels it. */
 export function speakSequence(
   lines: { text: string; gender?: 'female' | 'male' }[],
   opts: SpeakOptions & { onLine?: (i: number) => void } = {},
 ) {
-  let cancelled = false
+  stopSpeaking()
+  const my = generation
+  setSpeaking(true)
   void (async () => {
-    for (let i = 0; i < lines.length && !cancelled; i++) {
+    for (let i = 0; i < lines.length && my === generation; i++) {
       opts.onLine?.(i)
+      prefetchSpeech(lines.slice(i + 1), opts.rate ?? 1)
       const line = lines[i] as { text: string; gender?: 'female' | 'male' }
-      await speak(line.text, { ...opts, gender: line.gender, onEnd: undefined })
-      if (!cancelled) await new Promise((r) => setTimeout(r, 250))
+      await speakNow(line.text, { ...opts, gender: line.gender, onEnd: undefined }, my)
+      if (my === generation && i < lines.length - 1) await new Promise((r) => setTimeout(r, 200))
     }
-    if (!cancelled) opts.onEnd?.()
+    if (my === generation) {
+      setSpeaking(false)
+      opts.onEnd?.()
+    }
   })()
   return () => {
-    cancelled = true
-    stopSpeaking()
+    if (my === generation) stopSpeaking()
   }
 }
 

@@ -519,7 +519,7 @@ function Reader({ view }: { view: PassageView }) {
           )}
           {view.history.length > 0 && (
             <Card className="p-4 text-sm">
-              <div className="mb-2 text-xs font-semibold tracking-wide text-muted uppercase">
+              <div className="mb-2 text-xs font-semibold text-muted">
                 {L('Your previous reads', 'Các lần đọc trước')}
               </div>
               <ul className="space-y-1 tabular-nums">
@@ -552,7 +552,7 @@ function Reader({ view }: { view: PassageView }) {
 function ResultStat({ icon, label, value, sub }: { icon: ReactNode; label: string; value: string; sub?: string }) {
   return (
     <div>
-      <div className="flex items-center gap-1.5 text-xs font-semibold tracking-wide text-muted uppercase">
+      <div className="flex items-center gap-1.5 text-xs font-semibold text-muted">
         {icon}
         {label}
       </div>

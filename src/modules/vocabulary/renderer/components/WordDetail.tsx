@@ -104,9 +104,7 @@ export function WordDetail({
           </div>
           {item.examples.length > 0 && (
             <div>
-              <h3 className="mb-1.5 text-xs font-semibold tracking-wide text-muted uppercase">
-                {L('Examples', 'Ví dụ')}
-              </h3>
+              <h3 className="mb-1.5 text-xs font-semibold text-muted">{L('Examples', 'Ví dụ')}</h3>
               <ul className="space-y-1.5">
                 {item.examples.map((e) => (
                   <li key={e} className="flex items-start gap-2">
@@ -119,9 +117,7 @@ export function WordDetail({
           )}
           {item.context && (
             <div>
-              <h3 className="mb-1.5 text-xs font-semibold tracking-wide text-muted uppercase">
-                {L('Where you met it', 'Ngữ cảnh gặp từ')}
-              </h3>
+              <h3 className="mb-1.5 text-xs font-semibold text-muted">{L('Where you met it', 'Ngữ cảnh gặp từ')}</h3>
               <p className="border-l-2 border-accent/50 pl-3 text-muted italic">
                 <Highlight text={item.context} word={item.word} />
               </p>
@@ -177,7 +173,7 @@ export function WordDetail({
 function Info({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div>
-      <div className="text-[11px] font-semibold tracking-wide text-faint uppercase">{label}</div>
+      <div className="text-[11px] font-semibold text-faint">{label}</div>
       <div className="mt-1">{value}</div>
     </div>
   )
