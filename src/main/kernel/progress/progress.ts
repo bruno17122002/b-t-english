@@ -348,7 +348,8 @@ export class ProgressService {
       ),
       cinemaScenes: count('cinema_scene'),
       storiesCompleted: count('story_completed'),
-      goodEndings: Number(this.db.value("SELECT COUNT(*) FROM story_progress WHERE ending_type = 'good'") ?? 0),
+      // Counted from history so replaying a film never lowers it (a good ending is recorded with score 1).
+      goodEndings: Number(this.db.value("SELECT COUNT(*) FROM activity_log WHERE action = 'story_completed' AND score >= 1") ?? 0),
       longestStreak: computeStreak(days, this.today()).longest,
       level: levelFromXp(this.totalXp()).level,
       assessments: count('assessment_done'),

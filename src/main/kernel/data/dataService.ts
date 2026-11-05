@@ -45,6 +45,7 @@ export interface ExportFile {
   tables: Record<string, Record<string, unknown>[]>
 }
 
+const BOM = String.fromCharCode(0xfeff)
 const stamp = (d: Date) => d.toISOString().replace(/[:T]/g, '-').replace(/\..+$/, '')
 
 function csvCell(v: unknown): string {
@@ -58,7 +59,7 @@ export function parseCsv(text: string): string[][] {
   let row: string[] = []
   let cell = ''
   let quoted = false
-  const src = text.replace(/^﻿/, '')
+  const src = text.startsWith(BOM) ? text.slice(1) : text
   for (let i = 0; i < src.length; i++) {
     const c = src[i]
     if (quoted) {
@@ -192,7 +193,7 @@ export class DataService {
       }
       return [r.word, r.ipa, r.pos, r.meaning_vi, r.meaning_en, example, r.topic, r.cefr, r.notes].map(csvCell).join(',')
     })
-    return '﻿' + [header.join(','), ...lines].join('\r\n')
+    return BOM + [header.join(','), ...lines].join('\r\n')
   }
 
   /** Imports words from a Lingua Quest JSON export or a CSV (first column = word). Existing words are merged. */

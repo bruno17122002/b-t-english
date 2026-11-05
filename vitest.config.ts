@@ -8,10 +8,11 @@ export default defineConfig({
       '@core': resolve(__dirname, 'src/core'),
       '@content': resolve(__dirname, 'src/content'),
       '@modules': resolve(__dirname, 'src/modules'),
+      '@': resolve(__dirname, 'src/renderer/src'),
     },
   },
   test: {
-    include: ['tests/unit/**/*.test.ts', 'tests/integration/**/*.test.ts'],
+    include: ['tests/unit/**/*.test.ts', 'tests/renderer/**/*.test.ts', 'tests/integration/**/*.test.ts'],
     environment: 'node',
     testTimeout: 20000,
     reporters: ['default', 'json'],

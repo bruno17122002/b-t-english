@@ -21,11 +21,12 @@ export const PAGES: { id: string; title: string; titleVi: string; route: string;
   { id: 'ai-settings', title: 'AI Settings', titleVi: 'Cài đặt AI', route: '/settings/ai', keywords: 'api key gemini openai model' },
 ]
 
-const norm = (s: string) =>
+/** Lower-cases and strips Vietnamese diacritics so "hai dang" matches "hải đăng". */
+export const norm = (s: string) =>
   s
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/\p{M}/gu, '')
     .replace(/đ/g, 'd')
 
 export class SearchService {
@@ -51,6 +52,12 @@ export class SearchService {
     for (const s of this.content.stories())
       if (hit(s.title, s.synopsisEn, s.synopsisVi, s.genre))
         out.push({ kind: 'story', id: s.id, title: s.title, subtitle: `Cinema · ${s.cefr}`, route: `/cinema/${s.id}` })
+    // AI-generated films live in the database rather than the bundled content.
+    for (const s of this.db.all<{ id: string; title: string; genre: string; cefr: string }>(
+      "SELECT id, title, genre, cefr FROM stories WHERE source = 'ai'",
+    ))
+      if (hit(s.title, s.genre))
+        out.push({ kind: 'story', id: s.id, title: s.title, subtitle: `Cinema · AI · ${s.cefr}`, route: `/cinema/${s.id}` })
     for (const g of this.content.grammar())
       if (hit(g.title, g.summaryEn, g.patterns.join(' ')))
         out.push({ kind: 'grammar', id: g.id, title: g.title, subtitle: `Grammar · ${g.cefr}`, route: `/grammar/${g.id}` })

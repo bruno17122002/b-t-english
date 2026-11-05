@@ -195,7 +195,7 @@ export const DAILY_QUESTS: QuestTemplate[] = [
   { key: 'speak', metric: 'speaking_seconds', title: 'Speak English for {m} minutes', titleVi: 'Nói tiếng Anh {m} phút', base: 300, xp: 35, skill: 'speaking', route: '/speaking' },
   { key: 'read', metric: 'reading_done', title: 'Read {n} story or article', titleVi: 'Đọc {n} truyện/bài báo', base: 1, xp: 30, skill: 'reading', route: '/reading' },
   { key: 'write', metric: 'writing_done', title: 'Write {n} paragraph', titleVi: 'Viết {n} đoạn văn', base: 1, xp: 35, skill: 'writing', route: '/writing' },
-  { key: 'grammar', metric: 'grammar_done', title: 'Clear {n} Grammar Kingdom drill', titleVi: 'Vượt {n} thử thách ngữ pháp', base: 1, xp: 25, skill: 'grammar', route: '/journey' },
+  { key: 'grammar', metric: 'grammar_done', title: 'Clear {n} Grammar Kingdom drill', titleVi: 'Vượt {n} thử thách ngữ pháp', base: 1, xp: 25, skill: 'grammar', route: '/grammar' },
   { key: 'cinema', metric: 'cinema_scenes', title: 'Play {n} Cinema scenes', titleVi: 'Chơi {n} cảnh phim', base: 2, xp: 30, skill: 'listening', route: '/cinema' },
   { key: 'tutor', metric: 'tutor_messages', title: 'Send {n} messages to your tutor', titleVi: 'Gửi {n} tin nhắn cho gia sư AI', base: 5, xp: 20, skill: 'writing', route: '/tutor' },
 ]
@@ -249,9 +249,11 @@ export function generateDailyQuests(input: {
   const chosen: QuestTemplate[] = []
   const byKey = (k: string) => DAILY_QUESTS.find((q) => q.key === k) as QuestTemplate
   chosen.push(input.dueCards >= 5 ? byKey('review-words') : byKey('learn-words'))
-  const weakTemplate = DAILY_QUESTS.find(
-    (q) => input.weakestSkills.includes(q.skill as Skill) && q.skill !== 'vocabulary' && !chosen.includes(q),
-  )
+  // Respect the order of weakness: the weakest skill that has a quest wins.
+  const weakTemplate = input.weakestSkills
+    .filter((s) => s !== 'vocabulary')
+    .map((s) => DAILY_QUESTS.find((q) => q.skill === s && !chosen.includes(q)))
+    .find((q): q is QuestTemplate => q !== undefined)
   if (weakTemplate) chosen.push(weakTemplate)
   const rest = DAILY_QUESTS.filter((q) => !chosen.includes(q) && q.key !== 'review-words' && q.key !== 'learn-words')
   while (chosen.length < 3 && rest.length) chosen.push(rest.splice(Math.floor(rnd() * rest.length), 1)[0] as QuestTemplate)

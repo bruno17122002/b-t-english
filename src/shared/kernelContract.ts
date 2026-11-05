@@ -1,6 +1,6 @@
 // IPC contract for Platform Kernel services (shared by every module).
 import { z } from 'zod'
-import { CefrSchema } from './content'
+import { CefrSchema, type DictionaryEntry } from './content'
 import { channel, NoInput } from './ipc'
 import type {
   Achievement,
@@ -193,6 +193,16 @@ export const kernelContract = {
   ),
   'vocab:stats': channel<VocabStats>()(NoInput),
   'vocab:topics': channel<string[]>()(NoInput),
+  'vocab:dictionary': channel<{ items: DictionaryEntry[]; total: number }>()(
+    z
+      .object({
+        query: shortText(80).optional(),
+        cefr: CefrSchema.optional(),
+        offset: z.number().int().min(0).optional(),
+        limit: z.number().int().min(1).max(200).optional(),
+      })
+      .optional(),
+  ),
   'vocab:lookup': channel<DictionaryResult | null>()(
     z.object({ word: z.string().trim().min(1).max(80), context: shortText(500).optional(), useAi: z.boolean().optional() }),
   ),

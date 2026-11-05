@@ -6,6 +6,7 @@ import type { DiagnosticsInfo } from '@shared/types'
 import { USER_PROVIDERS } from '@shared/types'
 import { currentSchemaVersion } from '../db/migrations'
 import type { Kernel } from '../kernel'
+import { norm } from '../kernel/search/search'
 import { UserError, type IpcRouter } from './router'
 
 export interface HostBridge {
@@ -157,6 +158,20 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   r.handle('vocab:review', ({ id, rating, durationMs }) => k.vocab.review(id, rating, durationMs))
   r.handle('vocab:stats', () => k.vocab.stats())
   r.handle('vocab:topics', () => k.vocab.topics())
+  r.handle('vocab:dictionary', (input) => {
+    const q = norm(input?.query?.trim() ?? '')
+    const all = k.content
+      .dictionary()
+      .filter((e) => (!input?.cefr || e.cefr === input.cefr) && (!q || norm(e.word).includes(q) || norm(e.meaningVi).includes(q)))
+      .sort((a, b) => {
+        // Words starting with the query first, then alphabetical.
+        const pa = q && norm(a.word).startsWith(q) ? 0 : 1
+        const pb = q && norm(b.word).startsWith(q) ? 0 : 1
+        return pa - pb || a.word.localeCompare(b.word)
+      })
+    const offset = input?.offset ?? 0
+    return { items: all.slice(offset, offset + (input?.limit ?? 50)), total: all.length }
+  })
   r.handle('vocab:lookup', ({ word, context, useAi }) => k.vocab.lookup(word, { context, useAi }))
 
   // ---------- progress ----------

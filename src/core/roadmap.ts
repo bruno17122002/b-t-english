@@ -86,7 +86,10 @@ export function buildOfflineRoadmap(input: RoadmapInput): {
     dailyMinutes: input.dailyMinutes,
     studyDaysPerWeek: input.studyDaysPerWeek,
   })
-  const priority = weakestSkills(input.skills.length ? input.skills : SKILLS.map((s) => ({ skill: s, cefr: 'A1' as Cefr, score: 0 })), 3)
+  // Fill missing skills at the overall level so there are always three priorities to rotate through.
+  const known = new Set(input.skills.map((s) => s.skill))
+  const allSkills = [...input.skills, ...SKILLS.filter((s) => !known.has(s)).map((s) => ({ skill: s, cefr: overall, score: 50 }))]
+  const priority = weakestSkills(allSkills, 3)
   const themes = (input.interests.length ? input.interests : ['daily', 'travel', 'movies']).map((i) => THEME_LABELS[i] ?? i)
   const weeks: Omit<RoadmapWeek, 'id'>[] = []
   const grammarPool = [...input.grammarTopics].sort((a, b) => cefrIndex(a.cefr) - cefrIndex(b.cefr))

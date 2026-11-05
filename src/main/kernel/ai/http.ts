@@ -82,7 +82,7 @@ export async function httpRequest(url: string, opts: HttpOptions = {}): Promise<
         body: opts.body,
         signal: controller.signal,
       })
-    } catch (err) {
+    } catch {
       if (opts.signal?.aborted) throw new AiError('cancelled')
       const timedOut = controller.signal.aborted
       if (attempt < retries && !timedOut) {

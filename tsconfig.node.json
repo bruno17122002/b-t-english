@@ -13,11 +13,16 @@
     "src/preload/**/*",
     "src/shared/**/*",
     "src/core/**/*",
-    "src/modules/*.ts",
+    "src/modules/contract.ts",
+    "src/modules/registry.main.ts",
+    "src/modules/types.main.ts",
     "src/modules/*/contract.ts",
+    "src/modules/*/types.ts",
+    "src/modules/*/shared/**/*",
     "src/modules/*/main/**/*",
     "src/content/*.json",
     "src/content/packs/**/*.json",
     "tests/**/*"
-  ]
+  ],
+  "exclude": ["tests/renderer/**/*"]
 }

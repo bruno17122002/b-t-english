@@ -1,0 +1,37 @@
+appId: com.linguaquest.app
+productName: Lingua Quest
+copyright: Copyright © 2026 Lingua Quest
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - build/icon.png
+  - package.json
+  - '!**/*.map'
+extraResources:
+  - from: node_modules/sql.js/dist/sql-wasm.wasm
+    to: sql-wasm/sql-wasm.wasm
+  - from: THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+asar: true
+compression: normal
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Lingua Quest
+  uninstallDisplayName: Lingua Quest
+  deleteAppDataOnUninstall: false
+  artifactName: Lingua-Quest-Setup-${version}.${ext}
+portable:
+  artifactName: Lingua-Quest-Portable-${version}.${ext}

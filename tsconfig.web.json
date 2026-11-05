@@ -18,8 +18,12 @@
     "src/core/**/*",
     "src/modules/contract.ts",
     "src/modules/registry.renderer.tsx",
+    "src/modules/types.renderer.ts",
     "src/modules/*/contract.ts",
+    "src/modules/*/types.ts",
+    "src/modules/*/shared/**/*",
     "src/modules/*/renderer/**/*",
-    "src/preload/api.d.ts"
+    "src/preload/api.d.ts",
+    "tests/renderer/**/*"
   ]
 }

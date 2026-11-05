@@ -1,6 +1,6 @@
 // Content registry: bundled original content (and later third-party packs) validated with zod on first
 // access. An invalid item is skipped and reported instead of crashing the app.
-import { z } from 'zod'
+import type { z } from 'zod'
 import {
   AssessmentItemSchema,
   CinemaStorySchema,

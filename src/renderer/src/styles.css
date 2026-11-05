@@ -1,0 +1,175 @@
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/manrope';
+@import 'tailwindcss';
+
+/* ---------- Design tokens ----------
+   Components use Tailwind utilities mapped to these variables (bg-surface, text-muted, border-line, …),
+   so dark/light themes and the unlockable accent colours switch by changing data attributes on <html>. */
+:root {
+  --bg: #0b0d14;
+  --bg-glow: #151a2e;
+  --surface: #121521;
+  --surface-2: #191d2c;
+  --surface-3: #22273a;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.16);
+  --text: #eceef6;
+  --muted: #9ba1b8;
+  --faint: #6b7189;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+  --shadow: 0 10px 40px -12px rgb(0 0 0 / 0.55);
+  --accent: #7c8cff;
+  --accent-2: #4fd1c5;
+  --accent-ink: #0b0d14;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #f5f4ef;
+  --bg-glow: #ebe8fb;
+  --surface: #ffffff;
+  --surface-2: #f3f2ee;
+  --surface-3: #e8e6df;
+  --line: rgb(20 22 40 / 0.09);
+  --line-strong: rgb(20 22 40 / 0.18);
+  --text: #171a28;
+  --muted: #5a6077;
+  --faint: #8a8fa3;
+  --shadow: 0 10px 30px -14px rgb(30 30 60 / 0.25);
+  --accent-ink: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-accent='aurora'] {
+  --accent: #7c8cff;
+  --accent-2: #4fd1c5;
+}
+:root[data-accent='ember'] {
+  --accent: #ff7a59;
+  --accent-2: #ffc15e;
+}
+:root[data-accent='jade'] {
+  --accent: #34d399;
+  --accent-2: #a3e635;
+}
+:root[data-accent='royal'] {
+  --accent: #a78bfa;
+  --accent-2: #f472b6;
+}
+:root[data-accent='sunset'] {
+  --accent: #fb7185;
+  --accent-2: #fbbf24;
+}
+:root[data-theme='light'][data-accent='aurora'] {
+  --accent: #4f5fe8;
+  --accent-2: #0f9f92;
+}
+:root[data-theme='light'][data-accent='jade'] {
+  --accent: #059669;
+  --accent-2: #65a30d;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-ink: var(--accent-ink);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-sans: 'Manrope Variable', 'Segoe UI', system-ui, sans-serif;
+  --shadow-card: var(--shadow);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, var(--bg-glow), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 35%, transparent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-3) transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    background: linear-gradient(100deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-accent-gradient {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  }
+  .glass {
+    background: color-mix(in oklab, var(--surface) 82%, transparent);
+    backdrop-filter: blur(14px);
+  }
+  .word-token {
+    border-radius: 4px;
+    transition: background-color 120ms;
+    cursor: pointer;
+  }
+  .word-token:hover {
+    background: color-mix(in oklab, var(--accent) 22%, transparent);
+  }
+  .word-saved {
+    text-decoration: underline dotted var(--accent-2);
+    text-underline-offset: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+:root[data-reduce-motion='true'] *,
+:root[data-reduce-motion='true'] *::before,
+:root[data-reduce-motion='true'] *::after {
+  animation-duration: 1ms !important;
+  transition-duration: 1ms !important;
+}
