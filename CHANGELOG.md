@@ -33,7 +33,13 @@
   - `docs/ONLINE_PLAN.md`: thiết kế và hợp đồng dữ liệu đồng bộ.
   - `supabase/README.md`: hướng dẫn triển khai.
   - `web/README.md`.
-- **Kiểm thử:** 522/522 Vitest, 23/23 E2E.
+- **Kiểm thử:** 522/522 Vitest, 23/23 E2E trên bản đóng gói.
+- **Bản phát hành:**
+
+  | File | Kích thước | SHA-256 |
+  |---|---|---|
+  | `Lingua-Quest-Setup-1.2.0.exe` | 133 185 588 byte | `4bac32b1c6961f2dcfb9bff9be231ddbf32e3efce2dcc712763246beb50d1054` |
+  | `Lingua-Quest-Portable-1.2.0.exe` | 116 326 481 byte | `cd72f3278e6c08acd3097f9990c423118991320c9ce5dd0271182e314dbfb882` |
 
 ## [1.1.0] – 2026-11-05
 ### Thay đổi
