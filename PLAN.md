@@ -38,11 +38,11 @@ Xem `TEST_PLAN.md` mục "Release checklist".
 
 ---
 
-## Điều chỉnh sau nghiên cứu mã nguồn mở (2026-11-05) – CHỜ DUYỆT
+## Điều chỉnh sau nghiên cứu mã nguồn mở (2026-11-05) – ĐÃ DUYỆT, ĐÃ TRIỂN KHAI
 
 Chi tiết: `docs/OSS_RESEARCH.md`. Kiến trúc đề xuất: mục "Đề xuất v2" trong `ARCHITECTURE.md`.
 
-**Trạng thái:** đã tạm dừng viết tính năng mới. Code đã có giữ nguyên.
+**Trạng thái:** người dùng đã duyệt ngày 05/11/2026. Đã hoàn thành 2A (Kernel), 2B (content pack) và 2C (module), sau đó PHASE 3–4. Phần 2D để lại cho sau v1.
 
 **Đề xuất:** giữ Lingua Quest là một ứng dụng Electron duy nhất, tổ chức thành các module độc lập dùng chung Kernel (dữ liệu, AI, âm thanh, hồ sơ người học, kho từ vựng, tiến độ/gamification).
 - **Tận dụng (MIT, chuyển source có ghi công):**

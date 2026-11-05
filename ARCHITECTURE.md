@@ -90,9 +90,9 @@ AIProvider interface
 
 ---
 
-## Đề xuất v2: Kiến trúc All-in-One theo module (CHỜ DUYỆT)
+## Kiến trúc v2: All-in-One theo module (ĐÃ DUYỆT 05/11/2026 – ĐÃ TRIỂN KHAI)
 
-> Đề xuất sau khi nghiên cứu mã nguồn mở (`docs/OSS_RESEARCH.md`). Chưa áp dụng vào code; code hiện có (`src/core`, `src/main/db`, `src/shared`) được giữ nguyên và tái sử dụng.
+> Đề xuất sau khi nghiên cứu mã nguồn mở (`docs/OSS_RESEARCH.md`). Người dùng đã duyệt và kiến trúc đã được triển khai. Code cũ (`src/core`, `src/main/db`, `src/shared`) được giữ và tái sử dụng. Cách viết module: `docs/MODULE_GUIDE.md`.
 
 ### Ý tưởng
 Lingua Quest là **một ứng dụng Electron duy nhất** (modular monolith). Mỗi chức năng là một **module độc lập** với manifest riêng. Mọi thứ dùng chung nằm trong **Platform Kernel** ở Main Process. Không có sidecar hay runtime Python, không có server localhost.

@@ -27,13 +27,26 @@ Duyệt mọi route bằng Playwright: không màn trắng, không nút chết (
 Mỗi lỗi: ghi vào `docs/BUGS.md` (triệu chứng → nguyên nhân gốc → cách sửa → regression test) → chạy lại test liên quan + toàn bộ suite.
 
 ## Release checklist (release gate)
-- [ ] Source + core features hoàn chỉnh
-- [ ] Static analysis đạt
-- [ ] Unit đạt
-- [ ] Integration đạt
-- [ ] E2E đạt
-- [ ] UI/UX review + screenshots
-- [ ] Không còn bug critical/high
-- [ ] Regression đạt
-- [ ] Phiên bản, icon, metadata đúng
+- [x] Source + core features hoàn chỉnh
+- [x] Static analysis đạt
+- [x] Unit đạt
+- [x] Integration đạt
+- [x] E2E đạt
+- [x] UI/UX review + screenshots
+- [x] Không còn bug critical/high
+- [x] Regression đạt
+- [x] Phiên bản, icon, metadata đúng
 → Chỉ khi tất cả được tích mới chạy `npm run dist`.
+
+
+### Kết quả release gate (05/11/2026, vòng 3)
+| Hạng mục | Kết quả |
+|---|---|
+| TypeScript (node, web, e2e) | 0 lỗi |
+| ESLint (`--max-warnings 0`) | 0 lỗi, 0 cảnh báo |
+| Prettier | Không file nào lệch định dạng |
+| `npm audit --omit=dev` | 0 lỗ hổng |
+| Vitest | 294/294 đạt: 161 unit, 58 renderer helper, 75 integration (30 file) |
+| Playwright E2E | 20/20 đạt, 0 flaky |
+| Bug critical/high còn mở | 0 (`docs/BUGS.md`) |
+| Metadata | Phiên bản 1.0.0, appId `com.linguaquest.app`, icon `build/icon.ico` |

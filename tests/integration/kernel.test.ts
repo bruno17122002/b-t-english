@@ -115,7 +115,7 @@ describe('kernel IPC', () => {
 
   it('browses and searches the full offline dictionary with paging', async () => {
     const { call, kernel } = await makeApp()
-    const all = await call<{ items: { word: string }[]; total: number }>('vocab:dictionary', { limit: 500 })
+    const all = await call<{ items: { word: string }[]; total: number }>('vocab:dictionary', { limit: 200 })
     expect(all.total).toBe(kernel.content.dictionary().length)
     const page2 = await call<{ items: { word: string }[] }>('vocab:dictionary', { offset: 50, limit: 50 })
     expect(page2.items[0]?.word).toBe(all.items[50]?.word)
