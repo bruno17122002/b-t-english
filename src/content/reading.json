@@ -1,0 +1,2720 @@
+[
+  {
+    "id": "rd-a1-new-neighbour",
+    "title": "A New Neighbour",
+    "category": "short-story",
+    "cefr": "A1",
+    "topicTags": [
+      "home",
+      "neighbours",
+      "daily life"
+    ],
+    "summaryVi": "Lan giúp người hàng xóm mới tên Tom chuyển đồ vào căn hộ, và hai người trở thành bạn.",
+    "body": "Lan is twenty-two years old. She lives in a small flat in a big city. Her flat is on the fifth floor. It has one bedroom, a little kitchen and a window with a view of the park.\n\nOne Saturday morning, Lan hears a noise in the hall. She opens the door. A young man is carrying a lot of boxes. He looks tired. “Hello,” Lan says. “Do you need help?” The man smiles. “Yes, please! I'm Tom. I'm your new neighbour.”\n\nLan and Tom carry the boxes into his flat. There are books, plates, a lamp and a guitar. After an hour, they are both hungry. Tom makes two cups of tea, and Lan brings some bread and fruit from her kitchen. They sit on the floor and eat.\n\nTom is a music teacher. Lan is a nurse. In the evening, Tom plays the guitar. Lan listens from her window and smiles. The building feels friendly now.",
+    "questions": [
+      {
+        "id": "rd-a1-new-neighbour-q1",
+        "type": "mcq",
+        "prompt": "Where does Lan live?",
+        "options": [
+          "In a house near the sea",
+          "In a small flat in a big city",
+          "In a hotel",
+          "With her parents in the country"
+        ],
+        "answerIndex": 1,
+        "explanation": "Câu thứ hai nói rõ: “She lives in a small flat in a big city.”"
+      },
+      {
+        "id": "rd-a1-new-neighbour-q2",
+        "type": "true-false-ng",
+        "prompt": "Lan's flat is on the third floor.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Bài đọc nói căn hộ ở tầng năm (“on the fifth floor”), không phải tầng ba."
+      },
+      {
+        "id": "rd-a1-new-neighbour-q3",
+        "type": "true-false-ng",
+        "prompt": "Tom is a music teacher.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Đoạn cuối viết: “Tom is a music teacher.”"
+      },
+      {
+        "id": "rd-a1-new-neighbour-q4",
+        "type": "true-false-ng",
+        "prompt": "Tom has a cat.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài đọc không nhắc đến con mèo nào, nên không có thông tin."
+      },
+      {
+        "id": "rd-a1-new-neighbour-q5",
+        "type": "mcq",
+        "prompt": "What do Lan and Tom drink?",
+        "options": [
+          "Coffee",
+          "Juice",
+          "Tea",
+          "Milk"
+        ],
+        "answerIndex": 2,
+        "explanation": "“Tom makes two cups of tea” – Tom pha hai tách trà."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "neighbour",
+        "ipa": "/ˈneɪbər/",
+        "pos": "noun",
+        "meaningVi": "hàng xóm",
+        "meaningEn": "a person who lives next to or near you",
+        "example": "My neighbour has a big dog.",
+        "cefr": "A1"
+      },
+      {
+        "word": "flat",
+        "ipa": "/flæt/",
+        "pos": "noun",
+        "meaningVi": "căn hộ",
+        "meaningEn": "a set of rooms for living in, on one floor of a building",
+        "example": "Their flat is very small but bright.",
+        "cefr": "A1"
+      },
+      {
+        "word": "floor",
+        "ipa": "/flɔːr/",
+        "pos": "noun",
+        "meaningVi": "tầng (nhà); sàn nhà",
+        "meaningEn": "a level of a building; the surface you walk on inside",
+        "example": "I live on the second floor.",
+        "cefr": "A1"
+      },
+      {
+        "word": "noise",
+        "ipa": "/nɔɪz/",
+        "pos": "noun",
+        "meaningVi": "tiếng ồn",
+        "meaningEn": "a sound, often loud or unpleasant",
+        "example": "What is that noise outside?",
+        "cefr": "A2"
+      },
+      {
+        "word": "carry",
+        "ipa": "/ˈkæri/",
+        "pos": "verb",
+        "meaningVi": "mang, khiêng, xách",
+        "meaningEn": "to hold something and take it somewhere",
+        "example": "Can you carry this bag for me?",
+        "cefr": "A1"
+      },
+      {
+        "word": "tired",
+        "ipa": "/ˈtaɪərd/",
+        "pos": "adjective",
+        "meaningVi": "mệt",
+        "meaningEn": "needing rest or sleep",
+        "example": "I am tired after work.",
+        "cefr": "A1"
+      },
+      {
+        "word": "hungry",
+        "ipa": "/ˈhʌŋɡri/",
+        "pos": "adjective",
+        "meaningVi": "đói",
+        "meaningEn": "wanting to eat",
+        "example": "Are you hungry? Let's have lunch.",
+        "cefr": "A1"
+      },
+      {
+        "word": "friendly",
+        "ipa": "/ˈfrendli/",
+        "pos": "adjective",
+        "meaningVi": "thân thiện",
+        "meaningEn": "kind and pleasant to other people",
+        "example": "The people in this town are very friendly.",
+        "cefr": "A1"
+      }
+    ]
+  },
+  {
+    "id": "rd-a2-lost-umbrella",
+    "title": "The Red Umbrella",
+    "category": "short-story",
+    "cefr": "A2",
+    "topicTags": [
+      "kindness",
+      "neighbourhood",
+      "weather"
+    ],
+    "summaryVi": "Mai bỏ quên chiếc ô đỏ trên xe buýt. Sáng hôm sau, một ông lão hàng xóm mang ô trả lại và hai người trở thành bạn.",
+    "body": "It was raining hard when Mai left the office on Friday evening. She opened her old red umbrella and walked to the bus stop. The bus was late, so she waited under the roof with a group of students and an elderly man in a grey coat.\n\nWhen the bus finally arrived, everyone hurried on. Mai found a seat at the back and closed her eyes for a few minutes. She was very tired after a long week. Suddenly she heard the driver call the name of her stop, and she jumped off quickly.\n\nWhen she got to her apartment, she noticed a problem: her umbrella was still on the bus. She felt annoyed, but it was just an umbrella, so she decided to forget about it.\n\nThe next morning, someone knocked on her door. It was the elderly man from the bus stop. He was holding her red umbrella. “I saw you leave it on your seat,” he explained. “I live in the building opposite yours, so I recognised you.”\n\nMai thanked him and invited him in for coffee. His name was Mr Harris, and he had lived in the neighbourhood for forty years. He told her funny stories about the street when it was full of small shops. Since that day, they have met for coffee every Saturday.",
+    "questions": [
+      {
+        "id": "rd-a2-lost-umbrella-q1",
+        "type": "mcq",
+        "prompt": "Why did Mai wait under the roof at the bus stop?",
+        "options": [
+          "Because she was meeting a friend",
+          "Because the bus was late",
+          "Because she lost her ticket",
+          "Because the bus was full"
+        ],
+        "answerIndex": 1,
+        "explanation": "“The bus was late, so she waited under the roof” – xe buýt đến trễ nên cô phải chờ."
+      },
+      {
+        "id": "rd-a2-lost-umbrella-q2",
+        "type": "true-false-ng",
+        "prompt": "Mai sat at the front of the bus.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Mai ngồi ở cuối xe (“a seat at the back”), không phải phía trước."
+      },
+      {
+        "id": "rd-a2-lost-umbrella-q3",
+        "type": "true-false-ng",
+        "prompt": "Mr Harris lives in the same building as Mai.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Ông sống ở tòa nhà đối diện (“the building opposite yours”), không phải cùng tòa nhà."
+      },
+      {
+        "id": "rd-a2-lost-umbrella-q4",
+        "type": "true-false-ng",
+        "prompt": "Mr Harris used to own a shop on the street.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài chỉ nói ông kể chuyện về những cửa hàng nhỏ trên phố, không nói ông từng có cửa hàng."
+      },
+      {
+        "id": "rd-a2-lost-umbrella-q5",
+        "type": "mcq",
+        "prompt": "How often do Mai and Mr Harris meet now?",
+        "options": [
+          "Every day",
+          "Every Friday evening",
+          "Every Saturday",
+          "Once a month"
+        ],
+        "answerIndex": 2,
+        "explanation": "Câu cuối: “they have met for coffee every Saturday.”"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "umbrella",
+        "ipa": "/ʌmˈbrelə/",
+        "pos": "noun",
+        "meaningVi": "cái ô, cái dù",
+        "meaningEn": "an object you hold over your head to keep dry in the rain",
+        "example": "Take an umbrella – it might rain.",
+        "cefr": "A2"
+      },
+      {
+        "word": "elderly",
+        "ipa": "/ˈeldərli/",
+        "pos": "adjective",
+        "meaningVi": "cao tuổi, lớn tuổi",
+        "meaningEn": "old (a polite word for people)",
+        "example": "She helps an elderly woman with her shopping.",
+        "cefr": "B1"
+      },
+      {
+        "word": "hurry",
+        "ipa": "/ˈhɜːri/",
+        "pos": "verb",
+        "meaningVi": "vội vàng, đi vội",
+        "meaningEn": "to move or do something quickly",
+        "example": "We hurried to the station.",
+        "cefr": "A2"
+      },
+      {
+        "word": "annoyed",
+        "ipa": "/əˈnɔɪd/",
+        "pos": "adjective",
+        "meaningVi": "bực mình, khó chịu",
+        "meaningEn": "a little angry",
+        "example": "He was annoyed because the train was late.",
+        "cefr": "B1"
+      },
+      {
+        "word": "knock",
+        "ipa": "/nɑːk/",
+        "pos": "verb",
+        "meaningVi": "gõ (cửa)",
+        "meaningEn": "to hit a door with your hand to show you are there",
+        "example": "Please knock before you come in.",
+        "cefr": "A2"
+      },
+      {
+        "word": "opposite",
+        "ipa": "/ˈɑːpəzɪt/",
+        "pos": "preposition",
+        "meaningVi": "đối diện",
+        "meaningEn": "on the other side of a street, room, etc.",
+        "example": "The bank is opposite the post office.",
+        "cefr": "A2"
+      },
+      {
+        "word": "recognise",
+        "ipa": "/ˈrekəɡnaɪz/",
+        "pos": "verb",
+        "meaningVi": "nhận ra",
+        "meaningEn": "to know someone or something because you have seen them before",
+        "example": "I didn't recognise you with short hair!",
+        "cefr": "B1"
+      },
+      {
+        "word": "neighbourhood",
+        "ipa": "/ˈneɪbərhʊd/",
+        "pos": "noun",
+        "meaningVi": "khu phố, khu dân cư",
+        "meaningEn": "the area of a town where you live",
+        "example": "There is a nice café in my neighbourhood.",
+        "cefr": "A2"
+      }
+    ]
+  },
+  {
+    "id": "rd-a1-breakfast-world",
+    "title": "Breakfast Around the World",
+    "category": "article",
+    "cefr": "A1",
+    "topicTags": [
+      "food",
+      "culture",
+      "countries"
+    ],
+    "summaryVi": "Bài viết giới thiệu bữa sáng ở Việt Nam, Anh, Nhật Bản và Mexico.",
+    "body": "People eat different breakfasts in different countries. Let's look at four of them.\n\nIn Vietnam, many people eat a hot bowl of noodle soup in the morning. Some people buy it from a small shop near their home. Others like sticky rice or a bread roll with meat and vegetables.\n\nIn England, a traditional breakfast is very big. It has eggs, bacon, sausages, beans, tomatoes and toast. But most English people only eat this at the weekend. On weekdays, they often have cereal with milk or a slice of toast.\n\nIn Japan, breakfast is often rice, fish, miso soup and vegetables. It is healthy and light.\n\nIn Mexico, some people eat eggs with tortillas, beans and a spicy sauce.\n\nWhat do you eat for breakfast? Is it sweet or salty? Is it hot or cold? Breakfast is important because it gives us energy for the day.",
+    "questions": [
+      {
+        "id": "rd-a1-breakfast-world-q1",
+        "type": "mcq",
+        "prompt": "What do many people in Vietnam eat for breakfast?",
+        "options": [
+          "Cereal with milk",
+          "A hot bowl of noodle soup",
+          "Eggs with tortillas",
+          "Fish and miso soup"
+        ],
+        "answerIndex": 1,
+        "explanation": "Đoạn 2: “many people eat a hot bowl of noodle soup in the morning.”"
+      },
+      {
+        "id": "rd-a1-breakfast-world-q2",
+        "type": "true-false-ng",
+        "prompt": "Most English people eat a big breakfast every day.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Phần lớn người Anh chỉ ăn bữa sáng lớn vào cuối tuần (“only eat this at the weekend”)."
+      },
+      {
+        "id": "rd-a1-breakfast-world-q3",
+        "type": "true-false-ng",
+        "prompt": "A Japanese breakfast is often healthy.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Bài viết nói bữa sáng Nhật “is healthy and light”."
+      },
+      {
+        "id": "rd-a1-breakfast-world-q4",
+        "type": "true-false-ng",
+        "prompt": "Breakfast in Mexico is more expensive than breakfast in Vietnam.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không so sánh giá cả, nên không có thông tin."
+      },
+      {
+        "id": "rd-a1-breakfast-world-q5",
+        "type": "mcq",
+        "prompt": "Why is breakfast important, according to the text?",
+        "options": [
+          "It is cheap",
+          "It is sweet",
+          "It gives us energy",
+          "It is fast"
+        ],
+        "answerIndex": 2,
+        "explanation": "Câu cuối: “it gives us energy for the day.”"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "bowl",
+        "ipa": "/boʊl/",
+        "pos": "noun",
+        "meaningVi": "cái bát, cái tô",
+        "meaningEn": "a round deep dish for soup or rice",
+        "example": "I'd like a bowl of rice, please.",
+        "cefr": "A1"
+      },
+      {
+        "word": "noodle",
+        "ipa": "/ˈnuːdl/",
+        "pos": "noun",
+        "meaningVi": "mì, bún, phở (sợi)",
+        "meaningEn": "a long thin strip of food made from flour or rice",
+        "example": "We had chicken noodle soup for lunch.",
+        "cefr": "A1"
+      },
+      {
+        "word": "traditional",
+        "ipa": "/trəˈdɪʃənl/",
+        "pos": "adjective",
+        "meaningVi": "truyền thống",
+        "meaningEn": "following old customs that people have had for a long time",
+        "example": "Áo dài is a traditional Vietnamese dress.",
+        "cefr": "A2"
+      },
+      {
+        "word": "toast",
+        "ipa": "/toʊst/",
+        "pos": "noun",
+        "meaningVi": "bánh mì nướng",
+        "meaningEn": "bread that has been heated until it is brown",
+        "example": "I have toast and coffee every morning.",
+        "cefr": "A1"
+      },
+      {
+        "word": "weekend",
+        "ipa": "/ˈwiːkend/",
+        "pos": "noun",
+        "meaningVi": "cuối tuần",
+        "meaningEn": "Saturday and Sunday",
+        "example": "What do you do at the weekend?",
+        "cefr": "A1"
+      },
+      {
+        "word": "healthy",
+        "ipa": "/ˈhelθi/",
+        "pos": "adjective",
+        "meaningVi": "lành mạnh, tốt cho sức khỏe",
+        "meaningEn": "good for your body",
+        "example": "Fruit is a healthy snack.",
+        "cefr": "A1"
+      },
+      {
+        "word": "spicy",
+        "ipa": "/ˈspaɪsi/",
+        "pos": "adjective",
+        "meaningVi": "cay",
+        "meaningEn": "having a hot, strong taste",
+        "example": "This sauce is too spicy for me.",
+        "cefr": "A2"
+      },
+      {
+        "word": "energy",
+        "ipa": "/ˈenərdʒi/",
+        "pos": "noun",
+        "meaningVi": "năng lượng",
+        "meaningEn": "the strength to be active",
+        "example": "I have no energy today.",
+        "cefr": "A2"
+      }
+    ]
+  },
+  {
+    "id": "rd-b1-walk-more",
+    "title": "Why We Should Walk More",
+    "category": "article",
+    "cefr": "B1",
+    "topicTags": [
+      "health",
+      "lifestyle",
+      "cities"
+    ],
+    "summaryVi": "Bài viết giải thích lợi ích của việc đi bộ đối với cơ thể và tinh thần, những khó khăn khi đi bộ ở thành phố và mục tiêu 30 phút mỗi ngày.",
+    "body": "For most of human history, walking was simply how people got from one place to another. Today, many of us spend the whole day sitting: at a desk, in a car or in front of a screen. Health experts say that this change has a real cost, and that one of the easiest ways to improve our health is also one of the oldest: walking.\n\nRegular walking strengthens the heart and lungs, helps to control weight and reduces the risk of several serious illnesses. It is also good for the mind. Many people find that a short walk helps them to calm down after a stressful day or to think more clearly about a problem. Some writers say that their best ideas come to them while they are walking.\n\nOne advantage of walking is that it costs nothing and requires no special equipment. You do not need to join a gym or buy expensive clothes; a comfortable pair of shoes is enough. It is also easy to include walking in daily life. You could get off the bus one stop early, take the stairs instead of the lift, or walk to the shops instead of driving.\n\nOf course, walking is not always convenient. In some cities, the pavements are narrow or crowded, and the air can be polluted. In very hot or rainy weather, people naturally prefer to stay indoors. City planners can help by creating safer routes, planting more trees and building green spaces.\n\nExperts often suggest a goal of around thirty minutes of walking a day. This does not have to happen all at once; three ten-minute walks can be just as useful. The most important thing is to start, and then to keep going.",
+    "questions": [
+      {
+        "id": "rd-b1-walk-more-q1",
+        "type": "mcq",
+        "prompt": "What is the main idea of the article?",
+        "options": [
+          "Walking is only useful for losing weight",
+          "Walking is a simple, cheap way to improve physical and mental health",
+          "People should stop using cars completely",
+          "Gyms are better than walking"
+        ],
+        "answerIndex": 1,
+        "explanation": "Bài viết nói về nhiều lợi ích của đi bộ cho cơ thể và tinh thần, và việc này rẻ, dễ làm."
+      },
+      {
+        "id": "rd-b1-walk-more-q2",
+        "type": "true-false-ng",
+        "prompt": "You need to buy special equipment to start walking.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Bài viết nói đi bộ “requires no special equipment” – chỉ cần một đôi giày thoải mái."
+      },
+      {
+        "id": "rd-b1-walk-more-q3",
+        "type": "true-false-ng",
+        "prompt": "Walking can help people to think more clearly.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Đoạn 2: đi bộ giúp “think more clearly about a problem”."
+      },
+      {
+        "id": "rd-b1-walk-more-q4",
+        "type": "true-false-ng",
+        "prompt": "Walking in cities is more dangerous than cycling.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không hề so sánh đi bộ với đi xe đạp."
+      },
+      {
+        "id": "rd-b1-walk-more-q5",
+        "type": "mcq",
+        "prompt": "What do experts say about the thirty-minute goal?",
+        "options": [
+          "It must be done in one walk",
+          "It is only for young people",
+          "It can be divided into shorter walks",
+          "It is too difficult for most people"
+        ],
+        "answerIndex": 2,
+        "explanation": "“three ten-minute walks can be just as useful” – có thể chia thành nhiều lần đi ngắn."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "strengthen",
+        "ipa": "/ˈstreŋkθən/",
+        "pos": "verb",
+        "meaningVi": "làm cho khỏe hơn, củng cố",
+        "meaningEn": "to make something stronger",
+        "example": "Swimming strengthens your back.",
+        "cefr": "B2"
+      },
+      {
+        "word": "reduce",
+        "ipa": "/rɪˈduːs/",
+        "pos": "verb",
+        "meaningVi": "giảm",
+        "meaningEn": "to make something smaller in size or amount",
+        "example": "We need to reduce our costs.",
+        "cefr": "B1"
+      },
+      {
+        "word": "risk",
+        "ipa": "/rɪsk/",
+        "pos": "noun",
+        "meaningVi": "nguy cơ, rủi ro",
+        "meaningEn": "the chance that something bad will happen",
+        "example": "Smoking increases the risk of heart disease.",
+        "cefr": "B1"
+      },
+      {
+        "word": "stressful",
+        "ipa": "/ˈstresfl/",
+        "pos": "adjective",
+        "meaningVi": "căng thẳng, gây áp lực",
+        "meaningEn": "making you feel worried and under pressure",
+        "example": "Moving house is very stressful.",
+        "cefr": "B1"
+      },
+      {
+        "word": "equipment",
+        "ipa": "/ɪˈkwɪpmənt/",
+        "pos": "noun (uncountable)",
+        "meaningVi": "thiết bị, dụng cụ",
+        "meaningEn": "the tools or things you need for an activity",
+        "example": "Camping equipment can be expensive.",
+        "cefr": "B1"
+      },
+      {
+        "word": "convenient",
+        "ipa": "/kənˈviːniənt/",
+        "pos": "adjective",
+        "meaningVi": "thuận tiện",
+        "meaningEn": "easy to use or suitable for your plans",
+        "example": "Is Monday convenient for you?",
+        "cefr": "B1"
+      },
+      {
+        "word": "pavement",
+        "ipa": "/ˈpeɪvmənt/",
+        "pos": "noun",
+        "meaningVi": "vỉa hè",
+        "meaningEn": "the path at the side of a road for people to walk on (British English)",
+        "example": "Motorbikes should not park on the pavement.",
+        "cefr": "B1"
+      },
+      {
+        "word": "polluted",
+        "ipa": "/pəˈluːtɪd/",
+        "pos": "adjective",
+        "meaningVi": "bị ô nhiễm",
+        "meaningEn": "made dirty and harmful by chemicals, smoke, etc.",
+        "example": "The river is too polluted to swim in.",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "rd-a2-library-of-things",
+    "title": "Town Library Starts Lending Tools and Games",
+    "category": "news",
+    "cefr": "A2",
+    "topicTags": [
+      "community",
+      "sharing",
+      "fictional news"
+    ],
+    "summaryVi": "(Tin hư cấu) Thư viện ở thị trấn Greenfield bắt đầu cho mượn đồ dùng như máy khoan, lều, trò chơi – ý tưởng đến từ nhóm học sinh địa phương.",
+    "body": "GREENFIELD — The public library in the small town of Greenfield has started lending something new: not books, but things.\n\nSince Monday, library members can borrow more than two hundred useful items, including drills, sewing machines, camping tents, board games and even a karaoke machine. Members can keep each item for up to one week, and borrowing is free.\n\nThe idea came from a group of local teenagers. “Lots of people buy a tool, use it once and then keep it in a cupboard for years,” said one of the students, sixteen-year-old Ella. “We thought it was a waste of money and space.”\n\nThe library asked residents to donate things they no longer needed. In just three weeks, people gave more than three hundred items. Volunteers checked every item to make sure it was clean and safe.\n\nOn the first day, over ninety items were borrowed. The most popular was a ladder, followed by a pasta maker.\n\nThe head librarian, David Okafor, said he was delighted. “A library is about sharing,” he said. “Sharing things is a natural next step.” The library now plans to offer short workshops so that people can learn how to use some of the tools safely.",
+    "questions": [
+      {
+        "id": "rd-a2-library-of-things-q1",
+        "type": "mcq",
+        "prompt": "What is new at the Greenfield library?",
+        "options": [
+          "It sells second-hand books",
+          "It lends useful things, not only books",
+          "It is open 24 hours a day",
+          "It has a new café"
+        ],
+        "answerIndex": 1,
+        "explanation": "Thư viện bắt đầu cho mượn đồ vật (“not books, but things”)."
+      },
+      {
+        "id": "rd-a2-library-of-things-q2",
+        "type": "true-false-ng",
+        "prompt": "Members must pay to borrow items.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Bài viết nói “borrowing is free” – mượn miễn phí."
+      },
+      {
+        "id": "rd-a2-library-of-things-q3",
+        "type": "true-false-ng",
+        "prompt": "The idea came from the library staff.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Ý tưởng đến từ một nhóm thanh thiếu niên địa phương (“local teenagers”), không phải nhân viên thư viện."
+      },
+      {
+        "id": "rd-a2-library-of-things-q4",
+        "type": "true-false-ng",
+        "prompt": "Someone borrowed the karaoke machine on the first day.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài chỉ nói cái thang và máy làm mì được mượn nhiều nhất; không biết máy karaoke có được mượn không."
+      },
+      {
+        "id": "rd-a2-library-of-things-q5",
+        "type": "mcq",
+        "prompt": "Which item was the most popular on the first day?",
+        "options": [
+          "A pasta maker",
+          "A tent",
+          "A ladder",
+          "A drill"
+        ],
+        "answerIndex": 2,
+        "explanation": "Món được mượn nhiều nhất là cái thang: “The most popular was a ladder, followed by a pasta maker.”"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "borrow",
+        "ipa": "/ˈbɑːroʊ/",
+        "pos": "verb",
+        "meaningVi": "mượn",
+        "meaningEn": "to take something that you will give back later",
+        "example": "Can I borrow your pen?",
+        "cefr": "A2"
+      },
+      {
+        "word": "lend",
+        "ipa": "/lend/",
+        "pos": "verb",
+        "meaningVi": "cho mượn",
+        "meaningEn": "to give something to someone for a short time",
+        "example": "She lent me her bike for the weekend.",
+        "cefr": "A2"
+      },
+      {
+        "word": "item",
+        "ipa": "/ˈaɪtəm/",
+        "pos": "noun",
+        "meaningVi": "món đồ, mục",
+        "meaningEn": "a single thing in a list or group",
+        "example": "There are ten items on the shopping list.",
+        "cefr": "A2"
+      },
+      {
+        "word": "tool",
+        "ipa": "/tuːl/",
+        "pos": "noun",
+        "meaningVi": "dụng cụ",
+        "meaningEn": "a thing you hold in your hand to do a job, like a hammer",
+        "example": "My father keeps his tools in the garage.",
+        "cefr": "A2"
+      },
+      {
+        "word": "resident",
+        "ipa": "/ˈrezɪdənt/",
+        "pos": "noun",
+        "meaningVi": "cư dân",
+        "meaningEn": "a person who lives in a place",
+        "example": "Local residents are unhappy about the noise.",
+        "cefr": "B1"
+      },
+      {
+        "word": "donate",
+        "ipa": "/ˈdoʊneɪt/",
+        "pos": "verb",
+        "meaningVi": "quyên góp, tặng",
+        "meaningEn": "to give something to help people or an organisation",
+        "example": "We donated our old clothes to charity.",
+        "cefr": "B1"
+      },
+      {
+        "word": "volunteer",
+        "ipa": "/ˌvɑːlənˈtɪr/",
+        "pos": "noun",
+        "meaningVi": "tình nguyện viên",
+        "meaningEn": "a person who works without being paid",
+        "example": "Volunteers cleaned the beach on Sunday.",
+        "cefr": "B1"
+      },
+      {
+        "word": "delighted",
+        "ipa": "/dɪˈlaɪtɪd/",
+        "pos": "adjective",
+        "meaningVi": "rất vui mừng",
+        "meaningEn": "very pleased",
+        "example": "I'm delighted to meet you.",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "rd-b1-green-roofs",
+    "title": "City Turns Rooftops into Gardens",
+    "category": "news",
+    "cefr": "B1",
+    "topicTags": [
+      "environment",
+      "cities",
+      "fictional news"
+    ],
+    "summaryVi": "(Tin hư cấu) Thành phố Port Allard hỗ trợ tiền để biến mái nhà thành vườn. Bài nêu lợi ích (chống ngập, làm mát, giáo dục) và những ý kiến phản đối.",
+    "body": "PORT ALLARD — Look up in the centre of Port Allard this summer and you might see tomatoes, sunflowers and even beehives. Over the past two years, more than forty office buildings and schools in this coastal city have turned their flat rooftops into gardens as part of a city programme called Green Roofs.\n\nThe programme offers building owners a grant that covers up to half of the cost of creating a roof garden. In return, owners must keep the garden for at least ten years and open it to the public or to local schools at least once a month.\n\nSupporters say the benefits are clear. Plants absorb rainwater, which reduces the risk of flooding in the streets below. They also keep buildings cooler in summer, so less energy is needed for air conditioning. According to the city council, the surface of a typical green roof is several degrees cooler than a traditional roof on a hot afternoon.\n\nThe gardens have social benefits, too. At Harbour Street Primary School, pupils grow vegetables on the roof and use them in cooking lessons. “Children who never ate salad now ask for more, because they grew it themselves,” said teacher Rosa Lindqvist.\n\nHowever, not everyone is enthusiastic. Some engineers warn that older buildings may not be strong enough to carry the extra weight of soil and water, so every roof must be inspected before work begins. Others point out that the money could be spent on parks at street level, which are easier for elderly and disabled people to reach.\n\nThe council says it will publish a full report on the programme next spring. If the results are positive, the scheme could be extended to apartment buildings.",
+    "questions": [
+      {
+        "id": "rd-b1-green-roofs-q1",
+        "type": "mcq",
+        "prompt": "What do building owners receive from the programme?",
+        "options": [
+          "Free plants and seeds",
+          "Money for up to half of the cost",
+          "A lower tax for ten years",
+          "Free air conditioning"
+        ],
+        "answerIndex": 1,
+        "explanation": "Chủ tòa nhà nhận “a grant that covers up to half of the cost” – khoản trợ cấp tối đa một nửa chi phí."
+      },
+      {
+        "id": "rd-b1-green-roofs-q2",
+        "type": "true-false-ng",
+        "prompt": "Owners must open their gardens to the public every week.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Yêu cầu là ít nhất mỗi tháng một lần (“at least once a month”), không phải mỗi tuần."
+      },
+      {
+        "id": "rd-b1-green-roofs-q3",
+        "type": "true-false-ng",
+        "prompt": "Green roofs can help to reduce flooding.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Cây hấp thụ nước mưa, “which reduces the risk of flooding”."
+      },
+      {
+        "id": "rd-b1-green-roofs-q4",
+        "type": "true-false-ng",
+        "prompt": "Most engineers in Port Allard support the programme.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài chỉ nói “some engineers” cảnh báo rủi ro; không nói đa số kỹ sư nghĩ gì."
+      },
+      {
+        "id": "rd-b1-green-roofs-q5",
+        "type": "mcq",
+        "prompt": "Which problem do some engineers mention?",
+        "options": [
+          "Roof gardens attract too many insects",
+          "Older buildings may not support the extra weight",
+          "Vegetables on roofs are not safe to eat",
+          "Roof gardens make buildings hotter"
+        ],
+        "answerIndex": 1,
+        "explanation": "Kỹ sư cảnh báo tòa nhà cũ có thể không đủ chắc để chịu thêm trọng lượng đất và nước."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "grant",
+        "ipa": "/ɡrænt/",
+        "pos": "noun",
+        "meaningVi": "khoản trợ cấp, tài trợ",
+        "meaningEn": "money given by a government or organisation for a special purpose",
+        "example": "She received a grant to study abroad.",
+        "cefr": "B2"
+      },
+      {
+        "word": "absorb",
+        "ipa": "/əbˈzɔːrb/",
+        "pos": "verb",
+        "meaningVi": "hấp thụ, thấm",
+        "meaningEn": "to take in a liquid, gas or heat",
+        "example": "A sponge absorbs water.",
+        "cefr": "B2"
+      },
+      {
+        "word": "flooding",
+        "ipa": "/ˈflʌdɪŋ/",
+        "pos": "noun",
+        "meaningVi": "lũ lụt, ngập lụt",
+        "meaningEn": "a situation in which water covers an area that is usually dry",
+        "example": "Heavy rain caused flooding in the city.",
+        "cefr": "B1"
+      },
+      {
+        "word": "council",
+        "ipa": "/ˈkaʊnsl/",
+        "pos": "noun",
+        "meaningVi": "hội đồng (thành phố)",
+        "meaningEn": "a group of people elected to manage a town or city",
+        "example": "The council plans to build a new bridge.",
+        "cefr": "B1"
+      },
+      {
+        "word": "enthusiastic",
+        "ipa": "/ɪnˌθuːziˈæstɪk/",
+        "pos": "adjective",
+        "meaningVi": "nhiệt tình, hào hứng",
+        "meaningEn": "showing a lot of interest and excitement",
+        "example": "The students were enthusiastic about the trip.",
+        "cefr": "B1"
+      },
+      {
+        "word": "inspect",
+        "ipa": "/ɪnˈspekt/",
+        "pos": "verb",
+        "meaningVi": "kiểm tra kỹ",
+        "meaningEn": "to look at something carefully to check it",
+        "example": "The mechanic inspected the brakes.",
+        "cefr": "B2"
+      },
+      {
+        "word": "soil",
+        "ipa": "/sɔɪl/",
+        "pos": "noun",
+        "meaningVi": "đất (trồng trọt)",
+        "meaningEn": "the top layer of the earth in which plants grow",
+        "example": "These plants need wet soil.",
+        "cefr": "B1"
+      },
+      {
+        "word": "extend",
+        "ipa": "/ɪkˈstend/",
+        "pos": "verb",
+        "meaningVi": "mở rộng, gia hạn",
+        "meaningEn": "to make something bigger or longer",
+        "example": "They extended the deadline by a week.",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "rd-a1-water-cycle",
+    "title": "Where Does Rain Come From?",
+    "category": "science",
+    "cefr": "A1",
+    "topicTags": [
+      "nature",
+      "weather",
+      "water"
+    ],
+    "summaryVi": "Bài giải thích vòng tuần hoàn của nước: mặt trời làm nước bốc hơi, hơi nước tạo thành mây, rồi mưa rơi xuống.",
+    "body": "Water is everywhere. It is in the sea, in rivers, in the clouds and even in our bodies. But where does rain come from? The answer is the water cycle.\n\nFirst, the sun heats the water in seas, lakes and rivers. Some of the water turns into a gas called water vapour. The vapour goes up into the sky. We cannot see it.\n\nHigh in the sky, the air is cold. The vapour becomes very small drops of water. Many small drops together make a cloud.\n\nWhen the drops in a cloud get bigger and heavier, they fall to the ground. This is rain. When it is very cold, they fall as snow.\n\nThe rain goes into rivers, lakes and the sea. Then the sun heats the water again, and the cycle starts again. The same water goes around and around for millions of years. Maybe the water in your glass today was once in the sea near a dinosaur!",
+    "questions": [
+      {
+        "id": "rd-a1-water-cycle-q1",
+        "type": "mcq",
+        "prompt": "What heats the water in seas and rivers?",
+        "options": [
+          "The wind",
+          "The sun",
+          "The clouds",
+          "The snow"
+        ],
+        "answerIndex": 1,
+        "explanation": "“the sun heats the water in seas, lakes and rivers” – mặt trời làm nóng nước."
+      },
+      {
+        "id": "rd-a1-water-cycle-q2",
+        "type": "true-false-ng",
+        "prompt": "We can see water vapour in the sky.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Bài viết nói “We cannot see it” – chúng ta không nhìn thấy hơi nước."
+      },
+      {
+        "id": "rd-a1-water-cycle-q3",
+        "type": "true-false-ng",
+        "prompt": "A cloud is made of many small drops of water.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Nhiều giọt nước nhỏ hợp lại tạo thành mây: “Many small drops together make a cloud.”"
+      },
+      {
+        "id": "rd-a1-water-cycle-q4",
+        "type": "true-false-ng",
+        "prompt": "It rains more in summer than in winter.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không nói mùa nào mưa nhiều hơn."
+      },
+      {
+        "id": "rd-a1-water-cycle-q5",
+        "type": "mcq",
+        "prompt": "What happens when it is very cold?",
+        "options": [
+          "The drops fall as snow",
+          "The clouds disappear",
+          "The sun heats the drops",
+          "Nothing happens"
+        ],
+        "answerIndex": 0,
+        "explanation": "“When it is very cold, they fall as snow.” – khi rất lạnh, nước rơi xuống thành tuyết."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "cloud",
+        "ipa": "/klaʊd/",
+        "pos": "noun",
+        "meaningVi": "đám mây",
+        "meaningEn": "a white or grey mass in the sky made of small drops of water",
+        "example": "There isn't a cloud in the sky today.",
+        "cefr": "A1"
+      },
+      {
+        "word": "cycle",
+        "ipa": "/ˈsaɪkl/",
+        "pos": "noun",
+        "meaningVi": "chu trình, vòng tuần hoàn",
+        "meaningEn": "a series of events that happen again and again in the same order",
+        "example": "Children learn about the life cycle of a butterfly.",
+        "cefr": "B1"
+      },
+      {
+        "word": "heat",
+        "ipa": "/hiːt/",
+        "pos": "verb",
+        "meaningVi": "làm nóng, đun nóng",
+        "meaningEn": "to make something hot or warm",
+        "example": "Heat the milk in a small pan.",
+        "cefr": "A2"
+      },
+      {
+        "word": "gas",
+        "ipa": "/ɡæs/",
+        "pos": "noun",
+        "meaningVi": "khí, chất khí",
+        "meaningEn": "a substance like air that is not solid or liquid",
+        "example": "Oxygen is a gas.",
+        "cefr": "A2"
+      },
+      {
+        "word": "vapour",
+        "ipa": "/ˈveɪpər/",
+        "pos": "noun",
+        "meaningVi": "hơi (nước)",
+        "meaningEn": "very small drops of liquid in the air",
+        "example": "Water vapour rises from the hot soup.",
+        "cefr": "B2"
+      },
+      {
+        "word": "drop",
+        "ipa": "/drɑːp/",
+        "pos": "noun",
+        "meaningVi": "giọt",
+        "meaningEn": "a very small amount of liquid in a round shape",
+        "example": "A drop of rain fell on my nose.",
+        "cefr": "A2"
+      },
+      {
+        "word": "heavy",
+        "ipa": "/ˈhevi/",
+        "pos": "adjective",
+        "meaningVi": "nặng",
+        "meaningEn": "weighing a lot",
+        "example": "This bag is too heavy for me.",
+        "cefr": "A1"
+      },
+      {
+        "word": "dinosaur",
+        "ipa": "/ˈdaɪnəsɔːr/",
+        "pos": "noun",
+        "meaningVi": "khủng long",
+        "meaningEn": "a very large animal that lived millions of years ago",
+        "example": "My son loves books about dinosaurs.",
+        "cefr": "A2"
+      }
+    ]
+  },
+  {
+    "id": "rd-b2-forest-network",
+    "title": "The Hidden Network Beneath the Forest",
+    "category": "science",
+    "cefr": "B2",
+    "topicTags": [
+      "biology",
+      "forests",
+      "scientific debate"
+    ],
+    "summaryVi": "Rễ cây trong rừng được nối với nhau bởi mạng lưới nấm. Bài viết giải thích mối quan hệ cộng sinh này, những phát hiện gây chú ý và cuộc tranh luận khoa học xung quanh nó.",
+    "body": "Walk through a forest and you will see trees competing for light, each one stretching upwards in a silent race. Yet beneath your feet, something rather different may be happening. Scientists have discovered that the roots of many trees are connected by vast networks of fungi, and these networks appear to allow trees to exchange resources and, possibly, signals.\n\nThe relationship begins with a simple trade. Fungi produce thin threads, called hyphae, which spread through the soil and wrap around, or even enter, tree roots. These threads are far finer than roots and can reach water and minerals that the roots alone would miss. In exchange, the tree supplies the fungi with sugars that it produces through photosynthesis. This partnership, known as mycorrhiza, is extremely ancient and involves the great majority of land plants.\n\nWhat surprised researchers was evidence that a single fungal network can link several trees at once, sometimes of different species. In experiments using carbon that could be traced, scientists found that carbon from one tree had travelled into its neighbours. Some studies suggested that large, older trees might send resources to seedlings growing in deep shade, improving their chances of survival. The media quickly nicknamed the system the “wood wide web”.\n\nHowever, the idea has become controversial. Several ecologists have argued that popular accounts have exaggerated the findings. They point out that many experiments were carried out in laboratories or on a small scale, and that it is difficult to prove that resources are moved deliberately rather than simply leaking along the network. The claim that “mother trees” look after their offspring, they say, is an attractive story but not yet an established fact.\n\nWhat is not in doubt is the importance of fungi to healthy forests. Without them, many trees would grow slowly or not at all. This has practical consequences: when forests are cleared and replanted, foresters increasingly pay attention to the soil and its fungal life, not just to the young trees above it.\n\nThe story of the forest network is also a useful lesson in how science works: an exciting discovery, followed by careful questioning, and gradually a clearer and more accurate picture.",
+    "questions": [
+      {
+        "id": "rd-b2-forest-network-q1",
+        "type": "mcq",
+        "prompt": "What do the fungi receive from the trees?",
+        "options": [
+          "Water",
+          "Minerals",
+          "Sugars",
+          "Light"
+        ],
+        "answerIndex": 2,
+        "explanation": "Cây cung cấp cho nấm “sugars that it produces through photosynthesis”. Nấm thì mang nước và khoáng chất cho cây."
+      },
+      {
+        "id": "rd-b2-forest-network-q2",
+        "type": "true-false-ng",
+        "prompt": "Fungal threads are thicker than tree roots.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Sợi nấm “far finer than roots” – mảnh hơn nhiều, không phải dày hơn."
+      },
+      {
+        "id": "rd-b2-forest-network-q3",
+        "type": "true-false-ng",
+        "prompt": "All scientists agree that older trees deliberately feed young trees.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Đoạn 4 nói ý tưởng này “controversial” và nhiều nhà sinh thái học hoài nghi."
+      },
+      {
+        "id": "rd-b2-forest-network-q4",
+        "type": "true-false-ng",
+        "prompt": "The first experiments on fungal networks were carried out in tropical forests.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không nói thí nghiệm đầu tiên được làm ở đâu."
+      },
+      {
+        "id": "rd-b2-forest-network-q5",
+        "type": "mcq",
+        "prompt": "What is the writer's main point in the final paragraph?",
+        "options": [
+          "The wood wide web has been proved false",
+          "Science progresses through discovery followed by careful questioning",
+          "Journalists should not write about science",
+          "Foresters should stop replanting trees"
+        ],
+        "answerIndex": 1,
+        "explanation": "Đoạn cuối nói khoa học phát triển qua khám phá, rồi chất vấn cẩn thận, dần dần có bức tranh rõ hơn."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "beneath",
+        "ipa": "/bɪˈniːθ/",
+        "pos": "preposition",
+        "meaningVi": "bên dưới",
+        "meaningEn": "under; in a lower position than",
+        "example": "The boat sank beneath the waves.",
+        "cefr": "B2"
+      },
+      {
+        "word": "fungi",
+        "ipa": "/ˈfʌŋɡaɪ/",
+        "pos": "noun (plural of fungus)",
+        "meaningVi": "nấm (số nhiều)",
+        "meaningEn": "living things such as mushrooms that get food from dead or living matter",
+        "example": "Some fungi are safe to eat, but many are poisonous.",
+        "cefr": "C1"
+      },
+      {
+        "word": "exchange",
+        "ipa": "/ɪksˈtʃeɪndʒ/",
+        "pos": "verb / noun",
+        "meaningVi": "trao đổi",
+        "meaningEn": "to give something and receive something else in return",
+        "example": "We exchanged phone numbers after the meeting.",
+        "cefr": "B1"
+      },
+      {
+        "word": "seedling",
+        "ipa": "/ˈsiːdlɪŋ/",
+        "pos": "noun",
+        "meaningVi": "cây con, cây non",
+        "meaningEn": "a very young plant grown from a seed",
+        "example": "Water the seedlings every morning.",
+        "cefr": "C1"
+      },
+      {
+        "word": "controversial",
+        "ipa": "/ˌkɑːntrəˈvɜːrʃl/",
+        "pos": "adjective",
+        "meaningVi": "gây tranh cãi",
+        "meaningEn": "causing a lot of disagreement",
+        "example": "The new law is highly controversial.",
+        "cefr": "B2"
+      },
+      {
+        "word": "exaggerate",
+        "ipa": "/ɪɡˈzædʒəreɪt/",
+        "pos": "verb",
+        "meaningVi": "phóng đại, nói quá",
+        "meaningEn": "to make something seem bigger or more important than it is",
+        "example": "He always exaggerates his problems.",
+        "cefr": "B2"
+      },
+      {
+        "word": "deliberately",
+        "ipa": "/dɪˈlɪbərətli/",
+        "pos": "adverb",
+        "meaningVi": "một cách cố ý",
+        "meaningEn": "on purpose, not by accident",
+        "example": "She deliberately ignored my message.",
+        "cefr": "B2"
+      },
+      {
+        "word": "consequence",
+        "ipa": "/ˈkɑːnsəkwens/",
+        "pos": "noun",
+        "meaningVi": "hậu quả, kết quả",
+        "meaningEn": "a result of an action or situation",
+        "example": "Every decision has consequences.",
+        "cefr": "B2"
+      }
+    ]
+  },
+  {
+    "id": "rd-a2-strong-passwords",
+    "title": "Keeping Your Online Accounts Safe",
+    "category": "technology",
+    "cefr": "A2",
+    "topicTags": [
+      "internet",
+      "security",
+      "everyday tech"
+    ],
+    "summaryVi": "Bài hướng dẫn cách tạo mật khẩu mạnh, dùng trình quản lý mật khẩu và bật xác minh hai bước để bảo vệ tài khoản.",
+    "body": "Today, most of us have many online accounts: email, social media, banking, shopping and more. Each account needs a password, and remembering them all is not easy. Because of this, many people use the same simple password everywhere. This is a big mistake.\n\nIf a criminal discovers your password for one website, they can try it on all your other accounts. Simple passwords like “123456” or your date of birth are also very easy to guess. Computer programs can try millions of combinations in a few seconds.\n\nSo what makes a good password? First, it should be long – at least twelve characters. A good idea is to join three or four random words together, for example “purple-lamp-river-tiger”. This is easy for you to remember but hard for a computer to guess. Second, use a different password for every important account.\n\nYou can also use a password manager. This is an app that creates strong passwords and saves them for you, so you only need to remember one main password.\n\nFinally, turn on two-step verification when you can. With this, the website sends a code to your phone every time you log in from a new device. Even if someone knows your password, they cannot enter your account without the code.",
+    "questions": [
+      {
+        "id": "rd-a2-strong-passwords-q1",
+        "type": "mcq",
+        "prompt": "Why is it dangerous to use the same password everywhere?",
+        "options": [
+          "Websites do not allow it",
+          "A criminal can use one password to enter all your accounts",
+          "It makes your phone slow",
+          "You will forget it more easily"
+        ],
+        "answerIndex": 1,
+        "explanation": "Nếu kẻ gian biết mật khẩu của một trang, họ có thể thử nó với mọi tài khoản khác."
+      },
+      {
+        "id": "rd-a2-strong-passwords-q2",
+        "type": "true-false-ng",
+        "prompt": "A good password should have at least twelve characters.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Bài viết nói mật khẩu nên “at least twelve characters”."
+      },
+      {
+        "id": "rd-a2-strong-passwords-q3",
+        "type": "true-false-ng",
+        "prompt": "Password managers are always expensive.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không nói gì về giá của trình quản lý mật khẩu."
+      },
+      {
+        "id": "rd-a2-strong-passwords-q4",
+        "type": "true-false-ng",
+        "prompt": "With two-step verification, a criminal only needs your password to enter your account.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Với xác minh hai bước, họ còn cần mã gửi về điện thoại của bạn."
+      },
+      {
+        "id": "rd-a2-strong-passwords-q5",
+        "type": "mcq",
+        "prompt": "What does a password manager do?",
+        "options": [
+          "It sends codes to your phone",
+          "It creates and saves strong passwords",
+          "It deletes old accounts",
+          "It makes your internet faster"
+        ],
+        "answerIndex": 1,
+        "explanation": "Đó là ứng dụng tạo và lưu mật khẩu mạnh cho bạn: “an app that creates strong passwords and saves them for you”."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "account",
+        "ipa": "/əˈkaʊnt/",
+        "pos": "noun",
+        "meaningVi": "tài khoản",
+        "meaningEn": "an arrangement to use a website, bank or service",
+        "example": "I opened a new email account.",
+        "cefr": "A2"
+      },
+      {
+        "word": "password",
+        "ipa": "/ˈpæswɜːrd/",
+        "pos": "noun",
+        "meaningVi": "mật khẩu",
+        "meaningEn": "a secret word or group of letters you use to enter a system",
+        "example": "Never tell anyone your password.",
+        "cefr": "A2"
+      },
+      {
+        "word": "criminal",
+        "ipa": "/ˈkrɪmɪnl/",
+        "pos": "noun",
+        "meaningVi": "tội phạm, kẻ gian",
+        "meaningEn": "a person who breaks the law",
+        "example": "The police caught the criminal last night.",
+        "cefr": "B1"
+      },
+      {
+        "word": "guess",
+        "ipa": "/ɡes/",
+        "pos": "verb",
+        "meaningVi": "đoán",
+        "meaningEn": "to give an answer without knowing if it is correct",
+        "example": "Can you guess how old I am?",
+        "cefr": "A2"
+      },
+      {
+        "word": "combination",
+        "ipa": "/ˌkɑːmbɪˈneɪʃn/",
+        "pos": "noun",
+        "meaningVi": "sự kết hợp, tổ hợp",
+        "meaningEn": "a mix of different things together",
+        "example": "The lock opens with a four-number combination.",
+        "cefr": "B1"
+      },
+      {
+        "word": "random",
+        "ipa": "/ˈrændəm/",
+        "pos": "adjective",
+        "meaningVi": "ngẫu nhiên",
+        "meaningEn": "chosen without any plan or pattern",
+        "example": "The computer picks a random number.",
+        "cefr": "B1"
+      },
+      {
+        "word": "verification",
+        "ipa": "/ˌverɪfɪˈkeɪʃn/",
+        "pos": "noun",
+        "meaningVi": "sự xác minh",
+        "meaningEn": "the process of checking that something is true or correct",
+        "example": "The bank asked for verification of my address.",
+        "cefr": "C1"
+      },
+      {
+        "word": "device",
+        "ipa": "/dɪˈvaɪs/",
+        "pos": "noun",
+        "meaningVi": "thiết bị",
+        "meaningEn": "a machine or tool, e.g. a phone or tablet",
+        "example": "You can watch the film on any device.",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "rd-b1-right-to-repair",
+    "title": "Who Can Fix Your Phone?",
+    "category": "technology",
+    "cefr": "B1",
+    "topicTags": [
+      "electronics",
+      "environment",
+      "consumers"
+    ],
+    "summaryVi": "Bài viết bàn về phong trào “quyền được sửa chữa”: vì sao thiết bị hiện đại khó sửa, lợi ích môi trường của việc sửa đồ, và lo ngại của các nhà sản xuất.",
+    "body": "When a smartphone screen cracks or a laptop battery stops holding its charge, many people simply buy a new device. Sometimes this is a choice, but often it is because repairing the old one is surprisingly difficult or expensive. A growing movement, often called “the right to repair”, argues that this situation needs to change.\n\nThere are several reasons why modern devices are hard to fix. Some manufacturers glue batteries in place instead of using screws, which makes them difficult to remove safely. Spare parts may only be sold to official repair centres, and repair manuals are often not available to the public. In some cases, a replacement part will not work properly unless it is approved by the company's software.\n\nSupporters of the right to repair argue that people should be able to fix the things they own, or take them to an independent repair shop of their choice. They also point to the environmental cost of electronic waste, which is one of the fastest-growing kinds of rubbish in the world. Producing a new phone requires metals, energy and water, so keeping an old one working for an extra two or three years can make a real difference.\n\nManufacturers have their own concerns. They say that unofficial repairs can be unsafe, especially with batteries, and that sharing their designs could put security at risk. Some also argue that thin, waterproof devices are only possible because parts are glued together.\n\nIn recent years, a number of governments have introduced rules that require companies to make spare parts and repair information available for a certain number of years. Some companies now sell repair kits directly to customers. The debate is far from over, but it raises a simple question that affects everyone: when you buy something, how much of it do you really own?",
+    "questions": [
+      {
+        "id": "rd-b1-right-to-repair-q1",
+        "type": "mcq",
+        "prompt": "According to the article, why are some devices difficult to repair?",
+        "options": [
+          "They are made of plastic",
+          "Batteries are glued in place",
+          "They are too small to open",
+          "They have no screens"
+        ],
+        "answerIndex": 1,
+        "explanation": "Một số nhà sản xuất dán pin bằng keo thay vì dùng ốc vít, nên khó tháo an toàn."
+      },
+      {
+        "id": "rd-b1-right-to-repair-q2",
+        "type": "true-false-ng",
+        "prompt": "Electronic waste is decreasing around the world.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Rác điện tử là “one of the fastest-growing kinds of rubbish” – đang tăng nhanh, không giảm."
+      },
+      {
+        "id": "rd-b1-right-to-repair-q3",
+        "type": "true-false-ng",
+        "prompt": "Manufacturers say that unofficial repairs can be unsafe.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Đoạn 4: “They say that unofficial repairs can be unsafe”."
+      },
+      {
+        "id": "rd-b1-right-to-repair-q4",
+        "type": "true-false-ng",
+        "prompt": "Most customers prefer official repair centres.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không đưa ra thông tin về việc đa số khách hàng thích gì."
+      },
+      {
+        "id": "rd-b1-right-to-repair-q5",
+        "type": "mcq",
+        "prompt": "What question does the writer ask at the end?",
+        "options": [
+          "How much should a phone cost?",
+          "How much of the things we buy do we really own?",
+          "Should governments make phones?",
+          "Why do screens crack?"
+        ],
+        "answerIndex": 1,
+        "explanation": "Câu hỏi cuối bài: “how much of it do you really own?”"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "crack",
+        "ipa": "/kræk/",
+        "pos": "verb",
+        "meaningVi": "nứt, vỡ (thành vết nứt)",
+        "meaningEn": "to break so that a thin line appears on the surface",
+        "example": "I dropped my phone and the screen cracked.",
+        "cefr": "B1"
+      },
+      {
+        "word": "manufacturer",
+        "ipa": "/ˌmænjəˈfæktʃərər/",
+        "pos": "noun",
+        "meaningVi": "nhà sản xuất",
+        "meaningEn": "a company that makes goods in large numbers",
+        "example": "Contact the manufacturer if the product is broken.",
+        "cefr": "B2"
+      },
+      {
+        "word": "glue",
+        "ipa": "/ɡluː/",
+        "pos": "verb / noun",
+        "meaningVi": "dán bằng keo; keo dán",
+        "meaningEn": "to stick things together with a sticky substance",
+        "example": "She glued the photo into her diary.",
+        "cefr": "A2"
+      },
+      {
+        "word": "spare part",
+        "ipa": "/ˌsper ˈpɑːrt/",
+        "pos": "noun",
+        "meaningVi": "phụ tùng thay thế",
+        "meaningEn": "a new part used to replace a broken one in a machine",
+        "example": "It's hard to find spare parts for this old car.",
+        "cefr": "B2"
+      },
+      {
+        "word": "replacement",
+        "ipa": "/rɪˈpleɪsmənt/",
+        "pos": "noun",
+        "meaningVi": "sự thay thế; vật thay thế",
+        "meaningEn": "a thing that takes the place of another",
+        "example": "The shop gave me a replacement for the broken kettle.",
+        "cefr": "B2"
+      },
+      {
+        "word": "independent",
+        "ipa": "/ˌɪndɪˈpendənt/",
+        "pos": "adjective",
+        "meaningVi": "độc lập",
+        "meaningEn": "not controlled by another company or person",
+        "example": "She works for an independent bookshop.",
+        "cefr": "B1"
+      },
+      {
+        "word": "waste",
+        "ipa": "/weɪst/",
+        "pos": "noun",
+        "meaningVi": "rác thải; sự lãng phí",
+        "meaningEn": "things that are thrown away because they are no longer useful",
+        "example": "We should recycle more of our waste.",
+        "cefr": "B1"
+      },
+      {
+        "word": "debate",
+        "ipa": "/dɪˈbeɪt/",
+        "pos": "noun",
+        "meaningVi": "cuộc tranh luận",
+        "meaningEn": "a discussion in which people express different opinions",
+        "example": "There is a lot of debate about online learning.",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "rd-a2-hoa-bakery",
+    "title": "From Home Kitchen to Bakery",
+    "category": "business",
+    "cefr": "A2",
+    "topicTags": [
+      "small business",
+      "food",
+      "success"
+    ],
+    "summaryVi": "Hoa bắt đầu làm bánh tại nhà, bán qua mạng xã hội, học cách quản lý chi phí và khách hàng, rồi mở được một tiệm bánh nhỏ.",
+    "body": "Three years ago, Hoa started baking cakes in her small kitchen at home. At first, she only made them for friends and family. But people loved her cakes, especially her pandan sponge cake, and soon friends of friends started asking to buy them.\n\nHoa decided to turn her hobby into a business. She created a page on social media and posted photos of her cakes every day. She took orders by message and delivered the cakes on her motorbike. In the first month, she sold about thirty cakes. By the end of the year, she was selling more than two hundred a month.\n\nRunning a business was not always easy. Hoa had to learn how to calculate her costs, set prices and manage her time. Some weeks she worked until midnight. Once, a customer complained because a cake arrived late for a birthday party. Hoa apologised, gave a full refund and changed her delivery system so it never happened again.\n\nLast month, Hoa opened a small shop with two employees. She still bakes every morning, but now she also trains her staff and plans new products. “My advice is simple,” she says. “Start small, listen to your customers and never stop learning.”",
+    "questions": [
+      {
+        "id": "rd-a2-hoa-bakery-q1",
+        "type": "mcq",
+        "prompt": "Who did Hoa make cakes for at first?",
+        "options": [
+          "Hotels and restaurants",
+          "Friends and family",
+          "A big supermarket",
+          "Her school"
+        ],
+        "answerIndex": 1,
+        "explanation": "Lúc đầu Hoa chỉ làm bánh cho bạn bè và gia đình: “At first, she only made them for friends and family.”"
+      },
+      {
+        "id": "rd-a2-hoa-bakery-q2",
+        "type": "true-false-ng",
+        "prompt": "Hoa started her business in a large factory.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Hoa bắt đầu trong căn bếp nhỏ ở nhà (“her small kitchen at home”)."
+      },
+      {
+        "id": "rd-a2-hoa-bakery-q3",
+        "type": "true-false-ng",
+        "prompt": "Hoa gave money back to a customer who complained.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Cô ấy “gave a full refund” – hoàn lại toàn bộ tiền."
+      },
+      {
+        "id": "rd-a2-hoa-bakery-q4",
+        "type": "true-false-ng",
+        "prompt": "Hoa's new shop is in the city centre.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không nói cửa hàng nằm ở đâu."
+      },
+      {
+        "id": "rd-a2-hoa-bakery-q5",
+        "type": "mcq",
+        "prompt": "Which of these is part of Hoa's advice?",
+        "options": [
+          "Borrow a lot of money",
+          "Open a big shop immediately",
+          "Listen to your customers",
+          "Work alone"
+        ],
+        "answerIndex": 2,
+        "explanation": "Lời khuyên của Hoa: “Start small, listen to your customers and never stop learning.”"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "hobby",
+        "ipa": "/ˈhɑːbi/",
+        "pos": "noun",
+        "meaningVi": "sở thích",
+        "meaningEn": "an activity you do for fun in your free time",
+        "example": "My hobby is taking photos.",
+        "cefr": "A1"
+      },
+      {
+        "word": "order",
+        "ipa": "/ˈɔːrdər/",
+        "pos": "noun",
+        "meaningVi": "đơn hàng",
+        "meaningEn": "a request to buy or receive something",
+        "example": "We received fifty orders today.",
+        "cefr": "A2"
+      },
+      {
+        "word": "deliver",
+        "ipa": "/dɪˈlɪvər/",
+        "pos": "verb",
+        "meaningVi": "giao (hàng)",
+        "meaningEn": "to take goods to a person or place",
+        "example": "They deliver pizza until midnight.",
+        "cefr": "A2"
+      },
+      {
+        "word": "calculate",
+        "ipa": "/ˈkælkjuleɪt/",
+        "pos": "verb",
+        "meaningVi": "tính toán",
+        "meaningEn": "to find an amount using numbers",
+        "example": "Can you calculate the total cost?",
+        "cefr": "B1"
+      },
+      {
+        "word": "price",
+        "ipa": "/praɪs/",
+        "pos": "noun",
+        "meaningVi": "giá",
+        "meaningEn": "the amount of money you pay for something",
+        "example": "The price of rice has gone up.",
+        "cefr": "A1"
+      },
+      {
+        "word": "complain",
+        "ipa": "/kəmˈpleɪn/",
+        "pos": "verb",
+        "meaningVi": "phàn nàn, khiếu nại",
+        "meaningEn": "to say that you are not happy about something",
+        "example": "He complained about the cold food.",
+        "cefr": "A2"
+      },
+      {
+        "word": "refund",
+        "ipa": "/ˈriːfʌnd/",
+        "pos": "noun",
+        "meaningVi": "tiền hoàn lại",
+        "meaningEn": "money that is given back to you",
+        "example": "If the shoes don't fit, you can get a refund.",
+        "cefr": "B1"
+      },
+      {
+        "word": "employee",
+        "ipa": "/ɪmˈplɔɪiː/",
+        "pos": "noun",
+        "meaningVi": "nhân viên",
+        "meaningEn": "a person who is paid to work for someone",
+        "example": "The company has twenty employees.",
+        "cefr": "A2"
+      }
+    ]
+  },
+  {
+    "id": "rd-b2-four-day-week",
+    "title": "The Four-Day Week: Productivity or Fantasy?",
+    "category": "business",
+    "cefr": "B2",
+    "topicTags": [
+      "work",
+      "productivity",
+      "workplace trends"
+    ],
+    "summaryVi": "Bài phân tích ưu và nhược điểm của tuần làm việc bốn ngày: nhân viên tập trung, ít kiệt sức hơn, nhưng không phù hợp với mọi ngành và kết quả có thể không bền vững.",
+    "body": "For more than a century, the five-day working week has been treated as a natural part of economic life. Recently, however, a growing number of companies have begun to experiment with a radical alternative: a four-day week with no reduction in pay. Supporters claim it makes employees happier without harming productivity. Critics argue that it is an idea that works well in a few offices but would be impractical across the wider economy.\n\nThe argument in favour rests on a simple observation: the number of hours people spend at work is not the same as the amount of useful work they do. Long meetings, constant email and simple tiredness all reduce efficiency. Companies that have tried a shorter week often report that staff become more focused, cutting unnecessary meetings and organising their time more carefully. Several trials have also reported lower rates of sickness and burnout, and some employers say the policy helps them to attract and keep talented workers in a competitive job market.\n\nYet the model is not suitable for every organisation. Hospitals, schools, shops and factories cannot simply close for an extra day; they would need to hire more staff or arrange complicated rotas, which increases costs. Even in office jobs, some employees report that squeezing five days of work into four makes each day more intense and stressful. There is also the question of whether early results will last. People who volunteer for a trial may be especially motivated, and productivity gains could fade once the novelty wears off.\n\nSome businesses have chosen a middle path. Instead of a fixed day off for everyone, they offer flexible arrangements: compressed hours, a shorter Friday or a day off every other week. Others have concluded that the real lesson of the debate is not about the number of days at all, but about judging employees by their results rather than by how long they sit at their desks.\n\nWhether or not the four-day week becomes standard, the discussion has forced many managers to reconsider assumptions that went unquestioned for generations. In that sense, it may already have changed the way we think about work.",
+    "questions": [
+      {
+        "id": "rd-b2-four-day-week-q1",
+        "type": "mcq",
+        "prompt": "What is the main argument in favour of a four-day week?",
+        "options": [
+          "Workers deserve more holidays by law",
+          "Time spent at work does not equal useful work done",
+          "Offices are too expensive to run",
+          "Employees prefer working from home"
+        ],
+        "answerIndex": 1,
+        "explanation": "Lập luận chính: số giờ ở nơi làm việc không bằng lượng công việc hữu ích thực sự làm được."
+      },
+      {
+        "id": "rd-b2-four-day-week-q2",
+        "type": "true-false-ng",
+        "prompt": "Some employees find a four-day week more stressful.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Đoạn 3: dồn năm ngày việc vào bốn ngày “makes each day more intense and stressful” với một số người."
+      },
+      {
+        "id": "rd-b2-four-day-week-q3",
+        "type": "true-false-ng",
+        "prompt": "Hospitals can easily adopt a four-day week without extra costs.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Bệnh viện phải thuê thêm người hoặc xếp ca phức tạp, “which increases costs”."
+      },
+      {
+        "id": "rd-b2-four-day-week-q4",
+        "type": "true-false-ng",
+        "prompt": "Most companies that tried a four-day week have kept it permanently.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không cho biết có bao nhiêu công ty giữ chính sách này lâu dài."
+      },
+      {
+        "id": "rd-b2-four-day-week-q5",
+        "type": "mcq",
+        "prompt": "Why might the early results of trials be misleading?",
+        "options": [
+          "The trials were too long",
+          "Volunteers may be unusually motivated",
+          "Managers changed the results",
+          "Only hospitals took part"
+        ],
+        "answerIndex": 1,
+        "explanation": "Người tình nguyện tham gia thử nghiệm có thể đặc biệt có động lực, và hiệu quả có thể giảm khi hết cảm giác mới mẻ."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "radical",
+        "ipa": "/ˈrædɪkl/",
+        "pos": "adjective",
+        "meaningVi": "triệt để, cấp tiến",
+        "meaningEn": "very new and different from what is usual",
+        "example": "The company needs radical changes to survive.",
+        "cefr": "B2"
+      },
+      {
+        "word": "productivity",
+        "ipa": "/ˌproʊdʌkˈtɪvəti/",
+        "pos": "noun",
+        "meaningVi": "năng suất",
+        "meaningEn": "the amount of work done in a period of time",
+        "example": "Good lighting can improve productivity.",
+        "cefr": "B2"
+      },
+      {
+        "word": "efficiency",
+        "ipa": "/ɪˈfɪʃnsi/",
+        "pos": "noun",
+        "meaningVi": "hiệu quả, hiệu suất",
+        "meaningEn": "the quality of doing something well without wasting time or energy",
+        "example": "The new system improved efficiency by 20%.",
+        "cefr": "B2"
+      },
+      {
+        "word": "burnout",
+        "ipa": "/ˈbɜːrnaʊt/",
+        "pos": "noun",
+        "meaningVi": "tình trạng kiệt sức (vì công việc)",
+        "meaningEn": "extreme tiredness caused by working too hard for too long",
+        "example": "Many nurses suffer from burnout.",
+        "cefr": "C1"
+      },
+      {
+        "word": "rota",
+        "ipa": "/ˈroʊtə/",
+        "pos": "noun",
+        "meaningVi": "lịch phân ca",
+        "meaningEn": "a list showing when each person must do a job (British English)",
+        "example": "Check the rota to see when you're working.",
+        "cefr": "B2"
+      },
+      {
+        "word": "intense",
+        "ipa": "/ɪnˈtens/",
+        "pos": "adjective",
+        "meaningVi": "căng thẳng, dữ dội, cường độ cao",
+        "meaningEn": "very strong or extreme; needing a lot of effort",
+        "example": "The training programme is short but intense.",
+        "cefr": "B2"
+      },
+      {
+        "word": "novelty",
+        "ipa": "/ˈnɑːvlti/",
+        "pos": "noun",
+        "meaningVi": "sự mới lạ",
+        "meaningEn": "the quality of being new and unusual",
+        "example": "The novelty of the new phone soon wore off.",
+        "cefr": "C1"
+      },
+      {
+        "word": "assumption",
+        "ipa": "/əˈsʌmpʃn/",
+        "pos": "noun",
+        "meaningVi": "giả định, điều mặc nhiên cho là đúng",
+        "meaningEn": "something you believe is true without proof",
+        "example": "Don't make assumptions about people from their clothes.",
+        "cefr": "B2"
+      }
+    ]
+  },
+  {
+    "id": "rd-b1-procrastination",
+    "title": "Why We Put Things Off",
+    "category": "psychology",
+    "cefr": "B1",
+    "topicTags": [
+      "habits",
+      "emotions",
+      "study skills"
+    ],
+    "summaryVi": "Bài giải thích rằng trì hoãn chủ yếu là vấn đề cảm xúc chứ không phải quản lý thời gian, và gợi ý cách vượt qua: bắt đầu bằng bước rất nhỏ, loại bỏ xao nhãng, tha thứ cho bản thân.",
+    "body": "Almost everyone knows the feeling. You have an important task to do – an essay, a report, a difficult phone call – but instead of starting, you check your phone, tidy your desk or make another cup of tea. Hours later, the task is still waiting, and now you feel guilty as well. This habit of delaying things we know we should do is called procrastination.\n\nMany people believe that procrastination is simply a sign of laziness or poor time management. However, psychologists increasingly see it as a problem with emotions rather than with time. When a task makes us feel anxious, bored or unsure of ourselves, avoiding it gives us immediate relief. The bad feelings disappear – at least for a while. Unfortunately, the task does not, and the stress usually comes back stronger than before.\n\nPerfectionism can make the problem worse. If you believe your work must be perfect, starting it can feel frightening, because every first attempt is imperfect. Some people delay so that, if the result is poor, they can blame the lack of time rather than their ability.\n\nSo what can help? One useful strategy is to make the first step very small. Instead of “write my essay”, the goal becomes “write the first two sentences” or “work for ten minutes”. Once we start, continuing is often much easier. Another idea is to remove distractions, for example by putting your phone in another room. It also helps to be kind to yourself. Some research suggests that people who forgive themselves for procrastinating in the past are less likely to do it again, because they feel less negative about the task.\n\nProcrastination is not a permanent character flaw. It is a habit, and like any habit, it can be understood and gradually changed.",
+    "questions": [
+      {
+        "id": "rd-b1-procrastination-q1",
+        "type": "mcq",
+        "prompt": "According to psychologists, procrastination is mainly a problem with…",
+        "options": [
+          "time management",
+          "emotions",
+          "intelligence",
+          "sleep"
+        ],
+        "answerIndex": 1,
+        "explanation": "Các nhà tâm lý học xem trì hoãn là “a problem with emotions rather than with time”."
+      },
+      {
+        "id": "rd-b1-procrastination-q2",
+        "type": "true-false-ng",
+        "prompt": "The relief we feel when we avoid a task lasts for a long time.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Cảm giác nhẹ nhõm chỉ có “for a while”, sau đó căng thẳng quay lại mạnh hơn."
+      },
+      {
+        "id": "rd-b1-procrastination-q3",
+        "type": "true-false-ng",
+        "prompt": "Perfectionism can make people procrastinate more.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "“Perfectionism can make the problem worse.” – chủ nghĩa hoàn hảo làm vấn đề tệ hơn."
+      },
+      {
+        "id": "rd-b1-procrastination-q4",
+        "type": "true-false-ng",
+        "prompt": "Students procrastinate more than office workers.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không so sánh sinh viên với nhân viên văn phòng."
+      },
+      {
+        "id": "rd-b1-procrastination-q5",
+        "type": "mcq",
+        "prompt": "Which strategy does the article suggest?",
+        "options": [
+          "Wait until you feel motivated",
+          "Work only late at night",
+          "Make the first step very small",
+          "Do several tasks at the same time"
+        ],
+        "answerIndex": 2,
+        "explanation": "Chiến lược đầu tiên được nêu: “make the first step very small”."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "procrastination",
+        "ipa": "/prəˌkræstɪˈneɪʃn/",
+        "pos": "noun",
+        "meaningVi": "sự trì hoãn",
+        "meaningEn": "delaying something that you should do",
+        "example": "Procrastination is my biggest problem when I study.",
+        "cefr": "C1"
+      },
+      {
+        "word": "guilty",
+        "ipa": "/ˈɡɪlti/",
+        "pos": "adjective",
+        "meaningVi": "cảm thấy có lỗi, tội lỗi",
+        "meaningEn": "feeling bad because you did something wrong",
+        "example": "I feel guilty about forgetting her birthday.",
+        "cefr": "B1"
+      },
+      {
+        "word": "laziness",
+        "ipa": "/ˈleɪzinəs/",
+        "pos": "noun",
+        "meaningVi": "sự lười biếng",
+        "meaningEn": "not wanting to work or make an effort",
+        "example": "His teacher said his bad marks were caused by laziness.",
+        "cefr": "B2"
+      },
+      {
+        "word": "anxious",
+        "ipa": "/ˈæŋkʃəs/",
+        "pos": "adjective",
+        "meaningVi": "lo lắng, bồn chồn",
+        "meaningEn": "worried and nervous",
+        "example": "She felt anxious before the exam.",
+        "cefr": "B1"
+      },
+      {
+        "word": "relief",
+        "ipa": "/rɪˈliːf/",
+        "pos": "noun",
+        "meaningVi": "sự nhẹ nhõm",
+        "meaningEn": "a good feeling when something bad stops or does not happen",
+        "example": "It was a relief to hear that he was safe.",
+        "cefr": "B1"
+      },
+      {
+        "word": "perfectionism",
+        "ipa": "/pərˈfekʃənɪzəm/",
+        "pos": "noun",
+        "meaningVi": "chủ nghĩa cầu toàn",
+        "meaningEn": "the wish for everything to be perfect",
+        "example": "Her perfectionism makes every project take too long.",
+        "cefr": "C1"
+      },
+      {
+        "word": "distraction",
+        "ipa": "/dɪˈstrækʃn/",
+        "pos": "noun",
+        "meaningVi": "sự xao nhãng, điều làm phân tâm",
+        "meaningEn": "something that takes your attention away",
+        "example": "Music can be a distraction when I'm reading.",
+        "cefr": "B2"
+      },
+      {
+        "word": "flaw",
+        "ipa": "/flɔː/",
+        "pos": "noun",
+        "meaningVi": "khuyết điểm, thiếu sót",
+        "meaningEn": "a fault or weakness",
+        "example": "Impatience is his only flaw.",
+        "cefr": "C1"
+      }
+    ]
+  },
+  {
+    "id": "rd-b2-spotlight-effect",
+    "title": "Nobody Is Watching as Closely as You Think",
+    "category": "psychology",
+    "cefr": "B2",
+    "topicTags": [
+      "self-confidence",
+      "social psychology",
+      "language learning"
+    ],
+    "summaryVi": "“Hiệu ứng ánh đèn sân khấu” khiến ta nghĩ người khác chú ý đến mình nhiều hơn thực tế. Hiểu điều này giúp ta tự tin hơn, đặc biệt khi nói ngoại ngữ.",
+    "body": "Imagine arriving at a party and realising, too late, that you have a large coffee stain on your shirt. For the rest of the evening, you feel as though everyone is staring at it. In reality, it is quite likely that most of the guests never noticed. Psychologists have a name for this common experience: the spotlight effect.\n\nThe spotlight effect is our tendency to overestimate how much other people notice our appearance and behaviour. Because we experience the world from inside our own heads, we are intensely aware of our own mistakes, clothes and awkward moments, and it is easy to assume that others are equally focused on them. In fact, other people are mostly busy thinking about themselves – and, quite possibly, worrying about how they look to us.\n\nIn one well-known type of experiment, researchers asked students to walk into a room wearing a T-shirt that they found embarrassing. Afterwards, the students were asked to guess how many people in the room had noticed the shirt. Their estimates were typically far higher than the real number. Similar results have been found for bad hair days and for mistakes in presentations. Interestingly, the effect also applies to good performances: people rarely notice our successes as much as we expect, either.\n\nA related idea is the “illusion of transparency” – the belief that our inner feelings are obvious to others. A speaker who feels nervous may be convinced that the audience can see her hands shaking or hear her voice trembling, when in fact she appears calm. Studies have suggested that simply telling speakers about this illusion can help them perform better, because it reduces their anxiety.\n\nUnderstanding the spotlight effect can be surprisingly liberating. If people are paying less attention to us than we think, then a minor error in a meeting or an imperfect accent in a foreign language is unlikely to be remembered for long. For language learners, this matters: the fear of looking foolish often prevents people from speaking at all, yet the listener is usually far more interested in understanding the message than in judging the speaker.\n\nThis does not mean that our behaviour has no effect on others. But it does suggest that the harsh audience we imagine is, for the most part, an invention of our own minds.",
+    "questions": [
+      {
+        "id": "rd-b2-spotlight-effect-q1",
+        "type": "mcq",
+        "prompt": "What is the spotlight effect?",
+        "options": [
+          "Enjoying being the centre of attention",
+          "Believing others notice us more than they really do",
+          "Feeling nervous in bright places",
+          "Noticing other people's mistakes"
+        ],
+        "answerIndex": 1,
+        "explanation": "Định nghĩa trong đoạn 2: xu hướng đánh giá quá cao việc người khác chú ý đến ngoại hình và hành vi của mình."
+      },
+      {
+        "id": "rd-b2-spotlight-effect-q2",
+        "type": "true-false-ng",
+        "prompt": "In the T-shirt experiment, students underestimated how many people noticed the shirt.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Sinh viên đoán con số “far higher than the real number” – tức là đánh giá quá cao, không phải quá thấp."
+      },
+      {
+        "id": "rd-b2-spotlight-effect-q3",
+        "type": "true-false-ng",
+        "prompt": "Telling speakers about the illusion of transparency may help them perform better.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Đoạn 4: biết về ảo giác này “can help them perform better, because it reduces their anxiety”."
+      },
+      {
+        "id": "rd-b2-spotlight-effect-q4",
+        "type": "true-false-ng",
+        "prompt": "The spotlight effect is stronger in teenagers than in adults.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không so sánh theo độ tuổi."
+      },
+      {
+        "id": "rd-b2-spotlight-effect-q5",
+        "type": "mcq",
+        "prompt": "Why is the spotlight effect important for language learners?",
+        "options": [
+          "Because accents are always noticed",
+          "Because fear of looking foolish can stop them speaking, although listeners rarely judge",
+          "Because they should only speak to teachers",
+          "Because it helps them remember vocabulary"
+        ],
+        "answerIndex": 1,
+        "explanation": "Nỗi sợ trông ngớ ngẩn khiến người học không dám nói, trong khi người nghe chủ yếu quan tâm hiểu thông điệp."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "stain",
+        "ipa": "/steɪn/",
+        "pos": "noun",
+        "meaningVi": "vết bẩn, vết ố",
+        "meaningEn": "a dirty mark that is difficult to remove",
+        "example": "There's a wine stain on the carpet.",
+        "cefr": "B2"
+      },
+      {
+        "word": "tendency",
+        "ipa": "/ˈtendənsi/",
+        "pos": "noun",
+        "meaningVi": "xu hướng, khuynh hướng",
+        "meaningEn": "a likelihood to behave in a particular way",
+        "example": "He has a tendency to talk too fast.",
+        "cefr": "B2"
+      },
+      {
+        "word": "overestimate",
+        "ipa": "/ˌoʊvərˈestɪmeɪt/",
+        "pos": "verb",
+        "meaningVi": "đánh giá quá cao",
+        "meaningEn": "to think something is bigger or more important than it is",
+        "example": "Don't overestimate how much time you have.",
+        "cefr": "C1"
+      },
+      {
+        "word": "awkward",
+        "ipa": "/ˈɔːkwərd/",
+        "pos": "adjective",
+        "meaningVi": "ngượng ngùng, khó xử",
+        "meaningEn": "causing or feeling embarrassment",
+        "example": "There was an awkward silence after his joke.",
+        "cefr": "B2"
+      },
+      {
+        "word": "embarrassing",
+        "ipa": "/ɪmˈbærəsɪŋ/",
+        "pos": "adjective",
+        "meaningVi": "gây xấu hổ, ngượng",
+        "meaningEn": "making you feel shy or ashamed",
+        "example": "It was embarrassing to fall over on stage.",
+        "cefr": "B1"
+      },
+      {
+        "word": "transparency",
+        "ipa": "/trænsˈpærənsi/",
+        "pos": "noun",
+        "meaningVi": "sự minh bạch, trong suốt",
+        "meaningEn": "the quality of being easy to see through or understand",
+        "example": "Customers want more transparency about prices.",
+        "cefr": "C1"
+      },
+      {
+        "word": "tremble",
+        "ipa": "/ˈtrembl/",
+        "pos": "verb",
+        "meaningVi": "run, run rẩy",
+        "meaningEn": "to shake slightly because you are nervous, cold or afraid",
+        "example": "Her voice trembled as she spoke.",
+        "cefr": "B2"
+      },
+      {
+        "word": "liberating",
+        "ipa": "/ˈlɪbəreɪtɪŋ/",
+        "pos": "adjective",
+        "meaningVi": "giải phóng, mang lại cảm giác tự do",
+        "meaningEn": "making you feel free and relaxed",
+        "example": "Leaving my phone at home was strangely liberating.",
+        "cefr": "C1"
+      }
+    ]
+  },
+  {
+    "id": "rd-b1-ship-of-theseus",
+    "title": "Is It Still the Same Ship?",
+    "category": "philosophy",
+    "cefr": "B1",
+    "topicTags": [
+      "identity",
+      "thought experiments",
+      "change"
+    ],
+    "summaryVi": "Câu đố “Con tàu của Theseus”: nếu thay từng tấm ván của một con tàu, nó còn là con tàu cũ không? Bài liên hệ câu hỏi này với bản thân con người.",
+    "body": "Imagine a famous wooden ship kept in a harbour as a museum piece. Over the years, its old planks begin to rot, so workers replace them one at a time with new wood. Eventually, after many decades, every single plank has been replaced. Is it still the same ship?\n\nThis puzzle is known as the Ship of Theseus, named after a hero from ancient Greek legend. Philosophers have discussed it for more than two thousand years, because it raises a deep question: what makes something the same thing over time?\n\nMany people's first answer is “Yes, it's the same ship.” It has the same name and the same shape, and it sits in the same place. The changes happened slowly, so there was never a moment when the ship clearly stopped being itself. Others answer “No”. If none of the original material remains, they say, then what we have is a perfect copy, not the original.\n\nThe puzzle becomes even harder with an extra twist. Suppose someone collected all the old planks as they were removed and later used them to build a second ship. Now there are two ships. Which one is the real Ship of Theseus – the one in the harbour, or the one made from the original wood?\n\nThe question is not only about ships. Our bodies constantly replace their cells, and our opinions, memories and personalities change as we grow older. Are you the same person you were at five years old? Most of us would say yes, but it is surprisingly hard to explain exactly why.\n\nThere is no single correct answer. The value of the puzzle is that it makes us think carefully about words such as “same”, “identity” and “change” – words that we use every day without noticing how complicated they are.",
+    "questions": [
+      {
+        "id": "rd-b1-ship-of-theseus-q1",
+        "type": "mcq",
+        "prompt": "What question does the puzzle raise?",
+        "options": [
+          "How to build a strong ship",
+          "What makes something the same thing over time",
+          "Why wood rots in water",
+          "Who Theseus really was"
+        ],
+        "answerIndex": 1,
+        "explanation": "Câu đố đặt ra câu hỏi “what makes something the same thing over time?”"
+      },
+      {
+        "id": "rd-b1-ship-of-theseus-q2",
+        "type": "true-false-ng",
+        "prompt": "Philosophers have discussed this puzzle for more than two thousand years.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Đoạn 2 nói rõ điều này."
+      },
+      {
+        "id": "rd-b1-ship-of-theseus-q3",
+        "type": "true-false-ng",
+        "prompt": "The writer says the ship in the harbour is definitely the real one.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Tác giả nói “There is no single correct answer” – không khẳng định con tàu nào là thật."
+      },
+      {
+        "id": "rd-b1-ship-of-theseus-q4",
+        "type": "true-false-ng",
+        "prompt": "The museum ship was built in Athens.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không nói con tàu được đóng ở đâu."
+      },
+      {
+        "id": "rd-b1-ship-of-theseus-q5",
+        "type": "mcq",
+        "prompt": "What is the “extra twist” in the puzzle?",
+        "options": [
+          "The ship sinks",
+          "The old planks are used to build a second ship",
+          "The ship gets a new name",
+          "The museum sells the ship"
+        ],
+        "answerIndex": 1,
+        "explanation": "Những tấm ván cũ được gom lại để đóng một con tàu thứ hai, nên có hai con tàu."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "harbour",
+        "ipa": "/ˈhɑːrbər/",
+        "pos": "noun",
+        "meaningVi": "bến cảng",
+        "meaningEn": "an area of water near land where ships stay safely",
+        "example": "Fishing boats were waiting in the harbour.",
+        "cefr": "B1"
+      },
+      {
+        "word": "plank",
+        "ipa": "/plæŋk/",
+        "pos": "noun",
+        "meaningVi": "tấm ván",
+        "meaningEn": "a long flat piece of wood",
+        "example": "The old bridge was made of wooden planks.",
+        "cefr": "C1"
+      },
+      {
+        "word": "rot",
+        "ipa": "/rɑːt/",
+        "pos": "verb",
+        "meaningVi": "mục, thối rữa",
+        "meaningEn": "to become soft and bad because of age or water",
+        "example": "The fruit was left to rot on the ground.",
+        "cefr": "B2"
+      },
+      {
+        "word": "replace",
+        "ipa": "/rɪˈpleɪs/",
+        "pos": "verb",
+        "meaningVi": "thay thế",
+        "meaningEn": "to put a new thing in the place of an old one",
+        "example": "We need to replace the broken window.",
+        "cefr": "B1"
+      },
+      {
+        "word": "puzzle",
+        "ipa": "/ˈpʌzl/",
+        "pos": "noun",
+        "meaningVi": "câu đố; điều khó hiểu",
+        "meaningEn": "a question or problem that is difficult to answer",
+        "example": "Why he left is still a puzzle to me.",
+        "cefr": "B1"
+      },
+      {
+        "word": "legend",
+        "ipa": "/ˈledʒənd/",
+        "pos": "noun",
+        "meaningVi": "truyền thuyết",
+        "meaningEn": "an old story that may not be true",
+        "example": "There is a legend about a dragon in this lake.",
+        "cefr": "B1"
+      },
+      {
+        "word": "twist",
+        "ipa": "/twɪst/",
+        "pos": "noun",
+        "meaningVi": "tình tiết bất ngờ",
+        "meaningEn": "an unexpected change in a story or situation",
+        "example": "The film has a surprising twist at the end.",
+        "cefr": "B2"
+      },
+      {
+        "word": "identity",
+        "ipa": "/aɪˈdentəti/",
+        "pos": "noun",
+        "meaningVi": "bản sắc, danh tính",
+        "meaningEn": "who or what a person or thing is",
+        "example": "Language is an important part of our identity.",
+        "cefr": "B2"
+      }
+    ]
+  },
+  {
+    "id": "rd-c1-moral-luck",
+    "title": "Luck and Responsibility",
+    "category": "philosophy",
+    "cefr": "C1",
+    "topicTags": [
+      "ethics",
+      "responsibility",
+      "thought experiments"
+    ],
+    "summaryVi": "Bài bàn về “may rủi đạo đức”: hai người có cùng hành vi nhưng kết quả khác nhau vì may rủi – có nên đánh giá họ khác nhau không? Bài trình bày ba cách trả lời của các triết gia.",
+    "body": "Two friends spend an evening at the same restaurant, drink the same modest amount of wine and decide, unwisely, to drive home. Both drive with the same degree of care. On the first friend's route nothing happens; he arrives home and goes to bed. On the second friend's route a child suddenly runs into the road and is seriously injured. The second driver will face criminal charges, public condemnation and, very likely, years of guilt. The first will probably have forgotten the evening within a week.\n\nMost of us feel that the second driver has done something far worse. Yet when we try to justify that feeling, we run into difficulty. The two drivers made identical decisions and showed identical carelessness; the only difference lay in circumstances that neither of them controlled. If moral judgement should depend only on what is within a person's control – a principle that many people find intuitively compelling – then the two friends deserve exactly the same blame. Philosophers call this tension the problem of “moral luck”.\n\nThe problem extends well beyond road accidents. Consider how much of a person's character is shaped by factors they never chose: their genes, their upbringing, the culture and historical period into which they were born. Someone who lives a blameless life in peaceful times might, in a different era, have been drawn into terrible acts. If we are responsible only for what we control, and we control remarkably little, the space for genuine responsibility appears to shrink almost to nothing.\n\nSeveral responses have been proposed. One is to bite the bullet and insist that the two drivers really are equally blameworthy, and that our instinct to blame the unlucky one more is simply a bias. On this view, the law may reasonably respond to outcomes for practical reasons, but morality should look only at intentions and choices. A second response accepts that luck does affect moral standing and argues that this is simply part of acting in an unpredictable world: when we act, we take responsibility not merely for our intentions but for what we actually bring about.\n\nA third, more modest position suggests that we use the word “blame” in more than one sense. We can assess the quality of a person's decision, which is the same for both drivers, while also recognising that one of them stands in a uniquely painful relationship to a harm that actually occurred. The guilt of the second driver, on this account, is not irrational; it is a fitting response to having been the cause of suffering, even if the decision itself was no worse.\n\nNone of these answers fully dissolves the puzzle. But reflecting on moral luck can make us more cautious in our judgements of others, and perhaps more humble about our own good fortune.",
+    "questions": [
+      {
+        "id": "rd-c1-moral-luck-q1",
+        "type": "mcq",
+        "prompt": "What does “the problem of moral luck” refer to?",
+        "options": [
+          "The idea that lucky people are more moral",
+          "The conflict between judging people only by what they control and our tendency to judge them by outcomes",
+          "The fact that drinking and driving is illegal",
+          "The difficulty of predicting accidents"
+        ],
+        "answerIndex": 1,
+        "explanation": "Mâu thuẫn giữa nguyên tắc chỉ đánh giá điều con người kiểm soát được và việc ta thường phán xét theo kết quả."
+      },
+      {
+        "id": "rd-c1-moral-luck-q2",
+        "type": "true-false-ng",
+        "prompt": "The two friends drank different amounts of wine.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Hai người uống “the same modest amount of wine” – lượng như nhau."
+      },
+      {
+        "id": "rd-c1-moral-luck-q3",
+        "type": "mcq",
+        "prompt": "In the text, “bite the bullet” most nearly means…",
+        "options": [
+          "become angry",
+          "accept an unpleasant or difficult conclusion",
+          "avoid answering the question",
+          "change the subject"
+        ],
+        "answerIndex": 1,
+        "explanation": "“Bite the bullet” là chấp nhận một kết luận khó chịu nhưng nhất quán – ở đây là coi hai tài xế đáng trách như nhau."
+      },
+      {
+        "id": "rd-c1-moral-luck-q4",
+        "type": "true-false-ng",
+        "prompt": "The writer believes that one of the three responses completely solves the puzzle.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Đoạn cuối: “None of these answers fully dissolves the puzzle.”"
+      },
+      {
+        "id": "rd-c1-moral-luck-q5",
+        "type": "true-false-ng",
+        "prompt": "The second driver was sent to prison.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài chỉ nói người này sẽ đối mặt với cáo buộc hình sự, không nói kết quả xét xử."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "condemnation",
+        "ipa": "/ˌkɑːndemˈneɪʃn/",
+        "pos": "noun",
+        "meaningVi": "sự lên án",
+        "meaningEn": "strong public criticism or disapproval",
+        "example": "The attack drew condemnation from around the world.",
+        "cefr": "C2"
+      },
+      {
+        "word": "justify",
+        "ipa": "/ˈdʒʌstɪfaɪ/",
+        "pos": "verb",
+        "meaningVi": "biện minh, chứng minh là đúng",
+        "meaningEn": "to give a good reason for something",
+        "example": "How can you justify spending so much money?",
+        "cefr": "B2"
+      },
+      {
+        "word": "compelling",
+        "ipa": "/kəmˈpelɪŋ/",
+        "pos": "adjective",
+        "meaningVi": "thuyết phục, hấp dẫn mạnh",
+        "meaningEn": "very convincing or interesting",
+        "example": "She made a compelling argument for change.",
+        "cefr": "C1"
+      },
+      {
+        "word": "upbringing",
+        "ipa": "/ˈʌpbrɪŋɪŋ/",
+        "pos": "noun",
+        "meaningVi": "sự nuôi dạy, giáo dưỡng",
+        "meaningEn": "the way a child is cared for and taught while growing up",
+        "example": "He had a strict upbringing.",
+        "cefr": "C1"
+      },
+      {
+        "word": "blameworthy",
+        "ipa": "/ˈbleɪmwɜːrði/",
+        "pos": "adjective",
+        "meaningVi": "đáng trách",
+        "meaningEn": "deserving to be blamed",
+        "example": "Was the manager's decision blameworthy?",
+        "cefr": "C2"
+      },
+      {
+        "word": "bias",
+        "ipa": "/ˈbaɪəs/",
+        "pos": "noun",
+        "meaningVi": "thành kiến, thiên kiến",
+        "meaningEn": "an unfair preference for or against something",
+        "example": "The study showed a clear bias against older workers.",
+        "cefr": "C1"
+      },
+      {
+        "word": "dissolve",
+        "ipa": "/dɪˈzɑːlv/",
+        "pos": "verb",
+        "meaningVi": "hòa tan; làm tan biến (vấn đề)",
+        "meaningEn": "to make a problem disappear; to mix into a liquid",
+        "example": "Sugar dissolves in hot water.",
+        "cefr": "B2"
+      },
+      {
+        "word": "humble",
+        "ipa": "/ˈhʌmbl/",
+        "pos": "adjective",
+        "meaningVi": "khiêm tốn",
+        "meaningEn": "not thinking that you are better than others",
+        "example": "Despite her success, she remained humble.",
+        "cefr": "B2"
+      }
+    ]
+  },
+  {
+    "id": "rd-a1-robot-name",
+    "title": "The Robot Who Wanted a Name",
+    "category": "fiction",
+    "cefr": "A1",
+    "topicTags": [
+      "robots",
+      "friendship",
+      "names"
+    ],
+    "summaryVi": "Một chú rô-bốt nhỏ giúp việc cho bà Green muốn có một cái tên. Nó chọn tên “Star” và rất hạnh phúc.",
+    "body": "In a small house at the end of a quiet street, there is a little robot. It is grey and blue, and it has two big round eyes. Every day, it cleans the floor, waters the plants and makes tea for an old woman called Mrs Green.\n\nThe robot is happy, but it has one problem. It does not have a name. Mrs Green calls it “Robot”. The cat calls it nothing, because cats do not talk.\n\nOne evening, the robot asks, “Mrs Green, can I have a name, please?” Mrs Green puts down her book. She looks at the robot for a long time. “Of course,” she says. “What name do you like?”\n\nThe robot thinks. It likes the sky. It likes the colour blue. It likes the small bright stars at night. “I like Star,” it says.\n\nMrs Green smiles. “Hello, Star,” she says. “Thank you for my tea.” Star's eyes shine very brightly. It is the best day of its life.",
+    "questions": [
+      {
+        "id": "rd-a1-robot-name-q1",
+        "type": "mcq",
+        "prompt": "What does the robot do every day?",
+        "options": [
+          "It cooks dinner and goes shopping",
+          "It cleans the floor, waters the plants and makes tea",
+          "It reads books to the cat",
+          "It drives Mrs Green to work"
+        ],
+        "answerIndex": 1,
+        "explanation": "Đoạn 1: “it cleans the floor, waters the plants and makes tea”."
+      },
+      {
+        "id": "rd-a1-robot-name-q2",
+        "type": "true-false-ng",
+        "prompt": "The robot is red.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Rô-bốt màu xám và xanh dương (“grey and blue”)."
+      },
+      {
+        "id": "rd-a1-robot-name-q3",
+        "type": "true-false-ng",
+        "prompt": "Mrs Green has two children.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không nói bà Green có con hay không."
+      },
+      {
+        "id": "rd-a1-robot-name-q4",
+        "type": "true-false-ng",
+        "prompt": "The cat can talk.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "“cats do not talk” – mèo không biết nói."
+      },
+      {
+        "id": "rd-a1-robot-name-q5",
+        "type": "mcq",
+        "prompt": "What name does the robot choose?",
+        "options": [
+          "Blue",
+          "Sky",
+          "Star",
+          "Moon"
+        ],
+        "answerIndex": 2,
+        "explanation": "Rô-bốt nói: “I like Star.”"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "quiet",
+        "ipa": "/ˈkwaɪət/",
+        "pos": "adjective",
+        "meaningVi": "yên tĩnh",
+        "meaningEn": "with very little noise",
+        "example": "The library is very quiet.",
+        "cefr": "A1"
+      },
+      {
+        "word": "robot",
+        "ipa": "/ˈroʊbɑːt/",
+        "pos": "noun",
+        "meaningVi": "rô-bốt, người máy",
+        "meaningEn": "a machine that can do work like a person",
+        "example": "This robot can clean the house.",
+        "cefr": "A2"
+      },
+      {
+        "word": "clean",
+        "ipa": "/kliːn/",
+        "pos": "verb",
+        "meaningVi": "lau, dọn sạch",
+        "meaningEn": "to make something not dirty",
+        "example": "I clean my room on Sundays.",
+        "cefr": "A1"
+      },
+      {
+        "word": "plant",
+        "ipa": "/plænt/",
+        "pos": "noun",
+        "meaningVi": "cây (trồng)",
+        "meaningEn": "a living thing that grows in soil, with leaves",
+        "example": "There are many plants in her kitchen.",
+        "cefr": "A1"
+      },
+      {
+        "word": "problem",
+        "ipa": "/ˈprɑːbləm/",
+        "pos": "noun",
+        "meaningVi": "vấn đề",
+        "meaningEn": "something that is difficult or wrong",
+        "example": "There's a problem with my computer.",
+        "cefr": "A1"
+      },
+      {
+        "word": "bright",
+        "ipa": "/braɪt/",
+        "pos": "adjective",
+        "meaningVi": "sáng, rực rỡ",
+        "meaningEn": "full of light; strong in colour",
+        "example": "The sun is very bright today.",
+        "cefr": "A2"
+      },
+      {
+        "word": "shine",
+        "ipa": "/ʃaɪn/",
+        "pos": "verb",
+        "meaningVi": "chiếu sáng, tỏa sáng",
+        "meaningEn": "to give out or reflect light",
+        "example": "The stars shine at night.",
+        "cefr": "A2"
+      },
+      {
+        "word": "smile",
+        "ipa": "/smaɪl/",
+        "pos": "verb",
+        "meaningVi": "mỉm cười",
+        "meaningEn": "to make a happy face with your mouth",
+        "example": "She always smiles when she sees her dog.",
+        "cefr": "A1"
+      }
+    ]
+  },
+  {
+    "id": "rd-a2-grandpa-map",
+    "title": "The Map in the Old Dictionary",
+    "category": "fiction",
+    "cefr": "A2",
+    "topicTags": [
+      "family",
+      "adventure",
+      "memories"
+    ],
+    "summaryVi": "Nam tìm thấy một tấm bản đồ cũ trong cuốn từ điển của ông. Hai ông cháu đi tìm và đào được chiếc hộp kim loại mà ông chôn từ hồi mười tuổi.",
+    "body": "Nam found the map on a rainy Sunday afternoon. He was looking for something to read on his grandfather's bookshelf when a thin piece of yellow paper fell out of an old dictionary. On the paper, someone had drawn a river, a bridge, three tall trees and a small red cross.\n\n“Grandpa, what's this?” Nam asked. His grandfather put on his glasses and looked at the map for a long time. Then he laughed. “I drew that when I was ten years old,” he said. “I buried something under those trees. I forgot all about it!”\n\n“What did you bury?” Nam asked excitedly. But his grandfather only smiled. “Why don't you find out?”\n\nThe next morning, the sun was shining. Nam and his grandfather walked along the river until they reached an old stone bridge. Not far away were three tall trees, exactly like the ones on the map. Nam started to dig with a small spade. After twenty minutes, he hit something hard. It was a metal box, brown with rust.\n\nInside, there was a toy car, a few old coins and a letter. The letter said: “To whoever finds this – I hope you are happy, and I hope you have a good friend to share adventures with.”\n\nNam looked at his grandfather and smiled. “I do,” he said.",
+    "questions": [
+      {
+        "id": "rd-a2-grandpa-map-q1",
+        "type": "mcq",
+        "prompt": "Where did Nam find the map?",
+        "options": [
+          "Under a tree",
+          "In a metal box",
+          "In an old dictionary",
+          "On the bridge"
+        ],
+        "answerIndex": 2,
+        "explanation": "Tờ giấy rơi ra từ “an old dictionary” trên giá sách của ông."
+      },
+      {
+        "id": "rd-a2-grandpa-map-q2",
+        "type": "true-false-ng",
+        "prompt": "Nam's grandfather drew the map when he was a child.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Ông nói: “I drew that when I was ten years old.”"
+      },
+      {
+        "id": "rd-a2-grandpa-map-q3",
+        "type": "true-false-ng",
+        "prompt": "Nam found the box after five minutes.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Nam đào khoảng hai mươi phút (“After twenty minutes”) mới chạm vào chiếc hộp."
+      },
+      {
+        "id": "rd-a2-grandpa-map-q4",
+        "type": "true-false-ng",
+        "prompt": "The old coins were very valuable.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Bài không nói những đồng xu có giá trị hay không."
+      },
+      {
+        "id": "rd-a2-grandpa-map-q5",
+        "type": "mcq",
+        "prompt": "What was inside the box?",
+        "options": [
+          "A map and a key",
+          "A toy car, some old coins and a letter",
+          "A photo and a watch",
+          "Nothing"
+        ],
+        "answerIndex": 1,
+        "explanation": "Trong hộp có một chiếc ô tô đồ chơi, vài đồng xu cũ và một lá thư."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "map",
+        "ipa": "/mæp/",
+        "pos": "noun",
+        "meaningVi": "bản đồ",
+        "meaningEn": "a drawing of an area showing roads, rivers, etc.",
+        "example": "Let's look at the map before we go.",
+        "cefr": "A1"
+      },
+      {
+        "word": "bookshelf",
+        "ipa": "/ˈbʊkʃelf/",
+        "pos": "noun",
+        "meaningVi": "giá sách",
+        "meaningEn": "a shelf or set of shelves for books",
+        "example": "My bookshelf is full of comics.",
+        "cefr": "A2"
+      },
+      {
+        "word": "bury",
+        "ipa": "/ˈberi/",
+        "pos": "verb",
+        "meaningVi": "chôn",
+        "meaningEn": "to put something in the ground and cover it",
+        "example": "The dog buried a bone in the garden.",
+        "cefr": "B1"
+      },
+      {
+        "word": "bridge",
+        "ipa": "/brɪdʒ/",
+        "pos": "noun",
+        "meaningVi": "cây cầu",
+        "meaningEn": "a structure that goes over a river or road",
+        "example": "We walked across the bridge.",
+        "cefr": "A2"
+      },
+      {
+        "word": "dig",
+        "ipa": "/dɪɡ/",
+        "pos": "verb",
+        "meaningVi": "đào",
+        "meaningEn": "to make a hole in the ground",
+        "example": "The children dug a hole in the sand.",
+        "cefr": "B1"
+      },
+      {
+        "word": "spade",
+        "ipa": "/speɪd/",
+        "pos": "noun",
+        "meaningVi": "cái xẻng",
+        "meaningEn": "a tool with a long handle for digging",
+        "example": "He used a spade to plant the tree.",
+        "cefr": "B1"
+      },
+      {
+        "word": "rust",
+        "ipa": "/rʌst/",
+        "pos": "noun",
+        "meaningVi": "gỉ sét",
+        "meaningEn": "a red-brown substance on old metal that has been wet",
+        "example": "The old bike was covered in rust.",
+        "cefr": "B2"
+      },
+      {
+        "word": "adventure",
+        "ipa": "/ədˈventʃər/",
+        "pos": "noun",
+        "meaningVi": "cuộc phiêu lưu",
+        "meaningEn": "an exciting or unusual experience",
+        "example": "Our trip to the mountains was a real adventure.",
+        "cefr": "A2"
+      }
+    ]
+  }
+]

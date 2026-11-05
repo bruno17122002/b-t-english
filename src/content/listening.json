@@ -1,0 +1,2213 @@
+[
+  {
+    "id": "ls-a1-coffee-order",
+    "title": "Ordering a Coffee",
+    "cefr": "A1",
+    "topic": "café",
+    "accent": "en-US",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "barista",
+        "name": "Jenny",
+        "gender": "female"
+      },
+      {
+        "id": "customer",
+        "name": "Ben",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "barista",
+        "text": "Hi there! What can I get for you today?",
+        "translationVi": "Chào anh! Hôm nay anh muốn dùng gì ạ?"
+      },
+      {
+        "speaker": "customer",
+        "text": "Hi. Can I have a coffee, please?",
+        "translationVi": "Chào chị. Cho tôi một ly cà phê nhé."
+      },
+      {
+        "speaker": "barista",
+        "text": "Sure. What size would you like? Small, medium or large?",
+        "translationVi": "Vâng. Anh muốn cỡ nào ạ? Nhỏ, vừa hay lớn?"
+      },
+      {
+        "speaker": "customer",
+        "text": "A medium, please. With milk, no sugar.",
+        "translationVi": "Cỡ vừa nhé. Có sữa, không đường."
+      },
+      {
+        "speaker": "barista",
+        "text": "Okay. Is that for here or to go?",
+        "translationVi": "Vâng. Anh uống ở đây hay mang đi ạ?"
+      },
+      {
+        "speaker": "customer",
+        "text": "For here, please. And can I have a blueberry muffin, too?",
+        "translationVi": "Uống ở đây. Cho tôi thêm một cái bánh muffin việt quất nữa nhé."
+      },
+      {
+        "speaker": "barista",
+        "text": "Of course. That's six dollars and fifty cents.",
+        "translationVi": "Dạ được. Tổng cộng sáu đô la năm mươi xu ạ."
+      },
+      {
+        "speaker": "customer",
+        "text": "Here you are. Can I pay by card?",
+        "translationVi": "Đây ạ. Tôi trả bằng thẻ được không?"
+      },
+      {
+        "speaker": "barista",
+        "text": "Yes, no problem. Your coffee will be ready in two minutes.",
+        "translationVi": "Vâng, không vấn đề gì. Hai phút nữa cà phê của anh sẽ xong."
+      },
+      {
+        "speaker": "customer",
+        "text": "Great, thank you!",
+        "translationVi": "Tuyệt, cảm ơn chị!"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-a1-coffee-order-q1",
+        "type": "mcq",
+        "prompt": "What size coffee does Ben order?",
+        "options": [
+          "Small",
+          "Medium",
+          "Large",
+          "Extra large"
+        ],
+        "answerIndex": 1,
+        "explanation": "Ben nói “A medium, please.” – cỡ vừa."
+      },
+      {
+        "id": "ls-a1-coffee-order-q2",
+        "type": "mcq",
+        "prompt": "How does Ben like his coffee?",
+        "options": [
+          "With milk and sugar",
+          "With sugar, no milk",
+          "With milk, no sugar",
+          "Black"
+        ],
+        "answerIndex": 2,
+        "explanation": "“With milk, no sugar.” – có sữa, không đường."
+      },
+      {
+        "id": "ls-a1-coffee-order-q3",
+        "type": "true-false-ng",
+        "prompt": "Ben takes his coffee to go.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Ben trả lời “For here, please.” – anh uống tại quán."
+      },
+      {
+        "id": "ls-a1-coffee-order-q4",
+        "type": "mcq",
+        "prompt": "How much does Ben pay?",
+        "options": [
+          "$5.50",
+          "$6.15",
+          "$6.50",
+          "$16.50"
+        ],
+        "answerIndex": 2,
+        "explanation": "“six dollars and fifty cents” = 6,50 đô la."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "size",
+        "ipa": "/saɪz/",
+        "pos": "noun",
+        "meaningVi": "kích cỡ",
+        "meaningEn": "how big or small something is",
+        "example": "What size shoes do you wear?",
+        "cefr": "A1"
+      },
+      {
+        "word": "medium",
+        "ipa": "/ˈmiːdiəm/",
+        "pos": "adjective",
+        "meaningVi": "vừa, cỡ trung",
+        "meaningEn": "in the middle between small and large",
+        "example": "I'd like a medium pizza.",
+        "cefr": "A2"
+      },
+      {
+        "word": "to go",
+        "ipa": "/tə ˈɡoʊ/",
+        "pos": "phrase",
+        "meaningVi": "mang đi",
+        "meaningEn": "(of food or drink) to take away and eat or drink somewhere else",
+        "example": "Two teas to go, please.",
+        "cefr": "A2"
+      },
+      {
+        "word": "pay by card",
+        "ipa": "/ˌpeɪ baɪ ˈkɑːrd/",
+        "pos": "phrase",
+        "meaningVi": "trả bằng thẻ",
+        "meaningEn": "to pay with a bank card, not cash",
+        "example": "Can I pay by card here?",
+        "cefr": "A1"
+      }
+    ]
+  },
+  {
+    "id": "ls-a1-directions",
+    "title": "Asking for Directions",
+    "cefr": "A1",
+    "topic": "directions",
+    "accent": "en-GB",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "tourist",
+        "name": "Anna",
+        "gender": "female"
+      },
+      {
+        "id": "local",
+        "name": "Peter",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "tourist",
+        "text": "Excuse me. Is there a post office near here?",
+        "translationVi": "Xin lỗi. Gần đây có bưu điện không ạ?"
+      },
+      {
+        "speaker": "local",
+        "text": "Yes, there is. It's on Station Road.",
+        "translationVi": "Có. Nó ở đường Station."
+      },
+      {
+        "speaker": "tourist",
+        "text": "How do I get there?",
+        "translationVi": "Tôi đi đến đó bằng cách nào ạ?"
+      },
+      {
+        "speaker": "local",
+        "text": "Go straight on to the traffic lights. Then turn left.",
+        "translationVi": "Đi thẳng đến chỗ đèn giao thông. Sau đó rẽ trái."
+      },
+      {
+        "speaker": "tourist",
+        "text": "Straight on, then left at the traffic lights. OK.",
+        "translationVi": "Đi thẳng, rồi rẽ trái ở đèn giao thông. Vâng."
+      },
+      {
+        "speaker": "local",
+        "text": "Then walk past the supermarket. The post office is next to the bank.",
+        "translationVi": "Sau đó đi qua siêu thị. Bưu điện nằm cạnh ngân hàng."
+      },
+      {
+        "speaker": "tourist",
+        "text": "Is it far?",
+        "translationVi": "Có xa không ạ?"
+      },
+      {
+        "speaker": "local",
+        "text": "No, it's about five minutes on foot.",
+        "translationVi": "Không, đi bộ khoảng năm phút thôi."
+      },
+      {
+        "speaker": "tourist",
+        "text": "Thank you very much.",
+        "translationVi": "Cảm ơn anh rất nhiều."
+      },
+      {
+        "speaker": "local",
+        "text": "You're welcome. Have a nice day!",
+        "translationVi": "Không có gì. Chúc chị một ngày tốt lành!"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-a1-directions-q1",
+        "type": "mcq",
+        "prompt": "What is Anna looking for?",
+        "options": [
+          "A bank",
+          "A supermarket",
+          "A post office",
+          "A train station"
+        ],
+        "answerIndex": 2,
+        "explanation": "Anna hỏi “Is there a post office near here?” – cô tìm bưu điện."
+      },
+      {
+        "id": "ls-a1-directions-q2",
+        "type": "mcq",
+        "prompt": "Where does Anna turn left?",
+        "options": [
+          "At the bank",
+          "At the traffic lights",
+          "At the supermarket",
+          "At the station"
+        ],
+        "answerIndex": 1,
+        "explanation": "Đi thẳng đến đèn giao thông rồi rẽ trái: “Go straight on to the traffic lights. Then turn left.”"
+      },
+      {
+        "id": "ls-a1-directions-q3",
+        "type": "mcq",
+        "prompt": "What is next to the post office?",
+        "options": [
+          "The bank",
+          "The supermarket",
+          "A café",
+          "A park"
+        ],
+        "answerIndex": 0,
+        "explanation": "“The post office is next to the bank.” – bưu điện nằm cạnh ngân hàng."
+      },
+      {
+        "id": "ls-a1-directions-q4",
+        "type": "true-false-ng",
+        "prompt": "The post office is a long way from here.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Chỉ khoảng năm phút đi bộ (“about five minutes on foot”), không xa."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "post office",
+        "ipa": "/ˈpoʊst ˌɔːfɪs/",
+        "pos": "noun",
+        "meaningVi": "bưu điện",
+        "meaningEn": "a place where you can send letters and parcels",
+        "example": "I need to go to the post office.",
+        "cefr": "A1"
+      },
+      {
+        "word": "straight on",
+        "ipa": "/ˌstreɪt ˈɑːn/",
+        "pos": "adverb",
+        "meaningVi": "đi thẳng",
+        "meaningEn": "forward without turning (British English)",
+        "example": "Go straight on for about 100 metres.",
+        "cefr": "A1"
+      },
+      {
+        "word": "traffic lights",
+        "ipa": "/ˈtræfɪk ˌlaɪts/",
+        "pos": "noun (plural)",
+        "meaningVi": "đèn giao thông",
+        "meaningEn": "red, yellow and green lights that control traffic",
+        "example": "Stop at the traffic lights.",
+        "cefr": "A1"
+      },
+      {
+        "word": "next to",
+        "ipa": "/ˈnekst tuː/",
+        "pos": "preposition",
+        "meaningVi": "bên cạnh",
+        "meaningEn": "at the side of; very near",
+        "example": "The café is next to the cinema.",
+        "cefr": "A1"
+      },
+      {
+        "word": "on foot",
+        "ipa": "/ɑːn ˈfʊt/",
+        "pos": "phrase",
+        "meaningVi": "đi bộ",
+        "meaningEn": "walking",
+        "example": "The school is ten minutes on foot.",
+        "cefr": "A1"
+      }
+    ]
+  },
+  {
+    "id": "ls-a1-new-classmate",
+    "title": "Meeting a New Classmate",
+    "cefr": "A1",
+    "topic": "introductions",
+    "accent": "en-AU",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "chloe",
+        "name": "Chloe",
+        "gender": "female"
+      },
+      {
+        "id": "minh",
+        "name": "Minh",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "chloe",
+        "text": "Hi! Are you new here? I'm Chloe.",
+        "translationVi": "Chào! Bạn mới đến à? Mình là Chloe."
+      },
+      {
+        "speaker": "minh",
+        "text": "Hi, Chloe. Yes, it's my first day. My name is Minh.",
+        "translationVi": "Chào Chloe. Ừ, hôm nay là ngày đầu tiên của mình. Mình tên là Minh."
+      },
+      {
+        "speaker": "chloe",
+        "text": "Nice to meet you, Minh. Where are you from?",
+        "translationVi": "Rất vui được gặp bạn, Minh. Bạn đến từ đâu?"
+      },
+      {
+        "speaker": "minh",
+        "text": "I'm from Vietnam. I'm from Da Nang.",
+        "translationVi": "Mình đến từ Việt Nam. Mình ở Đà Nẵng."
+      },
+      {
+        "speaker": "chloe",
+        "text": "Oh, cool! I'm from Perth. How old are you?",
+        "translationVi": "Ồ, hay quá! Mình đến từ Perth. Bạn bao nhiêu tuổi?"
+      },
+      {
+        "speaker": "minh",
+        "text": "I'm nineteen. And you?",
+        "translationVi": "Mình mười chín tuổi. Còn bạn?"
+      },
+      {
+        "speaker": "chloe",
+        "text": "I'm twenty. What do you study?",
+        "translationVi": "Mình hai mươi. Bạn học ngành gì?"
+      },
+      {
+        "speaker": "minh",
+        "text": "I study engineering. What about you?",
+        "translationVi": "Mình học kỹ thuật. Còn bạn thì sao?"
+      },
+      {
+        "speaker": "chloe",
+        "text": "I study design. Do you want to have lunch together later?",
+        "translationVi": "Mình học thiết kế. Lát nữa bạn có muốn ăn trưa cùng không?"
+      },
+      {
+        "speaker": "minh",
+        "text": "Yes, sure! See you at twelve.",
+        "translationVi": "Có chứ! Hẹn gặp bạn lúc mười hai giờ."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-a1-new-classmate-q1",
+        "type": "mcq",
+        "prompt": "Which city is Minh from?",
+        "options": [
+          "Hanoi",
+          "Da Nang",
+          "Perth",
+          "Hue"
+        ],
+        "answerIndex": 1,
+        "explanation": "Minh nói “I'm from Da Nang.”"
+      },
+      {
+        "id": "ls-a1-new-classmate-q2",
+        "type": "mcq",
+        "prompt": "How old is Chloe?",
+        "options": [
+          "Eighteen",
+          "Nineteen",
+          "Twenty",
+          "Twenty-one"
+        ],
+        "answerIndex": 2,
+        "explanation": "Chloe nói “I'm twenty.” Minh mới là người mười chín tuổi."
+      },
+      {
+        "id": "ls-a1-new-classmate-q3",
+        "type": "mcq",
+        "prompt": "What does Minh study?",
+        "options": [
+          "Design",
+          "Engineering",
+          "English",
+          "Business"
+        ],
+        "answerIndex": 1,
+        "explanation": "“I study engineering.” – Minh học kỹ thuật; Chloe học thiết kế."
+      },
+      {
+        "id": "ls-a1-new-classmate-q4",
+        "type": "true-false-ng",
+        "prompt": "Chloe and Minh will meet at one o'clock.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Họ hẹn lúc mười hai giờ (“See you at twelve”)."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "new",
+        "ipa": "/nuː/",
+        "pos": "adjective",
+        "meaningVi": "mới",
+        "meaningEn": "recently arrived or started",
+        "example": "She is a new student in our class.",
+        "cefr": "A1"
+      },
+      {
+        "word": "nice to meet you",
+        "ipa": "/ˌnaɪs tə ˈmiːt juː/",
+        "pos": "phrase",
+        "meaningVi": "rất vui được gặp bạn",
+        "meaningEn": "a polite thing to say when you meet someone for the first time",
+        "example": "Hello, I'm Lan. Nice to meet you.",
+        "cefr": "A1"
+      },
+      {
+        "word": "study",
+        "ipa": "/ˈstʌdi/",
+        "pos": "verb",
+        "meaningVi": "học",
+        "meaningEn": "to learn about a subject",
+        "example": "I study English every evening.",
+        "cefr": "A1"
+      },
+      {
+        "word": "engineering",
+        "ipa": "/ˌendʒɪˈnɪrɪŋ/",
+        "pos": "noun",
+        "meaningVi": "ngành kỹ thuật",
+        "meaningEn": "the study of designing and building machines, roads, bridges, etc.",
+        "example": "My brother works in engineering.",
+        "cefr": "B1"
+      },
+      {
+        "word": "together",
+        "ipa": "/təˈɡeðər/",
+        "pos": "adverb",
+        "meaningVi": "cùng nhau",
+        "meaningEn": "with each other",
+        "example": "Let's study together.",
+        "cefr": "A1"
+      }
+    ]
+  },
+  {
+    "id": "ls-a2-gate-change",
+    "title": "Airport Announcement: Gate Change",
+    "cefr": "A2",
+    "topic": "airport",
+    "accent": "en-US",
+    "kind": "announcement",
+    "speakers": [
+      {
+        "id": "announcer",
+        "name": "Airport announcer",
+        "gender": "female"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "announcer",
+        "text": "Good afternoon, ladies and gentlemen. This is an announcement for passengers on Aurelia Air flight 417 to Denver.",
+        "translationVi": "Xin chào quý khách. Đây là thông báo dành cho hành khách trên chuyến bay 417 của hãng Aurelia Air đi Denver."
+      },
+      {
+        "speaker": "announcer",
+        "text": "Please note that the departure gate for this flight has changed.",
+        "translationVi": "Xin lưu ý rằng cửa khởi hành của chuyến bay này đã thay đổi."
+      },
+      {
+        "speaker": "announcer",
+        "text": "The flight will now depart from Gate 32, not Gate 18.",
+        "translationVi": "Chuyến bay sẽ khởi hành từ cửa số 32, không phải cửa số 18."
+      },
+      {
+        "speaker": "announcer",
+        "text": "Boarding will begin at 3:45 p.m., which is fifteen minutes later than planned.",
+        "translationVi": "Việc lên máy bay sẽ bắt đầu lúc 3 giờ 45 chiều, trễ mười lăm phút so với kế hoạch."
+      },
+      {
+        "speaker": "announcer",
+        "text": "We apologize for any inconvenience this may cause.",
+        "translationVi": "Chúng tôi xin lỗi vì bất kỳ sự bất tiện nào mà điều này có thể gây ra."
+      },
+      {
+        "speaker": "announcer",
+        "text": "Passengers traveling with small children, or who need extra help, are welcome to board first.",
+        "translationVi": "Hành khách đi cùng trẻ nhỏ hoặc cần hỗ trợ thêm được mời lên máy bay trước."
+      },
+      {
+        "speaker": "announcer",
+        "text": "Please have your boarding pass and passport or ID ready at the gate.",
+        "translationVi": "Vui lòng chuẩn bị sẵn thẻ lên máy bay và hộ chiếu hoặc giấy tờ tùy thân tại cửa."
+      },
+      {
+        "speaker": "announcer",
+        "text": "Thank you for flying with Aurelia Air.",
+        "translationVi": "Cảm ơn quý khách đã bay cùng Aurelia Air."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-a2-gate-change-q1",
+        "type": "mcq",
+        "prompt": "Which gate will the flight leave from now?",
+        "options": [
+          "Gate 18",
+          "Gate 23",
+          "Gate 32",
+          "Gate 417"
+        ],
+        "answerIndex": 2,
+        "explanation": "Chuyến bay giờ khởi hành từ cửa số 32, không phải cửa số 18."
+      },
+      {
+        "id": "ls-a2-gate-change-q2",
+        "type": "mcq",
+        "prompt": "What time will boarding begin?",
+        "options": [
+          "3:15 p.m.",
+          "3:30 p.m.",
+          "3:45 p.m.",
+          "4:15 p.m."
+        ],
+        "answerIndex": 2,
+        "explanation": "Giờ bắt đầu lên máy bay là 3 giờ 45 chiều (“Boarding will begin at 3:45 p.m.”)."
+      },
+      {
+        "id": "ls-a2-gate-change-q3",
+        "type": "true-false-ng",
+        "prompt": "Boarding will start earlier than planned.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Việc lên máy bay trễ hơn 15 phút (“fifteen minutes later than planned”)."
+      },
+      {
+        "id": "ls-a2-gate-change-q4",
+        "type": "true-false-ng",
+        "prompt": "The gate changed because of bad weather.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Thông báo không nói lý do đổi cửa."
+      },
+      {
+        "id": "ls-a2-gate-change-q5",
+        "type": "mcq",
+        "prompt": "Who can board first?",
+        "options": [
+          "Business class passengers only",
+          "Passengers with small children or who need help",
+          "Passengers with no bags",
+          "Airline staff"
+        ],
+        "answerIndex": 1,
+        "explanation": "Hành khách đi cùng trẻ nhỏ hoặc cần hỗ trợ được lên trước."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "passenger",
+        "ipa": "/ˈpæsɪndʒər/",
+        "pos": "noun",
+        "meaningVi": "hành khách",
+        "meaningEn": "a person travelling in a vehicle who is not driving it",
+        "example": "The bus has room for fifty passengers.",
+        "cefr": "A2"
+      },
+      {
+        "word": "departure",
+        "ipa": "/dɪˈpɑːrtʃər/",
+        "pos": "noun",
+        "meaningVi": "sự khởi hành",
+        "meaningEn": "the act of leaving a place",
+        "example": "Check the departure time on your ticket.",
+        "cefr": "B1"
+      },
+      {
+        "word": "boarding",
+        "ipa": "/ˈbɔːrdɪŋ/",
+        "pos": "noun",
+        "meaningVi": "việc lên (máy bay, tàu)",
+        "meaningEn": "getting on a plane, ship or train",
+        "example": "Boarding closes twenty minutes before departure.",
+        "cefr": "B1"
+      },
+      {
+        "word": "inconvenience",
+        "ipa": "/ˌɪnkənˈviːniəns/",
+        "pos": "noun",
+        "meaningVi": "sự bất tiện",
+        "meaningEn": "trouble or a problem that causes difficulty",
+        "example": "We are sorry for the inconvenience.",
+        "cefr": "B2"
+      },
+      {
+        "word": "boarding pass",
+        "ipa": "/ˈbɔːrdɪŋ ˌpæs/",
+        "pos": "noun",
+        "meaningVi": "thẻ lên máy bay",
+        "meaningEn": "a card you must show before you get on a plane",
+        "example": "You can download your boarding pass to your phone.",
+        "cefr": "A2"
+      }
+    ]
+  },
+  {
+    "id": "ls-a2-doctor-appointment",
+    "title": "Booking a Doctor's Appointment",
+    "cefr": "A2",
+    "topic": "health",
+    "accent": "en-GB",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "receptionist",
+        "name": "Sarah",
+        "gender": "female"
+      },
+      {
+        "id": "patient",
+        "name": "David",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "receptionist",
+        "text": "Good morning, Riverside Medical Centre. How can I help you?",
+        "translationVi": "Chào buổi sáng, Trung tâm Y tế Riverside xin nghe. Tôi có thể giúp gì cho anh?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Hello. I'd like to make an appointment to see a doctor, please.",
+        "translationVi": "Xin chào. Tôi muốn đặt lịch hẹn gặp bác sĩ."
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Of course. Are you already registered with us?",
+        "translationVi": "Vâng. Anh đã đăng ký ở chỗ chúng tôi chưa ạ?"
+      },
+      {
+        "speaker": "patient",
+        "text": "Yes, I am. My name is David Walker.",
+        "translationVi": "Rồi. Tôi tên là David Walker."
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Thank you, Mr Walker. What's the problem?",
+        "translationVi": "Cảm ơn anh Walker. Anh gặp vấn đề gì vậy?"
+      },
+      {
+        "speaker": "patient",
+        "text": "I've had a bad cough and a sore throat for about a week.",
+        "translationVi": "Tôi bị ho nặng và đau họng khoảng một tuần rồi."
+      },
+      {
+        "speaker": "receptionist",
+        "text": "I see. We have an appointment with Dr Patel tomorrow at ten past nine.",
+        "translationVi": "Tôi hiểu rồi. Chúng tôi có lịch với bác sĩ Patel ngày mai lúc chín giờ mười."
+      },
+      {
+        "speaker": "patient",
+        "text": "Sorry, I work in the morning. Is there anything in the afternoon?",
+        "translationVi": "Xin lỗi, buổi sáng tôi đi làm. Có lịch nào vào buổi chiều không?"
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Let me check. Yes, there's one at half past four with Dr Hughes.",
+        "translationVi": "Để tôi kiểm tra. Có, có một lịch lúc bốn giờ rưỡi với bác sĩ Hughes."
+      },
+      {
+        "speaker": "patient",
+        "text": "That's perfect. I'll take it.",
+        "translationVi": "Thật hoàn hảo. Tôi sẽ lấy lịch đó."
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Lovely. Please arrive ten minutes early. See you tomorrow.",
+        "translationVi": "Tốt quá. Anh vui lòng đến sớm mười phút nhé. Hẹn gặp anh ngày mai."
+      },
+      {
+        "speaker": "patient",
+        "text": "Thank you. Goodbye.",
+        "translationVi": "Cảm ơn chị. Tạm biệt."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-a2-doctor-appointment-q1",
+        "type": "mcq",
+        "prompt": "What is David's problem?",
+        "options": [
+          "A headache and a fever",
+          "A cough and a sore throat",
+          "A stomach ache",
+          "A broken arm"
+        ],
+        "answerIndex": 1,
+        "explanation": "“I've had a bad cough and a sore throat” – ho và đau họng."
+      },
+      {
+        "id": "ls-a2-doctor-appointment-q2",
+        "type": "mcq",
+        "prompt": "Why can't David go in the morning?",
+        "options": [
+          "He has a class",
+          "He works in the morning",
+          "He is travelling",
+          "The centre is closed"
+        ],
+        "answerIndex": 1,
+        "explanation": "“Sorry, I work in the morning.” – buổi sáng anh ấy đi làm."
+      },
+      {
+        "id": "ls-a2-doctor-appointment-q3",
+        "type": "mcq",
+        "prompt": "What time is David's appointment?",
+        "options": [
+          "9:10",
+          "4:00",
+          "4:30",
+          "5:30"
+        ],
+        "answerIndex": 2,
+        "explanation": "“half past four” nghĩa là 4 giờ 30."
+      },
+      {
+        "id": "ls-a2-doctor-appointment-q4",
+        "type": "true-false-ng",
+        "prompt": "David is a new patient at the medical centre.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "David đã đăng ký rồi (“Yes, I am.” khi được hỏi “Are you already registered?”)."
+      },
+      {
+        "id": "ls-a2-doctor-appointment-q5",
+        "type": "mcq",
+        "prompt": "Which doctor will David see?",
+        "options": [
+          "Dr Patel",
+          "Dr Walker",
+          "Dr Hughes",
+          "Dr Riverside"
+        ],
+        "answerIndex": 2,
+        "explanation": "Lịch buổi chiều là với bác sĩ Hughes."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "appointment",
+        "ipa": "/əˈpɔɪntmənt/",
+        "pos": "noun",
+        "meaningVi": "cuộc hẹn, lịch hẹn",
+        "meaningEn": "an arranged time to meet someone, e.g. a doctor",
+        "example": "I have a dentist appointment on Friday.",
+        "cefr": "A2"
+      },
+      {
+        "word": "registered",
+        "ipa": "/ˈredʒɪstərd/",
+        "pos": "adjective",
+        "meaningVi": "đã đăng ký",
+        "meaningEn": "officially on a list",
+        "example": "Are you registered with a local doctor?",
+        "cefr": "B1"
+      },
+      {
+        "word": "cough",
+        "ipa": "/kɔːf/",
+        "pos": "noun",
+        "meaningVi": "cơn ho, bệnh ho",
+        "meaningEn": "a noisy push of air from your throat when you are ill",
+        "example": "He has had a cough for three days.",
+        "cefr": "A2"
+      },
+      {
+        "word": "sore throat",
+        "ipa": "/ˌsɔːr ˈθroʊt/",
+        "pos": "noun",
+        "meaningVi": "đau họng",
+        "meaningEn": "a painful throat, often because of a cold",
+        "example": "Drink warm water if you have a sore throat.",
+        "cefr": "A2"
+      },
+      {
+        "word": "half past",
+        "ipa": "/ˈhæf pæst/",
+        "pos": "phrase",
+        "meaningVi": "(giờ) rưỡi",
+        "meaningEn": "thirty minutes after the hour",
+        "example": "The film starts at half past seven.",
+        "cefr": "A1"
+      }
+    ]
+  },
+  {
+    "id": "ls-a2-weekend-plans",
+    "title": "Weekend Plans",
+    "cefr": "A2",
+    "topic": "free time",
+    "accent": "en-AU",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "jack",
+        "name": "Jack",
+        "gender": "male"
+      },
+      {
+        "id": "emily",
+        "name": "Emily",
+        "gender": "female"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "jack",
+        "text": "Hey Emily, have you got any plans for the weekend?",
+        "translationVi": "Này Emily, cuối tuần này bạn có kế hoạch gì không?"
+      },
+      {
+        "speaker": "emily",
+        "text": "Not really. I might go to the beach on Saturday if the weather's nice.",
+        "translationVi": "Chưa có gì. Có thể mình sẽ đi biển vào thứ Bảy nếu trời đẹp."
+      },
+      {
+        "speaker": "jack",
+        "text": "The forecast says it's going to rain on Saturday, unfortunately.",
+        "translationVi": "Tiếc là dự báo thời tiết nói thứ Bảy trời sẽ mưa."
+      },
+      {
+        "speaker": "emily",
+        "text": "Oh no! What about Sunday?",
+        "translationVi": "Ôi không! Thế còn Chủ nhật?"
+      },
+      {
+        "speaker": "jack",
+        "text": "Sunday should be sunny and warm. About twenty-eight degrees.",
+        "translationVi": "Chủ nhật chắc sẽ nắng và ấm. Khoảng hai mươi tám độ."
+      },
+      {
+        "speaker": "emily",
+        "text": "Great, then I'll go on Sunday. Do you want to come?",
+        "translationVi": "Tuyệt, vậy mình sẽ đi vào Chủ nhật. Bạn có muốn đi cùng không?"
+      },
+      {
+        "speaker": "jack",
+        "text": "I'd love to, but I'm helping my brother move house in the morning.",
+        "translationVi": "Mình rất muốn, nhưng buổi sáng mình phải giúp anh trai chuyển nhà."
+      },
+      {
+        "speaker": "emily",
+        "text": "No worries. We could meet in the afternoon instead.",
+        "translationVi": "Không sao đâu. Thay vào đó mình có thể gặp nhau vào buổi chiều."
+      },
+      {
+        "speaker": "jack",
+        "text": "Sounds good. How about two o'clock at the café near the beach?",
+        "translationVi": "Nghe hay đấy. Hai giờ ở quán cà phê gần bãi biển nhé?"
+      },
+      {
+        "speaker": "emily",
+        "text": "Perfect. I'll bring some snacks and a frisbee.",
+        "translationVi": "Hoàn hảo. Mình sẽ mang ít đồ ăn vặt và một cái đĩa ném."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-a2-weekend-plans-q1",
+        "type": "mcq",
+        "prompt": "What will the weather be like on Saturday?",
+        "options": [
+          "Sunny",
+          "Rainy",
+          "Windy",
+          "Cold and snowy"
+        ],
+        "answerIndex": 1,
+        "explanation": "“it's going to rain on Saturday” – thứ Bảy trời mưa."
+      },
+      {
+        "id": "ls-a2-weekend-plans-q2",
+        "type": "mcq",
+        "prompt": "What will the temperature be on Sunday?",
+        "options": [
+          "About 18 degrees",
+          "About 22 degrees",
+          "About 28 degrees",
+          "About 38 degrees"
+        ],
+        "answerIndex": 2,
+        "explanation": "Chủ nhật khoảng hai mươi tám độ (“About twenty-eight degrees”)."
+      },
+      {
+        "id": "ls-a2-weekend-plans-q3",
+        "type": "mcq",
+        "prompt": "Why is Jack busy on Sunday morning?",
+        "options": [
+          "He has to work",
+          "He is helping his brother move house",
+          "He is playing sport",
+          "He is visiting his grandparents"
+        ],
+        "answerIndex": 1,
+        "explanation": "Jack phải giúp anh trai chuyển nhà vào buổi sáng."
+      },
+      {
+        "id": "ls-a2-weekend-plans-q4",
+        "type": "true-false-ng",
+        "prompt": "Emily will bring a picnic blanket.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Emily chỉ nói sẽ mang đồ ăn vặt và đĩa ném; không nhắc đến tấm thảm picnic."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "forecast",
+        "ipa": "/ˈfɔːrkæst/",
+        "pos": "noun",
+        "meaningVi": "dự báo (thời tiết)",
+        "meaningEn": "a statement about what the weather will be like",
+        "example": "The forecast says it will be cloudy tomorrow.",
+        "cefr": "B1"
+      },
+      {
+        "word": "degree",
+        "ipa": "/dɪˈɡriː/",
+        "pos": "noun",
+        "meaningVi": "độ (nhiệt độ)",
+        "meaningEn": "a unit for measuring temperature",
+        "example": "It's thirty degrees today.",
+        "cefr": "A2"
+      },
+      {
+        "word": "move house",
+        "ipa": "/ˌmuːv ˈhaʊs/",
+        "pos": "phrase",
+        "meaningVi": "chuyển nhà",
+        "meaningEn": "to go to live in a different home",
+        "example": "We moved house last year.",
+        "cefr": "A2"
+      },
+      {
+        "word": "no worries",
+        "ipa": "/ˌnoʊ ˈwɜːriz/",
+        "pos": "phrase",
+        "meaningVi": "không sao đâu (thân mật, rất phổ biến ở Úc)",
+        "meaningEn": "an informal way to say it's not a problem",
+        "example": "Sorry I'm late! – No worries.",
+        "cefr": "A2"
+      },
+      {
+        "word": "snack",
+        "ipa": "/snæk/",
+        "pos": "noun",
+        "meaningVi": "đồ ăn vặt",
+        "meaningEn": "a small amount of food eaten between meals",
+        "example": "I usually have a snack at four o'clock.",
+        "cefr": "A2"
+      }
+    ]
+  },
+  {
+    "id": "ls-b1-first-day-small-talk",
+    "title": "Small Talk on the First Day at Work",
+    "cefr": "B1",
+    "topic": "workplace",
+    "accent": "en-US",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "rachel",
+        "name": "Rachel",
+        "gender": "female"
+      },
+      {
+        "id": "kevin",
+        "name": "Kevin",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "rachel",
+        "text": "Hi, you must be Kevin. I'm Rachel from the marketing team. Welcome aboard!",
+        "translationVi": "Chào, chắc anh là Kevin. Tôi là Rachel ở nhóm marketing. Chào mừng anh gia nhập!"
+      },
+      {
+        "speaker": "kevin",
+        "text": "Thanks, Rachel. It's nice to finally meet everyone in person.",
+        "translationVi": "Cảm ơn Rachel. Thật vui vì cuối cùng cũng được gặp mọi người trực tiếp."
+      },
+      {
+        "speaker": "rachel",
+        "text": "So how's your first morning going so far?",
+        "translationVi": "Buổi sáng đầu tiên của anh đến giờ thế nào rồi?"
+      },
+      {
+        "speaker": "kevin",
+        "text": "Pretty well, actually. There's a lot of information, but everyone's been really helpful.",
+        "translationVi": "Khá tốt đấy. Có rất nhiều thông tin, nhưng mọi người đều rất nhiệt tình giúp đỡ."
+      },
+      {
+        "speaker": "rachel",
+        "text": "That's good to hear. Where were you working before this?",
+        "translationVi": "Nghe vậy tốt quá. Trước đây anh làm ở đâu?"
+      },
+      {
+        "speaker": "kevin",
+        "text": "I was at a small design agency downtown for about three years.",
+        "translationVi": "Tôi làm ở một công ty thiết kế nhỏ ở trung tâm thành phố khoảng ba năm."
+      },
+      {
+        "speaker": "rachel",
+        "text": "Oh, nice. So this must feel like a big change.",
+        "translationVi": "Ồ, hay đấy. Vậy chắc đây là một thay đổi lớn nhỉ."
+      },
+      {
+        "speaker": "kevin",
+        "text": "It is. I'm used to a team of five, and here there are five floors!",
+        "translationVi": "Đúng vậy. Tôi quen làm trong nhóm năm người, còn ở đây có tận năm tầng!"
+      },
+      {
+        "speaker": "rachel",
+        "text": "Don't worry, you'll get used to it. Have you found the kitchen yet?",
+        "translationVi": "Đừng lo, anh sẽ quen thôi. Anh tìm thấy phòng bếp chưa?"
+      },
+      {
+        "speaker": "kevin",
+        "text": "Not yet. Is there somewhere good to get lunch around here?",
+        "translationVi": "Chưa. Quanh đây có chỗ nào ăn trưa ngon không?"
+      },
+      {
+        "speaker": "rachel",
+        "text": "There's a great taco place across the street. A few of us usually go at twelve thirty.",
+        "translationVi": "Có một quán taco rất ngon bên kia đường. Vài người trong nhóm thường đi lúc mười hai rưỡi."
+      },
+      {
+        "speaker": "kevin",
+        "text": "That sounds great. Count me in.",
+        "translationVi": "Nghe tuyệt đấy. Cho tôi đi cùng với."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-b1-first-day-small-talk-q1",
+        "type": "mcq",
+        "prompt": "Which team does Rachel work in?",
+        "options": [
+          "Design",
+          "Sales",
+          "Marketing",
+          "Finance"
+        ],
+        "answerIndex": 2,
+        "explanation": "Rachel giới thiệu: “I'm Rachel from the marketing team.”"
+      },
+      {
+        "id": "ls-b1-first-day-small-talk-q2",
+        "type": "mcq",
+        "prompt": "Where did Kevin work before?",
+        "options": [
+          "At a large bank",
+          "At a small design agency",
+          "At a restaurant",
+          "At a university"
+        ],
+        "answerIndex": 1,
+        "explanation": "Trước đây Kevin làm ở một công ty thiết kế nhỏ ở trung tâm thành phố khoảng ba năm."
+      },
+      {
+        "id": "ls-b1-first-day-small-talk-q3",
+        "type": "true-false-ng",
+        "prompt": "Kevin says his new colleagues have not been very helpful.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Kevin nói “everyone's been really helpful” – mọi người rất nhiệt tình."
+      },
+      {
+        "id": "ls-b1-first-day-small-talk-q4",
+        "type": "mcq",
+        "prompt": "What does Kevin mean when he says “Count me in”?",
+        "options": [
+          "Please count how many people are going",
+          "I would like to join you",
+          "I am not hungry",
+          "I will pay for everyone"
+        ],
+        "answerIndex": 1,
+        "explanation": "“Count me in” là thành ngữ nghĩa là “cho tôi tham gia với”."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "welcome aboard",
+        "ipa": "/ˌwelkəm əˈbɔːrd/",
+        "pos": "phrase",
+        "meaningVi": "chào mừng gia nhập (đội, công ty)",
+        "meaningEn": "a friendly way to welcome a new member of a team",
+        "example": "Welcome aboard! We're happy to have you.",
+        "cefr": "B1"
+      },
+      {
+        "word": "in person",
+        "ipa": "/ɪn ˈpɜːrsn/",
+        "pos": "phrase",
+        "meaningVi": "trực tiếp, gặp mặt",
+        "meaningEn": "physically present, not online or by phone",
+        "example": "It's better to discuss this in person.",
+        "cefr": "B1"
+      },
+      {
+        "word": "agency",
+        "ipa": "/ˈeɪdʒənsi/",
+        "pos": "noun",
+        "meaningVi": "công ty dịch vụ, đại lý",
+        "meaningEn": "a business that provides a particular service",
+        "example": "She works for a travel agency.",
+        "cefr": "B1"
+      },
+      {
+        "word": "get used to",
+        "ipa": "/ɡet ˈjuːst tə/",
+        "pos": "phrase",
+        "meaningVi": "dần quen với",
+        "meaningEn": "to become familiar with something new",
+        "example": "I'm getting used to the cold weather.",
+        "cefr": "B1"
+      },
+      {
+        "word": "count me in",
+        "ipa": "/ˌkaʊnt mi ˈɪn/",
+        "pos": "idiom",
+        "meaningVi": "cho tôi tham gia với",
+        "meaningEn": "used to say you want to join an activity",
+        "example": "A game of football? Count me in!",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "ls-b1-hotel-booking",
+    "title": "Booking a Hotel Room by Phone",
+    "cefr": "B1",
+    "topic": "travel",
+    "accent": "en-GB",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "oliver",
+        "name": "Oliver",
+        "gender": "male"
+      },
+      {
+        "id": "linh",
+        "name": "Linh",
+        "gender": "female"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "oliver",
+        "text": "Good afternoon, the Harbour View Hotel, Oliver speaking. How may I help you?",
+        "translationVi": "Chào buổi chiều, khách sạn Harbour View, Oliver xin nghe. Tôi có thể giúp gì cho chị?"
+      },
+      {
+        "speaker": "linh",
+        "text": "Hi, I'd like to book a room for three nights, from Friday the twelfth of July.",
+        "translationVi": "Xin chào, tôi muốn đặt phòng ba đêm, từ thứ Sáu ngày mười hai tháng Bảy."
+      },
+      {
+        "speaker": "oliver",
+        "text": "Certainly. Would you like a single or a double room?",
+        "translationVi": "Vâng. Chị muốn phòng đơn hay phòng đôi ạ?"
+      },
+      {
+        "speaker": "linh",
+        "text": "A double, please. And if possible, I'd prefer a room with a sea view.",
+        "translationVi": "Phòng đôi. Và nếu được, tôi muốn phòng có view biển."
+      },
+      {
+        "speaker": "oliver",
+        "text": "Let me have a look. Yes, we have a sea-view double for a hundred and forty pounds per night.",
+        "translationVi": "Để tôi xem. Vâng, chúng tôi có phòng đôi hướng biển giá một trăm bốn mươi bảng mỗi đêm."
+      },
+      {
+        "speaker": "linh",
+        "text": "Does that include breakfast?",
+        "translationVi": "Giá đó đã bao gồm bữa sáng chưa?"
+      },
+      {
+        "speaker": "oliver",
+        "text": "Yes, breakfast is included, and there's free Wi-Fi throughout the hotel.",
+        "translationVi": "Có, đã bao gồm bữa sáng, và có Wi-Fi miễn phí trong toàn khách sạn."
+      },
+      {
+        "speaker": "linh",
+        "text": "Great. Is there parking available? I'll be arriving by car.",
+        "translationVi": "Tuyệt. Có chỗ đỗ xe không? Tôi sẽ đến bằng ô tô."
+      },
+      {
+        "speaker": "oliver",
+        "text": "We have a small car park behind the hotel. It's twelve pounds a day, and you don't need to reserve a space.",
+        "translationVi": "Chúng tôi có bãi đỗ xe nhỏ phía sau khách sạn. Mười hai bảng một ngày, và chị không cần đặt chỗ trước."
+      },
+      {
+        "speaker": "linh",
+        "text": "That's fine. What time is check-in?",
+        "translationVi": "Được. Mấy giờ thì nhận phòng?"
+      },
+      {
+        "speaker": "oliver",
+        "text": "Check-in is from three o'clock, and check-out is at eleven. Could I take your name, please?",
+        "translationVi": "Nhận phòng từ ba giờ chiều, trả phòng lúc mười một giờ. Cho tôi xin tên chị được không?"
+      },
+      {
+        "speaker": "linh",
+        "text": "Sure. It's Linh Tran. That's L-I-N-H, Linh.",
+        "translationVi": "Vâng. Tôi tên Linh Trần. Đánh vần là L-I-N-H, Linh."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-b1-hotel-booking-q1",
+        "type": "mcq",
+        "prompt": "How many nights does Linh want to stay?",
+        "options": [
+          "Two",
+          "Three",
+          "Four",
+          "Twelve"
+        ],
+        "answerIndex": 1,
+        "explanation": "“a room for three nights” – ba đêm. Số 12 là ngày đến."
+      },
+      {
+        "id": "ls-b1-hotel-booking-q2",
+        "type": "mcq",
+        "prompt": "How much is the sea-view double room per night?",
+        "options": [
+          "£114",
+          "£120",
+          "£140",
+          "£144"
+        ],
+        "answerIndex": 2,
+        "explanation": "“a hundred and forty pounds per night” = 140 bảng."
+      },
+      {
+        "id": "ls-b1-hotel-booking-q3",
+        "type": "true-false-ng",
+        "prompt": "Breakfast costs extra.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Oliver nói “breakfast is included” – đã bao gồm, không tốn thêm."
+      },
+      {
+        "id": "ls-b1-hotel-booking-q4",
+        "type": "true-false-ng",
+        "prompt": "Linh must reserve a parking space in advance.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "“you don't need to reserve a space” – không cần đặt chỗ đỗ xe trước."
+      },
+      {
+        "id": "ls-b1-hotel-booking-q5",
+        "type": "mcq",
+        "prompt": "What time is check-out?",
+        "options": [
+          "10 o'clock",
+          "11 o'clock",
+          "12 o'clock",
+          "3 o'clock"
+        ],
+        "answerIndex": 1,
+        "explanation": "“check-out is at eleven” – trả phòng lúc 11 giờ; 3 giờ là giờ nhận phòng."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "book",
+        "ipa": "/bʊk/",
+        "pos": "verb",
+        "meaningVi": "đặt (phòng, vé, bàn)",
+        "meaningEn": "to arrange to have a room, seat, etc. at a future time",
+        "example": "I've booked a table for four at eight o'clock.",
+        "cefr": "A2"
+      },
+      {
+        "word": "sea view",
+        "ipa": "/ˌsiː ˈvjuː/",
+        "pos": "noun",
+        "meaningVi": "tầm nhìn ra biển",
+        "meaningEn": "a view of the sea from a room or building",
+        "example": "All the rooms have a sea view.",
+        "cefr": "B1"
+      },
+      {
+        "word": "include",
+        "ipa": "/ɪnˈkluːd/",
+        "pos": "verb",
+        "meaningVi": "bao gồm",
+        "meaningEn": "to have something as one part of the whole",
+        "example": "The price includes tax.",
+        "cefr": "A2"
+      },
+      {
+        "word": "car park",
+        "ipa": "/ˈkɑːr ˌpɑːrk/",
+        "pos": "noun",
+        "meaningVi": "bãi đỗ xe ô tô",
+        "meaningEn": "an area where cars can be parked (British English; American: parking lot)",
+        "example": "The car park is full.",
+        "cefr": "A2"
+      },
+      {
+        "word": "reserve",
+        "ipa": "/rɪˈzɜːrv/",
+        "pos": "verb",
+        "meaningVi": "đặt trước, giữ chỗ",
+        "meaningEn": "to arrange for something to be kept for you",
+        "example": "I reserved two seats on the train.",
+        "cefr": "B1"
+      },
+      {
+        "word": "check-in",
+        "ipa": "/ˈtʃek ɪn/",
+        "pos": "noun",
+        "meaningVi": "việc nhận phòng; làm thủ tục",
+        "meaningEn": "the time or process of arriving and registering at a hotel or airport",
+        "example": "Check-in opens two hours before the flight.",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "ls-b1-surfing-podcast",
+    "title": "Learning to Surf at Thirty-Four",
+    "cefr": "B1",
+    "topic": "learning new skills",
+    "accent": "en-AU",
+    "kind": "monologue",
+    "speakers": [
+      {
+        "id": "mia",
+        "name": "Mia",
+        "gender": "female"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "mia",
+        "text": "G'day, and welcome back to Small Steps, the podcast about learning new things at any age. I'm Mia.",
+        "translationVi": "Xin chào, chào mừng trở lại với Small Steps, podcast về việc học những điều mới ở mọi lứa tuổi. Tôi là Mia."
+      },
+      {
+        "speaker": "mia",
+        "text": "Today I want to tell you about the year I finally learned to surf, at the age of thirty-four.",
+        "translationVi": "Hôm nay tôi muốn kể về năm cuối cùng tôi cũng học được lướt sóng, ở tuổi ba mươi tư."
+      },
+      {
+        "speaker": "mia",
+        "text": "I grew up near the coast, but I was always too nervous to try. I thought surfing was for confident teenagers.",
+        "translationVi": "Tôi lớn lên gần bờ biển nhưng lúc nào cũng quá lo lắng để thử. Tôi nghĩ lướt sóng là dành cho thanh thiếu niên tự tin."
+      },
+      {
+        "speaker": "mia",
+        "text": "Last summer, a friend convinced me to book a beginner's lesson, and honestly, the first day was a disaster.",
+        "translationVi": "Mùa hè năm ngoái, một người bạn thuyết phục tôi đăng ký một buổi học cho người mới, và thật lòng mà nói, ngày đầu tiên là một thảm họa."
+      },
+      {
+        "speaker": "mia",
+        "text": "I fell off the board about fifty times, swallowed half the ocean and went home with sore arms.",
+        "translationVi": "Tôi ngã khỏi ván khoảng năm mươi lần, uống cả nửa đại dương và về nhà với đôi tay đau nhức."
+      },
+      {
+        "speaker": "mia",
+        "text": "But my instructor said something I've never forgotten: 'Everyone falls. The surfers you admire just fell more times than you.'",
+        "translationVi": "Nhưng huấn luyện viên đã nói một câu tôi không bao giờ quên: “Ai cũng ngã. Những người lướt sóng bạn ngưỡng mộ chỉ là đã ngã nhiều lần hơn bạn.”"
+      },
+      {
+        "speaker": "mia",
+        "text": "So I kept going back, twice a week, even when it was cold and I felt silly.",
+        "translationVi": "Vì thế tôi tiếp tục quay lại, mỗi tuần hai lần, kể cả khi trời lạnh và tôi thấy mình thật ngớ ngẩn."
+      },
+      {
+        "speaker": "mia",
+        "text": "After about two months, I stood up on a small wave for maybe three seconds. People on the beach actually clapped.",
+        "translationVi": "Sau khoảng hai tháng, tôi đứng được trên một con sóng nhỏ chừng ba giây. Mọi người trên bãi biển còn vỗ tay nữa."
+      },
+      {
+        "speaker": "mia",
+        "text": "What I learned is that being a beginner is uncomfortable, but it doesn't last forever if you keep practising.",
+        "translationVi": "Điều tôi học được là làm người mới bắt đầu thì không dễ chịu, nhưng nó không kéo dài mãi nếu bạn tiếp tục luyện tập."
+      },
+      {
+        "speaker": "mia",
+        "text": "My challenge for you this week: try one thing you've always been too nervous to do. Let me know how it goes!",
+        "translationVi": "Thử thách của tôi dành cho bạn tuần này: hãy thử một việc mà bạn luôn quá lo lắng để làm. Hãy cho tôi biết kết quả nhé!"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-b1-surfing-podcast-q1",
+        "type": "mcq",
+        "prompt": "How old was Mia when she learned to surf?",
+        "options": [
+          "Fourteen",
+          "Twenty-four",
+          "Thirty-four",
+          "Forty-three"
+        ],
+        "answerIndex": 2,
+        "explanation": "“at the age of thirty-four” – ba mươi tư tuổi."
+      },
+      {
+        "id": "ls-b1-surfing-podcast-q2",
+        "type": "true-false-ng",
+        "prompt": "Mia grew up far away from the sea.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Mia nói “I grew up near the coast” – cô lớn lên gần bờ biển."
+      },
+      {
+        "id": "ls-b1-surfing-podcast-q3",
+        "type": "mcq",
+        "prompt": "How often did Mia go surfing after her first lesson?",
+        "options": [
+          "Every day",
+          "Twice a week",
+          "Once a month",
+          "Only at weekends in summer"
+        ],
+        "answerIndex": 1,
+        "explanation": "“I kept going back, twice a week” – hai lần mỗi tuần."
+      },
+      {
+        "id": "ls-b1-surfing-podcast-q4",
+        "type": "mcq",
+        "prompt": "What was the instructor's main message?",
+        "options": [
+          "Surfing is only for young people",
+          "Good surfers have simply fallen more times",
+          "You should buy a better board",
+          "Never surf when it is cold"
+        ],
+        "answerIndex": 1,
+        "explanation": "Huấn luyện viên nói những người giỏi chỉ là đã ngã nhiều lần hơn – thất bại là bình thường."
+      },
+      {
+        "id": "ls-b1-surfing-podcast-q5",
+        "type": "true-false-ng",
+        "prompt": "Mia now teaches surfing to beginners.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Mia không nói hiện giờ cô có dạy lướt sóng hay không."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "coast",
+        "ipa": "/koʊst/",
+        "pos": "noun",
+        "meaningVi": "bờ biển",
+        "meaningEn": "the land next to the sea",
+        "example": "They have a house on the coast.",
+        "cefr": "B1"
+      },
+      {
+        "word": "convince",
+        "ipa": "/kənˈvɪns/",
+        "pos": "verb",
+        "meaningVi": "thuyết phục",
+        "meaningEn": "to make someone believe or decide to do something",
+        "example": "She convinced me to join the club.",
+        "cefr": "B1"
+      },
+      {
+        "word": "disaster",
+        "ipa": "/dɪˈzæstər/",
+        "pos": "noun",
+        "meaningVi": "thảm họa, thất bại hoàn toàn",
+        "meaningEn": "something that goes very badly",
+        "example": "The party was a disaster – nobody came.",
+        "cefr": "B1"
+      },
+      {
+        "word": "instructor",
+        "ipa": "/ɪnˈstrʌktər/",
+        "pos": "noun",
+        "meaningVi": "người hướng dẫn, huấn luyện viên",
+        "meaningEn": "a person who teaches a practical skill",
+        "example": "My driving instructor is very patient.",
+        "cefr": "B1"
+      },
+      {
+        "word": "admire",
+        "ipa": "/ədˈmaɪər/",
+        "pos": "verb",
+        "meaningVi": "ngưỡng mộ",
+        "meaningEn": "to respect and like someone for what they do",
+        "example": "I really admire her courage.",
+        "cefr": "B1"
+      },
+      {
+        "word": "uncomfortable",
+        "ipa": "/ʌnˈkʌmftəbl/",
+        "pos": "adjective",
+        "meaningVi": "không thoải mái, khó chịu",
+        "meaningEn": "not relaxed; causing a slightly bad feeling",
+        "example": "Speaking in public makes me uncomfortable.",
+        "cefr": "B1"
+      }
+    ]
+  },
+  {
+    "id": "ls-b2-urban-heat-lecture",
+    "title": "Lecture: Why Cities Are Warmer",
+    "cefr": "B2",
+    "topic": "university lecture",
+    "accent": "en-GB",
+    "kind": "monologue",
+    "speakers": [
+      {
+        "id": "lecturer",
+        "name": "Dr Evans",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "lecturer",
+        "text": "Good morning, everyone. Today we're going to look at a phenomenon known as the urban heat island effect.",
+        "translationVi": "Chào buổi sáng các bạn. Hôm nay chúng ta sẽ tìm hiểu một hiện tượng gọi là hiệu ứng đảo nhiệt đô thị."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Put simply, cities tend to be noticeably warmer than the countryside around them, particularly at night.",
+        "translationVi": "Nói đơn giản, các thành phố thường ấm hơn rõ rệt so với vùng nông thôn xung quanh, đặc biệt là vào ban đêm."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "There are several reasons for this. The first is the materials we build with, such as concrete, brick and asphalt.",
+        "translationVi": "Có nhiều nguyên nhân. Thứ nhất là vật liệu xây dựng, chẳng hạn như bê tông, gạch và nhựa đường."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "These surfaces absorb heat from the sun during the day and release it slowly after dark.",
+        "translationVi": "Những bề mặt này hấp thụ nhiệt từ mặt trời vào ban ngày và tỏa nhiệt chậm rãi sau khi trời tối."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Secondly, cities have far less vegetation. Trees and plants cool the air by providing shade and releasing water vapour.",
+        "translationVi": "Thứ hai, thành phố có ít cây xanh hơn nhiều. Cây cối làm mát không khí bằng cách tạo bóng râm và thoát hơi nước."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "A third factor is waste heat from human activity: traffic, industry and, ironically, air conditioning units.",
+        "translationVi": "Yếu tố thứ ba là nhiệt thải từ hoạt động của con người: giao thông, công nghiệp và, trớ trêu thay, các máy điều hòa."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Tall buildings can also trap warm air and reduce wind speeds at street level.",
+        "translationVi": "Các tòa nhà cao tầng cũng có thể giữ lại không khí nóng và làm giảm tốc độ gió ở mặt đường."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Why does this matter? Higher temperatures increase energy demand and can be dangerous during heatwaves, especially for elderly residents.",
+        "translationVi": "Tại sao điều này quan trọng? Nhiệt độ cao làm tăng nhu cầu năng lượng và có thể nguy hiểm trong các đợt nắng nóng, nhất là với người cao tuổi."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "So what can planners do? Common strategies include planting street trees, creating parks and installing green roofs.",
+        "translationVi": "Vậy các nhà quy hoạch có thể làm gì? Những chiến lược phổ biến gồm trồng cây ven đường, xây công viên và lắp đặt mái nhà xanh."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Another approach is to use lighter-coloured materials for roofs and pavements, which reflect more sunlight.",
+        "translationVi": "Một cách khác là dùng vật liệu màu sáng cho mái nhà và vỉa hè, vì chúng phản xạ nhiều ánh nắng hơn."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "In the next session, we'll examine a case study of a city that combined several of these measures.",
+        "translationVi": "Trong buổi học tới, chúng ta sẽ phân tích một nghiên cứu điển hình về một thành phố đã kết hợp nhiều biện pháp này."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "For now, please read chapter four and note down any examples from your own hometown.",
+        "translationVi": "Còn bây giờ, các bạn hãy đọc chương bốn và ghi lại các ví dụ từ quê hương của chính mình."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-b2-urban-heat-lecture-q1",
+        "type": "true-false-ng",
+        "prompt": "According to the lecturer, the difference in temperature is especially noticeable at night.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 0,
+        "explanation": "Giảng viên nói thành phố ấm hơn “particularly at night” – đặc biệt là ban đêm."
+      },
+      {
+        "id": "ls-b2-urban-heat-lecture-q2",
+        "type": "mcq",
+        "prompt": "Which of these is NOT mentioned as a cause of the effect?",
+        "options": [
+          "Building materials",
+          "A lack of vegetation",
+          "Waste heat from human activity",
+          "Increased rainfall in cities"
+        ],
+        "answerIndex": 3,
+        "explanation": "Giảng viên nêu vật liệu, thiếu cây xanh, nhiệt thải và nhà cao tầng; không nhắc đến lượng mưa."
+      },
+      {
+        "id": "ls-b2-urban-heat-lecture-q3",
+        "type": "mcq",
+        "prompt": "Why does the lecturer say “ironically” about air conditioning?",
+        "options": [
+          "Because air conditioners are cheap",
+          "Because machines meant to cool us also add heat to the city",
+          "Because nobody uses air conditioning",
+          "Because air conditioning is a new invention"
+        ],
+        "answerIndex": 1,
+        "explanation": "Trớ trêu ở chỗ máy điều hòa dùng để làm mát lại thải nhiệt ra ngoài, làm thành phố nóng hơn."
+      },
+      {
+        "id": "ls-b2-urban-heat-lecture-q4",
+        "type": "true-false-ng",
+        "prompt": "Lighter-coloured materials absorb more sunlight than darker ones.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Vật liệu màu sáng “reflect more sunlight” – phản xạ nhiều hơn, không phải hấp thụ nhiều hơn."
+      },
+      {
+        "id": "ls-b2-urban-heat-lecture-q5",
+        "type": "mcq",
+        "prompt": "What must students do before the next session?",
+        "options": [
+          "Write an essay",
+          "Visit a park",
+          "Read chapter four and note local examples",
+          "Prepare a presentation"
+        ],
+        "answerIndex": 2,
+        "explanation": "Sinh viên phải đọc chương bốn và ghi lại các ví dụ từ quê hương của mình."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "phenomenon",
+        "ipa": "/fəˈnɑːmɪnən/",
+        "pos": "noun",
+        "meaningVi": "hiện tượng",
+        "meaningEn": "something that happens or exists, especially one that is studied",
+        "example": "Global warming is a worldwide phenomenon.",
+        "cefr": "B2"
+      },
+      {
+        "word": "asphalt",
+        "ipa": "/ˈæsfɔːlt/",
+        "pos": "noun",
+        "meaningVi": "nhựa đường",
+        "meaningEn": "a black material used to cover roads",
+        "example": "The asphalt was hot under our feet.",
+        "cefr": "C1"
+      },
+      {
+        "word": "release",
+        "ipa": "/rɪˈliːs/",
+        "pos": "verb",
+        "meaningVi": "giải phóng, thải ra",
+        "meaningEn": "to let something go or come out",
+        "example": "Factories release smoke into the air.",
+        "cefr": "B2"
+      },
+      {
+        "word": "vegetation",
+        "ipa": "/ˌvedʒəˈteɪʃn/",
+        "pos": "noun",
+        "meaningVi": "thảm thực vật, cây cối",
+        "meaningEn": "plants in general, especially in a particular area",
+        "example": "The island is covered in thick vegetation.",
+        "cefr": "C1"
+      },
+      {
+        "word": "heatwave",
+        "ipa": "/ˈhiːtweɪv/",
+        "pos": "noun",
+        "meaningVi": "đợt nắng nóng",
+        "meaningEn": "a period of unusually hot weather",
+        "example": "Stay indoors during the heatwave.",
+        "cefr": "B2"
+      },
+      {
+        "word": "reflect",
+        "ipa": "/rɪˈflekt/",
+        "pos": "verb",
+        "meaningVi": "phản xạ, phản chiếu",
+        "meaningEn": "to send back light or heat from a surface",
+        "example": "White walls reflect sunlight.",
+        "cefr": "B2"
+      }
+    ]
+  },
+  {
+    "id": "ls-b2-ielts-part1-home",
+    "title": "IELTS Speaking Part 1: Home and Reading",
+    "cefr": "B2",
+    "topic": "IELTS interview",
+    "accent": "en-US",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "examiner",
+        "name": "Examiner",
+        "gender": "female"
+      },
+      {
+        "id": "candidate",
+        "name": "Huy",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "examiner",
+        "text": "Good afternoon. Can you tell me your full name, please?",
+        "translationVi": "Chào buổi chiều. Bạn có thể cho tôi biết họ tên đầy đủ không?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Good afternoon. My name is Nguyen Duc Huy, but most people just call me Huy.",
+        "translationVi": "Chào buổi chiều. Tôi tên là Nguyễn Đức Huy, nhưng hầu hết mọi người chỉ gọi tôi là Huy."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Thank you. Let's talk about where you live. Do you live in a house or an apartment?",
+        "translationVi": "Cảm ơn. Hãy nói về nơi bạn sống. Bạn sống trong nhà riêng hay căn hộ?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I live in an apartment on the twelfth floor of a fairly new building in Ho Chi Minh City.",
+        "translationVi": "Tôi sống trong một căn hộ ở tầng mười hai của một tòa nhà khá mới ở Thành phố Hồ Chí Minh."
+      },
+      {
+        "speaker": "examiner",
+        "text": "What do you like most about living there?",
+        "translationVi": "Bạn thích điều gì nhất khi sống ở đó?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Honestly, it's the view. At night you can see the lights of the whole district, which is really relaxing.",
+        "translationVi": "Thật lòng thì đó là quang cảnh. Ban đêm bạn có thể thấy ánh đèn của cả quận, rất thư giãn."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Is there anything you would like to change about it?",
+        "translationVi": "Có điều gì bạn muốn thay đổi không?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I'd say the noise. The street below is quite busy, so it can be hard to concentrate when I'm studying.",
+        "translationVi": "Tôi nghĩ là tiếng ồn. Con đường bên dưới khá đông đúc nên đôi khi khó tập trung khi tôi học."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Let's move on to the topic of reading. How often do you read for pleasure?",
+        "translationVi": "Chúng ta chuyển sang chủ đề đọc sách. Bạn có thường đọc sách để giải trí không?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Not as often as I'd like. I usually read a few chapters before bed, mostly science fiction.",
+        "translationVi": "Không thường xuyên như tôi muốn. Tôi hay đọc vài chương trước khi ngủ, chủ yếu là khoa học viễn tưởng."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Did you read more when you were a child?",
+        "translationVi": "Hồi nhỏ bạn có đọc nhiều hơn không?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Definitely. When I was younger, I used to borrow comics from the local library almost every weekend.",
+        "translationVi": "Chắc chắn rồi. Hồi nhỏ, tôi thường mượn truyện tranh ở thư viện địa phương gần như mỗi cuối tuần."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-b2-ielts-part1-home-q1",
+        "type": "mcq",
+        "prompt": "Which floor does Huy live on?",
+        "options": [
+          "The second floor",
+          "The tenth floor",
+          "The twelfth floor",
+          "The twentieth floor"
+        ],
+        "answerIndex": 2,
+        "explanation": "“on the twelfth floor” – tầng mười hai."
+      },
+      {
+        "id": "ls-b2-ielts-part1-home-q2",
+        "type": "mcq",
+        "prompt": "What would Huy like to change about his home?",
+        "options": [
+          "The size",
+          "The view",
+          "The noise",
+          "The price"
+        ],
+        "answerIndex": 2,
+        "explanation": "Huy muốn thay đổi tiếng ồn từ con đường bên dưới; quang cảnh là điều anh thích nhất."
+      },
+      {
+        "id": "ls-b2-ielts-part1-home-q3",
+        "type": "true-false-ng",
+        "prompt": "Huy reads more now than when he was a child.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Huy nói hồi nhỏ đọc nhiều hơn (“Definitely”), bây giờ đọc “not as often as I'd like”."
+      },
+      {
+        "id": "ls-b2-ielts-part1-home-q4",
+        "type": "true-false-ng",
+        "prompt": "Huy lives with his parents.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Huy không nói anh sống với ai."
+      },
+      {
+        "id": "ls-b2-ielts-part1-home-q5",
+        "type": "mcq",
+        "prompt": "Which grammar structure does Huy use to talk about a past habit?",
+        "options": [
+          "I am used to",
+          "I used to",
+          "I will",
+          "I have been"
+        ],
+        "answerIndex": 1,
+        "explanation": "“I used to borrow comics…” – “used to + V” diễn tả thói quen trong quá khứ, rất hữu ích trong IELTS Part 1."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "fairly",
+        "ipa": "/ˈferli/",
+        "pos": "adverb",
+        "meaningVi": "khá, tương đối",
+        "meaningEn": "more than a little but not very",
+        "example": "The test was fairly easy.",
+        "cefr": "B1"
+      },
+      {
+        "word": "district",
+        "ipa": "/ˈdɪstrɪkt/",
+        "pos": "noun",
+        "meaningVi": "quận, khu vực",
+        "meaningEn": "an area of a city or country",
+        "example": "He lives in a quiet district near the river.",
+        "cefr": "B1"
+      },
+      {
+        "word": "concentrate",
+        "ipa": "/ˈkɑːnsntreɪt/",
+        "pos": "verb",
+        "meaningVi": "tập trung",
+        "meaningEn": "to give all your attention to something",
+        "example": "I can't concentrate with the TV on.",
+        "cefr": "B1"
+      },
+      {
+        "word": "for pleasure",
+        "ipa": "/fər ˈpleʒər/",
+        "pos": "phrase",
+        "meaningVi": "để giải trí, vì thích",
+        "meaningEn": "for enjoyment, not for work or study",
+        "example": "Do you travel for pleasure or for business?",
+        "cefr": "B1"
+      },
+      {
+        "word": "used to",
+        "ipa": "/ˈjuːst tə/",
+        "pos": "modal phrase",
+        "meaningVi": "đã từng (thói quen trong quá khứ)",
+        "meaningEn": "used to talk about something that was true or happened regularly in the past",
+        "example": "I used to play football every day.",
+        "cefr": "A2"
+      }
+    ]
+  },
+  {
+    "id": "ls-c1-hybrid-work-podcast",
+    "title": "Podcast: The Future of Flexible Work",
+    "cefr": "C1",
+    "topic": "work and society",
+    "accent": "en-AU",
+    "kind": "dialogue",
+    "speakers": [
+      {
+        "id": "grace",
+        "name": "Grace",
+        "gender": "female"
+      },
+      {
+        "id": "liam",
+        "name": "Liam Foster",
+        "gender": "male"
+      }
+    ],
+    "lines": [
+      {
+        "speaker": "grace",
+        "text": "Welcome back to Workplace Futures. With me today is Liam Foster, an organisational psychologist.",
+        "translationVi": "Chào mừng trở lại với Workplace Futures. Hôm nay cùng tôi là Liam Foster, một nhà tâm lý học tổ chức."
+      },
+      {
+        "speaker": "liam",
+        "text": "Thanks for having me, Grace. It's a topic I could talk about for hours, so feel free to cut me off.",
+        "translationVi": "Cảm ơn chị đã mời, Grace. Đây là chủ đề tôi có thể nói hàng giờ, nên chị cứ thoải mái ngắt lời tôi."
+      },
+      {
+        "speaker": "grace",
+        "text": "Let's start with the big question. Has remote work turned out to be the revolution people predicted?",
+        "translationVi": "Hãy bắt đầu với câu hỏi lớn. Làm việc từ xa có thực sự là cuộc cách mạng như người ta dự đoán không?"
+      },
+      {
+        "speaker": "liam",
+        "text": "In some ways, yes. But I'd argue the real shift wasn't about location; it was the expectation of flexibility.",
+        "translationVi": "Ở một số khía cạnh thì có. Nhưng tôi cho rằng sự thay đổi thực sự không nằm ở địa điểm, mà là kỳ vọng về sự linh hoạt."
+      },
+      {
+        "speaker": "grace",
+        "text": "Can you unpack that a little?",
+        "translationVi": "Anh có thể giải thích rõ hơn một chút không?"
+      },
+      {
+        "speaker": "liam",
+        "text": "Sure. Once people experienced control over their schedules, going back to rigid nine-to-five arrangements felt like a step backwards.",
+        "translationVi": "Được. Một khi người ta đã được tự kiểm soát lịch làm việc, việc quay lại giờ hành chính cứng nhắc giống như một bước lùi."
+      },
+      {
+        "speaker": "grace",
+        "text": "Yet plenty of managers are pushing for a full return to the office. What's driving that?",
+        "translationVi": "Thế nhưng nhiều nhà quản lý đang đòi nhân viên quay lại văn phòng hoàn toàn. Điều gì thúc đẩy việc đó?"
+      },
+      {
+        "speaker": "liam",
+        "text": "Partly genuine concerns about mentoring junior staff, who miss out on the informal learning that comes from overhearing colleagues.",
+        "translationVi": "Một phần là lo ngại chính đáng về việc kèm cặp nhân viên trẻ, những người bỏ lỡ việc học hỏi không chính thức khi nghe đồng nghiệp trao đổi."
+      },
+      {
+        "speaker": "grace",
+        "text": "And partly something else?",
+        "translationVi": "Và một phần là vì điều gì khác?"
+      },
+      {
+        "speaker": "liam",
+        "text": "Frankly, a reluctance to manage by outcomes rather than visibility. Seeing people at desks is reassuring, but says little about productivity.",
+        "translationVi": "Thẳng thắn mà nói, đó là sự ngại quản lý theo kết quả thay vì theo sự hiện diện. Thấy nhân viên ngồi ở bàn thì yên tâm, nhưng điều đó chẳng nói lên mấy về năng suất."
+      },
+      {
+        "speaker": "grace",
+        "text": "So where do you think we'll end up in five years' time?",
+        "translationVi": "Vậy anh nghĩ năm năm nữa chúng ta sẽ đi đến đâu?"
+      },
+      {
+        "speaker": "liam",
+        "text": "Probably with hybrid models that are designed deliberately, rather than the improvised compromises many organisations are living with now.",
+        "translationVi": "Có lẽ là các mô hình kết hợp được thiết kế có chủ đích, thay vì những thỏa hiệp chắp vá mà nhiều tổ chức đang chấp nhận hiện nay."
+      }
+    ],
+    "questions": [
+      {
+        "id": "ls-c1-hybrid-work-podcast-q1",
+        "type": "mcq",
+        "prompt": "According to Liam, what was the real change caused by remote work?",
+        "options": [
+          "People moved to the countryside",
+          "People came to expect flexibility",
+          "Offices became cheaper",
+          "Managers stopped mentoring staff"
+        ],
+        "answerIndex": 1,
+        "explanation": "Liam nói thay đổi thật sự là “the expectation of flexibility”, không phải địa điểm làm việc."
+      },
+      {
+        "id": "ls-c1-hybrid-work-podcast-q2",
+        "type": "mcq",
+        "prompt": "What does Grace mean by “Can you unpack that a little?”",
+        "options": [
+          "Can you open your bag?",
+          "Can you explain that in more detail?",
+          "Can you speak more slowly?",
+          "Can you change the topic?"
+        ],
+        "answerIndex": 1,
+        "explanation": "“Unpack” (nghĩa bóng) = phân tích, giải thích chi tiết hơn một ý."
+      },
+      {
+        "id": "ls-c1-hybrid-work-podcast-q3",
+        "type": "mcq",
+        "prompt": "Which genuine concern about remote work does Liam mention?",
+        "options": [
+          "High internet costs",
+          "Junior staff missing informal learning",
+          "Security of company data",
+          "Employees working too little"
+        ],
+        "answerIndex": 1,
+        "explanation": "Nhân viên trẻ bỏ lỡ việc học hỏi không chính thức từ đồng nghiệp – một lo ngại chính đáng."
+      },
+      {
+        "id": "ls-c1-hybrid-work-podcast-q4",
+        "type": "true-false-ng",
+        "prompt": "Liam thinks that seeing people at their desks is a reliable sign of productivity.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 1,
+        "explanation": "Liam nói việc đó “says little about productivity” – không nói lên nhiều về năng suất."
+      },
+      {
+        "id": "ls-c1-hybrid-work-podcast-q5",
+        "type": "true-false-ng",
+        "prompt": "Liam has written a book about hybrid work.",
+        "options": [
+          "True",
+          "False",
+          "Not Given"
+        ],
+        "answerIndex": 2,
+        "explanation": "Không có thông tin nào về việc Liam viết sách."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "unpack",
+        "ipa": "/ʌnˈpæk/",
+        "pos": "verb",
+        "meaningVi": "phân tích, giải thích rõ (nghĩa bóng); dỡ đồ",
+        "meaningEn": "to explain an idea in more detail by looking at its parts",
+        "example": "Let's unpack what this result really means.",
+        "cefr": "C1"
+      },
+      {
+        "word": "rigid",
+        "ipa": "/ˈrɪdʒɪd/",
+        "pos": "adjective",
+        "meaningVi": "cứng nhắc",
+        "meaningEn": "not able to change or be changed easily",
+        "example": "The school has very rigid rules.",
+        "cefr": "C1"
+      },
+      {
+        "word": "mentor",
+        "ipa": "/ˈmentɔːr/",
+        "pos": "verb / noun",
+        "meaningVi": "kèm cặp, hướng dẫn; người cố vấn",
+        "meaningEn": "to give help and advice to a less experienced person",
+        "example": "She mentors young engineers at her company.",
+        "cefr": "C1"
+      },
+      {
+        "word": "reluctance",
+        "ipa": "/rɪˈlʌktəns/",
+        "pos": "noun",
+        "meaningVi": "sự miễn cưỡng, ngần ngại",
+        "meaningEn": "not wanting to do something",
+        "example": "He agreed, but with obvious reluctance.",
+        "cefr": "C1"
+      },
+      {
+        "word": "reassuring",
+        "ipa": "/ˌriːəˈʃʊrɪŋ/",
+        "pos": "adjective",
+        "meaningVi": "khiến yên tâm",
+        "meaningEn": "making you feel less worried",
+        "example": "Her calm voice was very reassuring.",
+        "cefr": "B2"
+      },
+      {
+        "word": "improvised",
+        "ipa": "/ˈɪmprəvaɪzd/",
+        "pos": "adjective",
+        "meaningVi": "ứng biến, tạm bợ",
+        "meaningEn": "made or done quickly without planning",
+        "example": "We slept in an improvised tent made from blankets.",
+        "cefr": "C1"
+      }
+    ]
+  }
+]

@@ -1,0 +1,268 @@
+[
+  {
+    "id": "sp-shadow-greetings",
+    "kind": "shadowing",
+    "cefr": "A1",
+    "title": "Shadowing: Everyday Greetings",
+    "instructionsVi": "Nghe từng câu và nói theo gần như cùng lúc với người nói (shadowing). Bắt chước ngữ điệu, trọng âm và tốc độ. Lặp lại mỗi câu ít nhất ba lần.",
+    "sentences": [
+      "Hi, how are you today?",
+      "I'm fine, thanks. And you?",
+      "Nice to meet you.",
+      "See you tomorrow!",
+      "Have a nice weekend.",
+      "Thanks so much for your help."
+    ],
+    "cueCard": [],
+    "durationSec": 60
+  },
+  {
+    "id": "sp-shadow-cafe",
+    "kind": "shadowing",
+    "cefr": "A2",
+    "title": "Shadowing: Ordering at a Café",
+    "instructionsVi": "Nghe và nói đuổi theo người bản xứ. Chú ý cách nối âm như “Could I” /kʊdaɪ/ và “much is” /mʌtʃɪz/. Cố gắng nói trôi chảy, không ngắt từng từ.",
+    "sentences": [
+      "Could I get a large iced latte, please?",
+      "Is it possible to have it with oat milk?",
+      "Can I have it to go?",
+      "How much is that altogether?",
+      "Can I pay by card?",
+      "Thanks, have a good one!"
+    ],
+    "cueCard": [],
+    "durationSec": 90
+  },
+  {
+    "id": "sp-shadow-opinions",
+    "kind": "shadowing",
+    "cefr": "B1",
+    "title": "Shadowing: Natural Opinion Phrases",
+    "instructionsVi": "Shadowing các cụm từ bày tỏ ý kiến thường gặp trong hội thoại và IELTS Speaking. Chú ý dạng rút gọn (I'd, we've, wouldn't) và nhấn mạnh từ quan trọng trong câu.",
+    "sentences": [
+      "To be honest, I'd rather stay in tonight.",
+      "I see what you mean, but I'm not so sure.",
+      "It really depends on how much time we've got.",
+      "That's a really good point.",
+      "Let's wait and see what happens.",
+      "I wouldn't have done it that way myself."
+    ],
+    "cueCard": [],
+    "durationSec": 120
+  },
+  {
+    "id": "sp-repeat-numbers-time",
+    "kind": "repeat",
+    "cefr": "A1",
+    "title": "Repeat: Numbers, Prices and Times",
+    "instructionsVi": "Nghe hết câu, sau đó nhắc lại toàn bộ câu. Chú ý phân biệt “thirteen” (nhấn âm sau) và “thirty” (nhấn âm đầu), cũng như cách nói giờ trong tiếng Anh.",
+    "sentences": [
+      "The train leaves at half past seven.",
+      "It costs fifteen dollars.",
+      "My birthday is on the third of May.",
+      "There are thirteen students in my class, not thirty.",
+      "The meeting starts at a quarter to nine."
+    ],
+    "cueCard": [],
+    "durationSec": 60
+  },
+  {
+    "id": "sp-repeat-th-sounds",
+    "kind": "repeat",
+    "cefr": "A2",
+    "title": "Repeat: The “th” Sounds",
+    "instructionsVi": "Luyện hai âm /θ/ (think) và /ð/ (this) – người Việt hay đọc thành /t/ hoặc /d/. Đặt đầu lưỡi giữa hai hàm răng và thổi hơi nhẹ. Nghe rồi nhắc lại từng câu thật chậm, sau đó tăng tốc.",
+    "sentences": [
+      "I think this is the third time this month.",
+      "Thank you for the birthday present.",
+      "My brother and my father both like this weather.",
+      "There are three things I want to do.",
+      "They thought the theatre was on the other side."
+    ],
+    "cueCard": [],
+    "durationSec": 90
+  },
+  {
+    "id": "sp-repeat-ending-sounds",
+    "kind": "repeat",
+    "cefr": "B1",
+    "title": "Repeat: Final Consonant Sounds",
+    "instructionsVi": "Người Việt hay bỏ âm cuối (ending sounds) như -s, -ed, -st, -ks. Nghe và nhắc lại, phát âm rõ phụ âm cuối của mỗi từ. Âm cuối sai có thể làm thay đổi nghĩa và làm giảm điểm Pronunciation trong IELTS.",
+    "sentences": [
+      "She asked me about the tests last week.",
+      "He fixed the old desks and painted the walls.",
+      "My friends played games and watched films.",
+      "It's the best fruit juice I've ever had.",
+      "I've lived in five different cities."
+    ],
+    "cueCard": [],
+    "durationSec": 90
+  },
+  {
+    "id": "sp-roleplay-cafe-order",
+    "kind": "roleplay",
+    "cefr": "A2",
+    "title": "Role-play: Ordering in a London Café",
+    "instructionsVi": "Bạn là khách hàng trong một quán cà phê ở London. Hãy gọi một đồ uống và một món ăn, hỏi giá và cách thanh toán. Trả lời tự nhiên các câu hỏi của nhân viên.",
+    "sentences": [],
+    "aiRole": "a friendly barista in a busy London café who asks about size, milk, eating in or taking away, and payment",
+    "openingLine": "Morning! What can I get you?",
+    "cueCard": [],
+    "durationSec": 180
+  },
+  {
+    "id": "sp-roleplay-hotel-checkin",
+    "kind": "roleplay",
+    "cefr": "A2",
+    "title": "Role-play: Checking In at a Hotel",
+    "instructionsVi": "Bạn đến nhận phòng khách sạn ở Sydney. Cung cấp tên, số đêm ở, hỏi về giờ ăn sáng, Wi-Fi và giờ trả phòng. Nếu không nghe rõ, hãy lịch sự yêu cầu nhắc lại.",
+    "sentences": [],
+    "aiRole": "a polite hotel receptionist in Sydney checking in a guest who has a booking, and answering questions about breakfast, Wi-Fi and check-out",
+    "openingLine": "Good evening, and welcome! Do you have a booking with us?",
+    "cueCard": [],
+    "durationSec": 240
+  },
+  {
+    "id": "sp-roleplay-job-interview",
+    "kind": "roleplay",
+    "cefr": "B2",
+    "title": "Role-play: Job Interview for a Marketing Role",
+    "instructionsVi": "Bạn đang phỏng vấn cho vị trí nhân viên marketing tại một công ty công nghệ. Giới thiệu bản thân, nói về kinh nghiệm, điểm mạnh, một thử thách bạn từng vượt qua và đặt ít nhất một câu hỏi cho nhà tuyển dụng.",
+    "sentences": [],
+    "aiRole": "an HR manager at a mid-sized technology company interviewing the learner for a junior marketing position; professional but warm, asking follow-up questions",
+    "openingLine": "Thanks for coming in today. To start, could you tell me a little about yourself?",
+    "cueCard": [],
+    "durationSec": 420
+  },
+  {
+    "id": "sp-real-doctor-visit",
+    "kind": "real-world",
+    "cefr": "A2",
+    "title": "Real World: Seeing a Doctor",
+    "instructionsVi": "Bạn đi khám bác sĩ gia đình ở Anh. Mô tả triệu chứng (đau ở đâu, từ khi nào, mức độ), trả lời câu hỏi của bác sĩ và hỏi lại về thuốc hoặc lời khuyên.",
+    "sentences": [],
+    "aiRole": "a calm family doctor (GP) at a clinic in Manchester who asks about the patient's symptoms, how long they have had them, and gives simple advice",
+    "openingLine": "Hello, come in and take a seat. What seems to be the problem today?",
+    "cueCard": [],
+    "durationSec": 240
+  },
+  {
+    "id": "sp-real-landlord-repair",
+    "kind": "real-world",
+    "cefr": "B1",
+    "title": "Real World: Reporting a Problem to Your Landlord",
+    "instructionsVi": "Bạn gọi điện cho chủ nhà vì máy giặt trong căn hộ thuê bị hỏng. Giải thích vấn đề, nói nó bắt đầu từ khi nào và thỏa thuận thời gian thợ đến sửa. Giữ thái độ lịch sự nhưng rõ ràng.",
+    "sentences": [],
+    "aiRole": "a busy but reasonable landlord answering the phone; he asks for details about the broken washing machine and tries to arrange a repair time",
+    "openingLine": "Hello, Mark speaking. How can I help?",
+    "cueCard": [],
+    "durationSec": 300
+  },
+  {
+    "id": "sp-real-office-small-talk",
+    "kind": "real-world",
+    "cefr": "B1",
+    "title": "Real World: Monday Small Talk at Work",
+    "instructionsVi": "Bạn gặp đồng nghiệp ở máy pha cà phê sáng thứ Hai. Hãy trò chuyện xã giao (small talk): kể về cuối tuần, hỏi lại đồng nghiệp và giữ cuộc trò chuyện tự nhiên bằng cách đặt câu hỏi mở.",
+    "sentences": [],
+    "aiRole": "a friendly coworker chatting by the coffee machine on a Monday morning in an American office; curious and talkative",
+    "openingLine": "Hey! How was your weekend? Do anything fun?",
+    "cueCard": [],
+    "durationSec": 240
+  },
+  {
+    "id": "sp-challenge-favourite-food",
+    "kind": "challenge",
+    "cefr": "A2",
+    "title": "Challenge: One Minute About Your Favourite Food",
+    "instructionsVi": "Nói liên tục trong một phút về món ăn yêu thích của bạn. Dùng các gợi ý bên dưới. Cố gắng không dừng quá ba giây.",
+    "sentences": [],
+    "cueCard": [
+      "What the food is",
+      "Where and when you usually eat it",
+      "What is in it and how it is made",
+      "Why you love it"
+    ],
+    "durationSec": 60
+  },
+  {
+    "id": "sp-challenge-hometown-no-pauses",
+    "kind": "challenge",
+    "cefr": "B1",
+    "title": "Challenge: 90 Seconds About Your Hometown",
+    "instructionsVi": "Nói 90 giây về quê hương của bạn mà không ngắt quãng lâu. Thay vì “ừm…”, hãy dùng các cụm câu giờ tự nhiên như “Well…”, “Let me think…”, “The thing is…”.",
+    "sentences": [],
+    "cueCard": [
+      "Where your hometown is and how big it is",
+      "What it is famous for",
+      "How it has changed in recent years",
+      "Whether you would like to live there in the future, and why"
+    ],
+    "durationSec": 90
+  },
+  {
+    "id": "sp-challenge-persuade-language",
+    "kind": "challenge",
+    "cefr": "B2",
+    "title": "Challenge: Persuade a Friend to Learn a Language",
+    "instructionsVi": "Hãy thuyết phục một người bạn bắt đầu học một ngoại ngữ mới trong hai phút. Đưa ra ít nhất ba lý do, một ví dụ cá nhân và trả lời trước một lời phản đối có thể có.",
+    "sentences": [],
+    "cueCard": [
+      "Give at least three strong reasons",
+      "Share a personal example or story",
+      "Answer a possible objection (e.g. “I don't have time”)",
+      "End with a clear call to action"
+    ],
+    "durationSec": 120
+  },
+  {
+    "id": "sp-ielts-helpful-person",
+    "kind": "ielts",
+    "cefr": "B1",
+    "title": "IELTS Part 2: A Person Who Helped You",
+    "instructionsVi": "Dạng IELTS Speaking Part 2: bạn có 1 phút chuẩn bị (ghi chú từ khóa) và nói 1–2 phút theo thẻ gợi ý. Trả lời đủ các ý và mở rộng bằng ví dụ, cảm xúc.",
+    "sentences": [],
+    "cueCard": [
+      "Describe a person who has helped you in an important way.",
+      "You should say:",
+      "who this person is",
+      "how you know this person",
+      "what they helped you with",
+      "and explain why their help was important to you."
+    ],
+    "durationSec": 180
+  },
+  {
+    "id": "sp-ielts-memorable-trip",
+    "kind": "ielts",
+    "cefr": "B2",
+    "title": "IELTS Part 2: A Memorable Trip",
+    "instructionsVi": "Dạng IELTS Speaking Part 2: chuẩn bị 1 phút rồi nói khoảng 2 phút. Dùng đa dạng thì quá khứ (quá khứ đơn, quá khứ tiếp diễn, quá khứ hoàn thành) và từ vựng miêu tả để ghi điểm.",
+    "sentences": [],
+    "cueCard": [
+      "Describe a trip you remember well.",
+      "You should say:",
+      "where you went",
+      "who you went with",
+      "what you did there",
+      "and explain why this trip was so memorable for you."
+    ],
+    "durationSec": 180
+  },
+  {
+    "id": "sp-ielts-part3-technology",
+    "kind": "ielts",
+    "cefr": "C1",
+    "title": "IELTS Part 3: Technology and Society",
+    "instructionsVi": "Dạng IELTS Speaking Part 3: thảo luận sâu, trả lời mỗi câu hỏi trong 30–60 giây. Đưa ra quan điểm, giải thích lý do, nêu ví dụ và cân nhắc cả hai phía của vấn đề.",
+    "sentences": [],
+    "cueCard": [
+      "How has technology changed the way people communicate with their families?",
+      "Do you think older people find it harder to adapt to new technology? Why?",
+      "Some people say we are too dependent on our phones. Do you agree?",
+      "What kinds of jobs might disappear because of technology in the future?",
+      "Should governments control how technology companies use personal data?"
+    ],
+    "durationSec": 300
+  }
+]

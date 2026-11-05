@@ -1,0 +1,282 @@
+[
+  {
+    "id": "wp-sentence-about-me",
+    "taskType": "sentence",
+    "cefr": "A1",
+    "title": "Five Sentences About Me",
+    "instructions": "Write five short sentences about yourself. Include your name, age, where you live, your job or studies, and one thing you like.",
+    "instructionsVi": "Viết năm câu ngắn giới thiệu về bản thân: tên, tuổi, nơi sống, công việc hoặc ngành học, và một điều bạn thích.",
+    "minWords": 15,
+    "maxWords": 60,
+    "hints": [
+      "Start with: My name is…",
+      "Use “I am” for age: I am 25 years old.",
+      "Use “I live in…” for your city.",
+      "Use “I like + noun/V-ing”: I like music."
+    ]
+  },
+  {
+    "id": "wp-sentence-my-room",
+    "taskType": "sentence",
+    "cefr": "A2",
+    "title": "Describe Your Room",
+    "instructions": "Write four to six sentences describing your bedroom. Use “there is” and “there are”, and at least three prepositions of place (on, in, next to, under, opposite).",
+    "instructionsVi": "Viết bốn đến sáu câu mô tả phòng ngủ của bạn. Dùng “there is” và “there are”, và ít nhất ba giới từ chỉ nơi chốn (on, in, next to, under, opposite).",
+    "minWords": 20,
+    "maxWords": 80,
+    "hints": [
+      "There is + one thing: There is a desk next to the window.",
+      "There are + many things: There are two pictures on the wall.",
+      "Adjectives go before nouns: a small bed, a big window."
+    ]
+  },
+  {
+    "id": "wp-grammar-family-routine",
+    "taskType": "grammar",
+    "cefr": "A1",
+    "title": "A Family Member's Day",
+    "instructions": "Choose one person in your family. Write about their normal day using the present simple. Remember to add -s or -es to verbs after he or she.",
+    "instructionsVi": "Chọn một người trong gia đình. Viết về một ngày bình thường của người đó bằng thì hiện tại đơn. Nhớ thêm -s hoặc -es vào động từ sau he hoặc she.",
+    "minWords": 25,
+    "maxWords": 80,
+    "hints": [
+      "He gets up at six. She goes to work by bus.",
+      "Use time words: in the morning, at noon, after dinner.",
+      "Negative: He doesn't drink coffee."
+    ]
+  },
+  {
+    "id": "wp-grammar-last-weekend",
+    "taskType": "grammar",
+    "cefr": "A2",
+    "title": "What Did You Do Last Weekend?",
+    "instructions": "Write about what you did last weekend using the past simple. Use at least three irregular verbs (for example went, ate, saw, bought, met).",
+    "instructionsVi": "Viết về những việc bạn đã làm cuối tuần trước bằng thì quá khứ đơn. Dùng ít nhất ba động từ bất quy tắc (ví dụ went, ate, saw, bought, met).",
+    "minWords": 30,
+    "maxWords": 100,
+    "hints": [
+      "Start with: Last Saturday, I…",
+      "Negative: I didn't go out on Sunday.",
+      "Use sequence words: first, then, after that, finally."
+    ]
+  },
+  {
+    "id": "wp-paragraph-favourite-place",
+    "taskType": "paragraph",
+    "cefr": "A2",
+    "title": "My Favourite Place",
+    "instructions": "Write one paragraph about your favourite place in your town or city. Say where it is, what it looks like, what you do there and why you like it.",
+    "instructionsVi": "Viết một đoạn văn về địa điểm yêu thích của bạn trong thị trấn hoặc thành phố. Nói nơi đó ở đâu, trông như thế nào, bạn làm gì ở đó và vì sao bạn thích nó.",
+    "minWords": 60,
+    "maxWords": 120,
+    "hints": [
+      "Begin with a topic sentence: My favourite place is…",
+      "Use adjectives: quiet, peaceful, busy, colourful.",
+      "Give a reason with “because”.",
+      "Finish with a short concluding sentence."
+    ]
+  },
+  {
+    "id": "wp-paragraph-skill-to-learn",
+    "taskType": "paragraph",
+    "cefr": "B1",
+    "title": "A Skill I Want to Learn",
+    "instructions": "Write a paragraph about a skill you would like to learn (for example cooking, coding, swimming or playing an instrument). Explain why you want to learn it, how you plan to learn it and how it could change your life.",
+    "instructionsVi": "Viết một đoạn văn về một kỹ năng bạn muốn học (ví dụ nấu ăn, lập trình, bơi hoặc chơi nhạc cụ). Giải thích vì sao bạn muốn học, bạn định học bằng cách nào và nó có thể thay đổi cuộc sống bạn ra sao.",
+    "minWords": 100,
+    "maxWords": 160,
+    "hints": [
+      "Use “I'd like to / I want to + verb”.",
+      "Use “going to” for plans: I'm going to take an online course.",
+      "Connect ideas with because, so and also.",
+      "Try one conditional: If I learn…, I will…"
+    ]
+  },
+  {
+    "id": "wp-journal-my-day",
+    "taskType": "journal",
+    "cefr": "A2",
+    "title": "Journal: How Was Your Day?",
+    "instructions": "Write a short journal entry about today. What did you do? How did you feel? What was the best part of the day?",
+    "instructionsVi": "Viết một đoạn nhật ký ngắn về ngày hôm nay. Bạn đã làm gì? Bạn cảm thấy thế nào? Điều tuyệt nhất trong ngày là gì?",
+    "minWords": 40,
+    "maxWords": 150,
+    "hints": [
+      "Use the past simple for finished actions today.",
+      "Name your feelings: happy, tired, bored, excited, proud.",
+      "Write naturally – a journal doesn't need to be perfect."
+    ]
+  },
+  {
+    "id": "wp-journal-weekly-challenge",
+    "taskType": "journal",
+    "cefr": "B1",
+    "title": "Journal: A Challenge This Week",
+    "instructions": "Write a journal entry about a problem or challenge you faced this week. Describe what happened, how you dealt with it and what you learned from it.",
+    "instructionsVi": "Viết một đoạn nhật ký về một khó khăn hoặc thử thách bạn gặp trong tuần này. Mô tả chuyện gì đã xảy ra, bạn đã xử lý thế nào và bạn học được gì.",
+    "minWords": 100,
+    "maxWords": 250,
+    "hints": [
+      "Use the past continuous for background: I was working when…",
+      "Reflect with phrases like “Looking back, I think…”.",
+      "End with what you will do differently next time."
+    ]
+  },
+  {
+    "id": "wp-email-invite-friend",
+    "taskType": "email",
+    "cefr": "A2",
+    "title": "Invite a Friend to Your Birthday",
+    "instructions": "Write an informal email to a friend inviting them to your birthday party. Include the date, time and place, what you will do at the party, and ask them to reply.",
+    "instructionsVi": "Viết một email thân mật mời bạn bè đến dự tiệc sinh nhật. Nêu ngày, giờ, địa điểm, những hoạt động trong bữa tiệc và đề nghị bạn ấy trả lời.",
+    "minWords": 60,
+    "maxWords": 120,
+    "hints": [
+      "Start with “Hi + name,” and end with “See you soon,” or “Love,”.",
+      "Use “on” for dates and “at” for times.",
+      "Ask: Can you come? Let me know by Friday."
+    ]
+  },
+  {
+    "id": "wp-email-complaint-delivery",
+    "taskType": "email",
+    "cefr": "B1",
+    "title": "Complain About a Late Delivery",
+    "instructions": "You ordered a desk online two weeks ago, but it arrived late and one leg was damaged. Write an email to the company. Explain what you ordered, describe the problems and say what you want them to do.",
+    "instructionsVi": "Bạn đặt mua một chiếc bàn trên mạng hai tuần trước, nhưng hàng giao muộn và một chân bàn bị hỏng. Viết email cho công ty: nêu rõ bạn đã đặt gì, mô tả vấn đề và nói bạn muốn họ giải quyết thế nào.",
+    "minWords": 150,
+    "maxWords": 200,
+    "hints": [
+      "Use a formal greeting: Dear Sir or Madam,",
+      "Give your order number and the date you ordered.",
+      "Stay polite but clear: I would be grateful if you could…",
+      "Finish with: I look forward to hearing from you. Yours faithfully,"
+    ]
+  },
+  {
+    "id": "wp-business-meeting-request",
+    "taskType": "business",
+    "cefr": "B1",
+    "title": "Request a Meeting With Your Manager",
+    "instructions": "Write an email to your manager asking for a short meeting next week. Explain what you want to discuss (for example a new idea, extra training or your workload), suggest two possible times and keep the tone professional.",
+    "instructionsVi": "Viết email cho quản lý để xin một buổi họp ngắn vào tuần sau. Giải thích bạn muốn trao đổi điều gì (ví dụ một ý tưởng mới, đào tạo thêm hay khối lượng công việc), đề xuất hai khung giờ và giữ giọng văn chuyên nghiệp.",
+    "minWords": 80,
+    "maxWords": 150,
+    "hints": [
+      "Use a clear subject line, e.g. “Request for a short meeting”.",
+      "Polite request: Would it be possible to meet on…?",
+      "Offer options: I'm available on Tuesday at 10 a.m. or Thursday afternoon.",
+      "Close with: Thank you for your time. Best regards,"
+    ]
+  },
+  {
+    "id": "wp-business-proposal-summary",
+    "taskType": "business",
+    "cefr": "B2",
+    "title": "Proposal: Improving the Office",
+    "instructions": "Your company wants ideas to improve staff well-being. Write a short proposal to the management team. Describe the current problem, present one or two concrete solutions, estimate the costs and benefits, and make a clear recommendation.",
+    "instructionsVi": "Công ty bạn muốn có ý tưởng để cải thiện sức khỏe tinh thần và thể chất của nhân viên. Viết một bản đề xuất ngắn gửi ban quản lý: mô tả vấn đề hiện tại, đưa ra một hoặc hai giải pháp cụ thể, ước tính chi phí – lợi ích và đưa ra khuyến nghị rõ ràng.",
+    "minWords": 180,
+    "maxWords": 280,
+    "hints": [
+      "Use headings: Background, Proposal, Costs and Benefits, Recommendation.",
+      "Use the passive for an objective tone: It is recommended that…",
+      "Support claims with simple numbers or examples.",
+      "Use modal verbs to sound careful: This could reduce…"
+    ]
+  },
+  {
+    "id": "wp-essay-online-learning",
+    "taskType": "essay",
+    "cefr": "B1",
+    "title": "IELTS Task 2: Online Learning",
+    "instructions": "Some people believe that online learning will soon replace traditional classrooms. To what extent do you agree or disagree? Give reasons for your answer and include relevant examples from your own knowledge or experience.",
+    "instructionsVi": "Một số người cho rằng học trực tuyến sẽ sớm thay thế lớp học truyền thống. Bạn đồng ý hay không đồng ý ở mức độ nào? Hãy đưa ra lý do và ví dụ từ hiểu biết hoặc trải nghiệm của bạn. (Dạng bài IELTS Writing Task 2 – Opinion.)",
+    "minWords": 250,
+    "maxWords": 350,
+    "hints": [
+      "Paraphrase the question in your introduction and state your opinion clearly.",
+      "Write two body paragraphs, each with one main idea and an example.",
+      "Use linking words: however, moreover, for example, as a result.",
+      "Finish with a conclusion that restates your view – no new ideas."
+    ]
+  },
+  {
+    "id": "wp-essay-traffic-congestion",
+    "taskType": "essay",
+    "cefr": "B2",
+    "title": "IELTS Task 2: Traffic in Cities",
+    "instructions": "In many cities around the world, traffic congestion is becoming a serious problem. What are the main causes of this problem, and what measures could be taken to solve it?",
+    "instructionsVi": "Ở nhiều thành phố trên thế giới, ùn tắc giao thông đang trở thành vấn đề nghiêm trọng. Nguyên nhân chính là gì, và có thể áp dụng những biện pháp nào để giải quyết? (Dạng bài IELTS Writing Task 2 – Causes and Solutions.)",
+    "minWords": 250,
+    "maxWords": 350,
+    "hints": [
+      "Paragraph 1: causes; Paragraph 2: solutions – match each solution to a cause.",
+      "Use cause–effect language: due to, leads to, results in.",
+      "Use modals for solutions: Governments could / should…",
+      "Avoid listing too many ideas; develop two strong points per paragraph."
+    ]
+  },
+  {
+    "id": "wp-creative-mystery-door",
+    "taskType": "creative",
+    "cefr": "B1",
+    "title": "Story: The Door at the End of the Corridor",
+    "instructions": "Write a short story that begins with this sentence: “When I finally opened the door at the end of the corridor, I couldn't believe what I saw.” Describe the setting, the characters and what happens next.",
+    "instructionsVi": "Viết một truyện ngắn bắt đầu bằng câu: “When I finally opened the door at the end of the corridor, I couldn't believe what I saw.” Mô tả bối cảnh, nhân vật và diễn biến tiếp theo.",
+    "minWords": 120,
+    "maxWords": 300,
+    "hints": [
+      "Use the past simple for events and the past continuous for background.",
+      "Add senses: what could you see, hear and smell?",
+      "Include a little dialogue to bring characters to life.",
+      "Give your story a clear ending, happy or surprising."
+    ]
+  },
+  {
+    "id": "wp-creative-letter-future-self",
+    "taskType": "creative",
+    "cefr": "B2",
+    "title": "A Letter to Yourself in Ten Years",
+    "instructions": "Write a letter to yourself ten years from now. Describe your life today, your hopes and worries, and the questions you want your future self to answer. Be honest and personal.",
+    "instructionsVi": "Viết một lá thư gửi chính mình của mười năm sau. Mô tả cuộc sống hiện tại, những hy vọng và lo lắng của bạn, và những câu hỏi bạn muốn “bạn của tương lai” trả lời. Hãy viết chân thành và mang tính cá nhân.",
+    "minWords": 150,
+    "maxWords": 300,
+    "hints": [
+      "Mix tenses: present for now, future and “I hope” for later.",
+      "Try the second conditional: If I could change one thing, I would…",
+      "Use questions: Have you finally…? Are you still…?",
+      "End warmly, e.g. “Be kind to yourself.”"
+    ]
+  },
+  {
+    "id": "wp-free-anything",
+    "taskType": "free",
+    "cefr": "A1",
+    "title": "Free Writing: Anything You Like",
+    "instructions": "Write about anything you want: your family, your food, your plans, a dream, a funny moment. Don't worry about mistakes – just write in English.",
+    "instructionsVi": "Viết về bất cứ điều gì bạn muốn: gia đình, món ăn, kế hoạch, một giấc mơ, một khoảnh khắc vui. Đừng lo mắc lỗi – cứ viết bằng tiếng Anh.",
+    "minWords": 20,
+    "maxWords": 300,
+    "hints": [
+      "Short, simple sentences are fine.",
+      "Use words you learned this week.",
+      "Read it aloud when you finish."
+    ]
+  },
+  {
+    "id": "wp-free-review-something-you-love",
+    "taskType": "free",
+    "cefr": "B1",
+    "title": "Free Writing: Something You Love",
+    "instructions": "Write about a film, book, game, song or app that you really enjoy. Describe it in your own words, explain why it is special to you and say who you would recommend it to. Do not copy text or lyrics – use your own sentences.",
+    "instructionsVi": "Viết về một bộ phim, cuốn sách, trò chơi, bài hát hoặc ứng dụng bạn rất thích. Mô tả bằng lời của chính bạn, giải thích vì sao nó đặc biệt với bạn và bạn muốn giới thiệu nó cho ai. Không chép nội dung hay lời bài hát – hãy tự viết câu của mình.",
+    "minWords": 80,
+    "maxWords": 400,
+    "hints": [
+      "Use opinion phrases: In my opinion, What I love most is…",
+      "Use relative clauses: It's a story about a girl who…",
+      "Recommend: I'd recommend it to anyone who…"
+    ]
+  }
+]

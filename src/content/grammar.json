@@ -1,0 +1,2425 @@
+[
+  {
+    "id": "gr-to-be",
+    "title": "The verb “to be” (am, is, are)",
+    "cefr": "A1",
+    "summaryEn": "Use am, is and are to say who or what someone is, and to talk about age, jobs, feelings and places.",
+    "explanationVi": "Động từ “to be” (am/is/are) mang nghĩa “là, thì, ở”. Dùng “am” với I, “is” với he/she/it và danh từ số ít, “are” với you/we/they và danh từ số nhiều. Khác với tiếng Việt, câu tiếng Anh luôn cần động từ: “Tôi mệt” phải nói “I am tired”, không thể nói “I tired”. Câu phủ định thêm “not” sau be (I'm not, she isn't), còn câu hỏi thì đưa be lên trước chủ ngữ (Are you a student?). Người Việt hay quên “to be” trước tính từ và trước cụm chỉ nơi chốn, ví dụ nói “She very beautiful” thay vì “She is very beautiful”.",
+    "patterns": [
+      "I + am (I'm)",
+      "He / She / It + is (he's, she's, it's)",
+      "You / We / They + are (you're, we're, they're)",
+      "Negative: subject + be + not (isn't, aren't)",
+      "Question: Be + subject + …? (Are you…? Is she…?)"
+    ],
+    "examples": [
+      {
+        "en": "I'm a student.",
+        "vi": "Tôi là sinh viên."
+      },
+      {
+        "en": "She is twenty years old.",
+        "vi": "Cô ấy hai mươi tuổi."
+      },
+      {
+        "en": "We aren't hungry.",
+        "vi": "Chúng tôi không đói."
+      },
+      {
+        "en": "Is your brother at home?",
+        "vi": "Anh trai bạn có ở nhà không?"
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I tired.",
+        "right": "I am tired.",
+        "why": "Tiếng Anh cần động từ “be” trước tính từ; không thể bỏ như tiếng Việt."
+      },
+      {
+        "wrong": "She are my friend.",
+        "right": "She is my friend.",
+        "why": "Chủ ngữ “she” (số ít, ngôi thứ ba) đi với “is”."
+      },
+      {
+        "wrong": "You are from where?",
+        "right": "Where are you from?",
+        "why": "Từ để hỏi (where) đứng đầu câu, sau đó là be rồi đến chủ ngữ."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-to-be-e1",
+        "type": "gap",
+        "prompt": "My name ___ Lan.",
+        "options": [],
+        "answer": "is",
+        "explanation": "“My name” là danh từ số ít nên dùng “is”."
+      },
+      {
+        "id": "gr-to-be-e2",
+        "type": "gap",
+        "prompt": "I ___ a nurse.",
+        "options": [],
+        "answer": "am",
+        "explanation": "Chủ ngữ “I” luôn đi với “am”."
+      },
+      {
+        "id": "gr-to-be-e3",
+        "type": "mcq",
+        "prompt": "They ___ from Vietnam.",
+        "options": [
+          "am",
+          "is",
+          "are"
+        ],
+        "answer": "are",
+        "explanation": "“They” là số nhiều nên dùng “are”."
+      },
+      {
+        "id": "gr-to-be-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "She very happy.",
+          "She is very happy.",
+          "She are very happy."
+        ],
+        "answer": "She is very happy.",
+        "explanation": "Cần “is” trước tính từ “happy”, và “she” đi với “is”."
+      },
+      {
+        "id": "gr-to-be-e5",
+        "type": "gap",
+        "prompt": "We ___ not tired. We can walk more.",
+        "options": [],
+        "answer": "are",
+        "explanation": "“We” đi với “are”; phủ định là “are not” (aren't)."
+      },
+      {
+        "id": "gr-to-be-e6",
+        "type": "mcq",
+        "prompt": "___ you a student?",
+        "options": [
+          "Is",
+          "Am",
+          "Are"
+        ],
+        "answer": "Are",
+        "explanation": "Câu hỏi với “you” dùng “Are” đứng đầu."
+      },
+      {
+        "id": "gr-to-be-e7",
+        "type": "gap",
+        "prompt": "The coffee ___ very hot. Be careful!",
+        "options": [],
+        "answer": "is",
+        "explanation": "“The coffee” là danh từ không đếm được, coi như số ít, nên dùng “is”."
+      }
+    ]
+  },
+  {
+    "id": "gr-present-simple",
+    "title": "Present simple",
+    "cefr": "A1",
+    "summaryEn": "Use the present simple for habits, routines, facts and timetables. Add -s/-es to the verb after he, she and it.",
+    "explanationVi": "Thì hiện tại đơn diễn tả thói quen, sự thật hiển nhiên và lịch trình cố định (I drink coffee every morning; Water boils at 100°C). Với he/she/it, động từ phải thêm -s hoặc -es (she works, he watches) – đây là lỗi người Việt mắc nhiều nhất vì tiếng Việt không chia động từ theo ngôi. Câu phủ định và câu hỏi dùng trợ động từ do/does, và khi đó động từ chính trở về nguyên mẫu: She doesn't like tea (không phải doesn't likes). Thì này hay đi với trạng từ tần suất như always, usually, often, sometimes, never; chúng đứng trước động từ thường nhưng sau động từ be. Không dùng “am/is/are” cùng động từ thường: nói “I go”, không nói “I am go”.",
+    "patterns": [
+      "I / You / We / They + V (work)",
+      "He / She / It + V-s/-es (works, watches, studies)",
+      "Negative: don't / doesn't + V",
+      "Question: Do / Does + subject + V?",
+      "always / usually / often / sometimes / never + V"
+    ],
+    "examples": [
+      {
+        "en": "She works in a hospital.",
+        "vi": "Cô ấy làm việc ở bệnh viện."
+      },
+      {
+        "en": "I don't eat meat.",
+        "vi": "Tôi không ăn thịt."
+      },
+      {
+        "en": "Does he play football?",
+        "vi": "Anh ấy có chơi bóng đá không?"
+      },
+      {
+        "en": "We usually have dinner at seven.",
+        "vi": "Chúng tôi thường ăn tối lúc bảy giờ."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "He work in a bank.",
+        "right": "He works in a bank.",
+        "why": "Với he/she/it, động từ phải thêm -s."
+      },
+      {
+        "wrong": "She doesn't likes coffee.",
+        "right": "She doesn't like coffee.",
+        "why": "Sau does/doesn't, động từ trở về nguyên mẫu (không thêm -s)."
+      },
+      {
+        "wrong": "I am go to school every day.",
+        "right": "I go to school every day.",
+        "why": "Không dùng “am/is/are” cùng động từ thường ở thì hiện tại đơn."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-present-simple-e1",
+        "type": "gap",
+        "prompt": "My father ___ (work) in an office.",
+        "options": [],
+        "answer": "works",
+        "explanation": "“My father” tương đương “he” nên động từ thêm -s: works."
+      },
+      {
+        "id": "gr-present-simple-e2",
+        "type": "gap",
+        "prompt": "She ___ (watch) TV every evening.",
+        "options": [],
+        "answer": "watches",
+        "explanation": "Động từ tận cùng bằng -ch thêm -es: watch → watches."
+      },
+      {
+        "id": "gr-present-simple-e3",
+        "type": "mcq",
+        "prompt": "___ your sister live in Hanoi?",
+        "options": [
+          "Do",
+          "Does",
+          "Is"
+        ],
+        "answer": "Does",
+        "explanation": "“Your sister” = she → câu hỏi dùng “Does”."
+      },
+      {
+        "id": "gr-present-simple-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "He don't like fish.",
+          "He doesn't like fish.",
+          "He doesn't likes fish."
+        ],
+        "answer": "He doesn't like fish.",
+        "explanation": "He đi với doesn't, và sau doesn't dùng động từ nguyên mẫu."
+      },
+      {
+        "id": "gr-present-simple-e5",
+        "type": "gap",
+        "prompt": "I ___ (not / drink) coffee at night.",
+        "options": [],
+        "answer": "don't drink",
+        "explanation": "Chủ ngữ “I” → phủ định dùng “don't + V”."
+      },
+      {
+        "id": "gr-present-simple-e6",
+        "type": "mcq",
+        "prompt": "Choose the correct word order: “I ___ breakfast at seven.”",
+        "options": [
+          "always have",
+          "have always",
+          "am always have"
+        ],
+        "answer": "always have",
+        "explanation": "Trạng từ tần suất đứng trước động từ thường."
+      },
+      {
+        "id": "gr-present-simple-e7",
+        "type": "gap",
+        "prompt": "The sun ___ (rise) in the east.",
+        "options": [],
+        "answer": "rises",
+        "explanation": "Sự thật hiển nhiên dùng hiện tại đơn; “the sun” = it → rises."
+      }
+    ]
+  },
+  {
+    "id": "gr-present-continuous",
+    "title": "Present continuous",
+    "cefr": "A1",
+    "summaryEn": "Use am/is/are + -ing for actions happening now, temporary situations and fixed future arrangements.",
+    "explanationVi": "Thì hiện tại tiếp diễn (am/is/are + V-ing) diễn tả việc đang xảy ra ngay lúc nói (I'm reading now), việc tạm thời trong giai đoạn hiện tại (She's living with her aunt this month) và kế hoạch đã sắp xếp trong tương lai gần (We're meeting Tom tomorrow). Người Việt hay quên “to be” và nói “I reading”. Lưu ý: các động từ chỉ trạng thái như like, love, know, want, understand, believe thường KHÔNG dùng ở dạng tiếp diễn – nói “I know”, không nói “I am knowing”. Quy tắc chính tả: make → making, sit → sitting, lie → lying.",
+    "patterns": [
+      "Subject + am/is/are + V-ing",
+      "Negative: am/is/are + not + V-ing",
+      "Question: Am/Is/Are + subject + V-ing?",
+      "Time words: now, right now, at the moment, today, this week"
+    ],
+    "examples": [
+      {
+        "en": "Look! It's raining.",
+        "vi": "Nhìn kìa! Trời đang mưa."
+      },
+      {
+        "en": "I'm not watching TV; I'm studying.",
+        "vi": "Tôi không xem TV; tôi đang học."
+      },
+      {
+        "en": "What are you doing this weekend?",
+        "vi": "Cuối tuần này bạn định làm gì?"
+      },
+      {
+        "en": "She's working from home this week.",
+        "vi": "Tuần này cô ấy làm việc ở nhà."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I studying English now.",
+        "right": "I am studying English now.",
+        "why": "Thì tiếp diễn bắt buộc có “am/is/are” trước V-ing."
+      },
+      {
+        "wrong": "I am knowing the answer.",
+        "right": "I know the answer.",
+        "why": "“Know” là động từ trạng thái, không dùng ở dạng tiếp diễn."
+      },
+      {
+        "wrong": "He is siting there.",
+        "right": "He is sitting there.",
+        "why": "Động từ một âm tiết kết thúc bằng phụ âm–nguyên âm–phụ âm thì gấp đôi phụ âm cuối: sit → sitting."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-present-continuous-e1",
+        "type": "gap",
+        "prompt": "Be quiet! The baby ___ (sleep).",
+        "options": [],
+        "answer": "is sleeping",
+        "explanation": "Hành động đang diễn ra lúc nói → is + sleeping."
+      },
+      {
+        "id": "gr-present-continuous-e2",
+        "type": "mcq",
+        "prompt": "Listen! Somebody ___ at the door.",
+        "options": [
+          "knocks",
+          "is knocking",
+          "knocking"
+        ],
+        "answer": "is knocking",
+        "explanation": "“Listen!” cho thấy việc đang xảy ra → hiện tại tiếp diễn."
+      },
+      {
+        "id": "gr-present-continuous-e3",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "I am wanting a drink.",
+          "I want a drink.",
+          "I wanting a drink."
+        ],
+        "answer": "I want a drink.",
+        "explanation": "“Want” là động từ trạng thái, dùng hiện tại đơn."
+      },
+      {
+        "id": "gr-present-continuous-e4",
+        "type": "gap",
+        "prompt": "They ___ (not / play) football now. They're having lunch.",
+        "options": [],
+        "answer": "aren't playing",
+        "explanation": "They → are; phủ định: aren't + V-ing."
+      },
+      {
+        "id": "gr-present-continuous-e5",
+        "type": "gap",
+        "prompt": "What ___ you doing at the moment?",
+        "options": [],
+        "answer": "are",
+        "explanation": "Câu hỏi với “you”: Are/are + you + V-ing."
+      },
+      {
+        "id": "gr-present-continuous-e6",
+        "type": "mcq",
+        "prompt": "She usually walks to work, but today she ___ the bus.",
+        "options": [
+          "takes",
+          "is taking",
+          "take"
+        ],
+        "answer": "is taking",
+        "explanation": "“Today” chỉ tình huống tạm thời, khác thói quen → hiện tại tiếp diễn."
+      },
+      {
+        "id": "gr-present-continuous-e7",
+        "type": "gap",
+        "prompt": "We ___ (meet) our teacher tomorrow at ten. It's all arranged.",
+        "options": [],
+        "answer": "are meeting",
+        "explanation": "Kế hoạch đã sắp xếp trong tương lai gần → hiện tại tiếp diễn."
+      }
+    ]
+  },
+  {
+    "id": "gr-articles",
+    "title": "Articles: a, an, the",
+    "cefr": "A1",
+    "summaryEn": "Use a/an for one non-specific thing, the for something specific or already known, and no article for general plural or uncountable nouns.",
+    "explanationVi": "Tiếng Việt không có mạo từ nên đây là phần khó với người Việt. Dùng “a/an” với danh từ đếm được số ít khi nhắc lần đầu hoặc nói về một cái bất kỳ: “a” trước âm phụ âm (a book, a university), “an” trước âm nguyên âm (an apple, an hour) – quan trọng là ÂM chứ không phải chữ cái. Dùng “the” khi người nghe đã biết ta nói về cái nào: vật đã nhắc trước đó, vật duy nhất (the sun, the internet) hoặc được xác định rõ (the book on the table). Không dùng mạo từ khi nói chung chung với danh từ số nhiều hoặc không đếm được (I like music; Dogs are friendly). Lỗi phổ biến của người Việt: quên mạo từ (“I am student”) hoặc thêm “the” khi nói chung (“The life is hard”).",
+    "patterns": [
+      "a + consonant sound (a car, a university)",
+      "an + vowel sound (an egg, an hour)",
+      "the + something specific or already mentioned",
+      "no article + general plural/uncountable nouns (Cats like fish.)",
+      "Jobs: I'm a teacher. / She's an engineer."
+    ],
+    "examples": [
+      {
+        "en": "I have a cat. The cat is black.",
+        "vi": "Tôi có một con mèo. Con mèo đó màu đen."
+      },
+      {
+        "en": "She is an English teacher.",
+        "vi": "Cô ấy là giáo viên tiếng Anh."
+      },
+      {
+        "en": "The moon is very bright tonight.",
+        "vi": "Tối nay mặt trăng rất sáng."
+      },
+      {
+        "en": "I love music, but I don't like the music in this café.",
+        "vi": "Tôi thích âm nhạc, nhưng tôi không thích nhạc ở quán cà phê này."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I am student.",
+        "right": "I am a student.",
+        "why": "Danh từ đếm được số ít (nghề nghiệp, vai trò) cần “a/an”."
+      },
+      {
+        "wrong": "The life is beautiful.",
+        "right": "Life is beautiful.",
+        "why": "Nói chung chung về khái niệm trừu tượng thì không dùng “the”."
+      },
+      {
+        "wrong": "a hour",
+        "right": "an hour",
+        "why": "“Hour” bắt đầu bằng âm nguyên âm /aʊ/ (chữ h câm) nên dùng “an”."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-articles-e1",
+        "type": "mcq",
+        "prompt": "I waited for ___ hour.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answer": "an",
+        "explanation": "Chữ “h” trong “hour” câm, bắt đầu bằng âm nguyên âm → an."
+      },
+      {
+        "id": "gr-articles-e2",
+        "type": "mcq",
+        "prompt": "She is ___ university student.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answer": "a",
+        "explanation": "“University” bắt đầu bằng âm /j/ (phụ âm) → a."
+      },
+      {
+        "id": "gr-articles-e3",
+        "type": "gap",
+        "prompt": "I bought a shirt and a jacket. ___ jacket was very cheap.",
+        "options": [],
+        "answer": "The",
+        "explanation": "Chiếc áo khoác đã được nhắc đến trước đó → dùng “The”."
+      },
+      {
+        "id": "gr-articles-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "The money can't buy happiness.",
+          "Money can't buy happiness.",
+          "A money can't buy happiness."
+        ],
+        "answer": "Money can't buy happiness.",
+        "explanation": "Nói chung chung về tiền (danh từ không đếm được) → không dùng mạo từ."
+      },
+      {
+        "id": "gr-articles-e5",
+        "type": "gap",
+        "prompt": "Can you close ___ door, please? It's cold.",
+        "options": [],
+        "answer": "the",
+        "explanation": "Cả hai người đều biết đó là cánh cửa nào → the."
+      },
+      {
+        "id": "gr-articles-e6",
+        "type": "mcq",
+        "prompt": "My brother is ___ engineer.",
+        "options": [
+          "a",
+          "an",
+          "—"
+        ],
+        "answer": "an",
+        "explanation": "Nghề nghiệp cần mạo từ; “engineer” bắt đầu bằng âm nguyên âm → an."
+      },
+      {
+        "id": "gr-articles-e7",
+        "type": "gap",
+        "prompt": "___ sun rises in the east.",
+        "options": [],
+        "answer": "The",
+        "explanation": "Mặt trời là vật duy nhất → dùng “The”."
+      }
+    ]
+  },
+  {
+    "id": "gr-plurals-countable",
+    "title": "Plurals and countable / uncountable nouns",
+    "cefr": "A1",
+    "summaryEn": "Form plurals with -s/-es or irregular forms; uncountable nouns have no plural. Use many with countable and much with uncountable nouns.",
+    "explanationVi": "Danh từ đếm được có số ít và số nhiều: thường thêm -s (book → books), thêm -es sau s, sh, ch, x (box → boxes), đổi y thành ies (city → cities); một số từ bất quy tắc như man → men, child → children, person → people, foot → feet. Danh từ không đếm được (water, rice, money, information, advice, furniture, homework) không có dạng số nhiều và không đi với a/an. Người Việt hay quên -s vì tiếng Việt dùng “những, các” thay cho đuôi số nhiều, ví dụ nói “I have two brother”, và hay nói sai “informations”, “advices”. Dùng many/a few với danh từ đếm được, much/a little với danh từ không đếm được; some/any/a lot of dùng được cho cả hai loại.",
+    "patterns": [
+      "noun + s (cars), + es (buses, watches), consonant + y → ies (babies)",
+      "Irregular: man→men, woman→women, child→children, person→people, tooth→teeth",
+      "many / a few + countable plural",
+      "much / a little + uncountable",
+      "a lot of / some / any + both"
+    ],
+    "examples": [
+      {
+        "en": "I have two brothers and three sisters.",
+        "vi": "Tôi có hai anh/em trai và ba chị/em gái."
+      },
+      {
+        "en": "How much water do you drink every day?",
+        "vi": "Mỗi ngày bạn uống bao nhiêu nước?"
+      },
+      {
+        "en": "Can you give me some advice?",
+        "vi": "Bạn có thể cho tôi vài lời khuyên không?"
+      },
+      {
+        "en": "There are many people in the park.",
+        "vi": "Có nhiều người trong công viên."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I have three book.",
+        "right": "I have three books.",
+        "why": "Sau số lớn hơn một, danh từ đếm được phải ở dạng số nhiều."
+      },
+      {
+        "wrong": "She gave me many informations.",
+        "right": "She gave me a lot of information.",
+        "why": "“Information” không đếm được: không thêm -s, không dùng “many”."
+      },
+      {
+        "wrong": "How many money do you have?",
+        "right": "How much money do you have?",
+        "why": "“Money” không đếm được nên dùng “how much”."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-plurals-countable-e1",
+        "type": "gap",
+        "prompt": "There are two ___ (child) in the garden.",
+        "options": [],
+        "answer": "children",
+        "explanation": "“Child” có số nhiều bất quy tắc là “children”."
+      },
+      {
+        "id": "gr-plurals-countable-e2",
+        "type": "mcq",
+        "prompt": "How ___ sugar do you want in your tea?",
+        "options": [
+          "many",
+          "much",
+          "a few"
+        ],
+        "answer": "much",
+        "explanation": "“Sugar” không đếm được → how much."
+      },
+      {
+        "id": "gr-plurals-countable-e3",
+        "type": "mcq",
+        "prompt": "Which is correct?",
+        "options": [
+          "some advices",
+          "an advice",
+          "some advice"
+        ],
+        "answer": "some advice",
+        "explanation": "“Advice” không đếm được: không thêm -s, không dùng “an”."
+      },
+      {
+        "id": "gr-plurals-countable-e4",
+        "type": "gap",
+        "prompt": "I visited three ___ (city) last year.",
+        "options": [],
+        "answer": "cities",
+        "explanation": "Phụ âm + y → bỏ y, thêm ies: city → cities."
+      },
+      {
+        "id": "gr-plurals-countable-e5",
+        "type": "mcq",
+        "prompt": "We need a few ___ for the cake.",
+        "options": [
+          "egg",
+          "eggs",
+          "rice"
+        ],
+        "answer": "eggs",
+        "explanation": "“A few” đi với danh từ đếm được số nhiều."
+      },
+      {
+        "id": "gr-plurals-countable-e6",
+        "type": "gap",
+        "prompt": "My ___ (foot) hurt after the long walk.",
+        "options": [],
+        "answer": "feet",
+        "explanation": "“Foot” có số nhiều bất quy tắc là “feet”."
+      },
+      {
+        "id": "gr-plurals-countable-e7",
+        "type": "mcq",
+        "prompt": "There isn't ___ milk in the fridge.",
+        "options": [
+          "many",
+          "any",
+          "a few"
+        ],
+        "answer": "any",
+        "explanation": "Câu phủ định với danh từ không đếm được → any."
+      }
+    ]
+  },
+  {
+    "id": "gr-there-is-are",
+    "title": "There is / There are",
+    "cefr": "A1",
+    "summaryEn": "Use there is with singular or uncountable nouns and there are with plural nouns to say that something exists in a place.",
+    "explanationVi": "“There is / There are” dùng để nói có cái gì đó tồn tại ở một nơi nào đó. “There is” đi với danh từ số ít hoặc không đếm được (There is a bank near here; There is some milk), “There are” đi với danh từ số nhiều (There are three chairs). Người Việt hay dịch từng chữ “Ở … có …” thành “In my room have a bed” – câu này sai; phải nói “There is a bed in my room”. Phủ định là there isn't / there aren't, câu hỏi là Is there…? / Are there…?. Ở quá khứ, dùng there was / there were.",
+    "patterns": [
+      "There is + singular / uncountable noun",
+      "There are + plural noun",
+      "There isn't / There aren't any…",
+      "Is there…? / Are there…?",
+      "Past: There was / There were"
+    ],
+    "examples": [
+      {
+        "en": "There is a supermarket on my street.",
+        "vi": "Có một siêu thị trên đường nhà tôi."
+      },
+      {
+        "en": "There are twenty students in my class.",
+        "vi": "Lớp tôi có hai mươi học sinh."
+      },
+      {
+        "en": "Is there a pharmacy near here?",
+        "vi": "Gần đây có hiệu thuốc không?"
+      },
+      {
+        "en": "There were a lot of people at the concert.",
+        "vi": "Đã có rất nhiều người ở buổi hòa nhạc."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "In my city have many parks.",
+        "right": "There are many parks in my city.",
+        "why": "Để nói “có” (tồn tại), dùng “there is/are”, không dùng “have”."
+      },
+      {
+        "wrong": "There is two cats in the garden.",
+        "right": "There are two cats in the garden.",
+        "why": "“Two cats” là số nhiều → there are."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-there-is-are-e1",
+        "type": "gap",
+        "prompt": "There ___ a big tree in front of my house.",
+        "options": [],
+        "answer": "is",
+        "explanation": "“A big tree” là số ít → there is."
+      },
+      {
+        "id": "gr-there-is-are-e2",
+        "type": "mcq",
+        "prompt": "There ___ many books on the shelf.",
+        "options": [
+          "is",
+          "are",
+          "has"
+        ],
+        "answer": "are",
+        "explanation": "“Many books” là số nhiều → there are."
+      },
+      {
+        "id": "gr-there-is-are-e3",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "My room has a window big.",
+          "In my room have a big window.",
+          "There is a big window in my room."
+        ],
+        "answer": "There is a big window in my room.",
+        "explanation": "Cấu trúc đúng: There is + danh từ + nơi chốn; tính từ đứng trước danh từ."
+      },
+      {
+        "id": "gr-there-is-are-e4",
+        "type": "gap",
+        "prompt": "Are ___ any eggs in the fridge?",
+        "options": [],
+        "answer": "there",
+        "explanation": "Câu hỏi: Are there + danh từ số nhiều?"
+      },
+      {
+        "id": "gr-there-is-are-e5",
+        "type": "mcq",
+        "prompt": "There ___ a lot of rain yesterday.",
+        "options": [
+          "is",
+          "was",
+          "were"
+        ],
+        "answer": "was",
+        "explanation": "Quá khứ (yesterday) + “rain” không đếm được → there was."
+      },
+      {
+        "id": "gr-there-is-are-e6",
+        "type": "gap",
+        "prompt": "There ___ any students in the classroom now. They're all at lunch.",
+        "options": [],
+        "answer": "aren't",
+        "explanation": "Phủ định với danh từ số nhiều → there aren't any."
+      },
+      {
+        "id": "gr-there-is-are-e7",
+        "type": "mcq",
+        "prompt": "___ there a bus stop near your school?",
+        "options": [
+          "Is",
+          "Are",
+          "Has"
+        ],
+        "answer": "Is",
+        "explanation": "“A bus stop” số ít → Is there…?"
+      }
+    ]
+  },
+  {
+    "id": "gr-past-simple",
+    "title": "Past simple",
+    "cefr": "A2",
+    "summaryEn": "Use the past simple for finished actions at a specific time in the past. Regular verbs add -ed; many common verbs are irregular.",
+    "explanationVi": "Thì quá khứ đơn diễn tả hành động đã xảy ra và kết thúc tại một thời điểm xác định trong quá khứ (yesterday, last week, in 2019, two days ago). Động từ có quy tắc thêm -ed (work → worked, study → studied, stop → stopped); nhiều động từ thông dụng là bất quy tắc và cần học thuộc (go → went, eat → ate, buy → bought, see → saw). Câu phủ định và nghi vấn dùng did + động từ nguyên mẫu: I didn't go (không phải didn't went). Tiếng Việt chỉ thêm “đã” hoặc dựa vào ngữ cảnh, nên người Việt hay quên chia quá khứ, ví dụ “Yesterday I go to the market”. Quá khứ của be là was (I/he/she/it) và were (you/we/they).",
+    "patterns": [
+      "Regular: V + -ed (played, studied, stopped)",
+      "Irregular: go→went, have→had, see→saw, buy→bought",
+      "Negative: didn't + V (base form)",
+      "Question: Did + subject + V?",
+      "be: was / were"
+    ],
+    "examples": [
+      {
+        "en": "I visited my grandparents last weekend.",
+        "vi": "Cuối tuần trước tôi đã về thăm ông bà."
+      },
+      {
+        "en": "She didn't come to class yesterday.",
+        "vi": "Hôm qua cô ấy không đến lớp."
+      },
+      {
+        "en": "Did you see the match last night?",
+        "vi": "Tối qua bạn có xem trận đấu không?"
+      },
+      {
+        "en": "We were very tired after the trip.",
+        "vi": "Chúng tôi rất mệt sau chuyến đi."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "Yesterday I go to the market.",
+        "right": "Yesterday I went to the market.",
+        "why": "Có “yesterday” → phải dùng quá khứ; go là động từ bất quy tắc → went."
+      },
+      {
+        "wrong": "I didn't went to work.",
+        "right": "I didn't go to work.",
+        "why": "Sau “didn't” dùng động từ nguyên mẫu."
+      },
+      {
+        "wrong": "Did she called you?",
+        "right": "Did she call you?",
+        "why": "Trong câu hỏi với “did”, động từ chính ở dạng nguyên mẫu."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-past-simple-e1",
+        "type": "gap",
+        "prompt": "Last night I ___ (watch) a film with my sister.",
+        "options": [],
+        "answer": "watched",
+        "explanation": "“Last night” → quá khứ đơn; watch là động từ có quy tắc → watched."
+      },
+      {
+        "id": "gr-past-simple-e2",
+        "type": "gap",
+        "prompt": "We ___ (go) to Da Lat two years ago.",
+        "options": [],
+        "answer": "went",
+        "explanation": "“Two years ago” → quá khứ; go → went (bất quy tắc)."
+      },
+      {
+        "id": "gr-past-simple-e3",
+        "type": "mcq",
+        "prompt": "She ___ to the party last Saturday.",
+        "options": [
+          "didn't come",
+          "didn't came",
+          "not came"
+        ],
+        "answer": "didn't come",
+        "explanation": "Phủ định quá khứ: didn't + động từ nguyên mẫu."
+      },
+      {
+        "id": "gr-past-simple-e4",
+        "type": "mcq",
+        "prompt": "___ you finish your homework yesterday?",
+        "options": [
+          "Do",
+          "Did",
+          "Were"
+        ],
+        "answer": "Did",
+        "explanation": "Câu hỏi quá khứ với động từ thường dùng “Did”."
+      },
+      {
+        "id": "gr-past-simple-e5",
+        "type": "gap",
+        "prompt": "I ___ (buy) a new phone last month.",
+        "options": [],
+        "answer": "bought",
+        "explanation": "buy → bought (bất quy tắc)."
+      },
+      {
+        "id": "gr-past-simple-e6",
+        "type": "mcq",
+        "prompt": "They ___ at home yesterday evening.",
+        "options": [
+          "was",
+          "were",
+          "did"
+        ],
+        "answer": "were",
+        "explanation": "Chủ ngữ “they” dùng “were”."
+      },
+      {
+        "id": "gr-past-simple-e7",
+        "type": "gap",
+        "prompt": "He ___ (study) all night for the exam.",
+        "options": [],
+        "answer": "studied",
+        "explanation": "Phụ âm + y → ied: study → studied."
+      }
+    ]
+  },
+  {
+    "id": "gr-past-continuous",
+    "title": "Past continuous",
+    "cefr": "A2",
+    "summaryEn": "Use was/were + -ing for an action in progress at a moment in the past, often interrupted by a shorter action in the past simple.",
+    "explanationVi": "Thì quá khứ tiếp diễn (was/were + V-ing) diễn tả hành động đang diễn ra tại một thời điểm trong quá khứ (At 8 p.m. yesterday I was having dinner) hoặc làm bối cảnh cho một hành động khác xen vào (I was walking home when it started to rain). Hành động ngắn xen vào dùng quá khứ đơn, hành động dài đang diễn ra dùng quá khứ tiếp diễn; hai hành động thường được nối bằng “when” hoặc “while”. Người Việt hay dùng quá khứ đơn cho mọi thứ hoặc quên “was/were” (I watching TV when…). Cũng như hiện tại tiếp diễn, không dùng dạng này với động từ trạng thái như know, want, like.",
+    "patterns": [
+      "I / He / She / It + was + V-ing",
+      "You / We / They + were + V-ing",
+      "Long action (past continuous) + when + short action (past simple)",
+      "while + past continuous"
+    ],
+    "examples": [
+      {
+        "en": "At eight o'clock last night, I was having dinner.",
+        "vi": "Lúc tám giờ tối qua, tôi đang ăn tối."
+      },
+      {
+        "en": "I was walking home when it started to rain.",
+        "vi": "Tôi đang đi bộ về nhà thì trời bắt đầu mưa."
+      },
+      {
+        "en": "While she was cooking, the phone rang.",
+        "vi": "Trong lúc cô ấy đang nấu ăn thì điện thoại reo."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I watching TV when he called.",
+        "right": "I was watching TV when he called.",
+        "why": "Thì quá khứ tiếp diễn cần “was/were”."
+      },
+      {
+        "wrong": "When I was arriving, the film started.",
+        "right": "When I arrived, the film had already started.",
+        "why": "Hành động ngắn, xảy ra tức thì (arrive) dùng quá khứ đơn, không dùng dạng tiếp diễn."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-past-continuous-e1",
+        "type": "gap",
+        "prompt": "At 10 p.m. yesterday, I ___ (read) a book.",
+        "options": [],
+        "answer": "was reading",
+        "explanation": "Hành động đang diễn ra tại một thời điểm trong quá khứ → was + V-ing."
+      },
+      {
+        "id": "gr-past-continuous-e2",
+        "type": "mcq",
+        "prompt": "We ___ dinner when the lights went out.",
+        "options": [
+          "had",
+          "were having",
+          "are having"
+        ],
+        "answer": "were having",
+        "explanation": "Hành động dài đang diễn ra bị hành động ngắn (lights went out) xen vào."
+      },
+      {
+        "id": "gr-past-continuous-e3",
+        "type": "mcq",
+        "prompt": "While I was waiting for the bus, I ___ an old friend.",
+        "options": [
+          "was seeing",
+          "saw",
+          "see"
+        ],
+        "answer": "saw",
+        "explanation": "Hành động ngắn xen vào → quá khứ đơn."
+      },
+      {
+        "id": "gr-past-continuous-e4",
+        "type": "gap",
+        "prompt": "They ___ (play) football when it started to snow.",
+        "options": [],
+        "answer": "were playing",
+        "explanation": "Chủ ngữ “they” dùng were + V-ing."
+      },
+      {
+        "id": "gr-past-continuous-e5",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "I was knowing the answer.",
+          "I knew the answer.",
+          "I knowing the answer."
+        ],
+        "answer": "I knew the answer.",
+        "explanation": "“Know” là động từ trạng thái → dùng quá khứ đơn."
+      },
+      {
+        "id": "gr-past-continuous-e6",
+        "type": "gap",
+        "prompt": "What ___ you doing at midnight last night?",
+        "options": [],
+        "answer": "were",
+        "explanation": "Câu hỏi với “you” ở quá khứ tiếp diễn → were."
+      }
+    ]
+  },
+  {
+    "id": "gr-prepositions-time-place",
+    "title": "Prepositions of time and place (at, on, in)",
+    "cefr": "A2",
+    "summaryEn": "Use at for exact times and points, on for days, dates and surfaces, and in for months, years, parts of the day and enclosed spaces.",
+    "explanationVi": "Giới từ chỉ thời gian: “at” dùng cho giờ và thời điểm cụ thể (at 7 o'clock, at night), “on” dùng cho thứ và ngày tháng (on Monday, on 5th May, on my birthday), “in” dùng cho tháng, năm, mùa, buổi trong ngày và khoảng thời gian dài (in July, in 2025, in the morning). Giới từ chỉ nơi chốn: “at” cho một điểm (at the bus stop, at school), “in” cho không gian bao quanh (in the room, in Vietnam), “on” cho bề mặt (on the table, on the wall, on the second floor). Vì “ở/vào/lúc” trong tiếng Việt không phân biệt như vậy, người Việt hay nói sai “in Monday” hay “at 2010”. Hãy học theo cụm cố định: in the morning nhưng at night; on the bus nhưng in a car.",
+    "patterns": [
+      "at + clock time / point: at 6 p.m., at the station",
+      "on + day / date / surface: on Friday, on the desk",
+      "in + month / year / season / part of day / enclosed space: in May, in the box",
+      "Fixed: at night, in the morning, on the bus, in a car"
+    ],
+    "examples": [
+      {
+        "en": "The meeting is at 9 a.m. on Monday.",
+        "vi": "Cuộc họp lúc 9 giờ sáng thứ Hai."
+      },
+      {
+        "en": "I was born in 2001.",
+        "vi": "Tôi sinh năm 2001."
+      },
+      {
+        "en": "The keys are on the table.",
+        "vi": "Chìa khóa ở trên bàn."
+      },
+      {
+        "en": "She's waiting at the bus stop.",
+        "vi": "Cô ấy đang đợi ở trạm xe buýt."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I'll see you in Monday.",
+        "right": "I'll see you on Monday.",
+        "why": "Dùng “on” với các thứ trong tuần."
+      },
+      {
+        "wrong": "I live at Vietnam.",
+        "right": "I live in Vietnam.",
+        "why": "Dùng “in” với quốc gia và thành phố."
+      },
+      {
+        "wrong": "The class starts on 8 o'clock.",
+        "right": "The class starts at 8 o'clock.",
+        "why": "Dùng “at” với giờ cụ thể."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-prepositions-time-place-e1",
+        "type": "mcq",
+        "prompt": "My birthday is ___ June.",
+        "options": [
+          "at",
+          "on",
+          "in"
+        ],
+        "answer": "in",
+        "explanation": "Tháng → in."
+      },
+      {
+        "id": "gr-prepositions-time-place-e2",
+        "type": "mcq",
+        "prompt": "The shop closes ___ 10 p.m.",
+        "options": [
+          "at",
+          "on",
+          "in"
+        ],
+        "answer": "at",
+        "explanation": "Giờ cụ thể → at."
+      },
+      {
+        "id": "gr-prepositions-time-place-e3",
+        "type": "gap",
+        "prompt": "We have English lessons ___ Tuesday and Thursday.",
+        "options": [],
+        "answer": "on",
+        "explanation": "Thứ trong tuần → on."
+      },
+      {
+        "id": "gr-prepositions-time-place-e4",
+        "type": "gap",
+        "prompt": "There is a picture ___ the wall.",
+        "options": [],
+        "answer": "on",
+        "explanation": "Bức tranh nằm trên bề mặt bức tường → on."
+      },
+      {
+        "id": "gr-prepositions-time-place-e5",
+        "type": "mcq",
+        "prompt": "I usually study ___ the evening.",
+        "options": [
+          "at",
+          "on",
+          "in"
+        ],
+        "answer": "in",
+        "explanation": "Buổi trong ngày (morning, afternoon, evening) → in the…"
+      },
+      {
+        "id": "gr-prepositions-time-place-e6",
+        "type": "gap",
+        "prompt": "She is waiting for you ___ the airport.",
+        "options": [],
+        "answer": "at",
+        "explanation": "Sân bay được xem như một điểm/địa điểm gặp → at."
+      },
+      {
+        "id": "gr-prepositions-time-place-e7",
+        "type": "mcq",
+        "prompt": "Which is correct?",
+        "options": [
+          "at night",
+          "in night",
+          "on night"
+        ],
+        "answer": "at night",
+        "explanation": "Cụm cố định: at night (nhưng in the morning)."
+      }
+    ]
+  },
+  {
+    "id": "gr-comparatives-superlatives",
+    "title": "Comparatives and superlatives",
+    "cefr": "A2",
+    "summaryEn": "Compare two things with -er/more … than, and say something is number one in a group with the -est/the most.",
+    "explanationVi": "So sánh hơn dùng để so sánh hai đối tượng: tính từ ngắn thêm -er + than (tall → taller than), tính từ dài dùng more + tính từ + than (more expensive than). So sánh nhất dùng để nói đối tượng đứng đầu trong một nhóm: the + tính từ-est (the tallest) hoặc the most + tính từ (the most beautiful). Chú ý các dạng bất quy tắc: good → better → the best, bad → worse → the worst, far → further → the furthest. Người Việt hay dùng cả hai cách cùng lúc (“more cheaper”) hoặc quên “than” và “the”. So sánh bằng dùng as + tính từ + as (She is as tall as her mother).",
+    "patterns": [
+      "short adj + -er + than (cheaper than)",
+      "more + long adj + than (more interesting than)",
+      "the + short adj + -est (the biggest)",
+      "the most + long adj (the most difficult)",
+      "Irregular: good/better/best, bad/worse/worst",
+      "as + adj + as"
+    ],
+    "examples": [
+      {
+        "en": "My brother is taller than me.",
+        "vi": "Anh trai tôi cao hơn tôi."
+      },
+      {
+        "en": "This book is more interesting than the film.",
+        "vi": "Cuốn sách này thú vị hơn bộ phim."
+      },
+      {
+        "en": "Today is the hottest day of the year.",
+        "vi": "Hôm nay là ngày nóng nhất trong năm."
+      },
+      {
+        "en": "My English is not as good as my sister's.",
+        "vi": "Tiếng Anh của tôi không giỏi bằng chị tôi."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "This phone is more cheaper.",
+        "right": "This phone is cheaper.",
+        "why": "Tính từ ngắn chỉ thêm -er, không dùng thêm “more”."
+      },
+      {
+        "wrong": "She is the most tall girl in the class.",
+        "right": "She is the tallest girl in the class.",
+        "why": "“Tall” là tính từ ngắn → the tallest."
+      },
+      {
+        "wrong": "He is gooder than me.",
+        "right": "He is better than me.",
+        "why": "“Good” là bất quy tắc: good → better → best."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-comparatives-superlatives-e1",
+        "type": "gap",
+        "prompt": "A car is ___ (fast) than a bicycle.",
+        "options": [],
+        "answer": "faster",
+        "explanation": "Tính từ ngắn: fast → faster than."
+      },
+      {
+        "id": "gr-comparatives-superlatives-e2",
+        "type": "mcq",
+        "prompt": "This is ___ restaurant in town.",
+        "options": [
+          "the best",
+          "the better",
+          "the goodest"
+        ],
+        "answer": "the best",
+        "explanation": "So sánh nhất của good là the best."
+      },
+      {
+        "id": "gr-comparatives-superlatives-e3",
+        "type": "gap",
+        "prompt": "Maths is ___ (difficult) than English for me.",
+        "options": [],
+        "answer": "more difficult",
+        "explanation": "Tính từ dài: more + difficult + than."
+      },
+      {
+        "id": "gr-comparatives-superlatives-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "She is more taller than me.",
+          "She is taller than me.",
+          "She is tall than me."
+        ],
+        "answer": "She is taller than me.",
+        "explanation": "Tính từ ngắn + -er + than; không thêm “more”."
+      },
+      {
+        "id": "gr-comparatives-superlatives-e5",
+        "type": "gap",
+        "prompt": "Mount Everest is ___ (high) mountain in the world.",
+        "options": [],
+        "answer": "the highest",
+        "explanation": "So sánh nhất của tính từ ngắn: the + high + est."
+      },
+      {
+        "id": "gr-comparatives-superlatives-e6",
+        "type": "mcq",
+        "prompt": "My English is ___ than it was last year.",
+        "options": [
+          "good",
+          "better",
+          "best"
+        ],
+        "answer": "better",
+        "explanation": "Có “than” → dùng dạng so sánh hơn: better."
+      },
+      {
+        "id": "gr-comparatives-superlatives-e7",
+        "type": "gap",
+        "prompt": "This bag is as heavy ___ that one.",
+        "options": [],
+        "answer": "as",
+        "explanation": "So sánh bằng: as + tính từ + as."
+      }
+    ]
+  },
+  {
+    "id": "gr-future-will-going-to",
+    "title": "Future: will and going to",
+    "cefr": "A2",
+    "summaryEn": "Use will for instant decisions, promises, offers and opinions about the future; use going to for plans and predictions based on present evidence.",
+    "explanationVi": "“Will + V” dùng cho quyết định tức thời ngay lúc nói (I'm thirsty. I'll get some water), lời hứa, lời đề nghị và dự đoán dựa trên ý kiến (I think it will rain). “Be going to + V” dùng cho kế hoạch, dự định đã có từ trước (I'm going to study abroad next year) và dự đoán dựa trên bằng chứng ở hiện tại (Look at those clouds – it's going to rain). Người Việt hay dùng “will” cho mọi tình huống tương lai vì tiếng Việt chỉ có “sẽ”. Sau will luôn là động từ nguyên mẫu: “will go”, không phải “will to go” hay “will going”. Kế hoạch đã sắp xếp cụ thể còn có thể dùng hiện tại tiếp diễn (I'm flying to Da Nang on Friday).",
+    "patterns": [
+      "will + V (I'll help you.)",
+      "won't + V",
+      "am/is/are going to + V",
+      "Instant decision → will; plan made before → going to",
+      "Prediction with present evidence → going to"
+    ],
+    "examples": [
+      {
+        "en": "I'll call you later.",
+        "vi": "Lát nữa tôi sẽ gọi cho bạn."
+      },
+      {
+        "en": "We're going to visit Hue next month.",
+        "vi": "Tháng sau chúng tôi sẽ đi thăm Huế (đã lên kế hoạch)."
+      },
+      {
+        "en": "Be careful! You're going to fall!",
+        "vi": "Cẩn thận! Bạn sắp ngã kìa!"
+      },
+      {
+        "en": "I don't think she'll come.",
+        "vi": "Tôi không nghĩ cô ấy sẽ đến."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I will to call you.",
+        "right": "I will call you.",
+        "why": "Sau “will” là động từ nguyên mẫu không có “to”."
+      },
+      {
+        "wrong": "The phone is ringing. I'm going to answer it.",
+        "right": "The phone is ringing. I'll answer it.",
+        "why": "Quyết định đưa ra ngay lúc nói → will."
+      },
+      {
+        "wrong": "She going to travel next week.",
+        "right": "She is going to travel next week.",
+        "why": "Cấu trúc đầy đủ cần “be”: is going to."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-future-will-going-to-e1",
+        "type": "mcq",
+        "prompt": "A: We've got no milk. B: Oh, really? I ___ some now.",
+        "options": [
+          "'ll buy",
+          "am going to buy",
+          "buy"
+        ],
+        "answer": "'ll buy",
+        "explanation": "B vừa mới quyết định lúc nói → will ('ll)."
+      },
+      {
+        "id": "gr-future-will-going-to-e2",
+        "type": "mcq",
+        "prompt": "I've already booked the tickets. We ___ see a concert on Saturday.",
+        "options": [
+          "will",
+          "are going to",
+          "going to"
+        ],
+        "answer": "are going to",
+        "explanation": "Kế hoạch đã có từ trước (đã đặt vé) → be going to."
+      },
+      {
+        "id": "gr-future-will-going-to-e3",
+        "type": "gap",
+        "prompt": "Look at those black clouds! It ___ going to rain.",
+        "options": [],
+        "answer": "is",
+        "explanation": "Dự đoán dựa trên bằng chứng → It is going to…"
+      },
+      {
+        "id": "gr-future-will-going-to-e4",
+        "type": "gap",
+        "prompt": "Don't worry. I ___ tell anyone your secret. I promise.",
+        "options": [],
+        "answer": "won't",
+        "explanation": "Lời hứa → will; phủ định → won't."
+      },
+      {
+        "id": "gr-future-will-going-to-e5",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "She will to come tomorrow.",
+          "She will come tomorrow.",
+          "She will comes tomorrow."
+        ],
+        "answer": "She will come tomorrow.",
+        "explanation": "will + động từ nguyên mẫu, không “to”, không thêm -s."
+      },
+      {
+        "id": "gr-future-will-going-to-e6",
+        "type": "gap",
+        "prompt": "What ___ you going to do after graduation?",
+        "options": [],
+        "answer": "are",
+        "explanation": "Câu hỏi với “you”: What are you going to…?"
+      },
+      {
+        "id": "gr-future-will-going-to-e7",
+        "type": "mcq",
+        "prompt": "I think robots ___ do many jobs in the future.",
+        "options": [
+          "will",
+          "are going",
+          "going to"
+        ],
+        "answer": "will",
+        "explanation": "Dự đoán dựa trên ý kiến (I think) → will."
+      }
+    ]
+  },
+  {
+    "id": "gr-present-perfect",
+    "title": "Present perfect",
+    "cefr": "B1",
+    "summaryEn": "Use have/has + past participle for experiences, unfinished time periods (for/since) and recent actions with a present result.",
+    "explanationVi": "Thì hiện tại hoàn thành (have/has + V3) nối quá khứ với hiện tại. Thì này dùng để nói về trải nghiệm không rõ thời điểm (I have been to Japan), hành động bắt đầu trong quá khứ và vẫn còn tiếp diễn (I have lived here for five years / since 2020), và hành động vừa xảy ra có kết quả ở hiện tại (I've lost my keys). Không dùng hiện tại hoàn thành với thời gian quá khứ xác định như yesterday, last year, in 2019 – khi đó phải dùng quá khứ đơn. Người Việt hay nhầm “for” (khoảng thời gian: for three years) và “since” (mốc thời gian: since 2020), và hay nói “I have went” thay vì “I have gone”. Các từ hay đi kèm: ever, never, already, yet, just, recently.",
+    "patterns": [
+      "have/has + past participle (V3)",
+      "for + period (for two years) / since + starting point (since Monday)",
+      "ever / never / already / just / yet",
+      "Negative: haven't / hasn't + V3",
+      "Question: Have/Has + subject + V3?"
+    ],
+    "examples": [
+      {
+        "en": "I have never eaten durian.",
+        "vi": "Tôi chưa bao giờ ăn sầu riêng."
+      },
+      {
+        "en": "She has worked here since 2021.",
+        "vi": "Cô ấy làm việc ở đây từ năm 2021."
+      },
+      {
+        "en": "Have you finished your report yet?",
+        "vi": "Bạn đã làm xong báo cáo chưa?"
+      },
+      {
+        "en": "We've just arrived.",
+        "vi": "Chúng tôi vừa mới đến."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I have seen him yesterday.",
+        "right": "I saw him yesterday.",
+        "why": "Có thời gian quá khứ xác định (yesterday) → dùng quá khứ đơn."
+      },
+      {
+        "wrong": "I live here since 2018.",
+        "right": "I have lived here since 2018.",
+        "why": "Hành động bắt đầu trong quá khứ và còn tiếp diễn → hiện tại hoàn thành."
+      },
+      {
+        "wrong": "She has went home.",
+        "right": "She has gone home.",
+        "why": "Sau have/has dùng V3 (past participle): go → gone."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-present-perfect-e1",
+        "type": "gap",
+        "prompt": "I have lived in this city ___ ten years.",
+        "options": [],
+        "answer": "for",
+        "explanation": "“Ten years” là một khoảng thời gian → for."
+      },
+      {
+        "id": "gr-present-perfect-e2",
+        "type": "gap",
+        "prompt": "She has worked at the bank ___ 2019.",
+        "options": [],
+        "answer": "since",
+        "explanation": "“2019” là mốc thời gian bắt đầu → since."
+      },
+      {
+        "id": "gr-present-perfect-e3",
+        "type": "mcq",
+        "prompt": "___ you ever been to Singapore?",
+        "options": [
+          "Did",
+          "Have",
+          "Has"
+        ],
+        "answer": "Have",
+        "explanation": "Hỏi về trải nghiệm với “ever” → Have you ever…?"
+      },
+      {
+        "id": "gr-present-perfect-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "I have met her last week.",
+          "I met her last week.",
+          "I have meet her last week."
+        ],
+        "answer": "I met her last week.",
+        "explanation": "“Last week” là thời điểm quá khứ xác định → quá khứ đơn."
+      },
+      {
+        "id": "gr-present-perfect-e5",
+        "type": "gap",
+        "prompt": "They have already ___ (finish) the project.",
+        "options": [],
+        "answer": "finished",
+        "explanation": "Sau “have” dùng V3: finish → finished."
+      },
+      {
+        "id": "gr-present-perfect-e6",
+        "type": "mcq",
+        "prompt": "He hasn't called me ___.",
+        "options": [
+          "already",
+          "yet",
+          "just"
+        ],
+        "answer": "yet",
+        "explanation": "“Yet” dùng trong câu phủ định và câu hỏi, đứng cuối câu."
+      },
+      {
+        "id": "gr-present-perfect-e7",
+        "type": "gap",
+        "prompt": "I have never ___ (eat) sushi.",
+        "options": [],
+        "answer": "eaten",
+        "explanation": "Sau “have never” dùng V3: eat → ate → eaten."
+      }
+    ]
+  },
+  {
+    "id": "gr-modal-verbs",
+    "title": "Modal verbs (can, should, must, have to, might)",
+    "cefr": "B1",
+    "summaryEn": "Modal verbs add meanings like ability, advice, obligation and possibility. They are followed by the base form of the verb.",
+    "explanationVi": "Động từ khuyết thiếu (can, could, must, should, may, might) đứng trước động từ nguyên mẫu không “to” và không chia theo ngôi: she can swim (không phải she cans swim hay she can to swim). “Can/could” diễn tả khả năng, sự cho phép và lời đề nghị lịch sự; “should” đưa ra lời khuyên; “must” diễn tả sự bắt buộc do người nói đặt ra hoặc suy luận chắc chắn; “have to” diễn tả bắt buộc do hoàn cảnh hay quy định; “may/might” diễn tả khả năng có thể xảy ra. Chú ý: “mustn't” nghĩa là CẤM, còn “don't have to” nghĩa là KHÔNG CẦN – người Việt rất hay nhầm hai cách này. Trong IELTS Writing, modal giúp câu văn thận trọng hơn: “This might lead to…” thay vì khẳng định tuyệt đối.",
+    "patterns": [
+      "modal + base verb (can go, should study)",
+      "can / could: ability, permission, requests",
+      "should: advice",
+      "must / have to: obligation; mustn't: prohibition",
+      "don't have to: no obligation",
+      "may / might / could: possibility"
+    ],
+    "examples": [
+      {
+        "en": "You should drink more water.",
+        "vi": "Bạn nên uống nhiều nước hơn."
+      },
+      {
+        "en": "I can't come to the party tonight.",
+        "vi": "Tối nay tôi không thể đến bữa tiệc."
+      },
+      {
+        "en": "Students mustn't use phones during the exam.",
+        "vi": "Học sinh không được dùng điện thoại trong giờ thi."
+      },
+      {
+        "en": "You don't have to bring anything; food is provided.",
+        "vi": "Bạn không cần mang gì cả; đồ ăn đã được chuẩn bị."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "She can to speak French.",
+        "right": "She can speak French.",
+        "why": "Sau động từ khuyết thiếu không dùng “to”."
+      },
+      {
+        "wrong": "He musts go now.",
+        "right": "He must go now.",
+        "why": "Động từ khuyết thiếu không thêm -s với he/she/it."
+      },
+      {
+        "wrong": "You mustn't pay. It's free.",
+        "right": "You don't have to pay. It's free.",
+        "why": "“Mustn't” là cấm; “don't have to” là không cần thiết."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-modal-verbs-e1",
+        "type": "mcq",
+        "prompt": "You look tired. You ___ go to bed early.",
+        "options": [
+          "should",
+          "mustn't",
+          "can't"
+        ],
+        "answer": "should",
+        "explanation": "Đưa ra lời khuyên → should."
+      },
+      {
+        "id": "gr-modal-verbs-e2",
+        "type": "mcq",
+        "prompt": "The museum is free. You ___ pay.",
+        "options": [
+          "mustn't",
+          "don't have to",
+          "can't"
+        ],
+        "answer": "don't have to",
+        "explanation": "Không cần thiết phải trả tiền → don't have to (không phải bị cấm)."
+      },
+      {
+        "id": "gr-modal-verbs-e3",
+        "type": "gap",
+        "prompt": "My grandmother is 80, but she ___ still ride a bike.",
+        "options": [],
+        "answer": "can",
+        "explanation": "Khả năng ở hiện tại → can."
+      },
+      {
+        "id": "gr-modal-verbs-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "He can plays the guitar.",
+          "He can play the guitar.",
+          "He can to play the guitar."
+        ],
+        "answer": "He can play the guitar.",
+        "explanation": "can + động từ nguyên mẫu, không -s, không “to”."
+      },
+      {
+        "id": "gr-modal-verbs-e5",
+        "type": "mcq",
+        "prompt": "You ___ smoke here. It's a hospital.",
+        "options": [
+          "mustn't",
+          "don't have to",
+          "might"
+        ],
+        "answer": "mustn't",
+        "explanation": "Điều bị cấm → mustn't."
+      },
+      {
+        "id": "gr-modal-verbs-e6",
+        "type": "mcq",
+        "prompt": "Take an umbrella. It ___ rain later, but the forecast isn't sure.",
+        "options": [
+          "might",
+          "mustn't",
+          "can't"
+        ],
+        "answer": "might",
+        "explanation": "Khả năng không chắc chắn → might."
+      },
+      {
+        "id": "gr-modal-verbs-e7",
+        "type": "mcq",
+        "prompt": "___ you help me with this bag, please?",
+        "options": [
+          "Could",
+          "Must",
+          "Should"
+        ],
+        "answer": "Could",
+        "explanation": "Lời nhờ vả lịch sự → Could you…?"
+      },
+      {
+        "id": "gr-modal-verbs-e8",
+        "type": "gap",
+        "prompt": "In many countries, you ___ to be 18 to vote.",
+        "options": [],
+        "answer": "have",
+        "explanation": "Bắt buộc do quy định → have to + V."
+      }
+    ]
+  },
+  {
+    "id": "gr-gerunds-infinitives",
+    "title": "Gerunds and infinitives (doing / to do)",
+    "cefr": "B1",
+    "summaryEn": "Some verbs are followed by -ing, others by to + verb. After prepositions, always use -ing.",
+    "explanationVi": "Một số động từ được theo sau bởi V-ing (danh động từ): enjoy, finish, avoid, mind, suggest, keep, practise, consider. Một số khác được theo sau bởi to + V: want, decide, hope, plan, agree, need, learn, promise, would like. Sau giới từ (in, on, at, about, of, for, without, before, after…) luôn dùng V-ing: I'm interested in learning English. Người Việt hay nói “I enjoy to read” hoặc “I'm good at speak” vì tiếng Việt không có sự phân biệt này – cách tốt nhất là học động từ theo cụm. Một vài động từ đổi nghĩa: stop smoking (bỏ hút thuốc) khác stop to smoke (dừng lại để hút thuốc); remember doing (nhớ là đã làm) khác remember to do (nhớ phải làm).",
+    "patterns": [
+      "enjoy / finish / avoid / mind / suggest / keep + V-ing",
+      "want / decide / hope / plan / agree / need + to V",
+      "preposition + V-ing (interested in learning)",
+      "stop doing vs stop to do; remember doing vs remember to do"
+    ],
+    "examples": [
+      {
+        "en": "I enjoy listening to podcasts.",
+        "vi": "Tôi thích nghe podcast."
+      },
+      {
+        "en": "She decided to study abroad.",
+        "vi": "Cô ấy quyết định đi du học."
+      },
+      {
+        "en": "He's afraid of making mistakes.",
+        "vi": "Anh ấy sợ mắc lỗi."
+      },
+      {
+        "en": "Remember to lock the door.",
+        "vi": "Nhớ khóa cửa nhé."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "I enjoy to cook.",
+        "right": "I enjoy cooking.",
+        "why": "“Enjoy” luôn đi với V-ing."
+      },
+      {
+        "wrong": "I want going home.",
+        "right": "I want to go home.",
+        "why": "“Want” đi với to + V."
+      },
+      {
+        "wrong": "Thank you for help me.",
+        "right": "Thank you for helping me.",
+        "why": "Sau giới từ “for” phải dùng V-ing."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-gerunds-infinitives-e1",
+        "type": "gap",
+        "prompt": "I've finished ___ (write) my essay.",
+        "options": [],
+        "answer": "writing",
+        "explanation": "Sau “finish” dùng V-ing."
+      },
+      {
+        "id": "gr-gerunds-infinitives-e2",
+        "type": "gap",
+        "prompt": "We decided ___ (take) a taxi.",
+        "options": [],
+        "answer": "to take",
+        "explanation": "Sau “decide” dùng to + V."
+      },
+      {
+        "id": "gr-gerunds-infinitives-e3",
+        "type": "mcq",
+        "prompt": "She is very good at ___.",
+        "options": [
+          "draw",
+          "drawing",
+          "to draw"
+        ],
+        "answer": "drawing",
+        "explanation": "Sau giới từ “at” dùng V-ing."
+      },
+      {
+        "id": "gr-gerunds-infinitives-e4",
+        "type": "mcq",
+        "prompt": "Would you mind ___ the window?",
+        "options": [
+          "open",
+          "to open",
+          "opening"
+        ],
+        "answer": "opening",
+        "explanation": "Sau “mind” dùng V-ing."
+      },
+      {
+        "id": "gr-gerunds-infinitives-e5",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "I hope seeing you soon.",
+          "I hope to see you soon.",
+          "I hope see you soon."
+        ],
+        "answer": "I hope to see you soon.",
+        "explanation": "Sau “hope” dùng to + V."
+      },
+      {
+        "id": "gr-gerunds-infinitives-e6",
+        "type": "gap",
+        "prompt": "He stopped ___ (smoke) five years ago, and now he feels much healthier.",
+        "options": [],
+        "answer": "smoking",
+        "explanation": "“Stop doing” = bỏ hẳn một việc. Ngữ cảnh cho thấy anh ấy đã bỏ thuốc."
+      },
+      {
+        "id": "gr-gerunds-infinitives-e7",
+        "type": "mcq",
+        "prompt": "Don't forget ___ your passport!",
+        "options": [
+          "bring",
+          "bringing",
+          "to bring"
+        ],
+        "answer": "to bring",
+        "explanation": "“Forget to do” = quên phải làm việc gì (trong tương lai)."
+      }
+    ]
+  },
+  {
+    "id": "gr-conditionals-first-second",
+    "title": "First and second conditionals",
+    "cefr": "B1",
+    "summaryEn": "Use the first conditional (if + present, will) for real future possibilities and the second conditional (if + past, would) for unreal or unlikely situations.",
+    "explanationVi": "Câu điều kiện loại 1 (If + hiện tại đơn, will + V) nói về tình huống có thể xảy ra trong tương lai: If it rains, we will stay at home. Câu điều kiện loại 2 (If + quá khứ đơn, would + V) nói về tình huống không có thật hoặc khó xảy ra ở hiện tại hay tương lai: If I had more time, I would learn Japanese. Người Việt hay dùng “will” trong mệnh đề “if” (If it will rain…) – đây là lỗi, vì mệnh đề if không dùng will. Trong loại 2, với động từ be có thể dùng “were” cho mọi ngôi (If I were you, I would…), rất tự nhiên khi đưa lời khuyên. Hai mệnh đề có thể đổi chỗ; khi “if” đứng đầu câu thì dùng dấu phẩy. “Unless” nghĩa là “if… not”.",
+    "patterns": [
+      "First: If + present simple, will + V",
+      "Second: If + past simple, would + V",
+      "If I were you, I would…",
+      "unless = if … not"
+    ],
+    "examples": [
+      {
+        "en": "If you study hard, you will pass the exam.",
+        "vi": "Nếu bạn học chăm chỉ, bạn sẽ đỗ kỳ thi."
+      },
+      {
+        "en": "If I won the lottery, I would travel around the world.",
+        "vi": "Nếu tôi trúng xổ số, tôi sẽ đi du lịch vòng quanh thế giới."
+      },
+      {
+        "en": "If I were you, I'd apologise.",
+        "vi": "Nếu tôi là bạn, tôi sẽ xin lỗi."
+      },
+      {
+        "en": "We'll miss the bus unless we hurry.",
+        "vi": "Chúng ta sẽ lỡ xe buýt nếu không nhanh lên."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "If it will rain, we will stay home.",
+        "right": "If it rains, we will stay home.",
+        "why": "Mệnh đề “if” dùng hiện tại đơn, không dùng “will”."
+      },
+      {
+        "wrong": "If I have a lot of money, I would buy a house.",
+        "right": "If I had a lot of money, I would buy a house.",
+        "why": "Loại 2 (không có thật) cần quá khứ đơn trong mệnh đề if đi với “would”."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-conditionals-first-second-e1",
+        "type": "gap",
+        "prompt": "If it ___ (rain) tomorrow, we will cancel the picnic.",
+        "options": [],
+        "answer": "rains",
+        "explanation": "Loại 1: If + hiện tại đơn; it → rains."
+      },
+      {
+        "id": "gr-conditionals-first-second-e2",
+        "type": "gap",
+        "prompt": "If I ___ (have) a car, I would drive to work.",
+        "options": [],
+        "answer": "had",
+        "explanation": "Loại 2: If + quá khứ đơn → had."
+      },
+      {
+        "id": "gr-conditionals-first-second-e3",
+        "type": "mcq",
+        "prompt": "If she ___ harder, she would get better marks.",
+        "options": [
+          "studies",
+          "studied",
+          "will study"
+        ],
+        "answer": "studied",
+        "explanation": "Mệnh đề chính có “would” → loại 2 → quá khứ đơn."
+      },
+      {
+        "id": "gr-conditionals-first-second-e4",
+        "type": "mcq",
+        "prompt": "If I were you, I ___ that job.",
+        "options": [
+          "will take",
+          "would take",
+          "take"
+        ],
+        "answer": "would take",
+        "explanation": "“If I were you” là loại 2 → would + V."
+      },
+      {
+        "id": "gr-conditionals-first-second-e5",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "If you will call me, I will come.",
+          "If you call me, I will come.",
+          "If you called me, I will come."
+        ],
+        "answer": "If you call me, I will come.",
+        "explanation": "Loại 1: If + hiện tại đơn, will + V."
+      },
+      {
+        "id": "gr-conditionals-first-second-e6",
+        "type": "gap",
+        "prompt": "We will be late ___ we leave now.",
+        "options": [],
+        "answer": "unless",
+        "explanation": "“Unless” = if… not: chúng ta sẽ trễ nếu không đi ngay."
+      },
+      {
+        "id": "gr-conditionals-first-second-e7",
+        "type": "mcq",
+        "prompt": "What would you do if you ___ a million dollars?",
+        "options": [
+          "find",
+          "found",
+          "will find"
+        ],
+        "answer": "found",
+        "explanation": "Tình huống giả định (loại 2) → quá khứ đơn: found."
+      }
+    ]
+  },
+  {
+    "id": "gr-passive-voice",
+    "title": "The passive voice",
+    "cefr": "B2",
+    "summaryEn": "Form the passive with be + past participle. Use it when the action or the receiver is more important than who does it.",
+    "explanationVi": "Câu bị động (be + V3) dùng khi hành động hoặc đối tượng chịu tác động quan trọng hơn người thực hiện, hoặc khi không biết hay không cần nói ai làm: The bridge was built in 1990. Động từ “be” được chia theo thì: is made (hiện tại), was made (quá khứ), has been made (hiện tại hoàn thành), will be made (tương lai), can be made (sau động từ khuyết thiếu). Nếu cần nói người thực hiện thì thêm “by”. Người Việt hay quên “be” (The car made in Japan) hoặc dùng V2 thay vì V3 (was wrote). Bị động rất hữu ích trong IELTS Writing Task 1 khi mô tả quy trình và trong Task 2 để giọng văn khách quan hơn.",
+    "patterns": [
+      "am/is/are + V3 (present)",
+      "was/were + V3 (past)",
+      "has/have been + V3 (present perfect)",
+      "will be + V3 / modal + be + V3",
+      "… + by + agent (optional)"
+    ],
+    "examples": [
+      {
+        "en": "English is spoken all over the world.",
+        "vi": "Tiếng Anh được nói trên khắp thế giới."
+      },
+      {
+        "en": "This house was built by my grandfather.",
+        "vi": "Ngôi nhà này được ông tôi xây."
+      },
+      {
+        "en": "The results will be announced next week.",
+        "vi": "Kết quả sẽ được công bố vào tuần sau."
+      },
+      {
+        "en": "First, the coffee beans are roasted.",
+        "vi": "Đầu tiên, hạt cà phê được rang."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "The car made in Japan.",
+        "right": "The car is made in Japan.",
+        "why": "Câu bị động cần động từ “be”."
+      },
+      {
+        "wrong": "The book was wrote in 1990.",
+        "right": "The book was written in 1990.",
+        "why": "Bị động dùng V3 (past participle): write → written."
+      },
+      {
+        "wrong": "The problem must solve.",
+        "right": "The problem must be solved.",
+        "why": "Sau động từ khuyết thiếu: modal + be + V3."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-passive-voice-e1",
+        "type": "gap",
+        "prompt": "Rice ___ (grow) in many parts of Asia.",
+        "options": [],
+        "answer": "is grown",
+        "explanation": "Sự thật chung, bị động hiện tại: is + grown."
+      },
+      {
+        "id": "gr-passive-voice-e2",
+        "type": "gap",
+        "prompt": "The museum ___ (open) in 1995.",
+        "options": [],
+        "answer": "was opened",
+        "explanation": "Năm 1995 là quá khứ → was + opened."
+      },
+      {
+        "id": "gr-passive-voice-e3",
+        "type": "mcq",
+        "prompt": "A new hospital ___ in our town next year.",
+        "options": [
+          "will build",
+          "will be built",
+          "is building"
+        ],
+        "answer": "will be built",
+        "explanation": "Bệnh viện không tự xây → bị động tương lai: will be + V3."
+      },
+      {
+        "id": "gr-passive-voice-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "The email was send yesterday.",
+          "The email was sent yesterday.",
+          "The email sent yesterday."
+        ],
+        "answer": "The email was sent yesterday.",
+        "explanation": "Bị động quá khứ: was + V3 (send → sent)."
+      },
+      {
+        "id": "gr-passive-voice-e5",
+        "type": "mcq",
+        "prompt": "Describing a process: “First, the tea leaves ___ by hand.”",
+        "options": [
+          "pick",
+          "are picked",
+          "are picking"
+        ],
+        "answer": "are picked",
+        "explanation": "Mô tả quy trình (IELTS Task 1) thường dùng bị động hiện tại."
+      },
+      {
+        "id": "gr-passive-voice-e6",
+        "type": "gap",
+        "prompt": "All the tickets have ___ sold.",
+        "options": [],
+        "answer": "been",
+        "explanation": "Bị động hiện tại hoàn thành: have been + V3."
+      },
+      {
+        "id": "gr-passive-voice-e7",
+        "type": "mcq",
+        "prompt": "These rules must ___ by all students.",
+        "options": [
+          "follow",
+          "be followed",
+          "followed"
+        ],
+        "answer": "be followed",
+        "explanation": "Sau động từ khuyết thiếu (must) dùng be + V3."
+      }
+    ]
+  },
+  {
+    "id": "gr-relative-clauses",
+    "title": "Relative clauses (who, which, that, whose, where)",
+    "cefr": "B2",
+    "summaryEn": "Use relative clauses to add information about a noun and to join short sentences into longer, more natural ones.",
+    "explanationVi": "Mệnh đề quan hệ dùng để bổ sung thông tin cho danh từ, giúp nối hai câu đơn thành một câu phức – điều rất quan trọng để đạt điểm Grammatical Range trong IELTS. Dùng “who” cho người, “which” cho vật, “that” cho cả người và vật (chỉ trong mệnh đề xác định), “whose” chỉ sở hữu, “where” chỉ nơi chốn, “when” chỉ thời gian. Mệnh đề xác định (không có dấu phẩy) cho biết ta đang nói về ai/cái gì; mệnh đề không xác định (có dấu phẩy) chỉ thêm thông tin phụ và KHÔNG dùng “that”. Người Việt hay lặp lại đại từ trong mệnh đề (“the man who I met him”) hoặc dùng “which” cho người.",
+    "patterns": [
+      "who (people), which (things), that (people/things, defining only)",
+      "whose + noun (possession)",
+      "where (places), when (times)",
+      "Defining: no commas / Non-defining: commas, never 'that'",
+      "Object pronoun can be left out in defining clauses: the book (that) I read"
+    ],
+    "examples": [
+      {
+        "en": "The woman who lives next door is a doctor.",
+        "vi": "Người phụ nữ sống cạnh nhà là bác sĩ."
+      },
+      {
+        "en": "This is the laptop that I bought last week.",
+        "vi": "Đây là cái máy tính xách tay mà tôi mua tuần trước."
+      },
+      {
+        "en": "My father, who is sixty, still plays tennis.",
+        "vi": "Bố tôi, năm nay sáu mươi tuổi, vẫn chơi quần vợt."
+      },
+      {
+        "en": "That's the café where we first met.",
+        "vi": "Đó là quán cà phê nơi chúng ta gặp nhau lần đầu."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "The man which helped me was kind.",
+        "right": "The man who helped me was kind.",
+        "why": "Dùng “who” (hoặc that) cho người, không dùng “which”."
+      },
+      {
+        "wrong": "The book that I read it was boring.",
+        "right": "The book that I read was boring.",
+        "why": "Đại từ quan hệ đã thay cho “it”, không lặp lại tân ngữ."
+      },
+      {
+        "wrong": "Hanoi, that is the capital, is busy.",
+        "right": "Hanoi, which is the capital, is busy.",
+        "why": "Mệnh đề không xác định (có dấu phẩy) không dùng “that”."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-relative-clauses-e1",
+        "type": "gap",
+        "prompt": "That's the girl ___ brother is a famous singer.",
+        "options": [],
+        "answer": "whose",
+        "explanation": "Chỉ sở hữu (anh trai của cô gái) → whose."
+      },
+      {
+        "id": "gr-relative-clauses-e2",
+        "type": "gap",
+        "prompt": "This is the village ___ my mother was born.",
+        "options": [],
+        "answer": "where",
+        "explanation": "Chỉ nơi chốn (sinh ra ở ngôi làng đó) → where."
+      },
+      {
+        "id": "gr-relative-clauses-e3",
+        "type": "mcq",
+        "prompt": "The man ___ fixed my bike was very friendly.",
+        "options": [
+          "which",
+          "who",
+          "whose"
+        ],
+        "answer": "who",
+        "explanation": "Chỉ người, làm chủ ngữ của mệnh đề → who."
+      },
+      {
+        "id": "gr-relative-clauses-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "Da Lat, that is in the highlands, is cool.",
+          "Da Lat, which is in the highlands, is cool.",
+          "Da Lat, where is in the highlands, is cool."
+        ],
+        "answer": "Da Lat, which is in the highlands, is cool.",
+        "explanation": "Mệnh đề không xác định về một vật/địa danh làm chủ ngữ → which (không dùng that, không dùng where vì thiếu chủ ngữ)."
+      },
+      {
+        "id": "gr-relative-clauses-e5",
+        "type": "mcq",
+        "prompt": "The phone ___ I bought last week is already broken.",
+        "options": [
+          "who",
+          "which",
+          "where"
+        ],
+        "answer": "which",
+        "explanation": "Chỉ vật → which (hoặc that)."
+      },
+      {
+        "id": "gr-relative-clauses-e6",
+        "type": "mcq",
+        "prompt": "I'll never forget the summer ___ we travelled to Phu Quoc.",
+        "options": [
+          "when",
+          "where",
+          "whose"
+        ],
+        "answer": "when",
+        "explanation": "Chỉ thời gian (mùa hè) → when."
+      },
+      {
+        "id": "gr-relative-clauses-e7",
+        "type": "mcq",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The film that I watched it was great.",
+          "The film that I watched was great.",
+          "The film I watched it was great."
+        ],
+        "answer": "The film that I watched was great.",
+        "explanation": "Không lặp lại “it” vì “that” đã thay cho tân ngữ."
+      }
+    ]
+  },
+  {
+    "id": "gr-reported-speech",
+    "title": "Reported speech",
+    "cefr": "B2",
+    "summaryEn": "Report what someone said by moving tenses back, changing pronouns and time words, and using statement word order for questions.",
+    "explanationVi": "Câu tường thuật dùng để kể lại lời người khác nói. Khi động từ tường thuật ở quá khứ (said, told, asked), ta thường lùi thì: hiện tại đơn → quá khứ đơn, hiện tại tiếp diễn → quá khứ tiếp diễn, will → would, can → could, quá khứ đơn hoặc hiện tại hoàn thành → quá khứ hoàn thành. Đồng thời đổi đại từ và trạng từ: I → he/she, now → then, today → that day, tomorrow → the next day. “Say” không cần tân ngữ chỉ người (She said that…), còn “tell” phải có (She told me that…) – người Việt rất hay nói sai “She said me”. Câu hỏi tường thuật dùng trật tự câu khẳng định: He asked where I lived (không phải where did I live).",
+    "patterns": [
+      "say (that) + clause / tell + person + (that) + clause",
+      "Backshift: present → past, will → would, can → could, past → past perfect",
+      "Reported questions: ask + wh-word / if + subject + verb",
+      "Reported commands: tell/ask + someone + (not) to + V"
+    ],
+    "examples": [
+      {
+        "en": "“I'm tired,” she said. → She said (that) she was tired.",
+        "vi": "“Tôi mệt,” cô ấy nói. → Cô ấy nói rằng cô ấy mệt."
+      },
+      {
+        "en": "“I will help you.” → He told me he would help me.",
+        "vi": "“Tôi sẽ giúp bạn.” → Anh ấy bảo tôi rằng anh ấy sẽ giúp tôi."
+      },
+      {
+        "en": "“Where do you live?” → She asked me where I lived.",
+        "vi": "“Bạn sống ở đâu?” → Cô ấy hỏi tôi sống ở đâu."
+      },
+      {
+        "en": "“Don't be late.” → The teacher told us not to be late.",
+        "vi": "“Đừng đến muộn.” → Thầy giáo dặn chúng tôi đừng đến muộn."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "She said me that she was busy.",
+        "right": "She told me that she was busy.",
+        "why": "“Say” không đi trực tiếp với tân ngữ người; dùng “tell + người”."
+      },
+      {
+        "wrong": "He asked me where did I work.",
+        "right": "He asked me where I worked.",
+        "why": "Câu hỏi tường thuật dùng trật tự câu khẳng định, không có “did”."
+      },
+      {
+        "wrong": "She told that she is hungry.",
+        "right": "She said that she was hungry.",
+        "why": "“Tell” cần tân ngữ người; và cần lùi thì is → was."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-reported-speech-e1",
+        "type": "gap",
+        "prompt": "“I am hungry.” → She said that she ___ hungry.",
+        "options": [],
+        "answer": "was",
+        "explanation": "Lùi thì: am → was."
+      },
+      {
+        "id": "gr-reported-speech-e2",
+        "type": "gap",
+        "prompt": "“I will call you.” → He said he ___ call me.",
+        "options": [],
+        "answer": "would",
+        "explanation": "Lùi thì: will → would."
+      },
+      {
+        "id": "gr-reported-speech-e3",
+        "type": "mcq",
+        "prompt": "“Can you swim?” → She asked me ___ swim.",
+        "options": [
+          "if I could",
+          "could I",
+          "if can I"
+        ],
+        "answer": "if I could",
+        "explanation": "Câu hỏi Yes/No → if/whether + chủ ngữ + động từ; can → could."
+      },
+      {
+        "id": "gr-reported-speech-e4",
+        "type": "mcq",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "He said me the answer.",
+          "He told me the answer.",
+          "He told to me the answer."
+        ],
+        "answer": "He told me the answer.",
+        "explanation": "tell + người + điều được nói; không có “to”."
+      },
+      {
+        "id": "gr-reported-speech-e5",
+        "type": "mcq",
+        "prompt": "“Where do you work?” → He asked me where ___.",
+        "options": [
+          "do I work",
+          "I worked",
+          "did I work"
+        ],
+        "answer": "I worked",
+        "explanation": "Trật tự khẳng định + lùi thì: I worked."
+      },
+      {
+        "id": "gr-reported-speech-e6",
+        "type": "gap",
+        "prompt": "“Don't touch it!” → She told the children ___ touch it.",
+        "options": [],
+        "answer": "not to",
+        "explanation": "Mệnh lệnh phủ định: tell + người + not to + V."
+      },
+      {
+        "id": "gr-reported-speech-e7",
+        "type": "mcq",
+        "prompt": "“We're leaving tomorrow.” → They said they were leaving ___.",
+        "options": [
+          "tomorrow",
+          "the next day",
+          "yesterday"
+        ],
+        "answer": "the next day",
+        "explanation": "Đổi trạng từ thời gian: tomorrow → the next day."
+      }
+    ]
+  },
+  {
+    "id": "gr-linking-words-ielts",
+    "title": "Linking words for IELTS writing",
+    "cefr": "B2",
+    "summaryEn": "Use linking words to show addition, contrast, cause, result and examples. Pay attention to the grammar each one needs.",
+    "explanationVi": "Từ nối giúp bài viết mạch lạc và là một phần của tiêu chí Coherence and Cohesion trong IELTS. Nhóm bổ sung: moreover, furthermore, in addition; nhóm tương phản: however, although, whereas, on the other hand, nevertheless, despite; nhóm nguyên nhân – kết quả: because (of), due to, therefore, as a result, consequently; nhóm ví dụ: for example, for instance, such as; nhóm kết luận: in conclusion, overall. Về ngữ pháp, “although/because/whereas” nối hai mệnh đề trong cùng một câu, còn “however/therefore/moreover” thường đứng đầu câu mới và theo sau là dấu phẩy; “despite/because of/due to” đi với danh từ hoặc V-ing. Người Việt hay viết “Although…, but…” (thừa “but” vì dịch từ “Mặc dù… nhưng…”) hoặc dùng “because of” trước một mệnh đề. Đừng lạm dụng: dùng từ nối máy móc ở mọi câu cũng bị trừ điểm.",
+    "patterns": [
+      "Addition: Moreover, / Furthermore, / In addition,",
+      "Contrast: However, / Although + clause / whereas + clause / despite + noun or V-ing",
+      "Cause: because + clause / because of / due to + noun",
+      "Result: Therefore, / As a result, / Consequently,",
+      "Example: For example, / such as + noun"
+    ],
+    "examples": [
+      {
+        "en": "Public transport is cheap. Moreover, it reduces pollution.",
+        "vi": "Giao thông công cộng rẻ. Hơn nữa, nó giảm ô nhiễm."
+      },
+      {
+        "en": "Although the city is crowded, it offers many job opportunities.",
+        "vi": "Mặc dù thành phố đông đúc, nó mang lại nhiều cơ hội việc làm."
+      },
+      {
+        "en": "Many young people move to cities because of better jobs.",
+        "vi": "Nhiều người trẻ chuyển đến thành phố vì có việc làm tốt hơn."
+      },
+      {
+        "en": "Some people prefer online courses, whereas others like traditional classrooms.",
+        "vi": "Một số người thích khóa học trực tuyến, trong khi những người khác thích lớp học truyền thống."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "Although it was raining, but we went out.",
+        "right": "Although it was raining, we went out.",
+        "why": "Tiếng Anh không dùng “although” và “but” cùng lúc trong một câu."
+      },
+      {
+        "wrong": "Because of the traffic was heavy, I was late.",
+        "right": "Because the traffic was heavy, I was late.",
+        "why": "“Because of” đi với danh từ; trước mệnh đề dùng “because”."
+      },
+      {
+        "wrong": "Despite it was expensive, he bought it.",
+        "right": "Despite the high price, he bought it.",
+        "why": "“Despite” đi với danh từ hoặc V-ing, không đi với mệnh đề."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-linking-words-ielts-e1",
+        "type": "mcq",
+        "prompt": "Online learning is flexible. ___, it can feel lonely.",
+        "options": [
+          "Moreover",
+          "However",
+          "Therefore"
+        ],
+        "answer": "However",
+        "explanation": "Hai ý tương phản (linh hoạt ↔ cô đơn) → However."
+      },
+      {
+        "id": "gr-linking-words-ielts-e2",
+        "type": "mcq",
+        "prompt": "___ the bad weather, the festival went ahead.",
+        "options": [
+          "Although",
+          "Despite",
+          "Because"
+        ],
+        "answer": "Despite",
+        "explanation": "Theo sau là cụm danh từ “the bad weather” → Despite."
+      },
+      {
+        "id": "gr-linking-words-ielts-e3",
+        "type": "mcq",
+        "prompt": "Cars cause a lot of pollution. ___, many cities are building more bike lanes.",
+        "options": [
+          "As a result",
+          "Although",
+          "For instance"
+        ],
+        "answer": "As a result",
+        "explanation": "Câu sau là kết quả của câu trước → As a result."
+      },
+      {
+        "id": "gr-linking-words-ielts-e4",
+        "type": "gap",
+        "prompt": "Many students work part-time ___ of the high cost of living.",
+        "options": [],
+        "answer": "because",
+        "explanation": "“because of” + cụm danh từ (the high cost of living)."
+      },
+      {
+        "id": "gr-linking-words-ielts-e5",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "Although he was tired, but he kept working.",
+          "Although he was tired, he kept working.",
+          "Despite he was tired, he kept working."
+        ],
+        "answer": "Although he was tired, he kept working.",
+        "explanation": "Không dùng although + but; despite không đi với mệnh đề."
+      },
+      {
+        "id": "gr-linking-words-ielts-e6",
+        "type": "mcq",
+        "prompt": "Some people enjoy city life, ___ others prefer the countryside.",
+        "options": [
+          "whereas",
+          "therefore",
+          "moreover"
+        ],
+        "answer": "whereas",
+        "explanation": "So sánh đối lập hai nhóm người trong cùng một câu → whereas."
+      },
+      {
+        "id": "gr-linking-words-ielts-e7",
+        "type": "gap",
+        "prompt": "Governments should invest in public transport. In ___, they should make cycling safer.",
+        "options": [],
+        "answer": "addition",
+        "explanation": "Bổ sung thêm một ý → In addition."
+      },
+      {
+        "id": "gr-linking-words-ielts-e8",
+        "type": "mcq",
+        "prompt": "Many tropical fruits, ___ mangoes and bananas, are grown in this region.",
+        "options": [
+          "such as",
+          "as a result",
+          "however"
+        ],
+        "answer": "such as",
+        "explanation": "Đưa ví dụ bằng cụm danh từ ngay trong câu → such as."
+      }
+    ]
+  },
+  {
+    "id": "gr-third-mixed-conditionals",
+    "title": "Third and mixed conditionals",
+    "cefr": "C1",
+    "summaryEn": "Use the third conditional (if + had + past participle, would have + past participle) for imaginary past situations, and mixed conditionals to connect past and present.",
+    "explanationVi": "Câu điều kiện loại 3 (If + had + V3, would have + V3) nói về một điều kiện không có thật trong quá khứ và kết quả tưởng tượng của nó, thường để diễn tả sự tiếc nuối: If I had studied harder, I would have passed (thực tế là đã không học chăm và đã trượt). Câu điều kiện hỗn hợp kết hợp quá khứ với hiện tại: If I had taken that job, I would be rich now (điều kiện ở quá khứ, kết quả ở hiện tại). Người Việt hay viết sai thành “If I would have known…” hoặc quên “have” sau would. Trong văn nói, “would have” thường được rút gọn thành “would've”, nghe giống “would of” – nhưng viết “would of” là sai. Dùng tốt cấu trúc này giúp nâng điểm Grammatical Range trong IELTS Speaking Part 2 và Part 3.",
+    "patterns": [
+      "Third: If + had + V3, would/could/might have + V3",
+      "Mixed (past → present): If + had + V3, would + V",
+      "Mixed (present → past): If + past simple, would have + V3",
+      "Inversion (formal): Had I known, I would have…"
+    ],
+    "examples": [
+      {
+        "en": "If I had left earlier, I wouldn't have missed the train.",
+        "vi": "Nếu tôi đi sớm hơn thì đã không lỡ chuyến tàu."
+      },
+      {
+        "en": "If she hadn't helped me, I could have failed the course.",
+        "vi": "Nếu cô ấy không giúp, có lẽ tôi đã trượt môn đó."
+      },
+      {
+        "en": "If I had learned English as a child, I would be more fluent now.",
+        "vi": "Nếu tôi học tiếng Anh từ nhỏ thì giờ tôi đã nói trôi chảy hơn."
+      },
+      {
+        "en": "Had we known about the traffic, we would have taken the train.",
+        "vi": "Nếu biết trước chuyện kẹt xe thì chúng tôi đã đi tàu."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "If I would have known, I would have helped.",
+        "right": "If I had known, I would have helped.",
+        "why": "Mệnh đề “if” của loại 3 dùng had + V3, không dùng would."
+      },
+      {
+        "wrong": "I would of called you.",
+        "right": "I would have called you.",
+        "why": "“Would've” nghe giống “would of” nhưng dạng viết đúng là “would have”."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "gr-third-mixed-conditionals-e1",
+        "type": "gap",
+        "prompt": "If I ___ (know) about the party, I would have come.",
+        "options": [],
+        "answer": "had known",
+        "explanation": "Loại 3: If + had + V3."
+      },
+      {
+        "id": "gr-third-mixed-conditionals-e2",
+        "type": "mcq",
+        "prompt": "If we had booked earlier, we ___ a better seat.",
+        "options": [
+          "would get",
+          "would have got",
+          "will get"
+        ],
+        "answer": "would have got",
+        "explanation": "Kết quả tưởng tượng trong quá khứ → would have + V3."
+      },
+      {
+        "id": "gr-third-mixed-conditionals-e3",
+        "type": "mcq",
+        "prompt": "If I had taken that job in Singapore, I ___ there now.",
+        "options": [
+          "would live",
+          "would have lived",
+          "will live"
+        ],
+        "answer": "would live",
+        "explanation": "Câu hỗn hợp: điều kiện quá khứ, kết quả ở hiện tại (now) → would + V."
+      },
+      {
+        "id": "gr-third-mixed-conditionals-e4",
+        "type": "mcq",
+        "prompt": "Which sentence is correct?",
+        "options": [
+          "If she would have studied, she would have passed.",
+          "If she had studied, she would have passed.",
+          "If she studied, she would have pass."
+        ],
+        "answer": "If she had studied, she would have passed.",
+        "explanation": "Loại 3 chuẩn: If + had + V3, would have + V3."
+      },
+      {
+        "id": "gr-third-mixed-conditionals-e5",
+        "type": "gap",
+        "prompt": "He would have won the race if he ___ fallen.",
+        "options": [],
+        "answer": "hadn't",
+        "explanation": "Điều kiện phủ định trong quá khứ: if + hadn't + V3."
+      },
+      {
+        "id": "gr-third-mixed-conditionals-e6",
+        "type": "mcq",
+        "prompt": "___ I known you were in hospital, I would have visited you.",
+        "options": [
+          "If",
+          "Had",
+          "Would"
+        ],
+        "answer": "Had",
+        "explanation": "Đảo ngữ trang trọng: Had + S + V3 = If + S + had + V3."
+      }
+    ]
+  }
+]

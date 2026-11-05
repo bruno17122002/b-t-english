@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "voc-a1-1",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "Choose the word that means the opposite of 'hot'.",
+    "options": [
+      "wet",
+      "cold",
+      "warm",
+      "big"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-a1-2",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "Which word is a fruit?",
+    "options": [
+      "carrot",
+      "bread",
+      "cheese",
+      "banana"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-a1-3",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "My mother's brother is my ___.",
+    "options": [
+      "cousin",
+      "aunt",
+      "nephew",
+      "uncle"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-a1-4",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "We sleep in the ___.",
+    "options": [
+      "kitchen",
+      "garden",
+      "bathroom",
+      "bedroom"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-a2-1",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "I need to ___ an appointment with the doctor.",
+    "options": [
+      "do",
+      "take",
+      "have",
+      "make"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-a2-2",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "Choose the word that means 'not expensive'.",
+    "options": [
+      "easy",
+      "cheap",
+      "poor",
+      "empty"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-a2-3",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "The train was late, so I ___ the start of the meeting.",
+    "options": [
+      "lost",
+      "forgot",
+      "passed",
+      "missed"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-a2-4",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "He drives very ___. He never has accidents.",
+    "options": [
+      "care",
+      "caring",
+      "carefully",
+      "careful"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "voc-b1-1",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "Can you ___ me ten dollars until Friday?",
+    "options": [
+      "borrow",
+      "rent",
+      "owe",
+      "lend"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-b1-2",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "If you 'put off' a meeting, you...",
+    "options": [
+      "delay it until later",
+      "cancel it forever",
+      "start it early",
+      "attend it"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-b1-3",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "The film was so ___ that I fell asleep.",
+    "options": [
+      "bored",
+      "bore",
+      "boredom",
+      "boring"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-b1-4",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "Please pay ___ to the safety instructions.",
+    "options": [
+      "interest",
+      "attention",
+      "notice",
+      "care"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-b2-1",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "The new policy had a significant ___ on house prices.",
+    "options": [
+      "affect",
+      "effective",
+      "effecting",
+      "effect"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-b2-2",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "The evidence strongly ___ the theory that sleep improves memory.",
+    "options": [
+      "carries",
+      "lifts",
+      "supports",
+      "holds"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "voc-b2-3",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "Someone who is 'reluctant' to do something is...",
+    "options": [
+      "unwilling to do it",
+      "excited to do it",
+      "careless about it",
+      "well prepared for it"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-b2-4",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "Despite fierce ___, the small company continued to grow.",
+    "options": [
+      "competitively",
+      "competition",
+      "competitive",
+      "compete"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-c1-1",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "The plan aims to ___ the effects of pollution through stricter rules on factories.",
+    "options": [
+      "provoke",
+      "mitigate",
+      "exacerbate",
+      "magnify"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-c1-2",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "Something that is 'ubiquitous' is...",
+    "options": [
+      "found almost everywhere",
+      "extremely old",
+      "very rare",
+      "easily broken"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-c1-3",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "Her argument was so ___ that nobody could find a flaw in it.",
+    "options": [
+      "complicit",
+      "compelling",
+      "compulsive",
+      "complacent"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-c1-4",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "The two studies reached ___ conclusions: one found a link, the other found none.",
+    "options": [
+      "concurrent",
+      "contradictory",
+      "complementary",
+      "consecutive"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-c2-1",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "His explanation was so ___ that even specialists struggled to follow it.",
+    "options": [
+      "lucid",
+      "terse",
+      "candid",
+      "abstruse"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-c2-2",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "To 'equivocate' means to...",
+    "options": [
+      "speak vaguely to avoid committing yourself",
+      "agree completely and immediately",
+      "make two things equal",
+      "shout angrily at someone"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-c2-3",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "Critics saw the minister's silence as an ___ of responsibility.",
+    "options": [
+      "abdication",
+      "abduction",
+      "abstention",
+      "adjudication"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-c2-4",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "The novel's ___ charm lies in its quiet, gentle humour.",
+    "options": [
+      "outspoken",
+      "overbearing",
+      "understated",
+      "overstated"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-a1-1",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "She ___ a teacher.",
+    "options": [
+      "is",
+      "are",
+      "am",
+      "be"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-a1-2",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "I ___ coffee every morning.",
+    "options": [
+      "drinking",
+      "am drink",
+      "drink",
+      "drinks"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-a1-3",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "There ___ two cats in the garden.",
+    "options": [
+      "is",
+      "am",
+      "be",
+      "are"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "gra-a1-4",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "___ you like pizza?",
+    "options": [
+      "Are",
+      "Is",
+      "Do",
+      "Does"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-a2-1",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "Yesterday I ___ to the cinema with my friends.",
+    "options": [
+      "gone",
+      "going",
+      "went",
+      "go"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-a2-2",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "This box is ___ than that one.",
+    "options": [
+      "heavy",
+      "more heavy",
+      "heaviest",
+      "heavier"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "gra-a2-3",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "I ___ TV when the phone rang.",
+    "options": [
+      "watch",
+      "was watching",
+      "watched",
+      "am watching"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-a2-4",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "We ___ visit our grandparents next weekend. We bought the tickets yesterday.",
+    "options": [
+      "go to",
+      "will to",
+      "are going to",
+      "going to"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-b1-1",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "I ___ in Hanoi since 2019.",
+    "options": [
+      "have lived",
+      "live",
+      "am living",
+      "lived"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-b1-2",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "If it rains tomorrow, we ___ at home.",
+    "options": [
+      "stay will",
+      "will stay",
+      "would stay",
+      "stayed"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-b1-3",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "The letter ___ by my sister yesterday.",
+    "options": [
+      "wrote",
+      "has written",
+      "is writing",
+      "was written"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "gra-b1-4",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "She asked me where I ___.",
+    "options": [
+      "lived",
+      "do live",
+      "did I live",
+      "live I"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-b2-1",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "If I ___ more free time, I would learn the piano.",
+    "options": [
+      "would have",
+      "will have",
+      "had",
+      "have"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-b2-2",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "By the time we arrived at the cinema, the film ___.",
+    "options": [
+      "has already started",
+      "was already start",
+      "had already started",
+      "already started"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-b2-3",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "He denied ___ the window, but we all saw him do it.",
+    "options": [
+      "breaking",
+      "to break",
+      "break",
+      "broke"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-b2-4",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "I wish I ___ so much at dinner last night. I feel terrible.",
+    "options": [
+      "hadn't eaten",
+      "didn't eat",
+      "wouldn't eat",
+      "haven't eaten"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-c1-1",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "Not only ___ late, but he also forgot the tickets.",
+    "options": [
+      "was he",
+      "he was",
+      "he is",
+      "did he was"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-c1-2",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "Had I known about the traffic, I ___ earlier.",
+    "options": [
+      "will have left",
+      "would have left",
+      "would leave",
+      "had left"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-c1-3",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "It's high time the government ___ action on housing.",
+    "options": [
+      "will take",
+      "has taken",
+      "took",
+      "takes"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-c1-4",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "The report, ___ was published last week, criticises the plan.",
+    "options": [
+      "that",
+      "what",
+      "who",
+      "which"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "gra-c2-1",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "Little ___ that his decision would change the company forever.",
+    "options": [
+      "realised he",
+      "did he realise",
+      "he realised",
+      "he did realise"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-c2-2",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "___ it not for her help, the project would have failed.",
+    "options": [
+      "Were",
+      "Had",
+      "Was",
+      "If"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-c2-3",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "So severe ___ that the airport was closed for two days.",
+    "options": [
+      "was the storm",
+      "the storm was",
+      "did the storm",
+      "the storm had"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-c2-4",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "The proposal, ___ merits are still being debated, has divided the board.",
+    "options": [
+      "that's",
+      "whose",
+      "which",
+      "of which"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-a1-1",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "How does Lan go to school?",
+    "passage": "My name is Lan. I live in a small house with my parents and my brother. Every day I go to school by bike. After school, I play badminton with my friends. I love Sundays because my family eats lunch together.",
+    "options": [
+      "On foot",
+      "By car",
+      "By bike",
+      "By bus"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-a1-2",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "When is the café closed?",
+    "passage": "Tom works in a café. He starts work at seven in the morning and finishes at three. He makes coffee and sandwiches. He likes his job because the customers are friendly. On Mondays the café is closed, so Tom stays at home.",
+    "options": [
+      "On Mondays",
+      "On Sundays",
+      "At seven",
+      "In the afternoon"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-a1-3",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "What must children under 10 do?",
+    "passage": "CITY SWIMMING POOL. Open every day from 6 a.m. to 9 p.m. Children under 10 must swim with an adult. No food or drinks in the pool area. Towels for hire: $2. Please take a shower before you swim.",
+    "options": [
+      "Bring their own food",
+      "Come before 6 a.m.",
+      "Swim with an adult",
+      "Pay $2"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-a1-4",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "What is Mum cooking for dinner?",
+    "passage": "Hi Mai, I'm at the supermarket. We need milk, eggs and bread for breakfast. Do you want apples or bananas? Please call me before five. I'm cooking fish for dinner tonight. See you later! Love, Mum",
+    "options": [
+      "Fish",
+      "Eggs",
+      "Chicken",
+      "Bread"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-a2-1",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "What did Jack and his friends do when it rained?",
+    "passage": "Last summer, Jack went to Da Lat with his friends. The weather was cool and it rained every afternoon, so they visited cafés and museums when it was wet. On the last day, the sun came out and they rode bikes around the lake. Jack says it was the best trip of his life, but next time he will bring an umbrella.",
+    "options": [
+      "They visited cafés and museums.",
+      "They rode bikes around the lake.",
+      "They went swimming.",
+      "They stayed in the hotel."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-a2-2",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "How can you buy the sofa for $120?",
+    "passage": "FOR SALE: Blue sofa, three years old, in very good condition. There is a small hole on the back, but you can't see it if the sofa is against a wall. Price: $150, or $120 if you collect it this weekend. Call Sarah after 6 p.m.",
+    "options": [
+      "Call Sarah before 6 p.m.",
+      "Buy two sofas",
+      "Repair the hole yourself",
+      "Collect it this weekend"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-a2-3",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "Why is Linh writing to Mr. Brown?",
+    "passage": "Dear Mr. Brown, I'm sorry, but I can't come to class on Thursday because I have a dentist appointment. Could you please send me the homework by email? I will finish it before next Monday's lesson. Thank you, Linh",
+    "options": [
+      "To say she will miss Thursday's class",
+      "To ask for a new teacher",
+      "To send her finished homework",
+      "To change her dentist appointment"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-a2-4",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "Why don't most cats like getting wet?",
+    "passage": "Many people think that cats don't like water, but this isn't true for every cat. Some kinds of cats, like the Turkish Van, love swimming. Most cats don't like getting wet because their fur becomes heavy and takes a long time to dry.",
+    "options": [
+      "The water is always cold.",
+      "They are afraid of fish.",
+      "Their fur gets heavy and dries slowly.",
+      "They cannot swim at all."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-b1-1",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "Why does Daniel now go to the office two days a week?",
+    "passage": "When Daniel's company allowed staff to work from home, he was delighted. No more crowded trains, no more expensive lunches. But after three months, he noticed that he felt lonely and found it hard to stop working in the evening. Now he goes to the office two days a week. 'I get more done at home,' he says, 'but I need to see real people to stay motivated.'",
+    "options": [
+      "The trains are less crowded now.",
+      "He needs contact with people to stay motivated.",
+      "His boss told him to come in.",
+      "He gets more work done in the office."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-b1-2",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "What happened when a nearby town tried a similar scheme?",
+    "passage": "The town of Brightwater has introduced a new rule: from next month, cars will not be allowed in the town centre on Saturdays. The council hopes the change will reduce pollution and encourage people to walk or cycle. Some shop owners are worried that fewer customers will visit, but a similar scheme in a nearby town actually increased sales by ten percent.",
+    "options": [
+      "Shops sold more.",
+      "Many shops closed.",
+      "Pollution got worse.",
+      "Cars were allowed back after a month."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-b1-3",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "What was the writer's main problem with the film?",
+    "passage": "I had high hopes for 'The Silver Lake' after reading the reviews, but I left the cinema disappointed. The actors were excellent and the scenery was beautiful, but the story was far too slow. Nothing happened for the first forty minutes. If you love beautiful images, you might enjoy it; if you want excitement, choose something else.",
+    "options": [
+      "The scenery was ugly.",
+      "It was too exciting.",
+      "The story moved too slowly.",
+      "The actors were not good."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-b1-4",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "Why have some schools changed their start time?",
+    "passage": "Scientists have found that teenagers' body clocks are different from adults'. Teenagers naturally feel sleepy later at night and need to sleep later in the morning. Because of this, some schools have started lessons at 9:30 instead of 8:00. Early results show that students are more alert, and their exam results have improved slightly.",
+    "options": [
+      "Teenagers naturally sleep and wake later.",
+      "Teachers wanted to sleep longer.",
+      "School buses often arrive late.",
+      "Exams now take place in the afternoon."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-b2-1",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "According to the passage, what may be the greatest value of rooftop farms?",
+    "passage": "Rooftop farms are appearing in cities from Singapore to New York. Supporters argue that growing food close to consumers cuts transport emissions and gives residents access to fresh produce. Critics, however, point out that rooftop farms produce only a tiny fraction of a city's food and are expensive to build, since many roofs must be strengthened first. Perhaps their greatest value is educational: they reconnect city dwellers with where their food comes from, and that awareness may change how people shop and eat.",
+    "options": [
+      "Lowering the price of vegetables",
+      "Teaching people where their food comes from",
+      "Producing most of a city's food",
+      "Making old roofs stronger"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-b2-2",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "What does research suggest about people who believe they are excellent multitaskers?",
+    "passage": "Many of us are proud of our ability to multitask, answering emails while listening to a meeting or checking messages while studying. Yet research consistently suggests that the brain does not truly do two demanding tasks at once; instead, it switches rapidly between them. Each switch carries a small cost in time and accuracy, and these costs add up. People who believe they are excellent multitaskers often perform worst in tests, perhaps because their confidence prevents them from noticing their mistakes.",
+    "options": [
+      "They switch between tasks more slowly.",
+      "They often perform worse than others.",
+      "They make fewer mistakes than others.",
+      "Their brains really do two tasks at once."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-b2-3",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "What is the writer's view of community efforts to save languages?",
+    "passage": "Linguists estimate that one of the world's roughly 7,000 languages disappears every few months. When the last fluent speaker dies, a unique way of describing the world is lost, including knowledge about local plants, weather and history. Some communities are fighting back by recording elders, creating apps and teaching children in their heritage language. These efforts rarely restore a language to full strength, but they can keep it alive long enough for a new generation to take an interest.",
+    "options": [
+      "They always restore a language completely.",
+      "They only benefit older speakers.",
+      "They seldom fully revive a language but can keep it alive.",
+      "They are a waste of time and money."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-b2-4",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "Why does the writer say long-term data is needed?",
+    "passage": "A growing number of companies are experimenting with a four-day working week without reducing pay. In several trials, employees reported lower stress and better health, while productivity stayed the same or even rose. Nevertheless, the model is not suitable for every industry. Hospitals, for example, cannot simply close one day a week, and some managers fear that the benefits might fade once the novelty wears off. Long-term data will be needed before the idea becomes mainstream.",
+    "options": [
+      "The benefits might disappear once the idea is no longer new.",
+      "Employees in the trials reported more stress.",
+      "Productivity fell in every trial.",
+      "Hospitals have already adopted the model."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-c1-1",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "What is the main point of the passage?",
+    "passage": "The notion that money cannot buy happiness has long been a comforting cliché. Recent studies complicate it. Above a certain income, additional earnings appear to bring diminishing, though not zero, gains in day-to-day wellbeing. Crucially, how money is spent seems to matter as much as how much is earned. Spending on experiences rather than objects, on other people rather than oneself, and on buying time, such as paying someone to do disliked chores, tends to produce more lasting satisfaction. The real question may not be whether money buys happiness, but whether we know how to shop for it.",
+    "options": [
+      "Money has no effect at all on happiness.",
+      "Higher income always produces greater happiness.",
+      "People should avoid paying others to do chores.",
+      "How people spend money affects happiness as much as how much they earn."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-c1-2",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "What surprising finding does the passage mention?",
+    "passage": "Placebos, treatments with no active ingredient, have long been used as a baseline in drug trials. Yet the placebo effect itself is far from trivial. Patients given sugar pills frequently report real reductions in pain, and brain scans show measurable changes in activity. More surprisingly, some studies have found that placebos work even when patients are told openly that they are taking an inactive pill. Researchers suspect that the ritual of treatment triggers the body's own capacity to regulate symptoms, which raises awkward ethical questions about whether doctors should deliberately harness it.",
+    "options": [
+      "Doctors have stopped using placebos in trials.",
+      "Placebos can work even when patients know they are placebos.",
+      "Placebos secretly contain small amounts of medicine.",
+      "Brain scans show no change after taking placebos."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-c1-3",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "Which criticism of the anti-tourism measures is mentioned?",
+    "passage": "For decades, mass tourism was celebrated as an engine of development. Today, several of the world's most visited cities are trying to limit it. Residents complain that short-term rentals have pushed up housing costs, forcing locals out of historic centres, while crowds erode the very character that attracted visitors in the first place. Measures range from entry fees for day-trippers to caps on cruise ships. Critics argue that such policies merely turn heritage into a luxury for the wealthy. The underlying dilemma is stark: how can a city stay open to the world and still be a place where people actually live?",
+    "options": [
+      "They are not strict enough to reduce crowds.",
+      "They have pushed up housing costs for locals.",
+      "They encourage more cruise ships to visit.",
+      "They may make historic places affordable only for rich visitors."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-c1-4",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "What is the writer mainly concerned about?",
+    "passage": "Funding agencies increasingly favour projects with clearly defined, practical outcomes. The logic is understandable: public money should deliver measurable benefits. Yet historians of science point out that many transformative breakthroughs emerged from curiosity-driven research with no obvious application at the time. Studies of how materials behave at extremely low temperatures, for instance, eventually made modern hospital scanners possible. If every grant must promise a product, the argument goes, we risk optimising for small, predictable gains while starving the open-ended inquiry from which revolutions arise.",
+    "options": [
+      "Curiosity-driven research rarely produces anything useful.",
+      "Demanding practical results may reduce major breakthroughs.",
+      "Scientists are wasting too much public money.",
+      "Hospital scanners are becoming too expensive."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-c2-1",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "According to the passage, what do the best translations of irony often do?",
+    "passage": "Irony is notoriously resistant to translation. A sentence whose literal meaning is praise may, in context, be devastating criticism, and the cues that signal the shift, such as a pause or a shared cultural reference, rarely survive the journey into another language. Translators thus face an unenviable choice: render the words faithfully and risk readers taking them at face value, or make the irony explicit and destroy the very subtlety that gave it force. The best solutions are often oblique, relocating the irony to a different phrase where the target language can sustain it.",
+    "options": [
+      "Translate every word as literally as possible",
+      "Explain the irony clearly in a footnote",
+      "Remove the irony to avoid confusing readers",
+      "Move the irony to a different phrase where it works naturally"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-c2-2",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "What risk does the writer associate with nostalgia?",
+    "passage": "Nostalgia was once classified as a medical disorder, a form of homesickness thought capable of killing soldiers posted far from home. Contemporary psychology has largely rehabilitated it. Rather than trapping people in the past, nostalgic reflection appears to bolster a sense of continuity and meaning, particularly during periods of upheaval. Yet the emotion is not without hazards when it migrates from the personal to the political. Collective nostalgia for an idealised era can be mobilised to justify exclusion, glossing over the fact that the 'golden age' was rarely golden for everyone.",
+    "options": [
+      "It stops people from feeling continuity during change.",
+      "It makes people forget their personal history.",
+      "In politics it can idealise the past and be used to justify exclusion.",
+      "It is still regarded as a dangerous medical disorder."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-c2-3",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "Why does the writer describe the claim as 'specious'?",
+    "passage": "Proponents of algorithmic decision-making contend that software, unlike humans, is immune to prejudice. The claim is seductive but specious. Algorithms trained on historical data inherit the biases embedded in that data; a hiring model that learns from decades of decisions made by biased managers will faithfully reproduce their preferences, now with a veneer of mathematical objectivity. Worse, the opacity of many such systems makes their errors harder to contest than those of a human decision-maker, who can at least be asked to explain themselves.",
+    "options": [
+      "It is too technical for most people to understand.",
+      "It is strongly supported by historical data.",
+      "It is only true for hiring decisions.",
+      "It sounds convincing but is actually misleading."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-c2-4",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "How does the writer most likely explain the change in the architect's style?",
+    "passage": "The architect's late work is marked by a striking restraint. Where her early buildings proclaimed their ambition through dramatic roofs and walls of glass, the later ones recede almost apologetically into their surroundings. Some critics read this as a loss of nerve; others as the hard-won confidence of a designer who no longer needs to announce herself. The truth may lie in the commissions themselves: libraries, hospices and schools, buildings whose users are better served by calm than by spectacle.",
+    "options": [
+      "Her clients could no longer afford glass and steel.",
+      "Her later buildings served people who needed calm rather than spectacle.",
+      "She had lost confidence in her own abilities.",
+      "Critics persuaded her to abandon dramatic designs."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-a1-1",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "What is Anna's job?",
+    "passage": "Hello, I'm Anna. I'm from Canada, and I'm a nurse.",
+    "options": [
+      "A nurse",
+      "A teacher",
+      "A doctor",
+      "A student"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-a1-2",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "When does the shop close?",
+    "passage": "The shop opens at nine o'clock and closes at six o'clock.",
+    "options": [
+      "At five o'clock",
+      "At six o'clock",
+      "At nine o'clock",
+      "At seven o'clock"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-a1-3",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "How many sisters does the speaker have?",
+    "passage": "I have two sisters and one brother. My brother is ten years old.",
+    "options": [
+      "Three",
+      "Ten",
+      "Two",
+      "One"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-a1-4",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "What is the weather like today?",
+    "passage": "It's very cold today, so please wear your jacket and your hat.",
+    "options": [
+      "Hot",
+      "Rainy",
+      "Windy",
+      "Cold"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-a2-1",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "Where is the bank?",
+    "passage": "To get to the bank, go straight on and turn left at the post office. The bank is next to the café.",
+    "options": [
+      "Behind the station",
+      "Next to the café",
+      "Next to the post office",
+      "Opposite the café"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-a2-2",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "How did the speaker get to work today?",
+    "passage": "I usually take the bus to work, but today it was late, so I took a taxi. It cost twenty dollars.",
+    "options": [
+      "By bus",
+      "On foot",
+      "By train",
+      "By taxi"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-a2-3",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "Which platform will the train leave from?",
+    "passage": "The train to Manchester will now leave from platform four, not platform two. We're sorry for the change.",
+    "options": [
+      "Platform fourteen",
+      "Platform ten",
+      "Platform four",
+      "Platform two"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-a2-4",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "What did the speaker buy for her sister?",
+    "passage": "My sister's birthday is on Saturday. I wanted to buy her a book, but she already has so many, so I bought her a scarf instead.",
+    "options": [
+      "A book",
+      "A cake",
+      "A bag",
+      "A scarf"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-b1-1",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "What is the speaker doing now?",
+    "passage": "I was going to study medicine, but after volunteering at an animal shelter, I realised I'd much rather work with animals. So now I'm training to be a vet.",
+    "options": [
+      "Working in a hospital",
+      "Running an animal shelter",
+      "Training to be a vet",
+      "Studying medicine"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b1-2",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "What should callers do in an emergency?",
+    "passage": "Thank you for calling City Dental. Our clinic is closed for the holiday until Wednesday. If you have an emergency, please call five five five, zero one nine nine.",
+    "options": [
+      "Go to the clinic",
+      "Leave a message",
+      "Call a different number",
+      "Wait until Wednesday"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b1-3",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "Why has the meeting been moved?",
+    "passage": "The meeting has been moved from Tuesday afternoon to Thursday morning, because the manager is travelling. Please bring the sales figures with you.",
+    "options": [
+      "The meeting room is busy",
+      "Tuesday is a holiday",
+      "The manager is away",
+      "The sales figures aren't ready"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b1-4",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "What did the speaker dislike about the hotel?",
+    "passage": "Honestly, the hotel was fine. It was clean and quiet, and the staff were friendly. The only problem was the location: it took us forty minutes to get to the city centre every day.",
+    "options": [
+      "The cleanliness",
+      "Its location",
+      "The staff",
+      "The noise"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-b2-1",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "What is the speaker's opinion of the new phone?",
+    "passage": "Although the new phone has a better camera, I'm not convinced it's worth twice the price. Unless you're a professional photographer, the old model will do just fine.",
+    "options": [
+      "Its camera is worse than the old one.",
+      "Everyone should buy it.",
+      "Most people don't need it.",
+      "It is surprisingly cheap."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b2-2",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "Why did the company change its plan?",
+    "passage": "We'd originally planned to expand into three new markets this year, but given the rise in costs, we've decided to focus on just one and do it properly.",
+    "options": [
+      "Customers complained.",
+      "They found a new partner.",
+      "Costs have gone up.",
+      "The new markets were too small."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b2-3",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "How does the speaker feel about the course?",
+    "passage": "I wouldn't say I disliked the course. The lecturers really knew their stuff. It's just that I'd expected far more practical work and far fewer essays.",
+    "options": [
+      "Completely satisfied",
+      "Bored by too much practical work",
+      "Slightly disappointed, because it was less practical than expected",
+      "Angry with the lecturers"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b2-4",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "How can passengers get to the airport this weekend?",
+    "passage": "Passengers are reminded that, due to engineering works, there will be no direct trains to the airport this weekend. A replacement bus service will run from the main station every twenty minutes.",
+    "options": [
+      "By a direct train",
+      "Only by taxi",
+      "By a train every twenty minutes",
+      "By a replacement bus"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-c1-1",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "What does the speaker suggest about the report?",
+    "passage": "Had the report been released a week earlier, the board might have reconsidered. As it was, the decision had already been made, and nobody was willing to reopen the discussion.",
+    "options": [
+      "It came too late to influence the decision.",
+      "The board studied it carefully.",
+      "It caused the decision to be reversed.",
+      "Nobody on the board read it."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-c1-2",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "What is the speaker's criticism of the council?",
+    "passage": "To be fair to the council, they did consult residents. The problem is that the consultation took place in August, when half the neighbourhood was away on holiday.",
+    "options": [
+      "Residents refused to take part.",
+      "The consultation went on for too long.",
+      "Its timing meant many residents missed the consultation.",
+      "It didn't consult anyone at all."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-c1-3",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "What impressed the speaker most?",
+    "passage": "What struck me most wasn't the scale of the project, impressive as it was, but how quietly it had been achieved. No press releases, no ribbon-cutting, just results.",
+    "options": [
+      "It was achieved without any publicity.",
+      "The sheer size of the project",
+      "The amount of press coverage",
+      "The opening ceremony"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-c1-4",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "What does the speaker recommend?",
+    "passage": "I'm all for innovation, but rolling out an untested system across every branch at once strikes me as reckless. A pilot in two or three locations would have told us far more, at far less risk.",
+    "options": [
+      "Closing some of the branches",
+      "Testing the system in a few locations first",
+      "Abandoning innovation altogether",
+      "Rolling the system out even faster"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-c2-1",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "How does the speaker view the delay?",
+    "passage": "Far from being a setback, the delay afforded us a rare opportunity to revisit assumptions we'd been taking for granted since the outset.",
+    "options": [
+      "As a valuable chance to rethink their ideas",
+      "As a serious disaster for the project",
+      "As somebody else's fault",
+      "As completely irrelevant"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-c2-2",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "What is the speaker's attitude towards the woman?",
+    "passage": "She has a gift for saying precisely what the audience wants to hear, which is, I suppose, both her greatest strength and the reason I'm reluctant to take anything she says at face value.",
+    "options": [
+      "Completely trusting",
+      "Openly hostile",
+      "Totally indifferent",
+      "Admiring but sceptical"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-c2-3",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "What does the speaker mean about the minister's statement?",
+    "passage": "The minister's statement was a masterclass in saying nothing at considerable length. Every question was acknowledged; none was actually answered.",
+    "options": [
+      "It was short and very clear.",
+      "It answered every question in full.",
+      "The minister refused to make any statement.",
+      "It was long but avoided giving real answers."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-c2-4",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "What does the speaker imply about the merger?",
+    "passage": "It would be disingenuous to claim the merger was purely about efficiency. Eliminating a competitor was, if not the primary motive, certainly a welcome side effect.",
+    "options": [
+      "Removing a competitor was one of its real attractions.",
+      "It was motivated only by efficiency.",
+      "It was a complete failure.",
+      "It was proposed by the competitor."
+    ],
+    "answerIndex": 0
+  }
+]
