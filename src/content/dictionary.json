@@ -1,0 +1,6676 @@
+[
+  {
+    "word": "family",
+    "ipa": "/ˈfæməli/",
+    "pos": "noun",
+    "meaningVi": "gia đình",
+    "meaningEn": "a group of people related to each other, such as parents and children",
+    "example": "My family eats dinner together every Sunday.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "big family",
+      "family member",
+      "family photo"
+    ]
+  },
+  {
+    "word": "mother",
+    "ipa": "/ˈmʌðər/",
+    "pos": "noun",
+    "meaningVi": "mẹ",
+    "meaningEn": "a female parent",
+    "example": "My mother teaches maths at a small school.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "my mother",
+      "young mother"
+    ]
+  },
+  {
+    "word": "father",
+    "ipa": "/ˈfɑːðər/",
+    "pos": "noun",
+    "meaningVi": "bố, cha",
+    "meaningEn": "a male parent",
+    "example": "Her father cooks the best noodles in town.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "my father",
+      "proud father"
+    ]
+  },
+  {
+    "word": "friend",
+    "ipa": "/frend/",
+    "pos": "noun",
+    "meaningVi": "bạn, bạn bè",
+    "meaningEn": "a person you know well and like",
+    "example": "I met my best friend at a summer camp.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "best friend",
+      "make friends",
+      "old friend"
+    ]
+  },
+  {
+    "word": "brother",
+    "ipa": "/ˈbrʌðər/",
+    "pos": "noun",
+    "meaningVi": "anh trai, em trai",
+    "meaningEn": "a boy or man with the same parents as you",
+    "example": "My little brother loves football.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "older brother",
+      "younger brother",
+      "little brother"
+    ]
+  },
+  {
+    "word": "sister",
+    "ipa": "/ˈsɪstər/",
+    "pos": "noun",
+    "meaningVi": "chị gái, em gái",
+    "meaningEn": "a girl or woman with the same parents as you",
+    "example": "His sister lives in Da Nang now.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "older sister",
+      "younger sister"
+    ]
+  },
+  {
+    "word": "child",
+    "ipa": "/tʃaɪld/",
+    "pos": "noun",
+    "meaningVi": "đứa trẻ, con",
+    "meaningEn": "a young boy or girl",
+    "example": "Every child in the class has a new notebook.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "young child",
+      "only child"
+    ]
+  },
+  {
+    "word": "baby",
+    "ipa": "/ˈbeɪbi/",
+    "pos": "noun",
+    "meaningVi": "em bé",
+    "meaningEn": "a very young child",
+    "example": "The baby is sleeping, so please be quiet.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "have a baby",
+      "newborn baby"
+    ]
+  },
+  {
+    "word": "man",
+    "ipa": "/mæn/",
+    "pos": "noun",
+    "meaningVi": "người đàn ông",
+    "meaningEn": "an adult male person",
+    "example": "A man in a blue hat is waiting outside.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "young man",
+      "old man"
+    ]
+  },
+  {
+    "word": "woman",
+    "ipa": "/ˈwʊmən/",
+    "pos": "noun",
+    "meaningVi": "người phụ nữ",
+    "meaningEn": "an adult female person",
+    "example": "The woman at the desk gave me a map.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "young woman",
+      "old woman"
+    ]
+  },
+  {
+    "word": "people",
+    "ipa": "/ˈpiːpəl/",
+    "pos": "noun",
+    "meaningVi": "mọi người, con người",
+    "meaningEn": "men, women and children; more than one person",
+    "example": "Many people ride motorbikes to work here.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "young people",
+      "most people",
+      "local people"
+    ]
+  },
+  {
+    "word": "name",
+    "ipa": "/neɪm/",
+    "pos": "noun",
+    "meaningVi": "tên",
+    "meaningEn": "the word that you are called by",
+    "example": "What is your name, and where are you from?",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "first name",
+      "last name",
+      "full name"
+    ]
+  },
+  {
+    "word": "teacher",
+    "ipa": "/ˈtiːtʃər/",
+    "pos": "noun",
+    "meaningVi": "giáo viên",
+    "meaningEn": "a person whose job is to teach",
+    "example": "Our English teacher gives us a short test every Friday.",
+    "cefr": "A1",
+    "topic": "education",
+    "collocations": [
+      "English teacher",
+      "good teacher"
+    ]
+  },
+  {
+    "word": "student",
+    "ipa": "/ˈstuːdənt/",
+    "pos": "noun",
+    "meaningVi": "học sinh, sinh viên",
+    "meaningEn": "a person who is studying at a school or university",
+    "example": "She is a student at a university in Hanoi.",
+    "cefr": "A1",
+    "topic": "education",
+    "collocations": [
+      "university student",
+      "new student"
+    ]
+  },
+  {
+    "word": "school",
+    "ipa": "/skuːl/",
+    "pos": "noun",
+    "meaningVi": "trường học",
+    "meaningEn": "a place where children go to learn",
+    "example": "The school is only ten minutes from my house.",
+    "cefr": "A1",
+    "topic": "education",
+    "collocations": [
+      "go to school",
+      "primary school",
+      "after school"
+    ]
+  },
+  {
+    "word": "book",
+    "ipa": "/bʊk/",
+    "pos": "noun",
+    "meaningVi": "quyển sách",
+    "meaningEn": "a set of printed pages that you read",
+    "example": "I read a short book on the bus.",
+    "cefr": "A1",
+    "topic": "education",
+    "collocations": [
+      "read a book",
+      "good book",
+      "book shop"
+    ]
+  },
+  {
+    "word": "learn",
+    "ipa": "/lɜːrn/",
+    "pos": "verb",
+    "meaningVi": "học, học hỏi",
+    "meaningEn": "to get new knowledge or a new skill",
+    "example": "I want to learn English for my new job.",
+    "cefr": "A1",
+    "topic": "education",
+    "collocations": [
+      "learn English",
+      "learn fast",
+      "learn from mistakes"
+    ]
+  },
+  {
+    "word": "study",
+    "ipa": "/ˈstʌdi/",
+    "pos": "verb",
+    "meaningVi": "học, nghiên cứu",
+    "meaningEn": "to spend time learning a subject",
+    "example": "We study together in the library after class.",
+    "cefr": "A1",
+    "topic": "education",
+    "collocations": [
+      "study hard",
+      "study English",
+      "study for a test"
+    ]
+  },
+  {
+    "word": "read",
+    "ipa": "/riːd/",
+    "pos": "verb",
+    "meaningVi": "đọc",
+    "meaningEn": "to look at words and understand them",
+    "example": "I read the news on my phone every morning.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "read a book",
+      "read aloud",
+      "read the news"
+    ]
+  },
+  {
+    "word": "write",
+    "ipa": "/raɪt/",
+    "pos": "verb",
+    "meaningVi": "viết",
+    "meaningEn": "to make words on paper or a screen",
+    "example": "Please write your name at the top of the page.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "write a letter",
+      "write down",
+      "write an email"
+    ]
+  },
+  {
+    "word": "speak",
+    "ipa": "/spiːk/",
+    "pos": "verb",
+    "meaningVi": "nói",
+    "meaningEn": "to say words; to use a language",
+    "example": "Can you speak a little slower, please?",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "speak English",
+      "speak slowly",
+      "speak to someone"
+    ]
+  },
+  {
+    "word": "listen",
+    "ipa": "/ˈlɪsən/",
+    "pos": "verb",
+    "meaningVi": "nghe, lắng nghe",
+    "meaningEn": "to pay attention to sounds or words",
+    "example": "I listen to English podcasts while I cook.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "listen to music",
+      "listen carefully"
+    ]
+  },
+  {
+    "word": "house",
+    "ipa": "/haʊs/",
+    "pos": "noun",
+    "meaningVi": "ngôi nhà",
+    "meaningEn": "a building where people live",
+    "example": "Their house has a small garden in front.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "big house",
+      "new house",
+      "at my house"
+    ]
+  },
+  {
+    "word": "home",
+    "ipa": "/hoʊm/",
+    "pos": "noun",
+    "meaningVi": "nhà, tổ ấm",
+    "meaningEn": "the place where you live",
+    "example": "I usually get home at six o'clock.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "at home",
+      "go home",
+      "home town"
+    ]
+  },
+  {
+    "word": "room",
+    "ipa": "/ruːm/",
+    "pos": "noun",
+    "meaningVi": "phòng",
+    "meaningEn": "a part of a building with walls, a floor and a ceiling",
+    "example": "My room is small but very bright.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "living room",
+      "my room",
+      "hotel room"
+    ]
+  },
+  {
+    "word": "kitchen",
+    "ipa": "/ˈkɪtʃən/",
+    "pos": "noun",
+    "meaningVi": "nhà bếp",
+    "meaningEn": "the room where you cook food",
+    "example": "We have breakfast in the kitchen.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "in the kitchen",
+      "kitchen table"
+    ]
+  },
+  {
+    "word": "bed",
+    "ipa": "/bed/",
+    "pos": "noun",
+    "meaningVi": "cái giường",
+    "meaningEn": "a piece of furniture for sleeping on",
+    "example": "I go to bed at eleven every night.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "go to bed",
+      "make the bed",
+      "in bed"
+    ]
+  },
+  {
+    "word": "door",
+    "ipa": "/dɔːr/",
+    "pos": "noun",
+    "meaningVi": "cửa ra vào",
+    "meaningEn": "the thing you open to go into a room or building",
+    "example": "Please close the door when you leave.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "open the door",
+      "front door",
+      "knock on the door"
+    ]
+  },
+  {
+    "word": "window",
+    "ipa": "/ˈwɪndoʊ/",
+    "pos": "noun",
+    "meaningVi": "cửa sổ",
+    "meaningEn": "an opening in a wall with glass in it",
+    "example": "I can see the river from my window.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "open the window",
+      "look out of the window"
+    ]
+  },
+  {
+    "word": "table",
+    "ipa": "/ˈteɪbəl/",
+    "pos": "noun",
+    "meaningVi": "cái bàn",
+    "meaningEn": "a piece of furniture with a flat top and legs",
+    "example": "Put your bag on the table.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "kitchen table",
+      "at the table",
+      "book a table"
+    ]
+  },
+  {
+    "word": "chair",
+    "ipa": "/tʃer/",
+    "pos": "noun",
+    "meaningVi": "cái ghế",
+    "meaningEn": "a seat for one person",
+    "example": "There are four chairs in the meeting room.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "sit on a chair",
+      "comfortable chair"
+    ]
+  },
+  {
+    "word": "phone",
+    "ipa": "/foʊn/",
+    "pos": "noun",
+    "meaningVi": "điện thoại",
+    "meaningEn": "a device you use to talk to people far away",
+    "example": "My phone is almost out of battery.",
+    "cefr": "A1",
+    "topic": "technology",
+    "collocations": [
+      "mobile phone",
+      "phone call",
+      "answer the phone"
+    ]
+  },
+  {
+    "word": "computer",
+    "ipa": "/kəmˈpjuːtər/",
+    "pos": "noun",
+    "meaningVi": "máy tính",
+    "meaningEn": "an electronic machine for working with information",
+    "example": "I use a computer at work all day.",
+    "cefr": "A1",
+    "topic": "technology",
+    "collocations": [
+      "use a computer",
+      "computer game",
+      "laptop computer"
+    ]
+  },
+  {
+    "word": "money",
+    "ipa": "/ˈmʌni/",
+    "pos": "noun",
+    "meaningVi": "tiền",
+    "meaningEn": "coins and paper notes used to buy things",
+    "example": "I need to save money for my trip.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "save money",
+      "spend money",
+      "make money"
+    ]
+  },
+  {
+    "word": "water",
+    "ipa": "/ˈwɔːtər/",
+    "pos": "noun",
+    "meaningVi": "nước",
+    "meaningEn": "the clear liquid in rivers, rain and the sea",
+    "example": "Drink plenty of water when it is hot.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "drink water",
+      "cold water",
+      "bottle of water"
+    ]
+  },
+  {
+    "word": "food",
+    "ipa": "/fuːd/",
+    "pos": "noun",
+    "meaningVi": "thức ăn, đồ ăn",
+    "meaningEn": "things that people or animals eat",
+    "example": "The food at this market is cheap and fresh.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "street food",
+      "fast food",
+      "healthy food"
+    ]
+  },
+  {
+    "word": "eat",
+    "ipa": "/iːt/",
+    "pos": "verb",
+    "meaningVi": "ăn",
+    "meaningEn": "to put food in your mouth and swallow it",
+    "example": "We eat rice almost every day.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "eat breakfast",
+      "eat out",
+      "eat well"
+    ]
+  },
+  {
+    "word": "drink",
+    "ipa": "/drɪŋk/",
+    "pos": "verb",
+    "meaningVi": "uống",
+    "meaningEn": "to take liquid into your mouth and swallow it",
+    "example": "Do you drink coffee in the morning?",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "drink coffee",
+      "drink water"
+    ]
+  },
+  {
+    "word": "coffee",
+    "ipa": "/ˈkɔːfi/",
+    "pos": "noun",
+    "meaningVi": "cà phê",
+    "meaningEn": "a hot drink made from roasted beans",
+    "example": "Vietnamese coffee with milk is very sweet.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "cup of coffee",
+      "black coffee",
+      "coffee shop"
+    ]
+  },
+  {
+    "word": "tea",
+    "ipa": "/tiː/",
+    "pos": "noun",
+    "meaningVi": "trà",
+    "meaningEn": "a hot drink made from dried leaves",
+    "example": "My grandmother drinks green tea after lunch.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "green tea",
+      "cup of tea",
+      "iced tea"
+    ]
+  },
+  {
+    "word": "bread",
+    "ipa": "/bred/",
+    "pos": "noun",
+    "meaningVi": "bánh mì",
+    "meaningEn": "a food made from flour and water and baked",
+    "example": "I buy fresh bread from the bakery near my office.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "piece of bread",
+      "fresh bread"
+    ]
+  },
+  {
+    "word": "rice",
+    "ipa": "/raɪs/",
+    "pos": "noun",
+    "meaningVi": "cơm, gạo",
+    "meaningEn": "small white or brown grains cooked as food",
+    "example": "Fried rice is my favourite quick dinner.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "fried rice",
+      "bowl of rice",
+      "cook rice"
+    ]
+  },
+  {
+    "word": "egg",
+    "ipa": "/eɡ/",
+    "pos": "noun",
+    "meaningVi": "quả trứng",
+    "meaningEn": "an oval thing laid by a hen, eaten as food",
+    "example": "I have two boiled eggs for breakfast.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "boiled egg",
+      "fried egg"
+    ]
+  },
+  {
+    "word": "milk",
+    "ipa": "/mɪlk/",
+    "pos": "noun",
+    "meaningVi": "sữa",
+    "meaningEn": "a white drink that comes from cows",
+    "example": "Do you want milk in your tea?",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "glass of milk",
+      "fresh milk"
+    ]
+  },
+  {
+    "word": "fish",
+    "ipa": "/fɪʃ/",
+    "pos": "noun",
+    "meaningVi": "cá",
+    "meaningEn": "an animal that lives in water; its meat as food",
+    "example": "We had grilled fish by the sea.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "grilled fish",
+      "catch a fish"
+    ]
+  },
+  {
+    "word": "chicken",
+    "ipa": "/ˈtʃɪkɪn/",
+    "pos": "noun",
+    "meaningVi": "gà, thịt gà",
+    "meaningEn": "a bird kept on farms; its meat",
+    "example": "This chicken soup is good when you have a cold.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "chicken soup",
+      "fried chicken"
+    ]
+  },
+  {
+    "word": "apple",
+    "ipa": "/ˈæpəl/",
+    "pos": "noun",
+    "meaningVi": "quả táo",
+    "meaningEn": "a round fruit with red or green skin",
+    "example": "She puts an apple in her bag every day.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "green apple",
+      "apple juice"
+    ]
+  },
+  {
+    "word": "hungry",
+    "ipa": "/ˈhʌŋɡri/",
+    "pos": "adjective",
+    "meaningVi": "đói",
+    "meaningEn": "wanting to eat food",
+    "example": "I'm hungry. Let's get something to eat.",
+    "cefr": "A1",
+    "topic": "food",
+    "collocations": [
+      "feel hungry",
+      "very hungry"
+    ]
+  },
+  {
+    "word": "restaurant",
+    "ipa": "/ˈrestərɑːnt/",
+    "pos": "noun",
+    "meaningVi": "nhà hàng",
+    "meaningEn": "a place where you pay to eat a meal",
+    "example": "There is a new Korean restaurant on my street.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "go to a restaurant",
+      "book a restaurant"
+    ]
+  },
+  {
+    "word": "shop",
+    "ipa": "/ʃɑːp/",
+    "pos": "noun",
+    "meaningVi": "cửa hàng",
+    "meaningEn": "a building where you buy things",
+    "example": "The shop opens at eight in the morning.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "corner shop",
+      "go to the shop",
+      "shop assistant"
+    ]
+  },
+  {
+    "word": "city",
+    "ipa": "/ˈsɪti/",
+    "pos": "noun",
+    "meaningVi": "thành phố",
+    "meaningEn": "a large and important town",
+    "example": "Ho Chi Minh City is busy day and night.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "big city",
+      "city centre",
+      "capital city"
+    ]
+  },
+  {
+    "word": "street",
+    "ipa": "/striːt/",
+    "pos": "noun",
+    "meaningVi": "đường phố",
+    "meaningEn": "a road in a town with buildings on it",
+    "example": "My office is on a quiet street.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "main street",
+      "cross the street",
+      "on the street"
+    ]
+  },
+  {
+    "word": "car",
+    "ipa": "/kɑːr/",
+    "pos": "noun",
+    "meaningVi": "xe ô tô",
+    "meaningEn": "a road vehicle with four wheels and an engine",
+    "example": "He drives his car to work.",
+    "cefr": "A1",
+    "topic": "travel",
+    "collocations": [
+      "drive a car",
+      "by car",
+      "car park"
+    ]
+  },
+  {
+    "word": "bus",
+    "ipa": "/bʌs/",
+    "pos": "noun",
+    "meaningVi": "xe buýt",
+    "meaningEn": "a large vehicle that carries many passengers",
+    "example": "I take the bus to school.",
+    "cefr": "A1",
+    "topic": "travel",
+    "collocations": [
+      "take the bus",
+      "bus stop",
+      "catch a bus"
+    ]
+  },
+  {
+    "word": "train",
+    "ipa": "/treɪn/",
+    "pos": "noun",
+    "meaningVi": "tàu hỏa",
+    "meaningEn": "a line of carriages pulled along a railway",
+    "example": "The night train to Hue leaves at nine.",
+    "cefr": "A1",
+    "topic": "travel",
+    "collocations": [
+      "take the train",
+      "train station",
+      "by train"
+    ]
+  },
+  {
+    "word": "go",
+    "ipa": "/ɡoʊ/",
+    "pos": "verb",
+    "meaningVi": "đi",
+    "meaningEn": "to move or travel to a place",
+    "example": "We go to the beach every summer.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "go home",
+      "go out",
+      "go shopping"
+    ]
+  },
+  {
+    "word": "come",
+    "ipa": "/kʌm/",
+    "pos": "verb",
+    "meaningVi": "đến, tới",
+    "meaningEn": "to move towards the speaker or a place",
+    "example": "Can you come to my party on Saturday?",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "come back",
+      "come home",
+      "come in"
+    ]
+  },
+  {
+    "word": "see",
+    "ipa": "/siː/",
+    "pos": "verb",
+    "meaningVi": "nhìn thấy",
+    "meaningEn": "to notice something with your eyes",
+    "example": "I can see the mountains from here.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "see a film",
+      "see you later",
+      "see a doctor"
+    ]
+  },
+  {
+    "word": "look",
+    "ipa": "/lʊk/",
+    "pos": "verb",
+    "meaningVi": "nhìn",
+    "meaningEn": "to turn your eyes towards something",
+    "example": "Look at this photo of my dog!",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "look at",
+      "look for",
+      "look after"
+    ]
+  },
+  {
+    "word": "want",
+    "ipa": "/wɑːnt/",
+    "pos": "verb",
+    "meaningVi": "muốn",
+    "meaningEn": "to wish to have or do something",
+    "example": "I want a quiet room, please.",
+    "cefr": "A1",
+    "topic": "emotions",
+    "collocations": [
+      "want to go",
+      "really want"
+    ]
+  },
+  {
+    "word": "like",
+    "ipa": "/laɪk/",
+    "pos": "verb",
+    "meaningVi": "thích",
+    "meaningEn": "to enjoy something or think it is nice",
+    "example": "I like walking in the park.",
+    "cefr": "A1",
+    "topic": "emotions",
+    "collocations": [
+      "really like",
+      "like doing something"
+    ]
+  },
+  {
+    "word": "love",
+    "ipa": "/lʌv/",
+    "pos": "verb",
+    "meaningVi": "yêu, rất thích",
+    "meaningEn": "to like someone or something very much",
+    "example": "They love their grandparents very much.",
+    "cefr": "A1",
+    "topic": "emotions",
+    "collocations": [
+      "fall in love",
+      "love doing something"
+    ]
+  },
+  {
+    "word": "have",
+    "ipa": "/hæv/",
+    "pos": "verb",
+    "meaningVi": "có",
+    "meaningEn": "to own or hold something",
+    "example": "I have two sisters and one brother.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "have breakfast",
+      "have a good time",
+      "have a shower"
+    ]
+  },
+  {
+    "word": "make",
+    "ipa": "/meɪk/",
+    "pos": "verb",
+    "meaningVi": "làm, tạo ra",
+    "meaningEn": "to produce or create something",
+    "example": "Can you make a cake for her birthday?",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "make a mistake",
+      "make friends",
+      "make dinner"
+    ]
+  },
+  {
+    "word": "take",
+    "ipa": "/teɪk/",
+    "pos": "verb",
+    "meaningVi": "lấy, mang theo, cầm",
+    "meaningEn": "to carry or move something with you",
+    "example": "Take an umbrella. It might rain.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "take a photo",
+      "take a bus",
+      "take a break"
+    ]
+  },
+  {
+    "word": "give",
+    "ipa": "/ɡɪv/",
+    "pos": "verb",
+    "meaningVi": "cho, đưa",
+    "meaningEn": "to put something in someone's hand or let them have it",
+    "example": "My boss gave me a small present.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "give a gift",
+      "give advice",
+      "give back"
+    ]
+  },
+  {
+    "word": "buy",
+    "ipa": "/baɪ/",
+    "pos": "verb",
+    "meaningVi": "mua",
+    "meaningEn": "to get something by paying money for it",
+    "example": "I need to buy a new pair of shoes.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "buy food",
+      "buy online",
+      "buy a ticket"
+    ]
+  },
+  {
+    "word": "work",
+    "ipa": "/wɜːrk/",
+    "pos": "verb",
+    "meaningVi": "làm việc",
+    "meaningEn": "to do a job, usually for money",
+    "example": "She works in a bank in the city centre.",
+    "cefr": "A1",
+    "topic": "work",
+    "collocations": [
+      "work hard",
+      "work from home",
+      "work late"
+    ]
+  },
+  {
+    "word": "job",
+    "ipa": "/dʒɑːb/",
+    "pos": "noun",
+    "meaningVi": "công việc",
+    "meaningEn": "the regular work you do to earn money",
+    "example": "He has a new job at a hotel.",
+    "cefr": "A1",
+    "topic": "work",
+    "collocations": [
+      "get a job",
+      "full-time job",
+      "good job"
+    ]
+  },
+  {
+    "word": "sleep",
+    "ipa": "/sliːp/",
+    "pos": "verb",
+    "meaningVi": "ngủ",
+    "meaningEn": "to rest with your eyes closed",
+    "example": "I sleep for seven hours a night.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "sleep well",
+      "go to sleep",
+      "sleep late"
+    ]
+  },
+  {
+    "word": "walk",
+    "ipa": "/wɔːk/",
+    "pos": "verb",
+    "meaningVi": "đi bộ",
+    "meaningEn": "to move on your feet at a normal speed",
+    "example": "We walk to the market every morning.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "go for a walk",
+      "walk home",
+      "walk the dog"
+    ]
+  },
+  {
+    "word": "run",
+    "ipa": "/rʌn/",
+    "pos": "verb",
+    "meaningVi": "chạy",
+    "meaningEn": "to move very quickly on your legs",
+    "example": "I run in the park before work.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "run fast",
+      "go running",
+      "run away"
+    ]
+  },
+  {
+    "word": "open",
+    "ipa": "/ˈoʊpən/",
+    "pos": "verb",
+    "meaningVi": "mở",
+    "meaningEn": "to move something so it is no longer closed",
+    "example": "Please open your books at page ten.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "open the door",
+      "open a window",
+      "open an account"
+    ]
+  },
+  {
+    "word": "close",
+    "ipa": "/kloʊz/",
+    "pos": "verb",
+    "meaningVi": "đóng",
+    "meaningEn": "to shut something",
+    "example": "Close your eyes and relax.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "close the door",
+      "close a shop"
+    ]
+  },
+  {
+    "word": "help",
+    "ipa": "/help/",
+    "pos": "verb",
+    "meaningVi": "giúp đỡ",
+    "meaningEn": "to make it easier for someone to do something",
+    "example": "Can you help me with my homework?",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "help someone",
+      "ask for help"
+    ]
+  },
+  {
+    "word": "ask",
+    "ipa": "/æsk/",
+    "pos": "verb",
+    "meaningVi": "hỏi",
+    "meaningEn": "to say something to get an answer",
+    "example": "Can I ask you a question?",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "ask a question",
+      "ask for help",
+      "ask someone out"
+    ]
+  },
+  {
+    "word": "answer",
+    "ipa": "/ˈænsər/",
+    "pos": "verb",
+    "meaningVi": "trả lời",
+    "meaningEn": "to say or write something back to a question",
+    "example": "Please answer the phone, I'm busy.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "answer a question",
+      "answer the phone"
+    ]
+  },
+  {
+    "word": "live",
+    "ipa": "/lɪv/",
+    "pos": "verb",
+    "meaningVi": "sống",
+    "meaningEn": "to have your home in a place",
+    "example": "I live in a small apartment near the river.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "live alone",
+      "live with",
+      "live in a city"
+    ]
+  },
+  {
+    "word": "know",
+    "ipa": "/noʊ/",
+    "pos": "verb",
+    "meaningVi": "biết",
+    "meaningEn": "to have information in your mind",
+    "example": "Do you know the way to the station?",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "know the answer",
+      "get to know",
+      "know well"
+    ]
+  },
+  {
+    "word": "think",
+    "ipa": "/θɪŋk/",
+    "pos": "verb",
+    "meaningVi": "nghĩ",
+    "meaningEn": "to have an idea or opinion in your mind",
+    "example": "I think the film starts at seven.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "think about",
+      "think so",
+      "think carefully"
+    ]
+  },
+  {
+    "word": "play",
+    "ipa": "/pleɪ/",
+    "pos": "verb",
+    "meaningVi": "chơi",
+    "meaningEn": "to do a game or sport for fun",
+    "example": "The children play football after school.",
+    "cefr": "A1",
+    "topic": "actions",
+    "collocations": [
+      "play games",
+      "play the guitar",
+      "play sports"
+    ]
+  },
+  {
+    "word": "day",
+    "ipa": "/deɪ/",
+    "pos": "noun",
+    "meaningVi": "ngày",
+    "meaningEn": "a period of 24 hours",
+    "example": "Have a nice day!",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "every day",
+      "all day",
+      "the next day"
+    ]
+  },
+  {
+    "word": "night",
+    "ipa": "/naɪt/",
+    "pos": "noun",
+    "meaningVi": "đêm, buổi tối",
+    "meaningEn": "the time when it is dark",
+    "example": "The city is beautiful at night.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "at night",
+      "last night",
+      "good night"
+    ]
+  },
+  {
+    "word": "morning",
+    "ipa": "/ˈmɔːrnɪŋ/",
+    "pos": "noun",
+    "meaningVi": "buổi sáng",
+    "meaningEn": "the early part of the day",
+    "example": "I drink coffee every morning.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "in the morning",
+      "good morning",
+      "this morning"
+    ]
+  },
+  {
+    "word": "week",
+    "ipa": "/wiːk/",
+    "pos": "noun",
+    "meaningVi": "tuần",
+    "meaningEn": "a period of seven days",
+    "example": "I have English lessons three times a week.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "next week",
+      "last week",
+      "this week"
+    ]
+  },
+  {
+    "word": "year",
+    "ipa": "/jɪr/",
+    "pos": "noun",
+    "meaningVi": "năm",
+    "meaningEn": "a period of twelve months",
+    "example": "She is twenty-five years old.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "last year",
+      "every year",
+      "new year"
+    ]
+  },
+  {
+    "word": "time",
+    "ipa": "/taɪm/",
+    "pos": "noun",
+    "meaningVi": "thời gian, lúc",
+    "meaningEn": "the thing measured in minutes and hours",
+    "example": "What time is it now?",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "on time",
+      "free time",
+      "have time"
+    ]
+  },
+  {
+    "word": "today",
+    "ipa": "/təˈdeɪ/",
+    "pos": "adverb",
+    "meaningVi": "hôm nay",
+    "meaningEn": "on this day",
+    "example": "I am very busy today.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "later today",
+      "today's news"
+    ]
+  },
+  {
+    "word": "tomorrow",
+    "ipa": "/təˈmɑːroʊ/",
+    "pos": "adverb",
+    "meaningVi": "ngày mai",
+    "meaningEn": "on the day after today",
+    "example": "See you tomorrow at the office.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "see you tomorrow",
+      "tomorrow morning"
+    ]
+  },
+  {
+    "word": "yesterday",
+    "ipa": "/ˈjestərdeɪ/",
+    "pos": "adverb",
+    "meaningVi": "hôm qua",
+    "meaningEn": "on the day before today",
+    "example": "It rained all day yesterday.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "yesterday morning",
+      "yesterday afternoon"
+    ]
+  },
+  {
+    "word": "big",
+    "ipa": "/bɪɡ/",
+    "pos": "adjective",
+    "meaningVi": "to, lớn",
+    "meaningEn": "large in size",
+    "example": "They live in a big house with a garden.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "very big",
+      "big city",
+      "big problem"
+    ]
+  },
+  {
+    "word": "small",
+    "ipa": "/smɔːl/",
+    "pos": "adjective",
+    "meaningVi": "nhỏ, bé",
+    "meaningEn": "little in size",
+    "example": "I want a small coffee, please.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "small room",
+      "very small"
+    ]
+  },
+  {
+    "word": "good",
+    "ipa": "/ɡʊd/",
+    "pos": "adjective",
+    "meaningVi": "tốt, hay, giỏi",
+    "meaningEn": "of high quality; pleasant",
+    "example": "This is a really good book.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "good idea",
+      "good at",
+      "good news"
+    ]
+  },
+  {
+    "word": "bad",
+    "ipa": "/bæd/",
+    "pos": "adjective",
+    "meaningVi": "xấu, tệ",
+    "meaningEn": "not good; unpleasant",
+    "example": "The traffic is bad this morning.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "bad news",
+      "bad weather",
+      "not bad"
+    ]
+  },
+  {
+    "word": "new",
+    "ipa": "/nuː/",
+    "pos": "adjective",
+    "meaningVi": "mới",
+    "meaningEn": "recently made or bought",
+    "example": "I like your new bag!",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "brand new",
+      "new job",
+      "new friend"
+    ]
+  },
+  {
+    "word": "old",
+    "ipa": "/oʊld/",
+    "pos": "adjective",
+    "meaningVi": "cũ, già",
+    "meaningEn": "having lived or existed for a long time",
+    "example": "My grandfather is old but very active.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "old friend",
+      "years old",
+      "old house"
+    ]
+  },
+  {
+    "word": "hot",
+    "ipa": "/hɑːt/",
+    "pos": "adjective",
+    "meaningVi": "nóng",
+    "meaningEn": "having a high temperature",
+    "example": "It is very hot in Saigon in April.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "hot weather",
+      "hot water",
+      "very hot"
+    ]
+  },
+  {
+    "word": "cold",
+    "ipa": "/koʊld/",
+    "pos": "adjective",
+    "meaningVi": "lạnh",
+    "meaningEn": "having a low temperature",
+    "example": "The water in the lake is cold.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "cold drink",
+      "feel cold",
+      "catch a cold"
+    ]
+  },
+  {
+    "word": "happy",
+    "ipa": "/ˈhæpi/",
+    "pos": "adjective",
+    "meaningVi": "vui, hạnh phúc",
+    "meaningEn": "feeling pleased and glad",
+    "example": "I am happy to see you again.",
+    "cefr": "A1",
+    "topic": "emotions",
+    "collocations": [
+      "feel happy",
+      "happy birthday",
+      "happy with"
+    ]
+  },
+  {
+    "word": "sad",
+    "ipa": "/sæd/",
+    "pos": "adjective",
+    "meaningVi": "buồn",
+    "meaningEn": "feeling unhappy",
+    "example": "She was sad when her friend moved away.",
+    "cefr": "A1",
+    "topic": "emotions",
+    "collocations": [
+      "feel sad",
+      "sad story"
+    ]
+  },
+  {
+    "word": "tired",
+    "ipa": "/taɪərd/",
+    "pos": "adjective",
+    "meaningVi": "mệt",
+    "meaningEn": "needing rest or sleep",
+    "example": "I'm tired after a long day at work.",
+    "cefr": "A1",
+    "topic": "health",
+    "collocations": [
+      "feel tired",
+      "very tired",
+      "tired of"
+    ]
+  },
+  {
+    "word": "sick",
+    "ipa": "/sɪk/",
+    "pos": "adjective",
+    "meaningVi": "ốm, bệnh",
+    "meaningEn": "not well; ill",
+    "example": "He is sick, so he is staying at home today.",
+    "cefr": "A1",
+    "topic": "health",
+    "collocations": [
+      "feel sick",
+      "get sick",
+      "sick leave"
+    ]
+  },
+  {
+    "word": "doctor",
+    "ipa": "/ˈdɑːktər/",
+    "pos": "noun",
+    "meaningVi": "bác sĩ",
+    "meaningEn": "a person whose job is to treat ill people",
+    "example": "You should see a doctor about that cough.",
+    "cefr": "A1",
+    "topic": "health",
+    "collocations": [
+      "see a doctor",
+      "go to the doctor"
+    ]
+  },
+  {
+    "word": "hospital",
+    "ipa": "/ˈhɑːspɪtəl/",
+    "pos": "noun",
+    "meaningVi": "bệnh viện",
+    "meaningEn": "a place where ill or injured people are treated",
+    "example": "My aunt works as a nurse in a hospital.",
+    "cefr": "A1",
+    "topic": "health",
+    "collocations": [
+      "in hospital",
+      "go to hospital"
+    ]
+  },
+  {
+    "word": "head",
+    "ipa": "/hed/",
+    "pos": "noun",
+    "meaningVi": "cái đầu",
+    "meaningEn": "the top part of your body, with your eyes and mouth",
+    "example": "My head hurts after looking at screens all day.",
+    "cefr": "A1",
+    "topic": "health",
+    "collocations": [
+      "shake your head",
+      "head hurts"
+    ]
+  },
+  {
+    "word": "hand",
+    "ipa": "/hænd/",
+    "pos": "noun",
+    "meaningVi": "bàn tay",
+    "meaningEn": "the part at the end of your arm",
+    "example": "Wash your hands before you eat.",
+    "cefr": "A1",
+    "topic": "health",
+    "collocations": [
+      "wash your hands",
+      "shake hands",
+      "hold hands"
+    ]
+  },
+  {
+    "word": "eye",
+    "ipa": "/aɪ/",
+    "pos": "noun",
+    "meaningVi": "mắt",
+    "meaningEn": "the part of your body you see with",
+    "example": "She has big brown eyes.",
+    "cefr": "A1",
+    "topic": "health",
+    "collocations": [
+      "close your eyes",
+      "brown eyes"
+    ]
+  },
+  {
+    "word": "weather",
+    "ipa": "/ˈweðər/",
+    "pos": "noun",
+    "meaningVi": "thời tiết",
+    "meaningEn": "how hot, cold, sunny or rainy it is",
+    "example": "The weather is lovely today.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "good weather",
+      "bad weather",
+      "weather forecast"
+    ]
+  },
+  {
+    "word": "rain",
+    "ipa": "/reɪn/",
+    "pos": "noun",
+    "meaningVi": "mưa",
+    "meaningEn": "water that falls from clouds",
+    "example": "We stayed inside because of the rain.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "heavy rain",
+      "in the rain"
+    ]
+  },
+  {
+    "word": "sun",
+    "ipa": "/sʌn/",
+    "pos": "noun",
+    "meaningVi": "mặt trời",
+    "meaningEn": "the bright star that gives us light and heat",
+    "example": "The sun rises at half past five in summer.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "in the sun",
+      "the sun rises",
+      "sun cream"
+    ]
+  },
+  {
+    "word": "dog",
+    "ipa": "/dɔːɡ/",
+    "pos": "noun",
+    "meaningVi": "con chó",
+    "meaningEn": "an animal often kept as a pet",
+    "example": "Our dog sleeps next to the door.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "walk the dog",
+      "pet dog"
+    ]
+  },
+  {
+    "word": "cat",
+    "ipa": "/kæt/",
+    "pos": "noun",
+    "meaningVi": "con mèo",
+    "meaningEn": "a small animal with soft fur, often kept as a pet",
+    "example": "The cat is sitting on my keyboard again.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "pet cat",
+      "feed the cat"
+    ]
+  },
+  {
+    "word": "tree",
+    "ipa": "/triː/",
+    "pos": "noun",
+    "meaningVi": "cái cây",
+    "meaningEn": "a tall plant with a wooden trunk and branches",
+    "example": "There is a big tree in front of our school.",
+    "cefr": "A1",
+    "topic": "nature",
+    "collocations": [
+      "plant a tree",
+      "under a tree"
+    ]
+  },
+  {
+    "word": "music",
+    "ipa": "/ˈmjuːzɪk/",
+    "pos": "noun",
+    "meaningVi": "âm nhạc",
+    "meaningEn": "sounds arranged in a pleasant way",
+    "example": "I listen to music on the way to work.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "listen to music",
+      "pop music",
+      "play music"
+    ]
+  },
+  {
+    "word": "always",
+    "ipa": "/ˈɔːlweɪz/",
+    "pos": "adverb",
+    "meaningVi": "luôn luôn",
+    "meaningEn": "at all times; every time",
+    "example": "She always arrives early.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "almost always",
+      "as always"
+    ]
+  },
+  {
+    "word": "never",
+    "ipa": "/ˈnevər/",
+    "pos": "adverb",
+    "meaningVi": "không bao giờ",
+    "meaningEn": "not at any time",
+    "example": "I never drink coffee after six in the evening.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "never again",
+      "almost never"
+    ]
+  },
+  {
+    "word": "often",
+    "ipa": "/ˈɔːfən/",
+    "pos": "adverb",
+    "meaningVi": "thường, hay",
+    "meaningEn": "many times",
+    "example": "We often eat out on Fridays.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "very often",
+      "how often"
+    ]
+  },
+  {
+    "word": "very",
+    "ipa": "/ˈveri/",
+    "pos": "adverb",
+    "meaningVi": "rất",
+    "meaningEn": "to a great degree",
+    "example": "The test was very easy.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "very much",
+      "very good",
+      "very well"
+    ]
+  },
+  {
+    "word": "and",
+    "ipa": "/ænd/",
+    "pos": "conjunction",
+    "meaningVi": "và",
+    "meaningEn": "used to join two words or ideas",
+    "example": "I have a cat and a dog.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": []
+  },
+  {
+    "word": "but",
+    "ipa": "/bʌt/",
+    "pos": "conjunction",
+    "meaningVi": "nhưng",
+    "meaningEn": "used to show a contrast",
+    "example": "The room is small but clean.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": []
+  },
+  {
+    "word": "because",
+    "ipa": "/bɪˈkɔːz/",
+    "pos": "conjunction",
+    "meaningVi": "bởi vì",
+    "meaningEn": "for the reason that",
+    "example": "I'm late because the bus was slow.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "because of"
+    ]
+  },
+  {
+    "word": "in",
+    "ipa": "/ɪn/",
+    "pos": "preposition",
+    "meaningVi": "trong, ở trong",
+    "meaningEn": "inside a place or thing",
+    "example": "The keys are in my bag.",
+    "cefr": "A1",
+    "topic": "places",
+    "collocations": [
+      "in the morning",
+      "in the room"
+    ]
+  },
+  {
+    "word": "with",
+    "ipa": "/wɪð/",
+    "pos": "preposition",
+    "meaningVi": "với, cùng với",
+    "meaningEn": "together with someone or something",
+    "example": "I live with my parents.",
+    "cefr": "A1",
+    "topic": "people",
+    "collocations": [
+      "with friends",
+      "coffee with milk"
+    ]
+  },
+  {
+    "word": "easy",
+    "ipa": "/ˈiːzi/",
+    "pos": "adjective",
+    "meaningVi": "dễ",
+    "meaningEn": "not difficult",
+    "example": "This exercise is easy.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "easy to use",
+      "quite easy"
+    ]
+  },
+  {
+    "word": "difficult",
+    "ipa": "/ˈdɪfɪkəlt/",
+    "pos": "adjective",
+    "meaningVi": "khó",
+    "meaningEn": "not easy; needing effort",
+    "example": "English spelling can be difficult.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "difficult question",
+      "find it difficult"
+    ]
+  },
+  {
+    "word": "cheap",
+    "ipa": "/tʃiːp/",
+    "pos": "adjective",
+    "meaningVi": "rẻ",
+    "meaningEn": "not costing much money",
+    "example": "Street food here is cheap and delicious.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "cheap flight",
+      "very cheap"
+    ]
+  },
+  {
+    "word": "expensive",
+    "ipa": "/ɪkˈspensɪv/",
+    "pos": "adjective",
+    "meaningVi": "đắt",
+    "meaningEn": "costing a lot of money",
+    "example": "That hotel is too expensive for us.",
+    "cefr": "A1",
+    "topic": "daily-life",
+    "collocations": [
+      "too expensive",
+      "expensive restaurant"
+    ]
+  },
+  {
+    "word": "this",
+    "ipa": "/ðɪs/",
+    "pos": "determiner",
+    "meaningVi": "này, cái này",
+    "meaningEn": "used for a person or thing that is near you",
+    "example": "This bag is mine.",
+    "cefr": "A1",
+    "topic": "describing",
+    "collocations": [
+      "this morning",
+      "this week"
+    ]
+  },
+  {
+    "word": "every",
+    "ipa": "/ˈevri/",
+    "pos": "determiner",
+    "meaningVi": "mỗi, mọi",
+    "meaningEn": "each one of a group",
+    "example": "I check my email every hour.",
+    "cefr": "A1",
+    "topic": "time",
+    "collocations": [
+      "every day",
+      "every week",
+      "every time"
+    ]
+  },
+  {
+    "word": "holiday",
+    "ipa": "/ˈhɑːlədeɪ/",
+    "pos": "noun",
+    "meaningVi": "kỳ nghỉ",
+    "meaningEn": "a time when you do not go to work or school and often travel",
+    "example": "We spent our holiday in Phu Quoc.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "summer holiday",
+      "go on holiday",
+      "on holiday"
+    ]
+  },
+  {
+    "word": "ticket",
+    "ipa": "/ˈtɪkɪt/",
+    "pos": "noun",
+    "meaningVi": "vé",
+    "meaningEn": "a piece of paper or digital pass that lets you travel or enter",
+    "example": "I booked two train tickets online.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "buy a ticket",
+      "return ticket",
+      "ticket office"
+    ]
+  },
+  {
+    "word": "airport",
+    "ipa": "/ˈerpɔːrt/",
+    "pos": "noun",
+    "meaningVi": "sân bay",
+    "meaningEn": "a place where planes take off and land",
+    "example": "We need to be at the airport two hours early.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "at the airport",
+      "airport bus"
+    ]
+  },
+  {
+    "word": "passport",
+    "ipa": "/ˈpæspɔːrt/",
+    "pos": "noun",
+    "meaningVi": "hộ chiếu",
+    "meaningEn": "an official document you need to travel abroad",
+    "example": "Don't forget your passport!",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "passport control",
+      "valid passport"
+    ]
+  },
+  {
+    "word": "luggage",
+    "ipa": "/ˈlʌɡɪdʒ/",
+    "pos": "noun",
+    "meaningVi": "hành lý",
+    "meaningEn": "the bags you take on a journey",
+    "example": "My luggage didn't arrive with the plane.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "carry luggage",
+      "hand luggage",
+      "lost luggage"
+    ]
+  },
+  {
+    "word": "journey",
+    "ipa": "/ˈdʒɜːrni/",
+    "pos": "noun",
+    "meaningVi": "chuyến đi, hành trình",
+    "meaningEn": "travelling from one place to another",
+    "example": "The journey from Hanoi to Sapa takes six hours.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "long journey",
+      "bus journey"
+    ]
+  },
+  {
+    "word": "hotel",
+    "ipa": "/hoʊˈtel/",
+    "pos": "noun",
+    "meaningVi": "khách sạn",
+    "meaningEn": "a building where you pay to stay the night",
+    "example": "Our hotel is right next to the beach.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "stay at a hotel",
+      "book a hotel",
+      "hotel room"
+    ]
+  },
+  {
+    "word": "map",
+    "ipa": "/mæp/",
+    "pos": "noun",
+    "meaningVi": "bản đồ",
+    "meaningEn": "a drawing of an area showing roads and places",
+    "example": "I used a map on my phone to find the museum.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "look at a map",
+      "city map"
+    ]
+  },
+  {
+    "word": "abroad",
+    "ipa": "/əˈbrɔːd/",
+    "pos": "adverb",
+    "meaningVi": "ở nước ngoài, ra nước ngoài",
+    "meaningEn": "in or to a foreign country",
+    "example": "She wants to study abroad next year.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "go abroad",
+      "study abroad",
+      "live abroad"
+    ]
+  },
+  {
+    "word": "arrive",
+    "ipa": "/əˈraɪv/",
+    "pos": "verb",
+    "meaningVi": "đến nơi",
+    "meaningEn": "to reach a place",
+    "example": "The plane arrives at ten in the evening.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "arrive at",
+      "arrive in",
+      "arrive late"
+    ]
+  },
+  {
+    "word": "leave",
+    "ipa": "/liːv/",
+    "pos": "verb",
+    "meaningVi": "rời đi",
+    "meaningEn": "to go away from a place",
+    "example": "I leave the office at half past five.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "leave home",
+      "leave early",
+      "leave a message"
+    ]
+  },
+  {
+    "word": "visit",
+    "ipa": "/ˈvɪzɪt/",
+    "pos": "verb",
+    "meaningVi": "thăm, tham quan",
+    "meaningEn": "to go to see a person or a place",
+    "example": "We visit our grandparents every Tet.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "visit a museum",
+      "visit friends"
+    ]
+  },
+  {
+    "word": "travel",
+    "ipa": "/ˈtrævəl/",
+    "pos": "verb",
+    "meaningVi": "đi du lịch, di chuyển",
+    "meaningEn": "to go from one place to another, often far",
+    "example": "I love to travel by train.",
+    "cefr": "A2",
+    "topic": "travel",
+    "collocations": [
+      "travel abroad",
+      "travel by plane",
+      "travel light"
+    ]
+  },
+  {
+    "word": "museum",
+    "ipa": "/mjuˈziːəm/",
+    "pos": "noun",
+    "meaningVi": "bảo tàng",
+    "meaningEn": "a building where you can see old or interesting objects",
+    "example": "The history museum is free on Sundays.",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "art museum",
+      "visit a museum"
+    ]
+  },
+  {
+    "word": "bank",
+    "ipa": "/bæŋk/",
+    "pos": "noun",
+    "meaningVi": "ngân hàng",
+    "meaningEn": "a business that keeps and lends money",
+    "example": "I need to go to the bank before lunch.",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "bank account",
+      "go to the bank"
+    ]
+  },
+  {
+    "word": "library",
+    "ipa": "/ˈlaɪbreri/",
+    "pos": "noun",
+    "meaningVi": "thư viện",
+    "meaningEn": "a place where you can borrow books",
+    "example": "The library is quiet in the morning.",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "public library",
+      "library card"
+    ]
+  },
+  {
+    "word": "village",
+    "ipa": "/ˈvɪlɪdʒ/",
+    "pos": "noun",
+    "meaningVi": "làng",
+    "meaningEn": "a very small town in the countryside",
+    "example": "My father grew up in a village near the river.",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "small village",
+      "fishing village"
+    ]
+  },
+  {
+    "word": "countryside",
+    "ipa": "/ˈkʌntrisaɪd/",
+    "pos": "noun",
+    "meaningVi": "nông thôn, vùng quê",
+    "meaningEn": "land outside towns and cities",
+    "example": "We cycled through the countryside.",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "in the countryside",
+      "beautiful countryside"
+    ]
+  },
+  {
+    "word": "neighbour",
+    "ipa": "/ˈneɪbər/",
+    "pos": "noun",
+    "meaningVi": "hàng xóm",
+    "meaningEn": "a person who lives near you",
+    "example": "Our neighbour has a very noisy parrot.",
+    "cefr": "A2",
+    "topic": "people",
+    "collocations": [
+      "next-door neighbour",
+      "friendly neighbour"
+    ]
+  },
+  {
+    "word": "colleague",
+    "ipa": "/ˈkɑːliːɡ/",
+    "pos": "noun",
+    "meaningVi": "đồng nghiệp",
+    "meaningEn": "a person you work with",
+    "example": "My colleagues and I have lunch together.",
+    "cefr": "A2",
+    "topic": "work",
+    "collocations": [
+      "new colleague",
+      "work colleague"
+    ]
+  },
+  {
+    "word": "boss",
+    "ipa": "/bɔːs/",
+    "pos": "noun",
+    "meaningVi": "sếp",
+    "meaningEn": "the person in charge of you at work",
+    "example": "My boss lets us leave early on Fridays.",
+    "cefr": "A2",
+    "topic": "work",
+    "collocations": [
+      "new boss",
+      "ask your boss"
+    ]
+  },
+  {
+    "word": "office",
+    "ipa": "/ˈɔːfɪs/",
+    "pos": "noun",
+    "meaningVi": "văn phòng",
+    "meaningEn": "a room or building where people work at desks",
+    "example": "The office is on the fifth floor.",
+    "cefr": "A2",
+    "topic": "work",
+    "collocations": [
+      "in the office",
+      "office worker",
+      "head office"
+    ]
+  },
+  {
+    "word": "meeting",
+    "ipa": "/ˈmiːtɪŋ/",
+    "pos": "noun",
+    "meaningVi": "cuộc họp",
+    "meaningEn": "an event where people come together to discuss something",
+    "example": "We have a team meeting every Monday.",
+    "cefr": "A2",
+    "topic": "work",
+    "collocations": [
+      "have a meeting",
+      "attend a meeting",
+      "meeting room"
+    ]
+  },
+  {
+    "word": "salary",
+    "ipa": "/ˈsæləri/",
+    "pos": "noun",
+    "meaningVi": "lương",
+    "meaningEn": "money you get every month for your job",
+    "example": "She got a higher salary at her new company.",
+    "cefr": "A2",
+    "topic": "work",
+    "collocations": [
+      "high salary",
+      "monthly salary",
+      "earn a salary"
+    ]
+  },
+  {
+    "word": "company",
+    "ipa": "/ˈkʌmpəni/",
+    "pos": "noun",
+    "meaningVi": "công ty",
+    "meaningEn": "a business that sells goods or services",
+    "example": "He works for a software company.",
+    "cefr": "A2",
+    "topic": "business",
+    "collocations": [
+      "work for a company",
+      "big company",
+      "start a company"
+    ]
+  },
+  {
+    "word": "customer",
+    "ipa": "/ˈkʌstəmər/",
+    "pos": "noun",
+    "meaningVi": "khách hàng",
+    "meaningEn": "a person who buys something from a shop or business",
+    "example": "The customer asked for a refund.",
+    "cefr": "A2",
+    "topic": "business",
+    "collocations": [
+      "regular customer",
+      "customer service"
+    ]
+  },
+  {
+    "word": "earn",
+    "ipa": "/ɜːrn/",
+    "pos": "verb",
+    "meaningVi": "kiếm (tiền)",
+    "meaningEn": "to get money for work you do",
+    "example": "He earns extra money by teaching online.",
+    "cefr": "A2",
+    "topic": "work",
+    "collocations": [
+      "earn money",
+      "earn a living"
+    ]
+  },
+  {
+    "word": "email",
+    "ipa": "/ˈiːmeɪl/",
+    "pos": "noun",
+    "meaningVi": "thư điện tử, email",
+    "meaningEn": "a message sent from one computer or phone to another",
+    "example": "I'll send you an email with the details.",
+    "cefr": "A2",
+    "topic": "technology",
+    "collocations": [
+      "send an email",
+      "check emails",
+      "reply to an email"
+    ]
+  },
+  {
+    "word": "internet",
+    "ipa": "/ˈɪntərnet/",
+    "pos": "noun",
+    "meaningVi": "mạng internet",
+    "meaningEn": "the global network that connects computers",
+    "example": "The internet in this cafe is very fast.",
+    "cefr": "A2",
+    "topic": "technology",
+    "collocations": [
+      "on the internet",
+      "internet connection"
+    ]
+  },
+  {
+    "word": "website",
+    "ipa": "/ˈwebsaɪt/",
+    "pos": "noun",
+    "meaningVi": "trang web",
+    "meaningEn": "a set of pages on the internet",
+    "example": "You can buy tickets on the website.",
+    "cefr": "A2",
+    "topic": "technology",
+    "collocations": [
+      "visit a website",
+      "company website"
+    ]
+  },
+  {
+    "word": "download",
+    "ipa": "/ˌdaʊnˈloʊd/",
+    "pos": "verb",
+    "meaningVi": "tải xuống",
+    "meaningEn": "to copy files from the internet to your device",
+    "example": "Download the app to check your bus times.",
+    "cefr": "A2",
+    "topic": "technology",
+    "collocations": [
+      "download an app",
+      "download a file"
+    ]
+  },
+  {
+    "word": "message",
+    "ipa": "/ˈmesɪdʒ/",
+    "pos": "noun",
+    "meaningVi": "tin nhắn, lời nhắn",
+    "meaningEn": "a short piece of written or spoken information",
+    "example": "I got your message, thanks!",
+    "cefr": "A2",
+    "topic": "technology",
+    "collocations": [
+      "text message",
+      "leave a message",
+      "send a message"
+    ]
+  },
+  {
+    "word": "health",
+    "ipa": "/helθ/",
+    "pos": "noun",
+    "meaningVi": "sức khỏe",
+    "meaningEn": "the condition of your body and mind",
+    "example": "Walking every day is good for your health.",
+    "cefr": "A2",
+    "topic": "health",
+    "collocations": [
+      "good health",
+      "mental health",
+      "health care"
+    ]
+  },
+  {
+    "word": "exercise",
+    "ipa": "/ˈeksərsaɪz/",
+    "pos": "noun",
+    "meaningVi": "sự tập thể dục; bài tập",
+    "meaningEn": "physical activity to stay healthy",
+    "example": "Thirty minutes of exercise a day is enough.",
+    "cefr": "A2",
+    "topic": "health",
+    "collocations": [
+      "do exercise",
+      "regular exercise",
+      "light exercise"
+    ]
+  },
+  {
+    "word": "medicine",
+    "ipa": "/ˈmedɪsən/",
+    "pos": "noun",
+    "meaningVi": "thuốc",
+    "meaningEn": "something you take to get better when ill",
+    "example": "Take this medicine twice a day after meals.",
+    "cefr": "A2",
+    "topic": "health",
+    "collocations": [
+      "take medicine",
+      "cough medicine"
+    ]
+  },
+  {
+    "word": "headache",
+    "ipa": "/ˈhedeɪk/",
+    "pos": "noun",
+    "meaningVi": "chứng đau đầu",
+    "meaningEn": "a pain in your head",
+    "example": "I have a headache from the noise.",
+    "cefr": "A2",
+    "topic": "health",
+    "collocations": [
+      "have a headache",
+      "bad headache"
+    ]
+  },
+  {
+    "word": "hurt",
+    "ipa": "/hɜːrt/",
+    "pos": "verb",
+    "meaningVi": "làm đau, bị đau",
+    "meaningEn": "to feel pain or to cause pain",
+    "example": "My back hurts after sitting all day.",
+    "cefr": "A2",
+    "topic": "health",
+    "collocations": [
+      "hurt yourself",
+      "get hurt"
+    ]
+  },
+  {
+    "word": "healthy",
+    "ipa": "/ˈhelθi/",
+    "pos": "adjective",
+    "meaningVi": "khỏe mạnh, lành mạnh",
+    "meaningEn": "good for your body; not ill",
+    "example": "She eats a healthy breakfast every day.",
+    "cefr": "A2",
+    "topic": "health",
+    "collocations": [
+      "healthy food",
+      "stay healthy",
+      "healthy lifestyle"
+    ]
+  },
+  {
+    "word": "dangerous",
+    "ipa": "/ˈdeɪndʒərəs/",
+    "pos": "adjective",
+    "meaningVi": "nguy hiểm",
+    "meaningEn": "likely to hurt you",
+    "example": "It's dangerous to cross here without looking.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "very dangerous",
+      "dangerous road"
+    ]
+  },
+  {
+    "word": "important",
+    "ipa": "/ɪmˈpɔːrtənt/",
+    "pos": "adjective",
+    "meaningVi": "quan trọng",
+    "meaningEn": "having great value or effect",
+    "example": "Sleep is important for learning.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "very important",
+      "important to"
+    ]
+  },
+  {
+    "word": "interesting",
+    "ipa": "/ˈɪntrəstɪŋ/",
+    "pos": "adjective",
+    "meaningVi": "thú vị",
+    "meaningEn": "making you want to know more",
+    "example": "That was an interesting talk about space.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "really interesting",
+      "find something interesting"
+    ]
+  },
+  {
+    "word": "boring",
+    "ipa": "/ˈbɔːrɪŋ/",
+    "pos": "adjective",
+    "meaningVi": "nhàm chán",
+    "meaningEn": "not interesting",
+    "example": "The meeting was long and boring.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "so boring",
+      "boring job"
+    ]
+  },
+  {
+    "word": "famous",
+    "ipa": "/ˈfeɪməs/",
+    "pos": "adjective",
+    "meaningVi": "nổi tiếng",
+    "meaningEn": "known by many people",
+    "example": "Hoi An is famous for its lanterns.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "famous for",
+      "world famous"
+    ]
+  },
+  {
+    "word": "delicious",
+    "ipa": "/dɪˈlɪʃəs/",
+    "pos": "adjective",
+    "meaningVi": "ngon",
+    "meaningEn": "having a very good taste",
+    "example": "This pho is delicious!",
+    "cefr": "A2",
+    "topic": "food",
+    "collocations": [
+      "delicious food",
+      "taste delicious"
+    ]
+  },
+  {
+    "word": "quiet",
+    "ipa": "/ˈkwaɪət/",
+    "pos": "adjective",
+    "meaningVi": "yên tĩnh",
+    "meaningEn": "making little or no noise",
+    "example": "I need a quiet place to study.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "quiet place",
+      "keep quiet"
+    ]
+  },
+  {
+    "word": "noisy",
+    "ipa": "/ˈnɔɪzi/",
+    "pos": "adjective",
+    "meaningVi": "ồn ào",
+    "meaningEn": "making a lot of noise",
+    "example": "The street outside my window is very noisy.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "noisy neighbours",
+      "noisy room"
+    ]
+  },
+  {
+    "word": "crowded",
+    "ipa": "/ˈkraʊdɪd/",
+    "pos": "adjective",
+    "meaningVi": "đông đúc",
+    "meaningEn": "full of people",
+    "example": "The market is crowded at weekends.",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "crowded street",
+      "crowded bus"
+    ]
+  },
+  {
+    "word": "comfortable",
+    "ipa": "/ˈkʌmftərbəl/",
+    "pos": "adjective",
+    "meaningVi": "thoải mái, dễ chịu",
+    "meaningEn": "making you feel relaxed",
+    "example": "These shoes are very comfortable.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "feel comfortable",
+      "comfortable chair"
+    ]
+  },
+  {
+    "word": "different",
+    "ipa": "/ˈdɪfrənt/",
+    "pos": "adjective",
+    "meaningVi": "khác, khác nhau",
+    "meaningEn": "not the same",
+    "example": "My brother and I have very different hobbies.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "different from",
+      "completely different"
+    ]
+  },
+  {
+    "word": "favourite",
+    "ipa": "/ˈfeɪvərɪt/",
+    "pos": "adjective",
+    "meaningVi": "yêu thích nhất",
+    "meaningEn": "liked more than others",
+    "example": "What's your favourite food?",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "favourite song",
+      "favourite place"
+    ]
+  },
+  {
+    "word": "angry",
+    "ipa": "/ˈæŋɡri/",
+    "pos": "adjective",
+    "meaningVi": "tức giận",
+    "meaningEn": "having a strong feeling against someone or something",
+    "example": "He was angry because the train was late again.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "get angry",
+      "angry with"
+    ]
+  },
+  {
+    "word": "worried",
+    "ipa": "/ˈwɜːrid/",
+    "pos": "adjective",
+    "meaningVi": "lo lắng",
+    "meaningEn": "unhappy because you think something bad may happen",
+    "example": "I'm worried about my exam.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "worried about",
+      "look worried"
+    ]
+  },
+  {
+    "word": "excited",
+    "ipa": "/ɪkˈsaɪtɪd/",
+    "pos": "adjective",
+    "meaningVi": "hào hứng, phấn khích",
+    "meaningEn": "very happy about something that will happen",
+    "example": "The kids are excited about the trip.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "excited about",
+      "really excited"
+    ]
+  },
+  {
+    "word": "afraid",
+    "ipa": "/əˈfreɪd/",
+    "pos": "adjective",
+    "meaningVi": "sợ",
+    "meaningEn": "feeling fear",
+    "example": "My sister is afraid of dogs.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "afraid of",
+      "I'm afraid that"
+    ]
+  },
+  {
+    "word": "bored",
+    "ipa": "/bɔːrd/",
+    "pos": "adjective",
+    "meaningVi": "chán",
+    "meaningEn": "feeling tired because nothing interesting is happening",
+    "example": "I get bored on long flights.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "get bored",
+      "feel bored"
+    ]
+  },
+  {
+    "word": "surprised",
+    "ipa": "/sərˈpraɪzd/",
+    "pos": "adjective",
+    "meaningVi": "ngạc nhiên",
+    "meaningEn": "feeling that something unexpected has happened",
+    "example": "I was surprised to see him at the party.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "surprised by",
+      "pleasantly surprised"
+    ]
+  },
+  {
+    "word": "lonely",
+    "ipa": "/ˈloʊnli/",
+    "pos": "adjective",
+    "meaningVi": "cô đơn",
+    "meaningEn": "sad because you are alone",
+    "example": "She felt lonely in her first month abroad.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "feel lonely",
+      "lonely life"
+    ]
+  },
+  {
+    "word": "remember",
+    "ipa": "/rɪˈmembər/",
+    "pos": "verb",
+    "meaningVi": "nhớ",
+    "meaningEn": "to keep something in your mind",
+    "example": "Do you remember her phone number?",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "remember to",
+      "remember doing"
+    ]
+  },
+  {
+    "word": "forget",
+    "ipa": "/fərˈɡet/",
+    "pos": "verb",
+    "meaningVi": "quên",
+    "meaningEn": "to not remember",
+    "example": "I always forget my umbrella.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "forget to",
+      "forget about",
+      "never forget"
+    ]
+  },
+  {
+    "word": "try",
+    "ipa": "/traɪ/",
+    "pos": "verb",
+    "meaningVi": "cố gắng, thử",
+    "meaningEn": "to make an effort; to test something",
+    "example": "Try this cake. It's my mum's recipe.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "try hard",
+      "try on",
+      "try to"
+    ]
+  },
+  {
+    "word": "decide",
+    "ipa": "/dɪˈsaɪd/",
+    "pos": "verb",
+    "meaningVi": "quyết định",
+    "meaningEn": "to choose after thinking",
+    "example": "We decided to stay home because of the storm.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "decide to",
+      "decide on"
+    ]
+  },
+  {
+    "word": "explain",
+    "ipa": "/ɪkˈspleɪn/",
+    "pos": "verb",
+    "meaningVi": "giải thích",
+    "meaningEn": "to make something clear and easy to understand",
+    "example": "Can you explain this word to me?",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "explain why",
+      "explain clearly"
+    ]
+  },
+  {
+    "word": "understand",
+    "ipa": "/ˌʌndərˈstænd/",
+    "pos": "verb",
+    "meaningVi": "hiểu",
+    "meaningEn": "to know what something means",
+    "example": "I don't understand this question.",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "fully understand",
+      "understand why"
+    ]
+  },
+  {
+    "word": "practise",
+    "ipa": "/ˈpræktɪs/",
+    "pos": "verb",
+    "meaningVi": "luyện tập",
+    "meaningEn": "to do something again and again to improve",
+    "example": "I practise speaking English with my friend.",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "practise speaking",
+      "practise every day"
+    ]
+  },
+  {
+    "word": "exam",
+    "ipa": "/ɪɡˈzæm/",
+    "pos": "noun",
+    "meaningVi": "kỳ thi",
+    "meaningEn": "an official test of knowledge",
+    "example": "I have a maths exam on Thursday.",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "pass an exam",
+      "fail an exam",
+      "take an exam"
+    ]
+  },
+  {
+    "word": "homework",
+    "ipa": "/ˈhoʊmwɜːrk/",
+    "pos": "noun",
+    "meaningVi": "bài tập về nhà",
+    "meaningEn": "work that a teacher gives you to do at home",
+    "example": "I finish my homework before dinner.",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "do homework",
+      "finish homework"
+    ]
+  },
+  {
+    "word": "mistake",
+    "ipa": "/mɪˈsteɪk/",
+    "pos": "noun",
+    "meaningVi": "lỗi, sai lầm",
+    "meaningEn": "something that is wrong",
+    "example": "Everyone makes mistakes when learning a language.",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "make a mistake",
+      "big mistake",
+      "by mistake"
+    ]
+  },
+  {
+    "word": "subject",
+    "ipa": "/ˈsʌbdʒɪkt/",
+    "pos": "noun",
+    "meaningVi": "môn học, chủ đề",
+    "meaningEn": "an area of knowledge you study at school",
+    "example": "History is my favourite subject.",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "school subject",
+      "favourite subject"
+    ]
+  },
+  {
+    "word": "borrow",
+    "ipa": "/ˈbɑːroʊ/",
+    "pos": "verb",
+    "meaningVi": "mượn",
+    "meaningEn": "to take something and give it back later",
+    "example": "Can I borrow your pen for a minute?",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "borrow money",
+      "borrow a book"
+    ]
+  },
+  {
+    "word": "lend",
+    "ipa": "/lend/",
+    "pos": "verb",
+    "meaningVi": "cho mượn, cho vay",
+    "meaningEn": "to give something to someone for a short time",
+    "example": "Could you lend me your charger?",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "lend money",
+      "lend a hand"
+    ]
+  },
+  {
+    "word": "pay",
+    "ipa": "/peɪ/",
+    "pos": "verb",
+    "meaningVi": "trả tiền",
+    "meaningEn": "to give money for something",
+    "example": "Can I pay by card?",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "pay for",
+      "pay by card",
+      "pay the bill"
+    ]
+  },
+  {
+    "word": "spend",
+    "ipa": "/spend/",
+    "pos": "verb",
+    "meaningVi": "tiêu (tiền), dành (thời gian)",
+    "meaningEn": "to use money or time",
+    "example": "I spend too much money on coffee.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "spend money",
+      "spend time"
+    ]
+  },
+  {
+    "word": "save",
+    "ipa": "/seɪv/",
+    "pos": "verb",
+    "meaningVi": "tiết kiệm; cứu",
+    "meaningEn": "to keep money for later; to keep someone safe",
+    "example": "I'm saving money for a new laptop.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "save money",
+      "save time",
+      "save a file"
+    ]
+  },
+  {
+    "word": "change",
+    "ipa": "/tʃeɪndʒ/",
+    "pos": "verb",
+    "meaningVi": "thay đổi",
+    "meaningEn": "to become or make something different",
+    "example": "The city has changed a lot in ten years.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "change your mind",
+      "change clothes"
+    ]
+  },
+  {
+    "word": "wait",
+    "ipa": "/weɪt/",
+    "pos": "verb",
+    "meaningVi": "đợi, chờ",
+    "meaningEn": "to stay until something happens",
+    "example": "Please wait here for a moment.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "wait for",
+      "can't wait",
+      "wait a minute"
+    ]
+  },
+  {
+    "word": "carry",
+    "ipa": "/ˈkæri/",
+    "pos": "verb",
+    "meaningVi": "mang, xách",
+    "meaningEn": "to hold and take something somewhere",
+    "example": "Can you help me carry these boxes?",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "carry a bag",
+      "carry on"
+    ]
+  },
+  {
+    "word": "send",
+    "ipa": "/send/",
+    "pos": "verb",
+    "meaningVi": "gửi",
+    "meaningEn": "to make something go to another place or person",
+    "example": "I'll send you the photos tonight.",
+    "cefr": "A2",
+    "topic": "technology",
+    "collocations": [
+      "send a message",
+      "send an email"
+    ]
+  },
+  {
+    "word": "invite",
+    "ipa": "/ɪnˈvaɪt/",
+    "pos": "verb",
+    "meaningVi": "mời",
+    "meaningEn": "to ask someone to come to an event",
+    "example": "They invited us to their wedding.",
+    "cefr": "A2",
+    "topic": "people",
+    "collocations": [
+      "invite someone to",
+      "invite over"
+    ]
+  },
+  {
+    "word": "agree",
+    "ipa": "/əˈɡriː/",
+    "pos": "verb",
+    "meaningVi": "đồng ý",
+    "meaningEn": "to have the same opinion",
+    "example": "I agree with you about the plan.",
+    "cefr": "A2",
+    "topic": "people",
+    "collocations": [
+      "agree with",
+      "agree to",
+      "completely agree"
+    ]
+  },
+  {
+    "word": "hope",
+    "ipa": "/hoʊp/",
+    "pos": "verb",
+    "meaningVi": "hy vọng",
+    "meaningEn": "to want something to happen",
+    "example": "I hope you feel better soon.",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "hope so",
+      "hope to"
+    ]
+  },
+  {
+    "word": "enjoy",
+    "ipa": "/ɪnˈdʒɔɪ/",
+    "pos": "verb",
+    "meaningVi": "thích thú, tận hưởng",
+    "meaningEn": "to get pleasure from something",
+    "example": "Did you enjoy the concert?",
+    "cefr": "A2",
+    "topic": "emotions",
+    "collocations": [
+      "enjoy yourself",
+      "enjoy doing"
+    ]
+  },
+  {
+    "word": "cook",
+    "ipa": "/kʊk/",
+    "pos": "verb",
+    "meaningVi": "nấu ăn",
+    "meaningEn": "to make food hot and ready to eat",
+    "example": "My dad cooks dinner on Sundays.",
+    "cefr": "A2",
+    "topic": "food",
+    "collocations": [
+      "cook dinner",
+      "cook rice"
+    ]
+  },
+  {
+    "word": "vegetable",
+    "ipa": "/ˈvedʒtəbəl/",
+    "pos": "noun",
+    "meaningVi": "rau củ",
+    "meaningEn": "a plant or part of a plant eaten as food",
+    "example": "Try to eat more vegetables.",
+    "cefr": "A2",
+    "topic": "food",
+    "collocations": [
+      "fresh vegetables",
+      "green vegetables"
+    ]
+  },
+  {
+    "word": "meal",
+    "ipa": "/miːl/",
+    "pos": "noun",
+    "meaningVi": "bữa ăn",
+    "meaningEn": "food eaten at one time, such as lunch or dinner",
+    "example": "We had a lovely meal at the night market.",
+    "cefr": "A2",
+    "topic": "food",
+    "collocations": [
+      "have a meal",
+      "main meal",
+      "evening meal"
+    ]
+  },
+  {
+    "word": "menu",
+    "ipa": "/ˈmenjuː/",
+    "pos": "noun",
+    "meaningVi": "thực đơn",
+    "meaningEn": "a list of food you can order",
+    "example": "Could we see the menu, please?",
+    "cefr": "A2",
+    "topic": "food",
+    "collocations": [
+      "on the menu",
+      "look at the menu"
+    ]
+  },
+  {
+    "word": "bill",
+    "ipa": "/bɪl/",
+    "pos": "noun",
+    "meaningVi": "hóa đơn",
+    "meaningEn": "a paper showing how much you must pay",
+    "example": "Can we have the bill, please?",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "pay the bill",
+      "electricity bill"
+    ]
+  },
+  {
+    "word": "weekend",
+    "ipa": "/ˈwiːkend/",
+    "pos": "noun",
+    "meaningVi": "cuối tuần",
+    "meaningEn": "Saturday and Sunday",
+    "example": "What are you doing this weekend?",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": [
+      "at the weekend",
+      "this weekend"
+    ]
+  },
+  {
+    "word": "early",
+    "ipa": "/ˈɜːrli/",
+    "pos": "adjective",
+    "meaningVi": "sớm",
+    "meaningEn": "before the usual or expected time",
+    "example": "I take an early train to avoid the traffic.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": [
+      "early morning",
+      "early start"
+    ]
+  },
+  {
+    "word": "late",
+    "ipa": "/leɪt/",
+    "pos": "adjective",
+    "meaningVi": "muộn, trễ",
+    "meaningEn": "after the usual or expected time",
+    "example": "Sorry I'm late. The traffic was terrible.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": [
+      "be late",
+      "late at night",
+      "late for"
+    ]
+  },
+  {
+    "word": "soon",
+    "ipa": "/suːn/",
+    "pos": "adverb",
+    "meaningVi": "sớm, chẳng bao lâu nữa",
+    "meaningEn": "in a short time from now",
+    "example": "The bus will be here soon.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": [
+      "see you soon",
+      "as soon as"
+    ]
+  },
+  {
+    "word": "usually",
+    "ipa": "/ˈjuːʒuəli/",
+    "pos": "adverb",
+    "meaningVi": "thường thường",
+    "meaningEn": "in most cases",
+    "example": "I usually walk to work.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": []
+  },
+  {
+    "word": "sometimes",
+    "ipa": "/ˈsʌmtaɪmz/",
+    "pos": "adverb",
+    "meaningVi": "thỉnh thoảng",
+    "meaningEn": "on some occasions but not always",
+    "example": "Sometimes we order pizza on Friday night.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": []
+  },
+  {
+    "word": "already",
+    "ipa": "/ɔːlˈredi/",
+    "pos": "adverb",
+    "meaningVi": "đã, rồi",
+    "meaningEn": "before now or before expected",
+    "example": "I've already finished my lunch.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": []
+  },
+  {
+    "word": "together",
+    "ipa": "/təˈɡeðər/",
+    "pos": "adverb",
+    "meaningVi": "cùng nhau",
+    "meaningEn": "with each other",
+    "example": "Let's study together tonight.",
+    "cefr": "A2",
+    "topic": "people",
+    "collocations": [
+      "work together",
+      "live together",
+      "get together"
+    ]
+  },
+  {
+    "word": "maybe",
+    "ipa": "/ˈmeɪbi/",
+    "pos": "adverb",
+    "meaningVi": "có lẽ",
+    "meaningEn": "perhaps; possibly",
+    "example": "Maybe we can meet next week.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": []
+  },
+  {
+    "word": "before",
+    "ipa": "/bɪˈfɔːr/",
+    "pos": "preposition",
+    "meaningVi": "trước, trước khi",
+    "meaningEn": "earlier than",
+    "example": "Wash your hands before dinner.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": [
+      "before lunch",
+      "the day before"
+    ]
+  },
+  {
+    "word": "after",
+    "ipa": "/ˈæftər/",
+    "pos": "preposition",
+    "meaningVi": "sau, sau khi",
+    "meaningEn": "later than",
+    "example": "We went for a walk after dinner.",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": [
+      "after work",
+      "after that"
+    ]
+  },
+  {
+    "word": "between",
+    "ipa": "/bɪˈtwiːn/",
+    "pos": "preposition",
+    "meaningVi": "ở giữa",
+    "meaningEn": "in the space in the middle of two things",
+    "example": "The bank is between the cafe and the bookshop.",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "between A and B"
+    ]
+  },
+  {
+    "word": "near",
+    "ipa": "/nɪr/",
+    "pos": "preposition",
+    "meaningVi": "gần",
+    "meaningEn": "not far from",
+    "example": "Is there an ATM near here?",
+    "cefr": "A2",
+    "topic": "places",
+    "collocations": [
+      "near here",
+      "near the station"
+    ]
+  },
+  {
+    "word": "everyone",
+    "ipa": "/ˈevriwʌn/",
+    "pos": "pronoun",
+    "meaningVi": "mọi người",
+    "meaningEn": "every person",
+    "example": "Everyone in my class passed the test.",
+    "cefr": "A2",
+    "topic": "people",
+    "collocations": []
+  },
+  {
+    "word": "something",
+    "ipa": "/ˈsʌmθɪŋ/",
+    "pos": "pronoun",
+    "meaningVi": "cái gì đó, điều gì đó",
+    "meaningEn": "a thing that is not named",
+    "example": "I want to tell you something.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "something else",
+      "something new"
+    ]
+  },
+  {
+    "word": "if",
+    "ipa": "/ɪf/",
+    "pos": "conjunction",
+    "meaningVi": "nếu",
+    "meaningEn": "used to say that one thing depends on another",
+    "example": "If it rains, we'll stay inside.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "even if",
+      "as if"
+    ]
+  },
+  {
+    "word": "or",
+    "ipa": "/ɔːr/",
+    "pos": "conjunction",
+    "meaningVi": "hoặc, hay",
+    "meaningEn": "used to show another possibility",
+    "example": "Would you like tea or coffee?",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": []
+  },
+  {
+    "word": "clothes",
+    "ipa": "/kloʊz/",
+    "pos": "noun",
+    "meaningVi": "quần áo",
+    "meaningEn": "things you wear",
+    "example": "I need to wash my clothes.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "put on clothes",
+      "new clothes",
+      "change clothes"
+    ]
+  },
+  {
+    "word": "umbrella",
+    "ipa": "/ʌmˈbrelə/",
+    "pos": "noun",
+    "meaningVi": "cái ô, cái dù",
+    "meaningEn": "a thing you hold over your head in the rain",
+    "example": "Take an umbrella. It looks like rain.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "open an umbrella",
+      "take an umbrella"
+    ]
+  },
+  {
+    "word": "key",
+    "ipa": "/kiː/",
+    "pos": "noun",
+    "meaningVi": "chìa khóa",
+    "meaningEn": "a metal object for opening a lock",
+    "example": "I can't find my keys anywhere.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "car keys",
+      "lose your keys"
+    ]
+  },
+  {
+    "word": "river",
+    "ipa": "/ˈrɪvər/",
+    "pos": "noun",
+    "meaningVi": "sông",
+    "meaningEn": "a long natural flow of water",
+    "example": "The Mekong is a very long river.",
+    "cefr": "A2",
+    "topic": "nature",
+    "collocations": [
+      "along the river",
+      "river bank"
+    ]
+  },
+  {
+    "word": "mountain",
+    "ipa": "/ˈmaʊntən/",
+    "pos": "noun",
+    "meaningVi": "núi",
+    "meaningEn": "a very high hill",
+    "example": "We climbed the mountain early in the morning.",
+    "cefr": "A2",
+    "topic": "nature",
+    "collocations": [
+      "climb a mountain",
+      "mountain village"
+    ]
+  },
+  {
+    "word": "beach",
+    "ipa": "/biːtʃ/",
+    "pos": "noun",
+    "meaningVi": "bãi biển",
+    "meaningEn": "an area of sand by the sea",
+    "example": "Let's go to the beach this afternoon.",
+    "cefr": "A2",
+    "topic": "nature",
+    "collocations": [
+      "on the beach",
+      "go to the beach",
+      "sandy beach"
+    ]
+  },
+  {
+    "word": "island",
+    "ipa": "/ˈaɪlənd/",
+    "pos": "noun",
+    "meaningVi": "hòn đảo",
+    "meaningEn": "a piece of land with water all around it",
+    "example": "We took a boat to a small island.",
+    "cefr": "A2",
+    "topic": "nature",
+    "collocations": [
+      "tropical island",
+      "desert island"
+    ]
+  },
+  {
+    "word": "season",
+    "ipa": "/ˈsiːzən/",
+    "pos": "noun",
+    "meaningVi": "mùa",
+    "meaningEn": "one of the parts of the year, like summer",
+    "example": "The rainy season starts in May.",
+    "cefr": "A2",
+    "topic": "nature",
+    "collocations": [
+      "rainy season",
+      "dry season",
+      "holiday season"
+    ]
+  },
+  {
+    "word": "animal",
+    "ipa": "/ˈænɪməl/",
+    "pos": "noun",
+    "meaningVi": "động vật",
+    "meaningEn": "a living creature that is not a plant or a person",
+    "example": "Elephants are my favourite animals.",
+    "cefr": "A2",
+    "topic": "nature",
+    "collocations": [
+      "wild animal",
+      "farm animal"
+    ]
+  },
+  {
+    "word": "plant",
+    "ipa": "/plænt/",
+    "pos": "noun",
+    "meaningVi": "cây, thực vật",
+    "meaningEn": "a living thing that grows in soil",
+    "example": "I water my plants every morning.",
+    "cefr": "A2",
+    "topic": "nature",
+    "collocations": [
+      "water the plants",
+      "house plant"
+    ]
+  },
+  {
+    "word": "hobby",
+    "ipa": "/ˈhɑːbi/",
+    "pos": "noun",
+    "meaningVi": "sở thích",
+    "meaningEn": "something you enjoy doing in your free time",
+    "example": "My hobby is taking photos of street food.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "have a hobby",
+      "new hobby"
+    ]
+  },
+  {
+    "word": "party",
+    "ipa": "/ˈpɑːrti/",
+    "pos": "noun",
+    "meaningVi": "bữa tiệc",
+    "meaningEn": "a social event where people eat, drink and have fun",
+    "example": "We're having a party for her birthday.",
+    "cefr": "A2",
+    "topic": "people",
+    "collocations": [
+      "birthday party",
+      "have a party",
+      "go to a party"
+    ]
+  },
+  {
+    "word": "news",
+    "ipa": "/nuːz/",
+    "pos": "noun",
+    "meaningVi": "tin tức",
+    "meaningEn": "information about recent events",
+    "example": "Did you hear the news about the new metro line?",
+    "cefr": "A2",
+    "topic": "society",
+    "collocations": [
+      "good news",
+      "bad news",
+      "watch the news"
+    ]
+  },
+  {
+    "word": "problem",
+    "ipa": "/ˈprɑːbləm/",
+    "pos": "noun",
+    "meaningVi": "vấn đề",
+    "meaningEn": "something that causes difficulty",
+    "example": "There's a problem with my laptop.",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "solve a problem",
+      "no problem",
+      "big problem"
+    ]
+  },
+  {
+    "word": "idea",
+    "ipa": "/aɪˈdiːə/",
+    "pos": "noun",
+    "meaningVi": "ý tưởng",
+    "meaningEn": "a thought or plan",
+    "example": "That's a great idea!",
+    "cefr": "A2",
+    "topic": "describing",
+    "collocations": [
+      "good idea",
+      "have an idea",
+      "no idea"
+    ]
+  },
+  {
+    "word": "information",
+    "ipa": "/ˌɪnfərˈmeɪʃən/",
+    "pos": "noun",
+    "meaningVi": "thông tin",
+    "meaningEn": "facts about something",
+    "example": "You can find more information on our website.",
+    "cefr": "A2",
+    "topic": "education",
+    "collocations": [
+      "more information",
+      "useful information"
+    ]
+  },
+  {
+    "word": "advice",
+    "ipa": "/ədˈvaɪs/",
+    "pos": "noun",
+    "meaningVi": "lời khuyên",
+    "meaningEn": "an opinion about what someone should do",
+    "example": "My teacher gave me good advice about the test.",
+    "cefr": "A2",
+    "topic": "people",
+    "collocations": [
+      "give advice",
+      "ask for advice",
+      "good advice"
+    ]
+  },
+  {
+    "word": "future",
+    "ipa": "/ˈfjuːtʃər/",
+    "pos": "noun",
+    "meaningVi": "tương lai",
+    "meaningEn": "the time that will come after now",
+    "example": "What are your plans for the future?",
+    "cefr": "A2",
+    "topic": "time",
+    "collocations": [
+      "in the future",
+      "near future"
+    ]
+  },
+  {
+    "word": "get up",
+    "ipa": "/ɡet ˈʌp/",
+    "pos": "phrasal verb",
+    "meaningVi": "thức dậy, rời giường",
+    "meaningEn": "to get out of bed after sleeping",
+    "example": "I get up at six on weekdays.",
+    "cefr": "A2",
+    "topic": "daily-life",
+    "collocations": [
+      "get up early",
+      "get up late"
+    ]
+  },
+  {
+    "word": "look for",
+    "ipa": "/ˈlʊk fɔːr/",
+    "pos": "phrasal verb",
+    "meaningVi": "tìm kiếm",
+    "meaningEn": "to try to find something",
+    "example": "I'm looking for my glasses.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "look for a job",
+      "look for a flat"
+    ]
+  },
+  {
+    "word": "turn on",
+    "ipa": "/tɜːrn ˈɑːn/",
+    "pos": "phrasal verb",
+    "meaningVi": "bật (máy, đèn)",
+    "meaningEn": "to make a machine or light start working",
+    "example": "Can you turn on the air conditioner?",
+    "cefr": "A2",
+    "topic": "technology",
+    "collocations": [
+      "turn on the light",
+      "turn on the TV"
+    ]
+  },
+  {
+    "word": "find out",
+    "ipa": "/faɪnd ˈaʊt/",
+    "pos": "phrasal verb",
+    "meaningVi": "tìm ra, phát hiện",
+    "meaningEn": "to discover information",
+    "example": "I need to find out what time the shop closes.",
+    "cefr": "A2",
+    "topic": "actions",
+    "collocations": [
+      "find out about",
+      "find out why"
+    ]
+  },
+  {
+    "word": "achieve",
+    "ipa": "/əˈtʃiːv/",
+    "pos": "verb",
+    "meaningVi": "đạt được",
+    "meaningEn": "to succeed in doing something after a lot of effort",
+    "example": "She achieved her goal of running a marathon.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "achieve a goal",
+      "achieve success"
+    ]
+  },
+  {
+    "word": "improve",
+    "ipa": "/ɪmˈpruːv/",
+    "pos": "verb",
+    "meaningVi": "cải thiện",
+    "meaningEn": "to make or become better",
+    "example": "Reading every day will improve your vocabulary.",
+    "cefr": "B1",
+    "topic": "education",
+    "collocations": [
+      "improve your skills",
+      "greatly improve"
+    ]
+  },
+  {
+    "word": "develop",
+    "ipa": "/dɪˈveləp/",
+    "pos": "verb",
+    "meaningVi": "phát triển",
+    "meaningEn": "to grow or make something grow",
+    "example": "The small town has developed into a busy city.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "develop skills",
+      "develop a plan"
+    ]
+  },
+  {
+    "word": "suggest",
+    "ipa": "/səɡˈdʒest/",
+    "pos": "verb",
+    "meaningVi": "gợi ý, đề xuất",
+    "meaningEn": "to offer an idea for others to consider",
+    "example": "I suggest we leave early to avoid the traffic.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "strongly suggest",
+      "suggest an idea"
+    ]
+  },
+  {
+    "word": "recommend",
+    "ipa": "/ˌrekəˈmend/",
+    "pos": "verb",
+    "meaningVi": "giới thiệu, khuyên dùng",
+    "meaningEn": "to say that something is good or worth doing",
+    "example": "Can you recommend a good place to eat?",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "highly recommend",
+      "recommend a book"
+    ]
+  },
+  {
+    "word": "complain",
+    "ipa": "/kəmˈpleɪn/",
+    "pos": "verb",
+    "meaningVi": "phàn nàn",
+    "meaningEn": "to say that something is wrong or not good enough",
+    "example": "He complained about the cold food.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "complain about",
+      "complain to"
+    ]
+  },
+  {
+    "word": "apologise",
+    "ipa": "/əˈpɑːlədʒaɪz/",
+    "pos": "verb",
+    "meaningVi": "xin lỗi",
+    "meaningEn": "to say you are sorry",
+    "example": "I apologised for missing the meeting.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "apologise for",
+      "apologise to"
+    ]
+  },
+  {
+    "word": "manage",
+    "ipa": "/ˈmænɪdʒ/",
+    "pos": "verb",
+    "meaningVi": "quản lý; xoay xở được",
+    "meaningEn": "to be in charge of a team or business; to succeed in doing something difficult",
+    "example": "She manages a team of ten designers.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "manage a team",
+      "manage to",
+      "manage your time"
+    ]
+  },
+  {
+    "word": "organise",
+    "ipa": "/ˈɔːrɡənaɪz/",
+    "pos": "verb",
+    "meaningVi": "tổ chức, sắp xếp",
+    "meaningEn": "to plan and arrange something",
+    "example": "We organised a small trip for the whole office.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "organise an event",
+      "well organised"
+    ]
+  },
+  {
+    "word": "deal with",
+    "ipa": "/ˈdiːl wɪð/",
+    "pos": "phrasal verb",
+    "meaningVi": "giải quyết, xử lý",
+    "meaningEn": "to take action to solve a problem or handle a task",
+    "example": "I have to deal with fifty emails every morning.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "deal with a problem",
+      "deal with customers"
+    ]
+  },
+  {
+    "word": "apply",
+    "ipa": "/əˈplaɪ/",
+    "pos": "verb",
+    "meaningVi": "nộp đơn; áp dụng",
+    "meaningEn": "to ask officially for something such as a job",
+    "example": "He applied for a job at a bank.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "apply for a job",
+      "apply to university"
+    ]
+  },
+  {
+    "word": "interview",
+    "ipa": "/ˈɪntərvjuː/",
+    "pos": "noun",
+    "meaningVi": "cuộc phỏng vấn",
+    "meaningEn": "a formal meeting where someone asks you questions, often for a job",
+    "example": "I have a job interview on Monday.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "job interview",
+      "have an interview"
+    ]
+  },
+  {
+    "word": "experience",
+    "ipa": "/ɪkˈspɪriəns/",
+    "pos": "noun",
+    "meaningVi": "kinh nghiệm, trải nghiệm",
+    "meaningEn": "knowledge you get from doing something; something that happens to you",
+    "example": "Do you have any experience in sales?",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "work experience",
+      "gain experience",
+      "great experience"
+    ]
+  },
+  {
+    "word": "skill",
+    "ipa": "/skɪl/",
+    "pos": "noun",
+    "meaningVi": "kỹ năng",
+    "meaningEn": "an ability to do something well",
+    "example": "Communication is an important skill at work.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "language skills",
+      "develop a skill",
+      "practical skill"
+    ]
+  },
+  {
+    "word": "responsible",
+    "ipa": "/rɪˈspɑːnsəbəl/",
+    "pos": "adjective",
+    "meaningVi": "chịu trách nhiệm, có trách nhiệm",
+    "meaningEn": "having the job of taking care of something",
+    "example": "Who is responsible for the budget?",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "responsible for",
+      "feel responsible"
+    ]
+  },
+  {
+    "word": "deadline",
+    "ipa": "/ˈdedlaɪn/",
+    "pos": "noun",
+    "meaningVi": "hạn chót",
+    "meaningEn": "a time by which you must finish something",
+    "example": "The deadline for the report is Friday.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "meet a deadline",
+      "miss a deadline",
+      "tight deadline"
+    ]
+  },
+  {
+    "word": "career",
+    "ipa": "/kəˈrɪr/",
+    "pos": "noun",
+    "meaningVi": "sự nghiệp",
+    "meaningEn": "the series of jobs you do during your working life",
+    "example": "She started her career as a journalist.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "career path",
+      "change career",
+      "successful career"
+    ]
+  },
+  {
+    "word": "profit",
+    "ipa": "/ˈprɑːfɪt/",
+    "pos": "noun",
+    "meaningVi": "lợi nhuận",
+    "meaningEn": "money a business makes after paying its costs",
+    "example": "The shop made a small profit this year.",
+    "cefr": "B1",
+    "topic": "business",
+    "collocations": [
+      "make a profit",
+      "high profit"
+    ]
+  },
+  {
+    "word": "product",
+    "ipa": "/ˈprɑːdʌkt/",
+    "pos": "noun",
+    "meaningVi": "sản phẩm",
+    "meaningEn": "something that is made to be sold",
+    "example": "Their new product sold out in a week.",
+    "cefr": "B1",
+    "topic": "business",
+    "collocations": [
+      "launch a product",
+      "new product"
+    ]
+  },
+  {
+    "word": "advertise",
+    "ipa": "/ˈædvərtaɪz/",
+    "pos": "verb",
+    "meaningVi": "quảng cáo",
+    "meaningEn": "to tell people about a product so they will buy it",
+    "example": "The company advertises mainly on social media.",
+    "cefr": "B1",
+    "topic": "business",
+    "collocations": [
+      "advertise a product",
+      "advertise online"
+    ]
+  },
+  {
+    "word": "environment",
+    "ipa": "/ɪnˈvaɪrənmənt/",
+    "pos": "noun",
+    "meaningVi": "môi trường",
+    "meaningEn": "the natural world of land, water and air",
+    "example": "Plastic bags are bad for the environment.",
+    "cefr": "B1",
+    "topic": "nature",
+    "collocations": [
+      "protect the environment",
+      "natural environment"
+    ]
+  },
+  {
+    "word": "pollution",
+    "ipa": "/pəˈluːʃən/",
+    "pos": "noun",
+    "meaningVi": "sự ô nhiễm",
+    "meaningEn": "damage to air, water or land by harmful substances",
+    "example": "Air pollution is a big problem in many cities.",
+    "cefr": "B1",
+    "topic": "nature",
+    "collocations": [
+      "air pollution",
+      "reduce pollution"
+    ]
+  },
+  {
+    "word": "climate",
+    "ipa": "/ˈklaɪmət/",
+    "pos": "noun",
+    "meaningVi": "khí hậu",
+    "meaningEn": "the usual weather in a place",
+    "example": "The climate in the south is warm all year.",
+    "cefr": "B1",
+    "topic": "nature",
+    "collocations": [
+      "climate change",
+      "tropical climate"
+    ]
+  },
+  {
+    "word": "protect",
+    "ipa": "/prəˈtekt/",
+    "pos": "verb",
+    "meaningVi": "bảo vệ",
+    "meaningEn": "to keep someone or something safe",
+    "example": "Sunglasses protect your eyes from the sun.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "protect from",
+      "protect the environment"
+    ]
+  },
+  {
+    "word": "recycle",
+    "ipa": "/riːˈsaɪkəl/",
+    "pos": "verb",
+    "meaningVi": "tái chế",
+    "meaningEn": "to treat used things so they can be used again",
+    "example": "We recycle paper and glass at home.",
+    "cefr": "B1",
+    "topic": "nature",
+    "collocations": [
+      "recycle plastic",
+      "recycle waste"
+    ]
+  },
+  {
+    "word": "waste",
+    "ipa": "/weɪst/",
+    "pos": "noun",
+    "meaningVi": "rác thải; sự lãng phí",
+    "meaningEn": "things that are thrown away; a bad use of something",
+    "example": "The meeting was a complete waste of time.",
+    "cefr": "B1",
+    "topic": "nature",
+    "collocations": [
+      "waste of time",
+      "food waste",
+      "reduce waste"
+    ]
+  },
+  {
+    "word": "energy",
+    "ipa": "/ˈenərdʒi/",
+    "pos": "noun",
+    "meaningVi": "năng lượng",
+    "meaningEn": "power for machines; the strength to be active",
+    "example": "Solar energy is becoming cheaper every year.",
+    "cefr": "B1",
+    "topic": "nature",
+    "collocations": [
+      "save energy",
+      "solar energy",
+      "full of energy"
+    ]
+  },
+  {
+    "word": "government",
+    "ipa": "/ˈɡʌvərnmənt/",
+    "pos": "noun",
+    "meaningVi": "chính phủ",
+    "meaningEn": "the group of people who control a country",
+    "example": "The government plans to build a new airport.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "local government",
+      "government policy"
+    ]
+  },
+  {
+    "word": "community",
+    "ipa": "/kəˈmjuːnəti/",
+    "pos": "noun",
+    "meaningVi": "cộng đồng",
+    "meaningEn": "people living in one area or sharing the same interests",
+    "example": "The community built a small library together.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "local community",
+      "online community"
+    ]
+  },
+  {
+    "word": "culture",
+    "ipa": "/ˈkʌltʃər/",
+    "pos": "noun",
+    "meaningVi": "văn hóa",
+    "meaningEn": "the customs, art and ideas of a group of people",
+    "example": "I love learning about Japanese culture.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "local culture",
+      "popular culture"
+    ]
+  },
+  {
+    "word": "tradition",
+    "ipa": "/trəˈdɪʃən/",
+    "pos": "noun",
+    "meaningVi": "truyền thống",
+    "meaningEn": "a custom that has existed for a long time",
+    "example": "Giving lucky money at Tet is a family tradition.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "family tradition",
+      "follow a tradition"
+    ]
+  },
+  {
+    "word": "crime",
+    "ipa": "/kraɪm/",
+    "pos": "noun",
+    "meaningVi": "tội phạm, tội ác",
+    "meaningEn": "an illegal action",
+    "example": "Crime in the area has fallen this year.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "commit a crime",
+      "crime rate"
+    ]
+  },
+  {
+    "word": "population",
+    "ipa": "/ˌpɑːpjəˈleɪʃən/",
+    "pos": "noun",
+    "meaningVi": "dân số",
+    "meaningEn": "the number of people living in a place",
+    "example": "The population of the city is growing fast.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "growing population",
+      "large population"
+    ]
+  },
+  {
+    "word": "opinion",
+    "ipa": "/əˈpɪnjən/",
+    "pos": "noun",
+    "meaningVi": "ý kiến, quan điểm",
+    "meaningEn": "what you think about something",
+    "example": "In my opinion, the film was too long.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "in my opinion",
+      "express an opinion"
+    ]
+  },
+  {
+    "word": "advantage",
+    "ipa": "/ədˈvæntɪdʒ/",
+    "pos": "noun",
+    "meaningVi": "lợi thế, ưu điểm",
+    "meaningEn": "something that helps you be more successful",
+    "example": "One advantage of city life is good public transport.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "big advantage",
+      "take advantage of"
+    ]
+  },
+  {
+    "word": "disadvantage",
+    "ipa": "/ˌdɪsədˈvæntɪdʒ/",
+    "pos": "noun",
+    "meaningVi": "nhược điểm, bất lợi",
+    "meaningEn": "something that makes things harder",
+    "example": "The main disadvantage is the high price.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "main disadvantage",
+      "at a disadvantage"
+    ]
+  },
+  {
+    "word": "reason",
+    "ipa": "/ˈriːzən/",
+    "pos": "noun",
+    "meaningVi": "lý do",
+    "meaningEn": "why something happens",
+    "example": "What's the reason for the delay?",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "for this reason",
+      "main reason",
+      "good reason"
+    ]
+  },
+  {
+    "word": "result",
+    "ipa": "/rɪˈzʌlt/",
+    "pos": "noun",
+    "meaningVi": "kết quả",
+    "meaningEn": "what happens because of something",
+    "example": "The test results will be ready tomorrow.",
+    "cefr": "B1",
+    "topic": "education",
+    "collocations": [
+      "as a result",
+      "exam results",
+      "final result"
+    ]
+  },
+  {
+    "word": "research",
+    "ipa": "/ˈriːsɜːrtʃ/",
+    "pos": "noun",
+    "meaningVi": "nghiên cứu",
+    "meaningEn": "careful study to discover new facts",
+    "example": "Research shows that sleep helps memory.",
+    "cefr": "B1",
+    "topic": "academic",
+    "collocations": [
+      "do research",
+      "carry out research",
+      "research shows"
+    ]
+  },
+  {
+    "word": "knowledge",
+    "ipa": "/ˈnɑːlɪdʒ/",
+    "pos": "noun",
+    "meaningVi": "kiến thức",
+    "meaningEn": "information and understanding that you have",
+    "example": "He has a good knowledge of history.",
+    "cefr": "B1",
+    "topic": "education",
+    "collocations": [
+      "general knowledge",
+      "gain knowledge"
+    ]
+  },
+  {
+    "word": "degree",
+    "ipa": "/dɪˈɡriː/",
+    "pos": "noun",
+    "meaningVi": "bằng cấp; độ",
+    "meaningEn": "a university qualification; a unit for measuring temperature",
+    "example": "She has a degree in economics.",
+    "cefr": "B1",
+    "topic": "education",
+    "collocations": [
+      "university degree",
+      "master's degree"
+    ]
+  },
+  {
+    "word": "compare",
+    "ipa": "/kəmˈper/",
+    "pos": "verb",
+    "meaningVi": "so sánh",
+    "meaningEn": "to look at how things are similar or different",
+    "example": "Compare the prices before you buy.",
+    "cefr": "B1",
+    "topic": "academic",
+    "collocations": [
+      "compare with",
+      "compare prices"
+    ]
+  },
+  {
+    "word": "describe",
+    "ipa": "/dɪˈskraɪb/",
+    "pos": "verb",
+    "meaningVi": "miêu tả",
+    "meaningEn": "to say what something or someone is like",
+    "example": "Can you describe the man you saw?",
+    "cefr": "B1",
+    "topic": "education",
+    "collocations": [
+      "describe in detail",
+      "describe a picture"
+    ]
+  },
+  {
+    "word": "discuss",
+    "ipa": "/dɪˈskʌs/",
+    "pos": "verb",
+    "meaningVi": "thảo luận",
+    "meaningEn": "to talk about something with other people",
+    "example": "We discussed the plan over lunch.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "discuss a problem",
+      "discuss in detail"
+    ]
+  },
+  {
+    "word": "increase",
+    "ipa": "/ɪnˈkriːs/",
+    "pos": "verb",
+    "meaningVi": "tăng",
+    "meaningEn": "to become larger in amount or number",
+    "example": "House prices increased by ten percent.",
+    "cefr": "B1",
+    "topic": "academic",
+    "collocations": [
+      "increase sharply",
+      "increase by"
+    ]
+  },
+  {
+    "word": "reduce",
+    "ipa": "/rɪˈduːs/",
+    "pos": "verb",
+    "meaningVi": "giảm",
+    "meaningEn": "to make something smaller in amount",
+    "example": "Cycling to work can reduce stress.",
+    "cefr": "B1",
+    "topic": "academic",
+    "collocations": [
+      "reduce costs",
+      "reduce waste",
+      "reduce stress"
+    ]
+  },
+  {
+    "word": "affect",
+    "ipa": "/əˈfekt/",
+    "pos": "verb",
+    "meaningVi": "ảnh hưởng",
+    "meaningEn": "to cause a change in something",
+    "example": "Bad sleep can affect your mood.",
+    "cefr": "B1",
+    "topic": "academic",
+    "collocations": [
+      "badly affect",
+      "directly affect"
+    ]
+  },
+  {
+    "word": "prefer",
+    "ipa": "/prɪˈfɜːr/",
+    "pos": "verb",
+    "meaningVi": "thích hơn",
+    "meaningEn": "to like one thing more than another",
+    "example": "I prefer tea to coffee.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "prefer to",
+      "prefer A to B"
+    ]
+  },
+  {
+    "word": "expect",
+    "ipa": "/ɪkˈspekt/",
+    "pos": "verb",
+    "meaningVi": "mong đợi, dự kiến",
+    "meaningEn": "to think that something will happen",
+    "example": "I expect the package to arrive tomorrow.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "expect to",
+      "as expected"
+    ]
+  },
+  {
+    "word": "allow",
+    "ipa": "/əˈlaʊ/",
+    "pos": "verb",
+    "meaningVi": "cho phép",
+    "meaningEn": "to let someone do something",
+    "example": "Phones are not allowed in the exam room.",
+    "cefr": "B1",
+    "topic": "society",
+    "collocations": [
+      "allow someone to",
+      "not allowed"
+    ]
+  },
+  {
+    "word": "avoid",
+    "ipa": "/əˈvɔɪd/",
+    "pos": "verb",
+    "meaningVi": "tránh",
+    "meaningEn": "to stay away from something",
+    "example": "Try to avoid sugary drinks.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "avoid doing",
+      "avoid traffic"
+    ]
+  },
+  {
+    "word": "prepare",
+    "ipa": "/prɪˈper/",
+    "pos": "verb",
+    "meaningVi": "chuẩn bị",
+    "meaningEn": "to get ready for something",
+    "example": "I'm preparing for my IELTS test.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "prepare for",
+      "prepare a meal"
+    ]
+  },
+  {
+    "word": "depend",
+    "ipa": "/dɪˈpend/",
+    "pos": "verb",
+    "meaningVi": "phụ thuộc",
+    "meaningEn": "to be decided by something else",
+    "example": "Whether we go depends on the weather.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "depend on",
+      "it depends"
+    ]
+  },
+  {
+    "word": "realise",
+    "ipa": "/ˈriːəlaɪz/",
+    "pos": "verb",
+    "meaningVi": "nhận ra",
+    "meaningEn": "to suddenly understand something",
+    "example": "I realised I had left my wallet at home.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "suddenly realise",
+      "realise that"
+    ]
+  },
+  {
+    "word": "succeed",
+    "ipa": "/səkˈsiːd/",
+    "pos": "verb",
+    "meaningVi": "thành công",
+    "meaningEn": "to do what you tried to do",
+    "example": "She succeeded in passing the driving test.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "succeed in",
+      "finally succeed"
+    ]
+  },
+  {
+    "word": "fail",
+    "ipa": "/feɪl/",
+    "pos": "verb",
+    "meaningVi": "thất bại, trượt",
+    "meaningEn": "to not succeed",
+    "example": "He failed his first driving test.",
+    "cefr": "B1",
+    "topic": "education",
+    "collocations": [
+      "fail a test",
+      "fail to"
+    ]
+  },
+  {
+    "word": "confident",
+    "ipa": "/ˈkɑːnfɪdənt/",
+    "pos": "adjective",
+    "meaningVi": "tự tin",
+    "meaningEn": "sure of your own abilities",
+    "example": "She sounded confident in the interview.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "feel confident",
+      "confident about"
+    ]
+  },
+  {
+    "word": "nervous",
+    "ipa": "/ˈnɜːrvəs/",
+    "pos": "adjective",
+    "meaningVi": "lo lắng, hồi hộp",
+    "meaningEn": "worried and a little afraid",
+    "example": "I always get nervous before speaking in public.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "feel nervous",
+      "nervous about"
+    ]
+  },
+  {
+    "word": "embarrassed",
+    "ipa": "/ɪmˈbærəst/",
+    "pos": "adjective",
+    "meaningVi": "xấu hổ, ngượng",
+    "meaningEn": "feeling shy or silly in front of other people",
+    "example": "I was embarrassed when I called my teacher \"Mum\".",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "feel embarrassed",
+      "embarrassed about"
+    ]
+  },
+  {
+    "word": "disappointed",
+    "ipa": "/ˌdɪsəˈpɔɪntɪd/",
+    "pos": "adjective",
+    "meaningVi": "thất vọng",
+    "meaningEn": "sad because something was not as good as you hoped",
+    "example": "We were disappointed with the hotel.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "disappointed with",
+      "deeply disappointed"
+    ]
+  },
+  {
+    "word": "grateful",
+    "ipa": "/ˈɡreɪtfəl/",
+    "pos": "adjective",
+    "meaningVi": "biết ơn",
+    "meaningEn": "feeling thankful",
+    "example": "I'm grateful for all your help.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "grateful for",
+      "deeply grateful"
+    ]
+  },
+  {
+    "word": "proud",
+    "ipa": "/praʊd/",
+    "pos": "adjective",
+    "meaningVi": "tự hào",
+    "meaningEn": "pleased about something you or someone close to you did",
+    "example": "My parents were proud of my results.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "proud of",
+      "feel proud"
+    ]
+  },
+  {
+    "word": "stressed",
+    "ipa": "/strest/",
+    "pos": "adjective",
+    "meaningVi": "căng thẳng",
+    "meaningEn": "worried and unable to relax",
+    "example": "I feel stressed when I have too many deadlines.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "feel stressed",
+      "stressed out"
+    ]
+  },
+  {
+    "word": "patient",
+    "ipa": "/ˈpeɪʃənt/",
+    "pos": "adjective",
+    "meaningVi": "kiên nhẫn",
+    "meaningEn": "able to wait calmly without getting annoyed",
+    "example": "Learning a language requires you to be patient.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "be patient",
+      "patient with"
+    ]
+  },
+  {
+    "word": "polite",
+    "ipa": "/pəˈlaɪt/",
+    "pos": "adjective",
+    "meaningVi": "lịch sự",
+    "meaningEn": "having good manners",
+    "example": "It's polite to say thank you.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "polite to",
+      "polite request"
+    ]
+  },
+  {
+    "word": "honest",
+    "ipa": "/ˈɑːnɪst/",
+    "pos": "adjective",
+    "meaningVi": "trung thực, thật thà",
+    "meaningEn": "always telling the truth",
+    "example": "To be honest, I didn't like the ending.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "to be honest",
+      "honest answer"
+    ]
+  },
+  {
+    "word": "reliable",
+    "ipa": "/rɪˈlaɪəbəl/",
+    "pos": "adjective",
+    "meaningVi": "đáng tin cậy",
+    "meaningEn": "able to be trusted to work well",
+    "example": "We need a reliable internet connection.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "reliable source",
+      "reliable service"
+    ]
+  },
+  {
+    "word": "convenient",
+    "ipa": "/kənˈviːniənt/",
+    "pos": "adjective",
+    "meaningVi": "thuận tiện",
+    "meaningEn": "easy to use or suitable for your plans",
+    "example": "Is Tuesday convenient for you?",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "convenient time",
+      "convenient location"
+    ]
+  },
+  {
+    "word": "available",
+    "ipa": "/əˈveɪləbəl/",
+    "pos": "adjective",
+    "meaningVi": "có sẵn; rảnh",
+    "meaningEn": "able to be used or got; free to meet",
+    "example": "Are you available for a call this afternoon?",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "available for",
+      "freely available"
+    ]
+  },
+  {
+    "word": "necessary",
+    "ipa": "/ˈnesəseri/",
+    "pos": "adjective",
+    "meaningVi": "cần thiết",
+    "meaningEn": "needed in order to do something",
+    "example": "Is it necessary to book a table?",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "absolutely necessary",
+      "if necessary"
+    ]
+  },
+  {
+    "word": "obvious",
+    "ipa": "/ˈɑːbviəs/",
+    "pos": "adjective",
+    "meaningVi": "rõ ràng, hiển nhiên",
+    "meaningEn": "easy to see or understand",
+    "example": "The answer was obvious once she explained it.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "obvious reason",
+      "fairly obvious"
+    ]
+  },
+  {
+    "word": "similar",
+    "ipa": "/ˈsɪmələr/",
+    "pos": "adjective",
+    "meaningVi": "tương tự",
+    "meaningEn": "almost the same",
+    "example": "My phone is similar to yours.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "similar to",
+      "very similar"
+    ]
+  },
+  {
+    "word": "traffic",
+    "ipa": "/ˈtræfɪk/",
+    "pos": "noun",
+    "meaningVi": "giao thông, xe cộ",
+    "meaningEn": "the vehicles moving on roads",
+    "example": "I got stuck in traffic for an hour.",
+    "cefr": "B1",
+    "topic": "travel",
+    "collocations": [
+      "heavy traffic",
+      "traffic jam",
+      "stuck in traffic"
+    ]
+  },
+  {
+    "word": "destination",
+    "ipa": "/ˌdestɪˈneɪʃən/",
+    "pos": "noun",
+    "meaningVi": "điểm đến",
+    "meaningEn": "the place you are travelling to",
+    "example": "Da Lat is a popular destination for couples.",
+    "cefr": "B1",
+    "topic": "travel",
+    "collocations": [
+      "holiday destination",
+      "final destination"
+    ]
+  },
+  {
+    "word": "accommodation",
+    "ipa": "/əˌkɑːməˈdeɪʃən/",
+    "pos": "noun",
+    "meaningVi": "chỗ ở",
+    "meaningEn": "a place to stay or live",
+    "example": "Accommodation in the old town is expensive.",
+    "cefr": "B1",
+    "topic": "travel",
+    "collocations": [
+      "find accommodation",
+      "cheap accommodation"
+    ]
+  },
+  {
+    "word": "delay",
+    "ipa": "/dɪˈleɪ/",
+    "pos": "noun",
+    "meaningVi": "sự chậm trễ",
+    "meaningEn": "a time when something happens later than planned",
+    "example": "There's a two-hour delay because of the storm.",
+    "cefr": "B1",
+    "topic": "travel",
+    "collocations": [
+      "long delay",
+      "without delay"
+    ]
+  },
+  {
+    "word": "tourist",
+    "ipa": "/ˈtʊrɪst/",
+    "pos": "noun",
+    "meaningVi": "khách du lịch",
+    "meaningEn": "a person visiting a place on holiday",
+    "example": "The old town is full of tourists in summer.",
+    "cefr": "B1",
+    "topic": "travel",
+    "collocations": [
+      "tourist attraction",
+      "foreign tourist"
+    ]
+  },
+  {
+    "word": "diet",
+    "ipa": "/ˈdaɪət/",
+    "pos": "noun",
+    "meaningVi": "chế độ ăn",
+    "meaningEn": "the food you usually eat",
+    "example": "A balanced diet includes fruit and vegetables.",
+    "cefr": "B1",
+    "topic": "health",
+    "collocations": [
+      "healthy diet",
+      "go on a diet",
+      "balanced diet"
+    ]
+  },
+  {
+    "word": "symptom",
+    "ipa": "/ˈsɪmptəm/",
+    "pos": "noun",
+    "meaningVi": "triệu chứng",
+    "meaningEn": "a sign that you have an illness",
+    "example": "A high temperature is a common symptom of flu.",
+    "cefr": "B1",
+    "topic": "health",
+    "collocations": [
+      "common symptom",
+      "show symptoms"
+    ]
+  },
+  {
+    "word": "recover",
+    "ipa": "/rɪˈkʌvər/",
+    "pos": "verb",
+    "meaningVi": "hồi phục",
+    "meaningEn": "to become healthy again after an illness",
+    "example": "It took me two weeks to recover from the flu.",
+    "cefr": "B1",
+    "topic": "health",
+    "collocations": [
+      "recover from",
+      "fully recover"
+    ]
+  },
+  {
+    "word": "injury",
+    "ipa": "/ˈɪndʒəri/",
+    "pos": "noun",
+    "meaningVi": "chấn thương",
+    "meaningEn": "damage to the body",
+    "example": "He missed the match because of a knee injury.",
+    "cefr": "B1",
+    "topic": "health",
+    "collocations": [
+      "serious injury",
+      "minor injury"
+    ]
+  },
+  {
+    "word": "stress",
+    "ipa": "/stres/",
+    "pos": "noun",
+    "meaningVi": "sự căng thẳng",
+    "meaningEn": "a feeling of worry caused by difficult situations",
+    "example": "Exercise is a good way to reduce stress.",
+    "cefr": "B1",
+    "topic": "health",
+    "collocations": [
+      "under stress",
+      "reduce stress"
+    ]
+  },
+  {
+    "word": "device",
+    "ipa": "/dɪˈvaɪs/",
+    "pos": "noun",
+    "meaningVi": "thiết bị",
+    "meaningEn": "a machine or tool made for a particular purpose",
+    "example": "Please turn off all electronic devices.",
+    "cefr": "B1",
+    "topic": "technology",
+    "collocations": [
+      "mobile device",
+      "electronic device"
+    ]
+  },
+  {
+    "word": "software",
+    "ipa": "/ˈsɔːftwer/",
+    "pos": "noun",
+    "meaningVi": "phần mềm",
+    "meaningEn": "programs that run on a computer",
+    "example": "We need to update our accounting software.",
+    "cefr": "B1",
+    "topic": "technology",
+    "collocations": [
+      "install software",
+      "software developer"
+    ]
+  },
+  {
+    "word": "password",
+    "ipa": "/ˈpæswɜːrd/",
+    "pos": "noun",
+    "meaningVi": "mật khẩu",
+    "meaningEn": "a secret word that lets you use an account",
+    "example": "Never share your password with anyone.",
+    "cefr": "B1",
+    "topic": "technology",
+    "collocations": [
+      "change your password",
+      "forget your password"
+    ]
+  },
+  {
+    "word": "online",
+    "ipa": "/ˌɑːnˈlaɪn/",
+    "pos": "adverb",
+    "meaningVi": "trực tuyến",
+    "meaningEn": "on or through the internet",
+    "example": "I buy most of my books online.",
+    "cefr": "B1",
+    "topic": "technology",
+    "collocations": [
+      "shop online",
+      "go online"
+    ]
+  },
+  {
+    "word": "social media",
+    "ipa": "/ˌsoʊʃəl ˈmiːdiə/",
+    "pos": "noun",
+    "meaningVi": "mạng xã hội",
+    "meaningEn": "websites and apps where people share content and talk",
+    "example": "She spends two hours a day on social media.",
+    "cefr": "B1",
+    "topic": "technology",
+    "collocations": [
+      "on social media",
+      "use social media"
+    ]
+  },
+  {
+    "word": "relationship",
+    "ipa": "/rɪˈleɪʃənʃɪp/",
+    "pos": "noun",
+    "meaningVi": "mối quan hệ",
+    "meaningEn": "the way people are connected or behave towards each other",
+    "example": "She has a good relationship with her boss.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "close relationship",
+      "build a relationship"
+    ]
+  },
+  {
+    "word": "personality",
+    "ipa": "/ˌpɜːrsəˈnæləti/",
+    "pos": "noun",
+    "meaningVi": "tính cách",
+    "meaningEn": "the kind of person you are",
+    "example": "He has a warm, friendly personality.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "strong personality",
+      "personality type"
+    ]
+  },
+  {
+    "word": "support",
+    "ipa": "/səˈpɔːrt/",
+    "pos": "verb",
+    "meaningVi": "ủng hộ, hỗ trợ",
+    "meaningEn": "to help someone, often in a difficult time",
+    "example": "My friends supported me when I lost my job.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "support a team",
+      "fully support"
+    ]
+  },
+  {
+    "word": "trust",
+    "ipa": "/trʌst/",
+    "pos": "verb",
+    "meaningVi": "tin tưởng",
+    "meaningEn": "to believe that someone is honest or reliable",
+    "example": "I trust her completely.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "trust someone",
+      "trust your instincts"
+    ]
+  },
+  {
+    "word": "rely on",
+    "ipa": "/rɪˈlaɪ ɑːn/",
+    "pos": "phrasal verb",
+    "meaningVi": "dựa vào, trông cậy vào",
+    "meaningEn": "to depend on someone or something",
+    "example": "Many farmers rely on the rain.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "rely on someone",
+      "heavily rely on"
+    ]
+  },
+  {
+    "word": "get on with",
+    "ipa": "/ɡet ˈɑːn wɪð/",
+    "pos": "phrasal verb",
+    "meaningVi": "hòa hợp với",
+    "meaningEn": "to have a friendly relationship with someone",
+    "example": "I get on well with my flatmates.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "get on well with"
+    ]
+  },
+  {
+    "word": "give up",
+    "ipa": "/ɡɪv ˈʌp/",
+    "pos": "phrasal verb",
+    "meaningVi": "từ bỏ",
+    "meaningEn": "to stop doing or trying to do something",
+    "example": "Don't give up. You're nearly there!",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "give up smoking",
+      "never give up"
+    ]
+  },
+  {
+    "word": "set up",
+    "ipa": "/set ˈʌp/",
+    "pos": "phrasal verb",
+    "meaningVi": "thành lập, thiết lập",
+    "meaningEn": "to start a business or organise something",
+    "example": "They set up a small online shop last year.",
+    "cefr": "B1",
+    "topic": "business",
+    "collocations": [
+      "set up a company",
+      "set up a meeting"
+    ]
+  },
+  {
+    "word": "take part in",
+    "ipa": "/teɪk ˈpɑːrt ɪn/",
+    "pos": "phrasal verb",
+    "meaningVi": "tham gia",
+    "meaningEn": "to join in an activity",
+    "example": "Over fifty students took part in the competition.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "take part in a competition",
+      "take part in a discussion"
+    ]
+  },
+  {
+    "word": "come up with",
+    "ipa": "/kʌm ˈʌp wɪð/",
+    "pos": "phrasal verb",
+    "meaningVi": "nghĩ ra, nảy ra",
+    "meaningEn": "to think of an idea or plan",
+    "example": "She came up with a clever solution.",
+    "cefr": "B1",
+    "topic": "actions",
+    "collocations": [
+      "come up with an idea",
+      "come up with a plan"
+    ]
+  },
+  {
+    "word": "run out of",
+    "ipa": "/rʌn ˈaʊt əv/",
+    "pos": "phrasal verb",
+    "meaningVi": "hết, cạn",
+    "meaningEn": "to use all of something so there is none left",
+    "example": "We've run out of milk.",
+    "cefr": "B1",
+    "topic": "daily-life",
+    "collocations": [
+      "run out of time",
+      "run out of money"
+    ]
+  },
+  {
+    "word": "look forward to",
+    "ipa": "/lʊk ˈfɔːrwərd tə/",
+    "pos": "phrasal verb",
+    "meaningVi": "mong chờ",
+    "meaningEn": "to feel happy about something that is going to happen",
+    "example": "I'm looking forward to seeing you.",
+    "cefr": "B1",
+    "topic": "emotions",
+    "collocations": [
+      "really look forward to"
+    ]
+  },
+  {
+    "word": "although",
+    "ipa": "/ɔːlˈðoʊ/",
+    "pos": "conjunction",
+    "meaningVi": "mặc dù",
+    "meaningEn": "despite the fact that",
+    "example": "Although it was raining, we went out.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": []
+  },
+  {
+    "word": "however",
+    "ipa": "/haʊˈevər/",
+    "pos": "adverb",
+    "meaningVi": "tuy nhiên",
+    "meaningEn": "used to add something that contrasts with what came before",
+    "example": "The plan is good. However, it is expensive.",
+    "cefr": "B1",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "unless",
+    "ipa": "/ənˈles/",
+    "pos": "conjunction",
+    "meaningVi": "trừ khi",
+    "meaningEn": "except if",
+    "example": "You won't improve unless you practise.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": []
+  },
+  {
+    "word": "instead",
+    "ipa": "/ɪnˈsted/",
+    "pos": "adverb",
+    "meaningVi": "thay vào đó",
+    "meaningEn": "in place of something else",
+    "example": "There was no tea, so I had juice instead.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "instead of"
+    ]
+  },
+  {
+    "word": "probably",
+    "ipa": "/ˈprɑːbəbli/",
+    "pos": "adverb",
+    "meaningVi": "có lẽ, có thể",
+    "meaningEn": "very likely",
+    "example": "It will probably rain later.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "most probably"
+    ]
+  },
+  {
+    "word": "especially",
+    "ipa": "/ɪˈspeʃəli/",
+    "pos": "adverb",
+    "meaningVi": "đặc biệt là",
+    "meaningEn": "more than usual or more than others",
+    "example": "I love fruit, especially mangoes.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": []
+  },
+  {
+    "word": "recently",
+    "ipa": "/ˈriːsəntli/",
+    "pos": "adverb",
+    "meaningVi": "gần đây",
+    "meaningEn": "not long ago",
+    "example": "I've recently started learning the guitar.",
+    "cefr": "B1",
+    "topic": "time",
+    "collocations": [
+      "until recently",
+      "only recently"
+    ]
+  },
+  {
+    "word": "eventually",
+    "ipa": "/ɪˈventʃuəli/",
+    "pos": "adverb",
+    "meaningVi": "cuối cùng",
+    "meaningEn": "after a long time or after many problems",
+    "example": "We eventually found the hotel at midnight.",
+    "cefr": "B1",
+    "topic": "time",
+    "collocations": []
+  },
+  {
+    "word": "opportunity",
+    "ipa": "/ˌɑːpərˈtuːnəti/",
+    "pos": "noun",
+    "meaningVi": "cơ hội",
+    "meaningEn": "a chance to do something",
+    "example": "This job is a great opportunity to travel.",
+    "cefr": "B1",
+    "topic": "work",
+    "collocations": [
+      "take an opportunity",
+      "golden opportunity",
+      "equal opportunity"
+    ]
+  },
+  {
+    "word": "challenge",
+    "ipa": "/ˈtʃælɪndʒ/",
+    "pos": "noun",
+    "meaningVi": "thử thách",
+    "meaningEn": "something difficult that tests your ability",
+    "example": "Learning a new language is a real challenge.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "face a challenge",
+      "big challenge"
+    ]
+  },
+  {
+    "word": "solution",
+    "ipa": "/səˈluːʃən/",
+    "pos": "noun",
+    "meaningVi": "giải pháp",
+    "meaningEn": "a way to solve a problem",
+    "example": "We need a quick solution to this problem.",
+    "cefr": "B1",
+    "topic": "describing",
+    "collocations": [
+      "find a solution",
+      "simple solution"
+    ]
+  },
+  {
+    "word": "goal",
+    "ipa": "/ɡoʊl/",
+    "pos": "noun",
+    "meaningVi": "mục tiêu",
+    "meaningEn": "something you want to achieve",
+    "example": "My goal is to get IELTS 6.5 next year.",
+    "cefr": "B1",
+    "topic": "education",
+    "collocations": [
+      "set a goal",
+      "reach a goal",
+      "main goal"
+    ]
+  },
+  {
+    "word": "attitude",
+    "ipa": "/ˈætɪtuːd/",
+    "pos": "noun",
+    "meaningVi": "thái độ",
+    "meaningEn": "the way you think and feel about something",
+    "example": "A positive attitude helps you learn faster.",
+    "cefr": "B1",
+    "topic": "people",
+    "collocations": [
+      "positive attitude",
+      "attitude towards"
+    ]
+  },
+  {
+    "word": "schedule",
+    "ipa": "/ˈskedʒuːl/",
+    "pos": "noun",
+    "meaningVi": "lịch trình",
+    "meaningEn": "a plan of when things will happen",
+    "example": "My schedule is very busy this week.",
+    "cefr": "B1",
+    "topic": "time",
+    "collocations": [
+      "busy schedule",
+      "on schedule",
+      "behind schedule"
+    ]
+  },
+  {
+    "word": "significant",
+    "ipa": "/sɪɡˈnɪfɪkənt/",
+    "pos": "adjective",
+    "meaningVi": "đáng kể, quan trọng",
+    "meaningEn": "large or important enough to be noticed",
+    "example": "There has been a significant increase in online shopping.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "significant increase",
+      "significant change",
+      "statistically significant"
+    ]
+  },
+  {
+    "word": "consequently",
+    "ipa": "/ˈkɑːnsəkwentli/",
+    "pos": "adverb",
+    "meaningVi": "do đó, vì vậy",
+    "meaningEn": "as a result",
+    "example": "The road was flooded; consequently, the bus was cancelled.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "approach",
+    "ipa": "/əˈproʊtʃ/",
+    "pos": "noun",
+    "meaningVi": "cách tiếp cận",
+    "meaningEn": "a way of dealing with something",
+    "example": "We need a completely new approach to this problem.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "different approach",
+      "take an approach"
+    ]
+  },
+  {
+    "word": "benefit",
+    "ipa": "/ˈbenɪfɪt/",
+    "pos": "noun",
+    "meaningVi": "lợi ích",
+    "meaningEn": "an advantage or good effect",
+    "example": "The benefits of regular exercise are well known.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "health benefits",
+      "mutual benefit",
+      "bring benefits"
+    ]
+  },
+  {
+    "word": "factor",
+    "ipa": "/ˈfæktər/",
+    "pos": "noun",
+    "meaningVi": "yếu tố",
+    "meaningEn": "one of the things that cause or influence a situation",
+    "example": "Cost is a key factor in our decision.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "key factor",
+      "major factor",
+      "risk factor"
+    ]
+  },
+  {
+    "word": "issue",
+    "ipa": "/ˈɪʃuː/",
+    "pos": "noun",
+    "meaningVi": "vấn đề",
+    "meaningEn": "an important problem or topic for discussion",
+    "example": "Housing is a serious issue for young people.",
+    "cefr": "B2",
+    "topic": "society",
+    "collocations": [
+      "raise an issue",
+      "key issue",
+      "deal with an issue"
+    ]
+  },
+  {
+    "word": "evidence",
+    "ipa": "/ˈevɪdəns/",
+    "pos": "noun",
+    "meaningVi": "bằng chứng",
+    "meaningEn": "facts that show something is true",
+    "example": "There is little evidence that the drug works.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "strong evidence",
+      "evidence of",
+      "provide evidence"
+    ]
+  },
+  {
+    "word": "analyse",
+    "ipa": "/ˈænəlaɪz/",
+    "pos": "verb",
+    "meaningVi": "phân tích",
+    "meaningEn": "to examine something in detail",
+    "example": "The team analysed the survey data carefully.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "analyse data",
+      "carefully analyse"
+    ]
+  },
+  {
+    "word": "contribute",
+    "ipa": "/kənˈtrɪbjuːt/",
+    "pos": "verb",
+    "meaningVi": "đóng góp",
+    "meaningEn": "to help to cause something; to give something to a shared purpose",
+    "example": "Many factors contributed to the company's success.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "contribute to",
+      "contribute money"
+    ]
+  },
+  {
+    "word": "emphasise",
+    "ipa": "/ˈemfəsaɪz/",
+    "pos": "verb",
+    "meaningVi": "nhấn mạnh",
+    "meaningEn": "to show that something is especially important",
+    "example": "The report emphasises the need for more teachers.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "emphasise the importance of"
+    ]
+  },
+  {
+    "word": "indicate",
+    "ipa": "/ˈɪndɪkeɪt/",
+    "pos": "verb",
+    "meaningVi": "cho thấy, chỉ ra",
+    "meaningEn": "to show or suggest that something is true",
+    "example": "The data indicates a steady rise in prices.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "clearly indicate",
+      "results indicate"
+    ]
+  },
+  {
+    "word": "maintain",
+    "ipa": "/meɪnˈteɪn/",
+    "pos": "verb",
+    "meaningVi": "duy trì",
+    "meaningEn": "to keep something at the same level or in good condition",
+    "example": "It's hard to maintain a healthy weight when you travel a lot.",
+    "cefr": "B2",
+    "topic": "actions",
+    "collocations": [
+      "maintain a balance",
+      "maintain contact"
+    ]
+  },
+  {
+    "word": "require",
+    "ipa": "/rɪˈkwaɪər/",
+    "pos": "verb",
+    "meaningVi": "đòi hỏi, yêu cầu",
+    "meaningEn": "to need something",
+    "example": "This job requires good communication skills.",
+    "cefr": "B2",
+    "topic": "work",
+    "collocations": [
+      "require skills",
+      "be required to"
+    ]
+  },
+  {
+    "word": "obtain",
+    "ipa": "/əbˈteɪn/",
+    "pos": "verb",
+    "meaningVi": "có được, đạt được",
+    "meaningEn": "to get something, often with effort",
+    "example": "You must obtain a visa before you travel.",
+    "cefr": "B2",
+    "topic": "actions",
+    "collocations": [
+      "obtain permission",
+      "obtain information"
+    ]
+  },
+  {
+    "word": "assess",
+    "ipa": "/əˈses/",
+    "pos": "verb",
+    "meaningVi": "đánh giá",
+    "meaningEn": "to judge the quality, value or level of something",
+    "example": "Teachers assess students' progress every month.",
+    "cefr": "B2",
+    "topic": "education",
+    "collocations": [
+      "assess the risk",
+      "assess progress"
+    ]
+  },
+  {
+    "word": "encourage",
+    "ipa": "/ɪnˈkɜːrɪdʒ/",
+    "pos": "verb",
+    "meaningVi": "khuyến khích",
+    "meaningEn": "to give someone confidence or support to do something",
+    "example": "My parents encouraged me to study abroad.",
+    "cefr": "B2",
+    "topic": "people",
+    "collocations": [
+      "encourage someone to",
+      "strongly encourage"
+    ]
+  },
+  {
+    "word": "tend",
+    "ipa": "/tend/",
+    "pos": "verb",
+    "meaningVi": "có xu hướng",
+    "meaningEn": "to usually do or be something",
+    "example": "People tend to spend more at weekends.",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "tend to"
+    ]
+  },
+  {
+    "word": "cope",
+    "ipa": "/koʊp/",
+    "pos": "verb",
+    "meaningVi": "đối phó, đương đầu",
+    "meaningEn": "to deal successfully with something difficult",
+    "example": "She coped well with the pressure of the new job.",
+    "cefr": "B2",
+    "topic": "emotions",
+    "collocations": [
+      "cope with",
+      "cope with stress"
+    ]
+  },
+  {
+    "word": "consume",
+    "ipa": "/kənˈsuːm/",
+    "pos": "verb",
+    "meaningVi": "tiêu thụ",
+    "meaningEn": "to use fuel or energy; to eat or drink something",
+    "example": "Older fridges consume a lot of electricity.",
+    "cefr": "B2",
+    "topic": "society",
+    "collocations": [
+      "consume energy",
+      "consume food"
+    ]
+  },
+  {
+    "word": "urban",
+    "ipa": "/ˈɜːrbən/",
+    "pos": "adjective",
+    "meaningVi": "thuộc đô thị",
+    "meaningEn": "relating to towns and cities",
+    "example": "Urban areas often have poor air quality.",
+    "cefr": "B2",
+    "topic": "places",
+    "collocations": [
+      "urban area",
+      "urban development",
+      "urban life"
+    ]
+  },
+  {
+    "word": "rural",
+    "ipa": "/ˈrʊrəl/",
+    "pos": "adjective",
+    "meaningVi": "thuộc nông thôn",
+    "meaningEn": "relating to the countryside",
+    "example": "Many young people leave rural areas to find work.",
+    "cefr": "B2",
+    "topic": "places",
+    "collocations": [
+      "rural area",
+      "rural community"
+    ]
+  },
+  {
+    "word": "sustainable",
+    "ipa": "/səˈsteɪnəbəl/",
+    "pos": "adjective",
+    "meaningVi": "bền vững",
+    "meaningEn": "able to continue for a long time without harming the environment",
+    "example": "We need more sustainable forms of transport.",
+    "cefr": "B2",
+    "topic": "nature",
+    "collocations": [
+      "sustainable development",
+      "sustainable energy",
+      "sustainable growth"
+    ]
+  },
+  {
+    "word": "renewable",
+    "ipa": "/rɪˈnuːəbəl/",
+    "pos": "adjective",
+    "meaningVi": "tái tạo được",
+    "meaningEn": "able to be replaced naturally, like wind or solar power",
+    "example": "Renewable energy now powers half of the town.",
+    "cefr": "B2",
+    "topic": "nature",
+    "collocations": [
+      "renewable energy",
+      "renewable resources"
+    ]
+  },
+  {
+    "word": "efficient",
+    "ipa": "/ɪˈfɪʃənt/",
+    "pos": "adjective",
+    "meaningVi": "hiệu quả (không lãng phí)",
+    "meaningEn": "working well without wasting time or energy",
+    "example": "The new system is faster and more efficient.",
+    "cefr": "B2",
+    "topic": "work",
+    "collocations": [
+      "energy efficient",
+      "highly efficient"
+    ]
+  },
+  {
+    "word": "effective",
+    "ipa": "/ɪˈfektɪv/",
+    "pos": "adjective",
+    "meaningVi": "có hiệu quả",
+    "meaningEn": "producing the result that you want",
+    "example": "Flashcards are an effective way to learn vocabulary.",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "highly effective",
+      "effective way"
+    ]
+  },
+  {
+    "word": "essential",
+    "ipa": "/ɪˈsenʃəl/",
+    "pos": "adjective",
+    "meaningVi": "thiết yếu, cần thiết",
+    "meaningEn": "extremely important and necessary",
+    "example": "Clean water is essential for life.",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "essential for",
+      "absolutely essential"
+    ]
+  },
+  {
+    "word": "relevant",
+    "ipa": "/ˈreləvənt/",
+    "pos": "adjective",
+    "meaningVi": "liên quan, thích hợp",
+    "meaningEn": "connected to what is being discussed",
+    "example": "Please include only relevant information in your answer.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "relevant to",
+      "highly relevant"
+    ]
+  },
+  {
+    "word": "accurate",
+    "ipa": "/ˈækjərət/",
+    "pos": "adjective",
+    "meaningVi": "chính xác",
+    "meaningEn": "correct in every detail",
+    "example": "Is this map accurate?",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "accurate information",
+      "fairly accurate"
+    ]
+  },
+  {
+    "word": "aware",
+    "ipa": "/əˈwer/",
+    "pos": "adjective",
+    "meaningVi": "nhận thức được, biết",
+    "meaningEn": "knowing about something",
+    "example": "Are you aware of the risks?",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "aware of",
+      "fully aware",
+      "become aware"
+    ]
+  },
+  {
+    "word": "flexible",
+    "ipa": "/ˈfleksəbəl/",
+    "pos": "adjective",
+    "meaningVi": "linh hoạt",
+    "meaningEn": "able to change easily",
+    "example": "I have flexible working hours.",
+    "cefr": "B2",
+    "topic": "work",
+    "collocations": [
+      "flexible hours",
+      "flexible approach"
+    ]
+  },
+  {
+    "word": "reluctant",
+    "ipa": "/rɪˈlʌktənt/",
+    "pos": "adjective",
+    "meaningVi": "miễn cưỡng",
+    "meaningEn": "not willing to do something",
+    "example": "He was reluctant to admit his mistake.",
+    "cefr": "B2",
+    "topic": "emotions",
+    "collocations": [
+      "reluctant to"
+    ]
+  },
+  {
+    "word": "anxious",
+    "ipa": "/ˈæŋkʃəs/",
+    "pos": "adjective",
+    "meaningVi": "lo âu",
+    "meaningEn": "worried and nervous",
+    "example": "She felt anxious before the interview.",
+    "cefr": "B2",
+    "topic": "emotions",
+    "collocations": [
+      "anxious about",
+      "feel anxious"
+    ]
+  },
+  {
+    "word": "frustrated",
+    "ipa": "/ˈfrʌstreɪtɪd/",
+    "pos": "adjective",
+    "meaningVi": "bực bội, nản lòng",
+    "meaningEn": "annoyed because you cannot do what you want",
+    "example": "I get frustrated when the Wi-Fi is slow.",
+    "cefr": "B2",
+    "topic": "emotions",
+    "collocations": [
+      "feel frustrated",
+      "frustrated with"
+    ]
+  },
+  {
+    "word": "inevitable",
+    "ipa": "/ɪnˈevɪtəbəl/",
+    "pos": "adjective",
+    "meaningVi": "không thể tránh khỏi",
+    "meaningEn": "certain to happen",
+    "example": "Some mistakes are inevitable when you learn something new.",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "almost inevitable",
+      "inevitable result"
+    ]
+  },
+  {
+    "word": "employee",
+    "ipa": "/ɪmˈplɔɪiː/",
+    "pos": "noun",
+    "meaningVi": "nhân viên",
+    "meaningEn": "a person who is paid to work for a company",
+    "example": "The company has over 500 employees.",
+    "cefr": "B2",
+    "topic": "work",
+    "collocations": [
+      "full-time employee",
+      "employee benefits"
+    ]
+  },
+  {
+    "word": "employer",
+    "ipa": "/ɪmˈplɔɪər/",
+    "pos": "noun",
+    "meaningVi": "người sử dụng lao động",
+    "meaningEn": "a person or company that pays people to work",
+    "example": "My employer pays for my English classes.",
+    "cefr": "B2",
+    "topic": "work",
+    "collocations": [
+      "potential employer",
+      "major employer"
+    ]
+  },
+  {
+    "word": "negotiate",
+    "ipa": "/nɪˈɡoʊʃieɪt/",
+    "pos": "verb",
+    "meaningVi": "đàm phán",
+    "meaningEn": "to discuss something in order to reach an agreement",
+    "example": "We negotiated a lower price with the supplier.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "negotiate a deal",
+      "negotiate a contract"
+    ]
+  },
+  {
+    "word": "investment",
+    "ipa": "/ɪnˈvestmənt/",
+    "pos": "noun",
+    "meaningVi": "sự đầu tư",
+    "meaningEn": "money put into something to make a profit",
+    "example": "The new factory is a big investment for a small company.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "foreign investment",
+      "make an investment"
+    ]
+  },
+  {
+    "word": "revenue",
+    "ipa": "/ˈrevənuː/",
+    "pos": "noun",
+    "meaningVi": "doanh thu",
+    "meaningEn": "income that a company or government receives",
+    "example": "Revenue rose by 15 percent last quarter.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "generate revenue",
+      "annual revenue"
+    ]
+  },
+  {
+    "word": "competition",
+    "ipa": "/ˌkɑːmpəˈtɪʃən/",
+    "pos": "noun",
+    "meaningVi": "sự cạnh tranh; cuộc thi",
+    "meaningEn": "a situation where people try to be more successful than others",
+    "example": "There is strong competition between food delivery apps.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "fierce competition",
+      "win a competition"
+    ]
+  },
+  {
+    "word": "strategy",
+    "ipa": "/ˈstrætədʒi/",
+    "pos": "noun",
+    "meaningVi": "chiến lược",
+    "meaningEn": "a plan for achieving a goal",
+    "example": "We need a clear marketing strategy.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "business strategy",
+      "develop a strategy"
+    ]
+  },
+  {
+    "word": "budget",
+    "ipa": "/ˈbʌdʒɪt/",
+    "pos": "noun",
+    "meaningVi": "ngân sách",
+    "meaningEn": "the amount of money available to spend",
+    "example": "We're already over budget on this project.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "on a budget",
+      "tight budget",
+      "over budget"
+    ]
+  },
+  {
+    "word": "consumer",
+    "ipa": "/kənˈsuːmər/",
+    "pos": "noun",
+    "meaningVi": "người tiêu dùng",
+    "meaningEn": "a person who buys goods or services",
+    "example": "Consumers are more interested in eco-friendly products.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "consumer demand",
+      "consumer goods"
+    ]
+  },
+  {
+    "word": "demand",
+    "ipa": "/dɪˈmænd/",
+    "pos": "noun",
+    "meaningVi": "nhu cầu",
+    "meaningEn": "the need or wish to buy something",
+    "example": "Demand for electric scooters is rising.",
+    "cefr": "B2",
+    "topic": "business",
+    "collocations": [
+      "high demand",
+      "meet demand",
+      "supply and demand"
+    ]
+  },
+  {
+    "word": "policy",
+    "ipa": "/ˈpɑːləsi/",
+    "pos": "noun",
+    "meaningVi": "chính sách",
+    "meaningEn": "a plan of action agreed by a government or organisation",
+    "example": "The company has a strict no-smoking policy.",
+    "cefr": "B2",
+    "topic": "society",
+    "collocations": [
+      "government policy",
+      "company policy"
+    ]
+  },
+  {
+    "word": "unemployment",
+    "ipa": "/ˌʌnɪmˈplɔɪmənt/",
+    "pos": "noun",
+    "meaningVi": "thất nghiệp; tỷ lệ thất nghiệp",
+    "meaningEn": "the state of not having a job; the number of people without jobs",
+    "example": "Unemployment among graduates has fallen this year.",
+    "cefr": "B2",
+    "topic": "society",
+    "collocations": [
+      "high unemployment",
+      "unemployment rate"
+    ]
+  },
+  {
+    "word": "inequality",
+    "ipa": "/ˌɪnɪˈkwɑːləti/",
+    "pos": "noun",
+    "meaningVi": "sự bất bình đẳng",
+    "meaningEn": "an unfair difference between groups of people",
+    "example": "Good public schools can help reduce inequality.",
+    "cefr": "B2",
+    "topic": "society",
+    "collocations": [
+      "income inequality",
+      "social inequality"
+    ]
+  },
+  {
+    "word": "globalisation",
+    "ipa": "/ˌɡloʊbələˈzeɪʃən/",
+    "pos": "noun",
+    "meaningVi": "toàn cầu hóa",
+    "meaningEn": "the process of countries becoming more connected through trade and culture",
+    "example": "Globalisation has changed the way we shop and work.",
+    "cefr": "B2",
+    "topic": "society",
+    "collocations": [
+      "effects of globalisation"
+    ]
+  },
+  {
+    "word": "generation",
+    "ipa": "/ˌdʒenəˈreɪʃən/",
+    "pos": "noun",
+    "meaningVi": "thế hệ",
+    "meaningEn": "all the people born around the same time",
+    "example": "The younger generation spends more time online.",
+    "cefr": "B2",
+    "topic": "people",
+    "collocations": [
+      "younger generation",
+      "future generations"
+    ]
+  },
+  {
+    "word": "lifestyle",
+    "ipa": "/ˈlaɪfstaɪl/",
+    "pos": "noun",
+    "meaningVi": "lối sống",
+    "meaningEn": "the way someone lives",
+    "example": "A busy lifestyle leaves little time to cook.",
+    "cefr": "B2",
+    "topic": "daily-life",
+    "collocations": [
+      "healthy lifestyle",
+      "sedentary lifestyle"
+    ]
+  },
+  {
+    "word": "obesity",
+    "ipa": "/oʊˈbiːsəti/",
+    "pos": "noun",
+    "meaningVi": "bệnh béo phì",
+    "meaningEn": "the condition of being very overweight",
+    "example": "Childhood obesity is increasing in many countries.",
+    "cefr": "B2",
+    "topic": "health",
+    "collocations": [
+      "childhood obesity",
+      "rates of obesity"
+    ]
+  },
+  {
+    "word": "mental",
+    "ipa": "/ˈmentəl/",
+    "pos": "adjective",
+    "meaningVi": "thuộc tinh thần, tâm thần",
+    "meaningEn": "relating to the mind",
+    "example": "Mental health is as important as physical health.",
+    "cefr": "B2",
+    "topic": "health",
+    "collocations": [
+      "mental health",
+      "mental illness"
+    ]
+  },
+  {
+    "word": "treatment",
+    "ipa": "/ˈtriːtmənt/",
+    "pos": "noun",
+    "meaningVi": "sự điều trị",
+    "meaningEn": "medical care for an illness or injury",
+    "example": "She is receiving treatment for a back injury.",
+    "cefr": "B2",
+    "topic": "health",
+    "collocations": [
+      "receive treatment",
+      "medical treatment"
+    ]
+  },
+  {
+    "word": "prevent",
+    "ipa": "/prɪˈvent/",
+    "pos": "verb",
+    "meaningVi": "ngăn chặn, phòng ngừa",
+    "meaningEn": "to stop something from happening",
+    "example": "Washing your hands helps prevent illness.",
+    "cefr": "B2",
+    "topic": "health",
+    "collocations": [
+      "prevent disease",
+      "prevent someone from"
+    ]
+  },
+  {
+    "word": "artificial intelligence",
+    "ipa": "/ˌɑːrtɪfɪʃəl ɪnˈtelɪdʒəns/",
+    "pos": "noun",
+    "meaningVi": "trí tuệ nhân tạo",
+    "meaningEn": "computer systems that can do tasks that usually need human intelligence",
+    "example": "Artificial intelligence can now translate speech almost instantly.",
+    "cefr": "B2",
+    "topic": "technology",
+    "collocations": [
+      "use artificial intelligence"
+    ]
+  },
+  {
+    "word": "innovation",
+    "ipa": "/ˌɪnəˈveɪʃən/",
+    "pos": "noun",
+    "meaningVi": "sự đổi mới, cải tiến",
+    "meaningEn": "a new idea, method or invention",
+    "example": "The city is known for innovation in public transport.",
+    "cefr": "B2",
+    "topic": "technology",
+    "collocations": [
+      "technological innovation",
+      "encourage innovation"
+    ]
+  },
+  {
+    "word": "data",
+    "ipa": "/ˈdeɪtə/",
+    "pos": "noun",
+    "meaningVi": "dữ liệu",
+    "meaningEn": "facts and numbers collected for analysis",
+    "example": "The app collects data about your sleep.",
+    "cefr": "B2",
+    "topic": "technology",
+    "collocations": [
+      "collect data",
+      "data analysis",
+      "personal data"
+    ]
+  },
+  {
+    "word": "access",
+    "ipa": "/ˈækses/",
+    "pos": "noun",
+    "meaningVi": "quyền truy cập, sự tiếp cận",
+    "meaningEn": "the right or chance to use or enter something",
+    "example": "All students have free access to the online library.",
+    "cefr": "B2",
+    "topic": "technology",
+    "collocations": [
+      "have access to",
+      "internet access",
+      "gain access"
+    ]
+  },
+  {
+    "word": "deforestation",
+    "ipa": "/diːˌfɔːrɪˈsteɪʃən/",
+    "pos": "noun",
+    "meaningVi": "nạn phá rừng",
+    "meaningEn": "the cutting down of large areas of forest",
+    "example": "Deforestation is destroying the homes of many animals.",
+    "cefr": "B2",
+    "topic": "nature",
+    "collocations": [
+      "stop deforestation",
+      "rate of deforestation"
+    ]
+  },
+  {
+    "word": "emission",
+    "ipa": "/iˈmɪʃən/",
+    "pos": "noun",
+    "meaningVi": "sự phát thải, khí thải",
+    "meaningEn": "gas or another substance sent into the air",
+    "example": "Cars are a major source of carbon emissions.",
+    "cefr": "B2",
+    "topic": "nature",
+    "collocations": [
+      "carbon emissions",
+      "reduce emissions"
+    ]
+  },
+  {
+    "word": "resource",
+    "ipa": "/ˈriːsɔːrs/",
+    "pos": "noun",
+    "meaningVi": "tài nguyên, nguồn lực",
+    "meaningEn": "something useful such as water, money or skills",
+    "example": "Water is a precious natural resource.",
+    "cefr": "B2",
+    "topic": "nature",
+    "collocations": [
+      "natural resources",
+      "limited resources"
+    ]
+  },
+  {
+    "word": "nevertheless",
+    "ipa": "/ˌnevərðəˈles/",
+    "pos": "adverb",
+    "meaningVi": "tuy vậy, dù sao đi nữa",
+    "meaningEn": "despite what has just been said",
+    "example": "The task was hard; nevertheless, we finished on time.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "whereas",
+    "ipa": "/werˈæz/",
+    "pos": "conjunction",
+    "meaningVi": "trong khi (đối lập)",
+    "meaningEn": "used to compare two different facts",
+    "example": "I prefer the city, whereas my sister loves the countryside.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "furthermore",
+    "ipa": "/ˌfɜːrðərˈmɔːr/",
+    "pos": "adverb",
+    "meaningVi": "hơn nữa",
+    "meaningEn": "in addition to what has been said",
+    "example": "The flat is cheap. Furthermore, it's close to the metro.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "approximately",
+    "ipa": "/əˈprɑːksɪmətli/",
+    "pos": "adverb",
+    "meaningVi": "xấp xỉ, khoảng",
+    "meaningEn": "close to an exact number but not exactly",
+    "example": "The journey takes approximately three hours.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "gradually",
+    "ipa": "/ˈɡrædʒuəli/",
+    "pos": "adverb",
+    "meaningVi": "dần dần",
+    "meaningEn": "slowly over a period of time",
+    "example": "Her English gradually improved.",
+    "cefr": "B2",
+    "topic": "time",
+    "collocations": [
+      "gradually increase",
+      "gradually change"
+    ]
+  },
+  {
+    "word": "regardless",
+    "ipa": "/rɪˈɡɑːrdləs/",
+    "pos": "adverb",
+    "meaningVi": "bất kể",
+    "meaningEn": "without being affected by something",
+    "example": "Regardless of the weather, the match will go ahead.",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "regardless of"
+    ]
+  },
+  {
+    "word": "carry out",
+    "ipa": "/ˌkæri ˈaʊt/",
+    "pos": "phrasal verb",
+    "meaningVi": "tiến hành, thực hiện",
+    "meaningEn": "to do a task or piece of work",
+    "example": "Scientists carried out tests on the river water.",
+    "cefr": "B2",
+    "topic": "academic",
+    "collocations": [
+      "carry out research",
+      "carry out a survey"
+    ]
+  },
+  {
+    "word": "point out",
+    "ipa": "/pɔɪnt ˈaʊt/",
+    "pos": "phrasal verb",
+    "meaningVi": "chỉ ra",
+    "meaningEn": "to tell someone a fact they may not know or have noticed",
+    "example": "She pointed out a mistake in my report.",
+    "cefr": "B2",
+    "topic": "actions",
+    "collocations": [
+      "point out a mistake",
+      "point out that"
+    ]
+  },
+  {
+    "word": "figure out",
+    "ipa": "/ˌfɪɡjər ˈaʊt/",
+    "pos": "phrasal verb",
+    "meaningVi": "tìm ra, hiểu ra",
+    "meaningEn": "to understand or solve something after thinking",
+    "example": "I finally figured out how to use the new app.",
+    "cefr": "B2",
+    "topic": "actions",
+    "collocations": [
+      "figure out how",
+      "figure out a problem"
+    ]
+  },
+  {
+    "word": "put off",
+    "ipa": "/pʊt ˈɔːf/",
+    "pos": "phrasal verb",
+    "meaningVi": "trì hoãn",
+    "meaningEn": "to delay doing something",
+    "example": "Stop putting off your homework!",
+    "cefr": "B2",
+    "topic": "time",
+    "collocations": [
+      "put off a decision",
+      "put off doing"
+    ]
+  },
+  {
+    "word": "crucial",
+    "ipa": "/ˈkruːʃəl/",
+    "pos": "adjective",
+    "meaningVi": "cực kỳ quan trọng, then chốt",
+    "meaningEn": "extremely important",
+    "example": "Sleep is crucial for memory.",
+    "cefr": "B2",
+    "topic": "describing",
+    "collocations": [
+      "crucial role",
+      "crucial for"
+    ]
+  },
+  {
+    "word": "phenomenon",
+    "ipa": "/fəˈnɑːmɪnən/",
+    "pos": "noun",
+    "meaningVi": "hiện tượng",
+    "meaningEn": "something that exists or happens, especially something unusual",
+    "example": "Working from cafes is a fairly recent phenomenon.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "natural phenomenon",
+      "social phenomenon"
+    ]
+  },
+  {
+    "word": "hypothesis",
+    "ipa": "/haɪˈpɑːθəsɪs/",
+    "pos": "noun",
+    "meaningVi": "giả thuyết",
+    "meaningEn": "an idea that is suggested as an explanation but has not yet been proved",
+    "example": "The experiment was designed to test the hypothesis.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "test a hypothesis",
+      "support a hypothesis"
+    ]
+  },
+  {
+    "word": "infrastructure",
+    "ipa": "/ˈɪnfrəstrʌktʃər/",
+    "pos": "noun",
+    "meaningVi": "cơ sở hạ tầng",
+    "meaningEn": "the basic systems a country needs, such as roads, power and water",
+    "example": "The country is investing heavily in infrastructure.",
+    "cefr": "C1",
+    "topic": "society",
+    "collocations": [
+      "transport infrastructure",
+      "invest in infrastructure"
+    ]
+  },
+  {
+    "word": "substantial",
+    "ipa": "/səbˈstænʃəl/",
+    "pos": "adjective",
+    "meaningVi": "đáng kể, lớn",
+    "meaningEn": "large in amount, size or importance",
+    "example": "The project received substantial funding from the city.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "substantial amount",
+      "substantial increase"
+    ]
+  },
+  {
+    "word": "comprehensive",
+    "ipa": "/ˌkɑːmprɪˈhensɪv/",
+    "pos": "adjective",
+    "meaningVi": "toàn diện",
+    "meaningEn": "including everything that is needed",
+    "example": "The guide gives a comprehensive overview of the topic.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "comprehensive study",
+      "comprehensive review"
+    ]
+  },
+  {
+    "word": "controversial",
+    "ipa": "/ˌkɑːntrəˈvɜːrʃəl/",
+    "pos": "adjective",
+    "meaningVi": "gây tranh cãi",
+    "meaningEn": "causing a lot of disagreement",
+    "example": "The new parking tax is highly controversial.",
+    "cefr": "C1",
+    "topic": "society",
+    "collocations": [
+      "controversial issue",
+      "highly controversial"
+    ]
+  },
+  {
+    "word": "inherent",
+    "ipa": "/ɪnˈhɪrənt/",
+    "pos": "adjective",
+    "meaningVi": "vốn có, cố hữu",
+    "meaningEn": "existing as a natural or basic part of something",
+    "example": "There are risks inherent in starting any new business.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "inherent risk",
+      "inherent in"
+    ]
+  },
+  {
+    "word": "ambiguous",
+    "ipa": "/æmˈbɪɡjuəs/",
+    "pos": "adjective",
+    "meaningVi": "mơ hồ, nước đôi",
+    "meaningEn": "having more than one possible meaning",
+    "example": "The instructions were ambiguous, so half the class did the wrong task.",
+    "cefr": "C1",
+    "topic": "describing",
+    "collocations": [
+      "ambiguous answer",
+      "highly ambiguous"
+    ]
+  },
+  {
+    "word": "plausible",
+    "ipa": "/ˈplɔːzəbəl/",
+    "pos": "adjective",
+    "meaningVi": "hợp lý, nghe có vẻ đúng",
+    "meaningEn": "seeming likely to be true",
+    "example": "Her explanation for being late sounded plausible.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "plausible explanation",
+      "perfectly plausible"
+    ]
+  },
+  {
+    "word": "implication",
+    "ipa": "/ˌɪmplɪˈkeɪʃən/",
+    "pos": "noun",
+    "meaningVi": "hệ quả, hàm ý",
+    "meaningEn": "a possible effect or result of a decision or action",
+    "example": "The new law has serious implications for small businesses.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "serious implications",
+      "implications for"
+    ]
+  },
+  {
+    "word": "discrepancy",
+    "ipa": "/dɪˈskrepənsi/",
+    "pos": "noun",
+    "meaningVi": "sự chênh lệch, sai lệch",
+    "meaningEn": "a difference between things that should be the same",
+    "example": "There's a discrepancy between the two sales reports.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "discrepancy between",
+      "major discrepancy"
+    ]
+  },
+  {
+    "word": "paradigm",
+    "ipa": "/ˈpærədaɪm/",
+    "pos": "noun",
+    "meaningVi": "mô hình, hệ tư duy",
+    "meaningEn": "a typical model or accepted way of thinking about something",
+    "example": "Remote work has created a new paradigm for offices.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "paradigm shift",
+      "new paradigm"
+    ]
+  },
+  {
+    "word": "criterion",
+    "ipa": "/kraɪˈtɪriən/",
+    "pos": "noun",
+    "meaningVi": "tiêu chí",
+    "meaningEn": "a standard used to judge or decide something",
+    "example": "Price is not the only criterion for choosing a school.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "meet the criteria",
+      "main criterion"
+    ]
+  },
+  {
+    "word": "empirical",
+    "ipa": "/ɪmˈpɪrɪkəl/",
+    "pos": "adjective",
+    "meaningVi": "thực nghiệm",
+    "meaningEn": "based on observation or experiment rather than theory",
+    "example": "There is little empirical evidence for this claim.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "empirical evidence",
+      "empirical research"
+    ]
+  },
+  {
+    "word": "mitigate",
+    "ipa": "/ˈmɪtɪɡeɪt/",
+    "pos": "verb",
+    "meaningVi": "giảm nhẹ",
+    "meaningEn": "to make something bad less severe",
+    "example": "Planting trees can mitigate the effects of heat in cities.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "mitigate the risk",
+      "mitigate the effects"
+    ]
+  },
+  {
+    "word": "exacerbate",
+    "ipa": "/ɪɡˈzæsərbeɪt/",
+    "pos": "verb",
+    "meaningVi": "làm trầm trọng thêm",
+    "meaningEn": "to make a bad situation worse",
+    "example": "Heavy traffic exacerbates air pollution in the city centre.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "exacerbate a problem",
+      "exacerbate the situation"
+    ]
+  },
+  {
+    "word": "undermine",
+    "ipa": "/ˌʌndərˈmaɪn/",
+    "pos": "verb",
+    "meaningVi": "làm suy yếu",
+    "meaningEn": "to gradually make something weaker or less effective",
+    "example": "Constant criticism can undermine a child's confidence.",
+    "cefr": "C1",
+    "topic": "society",
+    "collocations": [
+      "undermine confidence",
+      "undermine trust"
+    ]
+  },
+  {
+    "word": "facilitate",
+    "ipa": "/fəˈsɪlɪteɪt/",
+    "pos": "verb",
+    "meaningVi": "tạo điều kiện thuận lợi",
+    "meaningEn": "to make an action or process easier",
+    "example": "The new app facilitates communication between teachers and parents.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "facilitate learning",
+      "facilitate communication"
+    ]
+  },
+  {
+    "word": "allocate",
+    "ipa": "/ˈæləkeɪt/",
+    "pos": "verb",
+    "meaningVi": "phân bổ",
+    "meaningEn": "to give something officially to someone for a particular purpose",
+    "example": "The city allocated more money to public parks.",
+    "cefr": "C1",
+    "topic": "business",
+    "collocations": [
+      "allocate resources",
+      "allocate funds"
+    ]
+  },
+  {
+    "word": "compensate",
+    "ipa": "/ˈkɑːmpenseɪt/",
+    "pos": "verb",
+    "meaningVi": "bù đắp, bồi thường",
+    "meaningEn": "to pay or do something to make up for a loss or problem",
+    "example": "The airline compensated passengers for the long delay.",
+    "cefr": "C1",
+    "topic": "business",
+    "collocations": [
+      "compensate for",
+      "fully compensate"
+    ]
+  },
+  {
+    "word": "deteriorate",
+    "ipa": "/dɪˈtɪriəreɪt/",
+    "pos": "verb",
+    "meaningVi": "xấu đi, suy giảm",
+    "meaningEn": "to become worse",
+    "example": "His health deteriorated during the cold winter.",
+    "cefr": "C1",
+    "topic": "health",
+    "collocations": [
+      "rapidly deteriorate",
+      "deteriorating conditions"
+    ]
+  },
+  {
+    "word": "advocate",
+    "ipa": "/ˈædvəkeɪt/",
+    "pos": "verb",
+    "meaningVi": "ủng hộ, chủ trương",
+    "meaningEn": "to publicly support an idea or plan",
+    "example": "Many doctors advocate a shorter working week.",
+    "cefr": "C1",
+    "topic": "society",
+    "collocations": [
+      "strongly advocate"
+    ]
+  },
+  {
+    "word": "scrutiny",
+    "ipa": "/ˈskruːtəni/",
+    "pos": "noun",
+    "meaningVi": "sự xem xét kỹ lưỡng",
+    "meaningEn": "careful and detailed examination",
+    "example": "The company's accounts are now under close scrutiny.",
+    "cefr": "C1",
+    "topic": "society",
+    "collocations": [
+      "under scrutiny",
+      "close scrutiny",
+      "public scrutiny"
+    ]
+  },
+  {
+    "word": "consensus",
+    "ipa": "/kənˈsensəs/",
+    "pos": "noun",
+    "meaningVi": "sự đồng thuận",
+    "meaningEn": "general agreement among a group of people",
+    "example": "There is a growing consensus that the plan needs to change.",
+    "cefr": "C1",
+    "topic": "society",
+    "collocations": [
+      "reach a consensus",
+      "broad consensus"
+    ]
+  },
+  {
+    "word": "sustainability",
+    "ipa": "/səˌsteɪnəˈbɪləti/",
+    "pos": "noun",
+    "meaningVi": "tính bền vững",
+    "meaningEn": "the ability to continue for a long time without damaging the environment",
+    "example": "The festival focuses on sustainability this year.",
+    "cefr": "C1",
+    "topic": "nature",
+    "collocations": [
+      "environmental sustainability",
+      "long-term sustainability"
+    ]
+  },
+  {
+    "word": "biodiversity",
+    "ipa": "/ˌbaɪoʊdaɪˈvɜːrsəti/",
+    "pos": "noun",
+    "meaningVi": "đa dạng sinh học",
+    "meaningEn": "the variety of plants and animals in an area",
+    "example": "Coral reefs have extraordinary biodiversity.",
+    "cefr": "C1",
+    "topic": "nature",
+    "collocations": [
+      "protect biodiversity",
+      "loss of biodiversity"
+    ]
+  },
+  {
+    "word": "unprecedented",
+    "ipa": "/ʌnˈpresɪdentɪd/",
+    "pos": "adjective",
+    "meaningVi": "chưa từng có",
+    "meaningEn": "never having happened or existed before",
+    "example": "The city saw an unprecedented rise in tourism last year.",
+    "cefr": "C1",
+    "topic": "describing",
+    "collocations": [
+      "unprecedented scale",
+      "unprecedented level"
+    ]
+  },
+  {
+    "word": "detrimental",
+    "ipa": "/ˌdetrɪˈmentəl/",
+    "pos": "adjective",
+    "meaningVi": "có hại",
+    "meaningEn": "causing harm or damage",
+    "example": "Too much screen time can be detrimental to sleep.",
+    "cefr": "C1",
+    "topic": "health",
+    "collocations": [
+      "detrimental effect",
+      "detrimental to"
+    ]
+  },
+  {
+    "word": "prevalent",
+    "ipa": "/ˈprevələnt/",
+    "pos": "adjective",
+    "meaningVi": "phổ biến, thịnh hành",
+    "meaningEn": "existing very commonly in a particular place or time",
+    "example": "Short-sightedness is prevalent among university students.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": [
+      "widely prevalent",
+      "increasingly prevalent"
+    ]
+  },
+  {
+    "word": "thereby",
+    "ipa": "/ˌðerˈbaɪ/",
+    "pos": "adverb",
+    "meaningVi": "bằng cách đó, nhờ đó",
+    "meaningEn": "as a result of the action just mentioned",
+    "example": "The city added bus lanes, thereby reducing travel times.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "notwithstanding",
+    "ipa": "/ˌnɑːtwɪθˈstændɪŋ/",
+    "pos": "preposition",
+    "meaningVi": "bất chấp, mặc dù",
+    "meaningEn": "despite",
+    "example": "Notwithstanding the high cost, the project was a success.",
+    "cefr": "C1",
+    "topic": "academic",
+    "collocations": []
+  },
+  {
+    "word": "entrepreneur",
+    "ipa": "/ˌɑːntrəprəˈnɜːr/",
+    "pos": "noun",
+    "meaningVi": "doanh nhân khởi nghiệp",
+    "meaningEn": "a person who starts their own business, often taking risks",
+    "example": "The young entrepreneur opened three cafes in two years.",
+    "cefr": "C1",
+    "topic": "business",
+    "collocations": [
+      "young entrepreneur",
+      "successful entrepreneur"
+    ]
+  },
+  {
+    "word": "phase out",
+    "ipa": "/feɪz ˈaʊt/",
+    "pos": "phrasal verb",
+    "meaningVi": "loại bỏ dần",
+    "meaningEn": "to gradually stop using or providing something",
+    "example": "The city plans to phase out petrol motorbikes by 2035.",
+    "cefr": "C1",
+    "topic": "society",
+    "collocations": [
+      "phase out gradually"
+    ]
+  }
+]
