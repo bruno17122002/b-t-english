@@ -2,12 +2,13 @@
 // come in through the HostBridge so these handlers stay testable without Electron.
 import fs from 'node:fs'
 import path from 'node:path'
-import type { DiagnosticsInfo } from '@shared/types'
+import type { AppSettings, DiagnosticsInfo } from '@shared/types'
 import { USER_PROVIDERS } from '@shared/types'
 import { currentSchemaVersion } from '../db/migrations'
 import type { Kernel } from '../kernel'
 import { norm } from '../kernel/search/search'
 import { UserError, type IpcRouter } from './router'
+import { registerTelegramHandlers } from './telegramHandlers'
 
 export interface HostBridge {
   version: string
@@ -23,6 +24,8 @@ export interface HostBridge {
   notify(title: string, body: string): void
   /** Closes the database and restarts the app (used after restore). */
   relaunch(): void
+  /** Applies OS-level settings (start with Windows) after the user changes them. */
+  applySystemSettings?(settings: AppSettings): void
   online(): boolean | null
 }
 
@@ -34,6 +37,8 @@ const ALLOWED_HOSTS = [
   'dictionary.cambridge.org',
   'www.oxfordlearnersdictionaries.com',
   'youglish.com',
+  't.me',
+  'core.telegram.org',
 ]
 
 export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge): void {
@@ -140,7 +145,11 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
 
   // ---------- settings ----------
   r.handle('settings:get', () => k.settings.get())
-  r.handle('settings:update', (patch) => k.settings.update(patch))
+  r.handle('settings:update', (patch) => {
+    const next = k.settings.update(patch)
+    if (patch.launchAtLogin !== undefined || patch.runInBackground !== undefined) host.applySystemSettings?.(next)
+    return next
+  })
 
   // ---------- AI ----------
   r.handle('ai:config', () => k.ai.getConfig())
@@ -216,6 +225,9 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
 
   // ---------- search ----------
   r.handle('search:query', ({ q }) => k.search.search(q))
+
+  // ---------- Telegram ----------
+  registerTelegramHandlers(r, k)
 
   // ---------- data ----------
   r.handle('data:backups', () => k.data.listBackups())

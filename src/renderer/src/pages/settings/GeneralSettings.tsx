@@ -259,6 +259,29 @@ export function GeneralSettings() {
             </Select>
           </Field>
         </Row>
+        <Row
+          title={L('Keep running when the window is closed', 'Chạy ngầm khi đóng cửa sổ')}
+          desc={L(
+            'Lingua Quest stays in the system tray so reminders, reports and the Telegram bot keep working.',
+            'Lingua Quest nằm ở khay hệ thống để nhắc học, báo cáo và bot Telegram vẫn hoạt động.',
+          )}
+        >
+          <Toggle
+            checked={settings.runInBackground}
+            onChange={(v) => set('runInBackground', v)}
+            label={L('Keep running when the window is closed', 'Chạy ngầm khi đóng cửa sổ')}
+          />
+        </Row>
+        <Row
+          title={L('Start with Windows', 'Khởi động cùng Windows')}
+          desc={L('Starts hidden in the tray when you sign in.', 'Tự chạy ẩn trong khay khi bạn đăng nhập Windows.')}
+        >
+          <Toggle
+            checked={settings.launchAtLogin}
+            onChange={(v) => set('launchAtLogin', v)}
+            label={L('Start with Windows', 'Khởi động cùng Windows')}
+          />
+        </Row>
       </Card>
     </div>
   )

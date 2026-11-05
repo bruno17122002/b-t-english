@@ -19,7 +19,7 @@ import { extractJson } from './http'
 import { MockProvider } from './mock'
 import { OPENAI_DEFAULT_MODEL, OpenAIProvider } from './openai'
 import type { LearnerSummary, PromptContext, PromptSpec } from './prompt'
-import { AiError, type AiProvider, type SynthesizeResult } from './types'
+import { AiError, type AiProvider, type ImageResult, type SynthesizeResult } from './types'
 
 interface AiSettingsRow {
   default_provider: UserProviderId | null
@@ -231,6 +231,7 @@ export class AiGateway {
           system: built.system,
           messages,
           audio: built.audio,
+          image: built.image,
           json: true,
           temperature: spec.temperature ?? 0.4,
           maxOutputTokens: spec.maxOutputTokens,
@@ -304,6 +305,29 @@ export class AiGateway {
     }
   }
 
+  // ---------- images ----------
+  /** Image generation (Gemini image models only). Mock mode returns a 1×1 PNG. */
+  async generateImage(
+    prompt: string,
+    model: string,
+    image?: { data: Uint8Array; mimeType: string },
+    signal?: AbortSignal,
+  ): Promise<ImageResult> {
+    if (this.deps.mock) return { image: MOCK_PNG, mimeType: 'image/png', text: '' }
+    const key = this.deps.keys.get('gemini')
+    if (!key) throw new AiError('no_key')
+    const p = new GeminiProvider(key, this.settings().gemini_model, this.deps.fetchImpl)
+    try {
+      const res = await p.generateImage({ prompt, model, image, signal })
+      this.deps.log?.('info', `ai image ok via gemini (${model}, ${Math.round(res.image.byteLength / 1024)} KB)`)
+      return res
+    } catch (err) {
+      const e = toAiError(err)
+      this.deps.log?.('warn', `ai image failed via gemini (${model}): ${e.code}`)
+      throw e
+    }
+  }
+
   async synthesize(engine: UserProviderId, text: string, voice?: string, speed?: number): Promise<SynthesizeResult> {
     const p = this.deps.mock ? new MockProvider() : this.provider(engine)
     try {
@@ -313,6 +337,14 @@ export class AiGateway {
     }
   }
 }
+
+/** 1×1 transparent PNG used by mock image generation. */
+const MOCK_PNG = new Uint8Array(
+  Buffer.from(
+    'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+    'base64',
+  ),
+)
 
 export function toAiError(err: unknown): AiError {
   if (err instanceof AiError) return err

@@ -35,11 +35,13 @@ const ROUTES = [
   '/tutor',
   '/game',
   '/stats',
+  '/coach',
   '/library',
   '/settings/general',
   '/settings/ai',
   '/settings/data',
   '/settings/about',
+  '/settings/telegram',
 ]
 
 let lq: LaunchedApp
@@ -149,7 +151,10 @@ for (const lang of ['vi', 'en'] as const) {
       for (const [k, v] of fonts) total.set(k, (total.get(k) ?? 0) + v)
       problems.push(...offenders.map((o) => `${route}: ${o}`))
     }
-    console.log(`[${lang}] fonts used:`, Object.fromEntries([...total].sort((a, b) => b[1] - a[1])))
+    test.info().annotations.push({
+      type: `fonts (${lang})`,
+      description: JSON.stringify(Object.fromEntries([...total].sort((a, b) => b[1] - a[1]))),
+    })
     expect(problems, problems.join('\n')).toEqual([])
     // The interface itself must be drawn with Segoe UI Variable, not a fallback.
     const segoe = [...total].filter(([k]) => k.startsWith('Segoe UI Variable')).reduce((s, [, v]) => s + v, 0)
@@ -183,7 +188,7 @@ test('Vietnamese diacritics and IPA are drawn by the UI font, not a fallback', a
   const { fonts } = (await cdp.send('CSS.getPlatformFontsForNode', { nodeId })) as {
     fonts: { familyName: string; postScriptName: string; glyphCount: number }[]
   }
-  console.log('sample fonts:', fonts)
+  test.info().annotations.push({ type: 'sample fonts', description: JSON.stringify(fonts) })
   // Every glyph (all Vietnamese letters with diacritics + IPA) comes from one font: Segoe UI Variable Text.
   expect(fonts.map((f) => [f.familyName, f.postScriptName])).toEqual([['Segoe UI Variable', 'Segoe-UI-Variable-Text']])
 })

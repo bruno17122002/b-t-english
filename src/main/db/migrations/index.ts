@@ -4,6 +4,7 @@ import { writeFileAtomic } from '../database'
 import { V1_INITIAL } from './v1_initial'
 import { V2_GENERATED_CONTENT_INDEX } from './v2_indexes'
 import { V3_SRS_LEARNING_STEPS } from './v3_srs_learning_steps'
+import { V4_TELEGRAM_MESSAGES } from './v4_telegram_messages'
 
 export interface Migration {
   version: number
@@ -16,6 +17,7 @@ export const MIGRATIONS: Migration[] = [
   { version: 1, name: 'initial schema', sql: V1_INITIAL },
   { version: 2, name: 'search and history indexes', sql: V2_GENERATED_CONTENT_INDEX },
   { version: 3, name: 'srs learning steps and module migrations', sql: V3_SRS_LEARNING_STEPS },
+  { version: 4, name: 'telegram bot chat memory', sql: V4_TELEGRAM_MESSAGES },
 ]
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1]?.version ?? 0

@@ -36,9 +36,18 @@ export class OpenAIProvider implements AiProvider {
 
   async generate(req: GenerateRequest): Promise<GenerateResult> {
     if (req.audio) throw new AiError('unsupported', 'Audio input is handled through transcription for OpenAI')
+    const messages: { role: string; content: unknown }[] = req.messages.map((m) => ({ ...m }))
+    const last = messages[messages.length - 1]
+    if (req.image && last) {
+      const url = `data:${req.image.mimeType};base64,${Buffer.from(req.image.data).toString('base64')}`
+      last.content = [
+        { type: 'text', text: String(last.content) },
+        { type: 'image_url', image_url: { url } },
+      ]
+    }
     const body: Record<string, unknown> = {
       model: this.model,
-      messages: [{ role: 'system', content: req.system }, ...req.messages],
+      messages: [{ role: 'system', content: req.system }, ...messages],
       max_completion_tokens: req.maxOutputTokens ?? 4096,
     }
     if (!fixedTemperature(this.model)) body.temperature = req.temperature ?? 0.7
@@ -61,7 +70,15 @@ export class OpenAIProvider implements AiProvider {
 
   async transcribe(req: TranscribeRequest): Promise<string> {
     const form = new FormData()
-    const ext = req.mimeType.includes('wav') ? 'wav' : req.mimeType.includes('mp3') ? 'mp3' : 'webm'
+    const ext = req.mimeType.includes('wav')
+      ? 'wav'
+      : req.mimeType.includes('mp3') || req.mimeType.includes('mpeg')
+        ? 'mp3'
+        : req.mimeType.includes('ogg') || req.mimeType.includes('opus')
+          ? 'ogg'
+          : req.mimeType.includes('mp4') || req.mimeType.includes('m4a')
+            ? 'm4a'
+            : 'webm'
     form.append('file', new Blob([Buffer.from(req.audio)], { type: req.mimeType }), `speech.${ext}`)
     form.append('model', OPENAI_STT_MODEL)
     form.append('language', 'en')

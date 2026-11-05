@@ -14,6 +14,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   showVietnameseHints: true,
   reduceMotion: false,
   dailyGoalXp: 50,
+  runInBackground: true,
+  launchAtLogin: false,
 }
 
 export class SettingsService {

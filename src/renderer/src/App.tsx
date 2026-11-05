@@ -54,6 +54,9 @@ function usePushEvents() {
 }
 
 const moduleRoutes = MODULES_RENDERER.flatMap((m) => m.routes.map((r) => ({ ...r, moduleId: m.id })))
+const moduleBackgrounds = MODULES_RENDERER.flatMap((m) =>
+  m.Background ? [{ id: m.id, Background: m.Background }] : [],
+)
 
 export function App() {
   const boot = useApp((s) => s.boot)
@@ -97,6 +100,9 @@ export function App() {
   return (
     <ErrorBoundary>
       <Shell bare={location.pathname.startsWith('/onboarding')}>
+        {moduleBackgrounds.map(({ id, Background }) => (
+          <Background key={id} />
+        ))}
         <Suspense
           fallback={
             <div className="flex h-64 items-center justify-center">

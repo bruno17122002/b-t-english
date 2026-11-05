@@ -7,11 +7,13 @@ import {
   dialog,
   ipcMain,
   Menu,
+  nativeImage,
   Notification,
   net,
   safeStorage,
   session,
   shell,
+  Tray,
   type WebContents,
 } from 'electron'
 import { CHANNELS } from '@modules/contract'
@@ -22,6 +24,7 @@ import { KeyStore } from './kernel/secure/keyStore'
 import { Logger } from './kernel/logger'
 import { IpcRouter } from './ipc/router'
 import { registerKernelHandlers, type HostBridge } from './ipc/kernelHandlers'
+import { importLegacyTelegramConfig } from './kernel/telegram/legacy'
 
 const isDev = !app.isPackaged && !!process.env.ELECTRON_RENDERER_URL
 const isE2E = process.env.LQ_E2E === '1'
@@ -34,6 +37,11 @@ if (!isE2E && !app.requestSingleInstanceLock()) {
 }
 
 let mainWindow: BrowserWindow | null = null
+let tray: Tray | null = null
+let quitting = false
+const stopBackground: (() => void)[] = []
+/** Started by Windows at sign-in: stay in the tray until the learner opens the window. */
+const startHidden = process.argv.includes('--hidden')
 let kernel: Kernel | null = null
 let logger: Logger | null = null
 const allowedChannels = new Set<string>(CHANNELS)
@@ -76,7 +84,15 @@ function createWindow() {
       devTools: !app.isPackaged || process.env.LQ_DEVTOOLS === '1',
     },
   })
-  mainWindow.once('ready-to-show', () => mainWindow?.show())
+  mainWindow.once('ready-to-show', () => {
+    if (!startHidden || isE2E) mainWindow?.show()
+  })
+  // Closing the window keeps the app (Telegram bot, reminders, reports) running in the tray when enabled.
+  mainWindow.on('close', (e) => {
+    if (quitting || isE2E || !kernel?.settings.get().runInBackground) return
+    e.preventDefault()
+    mainWindow?.hide()
+  })
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
     if (url.startsWith('https://')) void shell.openExternal(url)
     return { action: 'deny' }
@@ -145,45 +161,47 @@ function hostBridge(): HostBridge {
       app.relaunch()
       app.exit(0)
     },
+    applySystemSettings: (s) => applyLoginItem(s.launchAtLogin),
     online: () => net.isOnline(),
   }
 }
 
-function startReminders(k: Kernel) {
-  const check = () => {
-    try {
-      const s = k.settings.get()
-      if (!s.notificationsEnabled) return
-      const now = new Date()
-      const hhmm = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`
-      const today = localDateKey(now)
-      if (hhmm < s.reminderTime || k.settings.getFlag('lastReminder') === today) return
-      k.settings.setFlag('lastReminder', today)
-      if (k.progress.minutesToday() >= 1) return
-      const due = k.vocab.dueCount()
-      const streak = k.progress.gameState().streak.current
-      const vi = s.uiLanguage === 'vi'
-      const body = due
-        ? vi
-          ? `Có ${due} thẻ từ đang chờ ôn. Chỉ 5 phút để giữ chuỗi ${streak} ngày!`
-          : `${due} flashcards are waiting. Five minutes keeps your ${streak}-day streak alive!`
-        : vi
-          ? 'Hôm nay bạn chưa học. Một bài nghe ngắn nhé?'
-          : 'You have not studied today yet. How about a short listening session?'
-      if (Notification.isSupported()) {
-        const n = new Notification({ title: 'Lingua Quest', body })
-        n.on('click', () => {
-          mainWindow?.show()
-          push(mainWindow?.webContents, 'navigate', due ? '/vocabulary/review' : '/')
-        })
-        n.show()
-      }
-    } catch (err) {
-      logger?.error(`reminder failed: ${String(err)}`)
-    }
-  }
-  setInterval(check, 60_000)
-  setTimeout(check, 15_000)
+function showWindow(route?: string) {
+  if (!mainWindow) createWindow()
+  mainWindow?.show()
+  if (mainWindow?.isMinimized()) mainWindow.restore()
+  mainWindow?.focus()
+  if (route) push(mainWindow?.webContents, 'navigate', route)
+}
+
+function applyLoginItem(enabled: boolean) {
+  if (isE2E || !app.isPackaged) return // never register a dev build with Windows
+  app.setLoginItemSettings({ openAtLogin: enabled, args: ['--hidden'] })
+}
+
+function createTray() {
+  const icon = nativeImage
+    .createFromPath(path.join(app.getAppPath(), 'build', 'icon.png'))
+    .resize({ width: 16, height: 16 })
+  tray = new Tray(icon)
+  tray.setToolTip('Lingua Quest')
+  const vi = kernel?.settings.get().uiLanguage !== 'en'
+  tray.setContextMenu(
+    Menu.buildFromTemplate([
+      { label: vi ? 'Mở Lingua Quest' : 'Open Lingua Quest', click: () => showWindow() },
+      { label: vi ? 'Ôn thẻ từ' : 'Review flashcards', click: () => showWindow('/vocabulary/review') },
+      { label: vi ? 'Huấn luyện AI' : 'AI Coach', click: () => showWindow('/coach') },
+      { type: 'separator' },
+      {
+        label: vi ? 'Thoát hẳn' : 'Quit',
+        click: () => {
+          quitting = true
+          app.quit()
+        },
+      },
+    ]),
+  )
+  tray.on('click', () => showWindow())
 }
 
 async function bootstrap() {
@@ -212,6 +230,15 @@ async function bootstrap() {
   })
   const k = kernel
   k.push = (event, payload) => push(mainWindow?.webContents, event, payload)
+  k.notify = (title, body, route) => {
+    if (!Notification.isSupported()) return
+    const n = new Notification({ title, body })
+    n.on('click', () => showWindow(route))
+    n.show()
+  }
+  // Secrets of the old stand-alone Python bot are moved into the encrypted store once, then the file is deleted.
+  const legacy = importLegacyTelegramConfig(k)
+  if (legacy.length) logger.info(`imported from the old Telegram bot: ${legacy.join(', ')}`)
   k.progress.onReward((reward) => k.push('reward', reward))
 
   const router = new IpcRouter(logger)
@@ -243,15 +270,20 @@ async function bootstrap() {
   hardenSession()
   Menu.setApplicationMenu(null)
   createWindow()
-  if (!isE2E) startReminders(k)
+  if (!isE2E) {
+    createTray()
+    applyLoginItem(k.settings.get().launchAtLogin)
+    // Background services (Telegram polling, coach scheduler) run only in the real app, never in tests.
+    const tg = k.telegram as { start?: () => () => void }
+    if (tg.start) stopBackground.push(tg.start())
+    for (const m of MODULES_MAIN) {
+      const stop = m.start?.(k)
+      if (stop) stopBackground.push(stop)
+    }
+  }
 }
 
-app.on('second-instance', () => {
-  if (mainWindow) {
-    if (mainWindow.isMinimized()) mainWindow.restore()
-    mainWindow.focus()
-  }
-})
+app.on('second-instance', () => showWindow())
 
 app.on('web-contents-created', (_e, contents) => {
   contents.on('will-attach-webview', (e) => e.preventDefault())
@@ -270,11 +302,20 @@ app
   })
 
 app.on('window-all-closed', () => {
+  // With "run in background" the window is only hidden, so this fires only on a real quit.
   kernel?.db.close()
   app.quit()
 })
 
 app.on('before-quit', () => {
+  quitting = true
+  for (const stop of stopBackground.splice(0)) {
+    try {
+      stop()
+    } catch {
+      /* shutting down */
+    }
+  }
   try {
     kernel?.db.flush()
   } catch (err) {

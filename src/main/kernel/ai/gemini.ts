@@ -7,6 +7,8 @@ import {
   type AiProvider,
   type GenerateRequest,
   type GenerateResult,
+  type ImageRequest,
+  type ImageResult,
   type SynthesizeRequest,
   type SynthesizeResult,
   type TranscribeRequest,
@@ -21,6 +23,7 @@ export const GEMINI_VOICES = ['Kore', 'Puck', 'Charon', 'Aoede', 'Fenrir', 'Leda
 interface GeminiPart {
   text?: string
   inlineData?: { mimeType: string; data: string }
+  thought?: boolean
 }
 interface GeminiResponse {
   candidates?: { content?: { parts?: GeminiPart[] }; finishReason?: string }[]
@@ -66,6 +69,9 @@ export class GeminiProvider implements AiProvider {
       if (req.audio && i === req.messages.length - 1) {
         parts.push({ inlineData: { mimeType: req.audio.mimeType, data: toBase64(req.audio.data) } })
       }
+      if (req.image && i === req.messages.length - 1) {
+        parts.push({ inlineData: { mimeType: req.image.mimeType, data: toBase64(req.image.data) } })
+      }
       return { role: m.role === 'assistant' ? 'model' : 'user', parts }
     })
     const data = await this.call(
@@ -84,6 +90,29 @@ export class GeminiProvider implements AiProvider {
     const text = (data.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? '').join('')
     if (!text.trim()) throw new AiError('bad_response', 'Gemini returned an empty answer')
     return { text, model: this.model, provider: 'gemini' }
+  }
+
+  /** Image generation with a Gemini image model (e.g. gemini-2.5-flash-image). */
+  async generateImage(req: ImageRequest): Promise<ImageResult> {
+    const parts: GeminiPart[] = [{ text: req.prompt.slice(0, 4000) }]
+    if (req.image) parts.unshift({ inlineData: { mimeType: req.image.mimeType, data: toBase64(req.image.data) } })
+    const data = await this.call(
+      req.model,
+      { contents: [{ role: 'user', parts }], generationConfig: { responseModalities: ['TEXT', 'IMAGE'] } },
+      req.signal,
+      120_000,
+    )
+    const out = (data.candidates?.[0]?.content?.parts ?? []).filter((p) => !p.thought)
+    const img = out.find((p) => p.inlineData?.data && p.inlineData.mimeType.startsWith('image/'))
+    if (!img?.inlineData) throw new AiError('bad_response', 'Gemini returned no image')
+    return {
+      image: new Uint8Array(Buffer.from(img.inlineData.data, 'base64')),
+      mimeType: img.inlineData.mimeType,
+      text: out
+        .map((p) => p.text ?? '')
+        .join('')
+        .trim(),
+    }
   }
 
   async transcribe(req: TranscribeRequest): Promise<string> {

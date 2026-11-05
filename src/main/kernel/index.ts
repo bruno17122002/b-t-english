@@ -10,6 +10,8 @@ import { LearnerService } from './learner/learner'
 import { ProgressService } from './progress/progress'
 import { SearchService } from './search/search'
 import { KeyStore, type Cipher } from './secure/keyStore'
+import type { TelegramPort } from './telegram/port'
+import { TelegramService } from './telegram/service'
 import { SettingsService } from './settings/settings'
 import { VocabHub } from './vocab/vocabHub'
 
@@ -44,6 +46,10 @@ export interface Kernel {
   now: () => Date
   /** Pushes an event to the renderer (no-op in tests unless replaced). */
   push: (event: PushEvent, payload: unknown) => void
+  /** Shows a Windows notification; clicking it opens `route` (no-op in tests unless replaced). */
+  notify: (title: string, body: string, route?: string) => void
+  /** Telegram bot port: send messages, register commands and button callbacks (TelegramService). */
+  telegram: TelegramPort
 }
 
 export interface CreateKernelOptions {
@@ -96,7 +102,7 @@ export async function createKernel(opts: CreateKernelOptions): Promise<Kernel> {
   const data = new DataService(db, opts.paths.backups, vocab, opts.paths.wasmDir, now)
   if (content.issues.length) log.warn(`content issues: ${JSON.stringify(content.issues.slice(0, 5))}`)
 
-  return {
+  const kernel: Kernel = {
     db,
     content,
     learner,
@@ -111,5 +117,10 @@ export async function createKernel(opts: CreateKernelOptions): Promise<Kernel> {
     paths: opts.paths,
     now,
     push: () => undefined,
+    notify: () => undefined,
+    telegram: null as unknown as TelegramPort,
   }
+  // The bot needs the finished kernel; it makes no network request until start() or a settings action.
+  kernel.telegram = new TelegramService(kernel, { fetchImpl: opts.fetchImpl })
+  return kernel
 }

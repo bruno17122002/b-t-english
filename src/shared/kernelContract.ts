@@ -2,6 +2,7 @@
 import { z } from 'zod'
 import { CefrSchema, type DictionaryEntry } from './content'
 import { channel, NoInput } from './ipc'
+import { IMAGE_PROVIDERS, type TelegramStatus } from './telegram'
 import type {
   Achievement,
   ActivityEntry,
@@ -61,6 +62,8 @@ export const SettingsPatchSchema = z.object({
   showVietnameseHints: z.boolean().optional(),
   reduceMotion: z.boolean().optional(),
   dailyGoalXp: z.number().int().min(10).max(1000).optional(),
+  runInBackground: z.boolean().optional(),
+  launchAtLogin: z.boolean().optional(),
 })
 
 export const SaveWordSchema = z.object({
@@ -249,6 +252,25 @@ export const kernelContract = {
 
   // ---------- search ----------
   'search:query': channel<SearchResult[]>()(z.object({ q: z.string().max(100) })),
+
+  // ---------- Telegram bot ----------
+  'telegram:status': channel<TelegramStatus>()(NoInput),
+  /** Verifies the token with Telegram (getMe) before storing it encrypted. */
+  'telegram:setToken': channel<TelegramStatus>()(z.object({ token: z.string().trim().min(10).max(200) })),
+  'telegram:removeToken': channel<TelegramStatus>()(NoInput),
+  'telegram:unlink': channel<TelegramStatus>()(NoInput),
+  'telegram:test': channel<{ ok: boolean; error?: string }>()(NoInput),
+  'telegram:updateSettings': channel<TelegramStatus>()(
+    z.object({
+      imageProvider: z.enum(IMAGE_PROVIDERS).optional(),
+      imageModel: z
+        .string()
+        .trim()
+        .max(100)
+        .regex(/^[A-Za-z0-9._-]*$/)
+        .optional(),
+    }),
+  ),
 
   // ---------- data ----------
   'data:backups': channel<BackupInfo[]>()(NoInput),

@@ -22,4 +22,6 @@ export interface ModuleRenderer {
   id: string
   routes: ModuleRoute[]
   nav?: ModuleNavItem[]
+  /** Invisible component mounted once inside the shell on every page (e.g. habit tracking). */
+  Background?: ComponentType
 }

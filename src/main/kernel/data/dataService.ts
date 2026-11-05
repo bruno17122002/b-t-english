@@ -32,6 +32,7 @@ const EXPORT_TABLES = [
   'activity_log',
   'tutor_conversations',
   'tutor_messages',
+  'telegram_messages',
   'learner_mistakes',
   'favorites',
   'bookmarks',

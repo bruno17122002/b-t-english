@@ -3,6 +3,7 @@
 import { kernelContract } from '@shared/kernelContract'
 import type { ChannelInput, ChannelOutput } from '@shared/ipc'
 import { cinemaContract } from './cinema/contract'
+import { coachContract } from './coach/contract'
 import { grammarContract } from './grammar/contract'
 import { journeyContract } from './journey/contract'
 import { listeningContract } from './listening/contract'
@@ -21,6 +22,7 @@ export const CONTRACT = {
   ...grammarContract,
   ...cinemaContract,
   ...tutorContract,
+  ...coachContract,
 }
 
 export type Contract = typeof CONTRACT

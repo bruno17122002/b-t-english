@@ -5,17 +5,20 @@ import path from 'node:path'
 import type { UserProviderId } from '@shared/types'
 import { writeFileAtomic } from '../../db/database'
 
+/** Secrets kept in the encrypted store: AI provider keys and the Telegram bot token. */
+export type SecretId = UserProviderId | 'telegram'
+
 export interface Cipher {
   isEncryptionAvailable(): boolean
   encryptString(plain: string): Buffer
   decryptString(encrypted: Buffer): string
 }
 
-type Stored = Partial<Record<UserProviderId, string>> // base64 ciphertext
+type Stored = Partial<Record<SecretId, string>> // base64 ciphertext
 
 export class KeyStore {
   /** Used only when OS encryption is unavailable: keys live for this session and are never written. */
-  private readonly memory = new Map<UserProviderId, string>()
+  private readonly memory = new Map<SecretId, string>()
 
   constructor(
     private readonly file: string,
@@ -43,7 +46,7 @@ export class KeyStore {
     writeFileAtomic(this.file, new TextEncoder().encode(JSON.stringify(data)))
   }
 
-  get(provider: UserProviderId): string | null {
+  get(provider: SecretId): string | null {
     const mem = this.memory.get(provider)
     if (mem) return mem
     const enc = this.read()[provider]
@@ -55,17 +58,17 @@ export class KeyStore {
     }
   }
 
-  has(provider: UserProviderId): boolean {
+  has(provider: SecretId): boolean {
     return this.get(provider) !== null
   }
 
   /** Masked hint such as "••••3xQz" – the only form a key ever leaves the main process. */
-  hint(provider: UserProviderId): string | null {
+  hint(provider: SecretId): string | null {
     const key = this.get(provider)
     return key ? `••••${key.slice(-4)}` : null
   }
 
-  set(provider: UserProviderId, key: string): { persisted: boolean } {
+  set(provider: SecretId, key: string): { persisted: boolean } {
     const clean = normalizeKey(key)
     if (!this.encryptionAvailable) {
       this.memory.set(provider, clean)
@@ -78,7 +81,7 @@ export class KeyStore {
     return { persisted: true }
   }
 
-  remove(provider: UserProviderId): void {
+  remove(provider: SecretId): void {
     this.memory.delete(provider)
     const data = this.read()
     delete data[provider]

@@ -33,6 +33,8 @@ export interface BuiltPrompt {
   system: string
   messages: ChatMessage[]
   audio?: { data: Uint8Array; mimeType: string }
+  /** Optional image for vision-capable models (attached to the last user message). */
+  image?: { data: Uint8Array; mimeType: string }
 }
 
 interface PromptSpecBase<I> {

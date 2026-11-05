@@ -19,10 +19,12 @@ const ROUTES: { route: string; testId: string; name: string }[] = [
   { route: '/tutor', testId: 'page-tutor', name: 'tutor' },
   { route: '/game', testId: 'page-game', name: 'game' },
   { route: '/stats', testId: 'page-stats', name: 'stats' },
+  { route: '/coach', testId: 'page-coach', name: 'coach' },
   { route: '/library', testId: 'page-library', name: 'library' },
   { route: '/settings/general', testId: 'page-settings', name: 'settings' },
   { route: '/settings/ai', testId: 'page-settings', name: 'settings-ai' },
   { route: '/settings/about', testId: 'page-settings', name: 'settings-about' },
+  { route: '/settings/telegram', testId: 'page-settings', name: 'settings-telegram' },
 ]
 
 const SHOTS = path.resolve(__dirname, '../../docs/screenshots')
@@ -106,7 +108,7 @@ test('keyboard: Ctrl+K opens search, F1 opens shortcuts, Ctrl+, opens settings',
 
 test('every visible button on the main pages is enabled or deliberately disabled, and has an accessible name', async () => {
   const { page } = lq
-  for (const r of ROUTES.slice(0, 13)) {
+  for (const r of ROUTES.slice(0, 14)) {
     await page.evaluate((route) => (window.location.hash = `#${route}`), r.route)
     await expect(page.getByTestId(r.testId).first()).toBeVisible()
     await page.waitForTimeout(300)

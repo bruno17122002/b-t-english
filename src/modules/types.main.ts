@@ -8,4 +8,9 @@ export interface ModuleMain {
   /** Module-owned tables, applied after the kernel schema (namespaced by module id). */
   migrations?: Migration[]
   register(router: IpcRouter, kernel: Kernel): void
+  /**
+   * Background work (timers, schedulers) started only by the real app after bootstrap – never in tests.
+   * Returns a stop function called on quit.
+   */
+  start?(kernel: Kernel): () => void
 }

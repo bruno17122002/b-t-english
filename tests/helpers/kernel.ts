@@ -4,6 +4,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { createKernel, type Kernel } from '../../src/main/kernel'
 import type { Cipher } from '../../src/main/kernel/secure/keyStore'
+import { NullTelegram } from '../../src/main/kernel/telegram/port'
 import { IpcRouter } from '../../src/main/ipc/router'
 import { registerKernelHandlers, type HostBridge } from '../../src/main/ipc/kernelHandlers'
 import { MODULES_MAIN } from '../../src/modules/registry.main'
@@ -30,6 +31,11 @@ export interface TestKernelOptions {
   fetchImpl?: typeof fetch
   persistent?: boolean
   dir?: string
+  /**
+   * 'null' (default): module tests get a NullTelegram that records what they send and register.
+   * 'real': keep the TelegramService built by createKernel (Telegram bot tests with a fake Bot API).
+   */
+  telegram?: 'null' | 'real'
 }
 
 export async function makeKernel(opts: TestKernelOptions = {}): Promise<{ kernel: Kernel; dir: string }> {
@@ -51,6 +57,7 @@ export async function makeKernel(opts: TestKernelOptions = {}): Promise<{ kernel
     fetchImpl: opts.fetchImpl,
     moduleMigrations,
   })
+  if ((opts.telegram ?? 'null') === 'null') kernel.telegram = new NullTelegram()
   return { kernel, dir }
 }
 

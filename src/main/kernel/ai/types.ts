@@ -62,6 +62,8 @@ export interface GenerateRequest {
   maxOutputTokens?: number
   /** Optional inline audio for multimodal models (WAV/MP3 bytes). */
   audio?: { data: Uint8Array; mimeType: string }
+  /** Optional inline image (JPEG/PNG/WebP) attached to the last user message – vision input. */
+  image?: { data: Uint8Array; mimeType: string }
   signal?: AbortSignal
 }
 
@@ -89,6 +91,22 @@ export interface SynthesizeRequest {
 export interface SynthesizeResult {
   audio: Uint8Array
   mimeType: string
+}
+
+export interface ImageRequest {
+  prompt: string
+  /** Image-capable model id, e.g. gemini-2.5-flash-image. */
+  model: string
+  /** Optional source image to edit or redraw. */
+  image?: { data: Uint8Array; mimeType: string }
+  signal?: AbortSignal
+}
+
+export interface ImageResult {
+  image: Uint8Array
+  mimeType: string
+  /** Text the model returned next to the image (may be empty). */
+  text: string
 }
 
 export interface ProviderCapabilities {

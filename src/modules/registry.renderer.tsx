@@ -1,5 +1,6 @@
 // Feature modules loaded by the renderer. Adding a module = adding one line here.
 import { cinemaRenderer } from './cinema/renderer'
+import { coachRenderer } from './coach/renderer'
 import { gameRenderer } from './game/renderer'
 import { grammarRenderer } from './grammar/renderer'
 import { journeyRenderer } from './journey/renderer'
@@ -22,4 +23,5 @@ export const MODULES_RENDERER: ModuleRenderer[] = [
   cinemaRenderer,
   tutorRenderer,
   gameRenderer,
+  coachRenderer,
 ]
