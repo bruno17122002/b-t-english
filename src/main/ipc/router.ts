@@ -5,6 +5,7 @@ import type { IpcError, IpcResult } from '@shared/ipc'
 import { CONTRACT, type Channel, type Contract } from '@modules/contract'
 import type { ChannelOutput } from '@shared/ipc'
 import { AiError } from '../kernel/ai/types'
+import { CloudError } from '../kernel/cloud/client'
 import { redactSecrets } from '../kernel/ai/http'
 import { InvalidKeyFormatError } from '../kernel/secure/keyStore'
 import type { KernelLog } from '../kernel'
@@ -37,6 +38,10 @@ export function toIpcError(err: unknown, log?: KernelLog, channel?: string): Ipc
   if (err instanceof AiError) {
     const hint = AI_HINTS[err.code]
     return { code: `ai_${err.code}`, message: err.userMessage, ...(hint ? { hint } : {}) }
+  }
+  if (err instanceof CloudError) {
+    const hint = err.code === 'not_configured' || err.code === 'not_signed_in' ? { hint: 'account-settings' } : {}
+    return { code: `cloud_${err.code}`, message: err.message, ...hint }
   }
   if (err instanceof UserError) return { code: err.code, message: err.message, ...(err.hint ? { hint: err.hint } : {}) }
   if (err instanceof InvalidKeyFormatError)

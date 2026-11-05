@@ -227,6 +227,7 @@ async function bootstrap() {
     mockAi: isE2E,
     log: logger,
     moduleMigrations,
+    cloudDefaults: { url: process.env.LQ_CLOUD_URL, anonKey: process.env.LQ_CLOUD_ANON_KEY },
   })
   const k = kernel
   k.push = (event, payload) => push(mainWindow?.webContents, event, payload)

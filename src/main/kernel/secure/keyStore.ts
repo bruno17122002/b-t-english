@@ -5,8 +5,8 @@ import path from 'node:path'
 import type { UserProviderId } from '@shared/types'
 import { writeFileAtomic } from '../../db/database'
 
-/** Secrets kept in the encrypted store: AI provider keys and the Telegram bot token. */
-export type SecretId = UserProviderId | 'telegram'
+/** Secrets kept in the encrypted store: AI provider keys, the Telegram bot token and the cloud session. */
+export type SecretId = UserProviderId | 'telegram' | 'cloud'
 
 export interface Cipher {
   isEncryptionAvailable(): boolean
@@ -69,7 +69,8 @@ export class KeyStore {
   }
 
   set(provider: SecretId, key: string): { persisted: boolean } {
-    const clean = normalizeKey(key)
+    // The cloud session is a JSON blob with long JWTs; everything else is a single API key or token.
+    const clean = normalizeKey(key, provider === 'cloud' ? 16_000 : 300)
     if (!this.encryptionAvailable) {
       this.memory.set(provider, clean)
       return { persisted: false }
@@ -99,8 +100,8 @@ export class InvalidKeyFormatError extends Error {
   }
 }
 
-export function normalizeKey(key: string): string {
+export function normalizeKey(key: string, maxLength = 300): string {
   const clean = key.trim()
-  if (clean.length < 20 || clean.length > 300 || /\s/.test(clean)) throw new InvalidKeyFormatError()
+  if (clean.length < 20 || clean.length > maxLength || /\s/.test(clean)) throw new InvalidKeyFormatError()
   return clean
 }

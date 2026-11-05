@@ -4,6 +4,7 @@ import type { PushEvent } from '@shared/ipc'
 import { AppDatabase } from '../db/database'
 import { runMigrations, runModuleMigrations, type Migration } from '../db/migrations'
 import { AiGateway } from './ai/gateway'
+import { CloudClient } from './cloud/client'
 import { ContentRegistry } from './content/registry'
 import { DataService } from './data/dataService'
 import { LearnerService } from './learner/learner'
@@ -50,6 +51,8 @@ export interface Kernel {
   notify: (title: string, body: string, route?: string) => void
   /** Telegram bot port: send messages, register commands and button callbacks (TelegramService). */
   telegram: TelegramPort
+  /** Optional online account (Supabase): auth session, REST/RPC/Storage helpers. */
+  cloud: CloudClient
 }
 
 export interface CreateKernelOptions {
@@ -60,6 +63,8 @@ export interface CreateKernelOptions {
   now?: () => Date
   fetchImpl?: typeof fetch
   content?: ContentRegistry
+  /** Build-time default server for the online account (LQ_CLOUD_URL / LQ_CLOUD_ANON_KEY). */
+  cloudDefaults?: { url?: string; anonKey?: string }
   /** Feature-module migrations, keyed by module id. */
   moduleMigrations?: Record<string, Migration[]>
 }
@@ -102,6 +107,8 @@ export async function createKernel(opts: CreateKernelOptions): Promise<Kernel> {
   const data = new DataService(db, opts.paths.backups, vocab, opts.paths.wasmDir, now)
   if (content.issues.length) log.warn(`content issues: ${JSON.stringify(content.issues.slice(0, 5))}`)
 
+  const cloud = new CloudClient({ keys, settings, fetchImpl: opts.fetchImpl, now, defaults: opts.cloudDefaults })
+
   const kernel: Kernel = {
     db,
     content,
@@ -119,6 +126,7 @@ export async function createKernel(opts: CreateKernelOptions): Promise<Kernel> {
     push: () => undefined,
     notify: () => undefined,
     telegram: null as unknown as TelegramPort,
+    cloud,
   }
   // The bot needs the finished kernel; it makes no network request until start() or a settings action.
   kernel.telegram = new TelegramService(kernel, { fetchImpl: opts.fetchImpl })

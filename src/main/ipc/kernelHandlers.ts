@@ -235,6 +235,22 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   // ---------- Telegram ----------
   registerTelegramHandlers(r, k)
 
+  // ---------- online account ----------
+  r.handle('cloud:status', () => k.cloud.status())
+  r.handle('cloud:configure', ({ url, anonKey }) => {
+    k.cloud.configure(url, anonKey)
+    return k.cloud.status()
+  })
+  r.handle('cloud:sendCode', async ({ email }) => {
+    await k.cloud.sendCode(email)
+    return null
+  })
+  r.handle('cloud:verifyCode', ({ email, code }) => k.cloud.verifyCode(email, code))
+  r.handle('cloud:signOut', async () => {
+    await k.cloud.signOut()
+    return k.cloud.status()
+  })
+
   // ---------- data ----------
   r.handle('data:backups', () => k.data.listBackups())
   r.handle('data:createBackup', () => k.data.createBackup('manual'))

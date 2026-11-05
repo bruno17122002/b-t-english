@@ -106,6 +106,15 @@ const GoalSchema = z.object({
 
 const Bytes = z.instanceof(Uint8Array).refine((b) => b.byteLength <= 25 * 1024 * 1024, 'Audio is larger than 25 MB')
 
+export interface CloudStatusView {
+  configured: boolean
+  url: string | null
+  signedIn: boolean
+  email: string | null
+  userId: string | null
+  deviceId: string | null
+}
+
 export interface BootstrapData {
   version: string
   profile: Profile
@@ -271,6 +280,17 @@ export const kernelContract = {
         .optional(),
     }),
   ),
+
+  // ---------- online account (Supabase) ----------
+  'cloud:status': channel<CloudStatusView>()(NoInput),
+  'cloud:configure': channel<CloudStatusView>()(
+    z.object({ url: z.url().max(300), anonKey: z.string().min(20).max(2000) }),
+  ),
+  'cloud:sendCode': channel<null>()(z.object({ email: z.email().max(200) })),
+  'cloud:verifyCode': channel<CloudStatusView>()(
+    z.object({ email: z.email().max(200), code: z.string().regex(/^[0-9]{6,8}$/) }),
+  ),
+  'cloud:signOut': channel<CloudStatusView>()(NoInput),
 
   // ---------- data ----------
   'data:backups': channel<BackupInfo[]>()(NoInput),
