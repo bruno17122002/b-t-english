@@ -122,7 +122,6 @@ export function CueCardPractice({
   return (
     <div className="space-y-4">
       <Card className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -top-20 -right-20 size-56 rounded-full bg-accent/15 blur-3xl" />
         <div className="relative">
           <div className="text-xs font-semibold tracking-wider text-muted uppercase">{L('Cue card', 'Thẻ đề')}</div>
           <h2 className="mt-1 font-display text-xl font-semibold">{prompt.title}</h2>
@@ -209,7 +208,7 @@ export function CueCardPractice({
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-surface-3">
               <div
-                className="h-full bg-accent-gradient transition-[width] duration-75"
+                className="h-full bg-accent transition-[width] duration-75"
                 style={{ width: `${Math.min(100, rec.level * 160)}%` }}
               />
             </div>

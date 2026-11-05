@@ -65,7 +65,7 @@ export function ChartTooltip({ x, y, width, children }: { x: number; y: number; 
   return (
     <div
       role="status"
-      className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-line-strong bg-surface-2/95 px-2.5 py-1.5 text-xs whitespace-nowrap shadow-card backdrop-blur"
+      className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-line-strong bg-surface-2/95 px-2.5 py-1.5 text-xs whitespace-nowrap shadow-card"
       style={{ left, top: Math.max(0, y - 8) }}
     >
       {children}
@@ -84,24 +84,3 @@ export function ChartEmpty({ text, height }: { text: ReactNode; height: number }
     </div>
   )
 }
-
-/** Gradient definitions used by several charts (accent → accent-2). */
-export function AccentGradient({
-  id,
-  vertical = true,
-  opacity = [1, 1],
-}: {
-  id: string
-  vertical?: boolean
-  opacity?: [number, number]
-}) {
-  return (
-    <linearGradient id={id} x1="0" y1={vertical ? '1' : '0'} x2={vertical ? '0' : '1'} y2="0">
-      <stop offset="0" style={{ stopColor: 'var(--accent)', stopOpacity: opacity[0] }} />
-      <stop offset="1" style={{ stopColor: 'var(--accent-2)', stopOpacity: opacity[1] }} />
-    </linearGradient>
-  )
-}
-
-/** Valid SVG id from React's useId output (which contains colons). */
-export const svgId = (id: string) => id.replace(/[^a-zA-Z0-9_-]/g, '')

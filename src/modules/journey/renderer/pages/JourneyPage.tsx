@@ -195,7 +195,6 @@ function RoadmapContent({
     <div className="space-y-6" data-testid="journey-roadmap">
       {/* headline & projection */}
       <Card className="relative overflow-hidden p-6">
-        <div className="pointer-events-none absolute -top-24 -right-24 size-72 rounded-full bg-accent/15 blur-3xl" />
         <div className="relative">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="min-w-0">
@@ -250,7 +249,7 @@ function RoadmapContent({
             <div className="mt-6">
               <div className="relative h-2 rounded-full bg-surface-3">
                 <motion.div
-                  className="absolute inset-y-0 left-0 rounded-full bg-accent-gradient"
+                  className="absolute inset-y-0 left-0 rounded-full bg-accent"
                   initial={{ width: 0 }}
                   animate={{ width: `${Math.min(100, (data.currentWeek / totalWeeks) * 100)}%` }}
                   transition={{ duration: 0.8 }}

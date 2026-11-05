@@ -24,21 +24,11 @@ export function CastleArt({ cefr, progress, className }: { cefr: Cefr; progress:
   const flag = conquered ? '#fbbf24' : c.roof
   return (
     <svg viewBox="0 0 160 110" className={className} aria-hidden="true">
-      <defs>
-        <radialGradient id={`glow-${cefr}`} cx="50%" cy="70%" r="60%">
-          <stop offset="0%" stopColor={c.glow} stopOpacity={0.35 + 0.4 * progress} />
-          <stop offset="100%" stopColor={c.glow} stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id={`wall-${cefr}`} x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor={c.wall} />
-          <stop offset="100%" stopColor="#151a2e" />
-        </linearGradient>
-      </defs>
-      <ellipse cx="80" cy="92" rx="78" ry="26" fill={`url(#glow-${cefr})`} />
+      <ellipse cx="80" cy="92" rx="78" ry="26" fill={c.glow} opacity={0.12 + 0.18 * progress} />
       {/* hill */}
       <path d="M0 104 Q40 84 80 88 T160 100 L160 110 L0 110 Z" fill="#1f2a3a" />
       {/* curtain wall */}
-      <rect x="22" y="58" width="116" height="34" fill={`url(#wall-${cefr})`} />
+      <rect x="22" y="58" width="116" height="34" fill={c.wall} />
       {Array.from({ length: 12 }, (_, i) => (
         <rect key={i} x={22 + i * 10} y="52" width="6" height="7" fill={c.wall} />
       ))}
@@ -52,7 +42,7 @@ export function CastleArt({ cefr, progress, className }: { cefr: Cefr; progress:
         const top = tall ? 18 : 32
         return (
           <g key={i}>
-            <rect x={x - 9} y={top + 12} width="18" height={92 - top - 12} fill={`url(#wall-${cefr})`} />
+            <rect x={x - 9} y={top + 12} width="18" height={92 - top - 12} fill={c.wall} />
             <path d={`M${x - 12} ${top + 13} L${x} ${top - 6} L${x + 12} ${top + 13} Z`} fill={c.roof} />
             <rect
               x={x - 2}

@@ -27,23 +27,23 @@ export interface AccentTheme {
   key: string
   level: number
   name: Bi
-  /** Swatch gradient – illustration colours, mirrors the CSS accent tokens. */
+  /** Flat swatch colour (Windows accent colour) – mirrors the CSS accent tokens. Single-element tuple kept for compatibility. */
   swatch: [string, string]
 }
 
 const ACCENT_META: Record<string, { name: Bi; swatch: [string, string] }> = {
-  aurora: { name: { en: 'Aurora', vi: 'Cực quang' }, swatch: ['#7c8cff', '#4fd1c5'] },
-  ember: { name: { en: 'Ember', vi: 'Than hồng' }, swatch: ['#ff7a59', '#ffc15e'] },
-  jade: { name: { en: 'Jade', vi: 'Ngọc bích' }, swatch: ['#34d399', '#a3e635'] },
-  royal: { name: { en: 'Royal', vi: 'Hoàng gia' }, swatch: ['#a78bfa', '#f472b6'] },
-  sunset: { name: { en: 'Sunset', vi: 'Hoàng hôn' }, swatch: ['#fb7185', '#fbbf24'] },
+  aurora: { name: { en: 'Windows Blue', vi: 'Xanh Windows' }, swatch: ['#0078d4', '#0078d4'] },
+  ember: { name: { en: 'Ember', vi: 'Than hồng' }, swatch: ['#ca5010', '#ca5010'] },
+  jade: { name: { en: 'Jade', vi: 'Ngọc bích' }, swatch: ['#107c10', '#107c10'] },
+  royal: { name: { en: 'Royal', vi: 'Hoàng gia' }, swatch: ['#8764b8', '#8764b8'] },
+  sunset: { name: { en: 'Sunset', vi: 'Hoàng hôn' }, swatch: ['#c239b3', '#c239b3'] },
 }
 
 export function accentThemes(): AccentTheme[] {
   return ACCENT_UNLOCKS.map((a) => {
     const meta = ACCENT_META[a.key] ?? {
       name: { en: a.key, vi: a.key },
-      swatch: ['#7c8cff', '#4fd1c5'] as [string, string],
+      swatch: ['#0078d4', '#0078d4'] as [string, string],
     }
     return { key: a.key, level: a.level, ...meta }
   })

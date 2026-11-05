@@ -62,7 +62,7 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 680,
     show: false,
-    backgroundColor: '#0b0d14',
+    backgroundColor: '#202020',
     title: 'Lingua Quest',
     autoHideMenuBar: true,
     icon: path.join(app.getAppPath(), 'build', 'icon.png'),

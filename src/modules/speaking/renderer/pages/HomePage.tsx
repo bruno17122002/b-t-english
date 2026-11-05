@@ -92,7 +92,6 @@ function Home() {
           className="relative mb-8 overflow-hidden"
           data-testid="speaking-pron-entry"
         >
-          <div className="pointer-events-none absolute -top-24 -right-16 size-72 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative flex flex-wrap items-center gap-5">
             <div className="flex size-14 items-center justify-center rounded-2xl bg-accent/15 text-accent">
               <AudioLines className="size-7" />

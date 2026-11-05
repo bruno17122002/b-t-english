@@ -41,7 +41,7 @@ export function PlayerBar({
               : player.playAll(player.current !== null && player.current < total - 1 ? player.current : 0)
           }
           aria-label={player.playing ? L('Stop', 'Dừng') : L('Play all', 'Phát cả bài')}
-          className="flex size-11 items-center justify-center rounded-full bg-accent-gradient text-accent-ink shadow-card transition hover:brightness-110"
+          className="flex size-11 items-center justify-center rounded-full bg-accent text-accent-ink shadow-card transition hover:brightness-110"
           data-testid="listening-play-all"
         >
           {player.playing ? <Pause className="size-5" /> : <Play className="ml-0.5 size-5" />}

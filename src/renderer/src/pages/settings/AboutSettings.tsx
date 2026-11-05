@@ -26,7 +26,9 @@ export function AboutSettings() {
     ],
     [
       L('Key encryption', 'Mã hóa key'),
-      data.encryptionAvailable ? 'Windows DPAPI ✓' : L('Unavailable', 'Không khả dụng'),
+      data.encryptionAvailable
+        ? L('Windows DPAPI (on)', 'Windows DPAPI (đang bật)')
+        : L('Unavailable', 'Không khả dụng'),
     ],
     [
       'Gemini',

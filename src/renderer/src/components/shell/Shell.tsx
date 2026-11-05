@@ -1,7 +1,7 @@
 // App chrome: sidebar navigation built from module manifests, top bar with search, streak and XP,
 // toasts, reward celebrations and global keyboard shortcuts.
 import { AnimatePresence, motion } from 'framer-motion'
-import { Flame, Heart, Keyboard, Search, Settings, Sparkles, Star } from 'lucide-react'
+import { Flame, Heart, Keyboard, Search, Settings, GraduationCap, Star } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { MODULES_RENDERER } from '@modules/registry.renderer'
@@ -46,17 +46,20 @@ function Sidebar() {
   }))
   const linkCls = ({ isActive }: { isActive: boolean }) =>
     cx(
-      'group flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition',
-      isActive ? 'bg-surface-3 text-text' : 'text-muted hover:bg-surface-2 hover:text-text',
+      // Windows 11 NavigationView: subtle fill on the selected item plus a short accent pill on the left.
+      'group relative flex items-center gap-3 rounded-md px-3 py-[7px] text-sm text-text transition-colors',
+      isActive
+        ? 'bg-surface-2 font-semibold before:absolute before:top-1/2 before:left-0 before:h-4 before:w-[3px] before:-translate-y-1/2 before:rounded-full before:bg-accent'
+        : 'hover:bg-surface-2',
     )
   return (
-    <aside className="flex w-60 shrink-0 flex-col border-r border-line bg-surface/60 px-3 py-4">
+    <aside className="flex w-60 shrink-0 flex-col px-3 py-4">
       <div className="mb-6 flex items-center gap-2.5 px-2">
-        <div className="flex size-9 items-center justify-center rounded-xl bg-accent-gradient text-accent-ink">
-          <Sparkles className="size-5" />
+        <div className="flex size-8 items-center justify-center rounded-md bg-accent text-accent-ink">
+          <GraduationCap className="size-5" />
         </div>
         <div className="font-display text-lg leading-none font-semibold">
-          Lingua <span className="text-gradient">Quest</span>
+          Lingua <span className="text-accent">Quest</span>
         </div>
       </div>
       <nav className="flex-1 space-y-5 overflow-y-auto" aria-label="Main">
@@ -104,7 +107,7 @@ function TopBar({ onSearch, onShortcuts }: { onSearch: () => void; onShortcuts: 
   const game = useApp((s) => s.game)
   const navigate = useNavigate()
   return (
-    <header className="flex h-16 shrink-0 items-center gap-4 border-b border-line px-6">
+    <header className="flex h-14 shrink-0 items-center gap-4 px-6">
       <button
         onClick={onSearch}
         className="flex h-10 w-full max-w-md items-center gap-2 rounded-xl border border-line bg-surface-2 px-3 text-sm text-faint transition hover:border-line-strong"
@@ -200,7 +203,11 @@ export function Shell({ children, bare }: { children: ReactNode; bare?: boolean 
       {!bare && <Sidebar />}
       <div className="flex min-w-0 flex-1 flex-col">
         {!bare && <TopBar onSearch={() => setPaletteOpen(true)} onShortcuts={() => setShortcutsOpen(true)} />}
-        <main className="flex-1 overflow-y-auto" id="main-scroll">
+        {/* Content sits on a layer above the Mica-coloured window background, like Windows 11 Settings. */}
+        <main
+          className={cx('flex-1 overflow-y-auto', !bare && 'rounded-tl-lg border-t border-l border-line bg-layer')}
+          id="main-scroll"
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={bare ? 'bare' : 'app'}

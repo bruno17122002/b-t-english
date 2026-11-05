@@ -150,7 +150,6 @@ export default function CourseLessonPage() {
           data-testid="course-lesson"
         >
           <Card className="relative overflow-hidden p-6">
-            <div className="pointer-events-none absolute -top-20 -right-16 size-56 rounded-full bg-accent/15 blur-3xl" />
             <div className="relative">
               <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
                 <CefrBadge level={d.cefr} />

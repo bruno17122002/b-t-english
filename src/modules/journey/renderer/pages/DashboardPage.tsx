@@ -94,8 +94,6 @@ export default function DashboardPage() {
         className="relative overflow-hidden rounded-3xl border border-line bg-surface p-6 shadow-card md:p-8"
         data-testid="journey-dashboard"
       >
-        <div className="pointer-events-none absolute -top-24 -right-16 size-72 rounded-full bg-accent/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-28 left-1/3 size-64 rounded-full bg-accent-2/10 blur-3xl" />
         <div className="relative flex flex-wrap items-center justify-between gap-6">
           <div className="min-w-0">
             <div className="text-sm text-muted">
@@ -105,7 +103,7 @@ export default function DashboardPage() {
               {tx(greeting)}
               {name ? (
                 <>
-                  , <span className="text-gradient">{name}</span>
+                  , <span className="text-accent">{name}</span>
                 </>
               ) : null}
             </h1>

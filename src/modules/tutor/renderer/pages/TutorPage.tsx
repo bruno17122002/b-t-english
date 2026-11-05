@@ -362,7 +362,7 @@ function TutorHome({
                 <div
                   className={cx(
                     'flex size-10 items-center justify-center rounded-xl',
-                    selected ? 'bg-accent-gradient text-accent-ink' : 'bg-accent/15 text-accent',
+                    selected ? 'bg-accent text-accent-ink' : 'bg-accent/15 text-accent',
                   )}
                 >
                   <Icon className="size-5" />

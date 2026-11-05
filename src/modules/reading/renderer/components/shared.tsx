@@ -29,7 +29,7 @@ export const CATEGORY_META: Record<Category, { icon: LucideIcon; en: string; vi:
 
 export const CATEGORIES = Object.keys(CATEGORY_META) as Category[]
 
-/** Decorative cover: a soft accent gradient with the category icon (illustration only). */
+/** Decorative cover: flat accent wash and waves with the category icon (illustration only). */
 export function CategoryCover({ category, className }: { category: Category; className?: string }) {
   const Icon = CATEGORY_META[category].icon
   return (
@@ -38,14 +38,7 @@ export function CategoryCover({ category, className }: { category: Category; cla
       className={`relative flex items-center justify-center overflow-hidden rounded-xl bg-accent/10 text-accent ${className ?? ''}`}
     >
       <svg className="absolute inset-0 size-full opacity-40" viewBox="0 0 100 60" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id={`rg-${category}`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="var(--accent-2)" stopOpacity="0.15" />
-          </linearGradient>
-        </defs>
-        <rect width="100" height="60" fill={`url(#rg-${category})`} />
-        <path d="M0 45 Q 25 30 50 42 T 100 36 V60 H0 Z" fill="var(--accent-2)" opacity="0.18" />
+        <path d="M0 45 Q 25 30 50 42 T 100 36 V60 H0 Z" fill="var(--accent)" opacity="0.12" />
         <path d="M0 52 Q 30 40 60 50 T 100 46 V60 H0 Z" fill="var(--accent)" opacity="0.18" />
       </svg>
       <Icon className="relative size-7" />

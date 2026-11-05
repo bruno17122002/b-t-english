@@ -1,7 +1,6 @@
 // Radar (hexagon for six skills) chart: concentric level rings, a highlighted target ring and the learner's shape.
 import { motion } from 'framer-motion'
-import { useId } from 'react'
-import { ChartTooltip, svgId, useActiveIndex, useChartIds, useElementWidth } from './common'
+import { ChartTooltip, useActiveIndex, useChartIds, useElementWidth } from './common'
 import { polarPoint, radarPolygon } from './scale'
 
 export interface RadarAxis {
@@ -28,7 +27,6 @@ export function RadarChart({ axes, rings, targetRing, targetLabel, title, size =
   const { titleId, descId } = useChartIds()
   const { ref, width } = useElementWidth<HTMLDivElement>(size)
   const k = width / size
-  const gradId = svgId(useId()) + '-radar'
   const { active, setActive, focusProps } = useActiveIndex(axes.length)
   const pad = 46
   const cx = size / 2
@@ -63,12 +61,6 @@ export function RadarChart({ axes, rings, targetRing, targetLabel, title, size =
       >
         <title id={titleId}>{title}</title>
         <desc id={descId}>{axes.map((a) => `${a.label}: ${a.detail}`).join(', ')}</desc>
-        <defs>
-          <radialGradient id={gradId} cx="50%" cy="50%" r="60%">
-            <stop offset="0" style={{ stopColor: 'var(--accent-2)', stopOpacity: 0.45 }} />
-            <stop offset="1" style={{ stopColor: 'var(--accent)', stopOpacity: 0.3 }} />
-          </radialGradient>
-        </defs>
         {rings.map(({ label, value: f }, i) => {
           const isTarget = i === targetRing
           return (
@@ -115,10 +107,9 @@ export function RadarChart({ axes, rings, targetRing, targetLabel, title, size =
         })}
         <motion.polygon
           points={shape}
-          fill={`url(#${gradId})`}
           strokeWidth={2}
           strokeLinejoin="round"
-          style={{ stroke: 'var(--accent)' }}
+          style={{ stroke: 'var(--accent)', fill: 'color-mix(in srgb, var(--accent) 28%, transparent)' }}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}

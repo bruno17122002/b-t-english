@@ -21,8 +21,7 @@ export const cx = (...c: (string | false | null | undefined)[]) => c.filter(Bool
 // ---------- Button ----------
 type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'success'
 const VARIANTS: Record<Variant, string> = {
-  primary:
-    'bg-accent-gradient text-accent-ink font-semibold shadow-[0_6px_24px_-8px_var(--accent)] hover:brightness-110',
+  primary: 'bg-accent text-accent-ink font-semibold hover:opacity-90 active:opacity-80',
   secondary: 'bg-surface-2 text-text border border-line hover:border-line-strong hover:bg-surface-3',
   ghost: 'text-muted hover:text-text hover:bg-surface-2',
   danger: 'bg-danger/15 text-danger border border-danger/30 hover:bg-danger/25',
@@ -46,7 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       ref={ref}
       disabled={disabled || loading}
       className={cx(
-        'inline-flex items-center justify-center rounded-xl transition-all duration-150 select-none disabled:opacity-50 active:scale-[0.98]',
+        'inline-flex items-center justify-center rounded-md transition-colors duration-100 select-none disabled:opacity-50',
         VARIANTS[variant],
         SIZES[size],
         className,
@@ -70,7 +69,7 @@ export function IconButton({
       aria-label={label}
       title={label}
       className={cx(
-        'inline-flex size-9 items-center justify-center rounded-lg text-muted transition hover:bg-surface-2 hover:text-text disabled:opacity-40',
+        'inline-flex size-9 items-center justify-center rounded-md text-muted transition-colors hover:bg-surface-2 hover:text-text disabled:opacity-40',
         className,
       )}
       {...rest}
@@ -230,7 +229,7 @@ export function ProgressBar({
       <motion.div
         className={cx(
           'h-full rounded-full',
-          tone === 'accent' ? 'bg-accent-gradient' : tone === 'success' ? 'bg-success' : 'bg-warning',
+          tone === 'accent' ? 'bg-accent' : tone === 'success' ? 'bg-success' : 'bg-warning',
         )}
         initial={{ width: 0 }}
         animate={{ width: `${pct}%` }}
@@ -391,7 +390,7 @@ export function ErrorState({
 
 // ---------- Form controls ----------
 const FIELD =
-  'rounded-xl border border-line bg-surface-2 px-3 text-sm text-text placeholder:text-faint focus:border-accent focus:outline-none'
+  'rounded-md border border-line border-b-line-strong bg-surface-2 px-3 text-sm text-text placeholder:text-faint focus:border-b-2 focus:border-b-accent focus:outline-none'
 /** Fields are full width unless the caller sets its own width (w-28, w-auto, …). */
 const fieldWidth = (className?: string) => (className && /(^|\s)w-/.test(className) ? '' : 'w-full')
 
@@ -474,7 +473,7 @@ export function Tabs<T extends string>({
   return (
     <div
       role="tablist"
-      className={cx('inline-flex flex-wrap gap-1 rounded-xl border border-line bg-surface p-1', className)}
+      className={cx('inline-flex flex-wrap gap-1 rounded-md border border-line bg-surface p-1', className)}
     >
       {items.map((it) => (
         <button
@@ -483,14 +482,14 @@ export function Tabs<T extends string>({
           aria-selected={value === it.value}
           onClick={() => onChange(it.value)}
           className={cx(
-            'relative rounded-lg px-3 py-1.5 text-sm font-medium transition',
+            'relative rounded-[4px] px-3 py-1.5 text-sm font-medium transition-colors',
             value === it.value ? 'text-text' : 'text-muted hover:text-text',
           )}
         >
           {value === it.value && (
             <motion.span
               layoutId={`tab-${items.map((i) => i.value).join('')}`}
-              className="absolute inset-0 rounded-lg bg-surface-3"
+              className="absolute inset-0 rounded-[4px] bg-surface-3"
             />
           )}
           <span className="relative flex items-center gap-1.5">
@@ -540,7 +539,7 @@ export function Modal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

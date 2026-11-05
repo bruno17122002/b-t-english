@@ -1,7 +1,6 @@
-// Single-series line chart with area fill, nice y ticks, optional target line and hover/keyboard tooltips.
+// Single-series line chart with a flat area fill, nice y ticks, optional target line and hover/keyboard tooltips.
 import { motion } from 'framer-motion'
-import { useId } from 'react'
-import { AccentGradient, ChartEmpty, ChartTooltip, svgId, useActiveIndex, useChartIds, useElementWidth } from './common'
+import { ChartEmpty, ChartTooltip, useActiveIndex, useChartIds, useElementWidth } from './common'
 import { closeArea, linearScale, linePath, niceTicks, shouldShowLabel, smoothPath, type Point } from './scale'
 
 export interface LineDatum {
@@ -43,7 +42,6 @@ export function LineChart({
 }: LineChartProps) {
   const { ref, width } = useElementWidth<HTMLDivElement>()
   const { titleId, descId } = useChartIds()
-  const baseId = svgId(useId())
   const { active, setActive, focusProps } = useActiveIndex(data.length)
   const isEmpty = data.length < minPoints || data.length === 0
 
@@ -85,13 +83,6 @@ export function LineChart({
           >
             <title id={titleId}>{title}</title>
             <desc id={descId}>{description ?? data.map((d) => `${d.label}: ${formatValue(d.value)}`).join(', ')}</desc>
-            <defs>
-              <AccentGradient id={`${baseId}-stroke`} vertical={false} />
-              <linearGradient id={`${baseId}-area`} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" style={{ stopColor: 'var(--accent)', stopOpacity: 0.28 }} />
-                <stop offset="1" style={{ stopColor: 'var(--accent)', stopOpacity: 0 }} />
-              </linearGradient>
-            </defs>
             <g transform={`translate(${M.left},${M.top})`}>
               {ticks.map((t) => (
                 <g key={t} transform={`translate(0,${y(t)})`}>
@@ -129,11 +120,11 @@ export function LineChart({
               )}
               {points.length > 1 && (
                 <>
-                  <path d={closeArea(line, points, innerH)} fill={`url(#${baseId}-area)`} />
+                  <path d={closeArea(line, points, innerH)} style={{ fill: 'var(--accent)' }} opacity={0.12} />
                   <motion.path
                     d={line}
                     fill="none"
-                    stroke={`url(#${baseId}-stroke)`}
+                    style={{ stroke: 'var(--accent)' }}
                     strokeWidth={2.5}
                     strokeLinecap="round"
                     strokeLinejoin="round"

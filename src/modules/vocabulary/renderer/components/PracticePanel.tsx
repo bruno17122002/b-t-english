@@ -317,7 +317,7 @@ function Session({ rounds, onExit, onAgain }: { rounds: Round[]; onExit: () => v
         <div className="mt-4 flex justify-end">
           <Button variant="primary" icon={<ArrowRight className="size-4" />} onClick={next} data-testid="practice-next">
             {index + 1 >= rounds.length ? L('See results', 'Xem kết quả') : L('Next', 'Tiếp')}{' '}
-            <span className="text-xs opacity-70">↵</span>
+            <span className="text-xs opacity-70">(Enter)</span>
           </Button>
         </div>
       )}
@@ -373,7 +373,7 @@ function SpellingRound({
       <div className="text-sm text-muted">{L('Listen and type the word', 'Nghe và gõ lại từ')}</div>
       <button
         onClick={() => void speak(item.word)}
-        className="mx-auto mt-4 flex size-20 items-center justify-center rounded-full bg-accent-gradient text-accent-ink shadow-card transition hover:brightness-110"
+        className="mx-auto mt-4 flex size-20 items-center justify-center rounded-full bg-accent text-accent-ink shadow-card transition hover:brightness-110"
         aria-label={L('Play the word', 'Phát âm từ')}
       >
         <Volume2 className="size-9" />
@@ -504,7 +504,7 @@ function McqRound({ round, onResult }: { round: Extract<Round, { mcq: Mcq }>; on
         <div className="mb-4 flex justify-center">
           <button
             onClick={() => void speak(round.item.word)}
-            className="flex size-20 items-center justify-center rounded-full bg-accent-gradient text-accent-ink shadow-card transition hover:brightness-110"
+            className="flex size-20 items-center justify-center rounded-full bg-accent text-accent-ink shadow-card transition hover:brightness-110"
             aria-label={L('Play again', 'Nghe lại')}
           >
             <Volume2 className="size-9" />

@@ -1,5 +1,5 @@
 // Listening track page: player plus the three practice stages (gist → dictation → shadow & review).
-import { ArrowLeft, Clock, Ear, History, PenLine, Mic, Trash2 } from 'lucide-react'
+import { ArrowLeft, Check, Clock, Ear, History, Mic, PenLine, Trash2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AiBadge, FavoriteButton } from '@/components/learning'
@@ -97,9 +97,9 @@ function TrackView({ detail, onSaved }: { detail: TrackDetail; onSaved: () => vo
       s === 'dictation'
         ? summary.modesDone.some((m) => m === 'dictation' || m === 'gap')
         : summary.modesDone.includes(s)
-    )
-      ? ' ✓'
-      : ''
+    ) ? (
+      <Check className="ml-1 inline size-3.5 text-success" aria-label="done" />
+    ) : null
 
   const remove = async () => {
     setConfirmDelete(false)
@@ -142,7 +142,7 @@ function TrackView({ detail, onSaved }: { detail: TrackDetail; onSaved: () => vo
         </div>
       </header>
 
-      <div className="sticky top-0 z-20 -mx-1 mb-5 bg-bg/80 px-1 py-2 backdrop-blur">
+      <div className="sticky top-0 z-20 -mx-1 mb-5 bg-bg px-1 py-2">
         <PlayerBar track={track} player={player} />
       </div>
 

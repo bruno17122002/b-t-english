@@ -1,6 +1,6 @@
 // Pronunciation widgets: safe theory renderer (no raw HTML), phoneme alignment view, phoneme cards and
 // the Cadence attribution line.
-import { ExternalLink, Lightbulb } from 'lucide-react'
+import { Check, ExternalLink, Lightbulb } from 'lucide-react'
 import { useState } from 'react'
 import type { PhonemeAlignment } from '@core/phonemes'
 import type { PhonemeEntry } from '@shared/packs'
@@ -91,7 +91,7 @@ export function AlignmentView({ alignment }: { alignment: PhonemeAlignment }) {
           >
             <span className={cx('text-base', o.op === 'delete' && 'line-through')}>{o.expected ?? '+'}</span>
             <span className="text-[11px] opacity-80">
-              {o.op === 'match' ? '✓' : o.op === 'delete' ? '∅' : o.actual}
+              {o.op === 'match' ? <Check className="mx-auto size-3" /> : o.op === 'delete' ? '–' : o.actual}
             </span>
           </div>
         ))}

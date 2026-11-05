@@ -402,7 +402,7 @@ export function RecordButton({
         aria-label={recording ? L('Stop recording', 'Dừng ghi âm') : (label ?? L('Start recording', 'Bắt đầu ghi âm'))}
         className={cx(
           'relative flex size-20 items-center justify-center rounded-full text-white shadow-card transition disabled:opacity-50',
-          recording ? 'bg-danger' : 'bg-accent-gradient',
+          recording ? 'bg-danger' : 'bg-accent',
         )}
       >
         {recording && (

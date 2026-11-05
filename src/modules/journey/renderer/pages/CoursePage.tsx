@@ -129,7 +129,6 @@ function LevelView({
   return (
     <motion.div key={level.cefr} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}>
       <Card className="relative mb-6 overflow-hidden p-6">
-        <div className="pointer-events-none absolute -top-20 -right-16 size-60 rounded-full bg-accent/15 blur-3xl" />
         <div className="relative flex flex-wrap items-center justify-between gap-4">
           <div className="min-w-0 max-w-2xl">
             <div className="flex items-center gap-2">

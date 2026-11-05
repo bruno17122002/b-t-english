@@ -1,7 +1,7 @@
 // Shows XP gains as a small toast and big moments (level-up, achievements, completed quests) as a
 // celebration card. Driven by the 'reward' push event from the Progress kernel.
 import { AnimatePresence, motion } from 'framer-motion'
-import { Award, PartyPopper, ScrollText, Star } from 'lucide-react'
+import { Award, Check, PartyPopper, ScrollText, Star } from 'lucide-react'
 import { useEffect } from 'react'
 import { useL } from '../../i18n'
 import { useApp } from '../../lib/store'
@@ -60,7 +60,7 @@ export function RewardCelebration() {
     <AnimatePresence>
       {current && big && (
         <motion.div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -75,7 +75,7 @@ export function RewardCelebration() {
           >
             <Confetti />
             <div className="relative">
-              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl bg-accent-gradient text-accent-ink">
+              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl bg-accent text-accent-ink">
                 {current.levelUp ? (
                   <PartyPopper className="size-8" />
                 ) : current.achievementsUnlocked.length ? (
@@ -86,7 +86,7 @@ export function RewardCelebration() {
               </div>
               {current.levelUp && (
                 <h2 className="font-display text-3xl font-semibold">
-                  {L('Level', 'Cấp')} <span className="text-gradient">{current.levelUp}</span>!
+                  {L('Level', 'Cấp')} <span className="text-accent">{current.levelUp}</span>!
                 </h2>
               )}
               {current.achievementsUnlocked.map((a) => (
@@ -100,7 +100,7 @@ export function RewardCelebration() {
               ))}
               {current.questsCompleted.map((q) => (
                 <div key={q.id} className="mt-3 text-sm">
-                  <span className="text-success">✓</span> {lang === 'vi' ? q.titleVi : q.title}{' '}
+                  <Check className="mr-1 inline size-4 text-success" /> {lang === 'vi' ? q.titleVi : q.title}{' '}
                   <span className="text-warning">+{q.xpReward} XP</span>
                 </div>
               ))}

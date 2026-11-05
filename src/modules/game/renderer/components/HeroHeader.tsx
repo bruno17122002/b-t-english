@@ -11,18 +11,8 @@ import { levelTitleBi, nextAccentUnlock, restDayRechargeDate } from '../lib/meta
 function LevelCrest({ level }: { level: number }) {
   return (
     <div className="relative size-24 shrink-0" aria-hidden>
-      <svg
-        viewBox="0 0 100 110"
-        className="size-full"
-        style={{ filter: 'drop-shadow(0 8px 24px color-mix(in oklab, var(--accent) 45%, transparent))' }}
-      >
-        <defs>
-          <linearGradient id="lq-crest" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" style={{ stopColor: 'var(--accent)' }} />
-            <stop offset="1" style={{ stopColor: 'var(--accent-2)' }} />
-          </linearGradient>
-        </defs>
-        <path d="M50 4 L92 20 L88 62 Q84 90 50 106 Q16 90 12 62 L8 20 Z" fill="url(#lq-crest)" />
+      <svg viewBox="0 0 100 110" className="size-full">
+        <path d="M50 4 L92 20 L88 62 Q84 90 50 106 Q16 90 12 62 L8 20 Z" style={{ fill: 'var(--accent)' }} />
         <path
           d="M50 13 L83 26 L80 61 Q76 83 50 96 Q24 83 20 61 L17 26 Z"
           style={{ fill: 'var(--surface)' }}
@@ -63,18 +53,6 @@ export function HeroHeader({ game }: { game: GameState }) {
       className="relative mb-8 overflow-hidden rounded-3xl border border-line bg-surface p-6 shadow-card"
       aria-label={L('Your hero', 'Nhân vật của bạn')}
     >
-      {/* Decorative glow */}
-      <div
-        className="pointer-events-none absolute -top-24 -right-16 size-72 rounded-full opacity-40 blur-3xl"
-        style={{ background: 'radial-gradient(circle, var(--accent), transparent 70%)' }}
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -bottom-28 left-1/3 size-64 rounded-full opacity-25 blur-3xl"
-        style={{ background: 'radial-gradient(circle, var(--accent-2), transparent 70%)' }}
-        aria-hidden
-      />
-
       <div className="relative grid gap-6 lg:grid-cols-[1.4fr_1fr]">
         {/* Level + XP */}
         <div className="flex items-center gap-5">
@@ -84,7 +62,7 @@ export function HeroHeader({ game }: { game: GameState }) {
               {L('Level', 'Cấp')} {game.level}
             </div>
             <h2 className="font-display text-3xl font-semibold tracking-tight">
-              <span className="text-gradient">{tx(levelTitleBi(game.levelTitle))}</span>
+              <span className="text-accent">{tx(levelTitleBi(game.levelTitle))}</span>
             </h2>
             <div className="mt-3">
               <div
@@ -96,17 +74,10 @@ export function HeroHeader({ game }: { game: GameState }) {
                 aria-valuenow={game.xpIntoLevel}
               >
                 <motion.div
-                  className="h-full rounded-full bg-accent-gradient"
+                  className="h-full rounded-full bg-accent"
                   initial={{ width: 0 }}
                   animate={{ width: `${pct}%` }}
                   transition={{ duration: 1, ease: 'easeOut' }}
-                />
-                <motion.div
-                  className="absolute inset-y-0 w-16 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                  initial={{ left: '-10%' }}
-                  animate={{ left: '110%' }}
-                  transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' }}
-                  aria-hidden
                 />
               </div>
               <div className="mt-1.5 flex flex-wrap justify-between gap-2 text-xs text-muted">
@@ -202,7 +173,7 @@ export function HeroHeader({ game }: { game: GameState }) {
               <>
                 <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-3">
                   <motion.div
-                    className={cx('h-full rounded-full', goalPct >= 100 ? 'bg-success' : 'bg-accent-gradient')}
+                    className={cx('h-full rounded-full', goalPct >= 100 ? 'bg-success' : 'bg-accent')}
                     initial={{ width: 0 }}
                     animate={{ width: `${goalPct}%` }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}

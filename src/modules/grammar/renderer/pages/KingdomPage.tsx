@@ -1,7 +1,7 @@
 // Grammar Kingdom overview: CEFR castles on a kingdom path, topic mastery, recommended next topic and
 // the learner's recurring grammar mistakes.
 import { motion } from 'framer-motion'
-import { ArrowRight, Castle, Crown, Flame, Shield, Sparkles, Swords, Target } from 'lucide-react'
+import { ArrowRight, Castle, Check, Crown, Flame, Shield, Sparkles, Swords, Target } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import {
   Badge,
@@ -62,7 +62,6 @@ export default function KingdomPage() {
             {data.recommended ? (
               <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
                 <Card className="relative h-full overflow-hidden">
-                  <div className="pointer-events-none absolute -top-16 -right-16 size-56 rounded-full bg-accent/20 blur-3xl" />
                   <div className="relative flex h-full flex-col">
                     <div className="mb-2 flex items-center gap-2 text-xs font-semibold tracking-wider text-accent uppercase">
                       {data.recommended.reason === 'mistakes' ? (
@@ -144,7 +143,11 @@ export default function KingdomPage() {
                     <Flame className="mt-0.5 size-4 shrink-0 text-danger" />
                     <span className="min-w-0 flex-1">
                       <span className="font-medium">{m.pattern}</span>
-                      {m.correction && <span className="block truncate text-muted">✓ {m.correction}</span>}
+                      {m.correction && (
+                        <span className="flex items-center gap-1 truncate text-muted">
+                          <Check className="size-3 shrink-0" /> {m.correction}
+                        </span>
+                      )}
                     </span>
                     <Badge tone="danger">×{m.count}</Badge>
                   </button>

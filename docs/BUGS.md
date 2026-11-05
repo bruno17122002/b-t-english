@@ -15,4 +15,5 @@ Mỗi lỗi ghi theo các mục: triệu chứng → nguyên nhân gốc → cá
 | B10 | E2E bàn phím | Bấm Esc ngay sau Ctrl+K không đóng hộp tìm kiếm | Esc chỉ được bắt khi ô nhập đã có focus | Bắt Esc ở `window` khi palette đang mở | `routes.spec.ts` › keyboard |
 | B11 | E2E | Hộp chúc mừng thành tích chỉ đóng được bằng chuột | Thiếu phím tắt | Esc đóng hộp, nút "Tiếp tục" tự nhận focus | `journey.spec.ts` |
 | B12 | Agent Cinema | Số "kết thúc tốt" giảm khi xem lại phim | Thống kê đếm theo `story_progress` (bị ghi đè khi xem lại) | Đếm từ `activity_log` (`story_completed` với score 1) | `cinema.test.ts` |
+| B13 | Đo font bằng CDP | Phiên âm IPA (/ˈhʌŋɡri/, /ɜː/, /ɡ/) bị vẽ lẫn hai font Cascadia Mono và Consolas | Cascadia Mono thiếu các ký tự IPA ˈ ɒ ɜ ɹ ɡ ɾ nên Chromium phải mượn font khác | `font-mono` dùng Segoe UI Variable với số đều cột | `fonts.spec.ts`: 100% glyph vẽ bằng Segoe UI Variable, ngoại trừ emoji |
 | B5 | ESLint | Ký tự BOM thật nằm trong mã nguồn | Ký tự U+FEFF được dán trực tiếp vào regex | Dùng hằng `BOM = String.fromCharCode(0xfeff)` | `kernel-storage.test.ts` › CSV parser |

@@ -375,7 +375,9 @@ export function ExplainMistake({
         </div>
         <p>{L(data.explanationEn, data.explanationVi)}</p>
         <p className="text-muted">{L(data.explanationVi, data.explanationEn)}</p>
-        <p className="font-medium text-success">✓ {data.correctedSentence}</p>
+        <p className="flex items-center gap-1.5 font-medium text-success">
+          <Check className="size-4 shrink-0" /> {data.correctedSentence}
+        </p>
         <p className="text-muted">💡 {data.tip}</p>
       </div>
     )
@@ -443,7 +445,6 @@ function Summary({
       data-testid="grammar-summary"
     >
       <Card className="relative overflow-hidden p-6 text-center">
-        <div className="pointer-events-none absolute inset-x-0 -top-24 mx-auto size-64 rounded-full bg-accent/20 blur-3xl" />
         <div className="relative">
           <Trophy className={cx('mx-auto size-10', score >= 0.8 ? 'text-warning' : 'text-muted')} />
           <h2 className="mt-2 font-display text-3xl font-semibold">

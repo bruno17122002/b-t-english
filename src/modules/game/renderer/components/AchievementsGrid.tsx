@@ -10,32 +10,25 @@ import { resolveAchievementIcon } from '../lib/achievementIcons'
 import { filterAchievements, sortAchievements, type AchievementFilter } from '../lib/meta'
 
 /** Tier styling – medal colours are illustration colours; legend uses the theme accent. */
-const TIERS: Record<
-  Achievement['tier'],
-  { label: { en: string; vi: string }; ring: string; glow: string; text: string }
-> = {
+const TIERS: Record<Achievement['tier'], { label: { en: string; vi: string }; ring: string; text: string }> = {
   bronze: {
     label: { en: 'Bronze', vi: 'Đồng' },
-    ring: 'linear-gradient(135deg,#e2a26b,#8a5a35)',
-    glow: '#c98447',
+    ring: '#b87333',
     text: '#e2a26b',
   },
   silver: {
     label: { en: 'Silver', vi: 'Bạc' },
-    ring: 'linear-gradient(135deg,#eef1f7,#8f97a8)',
-    glow: '#b9c0cf',
+    ring: '#a0a7b4',
     text: '#c9cfdb',
   },
   gold: {
     label: { en: 'Gold', vi: 'Vàng' },
-    ring: 'linear-gradient(135deg,#ffe08a,#c98a10)',
-    glow: '#f5b82e',
+    ring: '#d4a017',
     text: '#f5c84c',
   },
   legend: {
     label: { en: 'Legend', vi: 'Huyền thoại' },
-    ring: 'conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--warning), var(--accent))',
-    glow: 'var(--accent)',
+    ring: 'var(--accent)',
     text: 'var(--accent-2)',
   },
 }
@@ -67,7 +60,6 @@ function AchievementBadge({ a, index }: { a: Achievement; index: number }) {
           )}
           style={{
             background: tier.ring,
-            boxShadow: unlocked ? `0 0 22px -4px ${tier.glow}` : undefined,
           }}
         >
           <div className="flex size-full items-center justify-center rounded-full bg-surface">
@@ -93,10 +85,7 @@ function AchievementBadge({ a, index }: { a: Achievement; index: number }) {
         ) : (
           <>
             <div className="h-1.5 overflow-hidden rounded-full bg-surface-3">
-              <div
-                className="h-full rounded-full bg-accent-gradient"
-                style={{ width: `${Math.round(a.progress * 100)}%` }}
-              />
+              <div className="h-full rounded-full bg-accent" style={{ width: `${Math.round(a.progress * 100)}%` }} />
             </div>
             <div className="mt-1 text-[11px] text-faint tabular-nums">
               {fmt.number(Math.min(a.current, a.target))}/{fmt.number(a.target)} · {tx(tier.label)}

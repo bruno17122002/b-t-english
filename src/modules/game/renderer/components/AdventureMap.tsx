@@ -64,26 +64,13 @@ function MapBackdrop() {
   return (
     <g aria-hidden>
       <defs>
-        <radialGradient id="lq-map-bg" cx="50%" cy="40%" r="75%">
-          <stop offset="0" style={{ stopColor: 'var(--surface-2)' }} />
-          <stop offset="1" style={{ stopColor: 'var(--surface)' }} />
-        </radialGradient>
-        <radialGradient id="lq-map-sea" cx="50%" cy="50%" r="50%">
-          <stop offset="0" style={{ stopColor: 'var(--info)', stopOpacity: 0.22 }} />
-          <stop offset="1" style={{ stopColor: 'var(--info)', stopOpacity: 0 }} />
-        </radialGradient>
-        <radialGradient id="lq-map-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0" style={{ stopColor: 'var(--accent)', stopOpacity: 0.16 }} />
-          <stop offset="1" style={{ stopColor: 'var(--accent)', stopOpacity: 0 }} />
-        </radialGradient>
         <pattern id="lq-map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
           <path d="M40 0 H0 V40" fill="none" style={{ stroke: 'var(--line)' }} strokeWidth={1} />
         </pattern>
       </defs>
-      <rect width={W} height={H} fill="url(#lq-map-bg)" />
+      <rect width={W} height={H} style={{ fill: 'var(--surface)' }} />
       <rect width={W} height={H} fill="url(#lq-map-grid)" opacity={0.5} />
-      <ellipse cx={420} cy={500} rx={210} ry={130} fill="url(#lq-map-sea)" />
-      <ellipse cx={730} cy={110} rx={220} ry={120} fill="url(#lq-map-glow)" />
+      <ellipse cx={420} cy={500} rx={210} ry={130} style={{ fill: 'var(--info)' }} opacity={0.1} />
       {/* contour lines – a hint of terrain */}
       <g fill="none" style={{ stroke: 'var(--line-strong)' }} opacity={0.35} strokeWidth={1}>
         <path d="M560 40 C640 10 820 10 900 60 C960 100 940 160 880 170" />
@@ -402,7 +389,7 @@ export function AdventureMap({ regions }: { regions: RegionProgress[] }) {
                     title={tx(s)}
                     className={cx(
                       'h-1.5 flex-1 rounded-full',
-                      i < region.stage ? (maxed ? 'bg-warning' : 'bg-accent-gradient') : 'bg-surface-3',
+                      i < region.stage ? (maxed ? 'bg-warning' : 'bg-accent') : 'bg-surface-3',
                     )}
                   />
                 ))}

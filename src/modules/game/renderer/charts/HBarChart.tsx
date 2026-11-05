@@ -1,7 +1,6 @@
 // Horizontal bar chart (e.g. minutes per skill): label column, proportional bars, value at the end of each bar.
 import { motion } from 'framer-motion'
-import { useId } from 'react'
-import { AccentGradient, ChartEmpty, ChartTooltip, svgId, useActiveIndex, useChartIds, useElementWidth } from './common'
+import { ChartEmpty, ChartTooltip, useActiveIndex, useChartIds, useElementWidth } from './common'
 import { linearScale } from './scale'
 
 export interface HBarDatum {
@@ -33,7 +32,6 @@ export function HBarChart({
 }: HBarChartProps) {
   const { ref, width } = useElementWidth<HTMLDivElement>()
   const { titleId, descId } = useChartIds()
-  const gradId = svgId(useId()) + '-hbar'
   const { active, setActive, focusProps } = useActiveIndex(data.length)
   const height = Math.max(rowHeight, data.length * rowHeight)
   const isEmpty = data.length === 0 || data.every((d) => !(d.value > 0))
@@ -62,9 +60,6 @@ export function HBarChart({
       >
         <title id={titleId}>{title}</title>
         <desc id={descId}>{description ?? data.map((d) => `${d.label}: ${formatValue(d.value)}`).join(', ')}</desc>
-        <defs>
-          <AccentGradient id={gradId} vertical={false} />
-        </defs>
         {data.map((d, i) => {
           const cy = i * rowHeight + rowHeight / 2
           const w = d.value > 0 ? Math.max(3, x(d.value)) : 0
@@ -87,7 +82,7 @@ export function HBarChart({
                 y={cy - barH / 2}
                 height={barH}
                 rx={barH / 2}
-                fill={`url(#${gradId})`}
+                style={{ fill: 'var(--accent)' }}
                 initial={{ width: 0 }}
                 animate={{ width: w }}
                 transition={{ duration: 0.6, delay: i * 0.05, ease: 'easeOut' }}

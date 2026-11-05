@@ -9,11 +9,11 @@ import { speak, systemVoices } from '../../lib/audio'
 import { useApp } from '../../lib/store'
 
 const ACCENT_SWATCH: Record<string, string> = {
-  aurora: 'linear-gradient(120deg,#7c8cff,#4fd1c5)',
-  ember: 'linear-gradient(120deg,#ff7a59,#ffc15e)',
-  jade: 'linear-gradient(120deg,#34d399,#a3e635)',
-  royal: 'linear-gradient(120deg,#a78bfa,#f472b6)',
-  sunset: 'linear-gradient(120deg,#fb7185,#fbbf24)',
+  aurora: '#0078d4',
+  ember: '#ca5010',
+  jade: '#107c10',
+  royal: '#8764b8',
+  sunset: '#c239b3',
 }
 
 function Row({ title, desc, children }: { title: ReactNode; desc?: ReactNode; children: ReactNode }) {

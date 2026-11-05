@@ -38,7 +38,7 @@ export const GENRES: Record<Genre, { en: string; vi: string; icon: LucideIcon; f
 
 export const genreMeta = (g: string) => GENRES[g as Genre] ?? GENRES['real-life']
 
-/** Poster: the opening scene's backdrop, graded with the genre colours, plus title and genre icon. */
+/** Poster: the opening scene's backdrop with a flat title bar and the genre icon. */
 export function Poster({
   title,
   genre,
@@ -60,23 +60,14 @@ export function Poster({
     <div className={cx('relative isolate overflow-hidden bg-black', className)}>
       <Backdrop backdrop={backdrop} mood={mood} still />
       <div
-        className="absolute inset-0 mix-blend-soft-light"
-        style={{ background: `linear-gradient(135deg, ${g.from}, ${g.to})` }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(180deg, rgb(0 0 0 / 0) 35%, rgb(0 0 0 / 0.85) 100%)' }}
-      />
-      <div
-        className="absolute top-3 left-3 flex size-9 items-center justify-center rounded-xl text-white shadow-lg"
-        style={{ background: `linear-gradient(135deg, ${g.from}, ${g.to})` }}
+        className="absolute top-3 left-3 flex size-9 items-center justify-center rounded-xl text-white"
+        style={{ background: g.from }}
       >
         <Icon className="size-5" />
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-4">
-        <div className="font-display text-2xl leading-tight font-semibold text-white drop-shadow-[0_2px_8px_rgb(0_0_0/0.6)]">
-          {title}
-        </div>
+      {/* Flat title bar keeps the title legible over the scene without a gradient scrim. */}
+      <div className="absolute inset-x-0 bottom-0 bg-black/65 px-4 py-3">
+        <div className="font-display text-xl leading-tight font-semibold text-white">{title}</div>
       </div>
       {children}
     </div>

@@ -19,18 +19,22 @@ function rng(seed: number) {
   }
 }
 
-function Sky({ id, top, bottom }: { id: string; top: string; bottom: string }) {
-  return (
-    <>
-      <defs>
-        <linearGradient id={id} x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor={top} />
-          <stop offset="100%" stopColor={bottom} />
-        </linearGradient>
-      </defs>
-      <rect width={W} height={H} fill={`url(#${id})`} />
-    </>
-  )
+/** Blends two #rrggbb colours (t = 0 → a, 1 → b). */
+function mixHex(a: string, b: string, t: number): string {
+  const pa = [1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16))
+  const pb = [1, 3, 5].map((i) => parseInt(b.slice(i, i + 2), 16))
+  return `#${pa
+    .map((v, i) =>
+      Math.round(v + ((pb[i] as number) - v) * t)
+        .toString(16)
+        .padStart(2, '0'),
+    )
+    .join('')}`
+}
+
+/** Flat sky / wall: a single solid colour between the two scene tones (no gradient). */
+function Sky({ top, bottom }: { id: string; top: string; bottom: string }) {
+  return <rect width={W} height={H} fill={mixHex(top, bottom, 0.4)} />
 }
 
 function Stars({ count, seed, maxY = 500 }: { count: number; seed: number; maxY?: number }) {
@@ -117,17 +121,9 @@ function Glow({
   opacity?: number
   id: string
 }) {
-  return (
-    <>
-      <defs>
-        <radialGradient id={id}>
-          <stop offset="0%" stopColor={color} stopOpacity={opacity} />
-          <stop offset="100%" stopColor={color} stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <circle cx={cx} cy={cy} r={r} fill={`url(#${id})`} />
-    </>
-  )
+  // Flat translucent light disc instead of a radial glow.
+  void id
+  return <circle cx={cx} cy={cy} r={r * 0.55} fill={color} opacity={opacity * 0.45} />
 }
 
 function Plant({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
@@ -410,7 +406,7 @@ const SCENES: Record<BackdropId, () => ReactNode> = {
       <Sky id="sr-sky" top="#1b2433" bottom="#3a4659" />
       <Skyline seed={31} base={700} color="#222b3b" windowColor="#fcd34d" minH={220} maxH={520} litRatio={0.18} />
       <rect y="700" width={W} height="200" fill="#151b26" />
-      <rect y="700" width={W} height="200" fill="url(#sr-sky)" opacity="0.15" />
+      <rect y="700" width={W} height="200" fill="#273242" opacity="0.15" />
       {Array.from({ length: 10 }, (_, i) => (
         <rect key={i} x={i * 170 + 30} y="790" width="90" height="6" rx="3" fill="#e2e8f0" opacity="0.25" />
       ))}
@@ -505,16 +501,11 @@ const SCENES: Record<BackdropId, () => ReactNode> = {
         <clipPath id="sp-port">
           <circle cx="800" cy="400" r="300" />
         </clipPath>
-        <radialGradient id="sp-planet" cx="35%" cy="35%">
-          <stop offset="0%" stopColor="#f472b6" />
-          <stop offset="60%" stopColor="#7c3aed" />
-          <stop offset="100%" stopColor="#1e1b4b" />
-        </radialGradient>
       </defs>
       <g clipPath="url(#sp-port)">
         <rect x="500" y="100" width="600" height="600" fill="#0a0820" />
         <Stars count={60} seed={57} maxY={H} />
-        <circle cx="900" cy="520" r="210" fill="url(#sp-planet)" />
+        <circle cx="900" cy="520" r="210" fill="#7c3aed" />
         <ellipse
           cx="900"
           cy="520"
@@ -727,13 +718,14 @@ const SCENES: Record<BackdropId, () => ReactNode> = {
   ),
 }
 
+/** Flat colour wash per mood (no gradient). */
 const MOOD_TINT: Record<Mood, string> = {
-  calm: 'linear-gradient(180deg, rgb(96 165 250 / 0.10), rgb(15 23 42 / 0.25))',
-  tense: 'linear-gradient(180deg, rgb(127 29 29 / 0.25), rgb(2 6 23 / 0.45))',
-  warm: 'linear-gradient(180deg, rgb(251 146 60 / 0.18), rgb(67 20 7 / 0.25))',
-  mysterious: 'linear-gradient(180deg, rgb(91 33 182 / 0.28), rgb(2 6 23 / 0.45))',
-  upbeat: 'linear-gradient(180deg, rgb(250 204 21 / 0.14), rgb(255 255 255 / 0.02))',
-  serious: 'linear-gradient(180deg, rgb(30 41 59 / 0.35), rgb(2 6 23 / 0.45))',
+  calm: 'rgb(30 64 120 / 0.14)',
+  tense: 'rgb(90 20 25 / 0.30)',
+  warm: 'rgb(170 80 30 / 0.16)',
+  mysterious: 'rgb(60 25 120 / 0.30)',
+  upbeat: 'rgb(250 204 21 / 0.08)',
+  serious: 'rgb(15 23 42 / 0.36)',
 }
 
 const KEYFRAMES = `
@@ -752,7 +744,7 @@ const KEYFRAMES = `
 .lq-backdrop.lq-still * { animation: none !important }
 `
 
-/** Full-bleed scene illustration with a mood tint and vignette. `still` disables the ambient animation. */
+/** Full-bleed flat scene illustration with a mood tint. `still` disables the ambient animation. */
 export const Backdrop = memo(function Backdrop({
   backdrop,
   mood,
@@ -775,10 +767,6 @@ export const Backdrop = memo(function Backdrop({
         {draw()}
       </svg>
       {mood && <div className="absolute inset-0" style={{ background: MOOD_TINT[mood] }} />}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgb(0 0 0 / 0.55) 100%)' }}
-      />
     </div>
   )
 })

@@ -2,6 +2,7 @@
 import {
   AlignLeft,
   Briefcase,
+  Check,
   Feather,
   GraduationCap,
   Mail,
@@ -9,8 +10,10 @@ import {
   PenLine,
   Pilcrow,
   SpellCheck,
+  X,
   type LucideIcon,
 } from 'lucide-react'
+import type { ReactNode } from 'react'
 import type { WritingPrompt } from '@shared/content'
 import type { TextMetrics, WritingFeedback } from '@shared/types'
 import { Badge, CefrBadge, cx } from '@/components/ui'
@@ -115,10 +118,10 @@ export function MetricsPanel({ metrics, compact }: { metrics: TextMetrics; compa
   )
 }
 
-const STATUS_STYLE: Record<CheckItem['status'], { mark: string; cls: string }> = {
-  pass: { mark: '✓', cls: 'bg-success/15 text-success' },
+const STATUS_STYLE: Record<CheckItem['status'], { mark: ReactNode; cls: string }> = {
+  pass: { mark: <Check className="size-3" strokeWidth={3} />, cls: 'bg-success/15 text-success' },
   warn: { mark: '!', cls: 'bg-warning/15 text-warning' },
-  fail: { mark: '✕', cls: 'bg-danger/15 text-danger' },
+  fail: { mark: <X className="size-3" strokeWidth={3} />, cls: 'bg-danger/15 text-danger' },
   manual: { mark: '?', cls: 'bg-surface-3 text-muted' },
 }
 
@@ -161,12 +164,6 @@ export function ScoreTrend({ points, label }: { points: { score: number; label: 
   const area = `${path} L${x(points.length - 1).toFixed(1)},${y(0)} L${x(0).toFixed(1)},${y(0)} Z`
   return (
     <svg viewBox={`0 0 ${w} ${h}`} className="h-auto w-full" role="img" aria-label={label} data-testid="writing-trend">
-      <defs>
-        <linearGradient id="wt-fill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
-        </linearGradient>
-      </defs>
       {[0, 5, 10].map((g) => (
         <g key={g}>
           <line x1={pad.l} x2={w - pad.r} y1={y(g)} y2={y(g)} stroke="var(--line)" />
@@ -175,7 +172,7 @@ export function ScoreTrend({ points, label }: { points: { score: number; label: 
           </text>
         </g>
       ))}
-      {points.length > 1 && <path d={area} fill="url(#wt-fill)" />}
+      {points.length > 1 && <path d={area} fill="var(--accent)" opacity={0.12} />}
       <path
         d={path}
         fill="none"

@@ -191,5 +191,5 @@ license; full license texts are included in each package's `LICENSE` file and ar
 | sql.js | 1.15.2 | MIT (SQLite: public domain) | Local database |
 | ts-fsrs | 6.0.0 | MIT | Spaced-repetition scheduling |
 | @open-spaced-repetition/srs-kit | 1.0.0 | BSD-3-Clause | Dependency of ts-fsrs |
-| Fraunces (font, via @fontsource-variable) | 5.3.0 | SIL Open Font License 1.1 | Display typeface |
-| Manrope (font, via @fontsource-variable) | 5.3.0 | SIL Open Font License 1.1 | Body typeface |
+
+The interface uses the Windows system typeface Segoe UI Variable; no font files are bundled.

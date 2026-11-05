@@ -212,7 +212,6 @@ function Intro({
         )}
       />
       <Card className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -top-20 -right-20 size-60 rounded-full bg-accent/15 blur-3xl" />
         <div className="relative grid grid-cols-2 gap-3 md:grid-cols-3">
           {parts.map((p) => (
             <div key={p.label} className="flex items-center gap-3 rounded-xl border border-line bg-surface-2/60 p-3">
@@ -392,7 +391,7 @@ function TestView({
                   aria-label={L('Play audio', 'Phát âm thanh')}
                   className={cx(
                     'flex size-20 items-center justify-center rounded-full text-accent-ink transition disabled:opacity-50',
-                    playing ? 'animate-pulse bg-accent' : 'bg-accent-gradient hover:brightness-110',
+                    playing ? 'animate-pulse bg-accent' : 'bg-accent hover:brightness-110',
                   )}
                 >
                   {playing ? (
@@ -758,7 +757,6 @@ function ResultView({
         animate={{ opacity: 1, scale: 1 }}
         className="relative overflow-hidden rounded-3xl border border-line bg-surface p-8 text-center shadow-card"
       >
-        <div className="pointer-events-none absolute -top-24 left-1/2 size-80 -translate-x-1/2 rounded-full bg-accent/20 blur-3xl" />
         <div className="relative">
           <div className="text-sm tracking-wider text-muted uppercase">
             {L('Your overall level', 'Trình độ tổng thể của bạn')}
@@ -767,7 +765,7 @@ function ResultView({
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 180, damping: 12, delay: 0.1 }}
-            className="mt-2 font-display text-7xl font-semibold text-gradient"
+            className="mt-2 font-display text-7xl font-semibold text-accent"
             data-testid="assessment-overall"
           >
             {result.overall}

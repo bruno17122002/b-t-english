@@ -207,15 +207,14 @@ export default function OnboardingPage() {
 
   return (
     <div data-testid="page-journey" className="relative flex h-full flex-col overflow-hidden">
-      <div className="pointer-events-none absolute -top-40 left-1/2 size-[640px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
       {/* progress */}
       <header className="relative flex items-center justify-between px-8 pt-6">
         <div className="flex items-center gap-2.5">
-          <div className="flex size-9 items-center justify-center rounded-xl bg-accent-gradient text-accent-ink">
+          <div className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-ink">
             <Sparkles className="size-5" />
           </div>
           <span className="font-display text-lg font-semibold">
-            Lingua <span className="text-gradient">Quest</span>
+            Lingua <span className="text-accent">Quest</span>
           </span>
         </div>
         <div
@@ -251,13 +250,13 @@ export default function OnboardingPage() {
                   initial={{ scale: 0.6, rotate: -10 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: 'spring', stiffness: 200, damping: 12 }}
-                  className="mx-auto mb-6 flex size-20 items-center justify-center rounded-3xl bg-accent-gradient text-accent-ink shadow-[0_20px_60px_-20px_var(--accent)]"
+                  className="mx-auto mb-6 flex size-20 items-center justify-center rounded-3xl bg-accent text-accent-ink"
                 >
                   <Rocket className="size-10" />
                 </motion.div>
                 <h1 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
                   {L('Your English adventure', 'Hành trình tiếng Anh')}{' '}
-                  <span className="text-gradient">{L('starts here', 'bắt đầu từ đây')}</span>
+                  <span className="text-accent">{L('starts here', 'bắt đầu từ đây')}</span>
                 </h1>
                 <p className="mx-auto mt-4 max-w-lg text-muted">
                   {L(

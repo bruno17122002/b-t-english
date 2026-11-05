@@ -1,7 +1,6 @@
 // Vertical bar chart (e.g. minutes or XP per day) with y-axis ticks, optional goal line and hover/keyboard tooltips.
 import { motion } from 'framer-motion'
-import { useId } from 'react'
-import { AccentGradient, ChartEmpty, ChartTooltip, svgId, useActiveIndex, useChartIds, useElementWidth } from './common'
+import { ChartEmpty, ChartTooltip, useActiveIndex, useChartIds, useElementWidth } from './common'
 import { bandScale, linearScale, niceTicks, shouldShowLabel } from './scale'
 
 export interface BarDatum {
@@ -43,7 +42,6 @@ export function BarChart({
 }: BarChartProps) {
   const { ref, width } = useElementWidth<HTMLDivElement>()
   const { titleId, descId } = useChartIds()
-  const gradId = svgId(useId()) + '-bar'
   const { active, setActive, focusProps } = useActiveIndex(data.length)
   const isEmpty = data.length === 0 || data.every((d) => !(d.value > 0))
 
@@ -77,9 +75,6 @@ export function BarChart({
           >
             <title id={titleId}>{title}</title>
             <desc id={descId}>{description ?? data.map((d) => `${d.label}: ${formatValue(d.value)}`).join(', ')}</desc>
-            <defs>
-              <AccentGradient id={gradId} />
-            </defs>
             <g transform={`translate(${M.left},${M.top})`}>
               {ticks.map((t) => (
                 <g key={t} transform={`translate(0,${y(t)})`}>
@@ -110,13 +105,8 @@ export function BarChart({
                         height: Math.max(h, d.value > 0 ? 2 : 0),
                       }}
                       transition={{ duration: 0.5, delay: Math.min(0.4, i * 0.015), ease: 'easeOut' }}
-                      fill={`url(#${gradId})`}
-                      opacity={dim ? 0.45 : isLast ? 1 : 0.85}
-                      style={
-                        isLast
-                          ? { filter: 'drop-shadow(0 0 6px color-mix(in oklab, var(--accent) 60%, transparent))' }
-                          : undefined
-                      }
+                      opacity={dim ? 0.45 : isLast ? 1 : 0.75}
+                      style={{ fill: 'var(--accent)' }}
                     />
                     {shouldShowLabel(i, data.length, maxLabels) && (
                       <text

@@ -266,7 +266,7 @@ function StoryCard({
         >
           <div className="absolute top-3 right-3 flex items-center gap-1.5">
             {story.source === 'ai' && <AiBadge estimated={false} />}
-            <CefrBadge level={story.cefr} className="bg-black/50 backdrop-blur" />
+            <CefrBadge level={story.cefr} className="bg-black/50" />
           </div>
           <div className="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover:opacity-100">
             <span className="flex size-14 items-center justify-center rounded-full bg-white/90 text-black shadow-xl">

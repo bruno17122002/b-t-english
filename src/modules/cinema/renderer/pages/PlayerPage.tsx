@@ -381,7 +381,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
               <motion.span
                 key={cid}
                 animate={{ scale: active ? 1.08 : 1, opacity: active || state.phase !== 'lines' ? 1 : 0.65 }}
-                className="flex items-center gap-1.5 rounded-full bg-black/55 py-1 pr-3 pl-1 text-xs font-semibold text-white backdrop-blur"
+                className="flex items-center gap-1.5 rounded-full bg-black/55 py-1 pr-3 pl-1 text-xs font-semibold text-white"
                 style={{ boxShadow: active ? `0 0 0 2px ${c.color}` : undefined }}
                 title={c.role}
               >
@@ -403,7 +403,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
             key={lineKey}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute inset-x-[4%] bottom-[12%] rounded-2xl bg-black/70 p-4 text-white shadow-2xl backdrop-blur-md md:p-5"
+            className="absolute inset-x-[4%] bottom-[12%] rounded-2xl bg-black/70 p-4 text-white shadow-2xl md:p-5"
             data-testid="cinema-line"
           >
             <div
@@ -465,7 +465,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl bg-black/60 p-[5%] backdrop-blur-[2px]"
+              className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl bg-black/60 p-[5%]"
               onClick={(e) => e.stopPropagation()}
               data-testid="cinema-choice"
             >
@@ -504,7 +504,7 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute inset-x-[4%] top-[12%] rounded-2xl bg-black/75 p-4 text-white shadow-2xl backdrop-blur-md"
+            className="absolute inset-x-[4%] top-[12%] rounded-2xl bg-black/75 p-4 text-white shadow-2xl"
             data-testid="cinema-feedback"
           >
             <div className="flex items-center gap-2">

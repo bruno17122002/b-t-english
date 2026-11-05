@@ -1,81 +1,86 @@
-@import '@fontsource-variable/fraunces';
-@import '@fontsource-variable/manrope';
 @import 'tailwindcss';
 /* Feature modules live outside the renderer root; scan them for class names too. */
 @source '../../modules';
 
-/* ---------- Design tokens ----------
+/* ---------- Design tokens: Windows 11 (Fluent 2) ----------
+   Flat colours only – no gradients, glows or glass. Values follow the Windows 11 dark/light theme
+   resources (Mica base, layer/card fills, control strokes, text opacity ramps, system accent).
    Components use Tailwind utilities mapped to these variables (bg-surface, text-muted, border-line, …),
-   so dark/light themes and the unlockable accent colours switch by changing data attributes on <html>. */
+   so the theme and the unlockable accent colours switch by changing data attributes on <html>. */
 :root {
-  --bg: #0b0d14;
-  --bg-glow: #151a2e;
-  --surface: #121521;
-  --surface-2: #191d2c;
-  --surface-3: #22273a;
-  --line: rgb(255 255 255 / 0.08);
-  --line-strong: rgb(255 255 255 / 0.16);
-  --text: #eceef6;
-  --muted: #9ba1b8;
-  --faint: #6b7189;
-  --success: #4ade80;
-  --warning: #fbbf24;
-  --danger: #f87171;
-  --info: #60a5fa;
-  --shadow: 0 10px 40px -12px rgb(0 0 0 / 0.55);
-  --accent: #7c8cff;
-  --accent-2: #4fd1c5;
-  --accent-ink: #0b0d14;
+  --bg: #202020; /* Mica base (dark) */
+  --layer: #272727; /* content layer above Mica */
+  --surface: #2d2d2d; /* card */
+  --surface-2: #323232; /* control fill, hover */
+  --surface-3: #3a3a3a; /* pressed / selected fill, tracks */
+  --line: rgb(255 255 255 / 0.07);
+  --line-strong: rgb(255 255 255 / 0.14);
+  --text: #ffffff;
+  --muted: #c8c8c8; /* text secondary (≈ 78 %) */
+  --faint: #9a9a9a; /* text tertiary (≈ 54 %) */
+  --success: #6ccb5f;
+  --warning: #fce100;
+  --danger: #ff99a4;
+  --info: #60cdff;
+  --shadow: 0 2px 4px rgb(0 0 0 / 0.26);
+  --shadow-flyout: 0 8px 16px rgb(0 0 0 / 0.26);
+  --accent: #60cdff; /* Windows default accent (blue), "Accent Light 2" for dark theme */
+  --accent-2: var(--accent);
+  --accent-ink: #000000;
   color-scheme: dark;
 }
 
 :root[data-theme='light'] {
-  --bg: #f5f4ef;
-  --bg-glow: #ebe8fb;
+  --bg: #f3f3f3; /* Mica base (light) */
+  --layer: #f9f9f9;
   --surface: #ffffff;
-  --surface-2: #f3f2ee;
-  --surface-3: #e8e6df;
-  --line: rgb(20 22 40 / 0.09);
-  --line-strong: rgb(20 22 40 / 0.18);
-  --text: #171a28;
-  --muted: #5a6077;
-  --faint: #8a8fa3;
-  --shadow: 0 10px 30px -14px rgb(30 30 60 / 0.25);
+  --surface-2: #f9f9f9;
+  --surface-3: #ececec;
+  --line: rgb(0 0 0 / 0.08);
+  --line-strong: rgb(0 0 0 / 0.16);
+  --text: #1b1b1b;
+  --muted: #5d5d5d;
+  --faint: #8a8a8a;
+  --success: #0f7b0f;
+  --warning: #9d5d00;
+  --danger: #c42b1c;
+  --info: #005fb8;
+  --shadow: 0 2px 4px rgb(0 0 0 / 0.04);
+  --shadow-flyout: 0 8px 16px rgb(0 0 0 / 0.14);
+  --accent: #005fb8; /* "Accent Dark 1" for light theme */
   --accent-ink: #ffffff;
   color-scheme: light;
 }
 
-:root[data-accent='aurora'] {
-  --accent: #7c8cff;
-  --accent-2: #4fd1c5;
-}
+/* Unlockable accents use Windows accent colours (dark theme value, then light theme value). */
 :root[data-accent='ember'] {
-  --accent: #ff7a59;
-  --accent-2: #ffc15e;
+  --accent: #f7a072;
 }
 :root[data-accent='jade'] {
-  --accent: #34d399;
-  --accent-2: #a3e635;
+  --accent: #6ccb5f;
 }
 :root[data-accent='royal'] {
-  --accent: #a78bfa;
-  --accent-2: #f472b6;
+  --accent: #c3a7f0;
 }
 :root[data-accent='sunset'] {
-  --accent: #fb7185;
-  --accent-2: #fbbf24;
+  --accent: #f3a6e8;
 }
-:root[data-theme='light'][data-accent='aurora'] {
-  --accent: #4f5fe8;
-  --accent-2: #0f9f92;
+:root[data-theme='light'][data-accent='ember'] {
+  --accent: #b6470a;
 }
 :root[data-theme='light'][data-accent='jade'] {
-  --accent: #059669;
-  --accent-2: #65a30d;
+  --accent: #0e700e;
+}
+:root[data-theme='light'][data-accent='royal'] {
+  --accent: #744da9;
+}
+:root[data-theme='light'][data-accent='sunset'] {
+  --accent: #9a2f8f;
 }
 
 @theme inline {
   --color-bg: var(--bg);
+  --color-layer: var(--layer);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-surface-3: var(--surface-3);
@@ -91,9 +96,18 @@
   --color-warning: var(--warning);
   --color-danger: var(--danger);
   --color-info: var(--info);
-  --font-display: 'Fraunces Variable', Georgia, serif;
-  --font-sans: 'Manrope Variable', 'Segoe UI', system-ui, sans-serif;
+  /* Windows 11 system typefaces: full Vietnamese and IPA coverage, no bundled web fonts. */
+  --font-display: 'Segoe UI Variable Display', 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  --font-sans: 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  /* IPA and badges use the UI font too: Cascadia Mono/Consolas lack IPA letters (ˈ ɒ ɜ ɹ ɡ ɾ) and would mix fonts. */
+  --font-mono: 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
   --shadow-card: var(--shadow);
+  /* Fluent corner radii: 4 px controls, 8 px cards, flyouts and dialogs. */
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
 }
 
 @layer base {
@@ -104,29 +118,32 @@
   }
   body {
     margin: 0;
-    background:
-      radial-gradient(1200px 600px at 85% -10%, var(--bg-glow), transparent 60%),
-      radial-gradient(900px 500px at -10% 110%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 60%),
-      var(--bg);
+    background: var(--bg);
     color: var(--text);
     font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
     overflow: hidden;
   }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    letter-spacing: normal;
+  }
   ::selection {
-    background: color-mix(in oklab, var(--accent) 35%, transparent);
+    background: color-mix(in srgb, var(--accent) 35%, transparent);
   }
   :focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-    border-radius: 6px;
+    outline: 2px solid var(--text);
+    outline-offset: 1px;
+    border-radius: 4px;
   }
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--surface-3) transparent;
   }
   button {
-    cursor: pointer;
+    cursor: default;
   }
   button:disabled {
     cursor: not-allowed;
@@ -134,29 +151,19 @@
 }
 
 @layer components {
-  .text-gradient {
-    background: linear-gradient(100deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .bg-accent-gradient {
-    background: linear-gradient(120deg, var(--accent), var(--accent-2));
-  }
-  .glass {
-    background: color-mix(in oklab, var(--surface) 82%, transparent);
-    backdrop-filter: blur(14px);
+  .font-mono {
+    font-variant-numeric: tabular-nums;
   }
   .word-token {
-    border-radius: 4px;
+    border-radius: 3px;
     transition: background-color 120ms;
     cursor: pointer;
   }
   .word-token:hover {
-    background: color-mix(in oklab, var(--accent) 22%, transparent);
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
   }
   .word-saved {
-    text-decoration: underline dotted var(--accent-2);
+    text-decoration: underline dotted var(--accent);
     text-underline-offset: 4px;
   }
 }

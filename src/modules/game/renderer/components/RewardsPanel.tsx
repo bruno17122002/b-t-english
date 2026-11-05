@@ -28,7 +28,7 @@ export function RewardsPanel({ game }: { game: GameState }) {
           >
             <div
               className={cx('h-16 rounded-xl', !unlocked && 'grayscale')}
-              style={{ background: `linear-gradient(120deg, ${t.swatch[0]}, ${t.swatch[1]})` }}
+              style={{ background: t.swatch[0] }}
               aria-hidden
             >
               {!unlocked && (
