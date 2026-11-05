@@ -30,3 +30,11 @@
 
 ### Sửa lỗi
 - Xem `docs/BUGS.md` (B1–B12).
+
+### Bản phát hành
+| File | Kích thước | SHA-256 |
+|---|---|---|
+| `Lingua-Quest-Setup-1.0.0.exe` | 133 274 042 byte | `49e94c98d9ad1e9997a68f51887c7a5ff84f14dd3ecc0a36c43c71c6b651e333` |
+| `Lingua-Quest-Portable-1.0.0.exe` | 116 419 559 byte | `6492f7c9a590dca56bc97d134cf077b28c51598610c526d4a40af299e445ab09` |
+
+Bản build chưa được ký số (không có chứng chỉ code signing), nên Windows SmartScreen có thể cảnh báo khi chạy lần đầu.

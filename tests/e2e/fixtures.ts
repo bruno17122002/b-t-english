@@ -20,11 +20,12 @@ export async function launchApp(userData?: string): Promise<LaunchedApp> {
   const env: Record<string, string> = { ...(process.env as Record<string, string>), LQ_E2E: '1', LQ_USER_DATA: dir }
   delete env.ELECTRON_RENDERER_URL
   delete env.ELECTRON_RUN_AS_NODE
-  const app = await electron.launch({
-    args: [ROOT, '--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream'],
-    cwd: ROOT,
-    env,
-  })
+  const flags = ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream']
+  // LQ_E2E_EXE=<path to Lingua Quest.exe> runs the same tests against the packaged application.
+  const exe = process.env.LQ_E2E_EXE
+  const app = await electron.launch(
+    exe ? { executablePath: exe, args: flags, env } : { args: [ROOT, ...flags], cwd: ROOT, env },
+  )
   const page = await app.firstWindow()
   const consoleErrors: string[] = []
   page.on('console', (msg) => {

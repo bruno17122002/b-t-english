@@ -50,8 +50,8 @@ Trạng thái: `TODO` / `IN_PROGRESS` / `COMPLETED` / `BLOCKED`. Một mục ch�
 | # | Hạng mục | Trạng thái | Bằng chứng |
 |---|---|---|---|
 | 4.1 | Release gate checklist | COMPLETED | `TEST_PLAN.md`, mục Release checklist |
-| 4.2 | Electron Builder: NSIS + portable | Xem báo cáo cuối | `release/` |
-| 4.3 | Kiểm tra installer sau build | Xem báo cáo cuối | |
+| 4.2 | Electron Builder: NSIS + portable | COMPLETED | `release/Lingua-Quest-Setup-1.0.0.exe` (133,3 MB), `release/Lingua-Quest-Portable-1.0.0.exe` (116,4 MB); SHA-256 ghi trong CHANGELOG |
+| 4.3 | Kiểm tra installer sau build | COMPLETED | Gói chỉ chứa `out/`, icon và 4 dependency production. E2E trên bản unpacked: 15/15. Cài đặt im lặng: exit 0, có registry và shortcut. E2E trên bản đã cài: 10/10. Gỡ im lặng: exit 0, không còn file, registry hay shortcut |
 
 ## Sau v1 (tùy chọn)
 | # | Hạng mục | Trạng thái |

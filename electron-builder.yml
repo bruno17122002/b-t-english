@@ -9,6 +9,8 @@ files:
   - build/icon.png
   - package.json
   - '!**/*.map'
+  - '!**/node_modules/zod/src/**'
+  - '!**/node_modules/*/README.md'
 extraResources:
   - from: node_modules/sql.js/dist/sql-wasm.wasm
     to: sql-wasm/sql-wasm.wasm
