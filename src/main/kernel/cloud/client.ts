@@ -297,7 +297,26 @@ export class CloudClient {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ email: clean, create_user: true }),
     })
-    if (!res.ok) await CloudClient.fail(res)
+    if (!res.ok) {
+      const body = await res.clone().text().catch(() => '')
+      // Supabase could not deliver the email (SMTP/template problem on the server, not in the app).
+      if (/error sending|sending (confirmation|magic link|otp)|smtp/i.test(body)) {
+        throw new CloudError(
+          'server',
+          'Supabase không gửi được email mã đăng nhập. Mở Supabase → Logs → Auth để xem lý do; thường do mẫu email ' +
+            '"Confirm signup"/"Magic Link" bị lỗi cú pháp hoặc chưa cấu hình SMTP riêng (Authentication → Emails → SMTP Settings).',
+          res.status,
+        )
+      }
+      if (/not authorized|not allowed/i.test(body)) {
+        throw new CloudError(
+          'forbidden',
+          'Email này chưa được phép nhận thư từ máy chủ email mặc định của Supabase. Thêm SMTP riêng (Authentication → Emails → SMTP Settings) rồi thử lại.',
+          res.status,
+        )
+      }
+      await CloudClient.fail(res)
+    }
   }
 
   async verifyCode(email: string, code: string): Promise<CloudStatus> {
