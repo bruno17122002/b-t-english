@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom'
 import type { SearchResult } from '@shared/types'
 import { useL } from '../../i18n'
 import { api } from '../../lib/api'
-import { cx, Kbd } from '../ui'
+import { cx, Kbd, useEscapeLayer } from '../ui'
 
 const ICONS: Record<SearchResult['kind'], typeof Search> = {
   page: LayoutGrid,
@@ -49,13 +49,9 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
     }
   }, [open])
 
-  // Escape closes the palette even before the input has received focus.
-  useEffect(() => {
-    if (!open) return
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open, onClose])
+  // Escape closes the palette even before the input has received focus (and only the palette when it
+  // sits on top of a page dialog).
+  useEscapeLayer(open, onClose)
 
   useEffect(() => {
     if (!q.trim()) {
@@ -107,6 +103,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
               <input
                 ref={inputRef}
                 value={q}
+                maxLength={100}
                 onChange={(e) => setQ(e.target.value)}
                 onKeyDown={(e) => {
                   if (e.key === 'ArrowDown') {

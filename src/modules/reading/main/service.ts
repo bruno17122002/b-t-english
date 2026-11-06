@@ -303,7 +303,7 @@ export class ReadingService {
     const res = await this.k.ai.run(generatePassagePrompt, { ...input, avoidTitles }, { level: input.cefr })
     const nowIso = this.k.now().toISOString()
     const stamp = this.k.now().getTime().toString(36)
-    const id = `ai-${slugify(res.data.title, 36)}-${stamp}`
+    const id = this.k.db.uniqueId('generated_content', `ai-${slugify(res.data.title, 36)}-${stamp}`)
     const passage: ReadingPassage = {
       ...res.data,
       id,

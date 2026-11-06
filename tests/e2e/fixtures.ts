@@ -55,10 +55,12 @@ export async function expectNoSeriousErrors(errors: string[]) {
 
 /** Closes any reward celebration (level-up / achievement / quest) that may cover the page. */
 export async function dismissRewards(page: Page) {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 8; i++) {
     const btn = page.getByTestId('reward-continue')
     if (!(await btn.isVisible().catch(() => false))) return
-    await btn.click()
-    await page.waitForTimeout(350)
+    // A card that is already animating out is still "visible" but detaches mid-click: do not wait for it.
+    await btn.click({ timeout: 2000 }).catch(() => undefined)
+    // Each card ignores clicks during its first 400 ms (double-click protection).
+    await page.waitForTimeout(450)
   }
 }

@@ -36,7 +36,9 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== SHELL && k !== ASSETS && k !== API).map((k) => caches.delete(k))))
+      .then((keys) =>
+        Promise.all(keys.filter((k) => k !== SHELL && k !== ASSETS && k !== API).map((k) => caches.delete(k))),
+      )
       .then(() => self.clients.claim()),
   )
 })
@@ -76,11 +78,15 @@ async function navigation(request) {
     const res = await fetch(request)
     if (res.ok) {
       const copy = res.clone()
-      caches.open(SHELL).then((c) => c.put('./index.html', copy)).catch(() => undefined)
+      caches
+        .open(SHELL)
+        .then((c) => c.put('./index.html', copy))
+        .catch(() => undefined)
     }
     return res
   } catch {
-    const cached = (await caches.match('./index.html', { cacheName: SHELL })) || (await caches.match('./', { cacheName: SHELL }))
+    const cached =
+      (await caches.match('./index.html', { cacheName: SHELL })) || (await caches.match('./', { cacheName: SHELL }))
     return cached || new Response(OFFLINE_HTML, { headers: { 'content-type': 'text/html; charset=utf-8' } })
   }
 }

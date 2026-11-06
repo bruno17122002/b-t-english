@@ -36,7 +36,12 @@ export class KeyStore {
   private read(): Stored {
     try {
       if (!fs.existsSync(this.file)) return {}
-      return JSON.parse(fs.readFileSync(this.file, 'utf8')) as Stored
+      const parsed: unknown = JSON.parse(fs.readFileSync(this.file, 'utf8'))
+      // A damaged file (null, an array, numbers…) must read as "no keys", never crash every AI call.
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {}
+      return Object.fromEntries(
+        Object.entries(parsed).filter(([, v]) => typeof v === 'string' && v.length > 0),
+      ) as Stored
     } catch {
       return {}
     }

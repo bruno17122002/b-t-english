@@ -85,13 +85,19 @@ export function useApi<K extends Channel>(channel: K, input: In<K> | null, deps:
   return { data, error, loading, reload, setData }
 }
 
-/** Wraps an async action with pending/error state. */
+/**
+ * Wraps an async action with pending/error state. Single-flight: while a run is pending, further calls
+ * (double clicks, Enter spam, a shortcut plus a click) are ignored and resolve to undefined.
+ */
 export function useAction<A extends unknown[], R>(fn: (...args: A) => Promise<R>) {
   const [pending, setPending] = useState(false)
   const [error, setError] = useState<ApiError | null>(null)
   const fnRef = useRef(fn)
   fnRef.current = fn
+  const inFlight = useRef(false)
   const run = useCallback(async (...args: A): Promise<R | undefined> => {
+    if (inFlight.current) return undefined
+    inFlight.current = true
     setPending(true)
     setError(null)
     try {
@@ -100,6 +106,7 @@ export function useAction<A extends unknown[], R>(fn: (...args: A) => Promise<R>
       setError(toApiError(err))
       return undefined
     } finally {
+      inFlight.current = false
       setPending(false)
     }
   }, [])

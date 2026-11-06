@@ -398,8 +398,8 @@ describe('sync – two devices', () => {
   it('pushes in batches of at most 500 rows and pulls in pages', async () => {
     const server = new FakeCloud()
     const A = await device(server)
-    const csv = Array.from({ length: 300 }, (_, i) => `word${i},nghĩa ${i}`).join('\n')
-    A.k.data.importVocabulary(csv, 'csv')
+    // Saved one by one, not imported: a bulk import awards no XP / activity, and those rows are needed here.
+    for (let i = 0; i < 300; i++) save(A.k, `word${i}`, `nghĩa ${i}`)
     await A.sync()
     const fromA = server.pushes.filter((p) => p.device === A.k.cloud.status().deviceId)
     expect(fromA.length).toBeGreaterThan(1)

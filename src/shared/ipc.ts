@@ -13,6 +13,19 @@ export const channel =
   <O>() =>
   <I extends z.ZodType>(input: I): ChannelDef<I, O> => ({ input })
 
+/**
+ * A measured amount (seconds, minutes, ms) clamped into [min, max] instead of rejected: a page left open for
+ * hours or a clock jump must not lose the learner's result. NaN and ±Infinity are still rejected.
+ */
+export const clampedNumber = (min: number, max: number) => z.number().transform((v) => Math.min(max, Math.max(min, v)))
+
+/** Free-text query that is cut to `max` characters instead of rejected (search boxes, bot commands). */
+export const truncatedText = (max: number) =>
+  z
+    .string()
+    .max(10_000)
+    .transform((s) => Array.from(s).slice(0, max).join(''))
+
 /** Input schema for channels that take nothing. */
 export const NoInput = z.undefined().optional()
 

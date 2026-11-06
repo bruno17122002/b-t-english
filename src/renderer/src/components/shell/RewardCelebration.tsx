@@ -2,10 +2,11 @@
 // celebration card. Driven by the 'reward' push event from the Progress kernel.
 import { AnimatePresence, motion } from 'framer-motion'
 import { Award, Check, PartyPopper, ScrollText, Star } from 'lucide-react'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useL } from '../../i18n'
 import { useApp } from '../../lib/store'
-import { Button } from '../ui'
+import type { Reward } from '@shared/types'
+import { Button, useEscapeLayer } from '../ui'
 
 const CONFETTI_COLORS = ['var(--accent)', 'var(--accent-2)', '#fbbf24', '#f472b6', '#4ade80']
 
@@ -31,23 +32,30 @@ function Confetti() {
   )
 }
 
+const isBig = (r: Reward) => r.levelUp !== null || r.achievementsUnlocked.length > 0 || r.questsCompleted.length > 0
+
 export function RewardCelebration() {
   const L = useL()
   const rewards = useApp((s) => s.rewards)
   const shift = useApp((s) => s.shiftReward)
+  const clearRewards = useApp((s) => s.clearRewards)
   const toast = useApp((s) => s.toast)
   const lang = useApp((s) => s.settings?.uiLanguage ?? 'vi')
   const current = rewards[0]
-  const big =
-    !!current &&
-    (current.levelUp !== null || current.achievementsUnlocked.length > 0 || current.questsCompleted.length > 0)
+  const big = !!current && isBig(current)
 
+  // A double click on "Keep going" (or Esc held down) must not skip the next card unseen: each card
+  // ignores dismissals during its first 400 ms.
+  const shownAt = useRef(0)
   useEffect(() => {
-    if (!big) return
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && shift()
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [big, shift])
+    shownAt.current = Date.now()
+  }, [current])
+  const next = useCallback(() => {
+    if (Date.now() - shownAt.current >= 400) shift()
+  }, [shift])
+  useEscapeLayer(big, next)
+  // Celebrations still waiting behind this one (a burst of achievements can arrive at once).
+  const remaining = rewards.slice(1).filter(isBig).length
 
   useEffect(() => {
     if (current && !big) {
@@ -64,10 +72,10 @@ export function RewardCelebration() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={shift}
+          onClick={next}
         >
           <motion.div
-            className="relative w-full max-w-sm overflow-hidden rounded-3xl border border-line-strong bg-surface p-8 text-center shadow-card"
+            className="relative max-h-[90vh] w-full max-w-sm overflow-x-hidden overflow-y-auto rounded-3xl border border-line-strong bg-surface p-8 text-center shadow-card"
             initial={{ scale: 0.8, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             transition={{ type: 'spring', stiffness: 260, damping: 18 }}
@@ -107,9 +115,23 @@ export function RewardCelebration() {
               <div className="mt-4 flex items-center justify-center gap-1 text-lg font-bold text-warning">
                 <Star className="size-5 fill-warning" />+{current.xpGained} XP
               </div>
-              <Button variant="primary" className="mt-6 w-full" onClick={shift} autoFocus data-testid="reward-continue">
+              <Button variant="primary" className="mt-6 w-full" onClick={next} autoFocus data-testid="reward-continue">
                 {L('Keep going', 'Tiếp tục')}
               </Button>
+              {remaining > 0 && (
+                <div className="mt-3 flex items-center justify-between text-xs text-muted">
+                  <span data-testid="reward-remaining">
+                    {L(`${remaining} more waiting`, `Còn ${remaining} thành tích nữa`)}
+                  </span>
+                  <button
+                    className="font-semibold text-accent hover:underline"
+                    onClick={clearRewards}
+                    data-testid="reward-skip-all"
+                  >
+                    {L('Skip all', 'Bỏ qua tất cả')}
+                  </button>
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>

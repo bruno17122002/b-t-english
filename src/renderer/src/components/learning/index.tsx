@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { BookmarkPlus, Check, Heart, Loader2, Mic, Sparkles, Square, Volume2, X } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { optionOrder } from '@core/shuffle'
 import type { Question } from '@shared/content'
 import type { DictionaryResult, ModuleId } from '@shared/types'
 import { useL } from '../../i18n'
@@ -440,15 +441,22 @@ export function QuizQuestion({
   onAnswer,
   answered,
   showVietnameseHint,
+  shuffle = true,
 }: {
   q: Question
   index?: number
+  /** `choice` is always the option's index in `q.options`, whatever order it was shown in. */
   onAnswer: (choice: number, correct: boolean) => void
   answered?: number | null
   showVietnameseHint?: ReactNode
+  /** Show the options in a random order (fixed for this mount). Order-sensitive sets such as True/False/Not Given keep their order. */
+  shuffle?: boolean
 }) {
   const L = useL()
   const done = answered !== undefined && answered !== null
+  const optionsKey = JSON.stringify(q.options)
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- reshuffle only when the options themselves change
+  const order = useMemo(() => (shuffle ? optionOrder(q.options) : q.options.map((_, i) => i)), [optionsKey, shuffle])
   return (
     <div className="rounded-2xl border border-line bg-surface-2 p-4">
       <p className="mb-3 font-medium">
@@ -456,7 +464,8 @@ export function QuizQuestion({
         {q.prompt}
       </p>
       <div className="grid gap-2">
-        {q.options.map((opt, i) => {
+        {order.map((i) => {
+          const opt = q.options[i]
           const isCorrect = i === q.answerIndex
           const chosen = answered === i
           return (

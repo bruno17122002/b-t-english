@@ -16,13 +16,14 @@ export async function restoreDatabaseFrom(k: Kernel, host: HostBridge, file: str
   try {
     await k.data.validateBackup(file)
   } catch (err) {
-    throw new UserError(
-      'invalid_backup',
-      `File sao lưu không hợp lệ: ${err instanceof Error ? err.message : String(err)}`,
-    )
+    if (err instanceof UserError) throw err
+    throw new UserError('invalid_backup', 'File sao lưu không hợp lệ hoặc không đọc được.')
   }
   k.db.flush()
   await k.data.restoreBackup(file, k.paths.dbFile)
+  // From here on the old in-memory data must never be saved again: a write in the relaunch window (a timer,
+  // another click) would otherwise overwrite the file that was just restored.
+  k.db.discard()
   SyncEngine.markRestored(k.paths.userData)
   k.log.info(`database restored from ${file.split(/[\\/]/).pop() ?? 'backup'}; relaunching`)
   setTimeout(() => host.relaunch(), 300)

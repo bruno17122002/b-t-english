@@ -1,6 +1,7 @@
 // Tutor business logic: conversations, structured replies, mistake memory and XP. No Electron imports.
 import type { TutorConversation, TutorStyle } from '@shared/types'
 import { TUTOR_STYLES } from '@shared/types'
+import { cleanInline } from '@core/text'
 import type { Kernel } from '../../../main/kernel'
 import { UserError } from '../../../main/ipc/router'
 import {
@@ -167,14 +168,17 @@ export class TutorService {
     const now = this.k.now().toISOString()
     const { lastInsertRowid } = this.k.db.run(
       'INSERT INTO tutor_conversations(mode, title, created_at, updated_at) VALUES (?, ?, ?, ?)',
-      [mode, title?.trim() || DEFAULT_TITLE, now, now],
+      [mode, cleanInline(title ?? '', 80) || DEFAULT_TITLE, now, now],
     )
     return this.requireConversation(lastInsertRowid)
   }
 
   rename(id: number, title: string): TutorConversation {
     this.requireConversation(id)
-    this.k.db.run('UPDATE tutor_conversations SET title = ? WHERE id = ?', [title.trim().slice(0, 80), id])
+    this.k.db.run('UPDATE tutor_conversations SET title = ? WHERE id = ?', [
+      cleanInline(title, 80) || DEFAULT_TITLE,
+      id,
+    ])
     return this.requireConversation(id)
   }
 

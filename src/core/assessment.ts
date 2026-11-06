@@ -2,6 +2,7 @@
 import type { AssessmentItem, Cefr } from '@shared/content'
 import { CEFR_LEVELS } from '@shared/content'
 import { cefrAt, cefrIndex } from './cefr'
+import { pickOne } from './shuffle'
 
 export const ITEMS_PER_SKILL = 6
 
@@ -14,6 +15,8 @@ export interface AnsweredItem {
 /**
  * Next item for a skill: start at `startLevel`, move one level up after a correct answer
  * and one level down after a wrong one (a simple up/down staircase), never repeating items.
+ * Among the unused items of the target level one is picked with `rng` (pass a seeded rng so the
+ * choice is stable while the same attempt is resumed); without it the first one in bank order is used.
  * Returns null when the skill is finished.
  */
 export function nextAssessmentItem(
@@ -21,6 +24,7 @@ export function nextAssessmentItem(
   answered: AnsweredItem[],
   startLevel: Cefr,
   maxItems = ITEMS_PER_SKILL,
+  rng?: () => number,
 ): AssessmentItem | null {
   if (answered.length >= maxItems) return null
   const used = new Set(answered.map((a) => a.itemId))
@@ -32,7 +36,8 @@ export function nextAssessmentItem(
   for (let dist = 0; dist < CEFR_LEVELS.length; dist++) {
     for (const idx of dist === 0 ? [target] : [target - dist, target + dist]) {
       if (idx < 0 || idx >= CEFR_LEVELS.length) continue
-      const candidate = bank.find((i) => i.cefr === cefrAt(idx) && !used.has(i.id))
+      const candidates = bank.filter((i) => i.cefr === cefrAt(idx) && !used.has(i.id))
+      const candidate = rng ? pickOne(candidates, rng) : candidates[0]
       if (candidate) return candidate
     }
   }

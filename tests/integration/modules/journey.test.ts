@@ -32,7 +32,11 @@ async function answerAll(
     if (!item) break
     // The renderer never receives the answer key.
     expect(JSON.stringify(s.current)).not.toContain('answerIndex')
-    const choice = correct(n) ? item.answerIndex : (item.answerIndex + 1) % item.options.length
+    // Options are shown shuffled: answer by the position of the option text on screen.
+    const right = item.options[item.answerIndex]
+    const shown = s.current.options
+    expect([...shown].sort()).toEqual([...item.options].sort())
+    const choice = correct(n) ? shown.indexOf(right ?? '') : shown.findIndex((o) => o !== right)
     s = await app.call<AssessmentSession>('journey:assessmentAnswer', { id: s.id, itemId: item.id, choice })
     n++
     if (n > 40) throw new Error('assessment did not terminate')
@@ -144,6 +148,25 @@ describe('journey: placement assessment', () => {
     // Retaking starts a fresh assessment.
     const retake = await app.call<AssessmentSession>('journey:assessmentStart')
     expect(retake.id).not.toBe(start.id)
+  })
+
+  it('gives each retake different questions, option order and tasks, but keeps a resumed attempt stable', async () => {
+    const app = await makeApp()
+    await app.call('learner:updateProfile', { selfReportedLevel: 'elementary' })
+    const first = await app.call<AssessmentSession>('journey:assessmentStart')
+    const again = await app.call<AssessmentSession>('journey:assessmentStart')
+    expect(again.current).toEqual(first.current)
+    expect(again.tasks).toEqual(first.tasks)
+
+    const attempts: AssessmentSession[] = [first]
+    for (let i = 0; i < 7; i++)
+      attempts.push(await app.call<AssessmentSession>('journey:assessmentStart', { resume: false }))
+    const signature = (s: AssessmentSession) => `${s.current?.id}|${s.current?.options.join('/')}`
+    expect(new Set(attempts.map(signature)).size).toBeGreaterThan(3)
+    expect(new Set(attempts.map((s) => s.current?.id)).size).toBeGreaterThan(1)
+    expect(new Set(attempts.map((s) => s.tasks.writing.en)).size).toBeGreaterThan(1)
+    // Every attempt still starts at the learner's level.
+    expect(attempts.every((s) => s.current?.cefr === 'A2')).toBe(true)
   })
 
   it('places a struggling learner low and grades writing offline without AI', async () => {

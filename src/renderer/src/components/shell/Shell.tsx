@@ -47,18 +47,19 @@ function Sidebar() {
   const linkCls = ({ isActive }: { isActive: boolean }) =>
     cx(
       // Windows 11 NavigationView: subtle fill on the selected item plus a short accent pill on the left.
-      'group relative flex items-center gap-3 rounded-md px-3 py-[7px] text-sm text-text transition-colors',
+      'group relative flex items-center gap-3 rounded-md px-3 py-[7px] text-sm text-text transition-colors max-[900px]:justify-center max-[900px]:px-0',
       isActive
         ? 'bg-surface-2 font-semibold before:absolute before:top-1/2 before:left-0 before:h-4 before:w-[3px] before:-translate-y-1/2 before:rounded-full before:bg-accent'
         : 'hover:bg-surface-2',
     )
   return (
-    <aside className="flex w-60 shrink-0 flex-col px-3 py-4">
-      <div className="mb-6 flex items-center gap-2.5 px-2">
+    // Below 900 CSS px (window zoomed in) the sidebar becomes an icon rail so the content keeps its room.
+    <aside className="flex w-60 shrink-0 flex-col px-3 py-4 max-[900px]:w-16 max-[900px]:px-2">
+      <div className="mb-6 flex items-center gap-2.5 px-2 max-[900px]:justify-center max-[900px]:px-0">
         <div className="flex size-8 items-center justify-center rounded-md bg-accent text-accent-ink">
           <GraduationCap className="size-5" />
         </div>
-        <div className="font-display text-lg leading-none font-semibold">
+        <div className="font-display text-lg leading-none font-semibold max-[900px]:hidden">
           Lingua <span className="text-accent">Quest</span>
         </div>
       </div>
@@ -67,15 +68,17 @@ function Sidebar() {
           items.length ? (
             <div key={g}>
               {GROUP_LABEL[g].en && (
-                <div className="mb-1 px-3 text-[11px] font-semibold text-faint">{tx(GROUP_LABEL[g])}</div>
+                <div className="mb-1 px-3 text-[11px] font-semibold text-faint max-[900px]:sr-only">
+                  {tx(GROUP_LABEL[g])}
+                </div>
               )}
               <div className="space-y-0.5">
                 {items.map((n) => (
-                  <NavLink key={n.path} to={n.path} end={n.path === '/'} className={linkCls}>
-                    <n.icon className="size-[18px]" />
-                    <span className="flex-1">{tx(n.label)}</span>
+                  <NavLink key={n.path} to={n.path} end={n.path === '/'} className={linkCls} title={tx(n.label)}>
+                    <n.icon className="size-[18px] shrink-0" />
+                    <span className="flex-1 truncate max-[900px]:sr-only">{tx(n.label)}</span>
                     {n.badge === 'dueCards' && dueCards > 0 && (
-                      <span className="rounded-full bg-accent px-1.5 text-[11px] font-bold text-accent-ink">
+                      <span className="rounded-full bg-accent px-1.5 text-[11px] font-bold text-accent-ink max-[900px]:absolute max-[900px]:top-0 max-[900px]:right-0">
                         {dueCards > 99 ? '99+' : dueCards}
                       </span>
                     )}
@@ -87,13 +90,13 @@ function Sidebar() {
         )}
       </nav>
       <div className="mt-4 space-y-0.5 border-t border-line pt-3">
-        <NavLink to="/library" className={linkCls}>
-          <Heart className="size-[18px]" />
-          {L('Favorites', 'Yêu thích')}
+        <NavLink to="/library" className={linkCls} title={L('Favorites', 'Yêu thích')}>
+          <Heart className="size-[18px] shrink-0" />
+          <span className="truncate max-[900px]:sr-only">{L('Favorites', 'Yêu thích')}</span>
         </NavLink>
-        <NavLink to="/settings" className={linkCls}>
-          <Settings className="size-[18px]" />
-          {L('Settings', 'Cài đặt')}
+        <NavLink to="/settings" className={linkCls} title={L('Settings', 'Cài đặt')}>
+          <Settings className="size-[18px] shrink-0" />
+          <span className="truncate max-[900px]:sr-only">{L('Settings', 'Cài đặt')}</span>
         </NavLink>
       </div>
     </aside>
@@ -105,14 +108,19 @@ function TopBar({ onSearch, onShortcuts }: { onSearch: () => void; onShortcuts: 
   const game = useApp((s) => s.game)
   const navigate = useNavigate()
   return (
-    <header className="flex h-14 shrink-0 items-center gap-4 px-6">
+    <header className="flex h-14 shrink-0 items-center gap-4 px-6 max-[900px]:gap-2 max-[900px]:px-3">
       <button
         onClick={onSearch}
-        className="flex h-10 w-full max-w-md items-center gap-2 rounded-xl border border-line bg-surface-2 px-3 text-sm text-faint transition hover:border-line-strong"
+        aria-label={L('Search', 'Tìm kiếm')}
+        className="flex h-10 w-full max-w-md min-w-10 items-center gap-2 rounded-xl border border-line bg-surface-2 px-3 text-sm text-faint transition hover:border-line-strong"
       >
-        <Search className="size-4" />
-        <span className="flex-1 text-left">{L('Search lessons, words, pages…', 'Tìm bài học, từ vựng, trang…')}</span>
-        <Kbd>Ctrl K</Kbd>
+        <Search className="size-4 shrink-0" />
+        <span className="min-w-0 flex-1 truncate text-left">
+          {L('Search lessons, words, pages…', 'Tìm bài học, từ vựng, trang…')}
+        </span>
+        <span className="max-[700px]:hidden">
+          <Kbd>Ctrl K</Kbd>
+        </span>
       </button>
       <div className="flex-1" />
       <button
@@ -138,13 +146,13 @@ function TopBar({ onSearch, onShortcuts }: { onSearch: () => void; onShortcuts: 
           </button>
           <button
             onClick={() => navigate('/game')}
-            className="flex w-44 items-center gap-2.5 text-left"
+            className="flex w-44 shrink-0 items-center gap-2.5 text-left max-[700px]:w-auto"
             title={`${game.xpIntoLevel}/${game.xpForNextLevel} XP`}
           >
             <div className="flex size-9 items-center justify-center rounded-xl bg-accent/15 text-sm font-bold text-accent">
               {game.level}
             </div>
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 flex-1 max-[700px]:hidden">
               <div className="flex items-center justify-between text-xs">
                 <span className="truncate font-semibold">{game.levelTitle}</span>
                 <span className="flex items-center gap-0.5 text-muted">
@@ -172,11 +180,14 @@ export function Shell({ children, bare }: { children: ReactNode; bare?: boolean 
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement
       const typing = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable
+      // The palette and the shortcut sheet replace each other instead of stacking.
       if (e.ctrlKey && e.key.toLowerCase() === 'k') {
         e.preventDefault()
+        setShortcutsOpen(false)
         setPaletteOpen(true)
       } else if (e.key === 'F1') {
         e.preventDefault()
+        setPaletteOpen(false)
         setShortcutsOpen(true)
       } else if (e.ctrlKey && e.key === ',') {
         e.preventDefault()
@@ -211,7 +222,7 @@ export function Shell({ children, bare }: { children: ReactNode; bare?: boolean 
               key={bare ? 'bare' : 'app'}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className={bare ? 'h-full' : 'mx-auto max-w-6xl px-8 py-8'}
+              className={bare ? 'h-full' : 'mx-auto max-w-6xl px-8 py-8 max-[900px]:px-4 max-[900px]:py-5'}
             >
               {children}
             </motion.div>

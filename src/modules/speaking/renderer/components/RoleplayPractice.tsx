@@ -124,7 +124,7 @@ export function RoleplayPractice({
         transcript: learnerTurns.join('\n') || null,
         analysis: analyses.length
           ? sumAnalyses(analyses)
-          : { durationSec: elapsed, speakingSec: 0, pauseCount: 0, longestPauseSec: 0 },
+          : { durationSec: Math.min(3600, elapsed), speakingSec: 0, pauseCount: 0, longestPauseSec: 0 },
       })
       setSession(res.session)
       onSaved()

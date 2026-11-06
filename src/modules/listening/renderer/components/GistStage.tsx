@@ -1,6 +1,7 @@
 // Stage 1 – Gist: listen to the whole track without the text, then answer the comprehension questions.
 import { EyeOff } from 'lucide-react'
 import { useState } from 'react'
+import { shuffled } from '@core/shuffle'
 import type { ListeningTrack } from '@shared/content'
 import { QuizQuestion } from '@/components/learning'
 import { cx } from '@/components/ui'
@@ -39,6 +40,8 @@ export function GistStage({
   })
   const [result, setResult] = useState<ListeningSubmitResult | undefined>()
 
+  // A new random question order for every round (options are shuffled by QuizQuestion).
+  const [questions, setQuestions] = useState(() => shuffled(track.questions))
   const answered = Object.keys(answers).length
   const correct = track.questions.filter((q) => answers[q.id] === q.answerIndex).length
 
@@ -55,6 +58,7 @@ export function GistStage({
     setAnswers({})
     setResult(undefined)
     setRound((r) => r + 1)
+    setQuestions(shuffled(track.questions))
     watch.reset()
   }
 
@@ -91,7 +95,7 @@ export function GistStage({
       </div>
 
       <div className="space-y-3">
-        {track.questions.map((q, i) => (
+        {questions.map((q, i) => (
           <QuizQuestion
             key={`${round}-${q.id}`}
             q={q}

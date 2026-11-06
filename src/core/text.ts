@@ -224,3 +224,20 @@ export function readingWpm(words: number, seconds: number): number {
   if (seconds <= 0) return 0
   return Math.round((words / seconds) * 60)
 }
+
+// Line breaks, tabs and other C0/C1 controls become spaces in one-line labels (matching them is the point).
+// eslint-disable-next-line no-control-regex
+const CONTROL_CHARS = /[\u0000-\u001f\u007f-\u009f]/g
+// Invisible format characters that spoof or hide text: zero-width space, LRM/RLM, bidi embeddings and
+// overrides (U+202A–202E: "txt.exe" shown reversed), isolates, word joiner, BOM. ZWJ/ZWNJ stay (emoji, scripts).
+const INVISIBLE_CHARS = /[\u200b\u200e\u200f\u202a-\u202e\u2060-\u2069\ufeff]/g
+
+/**
+ * One-line learner text (display name, titles): no control or invisible bidi characters, single spaces,
+ * cut to `max` characters without splitting a surrogate pair. Markup is kept as text – escaping is the
+ * job of the output (React, Telegram HTML).
+ */
+export function cleanInline(s: string, max: number): string {
+  const one = s.replace(INVISIBLE_CHARS, '').replace(CONTROL_CHARS, ' ').replace(/\s+/g, ' ').trim()
+  return Array.from(one).slice(0, max).join('').trim()
+}

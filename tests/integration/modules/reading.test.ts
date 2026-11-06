@@ -94,8 +94,11 @@ describe('reading module', () => {
 
   it('validates completion input', async () => {
     const { router } = await readingApp()
-    const bad = await router.dispatch('reading:complete', { id: PASSAGE, seconds: 0, answers: [] })
+    const bad = await router.dispatch('reading:complete', { id: PASSAGE, seconds: Number.NaN, answers: [] })
     expect(bad).toMatchObject({ ok: false, error: { code: 'invalid_input' } })
+    // Out-of-range durations (a page left open for hours, a clock jump) are clamped, not rejected.
+    const clamped = await router.dispatch('reading:complete', { id: PASSAGE, seconds: 0, answers: [] })
+    expect(clamped).toMatchObject({ ok: true })
   })
 
   it('creates, updates, lists and deletes highlights', async () => {

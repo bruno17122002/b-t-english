@@ -8,6 +8,7 @@ import type { TelegramLinkCode } from '@shared/telegram'
 import { Badge, Button, Card, ConfirmDialog, ErrorState, Field, Input, LoadingBlock } from '../../components/ui'
 import { useL } from '../../i18n'
 import { api, toApiError, useApi } from '../../lib/api'
+import { copyText } from '../../lib/clipboard'
 import { useApp } from '../../lib/store'
 
 const SERVER_COMMANDS: [string, string, string][] = [
@@ -141,11 +142,10 @@ export function TelegramServerPanel() {
     }
   }
 
-  const copy = (text: string) =>
-    navigator.clipboard
-      .writeText(text)
-      .then(() => toast({ kind: 'success', title: L('Copied', 'Đã sao chép') }))
-      .catch(() => undefined)
+  const copy = async (text: string) =>
+    (await copyText(text))
+      ? toast({ kind: 'success', title: L('Copied', 'Đã sao chép') })
+      : toast({ kind: 'error', title: L('Could not copy to the clipboard', 'Không sao chép được') })
 
   return (
     <div className="space-y-6" data-testid="tg-server-panel">

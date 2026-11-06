@@ -252,10 +252,10 @@ export class CinemaService {
   async generate(input: StoryInput): Promise<GeneratedStoryResult> {
     const res = await this.kernel.ai.run(storyPrompt, input, { level: input.cefr })
     const stamp = this.kernel.now().getTime().toString(36)
-    const id = `ai-${slugify(res.data.title) || 'story'}-${stamp}`
+    const id = this.kernel.db.uniqueId('stories', `ai-${slugify(res.data.title) || 'story'}-${stamp}`)
     const story = CinemaStorySchema.parse({ ...res.data, id, genre: input.genre, cefr: input.cefr })
     this.kernel.db.run(
-      'INSERT OR REPLACE INTO stories(id, source, genre, title, cefr, data, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      'INSERT INTO stories(id, source, genre, title, cefr, data, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
       [
         story.id,
         'ai',

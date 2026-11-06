@@ -1,7 +1,7 @@
 // IPC contract for the writing module. Channel names must start with 'writing:'.
 import { z } from 'zod'
 import { WritingTaskTypeSchema, type Cefr, type WritingPrompt } from '@shared/content'
-import { channel, NoInput, type ChannelDef } from '@shared/ipc'
+import { channel, clampedNumber, NoInput, type ChannelDef } from '@shared/ipc'
 import type { Reward, SkillLevel, WritingSubmission } from '@shared/types'
 
 // ---------- output types (shared by main and renderer) ----------
@@ -122,7 +122,7 @@ export const writingContract = {
       taskType: WritingTaskTypeSchema.default('free'),
       promptText: z.string().max(2000).default(''),
       text: Text,
-      minutes: z.number().min(0).max(600).optional(),
+      minutes: clampedNumber(0, 600).optional(),
       analyze: z.boolean().default(true),
     }),
   ),

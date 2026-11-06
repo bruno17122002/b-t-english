@@ -1,7 +1,7 @@
 // IPC contract for the listening module. Channel names must start with 'listening:'.
 import { z } from 'zod'
 import { AccentSchema, CefrSchema, type Cefr, type ListeningTrack } from '@shared/content'
-import { channel, type ChannelDef } from '@shared/ipc'
+import { channel, clampedNumber, type ChannelDef } from '@shared/ipc'
 import type { Reward, SkillLevel } from '@shared/types'
 
 // ---------- output types (shared by main and renderer) ----------
@@ -121,7 +121,7 @@ export const ListeningSubmitSchema = z
     total: z.number().int().min(1).max(1000),
     speed: z.number().min(0.5).max(1.5).default(1),
     /** Time actually spent on the stage (renderer stopwatch). */
-    durationSec: z.number().min(0).max(7200).optional(),
+    durationSec: clampedNumber(0, 7200).optional(),
     lines: z.array(LineResultSchema).max(200).optional(),
   })
   .refine((v) => v.correct <= v.total, { message: 'correct must not exceed total' })

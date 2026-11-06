@@ -49,7 +49,7 @@ function tokenize(html: string, limit: number): Token[] {
         // A single huge "word": hard-cut, never inside an HTML entity.
         let rest = word
         while (rest.length > limit / 2) {
-          let cut = Math.floor(limit / 2)
+          let cut = Math.max(1, Math.floor(limit / 2))
           const amp = rest.lastIndexOf('&', cut - 1)
           if (amp > 0 && amp > cut - 10 && rest.indexOf(';', amp) >= cut) cut = amp
           tokens.push({ text: rest.slice(0, cut) })
@@ -92,7 +92,8 @@ export function splitHtml(html: string, limit = TELEGRAM_CHUNK): string[] {
     if (body && stripHtml(body).trim()) chunks.push(`${body}${closing()}`)
     current = open.map((t) => t.raw).join('')
   }
-  for (const tok of tokenize(text, limit - 200)) {
+  // Text pieces stay well below the limit (room for re-opened tags); never 0, which would cut forever.
+  for (const tok of tokenize(text, Math.max(40, limit - 200))) {
     if (current.length + tok.text.length + closing().length > limit) flush()
     current += tok.text
     if (tok.tag) {

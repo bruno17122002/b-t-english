@@ -52,6 +52,58 @@
     "answerIndex": 3
   },
   {
+    "id": "voc-a1-5",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "Which one is a day of the week?",
+    "options": [
+      "April",
+      "Summer",
+      "Morning",
+      "Tuesday"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-a1-6",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "I wash my hands with soap and ___.",
+    "options": [
+      "rice",
+      "water",
+      "paper",
+      "salt"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-a1-7",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "The opposite of 'open' is ___.",
+    "options": [
+      "closed",
+      "empty",
+      "full",
+      "new"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-a1-8",
+    "skill": "vocabulary",
+    "cefr": "A1",
+    "prompt": "A doctor usually works in a ___.",
+    "options": [
+      "school",
+      "shop",
+      "hospital",
+      "farm"
+    ],
+    "answerIndex": 2
+  },
+  {
     "id": "voc-a2-1",
     "skill": "vocabulary",
     "cefr": "A2",
@@ -100,6 +152,58 @@
       "caring",
       "carefully",
       "careful"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "voc-a2-5",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "Don't forget to ___ your homework before you watch TV.",
+    "options": [
+      "do",
+      "make",
+      "take",
+      "have"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-a2-6",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "The opposite of 'arrive' is ___.",
+    "options": [
+      "stay",
+      "leave",
+      "come",
+      "return"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-a2-7",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "It's a ___ day. Let's go to the beach.",
+    "options": [
+      "sun",
+      "sunshine",
+      "sunnily",
+      "sunny"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-a2-8",
+    "skill": "vocabulary",
+    "cefr": "A2",
+    "prompt": "I'd like to ___ a table for four people at seven o'clock.",
+    "options": [
+      "buy",
+      "order",
+      "book",
+      "pay"
     ],
     "answerIndex": 2
   },
@@ -156,6 +260,58 @@
     "answerIndex": 1
   },
   {
+    "id": "voc-b1-5",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "If you 'give up' smoking, you...",
+    "options": [
+      "stop doing it",
+      "start doing it again",
+      "do it more often",
+      "talk about it"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-b1-6",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "I'm trying to ___ weight before the summer.",
+    "options": [
+      "miss",
+      "fall",
+      "lose",
+      "lower"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "voc-b1-7",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "The ___ of the new bridge took three years.",
+    "options": [
+      "construct",
+      "construction",
+      "constructive",
+      "constructed"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-b1-8",
+    "skill": "vocabulary",
+    "cefr": "B1",
+    "prompt": "Many students apply for a ___ so they don't have to pay university fees.",
+    "options": [
+      "salary",
+      "receipt",
+      "deposit",
+      "scholarship"
+    ],
+    "answerIndex": 3
+  },
+  {
     "id": "voc-b2-1",
     "skill": "vocabulary",
     "cefr": "B2",
@@ -206,6 +362,58 @@
       "compete"
     ],
     "answerIndex": 1
+  },
+  {
+    "id": "voc-b2-5",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "Vietnam's economy has ___ rapid growth over the past two decades.",
+    "options": [
+      "experienced",
+      "suffered",
+      "made",
+      "taken"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-b2-6",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "If a problem is 'widespread', it...",
+    "options": [
+      "is very serious but rare",
+      "is easy to solve",
+      "is getting smaller",
+      "affects many people or places"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-b2-7",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "The city has introduced measures to make public transport more ___ for disabled people.",
+    "options": [
+      "access",
+      "accessible",
+      "accessibly",
+      "accessibility"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-b2-8",
+    "skill": "vocabulary",
+    "cefr": "B2",
+    "prompt": "The museum is free to enter; ___, visitors are asked to make a small donation.",
+    "options": [
+      "therefore",
+      "moreover",
+      "however",
+      "otherwise"
+    ],
+    "answerIndex": 2
   },
   {
     "id": "voc-c1-1",
@@ -260,6 +468,58 @@
     "answerIndex": 1
   },
   {
+    "id": "voc-c1-5",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "The minister's remarks ___ a heated debate about online privacy.",
+    "options": [
+      "lit",
+      "sparked",
+      "burned",
+      "struck"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-c1-6",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "A 'tentative' agreement is one that is...",
+    "options": [
+      "not yet final or certain",
+      "signed by many countries",
+      "legally binding",
+      "reached very quickly"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-c1-7",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "Choose the most formal word to complete the sentence: 'Applicants must ___ a visa before travelling.'",
+    "options": [
+      "grab",
+      "pick up",
+      "fetch",
+      "obtain"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "voc-c1-8",
+    "skill": "vocabulary",
+    "cefr": "C1",
+    "prompt": "The new evidence ___ doubt on the official account of the accident.",
+    "options": [
+      "makes",
+      "gives",
+      "casts",
+      "sets"
+    ],
+    "answerIndex": 2
+  },
+  {
     "id": "voc-c2-1",
     "skill": "vocabulary",
     "cefr": "C2",
@@ -312,6 +572,58 @@
     "answerIndex": 2
   },
   {
+    "id": "voc-c2-5",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "The professor's ___ remarks offended several students who had worked hard on their projects.",
+    "options": [
+      "disparaging",
+      "laudatory",
+      "effusive",
+      "conciliatory"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "voc-c2-6",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "Someone who is 'obsequious' is...",
+    "options": [
+      "stubbornly independent",
+      "excessively eager to please or obey",
+      "deliberately rude",
+      "deeply secretive"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "voc-c2-7",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "The new law is little more than ___ dressing; it changes nothing of substance.",
+    "options": [
+      "salad",
+      "shop",
+      "window",
+      "table"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "voc-c2-8",
+    "skill": "vocabulary",
+    "cefr": "C2",
+    "prompt": "The two accounts of the event are completely ___; they cannot both be true.",
+    "options": [
+      "indispensable",
+      "interchangeable",
+      "inexhaustible",
+      "irreconcilable"
+    ],
+    "answerIndex": 3
+  },
+  {
     "id": "gra-a1-1",
     "skill": "grammar",
     "cefr": "A1",
@@ -360,6 +672,58 @@
       "Is",
       "Do",
       "Does"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-a1-5",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "I have ___ apple in my bag.",
+    "options": [
+      "a",
+      "an",
+      "many",
+      "two"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-a1-6",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "My brother ___ in a bank.",
+    "options": [
+      "work",
+      "working",
+      "is work",
+      "works"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "gra-a1-7",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "This is Minh. ___ car is red.",
+    "options": [
+      "His",
+      "He",
+      "Him",
+      "He's"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-a1-8",
+    "skill": "grammar",
+    "cefr": "A1",
+    "prompt": "My birthday is ___ June.",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "to"
     ],
     "answerIndex": 2
   },
@@ -416,6 +780,58 @@
     "answerIndex": 2
   },
   {
+    "id": "gra-a2-5",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "I ___ never been to Japan.",
+    "options": [
+      "has",
+      "have",
+      "am",
+      "did"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-a2-6",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "How ___ sugar do you want in your tea?",
+    "options": [
+      "many",
+      "long",
+      "much",
+      "often"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-a2-7",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "You ___ wear a helmet when you ride a motorbike. It's the law.",
+    "options": [
+      "must",
+      "mustn't",
+      "can",
+      "don't have to"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-a2-8",
+    "skill": "grammar",
+    "cefr": "A2",
+    "prompt": "This is the ___ park in our city.",
+    "options": [
+      "better",
+      "good",
+      "most good",
+      "best"
+    ],
+    "answerIndex": 3
+  },
+  {
     "id": "gra-b1-1",
     "skill": "grammar",
     "cefr": "B1",
@@ -466,6 +882,58 @@
       "live I"
     ],
     "answerIndex": 0
+  },
+  {
+    "id": "gra-b1-5",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "I'm used to ___ up early for work.",
+    "options": [
+      "getting",
+      "get",
+      "got",
+      "have got"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-b1-6",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "This is the town ___ I grew up.",
+    "options": [
+      "which",
+      "where",
+      "who",
+      "what"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-b1-7",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "English ___ in many countries around the world.",
+    "options": [
+      "speaks",
+      "is speaking",
+      "is spoken",
+      "has spoken"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-b1-8",
+    "skill": "grammar",
+    "cefr": "B1",
+    "prompt": "I'll call you as soon as I ___ at the airport.",
+    "options": [
+      "will arrive",
+      "arrived",
+      "would arrive",
+      "arrive"
+    ],
+    "answerIndex": 3
   },
   {
     "id": "gra-b2-1",
@@ -520,6 +988,58 @@
     "answerIndex": 0
   },
   {
+    "id": "gra-b2-5",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "If she ___ harder, she would have passed the exam.",
+    "options": [
+      "had studied",
+      "studied",
+      "would study",
+      "has studied"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-b2-6",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "The new hospital ___ by the end of next year.",
+    "options": [
+      "will build",
+      "will have been built",
+      "has been built",
+      "is building"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-b2-7",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "He told me that he ___ the report the day before.",
+    "options": [
+      "has finished",
+      "finishes",
+      "had finished",
+      "will finish"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-b2-8",
+    "skill": "grammar",
+    "cefr": "B2",
+    "prompt": "You ___ have told me about the change. I would have prepared!",
+    "options": [
+      "must",
+      "can",
+      "need",
+      "should"
+    ],
+    "answerIndex": 3
+  },
+  {
     "id": "gra-c1-1",
     "skill": "grammar",
     "cefr": "C1",
@@ -572,6 +1092,58 @@
     "answerIndex": 3
   },
   {
+    "id": "gra-c1-5",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "Only after the results were published ___ how serious the problem was.",
+    "options": [
+      "did we realise",
+      "we realised",
+      "we did realise",
+      "realised we"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-c1-6",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "If I had accepted that job in Singapore, I ___ in a much bigger flat now.",
+    "options": [
+      "would have lived",
+      "will live",
+      "would be living",
+      "had lived"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "gra-c1-7",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "I'd rather you ___ my phone without asking.",
+    "options": [
+      "don't use",
+      "won't use",
+      "haven't used",
+      "didn't use"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "gra-c1-8",
+    "skill": "grammar",
+    "cefr": "C1",
+    "prompt": "___ the instructions carefully, she started assembling the furniture.",
+    "options": [
+      "Being read",
+      "Having read",
+      "Had read",
+      "To have read"
+    ],
+    "answerIndex": 1
+  },
+  {
     "id": "gra-c2-1",
     "skill": "grammar",
     "cefr": "C2",
@@ -622,6 +1194,58 @@
       "of which"
     ],
     "answerIndex": 1
+  },
+  {
+    "id": "gra-c2-5",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "The committee insisted that the report ___ before the end of the month.",
+    "options": [
+      "be submitted",
+      "submits",
+      "would submit",
+      "is submitting"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "gra-c2-6",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "Should you ___ any further assistance, please do not hesitate to contact us.",
+    "options": [
+      "required",
+      "requiring",
+      "to require",
+      "require"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "gra-c2-7",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "Such ___ the demand for tickets that the website crashed within minutes.",
+    "options": [
+      "had",
+      "was",
+      "did",
+      "been"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "gra-c2-8",
+    "skill": "grammar",
+    "cefr": "C2",
+    "prompt": "On no account ___ to leave the building during the inspection.",
+    "options": [
+      "visitors are",
+      "do visitors",
+      "are visitors",
+      "visitors be"
+    ],
+    "answerIndex": 2
   },
   {
     "id": "rea-a1-1",
@@ -680,6 +1304,62 @@
     "answerIndex": 0
   },
   {
+    "id": "rea-a1-5",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "What does Duc do on Tuesdays?",
+    "passage": "Hi, I'm Duc. I am a cook in a small restaurant in Hue. I start work at ten in the morning. I cook rice, soup and noodles. On Tuesdays I don't work, so I go to the market with my wife.",
+    "options": [
+      "He goes to the market.",
+      "He cooks noodles at work.",
+      "He starts work at ten.",
+      "He stays in bed all day."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-a1-6",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "How many books can you borrow?",
+    "passage": "CITY LIBRARY. Open Monday to Saturday, 8 a.m. to 8 p.m. Closed on Sunday. You can borrow five books for two weeks. Please be quiet. No phones in the reading room.",
+    "options": [
+      "Two",
+      "Eight",
+      "Ten",
+      "Five"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-a1-7",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "Where does Hoa want to meet Nam?",
+    "passage": "Hi Nam, sorry, I can't meet you at the stadium at seven. My bus is very late. Can we meet at half past seven at the bookshop next to the stadium? Text me. Hoa",
+    "options": [
+      "At the bus stop",
+      "Inside the stadium",
+      "At the bookshop",
+      "At Nam's house"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-a1-8",
+    "skill": "reading",
+    "cefr": "A1",
+    "prompt": "Where does Kim live now?",
+    "passage": "This is my friend Kim. She is from Korea, but she lives in Da Nang now. She is tall and she has short black hair. She teaches English at a big school. She loves the beach.",
+    "options": [
+      "In Korea",
+      "In Da Nang",
+      "In Hanoi",
+      "At the school"
+    ],
+    "answerIndex": 1
+  },
+  {
     "id": "rea-a2-1",
     "skill": "reading",
     "cefr": "A2",
@@ -732,6 +1412,62 @@
       "They are afraid of fish.",
       "Their fur gets heavy and dries slowly.",
       "They cannot swim at all."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-a2-5",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "Why will Mark arrive late?",
+    "passage": "Hi Phong, thanks for inviting me to your party on Saturday. I'd love to come, but I have to work until eight. Is it OK if I arrive late? I'll bring some drinks. See you, Mark",
+    "options": [
+      "He has to buy drinks.",
+      "He doesn't like parties.",
+      "His bus is late.",
+      "He has to work."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-a2-6",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "How much will a new member who is not a student pay in the fourth month?",
+    "passage": "SUNRISE GYM. Join this month and pay only $20 a month for the first three months. After that, the price is $30 a month. Free yoga classes every Wednesday evening. Students get a 10% discount with a student card.",
+    "options": [
+      "$30",
+      "$20",
+      "$18",
+      "$27"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-a2-7",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "What do some farmers do with the straw now?",
+    "passage": "Every year, Vietnam produces millions of tonnes of rice. After the harvest, many farmers burn the straw in their fields. This is cheap and fast, but the smoke makes the air dirty. Now some farmers sell the straw to mushroom growers instead.",
+    "options": [
+      "Burn it in their fields",
+      "Sell it to mushroom growers",
+      "Give it to their animals",
+      "Use it to build houses"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-a2-8",
+    "skill": "reading",
+    "cefr": "A2",
+    "prompt": "What is the problem with the headphones?",
+    "passage": "I bought these headphones last month. The sound is great and they are very light, so I can wear them all day. But the battery only lasts four hours, and that is not enough for long flights.",
+    "options": [
+      "They are too heavy.",
+      "The sound is bad.",
+      "The battery does not last long.",
+      "They are too expensive."
     ],
     "answerIndex": 2
   },
@@ -792,6 +1528,62 @@
     "answerIndex": 0
   },
   {
+    "id": "rea-b1-5",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "What changed after Minh learned to cook?",
+    "passage": "Minh started learning to cook when he moved to Ho Chi Minh City for university. At first, he ate instant noodles almost every night because they were quick and cheap. After a few months, he felt tired all the time. A friend showed him how to make simple dishes with vegetables and eggs. Now Minh cooks most evenings, feels much healthier and says he spends less money than before.",
+    "options": [
+      "He spends less money on food than before.",
+      "He eats instant noodles every night.",
+      "He moved to a different city.",
+      "He started selling food to his friends."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-b1-6",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "What should volunteers bring?",
+    "passage": "Volunteers needed! Green River Club is looking for people to help clean the riverbank on the first Sunday of every month. We meet at 7 a.m. at the old bridge and finish by 10. Gloves and bags are provided, but please bring your own water bottle, as we are trying to reduce plastic waste. No experience is necessary. Teenagers under sixteen must come with a parent.",
+    "options": [
+      "Gloves",
+      "Rubbish bags",
+      "Some plastic cups",
+      "A water bottle"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-b1-7",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "What helped Thu speak more in meetings?",
+    "passage": "When Thu got her first job at an international company, she was nervous about speaking English in meetings. Her grammar was good, but she often stayed silent because she was afraid of making mistakes. Her manager suggested she prepare one comment before each meeting. It felt strange at first, but after a few weeks, Thu found herself joining discussions without notes. 'Confidence came from practice, not from perfect English,' she says.",
+    "options": [
+      "Taking an extra grammar course",
+      "Preparing a comment before each meeting",
+      "Waiting until her English was perfect",
+      "Asking her manager to speak for her"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-b1-8",
+    "skill": "reading",
+    "cefr": "B1",
+    "prompt": "According to the passage, what do most homestay guests value most?",
+    "passage": "Many travellers now choose homestays instead of hotels when they visit the countryside. In a homestay, guests sleep in a local family's house, eat home-cooked meals and sometimes help with farm work. The rooms are usually simple, and there may be no air conditioning. However, most guests say this does not matter, because the chance to learn about local life is the best part of the trip.",
+    "options": [
+      "Comfortable rooms with air conditioning",
+      "Buying cheap farm products",
+      "Learning about local life",
+      "Having no work to do"
+    ],
+    "answerIndex": 2
+  },
+  {
     "id": "rea-b2-1",
     "skill": "reading",
     "cefr": "B2",
@@ -846,6 +1638,62 @@
       "Hospitals have already adopted the model."
     ],
     "answerIndex": 0
+  },
+  {
+    "id": "rea-b2-5",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "What is the writer's main point?",
+    "passage": "Electric scooters have become a common sight in many Asian cities. They are quiet, produce no exhaust fumes and are cheap to run. However, their environmental benefits depend largely on how the electricity is generated. Where power still comes mainly from coal, the overall reduction in emissions may be smaller than people assume. Experts therefore argue that encouraging electric vehicles must go hand in hand with investment in cleaner energy.",
+    "options": [
+      "Electric scooters cause more pollution than petrol ones.",
+      "Electric scooters help the environment most when the electricity is clean.",
+      "Coal power stations should be closed immediately.",
+      "Electric scooters are too expensive for most people."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-b2-6",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "Why might a long list of skills harm a job application?",
+    "passage": "For years, job applicants were advised to list every skill they had on their CV. Recruiters now say this approach often backfires. A long list of loosely related abilities can make a candidate seem unfocused, and busy managers may spend less than a minute on each application. A shorter CV that clearly links a few strong achievements to the specific role tends to make a far better impression.",
+    "options": [
+      "Managers think the list is dishonest.",
+      "It shows the candidate lacks experience.",
+      "It takes managers too long to check each skill.",
+      "It can make the candidate seem unfocused."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-b2-7",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "What concern do some performers have?",
+    "passage": "Water puppetry, performed on a pool of water, began in the villages of the Red River Delta centuries ago. Farmers created the shows to entertain each other after the rice harvest, hiding behind a bamboo screen and controlling the puppets with long poles under the water. Today the art form attracts large numbers of tourists, yet some performers worry that shows are being shortened and simplified to suit visitors with limited time.",
+    "options": [
+      "Shows are being made shorter and simpler for tourists.",
+      "Too few tourists are coming to the shows.",
+      "Farmers no longer grow rice in the delta.",
+      "The puppets are too difficult to control."
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-b2-8",
+    "skill": "reading",
+    "cefr": "B2",
+    "prompt": "What does the passage say about the 10,000-step target?",
+    "passage": "Fitness trackers that count daily steps have become hugely popular, and many users aim for 10,000 steps a day. Yet this target did not come from medical research; it began largely as a marketing idea. Some recent studies suggest that, for many adults, health benefits rise steadily up to around 7,000 or 8,000 steps and then level off. Researchers stress that the exact number matters less than simply moving more than you do now.",
+    "options": [
+      "It is the minimum needed for any health benefit.",
+      "It was set by doctors after long studies.",
+      "It did not originally come from medical research.",
+      "It is too low for most adults."
+    ],
+    "answerIndex": 2
   },
   {
     "id": "rea-c1-1",
@@ -904,6 +1752,62 @@
     "answerIndex": 1
   },
   {
+    "id": "rea-c1-5",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "What point does the writer make about where new trees are planted?",
+    "passage": "As cities grow hotter, planting trees is often promoted as a simple, low-cost remedy. Shade from a mature canopy can lower street temperatures by several degrees, and trees absorb rainwater that would otherwise overwhelm drains. Yet the benefits are far from automatic. Saplings planted without long-term maintenance budgets frequently die within a few years, and species chosen for appearance rather than suitability may struggle in polluted, compacted soil. Moreover, new greenery tends to appear first in wealthier districts, where residents have the time and influence to lobby for it, leaving poorer neighbourhoods, often the hottest, with the least shade.",
+    "options": [
+      "They are mostly planted in the hottest, poorest districts.",
+      "They are usually chosen for their suitability to local soil.",
+      "They are mainly planted where drains are weakest.",
+      "They often go to wealthier areas rather than the hottest ones."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-c1-6",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "How do critics respond to the platforms' argument?",
+    "passage": "Food delivery apps have created flexible work for millions of riders, many of whom value the freedom to choose their own hours. Flexibility, however, can be a double-edged sword. Because riders are classified as independent contractors rather than employees, they typically receive no sick pay, insurance or pension contributions. Platforms argue that offering such benefits would force them to impose fixed shifts, removing the very freedom riders say they want. Critics counter that this is a false choice: several countries have experimented with models that provide basic protections while preserving flexible schedules.",
+    "options": [
+      "They say riders do not really want flexible hours.",
+      "They say flexibility and basic protections can exist together.",
+      "They want all riders to work fixed shifts.",
+      "They agree that benefits would end flexible work."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-c1-7",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "Why do many students prefer rereading, according to the passage?",
+    "passage": "Ask students how they revise and most will mention rereading notes or highlighting textbooks. These strategies feel productive because the material becomes increasingly familiar. Familiarity, however, is easily mistaken for mastery. Cognitive scientists have repeatedly found that retrieval practice, deliberately trying to recall information without looking at it, produces far more durable learning, even though it feels harder and more frustrating at the time. The irony is that the very difficulty which makes students abandon the method is a large part of why it works.",
+    "options": [
+      "Research shows it is the most effective method.",
+      "It helps them remember information for longer.",
+      "Familiar material gives them the feeling that they are learning.",
+      "It is more challenging than retrieval practice."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "rea-c1-8",
+    "skill": "reading",
+    "cefr": "C1",
+    "prompt": "What does the word 'Unsurprisingly' suggest in the last sentence?",
+    "passage": "The fashion industry has embraced the language of sustainability, with labels promising recycled fabrics and 'conscious' collections. Closer inspection often reveals a more modest reality. A garment advertised as containing recycled material may include only a small percentage of it, and the recycling of mixed fibres remains technically difficult, so most discarded clothing still ends up in landfill or is burned. Some analysts argue that the most effective step is neither technological nor glamorous: simply buying fewer clothes and wearing them for longer. Unsurprisingly, this message rarely features in advertising campaigns.",
+    "options": [
+      "Brands have little interest in encouraging people to buy less.",
+      "Recycling technology is too expensive to advertise.",
+      "Customers are not interested in sustainability.",
+      "Advertisers do not understand the problem."
+    ],
+    "answerIndex": 0
+  },
+  {
     "id": "rea-c2-1",
     "skill": "reading",
     "cefr": "C2",
@@ -958,6 +1862,62 @@
       "Critics persuaded her to abandon dramatic designs."
     ],
     "answerIndex": 1
+  },
+  {
+    "id": "rea-c2-5",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "What is the writer's position on relying on devices to remember things?",
+    "passage": "We tend to assume that outsourcing memory to our devices is a recent and corrosive habit. The anxiety is not new. Philosophers in antiquity worried that writing itself would weaken recollection, and every subsequent technology, from printed books to search engines, has prompted similar laments. What such complaints often overlook is that human cognition has always been distributed: we remember where to find information, and whom to ask, as much as the information itself. The pertinent question, then, is not whether we rely on external aids, but whether we retain enough knowledge internally to judge the reliability of what those aids supply.",
+    "options": [
+      "It is a recent habit that is seriously damaging our minds.",
+      "It is acceptable as long as we know enough to judge what the devices tell us.",
+      "It is a habit philosophers rightly warned us to avoid.",
+      "It means we no longer need to keep any knowledge in our heads."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "rea-c2-6",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "Why do most conservators make their interventions visible and reversible?",
+    "passage": "When a centuries-old pagoda is restored, the question of authenticity becomes curiously slippery. Should restorers return it to its original appearance, even if that appearance is only conjecture, or preserve the accumulated alterations of later generations, each of which is itself now historical? A purist insistence on the 'original' can erase layers of genuine history in pursuit of an imagined ideal. Conversely, preserving every later addition may leave a building that no single era would recognise. Most conservators now favour a pragmatic middle course, making interventions visible and reversible so that future generations are not bound by today's judgements.",
+    "options": [
+      "So that later generations can make their own decisions",
+      "So that the building looks exactly as it did originally",
+      "Because later additions have no historical value",
+      "Because original designs are always well documented"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "rea-c2-7",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "Which statement best reflects the writer's view?",
+    "passage": "Headlines announcing that a food 'doubles the risk' of a disease are rarely as alarming as they sound. A doubling of relative risk may translate into a minuscule change in absolute terms: if a condition affects one person in a hundred thousand, doubling the risk means two. Journalists are not solely to blame; press releases from universities frequently foreground the more dramatic figure, and readers seldom pause to ask what the baseline was. The upshot is a public oscillating between panic and cynicism, neither of which serves sound decisions about health.",
+    "options": [
+      "Journalists are entirely responsible for misleading health stories.",
+      "A doubled risk is always a serious health concern.",
+      "Readers have become more careful about health headlines.",
+      "Reporting a relative risk without its baseline can mislead the public."
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "rea-c2-8",
+    "skill": "reading",
+    "cefr": "C2",
+    "prompt": "What does the writer mean by 'a backdrop to be verified'?",
+    "passage": "There is a peculiar irony in the way social media has reshaped travel. Platforms that promised to broaden our horizons have, in many cases, narrowed them: visitors now queue for an hour to reproduce a photograph they have already seen thousands of times, at the precise spot from which it was originally taken. The destination becomes less a place to be explored than a backdrop to be verified. None of this is to romanticise some imagined era of authentic travel, which was always partly a myth of the privileged; it is merely to note that novelty has quietly given way to confirmation.",
+    "options": [
+      "Tourists check that destinations are safe before visiting.",
+      "Tourists explore the place to discover what is really there.",
+      "Tourists go there to confirm and recreate images they have already seen.",
+      "Tourists photograph places to prove that travel was once authentic."
+    ],
+    "answerIndex": 2
   },
   {
     "id": "lis-a1-1",
@@ -1016,6 +1976,62 @@
     "answerIndex": 3
   },
   {
+    "id": "lis-a1-5",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "Where does Tuan work?",
+    "passage": "Hi, my name is Tuan. I live in Hai Phong with my wife and our two children. I work in a shoe shop. The shop is next to a big school. I go to work by motorbike.",
+    "options": [
+      "In a school",
+      "In a clothes shop",
+      "At home",
+      "In a shoe shop"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-a1-6",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "What time does the class start?",
+    "passage": "Good morning, everyone. Today is Monday. Our English class is in room twelve today, not room twenty. Please bring your books and a pen. The class starts at eight thirty.",
+    "options": [
+      "At eight o'clock",
+      "At twelve o'clock",
+      "At eight thirty",
+      "At nine thirty"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-a1-7",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "What is the speaker's favourite food?",
+    "passage": "I love food. My favourite food is chicken soup. My mother makes it every Sunday. I don't like fish, and I never eat cake because it is too sweet.",
+    "options": [
+      "Chicken soup",
+      "Fish soup",
+      "Cake",
+      "Chicken salad"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-a1-8",
+    "skill": "listening",
+    "cefr": "A1",
+    "prompt": "What colour does the speaker want?",
+    "passage": "Excuse me, I want to buy this T-shirt. How much is it? Oh, it's fifteen dollars. That's OK. Do you have it in blue? My size is medium. Thank you.",
+    "options": [
+      "Black",
+      "Blue",
+      "Red",
+      "White"
+    ],
+    "answerIndex": 1
+  },
+  {
     "id": "lis-a2-1",
     "skill": "listening",
     "cefr": "A2",
@@ -1072,6 +2088,62 @@
     "answerIndex": 3
   },
   {
+    "id": "lis-a2-5",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "Which day is the shop closed?",
+    "passage": "Hello, this is a message for Mrs Hanh. Your new glasses are ready. You can pick them up from our shop any day this week between nine and five, but we are closed on Thursday. Thank you.",
+    "options": [
+      "Tuesday",
+      "Saturday",
+      "Friday",
+      "Thursday"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-a2-6",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "What did they do on Sunday morning?",
+    "passage": "Last weekend I went camping with my cousins near a lake. On Saturday it was sunny, so we went swimming. On Sunday it rained all morning, so we played cards in the tent. It was really fun.",
+    "options": [
+      "They went swimming.",
+      "They went fishing.",
+      "They played cards.",
+      "They went home."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-a2-7",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "What time does the supermarket usually open?",
+    "passage": "Attention, shoppers. The supermarket will close in fifteen minutes. Please take your shopping to the checkouts now. Tomorrow we open at seven in the morning, one hour earlier than usual. Thank you for shopping with us.",
+    "options": [
+      "At eight o'clock",
+      "At seven o'clock",
+      "At six o'clock",
+      "At a quarter past seven"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-a2-8",
+    "skill": "listening",
+    "cefr": "A2",
+    "prompt": "Why does the speaker practise less now?",
+    "passage": "I started learning the guitar in January. At first I practised every day, but now I only have time at weekends because I've got a new job. My teacher says I'm getting better, but slowly.",
+    "options": [
+      "Because the teacher is busy",
+      "Because of a new job",
+      "Because the guitar is broken",
+      "Because it is too difficult"
+    ],
+    "answerIndex": 1
+  },
+  {
     "id": "lis-b1-1",
     "skill": "listening",
     "cefr": "B1",
@@ -1124,6 +2196,62 @@
       "Its location",
       "The staff",
       "The noise"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-b1-5",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "What is a disadvantage of the new hotel?",
+    "passage": "Hi Lisa, it's Kevin from the travel agency. I'm calling about your trip to Phu Quoc. Unfortunately, the hotel you chose is fully booked for those dates. I can offer you a similar hotel nearby, which is a little cheaper and has a bigger pool, but it's a ten-minute walk from the beach. Please call me back before Friday so I can confirm your booking.",
+    "options": [
+      "It is more expensive.",
+      "It has a smaller pool.",
+      "It is further from the beach.",
+      "It is fully booked."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b1-6",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "What time does the museum close?",
+    "passage": "Welcome to the City Museum. Before you start, here are a few things to remember. Photos are allowed in all rooms, but please don't use a flash. Large bags must be left in the lockers on the ground floor, which are free. The cafe on the top floor closes at four, half an hour before the museum. Enjoy your visit.",
+    "options": [
+      "At four o'clock",
+      "At half past three",
+      "At five o'clock",
+      "At half past four"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-b1-7",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "What is the main reason the speaker cycles to work?",
+    "passage": "I've been cycling to work for about six months now. People think I do it to save money, and it's true that I spend less on petrol, but that's not the main reason. Honestly, it's because I arrive at the office feeling awake and in a good mood. Sitting in traffic used to make me stressed before I'd even started work.",
+    "options": [
+      "To arrive at work feeling awake and happy",
+      "To save money on petrol",
+      "Because the office has no car park",
+      "Because a doctor recommended it"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-b1-8",
+    "skill": "listening",
+    "cefr": "B1",
+    "prompt": "How can students get a discount?",
+    "passage": "Good afternoon, and thanks for coming to this information session about our evening courses. All courses start in the second week of September and last ten weeks. You can sign up online or at the reception desk. If you register before the end of August, you'll get fifteen percent off the price. Unfortunately, the photography course is already full.",
+    "options": [
+      "By signing up online",
+      "By registering before the end of August",
+      "By taking two courses",
+      "By joining the photography course"
     ],
     "answerIndex": 1
   },
@@ -1184,6 +2312,62 @@
     "answerIndex": 3
   },
   {
+    "id": "lis-b2-5",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "What is the speaker's attitude to open-plan offices now?",
+    "passage": "I'll be honest, when my company introduced open-plan offices, I was quite sceptical. I assumed it would be noisy and that I'd never get anything done. And yes, there are days when it's hard to concentrate. But I have to admit that problems get solved much faster now, simply because you can turn around and ask someone instead of sending an email and waiting.",
+    "options": [
+      "Positive overall, despite some drawbacks",
+      "Still completely sceptical",
+      "Enthusiastic, with no reservations",
+      "Indifferent either way"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-b2-6",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "Why has the flight been delayed?",
+    "passage": "This is an announcement for passengers on flight VN two four seven to Seoul. Due to a technical problem with the aircraft, departure has been delayed by approximately two hours. Passengers can collect a meal voucher from the information desk near gate twelve. We'll announce the new boarding time as soon as possible. We apologise for any inconvenience.",
+    "options": [
+      "The weather in Seoul is bad.",
+      "There is a technical problem with the plane.",
+      "The crew has not arrived yet.",
+      "The gate has been changed."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-b2-7",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "What does the speaker recommend?",
+    "passage": "A lot of people say that learning vocabulary from lists is a waste of time, and that you should only pick up words from reading. I don't entirely agree. Reading is wonderful, of course, but at lower levels you simply don't understand enough of the text to guess new words. In my experience, a combination works best: learn the most common words deliberately, then let reading do the rest.",
+    "options": [
+      "Learning new words only through reading",
+      "Avoiding vocabulary lists completely",
+      "Combining deliberate word study with reading",
+      "Learning new words only from lists"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-b2-8",
+    "skill": "listening",
+    "cefr": "B2",
+    "prompt": "How often will food waste be collected?",
+    "passage": "We're asking all residents to separate their household waste from next month. Food waste should go in the green bin, which will be collected twice a week. Paper, plastic and glass go in the blue bin, collected every Monday. Anything else goes in the black bin. Residents who don't follow the new system may receive a warning letter, and repeat offenders could be fined.",
+    "options": [
+      "Every Monday",
+      "Once a month",
+      "Every day",
+      "Twice a week"
+    ],
+    "answerIndex": 3
+  },
+  {
     "id": "lis-c1-1",
     "skill": "listening",
     "cefr": "C1",
@@ -1240,6 +2424,62 @@
     "answerIndex": 1
   },
   {
+    "id": "lis-c1-5",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "What does the speaker value most about running the business?",
+    "passage": "I've been asked whether I regret leaving my job at the bank to open a small bakery. The honest answer is: not really, though it hasn't been quite the adventure I imagined. I'd pictured myself spending my days chatting to customers and experimenting with new recipes. In reality, most of my time goes on paperwork, staff rotas and arguing with suppliers. Still, even on the worst days, I'd rather be dealing with my own problems than someone else's. That sense of ownership is worth more to me than the salary I gave up.",
+    "options": [
+      "Owning the business and its problems",
+      "Chatting to customers all day",
+      "Earning more than at the bank",
+      "Experimenting with new recipes"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-c1-6",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "What is the speaker's main criticism?",
+    "passage": "Let me say at the outset that I'm not opposed to the new metro line. Our city clearly needs better public transport. My concern is with the way the project has been managed. The budget has more than doubled, the opening date has been pushed back again and again, and residents along the route were given very little warning about the construction. If the city wants people to give up their motorbikes, it has to earn their trust, and so far it hasn't done a great deal to deserve it.",
+    "options": [
+      "The city does not need a metro line.",
+      "Motorbikes should be banned immediately.",
+      "The project has been poorly managed.",
+      "The metro route is in the wrong place."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-c1-7",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "According to the speaker, what best predicts an animal's success in cities?",
+    "passage": "Today I want to look at why some species adapt to cities while others disappear. You might expect the most intelligent animals to do best, and intelligence certainly helps. But the strongest predictor seems to be flexibility in diet. Crows, rats and certain pigeons will eat almost anything, from fruit to discarded fast food, and they can switch quickly when one source runs out. Species with very specialised diets, however clever they may be, tend to struggle once their usual food is gone.",
+    "options": [
+      "Being highly intelligent",
+      "Being able to eat many kinds of food",
+      "Living in large groups",
+      "Avoiding food left by humans"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "lis-c1-8",
+    "skill": "listening",
+    "cefr": "C1",
+    "prompt": "What is the speaker's main reservation about the app?",
+    "passage": "I've reviewed a lot of language apps over the years, and this one is better than most. The design is clean, the exercises are varied, and the speech recognition is impressively accurate. My reservation is a more fundamental one. The app rewards you for keeping a daily streak, and after a while I noticed I was choosing the easiest lessons just to keep my streak alive. It's clever motivation, but it risks turning learning into a game of attendance rather than progress.",
+    "options": [
+      "Its speech recognition is often inaccurate.",
+      "Its exercises are too repetitive.",
+      "It is badly designed and hard to use.",
+      "Its rewards can encourage users to avoid challenging lessons."
+    ],
+    "answerIndex": 3
+  },
+  {
     "id": "lis-c2-1",
     "skill": "listening",
     "cefr": "C2",
@@ -1294,5 +2534,61 @@
       "It was proposed by the competitor."
     ],
     "answerIndex": 0
+  },
+  {
+    "id": "lis-c2-5",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "How did the speaker experience the freedom of writing fiction?",
+    "passage": "People often ask whether I found the move from journalism to fiction difficult. I suspect they expect me to say that facts are a kind of cage and that fiction set me free. If anything, the opposite was true. Reporting gave me a structure: a deadline, an event, a set of people who had said things. Fiction offers none of that. Every decision is yours, and the freedom that sounds so liberating in theory turns out, in practice, to be rather paralysing, at least until you impose some constraints of your own.",
+    "options": [
+      "It felt liberating after the cage of journalism.",
+      "It made writing to deadlines easier.",
+      "At first it was paralysing rather than liberating.",
+      "It was no different from reporting."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "lis-c2-6",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "What is the speaker's attitude towards the companies' net zero pledges?",
+    "passage": "I don't doubt the sincerity of the companies pledging to reach net zero by twenty fifty. What I question is the arithmetic. A great many of these pledges lean heavily on carbon offsets, paying for trees to be planted elsewhere, rather than on cutting their own emissions. Some offset schemes are perfectly sound. Others protect forests that were never under threat, which means the emissions they supposedly cancel out are, in effect, still in the atmosphere. Until the accounting becomes far more rigorous, I'd treat many of these announcements with a healthy degree of caution.",
+    "options": [
+      "Convinced that the companies are deliberately lying",
+      "Confident that offsets will solve the problem",
+      "Uninterested in whether the targets are met",
+      "Doubtful about the methods, though not about the companies' sincerity"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "id": "lis-c2-7",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "What does the speaker consider the most important skill?",
+    "passage": "There's a tendency, when discussing artificial intelligence in medicine, to frame it as a contest between machine and doctor. I find that framing unhelpful. In the trials I've been involved in, the most accurate results came neither from the software alone nor from the clinicians alone, but from clinicians who knew when to trust the software and, crucially, when to overrule it. The real skill, then, isn't competing with the algorithm. It's developing the judgement to recognise the situations in which it's likely to be wrong.",
+    "options": [
+      "Knowing when to rely on the software and when to overrule it",
+      "Making diagnoses faster than the software",
+      "Understanding how the algorithm was programmed",
+      "Letting the software make the final decision"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "lis-c2-8",
+    "skill": "listening",
+    "cefr": "C2",
+    "prompt": "What would the speaker see as a real cause for concern?",
+    "passage": "Every few years, someone writes to a newspaper complaining that young people are ruining the language by borrowing English words. I have some sympathy, but the complaint rests on a misunderstanding. Vietnamese, like every living language, has always absorbed vocabulary from its neighbours and trading partners, and many of the words purists now defend as native were once borrowings themselves. Languages are not damaged by borrowing; if anything, it shows they're being used to talk about new things. What would genuinely worry me is a language that had stopped changing altogether.",
+    "options": [
+      "Young people borrowing English words",
+      "A language that no longer changes",
+      "Newspapers printing complaints about language",
+      "Native words being replaced by borrowings"
+    ],
+    "answerIndex": 1
   }
 ]

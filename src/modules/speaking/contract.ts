@@ -1,7 +1,7 @@
 // IPC contract for the speaking module. Channel names must start with 'speaking:'.
 import { z } from 'zod'
 import { SPEAKING_KINDS, type SpeakingPrompt } from '@shared/content'
-import { channel, NoInput, type ChannelDef } from '@shared/ipc'
+import { channel, clampedNumber, NoInput, type ChannelDef } from '@shared/ipc'
 import type { ConversationTurn, PhonemeEntry, PronunciationWord } from '@shared/packs'
 import type { Reward, SkillLevel, SpeakingSession } from '@shared/types'
 import type { PhonemeAlignment } from '@core/phonemes'
@@ -224,8 +224,8 @@ export const speakingContract = {
     z.object({
       lessonId: Slug,
       score: z.number().min(0).max(1),
-      durationSec: z.number().min(0).max(7200).default(0),
-      speakingSec: z.number().min(0).max(7200).default(0),
+      durationSec: clampedNumber(0, 7200).default(0),
+      speakingSec: clampedNumber(0, 7200).default(0),
       words: z
         .array(z.object({ word: z.string().max(80), score: z.number().min(0).max(1), method: z.enum(['ai', 'self']) }))
         .max(100)

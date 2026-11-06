@@ -186,8 +186,11 @@ test('Vietnamese diacritics and IPA are drawn by the UI font, not a fallback', a
   const { nodeId } = (await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '#font-sample' })) as {
     nodeId: number
   }
-  const { fonts } = (await cdp.send('CSS.getPlatformFontsForNode', { nodeId })) as {
-    fonts: { familyName: string; postScriptName: string; glyphCount: number }[]
+  // Under load the sample may not be laid out yet (no fonts reported): ask again for up to 3 s.
+  let fonts: { familyName: string; postScriptName: string; glyphCount: number }[] = []
+  for (let i = 0; i < 15 && !fonts.length; i++) {
+    if (i) await page.waitForTimeout(200)
+    fonts = ((await cdp.send('CSS.getPlatformFontsForNode', { nodeId })) as { fonts: typeof fonts }).fonts
   }
   test.info().annotations.push({ type: 'sample fonts', description: JSON.stringify(fonts) })
   // Every glyph (all Vietnamese letters with diacritics + IPA) comes from one font: Segoe UI Variable Text.

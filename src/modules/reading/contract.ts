@@ -1,7 +1,7 @@
 // IPC contract for the reading module. Channel names must start with 'reading:'.
 import { z } from 'zod'
 import { CefrSchema, ReadingCategorySchema, type Cefr, type ReadingPassage } from '@shared/content'
-import { channel, NoInput, type ChannelDef } from '@shared/ipc'
+import { channel, clampedNumber, NoInput, type ChannelDef } from '@shared/ipc'
 import type { Reward, SkillLevel } from '@shared/types'
 
 // ---------- output types (shared by main and renderer) ----------
@@ -104,10 +104,7 @@ export const readingContract = {
   'reading:complete': channel<ReadingResult>()(
     z.object({
       id: PassageId,
-      seconds: z
-        .number()
-        .min(1)
-        .max(4 * 3600),
+      seconds: clampedNumber(1, 4 * 3600),
       /** Chosen option index per question (same order as passage.questions); -1 = skipped. */
       answers: z.array(z.number().int().min(-1).max(10)).max(30),
     }),

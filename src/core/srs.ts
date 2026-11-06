@@ -100,17 +100,28 @@ export class FsrsScheduler {
     )
   }
 
+  /**
+   * The review time, never earlier than the last review: when the system clock moved back (manual change,
+   * dead CMOS battery, synced data from a PC with a wrong clock) ts-fsrs rejects the negative interval.
+   */
+  private reviewTime(card: CardMemory, now: Date): Date {
+    const last = card.lastReviewAt ? Date.parse(card.lastReviewAt) : Number.NaN
+    if (Number.isNaN(now.getTime())) return Number.isNaN(last) ? new Date() : new Date(last)
+    return !Number.isNaN(last) && now.getTime() < last ? new Date(last) : now
+  }
+
   review(card: CardMemory, rating: Rating, now: Date): CardMemory {
-    return fromLib(this.engine.next(toLib(card), now, rating as Grade).card)
+    return fromLib(this.engine.next(toLib(card), this.reviewTime(card, now), rating as Grade).card)
   }
 
   /** Preview the next due interval for each rating – shown on flashcard buttons. */
   preview(card: CardMemory, now: Date): Record<Rating, { dueAt: string; label: string }> {
     const out = {} as Record<Rating, { dueAt: string; label: string }>
-    const all = this.engine.repeat(toLib(card), now)
+    const at = this.reviewTime(card, now)
+    const all = this.engine.repeat(toLib(card), at)
     for (const r of [1, 2, 3, 4] as Rating[]) {
       const due = all[r as Grade].card.due
-      out[r] = { dueAt: due.toISOString(), label: formatInterval(due.getTime() - now.getTime()) }
+      out[r] = { dueAt: due.toISOString(), label: formatInterval(due.getTime() - at.getTime()) }
     }
     return out
   }

@@ -1,6 +1,6 @@
 // IPC contract for the journey module (channels 'journey:*') and the output types shared by main and renderer.
 import { z } from 'zod'
-import { channel, NoInput, type ChannelDef } from '@shared/ipc'
+import { channel, clampedNumber, NoInput, type ChannelDef } from '@shared/ipc'
 import type { Cefr } from '@shared/content'
 import type {
   AssessmentResult,
@@ -211,7 +211,7 @@ export const journeyContract = {
     z.object({
       id: AssessmentId,
       transcript: z.string().trim().min(1).max(3000),
-      durationSec: z.number().min(1).max(600),
+      durationSec: clampedNumber(1, 600),
     }),
   ),
   'journey:assessmentFinish': channel<AssessmentResult>()(z.object({ id: AssessmentId })),

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { optionOrder, shuffled } from '@core/shuffle'
 import { AiBadge, SpeakButton } from '@/components/learning'
 import {
   Badge,
@@ -45,8 +46,13 @@ export default function TopicPage() {
   const [aiLoading, setAiLoading] = useState(false)
   const [aiError, setAiError] = useState<ApiError | null>(null)
 
+  // Every run (and every "try again") shuffles the exercises and the multiple-choice options; grading is by
+  // the option text, so the order does not matter to the server.
   const startDrill = (exercises: GrammarExercise[], ai = false) => {
-    setDrill({ key: Date.now(), exercises, ai })
+    const mixed = shuffled(exercises).map((ex) =>
+      ex.type === 'mcq' ? { ...ex, options: optionOrder(ex.options).map((i) => ex.options[i] ?? '') } : ex,
+    )
+    setDrill({ key: Date.now(), exercises: mixed, ai })
     setMode('practice')
   }
 

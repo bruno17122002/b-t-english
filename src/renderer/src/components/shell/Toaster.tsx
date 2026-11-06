@@ -26,8 +26,8 @@ export function Toaster() {
             >
               <Icon className={`mt-0.5 size-5 shrink-0 ${TONE[t.kind]}`} />
               <div className="min-w-0 flex-1 text-sm">
-                <p className="font-medium">{t.title}</p>
-                {t.body && <p className="mt-0.5 text-muted">{t.body}</p>}
+                <p className="line-clamp-4 font-medium [overflow-wrap:anywhere]">{t.title}</p>
+                {t.body && <p className="mt-0.5 line-clamp-4 text-muted [overflow-wrap:anywhere]">{t.body}</p>}
                 {t.action && (
                   <button
                     className="mt-1 text-xs font-semibold text-accent"

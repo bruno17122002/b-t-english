@@ -8,6 +8,7 @@ import { FsrsScheduler, newCard, type CardMemory, type Rating } from '@core/srs'
 import { addDays, localDateKey } from '@core/dates'
 import type { AppDatabase } from '../../db/database'
 import type { AiGateway } from '../ai/gateway'
+import { definedOnly, UserError } from '../errors'
 import { JSON_ONLY, jsonPrompt } from '../ai/prompt'
 import type { ContentRegistry } from '../content/registry'
 import type { LearnerService } from '../learner/learner'
@@ -80,6 +81,20 @@ const list = (s: string): string[] => {
   }
 }
 const uniq = (xs: string[]) => [...new Set(xs.map((x) => x.trim()).filter(Boolean))]
+/** Minimal card for retrievability (state 'review' so the stored stability is used). */
+const memoryOf = (r: { stability: number; last_review_at: string | null }): CardMemory => ({
+  state: 'review',
+  stability: r.stability,
+  difficulty: 0,
+  reps: 1,
+  lapses: 0,
+  lastReviewAt: r.last_review_at,
+  dueAt: '',
+  scheduledDays: 0,
+})
+const notFound = () => new UserError('not_found', 'Không tìm thấy từ này trong kho từ (có thể đã bị xoá).')
+/** Escapes LIKE wildcards so a search for "50%" or "a_b" matches literally (used with ESCAPE '\'). */
+export const likeEscape = (s: string) => s.replace(/[\\%_]/g, (c) => `\\${c}`)
 export const wordKey = (w: string) => w.trim().toLowerCase().replace(/\s+/g, ' ')
 
 const SELECT = `SELECT v.*, r.state, r.due_at, r.stability, r.difficulty, r.reps, r.lapses, r.scheduled_days,
@@ -208,7 +223,7 @@ export class VocabHub {
   /** Saves (or enriches) a word. Returns created=false when the word was already in the bank. */
   save(input: SaveWordInput): { item: VocabItem; created: boolean } {
     const word = input.word.trim().slice(0, 80)
-    if (!word) throw new Error('Word is empty')
+    if (!word) throw new UserError('invalid_input', 'Từ vựng không được để trống.')
     const ts = this.now().toISOString()
     const existing = this.db.get<VocabRow>(`${SELECT} WHERE v.word_key = ?`, [wordKey(word)])
     if (existing) {
@@ -286,13 +301,96 @@ export class VocabHub {
     return { item: this.get(id) as VocabItem, created: true }
   }
 
+  /**
+   * Bulk import (CSV / JSON export): new words are inserted and existing ones enriched like save(), but with
+   * prepared statements in one transaction (20 000 words in well under a second instead of ~8 s of frozen
+   * main process) and without XP – importing a word list must not farm 2 XP per word.
+   */
+  importMany(inputs: SaveWordInput[]): { added: number; merged: number } {
+    const ts = this.now().toISOString()
+    const existing = new Map(
+      this.db
+        .all<{ id: number; word_key: string; examples: string }>('SELECT id, word_key, examples FROM vocabulary')
+        .map((r) => [r.word_key, r]),
+    )
+    const fresh = new Map<string, SaveWordInput & { word: string }>()
+    const updates: (string | number)[][] = []
+    let merged = 0
+    for (const input of inputs) {
+      const word = input.word.trim().slice(0, 80)
+      if (!word) continue
+      const key = wordKey(word)
+      const ex = existing.get(key)
+      if (ex) {
+        updates.push([
+          input.ipa ?? '',
+          input.pos ?? '',
+          input.meaningVi ?? '',
+          input.meaningEn ?? '',
+          JSON.stringify(uniq([...list(ex.examples), ...(input.examples ?? [])]).slice(0, 8)),
+          ts,
+          ex.id,
+        ])
+        merged++
+      } else if (fresh.has(key)) merged++
+      else fresh.set(key, { ...input, word })
+    }
+    const card = newCard(this.now())
+    this.db.transaction(() => {
+      this.db.runBatch(
+        `UPDATE vocabulary SET ipa = COALESCE(NULLIF(ipa, ''), ?), pos = COALESCE(NULLIF(pos, ''), ?),
+         meaning_vi = COALESCE(NULLIF(meaning_vi, ''), ?), meaning_en = COALESCE(NULLIF(meaning_en, ''), ?),
+         examples = ?, updated_at = ? WHERE id = ?`,
+        updates,
+      )
+      const rows = [...fresh.entries()]
+      this.db.runBatch(
+        `INSERT INTO vocabulary(word, word_key, ipa, pos, meaning_vi, meaning_en, examples, context, source_module, source_ref,
+         collocations, idioms, phrasal_verbs, cefr, topic, notes, is_favorite, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, '', ?, ?, '[]', '[]', '[]', NULL, ?, ?, 0, ?, ?)`,
+        rows.map(([key, it]) => [
+          it.word,
+          key,
+          it.ipa ?? '',
+          it.pos ?? '',
+          it.meaningVi ?? '',
+          it.meaningEn ?? '',
+          JSON.stringify(uniq(it.examples ?? []).slice(0, 8)),
+          it.sourceModule,
+          it.sourceRef ?? '',
+          (it.topic ?? '').slice(0, 60),
+          (it.notes ?? '').slice(0, 1000),
+          ts,
+          ts,
+        ]),
+      )
+      this.db.runBatch(
+        `INSERT INTO review_schedules(vocab_id, state, due_at, stability, difficulty, reps, lapses, scheduled_days, last_review_at, learning_steps)
+         SELECT id, ?, ?, ?, ?, ?, ?, ?, ?, ? FROM vocabulary WHERE word_key = ?`,
+        rows.map(([key]) => [
+          card.state,
+          card.dueAt,
+          card.stability,
+          card.difficulty,
+          card.reps,
+          card.lapses,
+          card.scheduledDays,
+          card.lastReviewAt,
+          card.learningSteps ?? 0,
+          key,
+        ]),
+      )
+    })
+    return { added: fresh.size, merged }
+  }
+
   update(
     id: number,
     patch: Partial<Omit<SaveWordInput, 'sourceModule' | 'word'>> & { isFavorite?: boolean },
   ): VocabItem {
     const cur = this.get(id)
-    if (!cur) throw new Error('Word not found')
-    const n = { ...cur, ...patch }
+    if (!cur) throw notFound()
+    const n = { ...cur, ...definedOnly(patch) }
     this.db.run(
       `UPDATE vocabulary SET ipa = ?, pos = ?, meaning_vi = ?, meaning_en = ?, examples = ?, context = ?, collocations = ?,
        idioms = ?, phrasal_verbs = ?, cefr = ?, topic = ?, notes = ?, is_favorite = ?, updated_at = ? WHERE id = ?`,
@@ -325,8 +423,10 @@ export class VocabHub {
     const where: string[] = []
     const params: (string | number)[] = []
     if (filter.query?.trim()) {
-      const q = `%${filter.query.trim().toLowerCase()}%`
-      where.push('(v.word_key LIKE ? OR lower(v.meaning_vi) LIKE ? OR lower(v.meaning_en) LIKE ?)')
+      const q = `%${likeEscape(filter.query.trim().toLowerCase())}%`
+      where.push(
+        "(v.word_key LIKE ? ESCAPE '\\' OR lower(v.meaning_vi) LIKE ? ESCAPE '\\' OR lower(v.meaning_en) LIKE ? ESCAPE '\\')",
+      )
       params.push(q, q, q)
     }
     if (filter.topic) {
@@ -404,11 +504,14 @@ export class VocabHub {
 
   review(id: number, rating: Rating, durationMs = 0): VocabItem {
     const row = this.db.get<VocabRow>(`${SELECT} WHERE v.id = ?`, [id])
-    if (!row) throw new Error('Word not found')
+    if (!row) throw notFound()
     const now = this.now()
     const before = this.toCard(row)
     const next = this.scheduler.review(before, rating, now)
-    const elapsed = before.lastReviewAt ? (now.getTime() - new Date(before.lastReviewAt).getTime()) / 86_400_000 : 0
+    // Clamped: the clock may have moved back since the last review.
+    const elapsed = before.lastReviewAt
+      ? Math.max(0, (now.getTime() - new Date(before.lastReviewAt).getTime()) / 86_400_000)
+      : 0
     this.db.transaction(() => {
       this.db.run(
         `UPDATE review_schedules SET state = ?, due_at = ?, stability = ?, difficulty = ?, reps = ?, lapses = ?,
@@ -450,19 +553,27 @@ export class VocabHub {
     const endOfToday = new Date(now)
     endOfToday.setHours(23, 59, 59, 999)
     const n = (sql: string, p: (string | number)[] = []) => Number(this.db.value(sql, p) ?? 0)
-    const rows = this.db.all<VocabRow>(`${SELECT} WHERE r.state != 'new'`)
+    // Only the columns needed (a 20 000-word bank took ~300 ms with SELECT v.* and 14 COUNT scans).
+    const rows = this.db.all<{ stability: number; last_review_at: string | null }>(
+      "SELECT stability, last_review_at FROM review_schedules WHERE state != 'new'",
+    )
     const retention = rows.length
-      ? rows.reduce((s, r) => s + this.scheduler.currentRetrievability(this.toCard(r), now), 0) / rows.length
+      ? rows.reduce((s, r) => s + this.scheduler.currentRetrievability(memoryOf(r), now), 0) / rows.length
       : 0
+    const last = addDays(today, 13)
+    const buckets = new Map<string, number>()
+    for (const r of this.db.all<{ due_at: string }>('SELECT due_at FROM review_schedules WHERE due_at <= ?', [
+      new Date(`${last}T23:59:59.999`).toISOString(),
+    ])) {
+      // Everything overdue counts for today; the rest by the learner's local calendar day.
+      const d = new Date(r.due_at)
+      const key = Number.isNaN(d.getTime()) || d <= now ? today : localDateKey(d)
+      buckets.set(key, (buckets.get(key) ?? 0) + 1)
+    }
     const forecast: { date: string; count: number }[] = []
     for (let i = 0; i < 14; i++) {
       const date = addDays(today, i)
-      const start = i === 0 ? '0000' : new Date(`${date}T00:00:00`).toISOString()
-      const end = new Date(`${date}T23:59:59.999`).toISOString()
-      forecast.push({
-        date,
-        count: n('SELECT COUNT(*) FROM review_schedules WHERE due_at > ? AND due_at <= ?', [start, end]),
-      })
+      forecast.push({ date, count: buckets.get(date) ?? 0 })
     }
     return {
       total: n('SELECT COUNT(*) FROM vocabulary'),

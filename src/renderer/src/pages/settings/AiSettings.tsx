@@ -1,7 +1,7 @@
 // AI provider settings. Keys are typed here once and sent to the main process, which encrypts them
 // with Windows DPAPI; the renderer only ever receives a masked hint afterwards.
 import { CheckCircle2, ExternalLink, KeyRound, Loader2, PlugZap, ShieldCheck, Trash2, XCircle } from 'lucide-react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { In } from '@modules/contract'
 import type { AiConfigView, ConnectionTestResult, ModelInfo, UserProviderId } from '@shared/types'
 import { TUTOR_STYLES } from '@shared/types'
@@ -62,7 +62,11 @@ function ProviderCard({
   const [confirmRemove, setConfirmRemove] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  // Enter in the field and a click on Save can arrive before the re-render disables the button.
+  const savingRef = useRef(false)
   const save = async () => {
+    if (savingRef.current || !key.trim()) return
+    savingRef.current = true
     setSaving(true)
     setError(null)
     try {
@@ -85,6 +89,7 @@ function ProviderCard({
     } catch (err) {
       setError(toApiError(err).message)
     } finally {
+      savingRef.current = false
       setSaving(false)
     }
   }
@@ -114,9 +119,13 @@ function ProviderCard({
 
   const remove = async () => {
     setConfirmRemove(false)
-    onChange(await api('ai:removeKey', { provider: meta.id }))
-    setTest(null)
-    setModels(null)
+    try {
+      onChange(await api('ai:removeKey', { provider: meta.id }))
+      setTest(null)
+      setModels(null)
+    } catch (err) {
+      toast({ kind: 'error', title: toApiError(err).message })
+    }
   }
 
   return (
@@ -155,7 +164,7 @@ function ProviderCard({
             spellCheck={false}
             value={key}
             onChange={(e) => setKey(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && key.trim() && void save()}
+            onKeyDown={(e) => e.key === 'Enter' && void save()}
             placeholder={
               status.hasKey
                 ? L('Paste a new key to replace the current one', 'Dán key mới để thay key hiện tại')
@@ -194,13 +203,13 @@ function ProviderCard({
             <div className="flex gap-2">
               <Select
                 value={status.model}
-                onChange={async (e) =>
-                  onChange(
-                    await api(
-                      'ai:updateConfig',
-                      meta.id === 'gemini' ? { geminiModel: e.target.value } : { openaiModel: e.target.value },
-                    ),
+                onChange={(e) =>
+                  api(
+                    'ai:updateConfig',
+                    meta.id === 'gemini' ? { geminiModel: e.target.value } : { openaiModel: e.target.value },
                   )
+                    .then(onChange)
+                    .catch((err) => toast({ kind: 'error', title: toApiError(err).message }))
                 }
                 aria-label={L('Model', 'Model')}
               >
@@ -276,7 +285,10 @@ export function AiSettings() {
   }
   if (loading && !config) return <LoadingBlock rows={3} />
   if (error || !config) return <ErrorState error={error ?? 'Error'} onRetry={reload} />
-  const update = async (patch: In<'ai:updateConfig'>) => setBootAi(await api('ai:updateConfig', patch))
+  const update = (patch: In<'ai:updateConfig'>) =>
+    api('ai:updateConfig', patch)
+      .then(setBootAi)
+      .catch((err) => useApp.getState().toast({ kind: 'error', title: toApiError(err).message }))
 
   return (
     <div className="space-y-6" data-testid="ai-settings">

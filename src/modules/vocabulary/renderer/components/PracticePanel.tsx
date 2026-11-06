@@ -511,6 +511,7 @@ function McqRound({ round, onResult }: { round: Extract<Round, { mcq: Mcq }>; on
       )}
       <QuizQuestion
         q={question}
+        shuffle={false}
         answered={choice}
         onAnswer={(i, ok) => {
           if (choice !== null) return

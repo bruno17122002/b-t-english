@@ -2,8 +2,52 @@
 
 Định dạng theo [Keep a Changelog](https://keepachangelog.com/), phiên bản theo SemVer.
 
+## [1.4.0] – 2026-11-06
+
+### Đề không còn "tĩnh"
+
+- **Kiểm tra đầu vào:**
+  - Mỗi lần làm lại là một đề khác: câu hỏi được rút ngẫu nhiên trong ngân hàng (gấp đôi, 192 câu), đáp án xáo trộn, đề viết / nói chọn ngẫu nhiên trong 6 đề mỗi loại.
+  - Tiếp tục bài đang làm dở vẫn giữ nguyên câu và thứ tự.
+- **Ngữ pháp:** mỗi lượt (kể cả "Làm lại") xáo trộn thứ tự bài tập và đáp án.
+- **Đọc, Nghe, Phim:**
+  - Xáo trộn thứ tự câu hỏi và đáp án mỗi lần làm.
+  - Lựa chọn hội thoại trong phim không còn luôn để câu hay nhất ở vị trí 1.
+- **Phát âm:** thứ tự từ trong bài luyện và bài kiểm tra thay đổi mỗi lần.
+- **Giữ nguyên thứ tự có chủ đích:** True / False / Not Given, "All of the above", thứ tự lời thoại khi chép chính tả, hàng đợi ôn thẻ SRS.
+
+### Chống "phá app" trước khi phát hành công khai
+
+Đợt kiểm thử lạm dụng: sửa 39 lỗi (B18–B56), chi tiết trong `docs/QA_ABUSE_REPORT.md` và `docs/BUGS.md`.
+
+- **Dữ liệu và IPC:**
+  - Fuzz 168 kênh IPC (hơn 20 000 lần gọi).
+  - DB hỏng hoặc 0 byte tự mở bản `.bak` hoặc tạo DB mới, có thông báo; không còn ghi đè bản `.bak` tốt.
+  - Khôi phục sao lưu không còn bị ghi đè trước khi khởi động lại.
+  - Bấm đúp không còn nhân đôi bản ghi hay XP.
+  - Đồng hồ lùi không làm kẹt thẻ ôn.
+  - Nhập từ vựng nhanh hơn khoảng 25 lần và không còn cộng XP.
+  - CSV xuất ra an toàn với Excel.
+  - Lỗi luôn bằng tiếng Việt, không lộ đường dẫn hay key.
+- **Giao diện:**
+  - Monkey test ngẫu nhiên khoảng 14 000 thao tác, cộng 28 kịch bản phá có chủ đích.
+  - Esc chỉ đóng hộp thoại trên cùng.
+  - Kết quả về trễ không còn kéo người học về trang cũ.
+  - Mọi nút khoá khi đang chờ.
+  - Ô nhập có bộ đếm và giới hạn theo contract.
+  - Từ rất dài không làm vỡ bố cục; phóng to 200 % vẫn dùng được.
+  - Chúc mừng hàng loạt có "Bỏ qua tất cả".
+  - Micro bị từ chối báo lỗi rõ ràng.
+- **Bền hơn với dữ liệu lạ:**
+  - Thời lượng vượt giới hạn (trang để mở qua đêm) được kẹp thay vì làm mất kết quả bài.
+  - Câu tìm kiếm quá dài bị cắt thay vì báo lỗi.
+  - Nút sao chép dùng được Clipboard API.
+- **Kiểm thử:** 644 test Vitest và 56 test Playwright.
+
 ## [1.3.0] – 2026-11-06
+
 ### Bảo vệ mã nguồn
+
 - **Tiến trình chính:**
   - Biên dịch sang V8 bytecode (`out/main/index.jsc`), không còn mã JavaScript đọc được.
   - Tên hàm và class bị loại bỏ.
@@ -24,17 +68,20 @@
 - **Hệ quả cho kiểm thử:** Playwright không gắn được vào bản phát hành (fuse `--inspect`). E2E chạy trên bản build từ cùng mã nguồn (`out/`, cũng là bytecode); bản đóng gói được kiểm bằng phép chạy thử và phép thử chống sửa đổi.
 - **Bản phát hành:**
 
-  | File | Kích thước | SHA-256 |
-  |---|---|---|
-  | `Lingua-Quest-Setup-1.3.0.exe` | 133 392 419 byte | `345bb11b8920a5ffd0e2547d9e83d668ea3a5f3cc50ffc4d1a4acfdc034bcbb9` |
+  | File                              | Kích thước       | SHA-256                                                            |
+  | --------------------------------- | ---------------- | ------------------------------------------------------------------ |
+  | `Lingua-Quest-Setup-1.3.0.exe`    | 133 392 419 byte | `345bb11b8920a5ffd0e2547d9e83d668ea3a5f3cc50ffc4d1a4acfdc034bcbb9` |
   | `Lingua-Quest-Portable-1.3.0.exe` | 116 597 845 byte | `d222d55db96b9a09b94c07073c949ca29079d9244e1921463c897f32a396d7cd` |
 
 ### Sửa lỗi
+
 - App giải thích rõ lỗi gửi email mã đăng nhập từ Supabase (SMTP, mẫu email).
 - Test nhiệm vụ "nói" phụ thuộc ngày chạy (B17).
 
 ## [1.2.0] – 2026-11-05
+
 ### Sửa lỗi
+
 - **Âm thanh bị phát chồng khi bấm nhiều lần:** trình phát mới theo "thế hệ"; mỗi lệnh phát mới hủy mọi lệnh cũ, kể cả bản đang tải (B14).
 - **Âm thanh phát chậm (B15):**
   - Ưu tiên giọng Windows offline.
@@ -47,6 +94,7 @@
   - Ô chọn có mũi tên riêng.
 
 ### Thêm mới – Lingua Quest Online (tùy chọn)
+
 - **GĐ1 – Tài khoản:**
   - Đăng nhập bằng mã email; phiên đăng nhập mã hóa DPAPI.
   - Sao lưu, khôi phục cloud; tự sao lưu hằng ngày.
@@ -67,13 +115,15 @@
 - **Kiểm thử:** 522/522 Vitest, 23/23 E2E trên bản đóng gói.
 - **Bản phát hành:**
 
-  | File | Kích thước | SHA-256 |
-  |---|---|---|
-  | `Lingua-Quest-Setup-1.2.0.exe` | 133 185 588 byte | `4bac32b1c6961f2dcfb9bff9be231ddbf32e3efce2dcc712763246beb50d1054` |
+  | File                              | Kích thước       | SHA-256                                                            |
+  | --------------------------------- | ---------------- | ------------------------------------------------------------------ |
+  | `Lingua-Quest-Setup-1.2.0.exe`    | 133 185 588 byte | `4bac32b1c6961f2dcfb9bff9be231ddbf32e3efce2dcc712763246beb50d1054` |
   | `Lingua-Quest-Portable-1.2.0.exe` | 116 326 481 byte | `cd72f3278e6c08acd3097f9990c423118991320c9ce5dd0271182e314dbfb882` |
 
 ## [1.1.0] – 2026-11-05
+
 ### Thay đổi
+
 - **Giao diện Windows 11 (Fluent):**
   - Màu phẳng, nền Mica, lớp nội dung giống app Settings.
   - Sidebar kiểu NavigationView, accent xanh Windows, bo góc 4–8 px.
@@ -84,6 +134,7 @@
   - Có kiểm tra tự động `scripts/check_text.py` và E2E `fonts.spec.ts`.
 
 ### Thêm mới
+
 - **Huấn luyện AI:**
   - Ghi lại thói quen học: phiên học, thời gian thực sự học, giờ và ngày hay học, nhịp độ, hiệu quả nhắc nhở.
   - Thống kê theo ngày, tuần, tháng.
@@ -96,16 +147,18 @@
 - **Chạy nền:** biểu tượng ở khay hệ thống, tùy chọn khởi động cùng Windows.
 - **Bản phát hành 1.1.0:**
 
-  | File | Kích thước | SHA-256 |
-  |---|---|---|
-  | `Lingua-Quest-Setup-1.1.0.exe` | 133 163 493 byte | `47f74093b906c47a947711ccbf9aaebbf3bd0ce1819dcd8eb18daecb77556217` |
+  | File                              | Kích thước       | SHA-256                                                            |
+  | --------------------------------- | ---------------- | ------------------------------------------------------------------ |
+  | `Lingua-Quest-Setup-1.1.0.exe`    | 133 163 493 byte | `47f74093b906c47a947711ccbf9aaebbf3bd0ce1819dcd8eb18daecb77556217` |
   | `Lingua-Quest-Portable-1.1.0.exe` | 116 313 653 byte | `8b671d3d22594c67981f296c0ef309c156e8b5f18305a4f9fc27735bce3cc7d7` |
 
 - **Kiểm thử:** 366/366 test Vitest, 23/23 E2E trên bản đóng gói (gồm 3 test font).
 - **Chuyển từ bot cũ:** tự nhập token, chat_id và key Gemini (mã hóa DPAPI), rồi xóa file cấu hình dạng chữ thường. Bot Python cũ và 2 tác vụ Windows của nó đã được gỡ.
 
 ## [1.0.0] – 2026-11-05
+
 ### Thêm mới
+
 - **Platform Kernel:**
   - SQLite (sql.js) với migration v1–v3 và migration theo module; ghi atomic, có `.bak` và tự khôi phục khi file hỏng.
   - AI Gateway cho Gemini, OpenAI và Mock, gồm Prompt Library có version và schema zod, ràng buộc ngôn ngữ theo CEFR, tự sửa JSON 1 vòng, kiểm tra lộ đáp án.
@@ -131,12 +184,14 @@
   - Cấu hình electron-builder: NSIS và portable.
 
 ### Sửa lỗi
+
 - Xem `docs/BUGS.md` (B1–B12).
 
 ### Bản phát hành
-| File | Kích thước | SHA-256 |
-|---|---|---|
-| `Lingua-Quest-Setup-1.0.0.exe` | 133 274 042 byte | `49e94c98d9ad1e9997a68f51887c7a5ff84f14dd3ecc0a36c43c71c6b651e333` |
+
+| File                              | Kích thước       | SHA-256                                                            |
+| --------------------------------- | ---------------- | ------------------------------------------------------------------ |
+| `Lingua-Quest-Setup-1.0.0.exe`    | 133 274 042 byte | `49e94c98d9ad1e9997a68f51887c7a5ff84f14dd3ecc0a36c43c71c6b651e333` |
 | `Lingua-Quest-Portable-1.0.0.exe` | 116 419 559 byte | `6492f7c9a590dca56bc97d134cf077b28c51598610c526d4a40af299e445ab09` |
 
 Bản build chưa được ký số (không có chứng chỉ code signing), nên Windows SmartScreen có thể cảnh báo khi chạy lần đầu.

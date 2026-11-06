@@ -40,7 +40,10 @@ export function currentSchemaVersion(db: AppDatabase): number {
 export function runMigrations(db: AppDatabase, migrations: Migration[] = MIGRATIONS): { from: number; to: number } {
   const from = currentSchemaVersion(db)
   if (from > (migrations[migrations.length - 1]?.version ?? 0)) {
-    throw new Error(`Database schema v${from} is newer than this app supports. Please update Lingua Quest.`)
+    throw new Error(
+      `Dữ liệu được tạo bởi phiên bản Lingua Quest mới hơn (schema v${from}). Hãy cài bản mới nhất của ứng dụng. ` +
+        `(Database schema v${from} is newer than this app supports. Please update Lingua Quest.)`,
+    )
   }
   const pending = migrations.filter((m) => m.version > from).sort((a, b) => a.version - b.version)
   if (pending.length && from > 0 && db.filePath && fs.existsSync(db.filePath)) {

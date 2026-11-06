@@ -3,7 +3,8 @@ import { Copy, FileText, FolderOpen, RefreshCw, Stethoscope } from 'lucide-react
 import { useState } from 'react'
 import { Badge, Button, Card, ErrorState, LoadingBlock, Modal } from '../../components/ui'
 import { useL } from '../../i18n'
-import { api, useApi } from '../../lib/api'
+import { api, toApiError, useApi } from '../../lib/api'
+import { copyText } from '../../lib/clipboard'
 import { useApp } from '../../lib/store'
 
 export function AboutSettings() {
@@ -64,10 +65,10 @@ export function AboutSettings() {
             <Button
               size="sm"
               icon={<Copy className="size-4" />}
-              onClick={() =>
-                navigator.clipboard
-                  .writeText(report)
-                  .then(() => toast({ kind: 'success', title: L('Copied', 'Đã sao chép') }))
+              onClick={async () =>
+                (await copyText(report))
+                  ? toast({ kind: 'success', title: L('Copied', 'Đã sao chép') })
+                  : toast({ kind: 'error', title: L('Could not copy to the clipboard', 'Không sao chép được') })
               }
             >
               {L('Copy report', 'Sao chép báo cáo')}
@@ -90,7 +91,15 @@ export function AboutSettings() {
           ))}
         </div>
         <div className="mt-4 flex gap-2">
-          <Button size="sm" icon={<FileText className="size-4" />} onClick={async () => setLogs(await api('app:logs'))}>
+          <Button
+            size="sm"
+            icon={<FileText className="size-4" />}
+            onClick={() =>
+              api('app:logs')
+                .then(setLogs)
+                .catch((err) => toast({ kind: 'error', title: toApiError(err).message }))
+            }
+          >
             {L('View log', 'Xem nhật ký')}
           </Button>
           <Button

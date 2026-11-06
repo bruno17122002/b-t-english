@@ -140,6 +140,9 @@
     font-family: var(--font-sans);
     font-size: 14px;
     overflow: hidden;
+    /* Learner-entered text (a 70-letter "word", a pasted URL, a name without spaces) wraps instead of
+       pushing the page sideways. */
+    overflow-wrap: break-word;
   }
   h1,
   h2,

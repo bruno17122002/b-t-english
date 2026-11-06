@@ -272,6 +272,7 @@ export function DictationStage({
           <Textarea
             ref={inputRef}
             value={typed}
+            maxLength={1000}
             onChange={(e) => setTyped(e.target.value)}
             onKeyDown={onKey}
             disabled={state.done}
@@ -306,6 +307,7 @@ export function DictationStage({
                     ) : (
                       <Input
                         value={gapAnswers[bi] ?? ''}
+                        maxLength={80}
                         onChange={(e) => setGapAnswers((a) => Object.assign([...a], { [bi]: e.target.value }))}
                         onKeyDown={onKey}
                         style={{ width: `${Math.max(4, blank.answer.length + 2)}ch` }}

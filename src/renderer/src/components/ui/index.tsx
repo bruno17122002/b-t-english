@@ -5,6 +5,7 @@ import { AlertTriangle, Loader2, Settings2, X } from 'lucide-react'
 import {
   forwardRef,
   useEffect,
+  useRef,
   type ButtonHTMLAttributes,
   type InputHTMLAttributes,
   type ReactNode,
@@ -350,6 +351,13 @@ export function ErrorState({
   const L = useL()
   const navigate = useNavigate()
   const message = typeof error === 'string' ? error : error.message
+  if (typeof error === 'object' && 'code' in error && (error as ApiError).code === 'db_closed')
+    return (
+      <div role="status" className="flex items-center gap-3 rounded-2xl border border-line bg-surface-2 p-4 text-sm">
+        <Spinner />
+        {L('Restarting Lingua Quest…', 'Đang khởi động lại Lingua Quest…')}
+      </div>
+    )
   const needsAi = typeof error === 'object' && 'needsAiSettings' in error && (error as ApiError).needsAiSettings
   const needsAccount = typeof error === 'object' && 'hint' in error && (error as ApiError).hint === 'account-settings'
   return (
@@ -521,6 +529,58 @@ export function Kbd({ children }: { children: ReactNode }) {
   )
 }
 
+// ---------- Overlays ----------
+// Open overlays (dialogs, the command palette, reward cards) form a stack: Esc closes only the top one.
+const overlayStack: number[] = []
+let overlaySeq = 0
+
+/** Registers an open overlay; Esc calls `onClose` only when it is the top-most one. */
+export function useEscapeLayer(open: boolean, onClose: () => void) {
+  const onCloseRef = useRef(onClose)
+  useEffect(() => {
+    onCloseRef.current = onClose
+  })
+  useEffect(() => {
+    if (!open) return
+    const id = ++overlaySeq
+    overlayStack.push(id)
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || overlayStack[overlayStack.length - 1] !== id) return
+      e.preventDefault()
+      onCloseRef.current()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      const i = overlayStack.indexOf(id)
+      if (i >= 0) overlayStack.splice(i, 1)
+    }
+  }, [open])
+}
+
+/** Shows "n/max" under a capped text field once the text gets close to the limit. */
+export function CharCount({
+  value,
+  max,
+  className,
+  ...rest
+}: { value: string; max: number; className?: string } & Record<`data-${string}`, string>) {
+  if (value.length < max * 0.8) return null
+  return (
+    <span
+      className={cx(
+        'block text-right text-xs tabular-nums',
+        value.length >= max ? 'text-warning' : 'text-faint',
+        className,
+      )}
+      aria-live="polite"
+      {...rest}
+    >
+      {value.length}/{max}
+    </span>
+  )
+}
+
 // ---------- Modal ----------
 export function Modal({
   open,
@@ -538,12 +598,7 @@ export function Modal({
   wide?: boolean
 }) {
   const L = useL()
-  useEffect(() => {
-    if (!open) return
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open, onClose])
+  useEscapeLayer(open, onClose)
   return (
     <AnimatePresence>
       {open && (

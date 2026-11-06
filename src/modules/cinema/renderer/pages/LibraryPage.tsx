@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Clapperboard, Film, Play, RotateCcw, Trash2, WandSparkles } from 'lucide-react'
 import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useSafeNavigate } from '@/lib/navigation'
 import { CEFR_LEVELS, STORY_GENRES, type Cefr } from '@shared/content'
 import { AiBadge, FavoriteButton } from '@/components/learning'
 import {
@@ -37,7 +37,7 @@ const ENDING_TONE = { good: 'success', neutral: 'warning', bad: 'danger' } as co
 
 export default function LibraryPage() {
   const L = useL()
-  const navigate = useNavigate()
+  const navigate = useSafeNavigate()
   const { data, error, loading, reload } = useApi('cinema:list', undefined, [])
   const [filter, setFilter] = useState<Filter>('all')
   const [genre, setGenre] = useState<Genre | ''>('')

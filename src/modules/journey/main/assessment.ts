@@ -5,6 +5,7 @@ import { ASSESSMENT_SKILLS } from '@shared/content'
 import type { AssessmentItemView, AssessmentResult, Skill, SkillLevel, SkillResult } from '@shared/types'
 import { ITEMS_PER_SKILL, estimateLevel, nextAssessmentItem, type AnsweredItem } from '@core/assessment'
 import { SELF_LEVEL_TO_CEFR, averageCefr, minCefr } from '@core/cefr'
+import { optionOrder, pickOne, rngFor } from '@core/shuffle'
 import { textMetrics, tokenizeWords } from '@core/text'
 import type { Kernel } from '../../../main/kernel'
 import { AiError } from '../../../main/kernel/ai/types'
@@ -13,14 +14,60 @@ import { estimateFromOtherSkills, heuristicSpeakingCefr } from './logic'
 import type { AssessmentSession, AssessmentSummary, ObjectiveSkill, ProductiveEstimate } from '../contract'
 import { speakingPlacementPrompt, writingPlacementPrompt } from './prompts'
 
-export const WRITING_TASK = {
-  en: 'Write 3–5 sentences about yourself: where you live, what you do every day and why you want to learn English.',
-  vi: 'Viết 3–5 câu giới thiệu bản thân: bạn sống ở đâu, hằng ngày làm gì và vì sao muốn học tiếng Anh.',
-}
-export const SPEAKING_TASK = {
-  en: 'Talk for 30–60 seconds: describe your favourite place in your city and explain why you like it.',
-  vi: 'Nói trong 30–60 giây: mô tả nơi bạn thích nhất ở thành phố của bạn và giải thích vì sao.',
-}
+/** Productive tasks: one of each is picked per attempt so a retake is not the same test. */
+export const WRITING_TASKS = [
+  {
+    en: 'Write 3–5 sentences about yourself: where you live, what you do every day and why you want to learn English.',
+    vi: 'Viết 3–5 câu giới thiệu bản thân: bạn sống ở đâu, hằng ngày làm gì và vì sao muốn học tiếng Anh.',
+  },
+  {
+    en: 'Write 3–5 sentences about your last weekend: where you went, who you were with and what you enjoyed most.',
+    vi: 'Viết 3–5 câu về cuối tuần vừa rồi: bạn đã đi đâu, đi cùng ai và thích điều gì nhất.',
+  },
+  {
+    en: 'Write 3–5 sentences describing a person you admire and explain why.',
+    vi: 'Viết 3–5 câu mô tả một người bạn ngưỡng mộ và giải thích vì sao.',
+  },
+  {
+    en: 'Write 3–5 sentences about your job or studies: what you do, what you like and what is difficult.',
+    vi: 'Viết 3–5 câu về công việc hoặc việc học của bạn: bạn làm gì, thích gì và điều gì khó.',
+  },
+  {
+    en: 'Write 3–5 sentences about a trip you would like to take and what you hope to do there.',
+    vi: 'Viết 3–5 câu về một chuyến đi bạn muốn thực hiện và bạn mong làm gì ở đó.',
+  },
+  {
+    en: 'Write 3–5 sentences giving your opinion: is it better to live in a big city or in the countryside? Why?',
+    vi: 'Viết 3–5 câu nêu ý kiến: sống ở thành phố lớn hay ở nông thôn thì tốt hơn? Vì sao?',
+  },
+] as const
+export const SPEAKING_TASKS = [
+  {
+    en: 'Talk for 30–60 seconds: describe your favourite place in your city and explain why you like it.',
+    vi: 'Nói trong 30–60 giây: mô tả nơi bạn thích nhất ở thành phố của bạn và giải thích vì sao.',
+  },
+  {
+    en: 'Talk for 30–60 seconds: describe your daily routine on a typical weekday.',
+    vi: 'Nói trong 30–60 giây: mô tả một ngày thường trong tuần của bạn.',
+  },
+  {
+    en: 'Talk for 30–60 seconds: describe a meal you really enjoy and when you usually have it.',
+    vi: 'Nói trong 30–60 giây: mô tả một món ăn bạn rất thích và bạn thường ăn khi nào.',
+  },
+  {
+    en: 'Talk for 30–60 seconds: describe a skill you would like to learn and explain why.',
+    vi: 'Nói trong 30–60 giây: mô tả một kỹ năng bạn muốn học và giải thích vì sao.',
+  },
+  {
+    en: 'Talk for 30–60 seconds: describe a festival or holiday in your country and what people do.',
+    vi: 'Nói trong 30–60 giây: mô tả một lễ hội hoặc ngày lễ ở nước bạn và mọi người làm gì.',
+  },
+  {
+    en: 'Talk for 30–60 seconds: do you prefer studying alone or with other people? Give your reasons.',
+    vi: 'Nói trong 30–60 giây: bạn thích học một mình hay học cùng người khác? Nêu lý do.',
+  },
+] as const
+type Task = (typeof WRITING_TASKS)[number] | (typeof SPEAKING_TASKS)[number]
 
 interface AssessmentRow {
   id: number
@@ -71,6 +118,26 @@ export class AssessmentService {
       .map((r) => ({ itemId: r.item_id, cefr: r.cefr, correct: r.correct === 1 }))
   }
 
+  /**
+   * Every random choice of an attempt derives from this key, so each attempt gets different items, option
+   * order and tasks, while resuming (and the double-click guard, which recomputes `next`) stays stable.
+   */
+  private seed(row: AssessmentRow): string {
+    return `assessment:${row.id}:${row.started_at}`
+  }
+
+  private tasks(row: AssessmentRow): { writing: Task; speaking: Task } {
+    return {
+      writing: pickOne(WRITING_TASKS, rngFor(`${this.seed(row)}:writing`)) ?? WRITING_TASKS[0],
+      speaking: pickOne(SPEAKING_TASKS, rngFor(`${this.seed(row)}:speaking`)) ?? SPEAKING_TASKS[0],
+    }
+  }
+
+  /** Display order of an item's options: `order[shownIndex] = index in the bank`. */
+  private optionOrder(row: AssessmentRow, item: AssessmentItem): number[] {
+    return optionOrder(item.options, rngFor(`${this.seed(row)}:options:${item.id}`))
+  }
+
   /** Objective skill currently being tested and its next item. */
   private next(
     row: AssessmentRow,
@@ -78,7 +145,8 @@ export class AssessmentService {
   ): { skill: ObjectiveSkill; item: AssessmentItem; index: number } | null {
     for (const skill of OBJECTIVE) {
       const done = this.answered(rows, skill)
-      const item = nextAssessmentItem(this.bank(skill), done, row.start_level)
+      const rng = rngFor(`${this.seed(row)}:${skill}:${done.length}`)
+      const item = nextAssessmentItem(this.bank(skill), done, row.start_level, undefined, rng)
       if (item) return { skill, item, index: done.length }
     }
     return null
@@ -113,7 +181,7 @@ export class AssessmentService {
         cefr: nxt.item.cefr,
         prompt: nxt.item.prompt,
         ...(nxt.item.passage ? { passage: nxt.item.passage } : {}),
-        options: nxt.item.options,
+        options: this.optionOrder(row, nxt.item).map((i) => nxt.item.options[i] ?? ''),
         index: nxt.index + 1,
         total: Math.min(ITEMS_PER_SKILL, this.bank(nxt.skill).length),
       }
@@ -130,7 +198,7 @@ export class AssessmentService {
       writing: this.productive(rows, 'writing'),
       speaking: this.productive(rows, 'speaking'),
       aiAvailable: this.k.ai.isAvailable(),
-      tasks: { writing: WRITING_TASK, speaking: SPEAKING_TASK },
+      tasks: this.tasks(row),
     }
   }
 
@@ -162,11 +230,13 @@ export class AssessmentService {
       throw new UserError('assessment_order', 'Câu hỏi không khớp với tiến trình bài kiểm tra. Hãy tải lại trang.')
     }
     if (choice >= nxt.item.options.length) throw new UserError('invalid_input', 'Lựa chọn không hợp lệ.')
-    const correct = choice === nxt.item.answerIndex
+    // `choice` is the position on screen; options are shown shuffled, so map it back to the bank's index.
+    const original = this.optionOrder(row, nxt.item)[choice] ?? -1
+    const correct = original === nxt.item.answerIndex
     this.k.db.run(
       `INSERT INTO assessment_answers(assessment_id, skill, item_id, cefr, correct, response, created_at)
        VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [id, nxt.skill, itemId, nxt.item.cefr, correct ? 1 : 0, String(choice), this.k.now().toISOString()],
+      [id, nxt.skill, itemId, nxt.item.cefr, correct ? 1 : 0, String(original), this.k.now().toISOString()],
     )
     return this.session(id)
   }
@@ -194,7 +264,7 @@ export class AssessmentService {
     let fallback = ''
     if (this.k.ai.isAvailable()) {
       try {
-        const res = await this.k.ai.run(writingPlacementPrompt, { task: WRITING_TASK.en, text })
+        const res = await this.k.ai.run(writingPlacementPrompt, { task: this.tasks(row).writing.en, text })
         est = {
           skill: 'writing',
           cefr: res.data.cefr,
@@ -234,7 +304,7 @@ export class AssessmentService {
     if (this.k.ai.isAvailable()) {
       try {
         const res = await this.k.ai.run(speakingPlacementPrompt, {
-          task: SPEAKING_TASK.en,
+          task: this.tasks(row).speaking.en,
           transcript,
           durationSec,
           wordsPerMinute,

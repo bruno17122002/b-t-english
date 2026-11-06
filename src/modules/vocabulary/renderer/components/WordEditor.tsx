@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import type { Cefr } from '@shared/content'
 import type { DictionaryResult, VocabItem } from '@shared/types'
 import { AiBadge } from '@/components/learning'
-import { Button, ErrorState, Field, Input, Modal, Select, Textarea } from '@/components/ui'
+import { Button, CharCount, ErrorState, Field, Input, Modal, Select, Textarea } from '@/components/ui'
 import { useL } from '@/i18n'
 import { api, toApiError, useApi, type ApiError } from '@/lib/api'
 import { useApp } from '@/lib/store'
@@ -231,10 +231,15 @@ export function WordEditor({
         )}
         <div className="grid gap-3 sm:grid-cols-3">
           <Field label="IPA">
-            <Input value={d.ipa} onChange={(e) => set('ipa', e.target.value)} placeholder="/rɪˈzɪliənt/" />
+            <Input
+              value={d.ipa}
+              maxLength={80}
+              onChange={(e) => set('ipa', e.target.value)}
+              placeholder="/rɪˈzɪliənt/"
+            />
           </Field>
           <Field label={L('Part of speech', 'Từ loại')}>
-            <Input value={d.pos} onChange={(e) => set('pos', e.target.value)} placeholder="adjective" />
+            <Input value={d.pos} maxLength={40} onChange={(e) => set('pos', e.target.value)} placeholder="adjective" />
           </Field>
           <Field label="CEFR">
             <Select value={d.cefr} onChange={(e) => set('cefr', e.target.value as Cefr | '')}>
@@ -256,7 +261,13 @@ export function WordEditor({
           </Field>
         </div>
         <Field label={L('Examples (one per line)', 'Ví dụ (mỗi dòng một câu)')}>
-          <Textarea value={d.examples} onChange={(e) => set('examples', e.target.value)} className="min-h-20" />
+          <Textarea
+            value={d.examples}
+            maxLength={3300}
+            onChange={(e) => set('examples', e.target.value)}
+            className="min-h-20"
+          />
+          <ListLimit text={d.examples} max={8} />
         </Field>
         <div className="grid gap-3 sm:grid-cols-2">
           <Field
@@ -267,9 +278,11 @@ export function WordEditor({
           >
             <Textarea
               value={d.collocations}
+              maxLength={900}
               onChange={(e) => set('collocations', e.target.value)}
               className="min-h-20"
             />
+            <ListLimit text={d.collocations} max={10} commas />
           </Field>
           <div className="space-y-3">
             <Field label={L('Topic', 'Chủ đề')}>
@@ -288,10 +301,23 @@ export function WordEditor({
             </Field>
             <Field label={L('Notes', 'Ghi chú')}>
               <Input value={d.notes} maxLength={1000} onChange={(e) => set('notes', e.target.value)} />
+              <CharCount value={d.notes} max={1000} />
             </Field>
           </div>
         </div>
       </div>
     </Modal>
+  )
+}
+
+/** Tells the learner when a list field has more entries than the word bank keeps. */
+function ListLimit({ text, max, commas }: { text: string; max: number; commas?: boolean }) {
+  const L = useL()
+  const n = splitList(text, commas).length
+  if (n <= max) return null
+  return (
+    <span className="block text-xs text-warning">
+      {L(`Only the first ${max} of ${n} are kept.`, `Chỉ giữ ${max} mục đầu (đang có ${n}).`)}
+    </span>
   )
 }

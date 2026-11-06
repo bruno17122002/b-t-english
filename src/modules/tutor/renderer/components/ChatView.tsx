@@ -8,6 +8,7 @@ import { AiBadge, RecordButton, SaveWordButton, SpeakButton } from '@/components
 import {
   Badge,
   Button,
+  CharCount,
   cx,
   ErrorState,
   IconButton,
@@ -305,6 +306,7 @@ export function ChatView({ id, noKey, onChanged }: { id: number; noKey: boolean;
             {L('Send', 'Gửi')}
           </Button>
         </div>
+        <CharCount value={text} max={2000} className="mt-1" data-testid="tutor-char-count" />
         {viaVoice && (
           <div className="mt-1.5 text-xs text-faint">
             {L('From voice input – check it before sending.', 'Từ giọng nói – kiểm tra trước khi gửi.')}

@@ -29,6 +29,8 @@ interface AppState {
   dismissToast(id: number): void
   pushReward(r: Reward): void
   shiftReward(): void
+  /** Drops every queued celebration; their XP is summed into one toast so nothing goes unacknowledged. */
+  clearRewards(): void
 }
 
 let toastId = 0
@@ -70,6 +72,13 @@ export const useApp = create<AppState>((set, get) => ({
   dismissToast: (id) => set({ toasts: get().toasts.filter((t) => t.id !== id) }),
   pushReward: (r) => set({ rewards: [...get().rewards, r] }),
   shiftReward: () => set({ rewards: get().rewards.slice(1) }),
+  clearRewards() {
+    const xp = get()
+      .rewards.slice(1)
+      .reduce((sum, r) => sum + r.xpGained, 0)
+    set({ rewards: [] })
+    if (xp > 0) get().toast({ kind: 'xp', title: `+${xp} XP` })
+  },
 }))
 
 export const useSettings = () => useApp((s) => s.settings)

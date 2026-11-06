@@ -6,6 +6,7 @@ import initSqlJs from 'sql.js'
 import type { BackupInfo } from '@shared/types'
 import { writeFileAtomic, type AppDatabase } from '../../db/database'
 import { LATEST_SCHEMA_VERSION } from '../../db/migrations'
+import { UserError } from '../errors'
 import type { VocabHub } from '../vocab/vocabHub'
 
 const EXPORT_TABLES = [
@@ -49,10 +50,37 @@ export interface ExportFile {
 const BOM = String.fromCharCode(0xfeff)
 const stamp = (d: Date) => d.toISOString().replace(/[:T]/g, '-').replace(/\..+$/, '')
 
-function csvCell(v: unknown): string {
-  const s = v === null || v === undefined ? '' : String(v)
+/** Max rows read from one import file; the rest is reported as skipped. */
+export const IMPORT_MAX_ROWS = 20_000
+
+/**
+ * CSV cell for spreadsheets: quotes when needed and neutralises formula injection (OWASP): a cell starting
+ * with = + - @ TAB or CR is prefixed with ' so Excel / Sheets show it as text instead of evaluating it.
+ */
+export function csvCell(v: unknown): string {
+  let s = v === null || v === undefined ? '' : String(v)
+  // Also for a value that already starts with ' + trigger, so the import (which strips one ') restores it.
+  if (/^'*[=+\-@\t\r]/.test(s)) s = `'${s}`
   return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
 }
+
+/** Reverses the formula-injection guard of csvCell on import. */
+function uncsvCell(s: string): string {
+  return /^'+[=+\-@\t\r]/.test(s) ? s.slice(1) : s
+}
+
+/** NUL bytes or many U+FFFD replacement characters mean the file is not text (image, zip, exe…). */
+function looksBinary(text: string): boolean {
+  const head = text.slice(0, 8192)
+  if (head.includes('\u0000')) return true
+  const bad = head.split('\ufffd').length - 1
+  return head.length > 0 && bad / head.length > 0.02
+}
+
+const cap = (v: unknown, max: number): string =>
+  (typeof v === 'string' ? v : v === null || v === undefined ? '' : String(v)).trim().slice(0, max)
+
+const importError = (message: string) => new UserError('invalid_import', message)
 
 /** RFC 4180 CSV parser (quoted fields, escaped quotes, CRLF). */
 export function parseCsv(text: string): string[][] {
@@ -99,8 +127,10 @@ export class DataService {
 
   createBackup(label: 'manual' | 'auto' | 'pre-restore' = 'manual'): BackupInfo {
     fs.mkdirSync(this.backupDir, { recursive: true })
-    const name = `lingua-quest-${label}-${stamp(this.now())}.sqlite`
-    const file = path.join(this.backupDir, name)
+    // Two backups in the same second (double click, or a pre-restore right after a manual one) get distinct names.
+    const base = `lingua-quest-${label}-${stamp(this.now())}`
+    let file = path.join(this.backupDir, `${base}.sqlite`)
+    for (let n = 2; fs.existsSync(file); n++) file = path.join(this.backupDir, `${base}-${n}.sqlite`)
     writeFileAtomic(file, this.db.exportBytes())
     try {
       fs.unlinkSync(`${file}.bak`)
@@ -132,7 +162,8 @@ export class DataService {
 
   deleteBackup(file: string): void {
     const resolved = path.resolve(file)
-    if (path.dirname(resolved) !== path.resolve(this.backupDir)) throw new Error('Not a Lingua Quest backup')
+    if (path.dirname(resolved) !== path.resolve(this.backupDir) || !resolved.endsWith('.sqlite'))
+      throw new UserError('invalid_backup', 'Chỉ có thể xoá bản sao lưu nằm trong thư mục sao lưu của Lingua Quest.')
     fs.rmSync(resolved, { force: true })
   }
 
@@ -141,16 +172,37 @@ export class DataService {
     const SQL = await initSqlJs(
       this.wasmDir ? { locateFile: (f: string) => path.join(this.wasmDir as string, f) } : undefined,
     )
-    const bytes = fs.readFileSync(file)
-    if (bytes.subarray(0, 15).toString('latin1') !== 'SQLite format 3') throw new Error('Not a SQLite database file')
+    let bytes: Buffer
+    try {
+      if (!fs.statSync(file).isFile()) throw new Error('not a file')
+      bytes = fs.readFileSync(file)
+    } catch {
+      throw new UserError('invalid_backup', 'Không tìm thấy hoặc không đọc được file sao lưu.')
+    }
+    if (bytes.subarray(0, 15).toString('latin1') !== 'SQLite format 3')
+      throw new UserError('invalid_backup', 'File này không phải bản sao lưu Lingua Quest (không phải SQLite).')
     const db = new SQL.Database(bytes)
     try {
-      const ok = db.exec('PRAGMA integrity_check')[0]?.values[0]?.[0]
-      if (ok !== 'ok') throw new Error('Database integrity check failed')
-      const v = Number(db.exec('SELECT MAX(version) FROM schema_migrations')[0]?.values[0]?.[0] ?? 0)
-      if (!v) throw new Error('Not a Lingua Quest database')
-      if (v > LATEST_SCHEMA_VERSION) throw new Error('Backup was made by a newer version of Lingua Quest')
-      const words = Number(db.exec('SELECT COUNT(*) FROM vocabulary')[0]?.values[0]?.[0] ?? 0)
+      let ok: unknown = null
+      let v = 0
+      let words = 0
+      try {
+        ok = db.exec('PRAGMA integrity_check')[0]?.values[0]?.[0]
+        if (ok === 'ok') {
+          v = Number(db.exec('SELECT MAX(version) FROM schema_migrations')[0]?.values[0]?.[0] ?? 0)
+          words = Number(db.exec('SELECT COUNT(*) FROM vocabulary')[0]?.values[0]?.[0] ?? 0)
+        }
+      } catch {
+        // malformed pages, or a SQLite file without the Lingua Quest tables
+        if (ok === 'ok') throw new UserError('invalid_backup', 'File này không phải bản sao lưu Lingua Quest.')
+      }
+      if (ok !== 'ok') throw new UserError('invalid_backup', 'File sao lưu bị hỏng (kiểm tra toàn vẹn thất bại).')
+      if (!v) throw new UserError('invalid_backup', 'File này không phải bản sao lưu Lingua Quest.')
+      if (v > LATEST_SCHEMA_VERSION)
+        throw new UserError(
+          'backup_too_new',
+          'Bản sao lưu được tạo bởi phiên bản Lingua Quest mới hơn. Hãy cập nhật ứng dụng rồi thử lại.',
+        )
       return { schemaVersion: v, words }
     } finally {
       db.close()
@@ -199,38 +251,53 @@ export class DataService {
     return BOM + [header.join(','), ...lines].join('\r\n')
   }
 
-  /** Imports words from a Lingua Quest JSON export or a CSV (first column = word). Existing words are merged. */
+  /**
+   * Imports words from a Lingua Quest JSON export or a CSV (first column = word). Existing words are merged.
+   * Hostile files are rejected with a Vietnamese message (binary, wrong JSON shape); fields are capped like
+   * the IPC schema; at most IMPORT_MAX_ROWS rows; imported words award no XP; everything runs in one
+   * transaction (VocabHub.importMany), so a failure leaves the word bank unchanged.
+   */
   importVocabulary(text: string, kind: 'json' | 'csv'): { added: number; merged: number; skipped: number } {
-    const items: {
-      word: string
-      ipa?: string
-      pos?: string
-      meaningVi?: string
-      meaningEn?: string
-      example?: string
-      topic?: string
-      notes?: string
-    }[] = []
+    if (looksBinary(text))
+      throw importError('File không phải văn bản (có thể là ảnh, file nén hoặc file chương trình).')
+    const items: Record<'word' | 'ipa' | 'pos' | 'meaningVi' | 'meaningEn' | 'example' | 'topic' | 'notes', string>[] =
+      []
+    let skipped = 0
     if (kind === 'json') {
-      const parsed = JSON.parse(text) as Partial<ExportFile>
-      if (parsed.format !== 'lingua-quest-export' || !parsed.tables?.vocabulary)
-        throw new Error('Not a Lingua Quest export file')
-      for (const r of parsed.tables.vocabulary) {
+      let parsed: unknown
+      try {
+        parsed = JSON.parse(text.startsWith(BOM) ? text.slice(1) : text)
+      } catch {
+        throw importError('File JSON bị lỗi cú pháp.')
+      }
+      const file = parsed as Partial<ExportFile> | null
+      const vocab =
+        file && typeof file === 'object' ? (file.tables as Record<string, unknown> | undefined)?.vocabulary : null
+      if (!file || file.format !== 'lingua-quest-export' || !Array.isArray(vocab))
+        throw importError('Đây không phải file xuất dữ liệu của Lingua Quest.')
+      // A newer export may carry extra columns: only the known ones are read, unknown ones are ignored.
+      for (const raw of vocab as unknown[]) {
+        if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
+          skipped++
+          continue
+        }
+        const r = raw as Record<string, unknown>
         let example = ''
         try {
-          example = (JSON.parse(String(r.examples ?? '[]')) as string[])[0] ?? ''
+          const ex = JSON.parse(String(r.examples ?? '[]')) as unknown
+          example = Array.isArray(ex) && typeof ex[0] === 'string' ? ex[0] : ''
         } catch {
           /* ignore */
         }
         items.push({
-          word: String(r.word ?? ''),
-          ipa: String(r.ipa ?? ''),
-          pos: String(r.pos ?? ''),
-          meaningVi: String(r.meaning_vi ?? ''),
-          meaningEn: String(r.meaning_en ?? ''),
-          example,
-          topic: String(r.topic ?? ''),
-          notes: String(r.notes ?? ''),
+          word: typeof r.word === 'string' ? r.word : '',
+          ipa: cap(r.ipa, 80),
+          pos: cap(r.pos, 40),
+          meaningVi: cap(r.meaning_vi, 300),
+          meaningEn: cap(r.meaning_en, 300),
+          example: cap(example, 400),
+          topic: cap(r.topic, 60),
+          notes: cap(r.notes, 1000),
         })
       }
     } else {
@@ -239,29 +306,29 @@ export class DataService {
       const hasHeader = header.includes('word')
       const col = (name: string, fallback: number) => (hasHeader ? header.indexOf(name) : fallback)
       for (const r of hasHeader ? rows.slice(1) : rows) {
-        const get = (i: number) => (i >= 0 ? (r[i] ?? '').trim() : '')
+        const get = (i: number, max: number) => (i >= 0 ? cap(uncsvCell((r[i] ?? '').trim()), max) : '')
         items.push({
-          word: get(col('word', 0)),
-          ipa: get(col('ipa', -1)),
-          pos: get(col('pos', -1)),
-          meaningVi: get(col('meaning_vi', 1)),
-          meaningEn: get(col('meaning_en', 2)),
-          example: get(col('example', 3)),
-          topic: get(col('topic', -1)),
-          notes: get(col('notes', -1)),
+          word: i0(r, col('word', 0)),
+          ipa: get(col('ipa', -1), 80),
+          pos: get(col('pos', -1), 40),
+          meaningVi: get(col('meaning_vi', 1), 300),
+          meaningEn: get(col('meaning_en', 2), 300),
+          example: get(col('example', 3), 400),
+          topic: get(col('topic', -1), 60),
+          notes: get(col('notes', -1), 1000),
         })
       }
     }
-    let added = 0
-    let merged = 0
-    let skipped = 0
-    for (const it of items.slice(0, 20_000)) {
-      if (!it.word.trim() || it.word.length > 80) {
+    if (items.length > IMPORT_MAX_ROWS) skipped += items.length - IMPORT_MAX_ROWS
+    const valid: Parameters<VocabHub['importMany']>[0] = []
+    for (const it of items.slice(0, IMPORT_MAX_ROWS)) {
+      const word = it.word.trim()
+      if (!word || word.length > 80) {
         skipped++
         continue
       }
-      const res = this.vocab.save({
-        word: it.word,
+      valid.push({
+        word,
         ipa: it.ipa,
         pos: it.pos,
         meaningVi: it.meaningVi,
@@ -272,9 +339,13 @@ export class DataService {
         sourceModule: 'manual',
         sourceRef: 'import',
       })
-      if (res.created) added++
-      else merged++
     }
+    const { added, merged } = this.vocab.importMany(valid)
     return { added, merged, skipped }
   }
+}
+
+/** Raw word cell of a CSV row (formula guard removed, not truncated: over-long words are skipped). */
+function i0(r: string[], i: number): string {
+  return i >= 0 ? uncsvCell((r[i] ?? '').trim()) : ''
 }

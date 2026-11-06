@@ -86,6 +86,10 @@ export async function createKernel(opts: CreateKernelOptions): Promise<Kernel> {
     wasmDir: opts.paths.wasmDir,
     onError: (err) => log.error(`database save failed: ${String(err)}`),
   })
+  if (db.recovery)
+    log.warn(
+      `database file was damaged (${db.recovery.reason}); ${db.recovery.kind === 'backup' ? 'restored the last good copy (.bak)' : 'started with an empty database'}; damaged file kept at ${db.recovery.corruptFile}`,
+    )
   const mig = runMigrations(db)
   if (mig.from !== mig.to) log.info(`database migrated v${mig.from} → v${mig.to}`)
   for (const [moduleId, migrations] of Object.entries(opts.moduleMigrations ?? {})) {

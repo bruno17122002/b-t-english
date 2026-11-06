@@ -2,7 +2,7 @@
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
-import { createKernel, type Kernel } from '../../src/main/kernel'
+import { createKernel, type Kernel, type KernelLog } from '../../src/main/kernel'
 import type { Cipher } from '../../src/main/kernel/secure/keyStore'
 import { NullTelegram } from '../../src/main/kernel/telegram/port'
 import { IpcRouter } from '../../src/main/ipc/router'
@@ -36,6 +36,8 @@ export interface TestKernelOptions {
    * 'real': keep the TelegramService built by createKernel (Telegram bot tests with a fake Bot API).
    */
   telegram?: 'null' | 'real'
+  /** Kernel + router log (defaults to silent); abuse tests capture errors logged as 'internal'. */
+  log?: KernelLog
 }
 
 export async function makeKernel(opts: TestKernelOptions = {}): Promise<{ kernel: Kernel; dir: string }> {
@@ -55,6 +57,7 @@ export async function makeKernel(opts: TestKernelOptions = {}): Promise<{ kernel
     mockAi: opts.mockAi ?? true,
     now: opts.now,
     fetchImpl: opts.fetchImpl,
+    log: opts.log,
     moduleMigrations,
   })
   if ((opts.telegram ?? 'null') === 'null') kernel.telegram = new NullTelegram()
@@ -87,10 +90,10 @@ export function fakeHost(
 }
 
 /** Full router with kernel + all module handlers, as wired in production. */
-export async function makeApp(opts: TestKernelOptions & { host?: Partial<HostBridge> } = {}) {
+export async function makeApp(opts: TestKernelOptions & { host?: Partial<HostBridge>; repeatWindowMs?: number } = {}) {
   const { kernel, dir } = await makeKernel(opts)
   const host = fakeHost(opts.host)
-  const router = new IpcRouter()
+  const router = new IpcRouter(opts.log, { repeatWindowMs: opts.repeatWindowMs ?? 0 })
   registerKernelHandlers(router, kernel, host)
   for (const m of MODULES_MAIN) m.register(router, kernel)
   const call = async <T = unknown>(channel: string, payload?: unknown): Promise<T> => {

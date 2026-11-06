@@ -92,7 +92,8 @@ export function Drill({
     try {
       const res = await api('grammar:submit', {
         topicId,
-        durationSec: Math.round((Date.now() - started.current) / 1000),
+        // Capped like the contract: a drill left open over lunch must still be saved.
+        durationSec: Math.min(4 * 3600, Math.round((Date.now() - started.current) / 1000)),
         answers: all.map((a) => ({
           exerciseId: a.exercise.id,
           given: a.given,
@@ -229,6 +230,7 @@ export function Drill({
                     <Input
                       ref={inputRef}
                       value={text}
+                      maxLength={400}
                       onChange={(e) => setText(e.target.value)}
                       placeholder={L('Type the missing words…', 'Gõ phần còn thiếu…')}
                       autoComplete="off"

@@ -1,7 +1,7 @@
 // IPC contract of the coach module (channels 'coach:*'): habit tracking, analytics, AI advice reports,
 // notification schedules and habit Q&A.
 import { z } from 'zod'
-import { channel, NoInput } from '@shared/ipc'
+import { channel, clampedNumber, NoInput } from '@shared/ipc'
 import type {
   ApplyPlanResult,
   AskResult,
@@ -41,8 +41,8 @@ export const TrackInputSchema = z.object({
         id: IdSchema,
         startedAt: IsoSchema,
         lastActiveAt: IsoSchema,
-        activeSeconds: z.number().min(0).max(86_400),
-        idleSeconds: z.number().min(0).max(86_400),
+        activeSeconds: clampedNumber(0, 86_400),
+        idleSeconds: clampedNumber(0, 86_400),
         ended: z.boolean(),
       }),
     )
@@ -55,7 +55,7 @@ export const TrackInputSchema = z.object({
         route: z.string().min(1).max(200),
         startedAt: IsoSchema,
         endedAt: IsoSchema,
-        activeSeconds: z.number().min(0).max(86_400),
+        activeSeconds: clampedNumber(0, 86_400),
       }),
     )
     .max(300),

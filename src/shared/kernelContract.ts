@@ -1,7 +1,7 @@
 // IPC contract for Platform Kernel services (shared by every module).
 import { z } from 'zod'
 import { CefrSchema, type DictionaryEntry } from './content'
-import { channel, NoInput } from './ipc'
+import { channel, clampedNumber, NoInput, truncatedText } from './ipc'
 import {
   IMAGE_PROVIDERS,
   TELEGRAM_MODES,
@@ -106,7 +106,11 @@ const GoalSchema = z.object({
   title: z.string().trim().min(1).max(200),
   metric: z.enum(['minutes', 'words', 'lessons', 'xp', 'none']),
   targetValue: z.number().min(0).max(1_000_000),
-  targetDate: z.string().nullable(),
+  // <input type="date"> value; '' = no date.
+  targetDate: z
+    .string()
+    .regex(/^(\d{4}-\d{2}-\d{2})?$/)
+    .nullable(),
   status: z.enum(['active', 'done', 'archived']),
 })
 
@@ -166,6 +170,11 @@ export interface BootstrapData {
   dueCards: number
   contentIssues: number
   isFirstRun: boolean
+  /**
+   * Set when the database file was damaged at start-up: 'backup' = the last good copy was loaded (recent
+   * changes may be missing), 'fresh' = no usable copy, the app started empty (restore a backup in Settings → Data).
+   */
+  dataRecovery: { kind: 'backup' | 'fresh'; corruptFile: string } | null
 }
 
 export const kernelContract = {
@@ -246,7 +255,7 @@ export const kernelContract = {
     z.object({
       id: z.number().int().positive(),
       rating: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
-      durationMs: z.number().min(0).max(3_600_000).optional(),
+      durationMs: clampedNumber(0, 3_600_000).optional(),
     }),
   ),
   'vocab:stats': channel<VocabStats>()(NoInput),
@@ -254,7 +263,7 @@ export const kernelContract = {
   'vocab:dictionary': channel<{ items: DictionaryEntry[]; total: number }>()(
     z
       .object({
-        query: shortText(80).optional(),
+        query: truncatedText(80).optional(),
         cefr: CefrSchema.optional(),
         offset: z.number().int().min(0).optional(),
         limit: z.number().int().min(1).max(200).optional(),
@@ -302,7 +311,7 @@ export const kernelContract = {
   'library:removeBookmark': channel<null>()(Id),
 
   // ---------- search ----------
-  'search:query': channel<SearchResult[]>()(z.object({ q: z.string().max(100) })),
+  'search:query': channel<SearchResult[]>()(z.object({ q: truncatedText(100) })),
 
   // ---------- Telegram bot ----------
   'telegram:status': channel<TelegramStatus>()(NoInput),

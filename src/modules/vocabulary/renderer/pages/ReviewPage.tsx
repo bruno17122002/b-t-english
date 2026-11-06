@@ -69,15 +69,26 @@ export default function ReviewPage() {
       try {
         await api('vocab:review', { id: card.id, rating, durationMs: ms })
         setResults((r) => [...r, { id: card.id, word: card.word, rating, ms }])
+        // Flip back in the same render as the index change, or the next card shows its answer for a frame.
+        setFlipped(false)
         setIndex((i) => i + 1)
         void useApp.getState().refreshGame()
       } catch (err) {
-        setError(toApiError(err).message)
+        const e = toApiError(err)
+        if (e.code === 'not_found') {
+          // The word was deleted elsewhere (word bank, another device): skip it and carry on.
+          useApp.getState().toast({
+            kind: 'info',
+            title: L(`“${card.word}” was deleted – skipped`, `“${card.word}” đã bị xóa – bỏ qua`),
+          })
+          setFlipped(false)
+          setIndex((i) => i + 1)
+        } else setError(e.message)
       } finally {
         setSubmitting(false)
       }
     },
-    [card, flipped, submitting],
+    [card, flipped, submitting, L],
   )
 
   useEffect(() => {
@@ -198,8 +209,11 @@ function Flashcard({ card, flipped, onFlip }: { card: DueCard; flipped: boolean;
         </Badge>
       </div>
       <div className="flex flex-col items-center pt-6 text-center">
-        <div className="flex items-center gap-2">
-          <h2 className="font-display text-5xl font-semibold tracking-tight" data-testid="review-word">
+        <div className="flex max-w-full items-center gap-2">
+          <h2
+            className="min-w-0 font-display text-5xl font-semibold tracking-tight [overflow-wrap:anywhere]"
+            data-testid="review-word"
+          >
             {card.word}
           </h2>
           {card.cefr && <CefrBadge level={card.cefr} />}

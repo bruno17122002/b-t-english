@@ -247,7 +247,13 @@ export class CloudClient {
     if (init.body && !headers.has('content-type')) headers.set('content-type', 'application/json')
     const res = await this.request(path, { ...init, headers })
     const text = await res.text()
-    return (text ? JSON.parse(text) : null) as T
+    if (!text) return null as T
+    try {
+      return JSON.parse(text) as T
+    } catch {
+      // A captive portal, proxy or misconfigured URL answered with HTML instead of JSON.
+      throw new CloudError('server', 'Máy chủ trả về dữ liệu không đúng định dạng. Kiểm tra URL máy chủ và mạng.')
+    }
   }
 
   /** PostgREST RPC call: POST /rest/v1/rpc/<fn>. */
@@ -298,7 +304,10 @@ export class CloudClient {
       body: JSON.stringify({ email: clean, create_user: true }),
     })
     if (!res.ok) {
-      const body = await res.clone().text().catch(() => '')
+      const body = await res
+        .clone()
+        .text()
+        .catch(() => '')
       // Supabase could not deliver the email (SMTP/template problem on the server, not in the app).
       if (/error sending|sending (confirmation|magic link|otp)|smtp/i.test(body)) {
         throw new CloudError(

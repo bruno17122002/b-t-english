@@ -132,17 +132,35 @@ export interface DueSchedule extends Occurrence {
  * Schedules that must run now: enabled, the latest occurrence has passed, it is still inside its catch-up
  * window and it was not sent before (lastSent[kind] !== key).
  */
+/** Approximate start time of a last-sent key (YYYY-MM-DD, YYYY-Www or YYYY-MM); NaN when unparsable. */
+function keyTime(key: string): number {
+  const week = /^(\d{4})-W(\d{2})$/.exec(key)
+  if (week) return new Date(Number(week[1]), 0, 4 + (Number(week[2]) - 1) * 7).getTime()
+  if (/^\d{4}-\d{2}$/.test(key)) return parseDateKey(`${key}-01`).getTime()
+  if (/^\d{4}-\d{2}-\d{2}$/.test(key)) return parseDateKey(key).getTime()
+  return Number.NaN
+}
+
+/** True when `last` is a little ahead of `key`: the clock moved back, so `key` was already handled. */
+function sentLater(key: string, last: string | undefined): boolean {
+  if (!last) return false
+  const gap = keyTime(last) - keyTime(key)
+  // A key far in the future came from a wrong clock that has since been fixed: ignore it.
+  return gap > 0 && gap <= 31 * 86_400_000
+}
+
 export function dueSchedules(
   now: Date,
   schedules: ScheduleMap,
   lastSent: Partial<Record<ScheduleKind, string>>,
 ): DueSchedule[] {
   const out: DueSchedule[] = []
+  if (Number.isNaN(now.getTime())) return out
   for (const kind of SCHEDULE_KINDS) {
     const cfg = schedules[kind]
     if (!cfg?.enabled || (!cfg.channels.app && !cfg.channels.telegram)) continue
     const occ = lastOccurrence(kind, cfg, now)
-    if (!occ || now >= occ.until || lastSent[kind] === occ.key) continue
+    if (!occ || now >= occ.until || lastSent[kind] === occ.key || sentLater(occ.key, lastSent[kind])) continue
     out.push({ ...occ, catchUp: now.getTime() - occ.at.getTime() > 5 * 60_000 })
   }
   return out

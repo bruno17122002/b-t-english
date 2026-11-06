@@ -3,8 +3,10 @@ import type { Cefr } from '@shared/content'
 import type { LearningGoal, Profile, Skill, SkillLevel } from '@shared/types'
 import { SKILLS } from '@shared/types'
 import { averageCefr, SELF_LEVEL_TO_CEFR } from '@core/cefr'
+import { cleanInline } from '@core/text'
 import type { AppDatabase } from '../../db/database'
 import type { LearnerSummary } from '../ai/prompt'
+import { definedOnly } from '../errors'
 
 interface ProfileRow {
   display_name: string
@@ -87,7 +89,8 @@ export class LearnerService {
 
   updateProfile(patch: ProfilePatch): Profile {
     const cur = this.profile()
-    const next = { ...cur, ...patch }
+    // `{ displayName: undefined }` means "unchanged", never "clear the column".
+    const next = { ...cur, ...definedOnly(patch) }
     const completedAt =
       patch.onboardingCompleted === true
         ? (cur.onboardingCompletedAt ?? this.now().toISOString())
@@ -98,7 +101,7 @@ export class LearnerService {
       `UPDATE user_profile SET display_name = ?, self_reported_level = ?, overall_cefr = ?, target_cefr = ?, target_ielts = ?,
        daily_minutes = ?, purposes = ?, interests = ?, learning_style = ?, onboarding_completed_at = ?, updated_at = ? WHERE id = 1`,
       [
-        next.displayName.trim().slice(0, 60),
+        cleanInline(next.displayName, 60),
         next.selfReportedLevel,
         next.overallCefr,
         next.targetCefr,
@@ -195,17 +198,25 @@ export class LearnerService {
     if (goal.id) {
       this.db.run(
         'UPDATE learning_goals SET kind = ?, title = ?, metric = ?, target_value = ?, target_date = ?, status = ? WHERE id = ?',
-        [goal.kind, goal.title.trim(), goal.metric, goal.targetValue, goal.targetDate, goal.status, goal.id],
+        [
+          goal.kind,
+          cleanInline(goal.title, 200),
+          goal.metric,
+          goal.targetValue,
+          goal.targetDate || null,
+          goal.status,
+          goal.id,
+        ],
       )
     } else {
       this.db.run(
         'INSERT INTO learning_goals(kind, title, metric, target_value, target_date, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
         [
           goal.kind,
-          goal.title.trim(),
+          cleanInline(goal.title, 200),
           goal.metric,
           goal.targetValue,
-          goal.targetDate,
+          goal.targetDate || null,
           goal.status,
           this.now().toISOString(),
         ],

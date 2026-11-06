@@ -5,7 +5,7 @@ import { z } from 'zod'
 import type { Cefr, GrammarTopic } from '@shared/content'
 import type { ProviderId, Reward, SkillLevel } from '@shared/types'
 import { normalizeAnswer } from '@core/text'
-import { channel, NoInput, type ChannelDef } from '@shared/ipc'
+import { channel, clampedNumber, NoInput, type ChannelDef } from '@shared/ipc'
 
 // ---------- types ----------
 export type GrammarExercise = GrammarTopic['exercises'][number]
@@ -195,11 +195,7 @@ export const grammarContract = {
   'grammar:submit': channel<GrammarSubmitResult>()(
     z.object({
       topicId: TopicId,
-      durationSec: z
-        .number()
-        .min(0)
-        .max(4 * 3600)
-        .default(0),
+      durationSec: clampedNumber(0, 4 * 3600).default(0),
       answers: z
         .array(
           z.object({

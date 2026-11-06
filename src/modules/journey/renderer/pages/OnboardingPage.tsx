@@ -16,7 +16,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Cefr } from '@shared/content'
 import type { LearningStyle, SelfLevel } from '@shared/types'
-import { Badge, Button, CefrBadge, ErrorState, Input, Select, cx } from '@/components/ui'
+import { Badge, Button, CefrBadge, CharCount, ErrorState, Input, Select, cx } from '@/components/ui'
 import { useL, useTx } from '@/i18n'
 import { api, toApiError, useApi, type ApiError } from '@/lib/api'
 import { useApp } from '@/lib/store'
@@ -292,6 +292,7 @@ export default function OnboardingPage() {
                   onKeyDown={(e) => e.key === 'Enter' && canNext && go(1)}
                   data-testid="onboarding-name"
                 />
+                <CharCount value={draft.displayName} max={60} className="mt-1" data-testid="onboarding-name-count" />
               </StepFrame>
             )}
 

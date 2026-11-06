@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { shuffled } from '@core/shuffle'
 import { AiBadge, RecordButton } from '@/components/learning'
 import {
   Badge,
@@ -155,7 +156,7 @@ function TheoryLesson({ view, onDone }: { view: PronLessonView; onDone: () => vo
     const res = await api('speaking:pronComplete', {
       lessonId: view.lesson.id,
       score: 1,
-      durationSec: Math.round((Date.now() - started.current) / 1000),
+      durationSec: Math.min(7200, Math.round((Date.now() - started.current) / 1000)),
       speakingSec: 0,
     })
     void useApp.getState().refreshGame()
@@ -239,7 +240,17 @@ interface WordResult {
   estimate?: PronEstimateResult
 }
 
-function WordDrill({ view, aiReady, onDone }: { view: PronLessonView; aiReady: boolean; onDone: () => void }) {
+function WordDrill({
+  view: lessonView,
+  aiReady,
+  onDone,
+}: {
+  view: PronLessonView
+  aiReady: boolean
+  onDone: () => void
+}) {
+  // Words come in a new random order on every attempt; results are submitted by word, not position.
+  const [view] = useState(() => ({ ...lessonView, words: shuffled(lessonView.words) }))
   const L = useL()
   const navigate = useNavigate()
   const isExam = view.lesson.type === 'exam'
@@ -296,8 +307,8 @@ function WordDrill({ view, aiReady, onDone }: { view: PronLessonView; aiReady: b
       const r = await api('speaking:pronComplete', {
         lessonId: view.lesson.id,
         score: Math.round(avg * 100) / 100,
-        durationSec: Math.round((Date.now() - started.current) / 1000),
-        speakingSec: Math.round(speakingSec.current),
+        durationSec: Math.min(7200, Math.round((Date.now() - started.current) / 1000)),
+        speakingSec: Math.min(7200, Math.round(speakingSec.current)),
         words: view.words.map((w, i) => ({
           word: w.word,
           score: results[i]?.score ?? 0,

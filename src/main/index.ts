@@ -113,12 +113,17 @@ function createWindow() {
 
 function hardenSession() {
   const ses = session.defaultSession
-  // Only the app itself may use the microphone (speaking practice); everything else is denied.
+  // Only the app itself may use the microphone (speaking practice) and write to the clipboard (copy buttons);
+  // everything else is denied.
   ses.setPermissionRequestHandler((_wc, permission, cb, details) => {
     const mediaTypes = 'mediaTypes' in details ? (details.mediaTypes ?? []) : []
+    if (permission === 'clipboard-sanitized-write') return cb(isAppUrl(details.requestingUrl))
     cb(permission === 'media' && isAppUrl(details.requestingUrl) && mediaTypes.every((m) => m === 'audio'))
   })
-  ses.setPermissionCheckHandler((_wc, permission, origin) => permission === 'media' && isAppUrl(origin))
+  ses.setPermissionCheckHandler(
+    (_wc, permission, origin) =>
+      (permission === 'media' || permission === 'clipboard-sanitized-write') && isAppUrl(origin),
+  )
   const csp = [
     "default-src 'self'",
     `script-src 'self'${isDev ? " 'unsafe-inline'" : ''}`,
@@ -249,7 +254,7 @@ async function bootstrap() {
   if (legacy.length) logger.info(`imported from the old Telegram bot: ${legacy.join(', ')}`)
   k.progress.onReward((reward) => k.push('reward', reward))
 
-  const router = new IpcRouter(logger)
+  const router = new IpcRouter(logger, { repeatWindowMs: 1500 })
   registerKernelHandlers(router, k, hostBridge())
   for (const m of MODULES_MAIN) m.register(router, k)
   const missing = router.missing()

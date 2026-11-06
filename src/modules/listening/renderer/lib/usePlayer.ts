@@ -106,7 +106,8 @@ export function useTrackPlayer(track: ListeningTrack | undefined): TrackPlayer {
 export function useStopwatch() {
   const started = useRef(Date.now())
   return {
-    seconds: () => Math.round((Date.now() - started.current) / 1000),
+    // Capped at the contract limit (2 h) so a stage left open for hours can still be saved.
+    seconds: () => Math.min(7200, Math.round((Date.now() - started.current) / 1000)),
     reset: () => {
       started.current = Date.now()
     },

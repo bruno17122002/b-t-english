@@ -2,14 +2,14 @@
 
 Thư mục này chứa phần chạy trên Supabase:
 
-| Thành phần | Vai trò |
-|---|---|
-| `migrations/0001_init.sql` | Bảng, RLS, RPC (tài khoản, đồng bộ, Telegram, hạn mức AI). |
-| `migrations/0002_cron.sql` | Bảng `bot_pending` cho nút bấm của bot + job `pg_cron` gọi `scheduler` mỗi 5 phút. |
-| `functions/telegram-bot` | Webhook của **bot Telegram trung tâm** (nhiều người dùng, liên kết bằng mã `/start <mã>`). |
-| `functions/scheduler` | Gửi brief sáng, nhắc tối, báo cáo ngày/tuần/tháng theo lịch AI Coach của từng người. |
-| `functions/tutor` | Gia sư AI cho PWA (`POST {message, history?}` + JWT người dùng). |
-| `functions/_shared` | Toàn bộ logic (TypeScript thuần, có unit test `tests/unit/server-*.test.ts`). |
+| Thành phần                 | Vai trò                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------ |
+| `migrations/0001_init.sql` | Bảng, RLS, RPC (tài khoản, đồng bộ, Telegram, hạn mức AI).                                 |
+| `migrations/0002_cron.sql` | Bảng `bot_pending` cho nút bấm của bot + job `pg_cron` gọi `scheduler` mỗi 5 phút.         |
+| `functions/telegram-bot`   | Webhook của **bot Telegram trung tâm** (nhiều người dùng, liên kết bằng mã `/start <mã>`). |
+| `functions/scheduler`      | Gửi brief sáng, nhắc tối, báo cáo ngày/tuần/tháng theo lịch AI Coach của từng người.       |
+| `functions/tutor`          | Gia sư AI cho PWA (`POST {message, history?}` + JWT người dùng).                           |
+| `functions/_shared`        | Toàn bộ logic (TypeScript thuần, có unit test `tests/unit/server-*.test.ts`).              |
 
 Bot dùng dữ liệu đã đồng bộ trong `sync_rows`, nên app desktop cần **đăng nhập tài khoản online và bật đồng bộ**. Kết quả ôn thẻ, từ đã lưu và hoạt động trên Telegram được ghi lại vào `sync_rows`, app tự kéo về ở lần đồng bộ sau.
 
@@ -76,15 +76,15 @@ supabase secrets set \
   TELEGRAM_BOT_USERNAME="lingua_quest_bot"
 ```
 
-| Secret | Bắt buộc | Ý nghĩa |
-|---|---|---|
-| `TELEGRAM_BOT_TOKEN` | có | Token của bot server từ @BotFather. |
-| `TELEGRAM_WEBHOOK_SECRET` | có | Telegram gửi kèm header `X-Telegram-Bot-Api-Secret-Token`; sai là bị từ chối (401). Chỉ dùng chữ, số, `_` và `-`. |
-| `SCHEDULER_SECRET` | có | Header `x-scheduler-secret` mà job cron gửi cho `scheduler`. |
-| `GEMINI_API_KEY` | nên có | AI của server. Thiếu key thì bot vẫn chạy `/today`, `/review`, `/habits`, `/report` (lời khuyên offline). |
-| `AI_DAILY_LIMIT` | không | Số lượt gọi AI mỗi người mỗi ngày (theo giờ của người học). Mặc định 100. |
-| `TELEGRAM_BOT_USERNAME` | không | Để bot nhận lệnh dạng `/report@lingua_quest_bot`. |
-| `GEMINI_MODEL` | không | Mặc định `gemini-2.5-flash`. |
+| Secret                    | Bắt buộc | Ý nghĩa                                                                                                           |
+| ------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `TELEGRAM_BOT_TOKEN`      | có       | Token của bot server từ @BotFather.                                                                               |
+| `TELEGRAM_WEBHOOK_SECRET` | có       | Telegram gửi kèm header `X-Telegram-Bot-Api-Secret-Token`; sai là bị từ chối (401). Chỉ dùng chữ, số, `_` và `-`. |
+| `SCHEDULER_SECRET`        | có       | Header `x-scheduler-secret` mà job cron gửi cho `scheduler`.                                                      |
+| `GEMINI_API_KEY`          | nên có   | AI của server. Thiếu key thì bot vẫn chạy `/today`, `/review`, `/habits`, `/report` (lời khuyên offline).         |
+| `AI_DAILY_LIMIT`          | không    | Số lượt gọi AI mỗi người mỗi ngày (theo giờ của người học). Mặc định 100.                                         |
+| `TELEGRAM_BOT_USERNAME`   | không    | Để bot nhận lệnh dạng `/report@lingua_quest_bot`.                                                                 |
+| `GEMINI_MODEL`            | không    | Mặc định `gemini-2.5-flash`.                                                                                      |
 
 PowerShell: viết trên một dòng, bỏ các dấu `\`.
 
@@ -150,6 +150,7 @@ curl -X POST "https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/setMyCommands" \
    ```
 
    Kết quả mẫu: `{"ok":true,"users":1,"sent":1}`. Nếu không có lịch nào đến hạn, kết quả chỉ có `users`.
+
 5. **Cron:** chạy trong SQL Editor:
 
    ```sql

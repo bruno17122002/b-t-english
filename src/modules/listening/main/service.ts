@@ -289,14 +289,16 @@ export class ListeningService {
     const stamp = this.k.now().getTime().toString(36)
     const id = `ai-${slugify(input.topic, 40)}-${stamp}`
     const res = await this.k.ai.run(generateTrackPrompt, { id, ...input }, { level: input.cefr })
+    // Never replace an earlier track that got the same id (same topic + millisecond, or the clock moved back).
+    const uid = this.k.db.uniqueId('generated_content', id)
     // The model must not override what the learner chose.
-    const track: ListeningTrack = { ...res.data, id, cefr: input.cefr, accent: input.accent, kind: input.kind }
+    const track: ListeningTrack = { ...res.data, id: uid, cefr: input.cefr, accent: input.accent, kind: input.kind }
     const nowIso = this.k.now().toISOString()
     this.k.db.run(
-      'INSERT OR REPLACE INTO generated_content(id, kind, cefr, title, data, provider, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      [id, 'listening', track.cefr, track.title.slice(0, 200), JSON.stringify(track), res.provider, nowIso],
+      'INSERT INTO generated_content(id, kind, cefr, title, data, provider, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [uid, 'listening', track.cefr, track.title.slice(0, 200), JSON.stringify(track), res.provider, nowIso],
     )
-    this.k.log.info(`listening: generated track ${id} via ${res.provider}`)
+    this.k.log.info(`listening: generated track ${uid} via ${res.provider}`)
     return this.summarize(
       { track, source: 'ai', provider: res.provider, createdAt: nowIso },
       this.stats(),

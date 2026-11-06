@@ -220,12 +220,11 @@ export class CoachService {
   report(id: number): CoachReport {
     const r = this.k.db.get<ReportRow>('SELECT * FROM coach_reports WHERE id = ?', [id])
     if (!r) throw new UserError('not_found', 'Không tìm thấy báo cáo.')
-    return {
-      ...this.toSummary(r),
-      stats: JSON.parse(r.stats) as CoachReport['stats'],
-      advice: JSON.parse(r.advice) as CoachAdvice,
-      fallbackReason: r.fallback_reason,
-    }
+    const stats = parse<CoachReport['stats'] | null>(r.stats, null)
+    const advice = parse<CoachAdvice | null>(r.advice, null)
+    // A damaged row (e.g. synced from another device) must not break the reports page.
+    if (!stats || !advice) throw new UserError('report_damaged', 'Báo cáo này bị hỏng dữ liệu. Hãy tạo báo cáo mới.')
+    return { ...this.toSummary(r), stats, advice, fallbackReason: r.fallback_reason }
   }
 
   /** Latest report of the period created in the last `maxAgeMin` minutes, or a fresh one. */

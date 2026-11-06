@@ -5,7 +5,8 @@ import { MODULES_RENDERER } from '@modules/registry.renderer'
 import type { Reward } from '@shared/types'
 import { ErrorBoundary } from './components/shell/ErrorBoundary'
 import { Shell } from './components/shell/Shell'
-import { Button, Spinner } from './components/ui'
+import { Button, Modal, Spinner } from './components/ui'
+import { useL } from './i18n'
 import { api, toApiError } from './lib/api'
 import { useApp } from './lib/store'
 import { LibraryPage } from './pages/LibraryPage'
@@ -51,6 +52,51 @@ function usePushEvents() {
       offNav()
     }
   }, [navigate, pushReward, refreshGame])
+}
+
+/** Shown once after start-up when the data file was damaged and the app had to recover (see B26). */
+function DataRecoveryNotice() {
+  const L = useL()
+  const navigate = useNavigate()
+  const recovery = useApp((s) => s.boot?.dataRecovery ?? null)
+  const [open, setOpen] = useState(true)
+  if (!recovery) return null
+  const close = () => setOpen(false)
+  return (
+    <Modal
+      open={open}
+      onClose={close}
+      title={L('Your data was repaired', 'Dữ liệu đã được khôi phục')}
+      footer={
+        <>
+          <Button variant="ghost" onClick={close}>
+            {L('OK', 'Đã hiểu')}
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              close()
+              navigate('/settings/data')
+            }}
+          >
+            {L('Open backups', 'Mở sao lưu')}
+          </Button>
+        </>
+      }
+    >
+      <p className="text-sm text-muted" data-testid="data-recovery">
+        {recovery.kind === 'backup'
+          ? L(
+              'The data file was damaged, so Lingua Quest opened the latest saved copy. The last few changes may be missing.',
+              'Dữ liệu bị hỏng nên Lingua Quest đã mở bản lưu gần nhất; vài thay đổi cuối có thể bị mất.',
+            )
+          : L(
+              'The data file was damaged and no usable copy was found. Go to Settings → Data to restore a backup.',
+              'Dữ liệu bị hỏng và không có bản lưu dùng được. Vào Cài đặt → Dữ liệu để khôi phục bản sao lưu.',
+            )}
+      </p>
+    </Modal>
+  )
 }
 
 const moduleRoutes = MODULES_RENDERER.flatMap((m) => m.routes.map((r) => ({ ...r, moduleId: m.id })))
@@ -100,6 +146,7 @@ export function App() {
   return (
     <ErrorBoundary>
       <Shell bare={location.pathname.startsWith('/onboarding')}>
+        <DataRecoveryNotice />
         {moduleBackgrounds.map(({ id, Background }) => (
           <Background key={id} />
         ))}

@@ -128,7 +128,7 @@ describe('kernel IPC', () => {
     const { kernel } = await makeKernel()
     expect(kernel.content.reading().length).toBeGreaterThanOrEqual(18)
     expect(kernel.content.stories().length).toBe(7)
-    expect(kernel.content.assessment().length).toBe(96)
+    expect(kernel.content.assessment().length).toBe(192)
     expect(kernel.content.dictionary().length).toBeGreaterThan(400)
     expect(kernel.content.issues).toEqual([])
   })

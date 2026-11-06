@@ -1,7 +1,7 @@
 // Modal for generating a new original passage with AI at a chosen level, category and topic.
 import { Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useSafeNavigate } from '@/lib/navigation'
 import { CEFR_LEVELS, type Cefr, type ReadingPassage } from '@shared/content'
 import { AiBadge } from '@/components/learning'
 import { Button, ErrorState, Field, Input, Modal, Select } from '@/components/ui'
@@ -21,7 +21,7 @@ export function GenerateModal({
 }) {
   const L = useL()
   const tx = useTx()
-  const navigate = useNavigate()
+  const navigate = useSafeNavigate()
   const toast = useApp((s) => s.toast)
   const [cefr, setCefr] = useState<Cefr>(defaultLevel)
   const [category, setCategory] = useState<ReadingPassage['category']>('short-story')

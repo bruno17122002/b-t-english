@@ -56,6 +56,7 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
       dueCards: k.vocab.dueCount(),
       contentIssues: k.content.issues.length,
       isFirstRun: !profile.onboardingCompletedAt,
+      dataRecovery: k.db.recovery ? { kind: k.db.recovery.kind, corruptFile: k.db.recovery.corruptFile } : null,
     }
   })
 
@@ -283,12 +284,14 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
       filters: [{ name: 'Lingua Quest export / CSV', extensions: ['json', 'csv'] }],
     })
     if (!file) return null
-    if (fs.statSync(file).size > 20 * 1024 * 1024) throw new UserError('file_too_large', 'File lớn hơn 20 MB.')
-    const text = fs.readFileSync(file, 'utf8')
+    let text: string
     try {
-      return k.data.importVocabulary(text, file.toLowerCase().endsWith('.json') ? 'json' : 'csv')
+      if (fs.statSync(file).size > 20 * 1024 * 1024) throw new UserError('file_too_large', 'File lớn hơn 20 MB.')
+      text = fs.readFileSync(file, 'utf8')
     } catch (err) {
-      throw new UserError('invalid_import', `Không đọc được file: ${err instanceof Error ? err.message : String(err)}`)
+      if (err instanceof UserError) throw err
+      throw new UserError('invalid_import', 'Không mở được file đã chọn.')
     }
+    return k.data.importVocabulary(text, file.toLowerCase().endsWith('.json') ? 'json' : 'csv')
   })
 }

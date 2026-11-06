@@ -1,5 +1,6 @@
 // App settings (key/value) with typed defaults, favorites and bookmarks.
 import type { AppSettings, Bookmark, Favorite } from '@shared/types'
+import { SettingsPatchSchema } from '@shared/kernelContract'
 import type { AppDatabase } from '../../db/database'
 
 export const DEFAULT_SETTINGS: AppSettings = {
@@ -27,12 +28,16 @@ export class SettingsService {
   get(): AppSettings {
     const rows = this.db.all<{ key: string; value: string }>('SELECT key, value FROM app_settings')
     const out: AppSettings = { ...DEFAULT_SETTINGS }
+    const shape = SettingsPatchSchema.shape as Record<string, { safeParse(v: unknown): { success: boolean } }>
     for (const r of rows) {
       if (!(r.key in DEFAULT_SETTINGS)) continue
       try {
-        ;(out as unknown as Record<string, unknown>)[r.key] = JSON.parse(r.value)
+        const v: unknown = JSON.parse(r.value)
+        // A damaged or hand-edited row (wrong type, out of range) keeps the default instead of reaching the UI.
+        if (v !== undefined && v !== null && (shape[r.key]?.safeParse(v).success ?? true))
+          (out as unknown as Record<string, unknown>)[r.key] = v
       } catch {
-        /* keep default */
+        /* invalid JSON: keep default */
       }
     }
     return out

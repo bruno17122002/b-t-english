@@ -10,22 +10,22 @@
 
 ## Tính năng
 
-| Khu vực | Nội dung |
-|---|---|
-| Hành trình | Onboarding, bài đánh giá trình độ thích ứng theo từng kỹ năng, lộ trình 12 tuần do AI tạo (hoặc tạo offline), giáo trình A1→C2, kế hoạch học mỗi ngày, mục tiêu |
-| Listening Lab | 12 bài hội thoại gốc, nghe 3 tầng (nghe ý chính → chép chính tả có cho thử lại → nhại theo), chỉnh tốc độ và giọng vùng, AI tạo bài mới |
-| Speaking Studio | Shadowing, lặp câu, đóng vai với AI, thẻ đề IELTS; đo thời lượng, khoảng ngắt và WPM; AI nhận xét; lộ trình phát âm theo âm vị |
-| Reading Adventure | 18 bài đọc gốc, bấm vào từ để tra và lưu, highlight kèm ghi chú, đo tốc độ đọc, quiz, AI tạo bài mới và giải thích câu |
-| Writing Workshop | Nhiều dạng đề (email, đoạn văn, essay IELTS…), chỉ số viết đo trực tiếp, AI sửa lỗi kèm giải thích tiếng Việt, so sánh bản gốc và bản sửa, vòng tự sửa |
-| Grammar Kingdom | 20 chủ điểm ngữ pháp và 140 bài tập; AI tạo bài tập thêm và giải thích lỗi sai |
-| Cinema Mode | 7 phim tương tác gốc (80 cảnh), lời thoại có giọng đọc, phụ đề EN/VI, lựa chọn rẽ nhánh, quiz, nhiều kết thúc; AI viết phim mới |
-| Từ vựng | Một kho từ chung cho mọi module, lịch ôn FSRS (ts-fsrs), luyện chính tả, nghĩa, điền từ; từ điển offline 472 từ |
-| Gia sư AI | 7 phong cách, ghi nhớ lỗi hay lặp lại, sửa lỗi ngay trong câu, nói bằng giọng |
-| Phiêu lưu | XP, level, chuỗi ngày học (mỗi tuần được nghỉ một ngày), bản đồ 7 vùng, nhiệm vụ ngày/tuần, 27 thành tích, mở khóa màu giao diện |
-| Thống kê | Biểu đồ phút học, XP, kỹ năng, tốc độ đọc, độ chính xác khi nghe, điểm viết, lịch hoạt động |
-| Huấn luyện AI | Ghi lại thói quen học, thống kê ngày/tuần/tháng, AI phân tích và khuyên cách học, kế hoạch áp dụng được, lịch nhắc và báo cáo qua Windows và Telegram |
-| Bot Telegram | Gia sư AI (chữ, ảnh, giọng nói), ôn thẻ bằng nút bấm, từ của ngày, quiz, tạo ảnh, báo cáo; nằm ngay trong app (Cài đặt → Telegram) |
-| Tiện ích | Tìm kiếm toàn cục (Ctrl+K), yêu thích và đánh dấu, nhắc học, sao lưu/khôi phục, nhập/xuất CSV/JSON, chẩn đoán, phím tắt (F1), giao diện sáng/tối, giao diện tiếng Anh/tiếng Việt |
+| Khu vực           | Nội dung                                                                                                                                                                         |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hành trình        | Onboarding, bài đánh giá trình độ thích ứng theo từng kỹ năng, lộ trình 12 tuần do AI tạo (hoặc tạo offline), giáo trình A1→C2, kế hoạch học mỗi ngày, mục tiêu                  |
+| Listening Lab     | 12 bài hội thoại gốc, nghe 3 tầng (nghe ý chính → chép chính tả có cho thử lại → nhại theo), chỉnh tốc độ và giọng vùng, AI tạo bài mới                                          |
+| Speaking Studio   | Shadowing, lặp câu, đóng vai với AI, thẻ đề IELTS; đo thời lượng, khoảng ngắt và WPM; AI nhận xét; lộ trình phát âm theo âm vị                                                   |
+| Reading Adventure | 18 bài đọc gốc, bấm vào từ để tra và lưu, highlight kèm ghi chú, đo tốc độ đọc, quiz, AI tạo bài mới và giải thích câu                                                           |
+| Writing Workshop  | Nhiều dạng đề (email, đoạn văn, essay IELTS…), chỉ số viết đo trực tiếp, AI sửa lỗi kèm giải thích tiếng Việt, so sánh bản gốc và bản sửa, vòng tự sửa                           |
+| Grammar Kingdom   | 20 chủ điểm ngữ pháp và 140 bài tập; AI tạo bài tập thêm và giải thích lỗi sai                                                                                                   |
+| Cinema Mode       | 7 phim tương tác gốc (80 cảnh), lời thoại có giọng đọc, phụ đề EN/VI, lựa chọn rẽ nhánh, quiz, nhiều kết thúc; AI viết phim mới                                                  |
+| Từ vựng           | Một kho từ chung cho mọi module, lịch ôn FSRS (ts-fsrs), luyện chính tả, nghĩa, điền từ; từ điển offline 472 từ                                                                  |
+| Gia sư AI         | 7 phong cách, ghi nhớ lỗi hay lặp lại, sửa lỗi ngay trong câu, nói bằng giọng                                                                                                    |
+| Phiêu lưu         | XP, level, chuỗi ngày học (mỗi tuần được nghỉ một ngày), bản đồ 7 vùng, nhiệm vụ ngày/tuần, 27 thành tích, mở khóa màu giao diện                                                 |
+| Thống kê          | Biểu đồ phút học, XP, kỹ năng, tốc độ đọc, độ chính xác khi nghe, điểm viết, lịch hoạt động                                                                                      |
+| Huấn luyện AI     | Ghi lại thói quen học, thống kê ngày/tuần/tháng, AI phân tích và khuyên cách học, kế hoạch áp dụng được, lịch nhắc và báo cáo qua Windows và Telegram                            |
+| Bot Telegram      | Gia sư AI (chữ, ảnh, giọng nói), ôn thẻ bằng nút bấm, từ của ngày, quiz, tạo ảnh, báo cáo; nằm ngay trong app (Cài đặt → Telegram)                                               |
+| Tiện ích          | Tìm kiếm toàn cục (Ctrl+K), yêu thích và đánh dấu, nhắc học, sao lưu/khôi phục, nhập/xuất CSV/JSON, chẩn đoán, phím tắt (F1), giao diện sáng/tối, giao diện tiếng Anh/tiếng Việt |
 
 ## Cài đặt (người dùng)
 
@@ -42,11 +42,11 @@
 
 **Dữ liệu ứng dụng:**
 
-| Loại | Vị trí |
-|---|---|
-| Cơ sở dữ liệu | `%APPDATA%\Lingua Quest\data\lingua-quest.sqlite` |
+| Loại            | Vị trí                                                                    |
+| --------------- | ------------------------------------------------------------------------- |
+| Cơ sở dữ liệu   | `%APPDATA%\Lingua Quest\data\lingua-quest.sqlite`                         |
 | Sao lưu tự động | `%APPDATA%\Lingua Quest\backups\` (mỗi ngày một bản, giữ 10 bản gần nhất) |
-| Nhật ký | `%APPDATA%\Lingua Quest\logs\` |
+| Nhật ký         | `%APPDATA%\Lingua Quest\logs\`                                            |
 
 Gỡ cài đặt **không** xóa dữ liệu học tập.
 
@@ -66,9 +66,9 @@ npm run dist         # build installer NSIS + bản portable vào thư mục rel
 
 Biến môi trường dùng khi kiểm thử:
 
-| Biến | Tác dụng |
-|---|---|
-| `LQ_E2E=1` | Dùng AI giả lập cố định |
+| Biến                     | Tác dụng                   |
+| ------------------------ | -------------------------- |
+| `LQ_E2E=1`               | Dùng AI giả lập cố định    |
 | `LQ_USER_DATA=<thư mục>` | Dùng thư mục dữ liệu riêng |
 
 ## Kiến trúc
@@ -95,4 +95,5 @@ Xem `ARCHITECTURE.md` (kiến trúc module v2) và `docs/MODULE_GUIDE.md` (cách
   - VocabReader: ý tưởng prompt.
 
   Chi tiết và toàn văn giấy phép nằm trong `THIRD_PARTY_NOTICES.md`.
+
 - Báo cáo nghiên cứu mã nguồn mở: `docs/OSS_RESEARCH.md`.

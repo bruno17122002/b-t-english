@@ -1,7 +1,7 @@
 // Writing editor: live word count vs target, live metrics, autosaved draft, optional IELTS-style timer.
 import { ArrowLeft, ChevronDown, ChevronUp, Hourglass, Lightbulb, Save, Send, Timer } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useSafeNavigate } from '@/lib/navigation'
 import { WRITING_TASK_TYPES, type WritingPrompt } from '@shared/content'
 import { textMetrics } from '@core/text'
 import { AiBadge } from '@/components/learning'
@@ -60,11 +60,14 @@ function writeDraft(key: string, d: Draft | null) {
   }
 }
 
+/** Same limit as the writing:submit contract. */
+const MAX_CHARS = 12000
+
 export function Editor({ prompt, aiAvailable }: { prompt: WritingPromptInfo | null; aiAvailable: boolean }) {
   const L = useL()
   const tx = useTx()
   const fmt = useFormat()
-  const navigate = useNavigate()
+  const navigate = useSafeNavigate()
   const refreshGame = useApp((s) => s.refreshGame)
   const key = draftKey(prompt?.id ?? null)
   const initial = useMemo(() => readDraft(key), [key])
@@ -111,7 +114,7 @@ export function Editor({ prompt, aiAvailable }: { prompt: WritingPromptInfo | nu
       taskType,
       promptText: prompt ? prompt.instructions : topic,
       text,
-      minutes: Math.max(0.5, Math.round((elapsed / 60) * 10) / 10),
+      minutes: Math.min(600, Math.max(0.5, Math.round((elapsed / 60) * 10) / 10)),
       analyze,
     })
     writeDraft(key, null)
@@ -229,7 +232,7 @@ export function Editor({ prompt, aiAvailable }: { prompt: WritingPromptInfo | nu
               value={text}
               onChange={(e) => setText(e.target.value)}
               spellCheck={false}
-              maxLength={12000}
+              maxLength={MAX_CHARS}
               placeholder={L('Start writing in English…', 'Bắt đầu viết bằng tiếng Anh…')}
               className="min-h-[360px] resize-y border-0 bg-transparent px-4 py-3 text-[17px] leading-8 focus:border-0"
               data-testid="writing-editor"
@@ -262,6 +265,16 @@ export function Editor({ prompt, aiAvailable }: { prompt: WritingPromptInfo | nu
               {words > maxWords && (
                 <p className="mt-1 text-xs text-warning">
                   {L('Over the word limit – try to be more concise.', 'Vượt giới hạn số từ – hãy viết gọn hơn.')}
+                </p>
+              )}
+              {text.length >= MAX_CHARS * 0.9 && (
+                <p className="mt-1 text-xs text-warning tabular-nums" data-testid="writing-char-limit">
+                  {text.length >= MAX_CHARS
+                    ? L(
+                        `Character limit reached (${MAX_CHARS}). Extra text is not added.`,
+                        `Đã đạt giới hạn ${MAX_CHARS} ký tự. Phần chữ thêm sẽ không được nhận.`,
+                      )
+                    : L(`${text.length}/${MAX_CHARS} characters`, `${text.length}/${MAX_CHARS} ký tự`)}
                 </p>
               )}
             </div>

@@ -36,12 +36,16 @@ export const analysisOf = (rec: Recording): RecordingAnalysis => ({
   longestPauseSec: rec.analysis.longestPauseSec,
 })
 
+/** Sums several recordings, capped at the contract limits so a very long session can still be saved. */
 export function sumAnalyses(list: RecordingAnalysis[]): RecordingAnalysis {
-  const r1 = (v: number) => Math.round(v * 10) / 10
+  const r1 = (v: number) => Math.min(3600, Math.round(v * 10) / 10)
   return {
     durationSec: r1(list.reduce((s, a) => s + a.durationSec, 0)),
     speakingSec: r1(list.reduce((s, a) => s + a.speakingSec, 0)),
-    pauseCount: list.reduce((s, a) => s + a.pauseCount, 0),
+    pauseCount: Math.min(
+      5000,
+      list.reduce((s, a) => s + a.pauseCount, 0),
+    ),
     longestPauseSec: r1(list.reduce((m, a) => Math.max(m, a.longestPauseSec), 0)),
   }
 }

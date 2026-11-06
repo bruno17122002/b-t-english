@@ -59,6 +59,7 @@ export function GoalsPanel() {
     })[m]
 
   const save = async (g: GoalDraft) => {
+    if (busy) return
     setBusy(true)
     setError(null)
     try {
@@ -66,6 +67,8 @@ export function GoalsPanel() {
         await api('learner:saveGoal', {
           ...g,
           title: g.title.trim(),
+          // The contract accepts exactly 'YYYY-MM-DD' or null (older goals may carry a full timestamp).
+          targetDate: /^\d{4}-\d{2}-\d{2}/.test(g.targetDate ?? '') ? (g.targetDate as string).slice(0, 10) : null,
           targetValue: g.metric === 'none' ? 0 : g.targetValue,
         }),
       )

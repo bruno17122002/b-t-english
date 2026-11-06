@@ -377,6 +377,22 @@ async function toWav16k(blob: Blob): Promise<{ wav: Uint8Array<ArrayBuffer>; ana
 
 export type RecorderState = 'idle' | 'requesting' | 'recording' | 'processing' | 'error'
 
+const MIC_TEXT = {
+  denied: {
+    en: 'Lingua Quest may not use the microphone. Open Windows Settings → Privacy & security → Microphone and allow desktop apps.',
+    vi: 'Ứng dụng chưa được phép dùng micro. Mở Windows Settings → Privacy & security → Microphone và bật quyền cho ứng dụng desktop.',
+  },
+  missing: {
+    en: 'No microphone found. Plug in a microphone or headset and try again.',
+    vi: 'Không tìm thấy micro. Hãy cắm micro/tai nghe rồi thử lại.',
+  },
+  process: {
+    en: 'The recording could not be processed. Please try again.',
+    vi: 'Không xử lý được bản ghi âm. Hãy thử lại.',
+  },
+}
+const micText = (k: keyof typeof MIC_TEXT) => MIC_TEXT[k][useApp.getState().settings?.uiLanguage === 'en' ? 'en' : 'vi']
+
 /**
  * Microphone recorder hook. `stop()` resolves with a 16 kHz WAV and pause analysis. When the time limit
  * stops the recording by itself, the result is delivered to `onAutoStop` so it is never lost.
@@ -391,6 +407,8 @@ export function useRecorder(maxSeconds = 120, onAutoStop?: (rec: Recording | nul
   const stream = useRef<MediaStream | null>(null)
   const timer = useRef<number | null>(null)
   const raf = useRef<number | null>(null)
+  const audioCtx = useRef<AudioContext | null>(null)
+  const alive = useRef(true)
   const resolver = useRef<((r: Recording | null) => void) | null>(null)
   const startedAt = useRef(0)
   const autoStopRef = useRef(onAutoStop)
@@ -401,10 +419,22 @@ export function useRecorder(maxSeconds = 120, onAutoStop?: (rec: Recording | nul
     if (raf.current) cancelAnimationFrame(raf.current)
     stream.current?.getTracks().forEach((t) => t.stop())
     stream.current = null
+    // Each recording opens an AudioContext for the level meter; close it or they pile up.
+    void audioCtx.current?.close().catch(() => undefined)
+    audioCtx.current = null
     setLevel(0)
   }, [])
 
-  useEffect(() => cleanup, [cleanup])
+  useEffect(() => {
+    alive.current = true
+    return () => {
+      // Leaving the page mid-recording: stop the microphone and drop the result.
+      alive.current = false
+      resolver.current = null
+      if (media.current && media.current.state !== 'inactive') media.current.stop()
+      cleanup()
+    }
+  }, [cleanup])
 
   const stop = useCallback((): Promise<Recording | null> => {
     const rec = media.current
@@ -431,7 +461,7 @@ export function useRecorder(maxSeconds = 120, onAutoStop?: (rec: Recording | nul
         const resolve = resolver.current
         resolver.current = null
         if (resolve) resolve(r)
-        else autoStopRef.current?.(r)
+        else if (alive.current) autoStopRef.current?.(r)
       }
       rec.onstop = async () => {
         cleanup()
@@ -443,13 +473,14 @@ export function useRecorder(maxSeconds = 120, onAutoStop?: (rec: Recording | nul
           setState('idle')
           deliver({ wav, url, analysis })
         } catch {
-          setError('Không xử lý được bản ghi âm. Hãy thử lại.')
+          setError(micText('process'))
           setState('error')
           deliver(null)
         }
       }
       // Level meter for visual feedback.
       const actx = new AudioContext()
+      audioCtx.current = actx
       const analyser = actx.createAnalyser()
       analyser.fftSize = 512
       actx.createMediaStreamSource(s).connect(analyser)
@@ -474,11 +505,7 @@ export function useRecorder(maxSeconds = 120, onAutoStop?: (rec: Recording | nul
     } catch (err) {
       cleanup()
       const denied = err instanceof DOMException && (err.name === 'NotAllowedError' || err.name === 'SecurityError')
-      setError(
-        denied
-          ? 'Ứng dụng chưa được phép dùng micro. Mở Windows Settings → Privacy & security → Microphone và bật quyền cho ứng dụng desktop.'
-          : 'Không tìm thấy micro. Hãy cắm micro/tai nghe rồi thử lại.',
-      )
+      setError(micText(denied ? 'denied' : 'missing'))
       setState('error')
     }
   }, [cleanup, maxSeconds, stop])

@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import { CheckCircle2, Clock, Headphones, ListMusic, Search, Sparkles, Target, Wand2 } from 'lucide-react'
 import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useSafeNavigate } from '@/lib/navigation'
 import { CEFR_LEVELS, type Cefr } from '@shared/content'
 import { AiBadge, FavoriteButton } from '@/components/learning'
 import {
@@ -31,7 +31,7 @@ type StatusFilter = 'all' | 'new' | 'done' | 'favorite' | 'ai'
 export default function LibraryPage() {
   const L = useL()
   const tx = useTx()
-  const navigate = useNavigate()
+  const navigate = useSafeNavigate()
   const { data, error, loading, reload } = useApi('listening:list', undefined, [])
   const skills = useApi('learner:skills', undefined, [])
   const [status, setStatus] = useState<StatusFilter>('all')

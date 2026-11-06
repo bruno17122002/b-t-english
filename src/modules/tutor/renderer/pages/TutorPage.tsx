@@ -18,6 +18,7 @@ import {
 } from '@/components/ui'
 import { useFormat, useL, useTx } from '@/i18n'
 import { api, ApiError, toApiError, useApi } from '@/lib/api'
+import { useSafeNavigate } from '@/lib/navigation'
 import { useApp } from '@/lib/store'
 import type { TutorConversationView } from '../../contract'
 import { ChatView } from '../components/ChatView'
@@ -231,7 +232,7 @@ function RenameDialog({
   const [saving, setSaving] = useState(false)
   useEffect(() => setTitle(conv?.title ?? ''), [conv])
   const save = async () => {
-    if (!conv || !title.trim()) return
+    if (!conv || !title.trim() || saving) return
     setSaving(true)
     try {
       const res = await api('tutor:rename', { id: conv.id, title: title.trim() })
@@ -282,13 +283,14 @@ function TutorHome({
 }) {
   const L = useL()
   const tx = useTx()
-  const navigate = useNavigate()
+  const navigate = useSafeNavigate()
   const [mode, setMode] = useState<TutorStyle>(defaultMode)
   const [creating, setCreating] = useState(false)
   const [error, setError] = useState<ApiError | null>(null)
   useEffect(() => setMode(defaultMode), [defaultMode])
 
   const start = async (draft?: string) => {
+    if (creating) return
     setCreating(true)
     setError(null)
     try {

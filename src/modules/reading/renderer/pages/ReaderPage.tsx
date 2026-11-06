@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { permutation } from '@core/shuffle'
 import type { Bookmark as BookmarkRow } from '@shared/types'
 import {
   AiBadge,
@@ -214,11 +215,13 @@ function Reader({ view }: { view: PassageView }) {
   const complete = useAction(() =>
     api('reading:complete', {
       id: passage.id,
-      seconds: Math.max(1, elapsed),
+      seconds: Math.min(4 * 3600, Math.max(1, elapsed)),
       answers: answers.map((a) => (a === null ? -1 : a)),
     }),
   )
   const allAnswered = answers.every((a) => a !== null)
+  // Questions are shown in a random order per visit; `answers` stays in the passage's own order for scoring.
+  const questionOrder = useMemo(() => permutation(passage.questions.length), [passage.questions])
   const finishReading = () => {
     setPhase('quiz')
     window.setTimeout(
@@ -421,17 +424,21 @@ function Reader({ view }: { view: PassageView }) {
                   {answers.filter((a) => a !== null).length}/{passage.questions.length}
                 </span>
               </div>
-              {passage.questions.map((q, i) => (
-                <QuizQuestion
-                  key={q.id}
-                  q={q}
-                  index={i}
-                  answered={answers[i]}
-                  onAnswer={(choice) =>
-                    phase === 'quiz' && setAnswers((prev) => prev.map((a, k) => (k === i ? choice : a)))
-                  }
-                />
-              ))}
+              {questionOrder.map((i, shown) => {
+                const q = passage.questions[i]
+                if (!q) return null
+                return (
+                  <QuizQuestion
+                    key={q.id}
+                    q={q}
+                    index={shown}
+                    answered={answers[i]}
+                    onAnswer={(choice) =>
+                      phase === 'quiz' && setAnswers((prev) => prev.map((a, k) => (k === i ? choice : a)))
+                    }
+                  />
+                )
+              })}
               {phase === 'quiz' && (
                 <div className="flex flex-wrap items-center justify-end gap-3">
                   {complete.error && <ErrorState error={complete.error} compact onRetry={submitQuiz} />}

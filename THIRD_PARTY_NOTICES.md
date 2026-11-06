@@ -179,17 +179,17 @@ implementations written for Lingua Quest.
 The installed application ships the following open-source libraries (unmodified). Each is used under its own
 license; full license texts are included in each package's `LICENSE` file and are available from the project pages.
 
-| Library | Version | License | Used for |
-|---|---|---|---|
-| Electron (Chromium, Node.js) | 44.10.2 | MIT (Chromium: BSD-3-Clause and others, see `LICENSES.chromium.html` in the install folder) | Desktop runtime |
-| React, React DOM | 19.3.1 | MIT | User interface |
-| React Router | 7.18.5 | MIT | Navigation |
-| Framer Motion | 12.43.0 | MIT | Animations |
-| Lucide React | 1.68.0 | ISC | Icons |
-| Zustand | 5.0.16 | MIT | UI state |
-| Zod | 4.6.7 | MIT | Data validation |
-| sql.js | 1.15.2 | MIT (SQLite: public domain) | Local database |
-| ts-fsrs | 6.0.0 | MIT | Spaced-repetition scheduling |
-| @open-spaced-repetition/srs-kit | 1.0.0 | BSD-3-Clause | Dependency of ts-fsrs |
+| Library                         | Version | License                                                                                     | Used for                     |
+| ------------------------------- | ------- | ------------------------------------------------------------------------------------------- | ---------------------------- |
+| Electron (Chromium, Node.js)    | 44.10.2 | MIT (Chromium: BSD-3-Clause and others, see `LICENSES.chromium.html` in the install folder) | Desktop runtime              |
+| React, React DOM                | 19.3.1  | MIT                                                                                         | User interface               |
+| React Router                    | 7.18.5  | MIT                                                                                         | Navigation                   |
+| Framer Motion                   | 12.43.0 | MIT                                                                                         | Animations                   |
+| Lucide React                    | 1.68.0  | ISC                                                                                         | Icons                        |
+| Zustand                         | 5.0.16  | MIT                                                                                         | UI state                     |
+| Zod                             | 4.6.7   | MIT                                                                                         | Data validation              |
+| sql.js                          | 1.15.2  | MIT (SQLite: public domain)                                                                 | Local database               |
+| ts-fsrs                         | 6.0.0   | MIT                                                                                         | Spaced-repetition scheduling |
+| @open-spaced-repetition/srs-kit | 1.0.0   | BSD-3-Clause                                                                                | Dependency of ts-fsrs        |
 
 The interface uses the Windows system typeface Segoe UI Variable; no font files are bundled.

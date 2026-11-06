@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { permutation } from '@core/shuffle'
 import type { CinemaStory, Scene } from '@shared/content'
 import type { StoryProgress } from '@shared/types'
 import {
@@ -165,6 +166,10 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
   const line = scene.lines[state.lineIndex]
   const characters = useMemo(() => new Map(story.characters.map((c) => [c.id, c])), [story])
   const speaker = line && line.characterId !== 'narrator' ? characters.get(line.characterId) : undefined
+  // Choices and quiz questions are shown in a random order per visit (the best reply is not always first);
+  // dispatched indexes stay the scene's own indexes.
+  const choiceOrder = useMemo(() => permutation(scene.choice?.options.length ?? 0), [scene])
+  const quizOrder = useMemo(() => permutation(scene.quiz?.length ?? 0), [scene])
 
   // ---------- typewriter ----------
   const lineKey = `${state.sceneId}:${state.lineIndex}`
@@ -255,12 +260,13 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
         e.preventDefault()
         advance()
       } else if (state.phase === 'choice' && /^[1-4]$/.test(e.key)) {
-        dispatch({ type: 'choose', optionIndex: Number(e.key) - 1 })
+        const optionIndex = choiceOrder[Number(e.key) - 1]
+        if (optionIndex !== undefined) dispatch({ type: 'choose', optionIndex })
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [advance, state.phase])
+  }, [advance, state.phase, choiceOrder])
 
   useEffect(() => {
     if (state.phase === 'quiz')
@@ -469,29 +475,33 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
               <p className="mb-1 text-center font-display text-xl font-semibold text-white md:text-2xl">
                 {scene.choice.prompt}
               </p>
-              {scene.choice.options.map((o, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08 }}
-                  className="flex w-full max-w-2xl items-center gap-2"
-                >
-                  <button
-                    onClick={() => dispatch({ type: 'choose', optionIndex: i })}
-                    className="flex flex-1 items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-left text-white transition hover:border-white/50 hover:bg-white/20"
-                    data-testid={`cinema-option-${i}`}
+              {choiceOrder.map((optionIndex, i) => {
+                const o = scene.choice?.options[optionIndex]
+                if (!o) return null
+                return (
+                  <motion.div
+                    key={optionIndex}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.08 }}
+                    className="flex w-full max-w-2xl items-center gap-2"
                   >
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/15 text-sm font-bold">
-                      {i + 1}
+                    <button
+                      onClick={() => dispatch({ type: 'choose', optionIndex })}
+                      className="flex flex-1 items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-left text-white transition hover:border-white/50 hover:bg-white/20"
+                      data-testid={`cinema-option-${i}`}
+                    >
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/15 text-sm font-bold">
+                        {i + 1}
+                      </span>
+                      <span className="flex-1">“{o.text}”</span>
+                    </button>
+                    <span className="text-white/70">
+                      <SpeakButton text={o.text} />
                     </span>
-                    <span className="flex-1">“{o.text}”</span>
-                  </button>
-                  <span className="text-white/70">
-                    <SpeakButton text={o.text} />
-                  </span>
-                </motion.div>
-              ))}
+                  </motion.div>
+                )
+              })}
             </motion.div>
           )}
         </AnimatePresence>
@@ -601,15 +611,19 @@ function Player({ story, source, initial }: { story: CinemaStory; source: 'built
               {L('Did you follow the scene?', 'Bạn có theo kịp cảnh phim?')}
             </h3>
             <div className="space-y-3">
-              {scene.quiz.map((q, i) => (
-                <QuizQuestion
-                  key={q.id}
-                  q={q}
-                  index={i}
-                  answered={state.quizAnswers[i]}
-                  onAnswer={(choice) => dispatch({ type: 'answer', index: i, choice })}
-                />
-              ))}
+              {quizOrder.map((qi, shown) => {
+                const q = scene.quiz?.[qi]
+                if (!q) return null
+                return (
+                  <QuizQuestion
+                    key={q.id}
+                    q={q}
+                    index={shown}
+                    answered={state.quizAnswers[qi]}
+                    onAnswer={(choice) => dispatch({ type: 'answer', index: qi, choice })}
+                  />
+                )
+              })}
             </div>
             <div className="mt-4 flex justify-end">
               <Button

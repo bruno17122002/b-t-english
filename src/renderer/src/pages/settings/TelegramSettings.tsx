@@ -174,6 +174,7 @@ export function TelegramSettings() {
     )
 
   const saveToken = async () => {
+    if (saving || !token.trim()) return
     setSaving(true)
     setError(null)
     try {
@@ -363,7 +364,7 @@ export function TelegramSettings() {
                 spellCheck={false}
                 value={token}
                 onChange={(e) => setToken(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && token.trim() && void saveToken()}
+                onKeyDown={(e) => e.key === 'Enter' && void saveToken()}
                 placeholder={
                   st.hasToken
                     ? L('Paste a new token to replace the current bot', 'Dán token mới để thay bot hiện tại')

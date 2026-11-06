@@ -1,7 +1,7 @@
 // Report list with period filter and buttons to generate a new day / week / month report.
 import { FileText, Send, Monitor } from 'lucide-react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useSafeNavigate } from '@/lib/navigation'
 import { Badge, Button, Card, EmptyState, ErrorState, LoadingBlock, Tabs } from '@/components/ui'
 import { useFormat, useL, useTx } from '@/i18n'
 import { api, useAction, useApi } from '@/lib/api'
@@ -15,7 +15,7 @@ export function ReportsTab() {
   const L = useL()
   const tx = useTx()
   const fmt = useFormat()
-  const navigate = useNavigate()
+  const navigate = useSafeNavigate()
   const [filter, setFilter] = useState<Filter>('all')
   const list = useApi('coach:reports', filter === 'all' ? { limit: 100 } : { period: filter, limit: 100 }, [filter])
   const gen = useAction((period: CoachPeriod) => api('coach:generateReport', { period, offset: 0, useAi: true }))
