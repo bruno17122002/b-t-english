@@ -43,6 +43,12 @@
   - Câu tìm kiếm quá dài bị cắt thay vì báo lỗi.
   - Nút sao chép dùng được Clipboard API.
 - **Kiểm thử:** 644 test Vitest và 56 test Playwright.
+- **Bản phát hành:** đã chạy thử bản đóng gói (khởi động, tạo dữ liệu mới, không lỗi trong log).
+
+  | File                              | Kích thước       | SHA-256                                                            |
+  | --------------------------------- | ---------------- | ------------------------------------------------------------------ |
+  | `Lingua-Quest-Setup-1.4.0.exe`    | 133 418 550 byte | `afd47547b9486b28383d92718c2075dc3f7bf31096c1a06214062d43fee4e224` |
+  | `Lingua-Quest-Portable-1.4.0.exe` | 116 622 186 byte | `afccb86531796550b70eb28133ecef805738f15e730a77330115452a55e57a04` |
 
 ## [1.3.0] – 2026-11-06
 
