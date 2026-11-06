@@ -18,7 +18,7 @@ Bot dùng dữ liệu đã đồng bộ trong `sync_rows`, nên app desktop cầ
 ## 1. Chuẩn bị
 
 1. Đã có project Supabase và đã chạy `0001_init.sql` (xem `docs/ONLINE_PLAN.md`, mục "Việc người dùng cần làm").
-2. Cài [Supabase CLI](https://supabase.com/docs/guides/cli) (Windows: `scoop install supabase` hoặc `npm i -g supabase`).
+2. Cài [Supabase CLI](https://supabase.com/docs/guides/cli) (Windows: `scoop install supabase`), hoặc không cài mà gọi qua `npx supabase …`. Supabase không hỗ trợ `npm i -g supabase`.
 3. Tạo **một bot Telegram mới cho server** (khác bot cá nhân đang chạy trong app, vì một bot chỉ dùng được webhook **hoặc** polling):
    - Mở **@BotFather** → `/newbot` → đặt tên và username (ví dụ `lingua_quest_bot`).
    - Lưu lại **token** (dạng `123456789:AAH…`) và **username**.
