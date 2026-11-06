@@ -1,0 +1,53 @@
+﻿LINGUA QUEST – THỎA THUẬN CẤP PHÉP NGƯỜI DÙNG CUỐI (EULA)
+Phiên bản 1.3 – có hiệu lực từ ngày 06/11/2026
+
+Vui lòng đọc kỹ trước khi cài đặt. Bằng việc cài đặt hoặc sử dụng Lingua Quest ("Phần mềm"), bạn đồng ý với các điều khoản dưới đây. Nếu không đồng ý, hãy hủy cài đặt.
+
+1. QUYỀN SỬ DỤNG
+Chủ sở hữu Lingua Quest cấp cho bạn quyền cá nhân, không độc quyền, không chuyển nhượng để cài đặt và sử dụng Phần mềm cho mục đích học tập của chính bạn.
+
+2. HẠN CHẾ
+Bạn KHÔNG được:
+a) dịch ngược, giải mã, tháo rời (decompile, disassemble), giải nén gói ứng dụng hoặc tìm cách lấy mã nguồn, prompt, nội dung bài học của Phần mềm, trừ khi pháp luật bắt buộc cho phép;
+b) sao chép, sửa đổi, tạo sản phẩm phái sinh, cho thuê, bán, phân phối lại hoặc công bố Phần mềm hoặc nội dung học tập đi kèm (bài đọc, bài nghe, phim tương tác, từ điển, đề kiểm tra);
+c) gỡ bỏ hoặc che giấu thông báo bản quyền, nhãn hiệu;
+d) vượt qua các biện pháp bảo vệ kỹ thuật của Phần mềm.
+
+3. QUYỀN SỞ HỮU
+Phần mềm và nội dung gốc thuộc quyền sở hữu của chủ sở hữu Lingua Quest và được bảo hộ bởi Luật Sở hữu trí tuệ Việt Nam cùng các điều ước quốc tế. Mọi quyền không được cấp rõ ràng đều được bảo lưu.
+
+4. THÀNH PHẦN MÃ NGUỒN MỞ
+Một số thành phần thuộc giấy phép mã nguồn mở (MIT, ISC, BSD-3-Clause, SIL OFL…) và chịu điều khoản của giấy phép tương ứng, liệt kê trong tệp THIRD_PARTY_NOTICES.md tại thư mục cài đặt. Thỏa thuận này không hạn chế quyền của bạn theo các giấy phép đó.
+
+5. DỊCH VỤ AI, TÀI KHOẢN ONLINE VÀ DỮ LIỆU
+- Dữ liệu học tập được lưu trên máy của bạn. Tài khoản online, sao lưu cloud, đồng bộ và bot Telegram là tùy chọn và chỉ hoạt động khi bạn bật.
+- Khi dùng AI, nội dung bạn gửi được chuyển tới nhà cung cấp AI bạn chọn (Google Gemini, OpenAI) theo điều khoản của họ. API key của bạn được mã hóa trên máy và không được gửi cho chúng tôi.
+- Bạn có thể xóa toàn bộ dữ liệu cloud bất kỳ lúc nào trong Cài đặt → Tài khoản.
+
+6. KHÔNG BẢO ĐẢM
+Phần mềm được cung cấp "nguyên trạng". Nội dung do AI tạo ra (nhận xét, điểm ước lượng, lộ trình) chỉ mang tính tham khảo, không thay thế giáo viên hay kết quả thi chính thức (ví dụ IELTS).
+
+7. GIỚI HẠN TRÁCH NHIỆM
+Trong phạm vi pháp luật cho phép, chủ sở hữu không chịu trách nhiệm về thiệt hại gián tiếp, mất dữ liệu hoặc chi phí phát sinh từ việc sử dụng Phần mềm hay dịch vụ của bên thứ ba.
+
+8. CHẤM DỨT
+Quyền sử dụng tự động chấm dứt nếu bạn vi phạm thỏa thuận này. Khi đó bạn phải gỡ cài đặt và xóa mọi bản sao.
+
+9. LUẬT ÁP DỤNG
+Thỏa thuận được điều chỉnh bởi pháp luật nước Cộng hòa Xã hội Chủ nghĩa Việt Nam.
+
+------------------------------------------------------------
+
+LINGUA QUEST – END USER LICENSE AGREEMENT (EULA)
+
+By installing or using Lingua Quest (the "Software") you agree to these terms. If you do not agree, cancel the installation.
+
+1. LICENSE. You receive a personal, non-exclusive, non-transferable license to install and use the Software for your own learning.
+2. RESTRICTIONS. You may not reverse engineer, decompile, disassemble, unpack or otherwise attempt to obtain the source code, prompts or learning content of the Software (except where such restriction is prohibited by law); copy, modify, create derivative works of, rent, sell, redistribute or publish the Software or its bundled content; remove copyright notices; or circumvent its technical protection measures.
+3. OWNERSHIP. The Software and its original content are owned by the Lingua Quest owner and protected by intellectual property laws. All rights not expressly granted are reserved.
+4. OPEN-SOURCE COMPONENTS are licensed under their own terms, listed in THIRD_PARTY_NOTICES.md in the installation folder; nothing here limits your rights under those licenses.
+5. AI, ONLINE ACCOUNT AND DATA. Learning data stays on your computer unless you enable the optional online account, cloud backup, sync or Telegram bot. AI requests go to the provider you choose under its terms; your API keys are encrypted on your computer and never sent to us. You can delete all cloud data at any time.
+6. NO WARRANTY. The Software is provided "as is". AI-generated feedback, scores and plans are estimates only.
+7. LIMITATION OF LIABILITY. To the extent permitted by law, the owner is not liable for indirect damages, data loss or third-party service costs.
+8. TERMINATION. This license ends automatically if you breach it.
+9. GOVERNING LAW. The laws of the Socialist Republic of Vietnam.

@@ -40,6 +40,11 @@ describe('speaking module', () => {
 
   it('submits a shadowing session, measures it and counts speaking seconds in quests', async () => {
     const { call, kernel } = await makeApp()
+    // Speaking is the weakest skill, so today's daily quests always include the speaking quest
+    // (otherwise whether one exists depends on the date-seeded random pick).
+    for (const skill of ['vocabulary', 'grammar', 'reading', 'listening', 'writing'] as const)
+      kernel.learner.setSkillLevel({ skill, cefr: 'B1', score: 50, source: 'self', estimated: true })
+    kernel.learner.setSkillLevel({ skill: 'speaking', cefr: 'A1', score: 0, source: 'self', estimated: true })
     const [prompt] = await call<SpeakingPromptView[]>('speaking:prompts', { kind: 'shadowing' })
     const target = prompt?.sentences[0] as string
     const words = target.split(' ')

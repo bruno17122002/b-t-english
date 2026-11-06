@@ -1,5 +1,5 @@
 import { resolve } from 'node:path'
-import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
+import { bytecodePlugin, defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
@@ -11,20 +11,22 @@ const alias = {
 }
 
 export default defineConfig({
+  // Source protection: the main process ships as V8 bytecode (no readable JavaScript); preload and renderer are
+  // minified without source maps. The sandboxed preload cannot load bytecode, so it is only minified.
   main: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [externalizeDepsPlugin(), bytecodePlugin({ transformArrowFunctions: false, removeBundleJS: true })],
     resolve: { alias },
-    build: { sourcemap: false },
+    build: { sourcemap: false, minify: true },
   },
   preload: {
     plugins: [externalizeDepsPlugin({ exclude: ['zod'] })],
     resolve: { alias },
-    build: { rollupOptions: { output: { format: 'cjs' } } },
+    build: { sourcemap: false, minify: true, rollupOptions: { output: { format: 'cjs' } } },
   },
   renderer: {
     root: resolve(__dirname, 'src/renderer'),
     resolve: { alias: { ...alias, '@': resolve(__dirname, 'src/renderer/src') } },
     plugins: [react(), tailwindcss()],
-    build: { rollupOptions: { input: resolve(__dirname, 'src/renderer/index.html') } },
+    build: { sourcemap: false, minify: true, rollupOptions: { input: resolve(__dirname, 'src/renderer/index.html') } },
   },
 })

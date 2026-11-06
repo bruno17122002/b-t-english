@@ -2,6 +2,37 @@
 
 Định dạng theo [Keep a Changelog](https://keepachangelog.com/), phiên bản theo SemVer.
 
+## [1.3.0] – 2026-11-06
+### Bảo vệ mã nguồn
+- **Tiến trình chính:**
+  - Biên dịch sang V8 bytecode (`out/main/index.jsc`), không còn mã JavaScript đọc được.
+  - Tên hàm và class bị loại bỏ.
+- **Preload và giao diện:** nén (minify), không kèm source map.
+- **Electron Fuses:**
+  - Tắt `ELECTRON_RUN_AS_NODE`, `NODE_OPTIONS` và `--inspect`.
+  - Chỉ nạp code từ `app.asar`, có kiểm tra toàn vẹn ASAR.
+  - Mã hóa cookie.
+- **Bản phát hành:**
+  - Từ chối các cờ gỡ lỗi (`--inspect`, `--remote-debugging-port`…).
+  - Không còn cách bật DevTools.
+  - Bỏ qua chế độ kiểm thử `LQ_E2E`.
+- **Installer:** có trang Thỏa thuận cấp phép người dùng (EULA) song ngữ, cấm dịch ngược và phân phối lại.
+- **Đã kiểm chứng trên bản đóng gói:**
+  - Bản gốc chạy bình thường.
+  - Gói bị sửa mục lục hoặc bị đóng gói lại với code đã chỉnh đều bị từ chối khởi động.
+- **Giới hạn còn lại:** các chuỗi văn bản (gồm prompt AI) vẫn nằm trong bytecode dưới dạng UTF-16, công cụ chuyên dụng vẫn trích ra được. Muốn giấu hoàn toàn phải chuyển prompt lên server.
+- **Hệ quả cho kiểm thử:** Playwright không gắn được vào bản phát hành (fuse `--inspect`). E2E chạy trên bản build từ cùng mã nguồn (`out/`, cũng là bytecode); bản đóng gói được kiểm bằng phép chạy thử và phép thử chống sửa đổi.
+- **Bản phát hành:**
+
+  | File | Kích thước | SHA-256 |
+  |---|---|---|
+  | `Lingua-Quest-Setup-1.3.0.exe` | 133 392 419 byte | `345bb11b8920a5ffd0e2547d9e83d668ea3a5f3cc50ffc4d1a4acfdc034bcbb9` |
+  | `Lingua-Quest-Portable-1.3.0.exe` | 116 597 845 byte | `d222d55db96b9a09b94c07073c949ca29079d9244e1921463c897f32a396d7cd` |
+
+### Sửa lỗi
+- App giải thích rõ lỗi gửi email mã đăng nhập từ Supabase (SMTP, mẫu email).
+- Test nhiệm vụ "nói" phụ thuộc ngày chạy (B17).
+
 ## [1.2.0] – 2026-11-05
 ### Sửa lỗi
 - **Âm thanh bị phát chồng khi bấm nhiều lần:** trình phát mới theo "thế hệ"; mỗi lệnh phát mới hủy mọi lệnh cũ, kể cả bản đang tải (B14).

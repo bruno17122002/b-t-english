@@ -9,6 +9,7 @@ files:
   - build/icon.png
   - package.json
   - '!**/*.map'
+  - '!out/**/*.js.map'
   - '!**/node_modules/zod/src/**'
   - '!**/node_modules/*/README.md'
 extraResources:
@@ -17,6 +18,16 @@ extraResources:
   - from: THIRD_PARTY_NOTICES.md
     to: THIRD_PARTY_NOTICES.md
 asar: true
+# Electron fuses (flipped in the binary at packaging time):
+# - no ELECTRON_RUN_AS_NODE, NODE_OPTIONS or --inspect: the app cannot be turned into a Node shell or debugged
+# - code is only loaded from app.asar and its integrity is checked at start, so a modified package will not run
+electronFuses:
+  runAsNode: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+  enableCookieEncryption: true
 compression: normal
 win:
   icon: build/icon.ico
@@ -26,6 +37,7 @@ win:
     - target: portable
       arch: [x64]
 nsis:
+  license: build/license.txt
   oneClick: false
   perMachine: false
   allowToChangeInstallationDirectory: true

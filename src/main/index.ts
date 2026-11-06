@@ -28,7 +28,13 @@ import { importLegacyTelegramConfig } from './kernel/telegram/legacy'
 import { startCloudServices } from './kernel/cloud/background'
 
 const isDev = !app.isPackaged && !!process.env.ELECTRON_RENDERER_URL
-const isE2E = process.env.LQ_E2E === '1'
+// Test mode (simulated AI, isolated data) is only honoured by development builds, never by the released app.
+const isE2E = process.env.LQ_E2E === '1' && !app.isPackaged
+
+// Released builds refuse debugger / remote-control switches (the inspect fuse already blocks --inspect for Node).
+if (app.isPackaged && process.argv.some((a) => /^--(inspect|remote-debugging|remote-allow-origins|js-flags)/.test(a))) {
+  app.exit(1)
+}
 
 if (process.env.LQ_USER_DATA) app.setPath('userData', process.env.LQ_USER_DATA)
 app.setAppUserModelId('com.linguaquest.app')
@@ -82,7 +88,7 @@ function createWindow() {
       nodeIntegration: false,
       webSecurity: true,
       spellcheck: true,
-      devTools: !app.isPackaged || process.env.LQ_DEVTOOLS === '1',
+      devTools: !app.isPackaged,
     },
   })
   mainWindow.once('ready-to-show', () => {
