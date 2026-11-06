@@ -19,6 +19,15 @@
   - Thư mục dữ liệu vẫn là `%APPDATA%\Lingua Quest`, nên không mất tiến độ học.
   - Tên file sao lưu, xuất dữ liệu và bucket cloud giữ nguyên định dạng cũ.
 - **Server Supabase:** mã bot đã đổi tên, nhưng cần deploy lại Edge Functions thì bot trên server mới hiện tên mới.
+- **Kiểm thử:**
+  - 644 test Vitest và 56 test Playwright đều đạt.
+  - Đã chạy thử bản đóng gói: cửa sổ "B&T English", phiên bản 1.5.0, log không có lỗi.
+- **Bản phát hành:**
+
+  | File                            | Kích thước       | SHA-256                                                            |
+  | ------------------------------- | ---------------- | ------------------------------------------------------------------ |
+  | `BT-English-Setup-1.5.0.exe`    | 133 199 754 byte | `26f62e36597d1b760a4df43018f7a4bbb19b0c48d97ccf7f2fa5426f46abaf21` |
+  | `BT-English-Portable-1.5.0.exe` | 116 340 568 byte | `17341c81b3b688bff51c33d406238c6be67d2e085610e66c96c804b6b93a8eef` |
 
 ## [1.4.0] – 2026-11-06
 
