@@ -36,7 +36,9 @@ if (app.isPackaged && process.argv.some((a) => /^--(inspect|remote-debugging|rem
   app.exit(1)
 }
 
-if (process.env.LQ_USER_DATA) app.setPath('userData', process.env.LQ_USER_DATA)
+// The data folder keeps the app's original name: renaming the product (now "B&T English") must never orphan a
+// learner's database, keys and backups. LQ_USER_DATA overrides it for tests.
+app.setPath('userData', process.env.LQ_USER_DATA || path.join(app.getPath('appData'), 'Lingua Quest'))
 app.setAppUserModelId('com.linguaquest.app')
 
 if (!isE2E && !app.requestSingleInstanceLock()) {
@@ -78,7 +80,7 @@ function createWindow() {
     minHeight: 680,
     show: false,
     backgroundColor: '#202020',
-    title: 'Lingua Quest',
+    title: 'B&T English',
     autoHideMenuBar: true,
     icon: path.join(app.getAppPath(), 'build', 'icon.png'),
     webPreferences: {
@@ -196,11 +198,11 @@ function createTray() {
     .createFromPath(path.join(app.getAppPath(), 'build', 'icon.png'))
     .resize({ width: 16, height: 16 })
   tray = new Tray(icon)
-  tray.setToolTip('Lingua Quest')
+  tray.setToolTip('B&T English')
   const vi = kernel?.settings.get().uiLanguage !== 'en'
   tray.setContextMenu(
     Menu.buildFromTemplate([
-      { label: vi ? 'Mở Lingua Quest' : 'Open Lingua Quest', click: () => showWindow() },
+      { label: vi ? 'Mở B&T English' : 'Open B&T English', click: () => showWindow() },
       { label: vi ? 'Ôn thẻ từ' : 'Review flashcards', click: () => showWindow('/vocabulary/review') },
       { label: vi ? 'Huấn luyện AI' : 'AI Coach', click: () => showWindow('/coach') },
       { type: 'separator' },
@@ -219,7 +221,7 @@ function createTray() {
 async function bootstrap() {
   const userData = app.getPath('userData')
   logger = new Logger(path.join(userData, 'logs'))
-  logger.info(`starting Lingua Quest ${app.getVersion()} (electron ${process.versions.electron}, e2e=${isE2E})`)
+  logger.info(`starting B&T English ${app.getVersion()} (electron ${process.versions.electron}, e2e=${isE2E})`)
   process.on('uncaughtException', (err) => logger?.error(`uncaught: ${err.stack ?? err.message}`))
   process.on('unhandledRejection', (err) => logger?.error(`unhandled rejection: ${String(err)}`))
 
@@ -319,7 +321,7 @@ app
   .catch((err: unknown) => {
     logger?.error(`fatal startup error: ${err instanceof Error ? (err.stack ?? err.message) : String(err)}`)
     dialog.showErrorBox(
-      'Lingua Quest',
+      'B&T English',
       `Không thể khởi động ứng dụng.\n\n${err instanceof Error ? err.message : String(err)}\n\nNhật ký: ${app.getPath('userData')}\\logs`,
     )
     app.exit(1)

@@ -44,7 +44,7 @@ const ACTIVITY_LABELS: Record<string, { en: string; vi: string }> = {
   video_call: { en: 'Video call practice', vi: 'Gọi video luyện tập' },
 }
 
-/** Where the learner can practise each activity type in Lingua Quest. */
+/** Where the learner can practise each activity type in B&T English. */
 function practiceLinks(types: string[]) {
   const set = new Set(types)
   const links: { route: string; icon: typeof Ear; en: string; vi: string }[] = []

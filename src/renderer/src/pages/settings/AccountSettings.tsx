@@ -67,8 +67,8 @@ export function AccountSettings() {
         </div>
         <p className="mt-1 text-sm text-muted">
           {L(
-            'Optional. Lingua Quest keeps working offline without an account. Signed in, your words, reviews and progress sync between your PCs, the Telegram bot and the phone app, and you can keep backups in the cloud. Your AI API keys never leave this PC.',
-            'Không bắt buộc. Không có tài khoản, Lingua Quest vẫn chạy offline đầy đủ. Khi đăng nhập, từ vựng, lượt ôn và tiến độ được đồng bộ giữa các máy, bot Telegram và app điện thoại, và bạn có thể sao lưu lên cloud. API key AI không bao giờ rời khỏi máy này.',
+            'Optional. B&T English keeps working offline without an account. Signed in, your words, reviews and progress sync between your PCs, the Telegram bot and the phone app, and you can keep backups in the cloud. Your AI API keys never leave this PC.',
+            'Không bắt buộc. Không có tài khoản, B&T English vẫn chạy offline đầy đủ. Khi đăng nhập, từ vựng, lượt ôn và tiến độ được đồng bộ giữa các máy, bot Telegram và app điện thoại, và bạn có thể sao lưu lên cloud. API key AI không bao giờ rời khỏi máy này.',
           )}
         </p>
       </Card>

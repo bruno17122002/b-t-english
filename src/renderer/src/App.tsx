@@ -87,8 +87,8 @@ function DataRecoveryNotice() {
       <p className="text-sm text-muted" data-testid="data-recovery">
         {recovery.kind === 'backup'
           ? L(
-              'The data file was damaged, so Lingua Quest opened the latest saved copy. The last few changes may be missing.',
-              'Dữ liệu bị hỏng nên Lingua Quest đã mở bản lưu gần nhất; vài thay đổi cuối có thể bị mất.',
+              'The data file was damaged, so B&T English opened the latest saved copy. The last few changes may be missing.',
+              'Dữ liệu bị hỏng nên B&T English đã mở bản lưu gần nhất; vài thay đổi cuối có thể bị mất.',
             )
           : L(
               'The data file was damaged and no usable copy was found. Go to Settings → Data to restore a backup.',
@@ -124,7 +124,7 @@ export function App() {
   if (error)
     return (
       <div className="flex h-full flex-col items-center justify-center gap-4 p-8 text-center">
-        <h1 className="font-display text-2xl">Lingua Quest</h1>
+        <h1 className="font-display text-2xl">B&T English</h1>
         <p className="max-w-md text-muted">{error}</p>
         <Button variant="primary" onClick={load}>
           Thử lại / Retry

@@ -1,4 +1,4 @@
-// In-app Telegram bot. Long-polls the Bot API while Lingua Quest runs, answers only the linked chat, pairs a
+// In-app Telegram bot. Long-polls the Bot API while B&T English runs, answers only the linked chat, pairs a
 // new chat with a 6-digit code shown in Settings, and lets modules register commands and button callbacks.
 // No network activity happens until start() (or an explicit settings action such as setToken).
 import { randomInt } from 'node:crypto'
@@ -209,7 +209,7 @@ export class TelegramService implements TelegramPort {
     if (!chat) return { ok: false, error: 'Chưa liên kết với chat Telegram nào.' }
     try {
       await this.deliver(api, chat, {
-        html: '✅ <b>Lingua Quest</b> đã kết nối với Telegram!\nGõ /help để xem các lệnh, hoặc nhắn một câu tiếng Anh để mình sửa giúp.',
+        html: '✅ <b>B&amp;T English</b> đã kết nối với Telegram!\nGõ /help để xem các lệnh, hoặc nhắn một câu tiếng Anh để mình sửa giúp.',
       })
       return { ok: true }
     } catch (err) {
@@ -423,7 +423,7 @@ export class TelegramService implements TelegramPort {
         return {
           code: 'conflict',
           message:
-            'Telegram báo 409: một chương trình khác đang dùng bot này (ví dụ bot Python cũ chạy bằng Task Scheduler "IELTS Telegram chatbot"). Hãy tắt chương trình đó – Lingua Quest sẽ tự kết nối lại.',
+            'Telegram báo 409: một chương trình khác đang dùng bot này (ví dụ bot Python cũ chạy bằng Task Scheduler "IELTS Telegram chatbot"). Hãy tắt chương trình đó – B&T English sẽ tự kết nối lại.',
         }
       return { code: err.code, message: err.userMessage }
     }
@@ -453,7 +453,7 @@ export class TelegramService implements TelegramPort {
       this.pairingFailures = 0
       this.k.log.info('Telegram chat linked by pairing code')
       await this.deliver(api, chatId, [
-        { html: '🔗 <b>Đã liên kết với Lingua Quest!</b> Từ giờ mình chỉ trả lời tài khoản này.' },
+        { html: '🔗 <b>Đã liên kết với B&amp;T English!</b> Từ giờ mình chỉ trả lời tài khoản này.' },
         this.features.help(true),
       ])
       return
@@ -465,7 +465,7 @@ export class TelegramService implements TelegramPort {
     }
     await api.sendMessage(
       chatId,
-      '🔒 Bot này thuộc về một người dùng Lingua Quest và chưa được liên kết.\nNếu đây là bot của bạn: mở Lingua Quest → Cài đặt → Telegram rồi gửi mã ghép đôi 6 số hiển thị ở đó, ví dụ <code>/start 123456</code>.',
+      '🔒 Bot này thuộc về một người dùng B&amp;T English và chưa được liên kết.\nNếu đây là bot của bạn: mở B&amp;T English → Cài đặt → Telegram rồi gửi mã ghép đôi 6 số hiển thị ở đó, ví dụ <code>/start 123456</code>.',
     )
   }
 

@@ -39,8 +39,8 @@ export function DataSettings() {
         </h3>
         <p className="mt-1 text-sm text-muted">
           {L(
-            'Lingua Quest saves an automatic backup once a day (last 10 kept). API keys are never included.',
-            'Lingua Quest tự sao lưu mỗi ngày một lần (giữ 10 bản gần nhất). API key không bao giờ nằm trong bản sao lưu.',
+            'B&T English saves an automatic backup once a day (last 10 kept). API keys are never included.',
+            'B&T English tự sao lưu mỗi ngày một lần (giữ 10 bản gần nhất). API key không bao giờ nằm trong bản sao lưu.',
           )}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">

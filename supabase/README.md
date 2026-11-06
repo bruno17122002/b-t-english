@@ -1,4 +1,4 @@
-# Lingua Quest Online – server (Supabase)
+# B&T English Online – server (Supabase)
 
 Thư mục này chứa phần chạy trên Supabase:
 

@@ -1,4 +1,4 @@
-// Lingua Quest Online (PWA). Build: npm run web:build → web/dist (static files, host anywhere).
+// B&T English Online (PWA). Build: npm run web:build → web/dist (static files, host anywhere).
 import { resolve } from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'

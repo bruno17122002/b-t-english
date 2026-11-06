@@ -339,7 +339,7 @@ export function planHtml(r: CoachReport): string {
       `<b>${esc(d.day)}</b> – ${esc(d.focus)} (${d.minutes} phút)`,
       ...d.activities.map((x) => `• ${esc(x)}`),
     )
-  parts.push('', '<i>Muốn đưa kế hoạch vào Hành trình? Mở Lingua Quest → AI Coach → Áp dụng kế hoạch.</i>')
+  parts.push('', '<i>Muốn đưa kế hoạch vào Hành trình? Mở B&amp;T English → AI Coach → Áp dụng kế hoạch.</i>')
   return parts.join('\n').slice(0, 3800)
 }
 

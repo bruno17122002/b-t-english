@@ -1,4 +1,4 @@
-# Lingua Quest Online – thiết kế 4 giai đoạn
+# B&T English Online – thiết kế 4 giai đoạn
 
 **Nguyên tắc chung:**
 

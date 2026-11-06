@@ -1,4 +1,4 @@
-// Schema v5: change capture for multi-device sync (Lingua Quest Online, phase 3).
+// Schema v5: change capture for multi-device sync (B&T English Online, phase 3).
 // sync_outbox  – rows changed locally since the last push (filled by triggers, emptied after a push)
 // sync_map     – rows pulled from other devices: remote row_key → local id (append-only tables)
 // sync_state   – cursor, flags ('active' enables the triggers, 'suppress' mutes them while applying a pull)

@@ -41,8 +41,8 @@ export function runMigrations(db: AppDatabase, migrations: Migration[] = MIGRATI
   const from = currentSchemaVersion(db)
   if (from > (migrations[migrations.length - 1]?.version ?? 0)) {
     throw new Error(
-      `Dữ liệu được tạo bởi phiên bản Lingua Quest mới hơn (schema v${from}). Hãy cài bản mới nhất của ứng dụng. ` +
-        `(Database schema v${from} is newer than this app supports. Please update Lingua Quest.)`,
+      `Dữ liệu được tạo bởi phiên bản B&T English mới hơn (schema v${from}). Hãy cài bản mới nhất của ứng dụng. ` +
+        `(Database schema v${from} is newer than this app supports. Please update B&T English.)`,
     )
   }
   const pending = migrations.filter((m) => m.version > from).sort((a, b) => a.version - b.version)

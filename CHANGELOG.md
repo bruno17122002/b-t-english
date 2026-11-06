@@ -2,6 +2,24 @@
 
 Định dạng theo [Keep a Changelog](https://keepachangelog.com/), phiên bản theo SemVer.
 
+## [1.5.0] – 2026-11-06
+
+### Đổi tên thành B&T English
+
+- **Tên mới:** "B&T English" ở cửa sổ, khay hệ thống, thông báo, bộ cài, lối tắt, bot Telegram, app điện thoại (PWA) và các prompt AI.
+- **Logo mới (tự vẽ):**
+  - Hai chữ B và T dùng chung một nét ngang, bên dưới là một nét bút gạch chân.
+  - Màu xanh Windows 11 `#005FB8`, không gradient.
+  - Nguồn: `build/logo.svg`. Bộ icon (`.ico`, PNG, PWA) được tạo lại từ file này.
+- **Tên file:**
+  - Không còn dấu "&": `BTEnglish.exe`, `BT-English-Setup-x.y.z.exe`, `BT-English-Portable-x.y.z.exe`.
+  - Tin nhắn Telegram dạng HTML dùng `B&amp;T` để tránh lỗi phân tích.
+- **Giữ tương thích:**
+  - `appId` không đổi, nên cài đè lên bản cũ như một bản cập nhật.
+  - Thư mục dữ liệu vẫn là `%APPDATA%\Lingua Quest`, nên không mất tiến độ học.
+  - Tên file sao lưu, xuất dữ liệu và bucket cloud giữ nguyên định dạng cũ.
+- **Server Supabase:** mã bot đã đổi tên, nhưng cần deploy lại Edge Functions thì bot trên server mới hiện tên mới.
+
 ## [1.4.0] – 2026-11-06
 
 ### Đề không còn "tĩnh"

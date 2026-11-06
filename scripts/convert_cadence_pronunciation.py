@@ -1,4 +1,4 @@
-"""Convert Cadence pronunciation data (MIT) into a Lingua Quest content pack.
+"""Convert Cadence pronunciation data (MIT) into a B&T English content pack.
 
 Usage:
     python -I scripts/convert_cadence_pronunciation.py <path/to/cadence repo root> <output dir>
@@ -13,7 +13,7 @@ Reads (read-only):
     LICENSE                                 -> copyright line in pack.json
 
 English source text is kept as-is. The only additions are the `viNote` fields on phonemes, which are
-original Vietnamese learner notes written for Lingua Quest (not taken from Cadence).
+original Vietnamese learner notes written for B&T English (not taken from Cadence).
 The conversion is deterministic; pack.json keeps its previous converted_at unless content changed.
 """
 import argparse
@@ -30,7 +30,7 @@ PACK_VERSION = '1.0.0'
 SOURCE_URL = 'https://github.com/pstepanovum/Cadence'
 DEFAULT_COMMIT = '9d94329239892032a343a1d3e64b60b08419d867'
 
-# Original Lingua Quest notes for Vietnamese learners (written for this pack, not from Cadence).
+# Original B&T English notes for Vietnamese learners (written for this pack, not from Cadence).
 VI_NOTES = {
     'æ': 'Tiếng Việt không có âm này; người Việt hay đọc thành "e" hoặc "a". Mở miệng rộng như "a" '
          'nhưng đẩy lưỡi ra trước như "e": cat, man, bad.',
@@ -494,7 +494,7 @@ def main(argv):
         'attribution': (
             'Phoneme catalog, pronunciation modules, practice words and conversation scripts adapted from Cadence ('
             + SOURCE_URL + '), ' + copyright_text + ', MIT License. Vietnamese notes (viNote) are original '
-            'Lingua Quest additions.'
+            'B&T English additions.'
         ),
         'files': sorted(texts),
         'content_sha256': content_hash,

@@ -1,4 +1,4 @@
-// Lingua Quest Online – hand-written service worker.
+// B&T English Online – hand-written service worker.
 // - App shell (index.html, manifest, icons) is pre-cached on install.
 // - Navigations: network first, cached index.html when offline (the SPA then reads its own IndexedDB cache).
 // - Hashed build assets (./assets/*): cache first – their names change on every build.
@@ -20,8 +20,8 @@ const MAX_ASSETS = 60
 const MAX_API = 40
 
 const OFFLINE_HTML = `<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lingua Quest – offline</title><body style="margin:0;background:#202020;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;display:grid;place-items:center;height:100vh;text-align:center">
-<div><h1 style="font-size:20px">Bạn đang offline</h1><p style="color:#c8c8c8">Kết nối Internet rồi mở lại Lingua Quest.</p></div></body></html>`
+<title>B&amp;T English – offline</title><body style="margin:0;background:#202020;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;display:grid;place-items:center;height:100vh;text-align:center">
+<div><h1 style="font-size:20px">Bạn đang offline</h1><p style="color:#c8c8c8">Kết nối Internet rồi mở lại B&amp;T English.</p></div></body></html>`
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

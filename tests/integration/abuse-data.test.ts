@@ -83,7 +83,7 @@ describe('damaged database file between runs', () => {
     const app = await makeApp({ persistent: true, dir })
     app.kernel.db.run("INSERT INTO schema_migrations(version, name, applied_at) VALUES (999, 'future', '2030-01-01')")
     app.kernel.db.close()
-    await expect(makeApp({ persistent: true, dir })).rejects.toThrow(/phiên bản Lingua Quest mới hơn/)
+    await expect(makeApp({ persistent: true, dir })).rejects.toThrow(/phiên bản B&T English mới hơn/)
   })
 })
 

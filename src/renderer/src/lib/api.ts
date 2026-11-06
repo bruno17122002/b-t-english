@@ -23,7 +23,7 @@ export async function api<K extends Channel>(
   channel: K,
   ...args: undefined extends In<K> ? [In<K>?] : [In<K>]
 ): Promise<Out<K>> {
-  if (!window.lq) throw new ApiError({ code: 'no_bridge', message: 'Lingua Quest bridge is not available.' })
+  if (!window.lq) throw new ApiError({ code: 'no_bridge', message: 'B&T English bridge is not available.' })
   const res = await window.lq.invoke(channel, args[0])
   if (!res.ok) throw new ApiError(res.error)
   return res.data as Out<K>

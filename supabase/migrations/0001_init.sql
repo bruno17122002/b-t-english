@@ -1,4 +1,4 @@
--- Lingua Quest Online – initial schema (phases 1–4). Run once in the Supabase SQL editor or `supabase db push`.
+-- B&T English Online – initial schema (phases 1–4). Run once in the Supabase SQL editor or `supabase db push`.
 -- Every table has Row Level Security: a signed-in user can only see and change their own rows.
 -- Edge Functions use the service role key (bypasses RLS) and must filter by user themselves.
 

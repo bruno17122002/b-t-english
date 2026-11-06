@@ -1,6 +1,8 @@
 appId: com.linguaquest.app
-productName: Lingua Quest
-copyright: Copyright © 2026 Lingua Quest
+productName: B&T English
+# File names avoid "&" (it breaks cmd.exe scripts); the window, shortcuts and installer still show "B&T English".
+executableName: BTEnglish
+copyright: Copyright © 2026 B&T English
 directories:
   output: release
   buildResources: build
@@ -43,9 +45,9 @@ nsis:
   allowToChangeInstallationDirectory: true
   createDesktopShortcut: always
   createStartMenuShortcut: true
-  shortcutName: Lingua Quest
-  uninstallDisplayName: Lingua Quest
+  shortcutName: B&T English
+  uninstallDisplayName: B&T English
   deleteAppDataOnUninstall: false
-  artifactName: Lingua-Quest-Setup-${version}.${ext}
+  artifactName: BT-English-Setup-${version}.${ext}
 portable:
-  artifactName: Lingua-Quest-Portable-${version}.${ext}
+  artifactName: BT-English-Portable-${version}.${ext}

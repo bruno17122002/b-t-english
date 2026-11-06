@@ -6,7 +6,7 @@
   "source": "https://github.com/pstepanovum/Cadence",
   "commit": "9d94329239892032a343a1d3e64b60b08419d867",
   "copyright": "Copyright (c) 2026 Pavel Stepanov",
-  "attribution": "Phoneme catalog, pronunciation modules, practice words and conversation scripts adapted from Cadence (https://github.com/pstepanovum/Cadence), Copyright (c) 2026 Pavel Stepanov, MIT License. Vietnamese notes (viNote) are original Lingua Quest additions.",
+  "attribution": "Phoneme catalog, pronunciation modules, practice words and conversation scripts adapted from Cadence (https://github.com/pstepanovum/Cadence), Copyright (c) 2026 Pavel Stepanov, MIT License. Vietnamese notes (viNote) are original B&T English additions.",
   "files": [
     "conversations.json",
     "modules.json",

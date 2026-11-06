@@ -1,4 +1,4 @@
-# Lingua Quest
+# B&T English
 
 Ứng dụng desktop Windows giúp người Việt học tiếng Anh **từ con số 0 đến IELTS 6.5 (CEFR B2)**:
 
@@ -37,16 +37,16 @@
 
 **Về API key:**
 
-- Key được mã hóa bằng Windows DPAPI và lưu trong `%APPDATA%\Lingua Quest\secure\keys.bin`.
+- Key được mã hóa bằng Windows DPAPI và lưu trong `%APPDATA%\B&T English\secure\keys.bin`.
 - Key chỉ được dùng ở tiến trình nền của ứng dụng, không bao giờ hiển thị lại, không ghi vào log, file sao lưu hay file xuất.
 
 **Dữ liệu ứng dụng:**
 
-| Loại            | Vị trí                                                                    |
-| --------------- | ------------------------------------------------------------------------- |
-| Cơ sở dữ liệu   | `%APPDATA%\Lingua Quest\data\lingua-quest.sqlite`                         |
-| Sao lưu tự động | `%APPDATA%\Lingua Quest\backups\` (mỗi ngày một bản, giữ 10 bản gần nhất) |
-| Nhật ký         | `%APPDATA%\Lingua Quest\logs\`                                            |
+| Loại            | Vị trí                                                                   |
+| --------------- | ------------------------------------------------------------------------ |
+| Cơ sở dữ liệu   | `%APPDATA%\B&T English\data\lingua-quest.sqlite`                         |
+| Sao lưu tự động | `%APPDATA%\B&T English\backups\` (mỗi ngày một bản, giữ 10 bản gần nhất) |
+| Nhật ký         | `%APPDATA%\B&T English\logs\`                                            |
 
 Gỡ cài đặt **không** xóa dữ liệu học tập.
 
@@ -87,7 +87,7 @@ Xem `ARCHITECTURE.md` (kiến trúc module v2) và `docs/MODULE_GUIDE.md` (cách
 
 ## Nội dung và giấy phép
 
-- Toàn bộ bài đọc, bài nghe, phim tương tác, đề đánh giá và từ điển là **nội dung gốc** viết cho Lingua Quest.
+- Toàn bộ bài đọc, bài nghe, phim tương tác, đề đánh giá và từ điển là **nội dung gốc** viết cho B&T English.
 - Ứng dụng tái sử dụng có ghi công một số dự án MIT:
   - Sprigo: khung giáo trình;
   - Cadence: dữ liệu phát âm và thuật toán căn chỉnh âm vị;

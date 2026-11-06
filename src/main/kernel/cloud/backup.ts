@@ -1,4 +1,4 @@
-// Cloud backups (Lingua Quest Online, phase 1): the same SQLite file as a local backup, uploaded to the private
+// Cloud backups (B&T English Online, phase 1): the same SQLite file as a local backup, uploaded to the private
 // Supabase Storage bucket `backups/<user id>/lingua-quest-<stamp>.sqlite`. API keys live in keys.bin, never in
 // the database, so a cloud backup never contains them. The last 20 backups are kept.
 import fs from 'node:fs'

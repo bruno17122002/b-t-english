@@ -458,8 +458,8 @@ export default function OnboardingPage() {
               <StepFrame
                 title={L('Supercharge with AI (optional)', 'Tăng sức mạnh với AI (tùy chọn)')}
                 subtitle={L(
-                  'Lingua Quest works fully offline. An AI key unlocks extra features.',
-                  'Lingua Quest dùng được hoàn toàn offline. Thêm khóa AI để mở khóa tính năng nâng cao.',
+                  'B&T English works fully offline. An AI key unlocks extra features.',
+                  'B&T English dùng được hoàn toàn offline. Thêm khóa AI để mở khóa tính năng nâng cao.',
                 )}
               >
                 <div className="grid gap-3 md:grid-cols-2">

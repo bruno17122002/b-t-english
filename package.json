@@ -1,9 +1,9 @@
 {
   "name": "lingua-quest",
-  "productName": "Lingua Quest",
-  "version": "1.4.0",
+  "productName": "B&T English",
+  "version": "1.5.0",
   "description": "Personalized AI English learning adventure for Vietnamese learners",
-  "author": "Lingua Quest",
+  "author": "B&T English",
   "license": "UNLICENSED",
   "private": true,
   "main": "./out/main/index.js",

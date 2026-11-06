@@ -1,7 +1,7 @@
 {
-  "name": "Lingua Quest",
-  "short_name": "Lingua Quest",
-  "description": "Ôn từ vựng FSRS, xem tiến độ và hỏi gia sư AI – bản điện thoại của Lingua Quest.",
+  "name": "B&T English",
+  "short_name": "B&T English",
+  "description": "Ôn từ vựng FSRS, xem tiến độ và hỏi gia sư AI – bản điện thoại của B&T English.",
   "lang": "vi",
   "id": "./",
   "start_url": "./",

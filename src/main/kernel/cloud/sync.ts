@@ -1,4 +1,4 @@
-// Multi-device sync (Lingua Quest Online, phase 3). Local SQLite stays the source of truth; Supabase keeps a
+// Multi-device sync (B&T English Online, phase 3). Local SQLite stays the source of truth; Supabase keeps a
 // copy of every synced row in `sync_rows` (one jsonb row per local row, last-writer-wins on client_updated_at).
 //
 // push: SQLite triggers record changed rows in sync_outbox → the current row (or a deletion) is sent in

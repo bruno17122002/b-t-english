@@ -1,7 +1,7 @@
 // App chrome: sidebar navigation built from module manifests, top bar with search, streak and XP,
 // toasts, reward celebrations and global keyboard shortcuts.
 import { AnimatePresence, motion } from 'framer-motion'
-import { Flame, Heart, Keyboard, Search, Settings, GraduationCap, Star } from 'lucide-react'
+import { Flame, Heart, Keyboard, Search, Settings, Star } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { MODULES_RENDERER } from '@modules/registry.renderer'
@@ -9,6 +9,7 @@ import type { ModuleNavItem } from '@modules/types.renderer'
 import { useL, useTx } from '../../i18n'
 import { useApp } from '../../lib/store'
 import { cx, Kbd, Modal, ProgressBar } from '../ui'
+import { BrandMark } from './BrandMark'
 import { CommandPalette } from './CommandPalette'
 import { RewardCelebration } from './RewardCelebration'
 import { Toaster } from './Toaster'
@@ -56,11 +57,9 @@ function Sidebar() {
     // Below 900 CSS px (window zoomed in) the sidebar becomes an icon rail so the content keeps its room.
     <aside className="flex w-60 shrink-0 flex-col px-3 py-4 max-[900px]:w-16 max-[900px]:px-2">
       <div className="mb-6 flex items-center gap-2.5 px-2 max-[900px]:justify-center max-[900px]:px-0">
-        <div className="flex size-8 items-center justify-center rounded-md bg-accent text-accent-ink">
-          <GraduationCap className="size-5" />
-        </div>
+        <BrandMark className="size-8 shrink-0" />
         <div className="font-display text-lg leading-none font-semibold max-[900px]:hidden">
-          Lingua <span className="text-accent">Quest</span>
+          B&amp;T <span className="text-accent">English</span>
         </div>
       </div>
       <nav className="flex-1 space-y-5 overflow-y-auto" aria-label="Main">

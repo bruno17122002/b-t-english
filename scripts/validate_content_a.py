@@ -1,4 +1,4 @@
-"""Validate Lingua Quest content files (author A set).
+"""Validate B&T English content files (author A set).
 
 Mirrors the zod schemas in src/shared/content.ts plus the authoring rules for:
   reading.json, listening.json, grammar.json, writing-prompts.json, speaking-prompts.json

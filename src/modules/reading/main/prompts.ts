@@ -68,7 +68,7 @@ export const generatePassagePrompt = jsonPrompt<GenerateInput, GeneratedPassage>
     const [min, max] = LENGTH_BY_LEVEL[input.cefr]
     return {
       system: [
-        'You write ORIGINAL graded reading passages for Vietnamese learners of English (Lingua Quest).',
+        'You write ORIGINAL graded reading passages for Vietnamese learners of English (B&T English).',
         ctx.learnerLine,
         ctx.constraints,
         'Never copy or retell copyrighted stories, articles or characters. Invent names, places and facts that are plausible and harmless.',

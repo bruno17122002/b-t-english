@@ -71,7 +71,7 @@ describe('tutor function', () => {
       usage: { used: 1, limit: 1 },
     })
     expect(ai.inputs[0]?.messages.map((m) => m.role)).toEqual(['user', 'assistant', 'user'])
-    expect(ai.inputs[0]?.system).toContain('inside the Lingua Quest app')
+    expect(ai.inputs[0]?.system).toContain('inside the B&T English app')
     expect(ai.inputs[0]?.system).toContain('Flashcards due now: 1.')
     expect(sb.rows('ai_usage')).toEqual([expect.objectContaining({ user_id: USER, day: '2026-11-05', requests: 1 })])
 

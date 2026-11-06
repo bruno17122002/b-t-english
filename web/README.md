@@ -1,6 +1,6 @@
-# Lingua Quest Online (PWA)
+# B&T English Online (PWA)
 
-Bản điện thoại của Lingua Quest. Ứng dụng gọi thẳng tới Supabase bằng tài khoản của người dùng (email OTP) và đọc/ghi bảng `sync_rows` mà ứng dụng desktop đồng bộ lên. Nội dung thiết kế xem ở `docs/ONLINE_PLAN.md`, giai đoạn 4.
+Bản điện thoại của B&T English. Ứng dụng gọi thẳng tới Supabase bằng tài khoản của người dùng (email OTP) và đọc/ghi bảng `sync_rows` mà ứng dụng desktop đồng bộ lên. Nội dung thiết kế xem ở `docs/ONLINE_PLAN.md`, giai đoạn 4.
 
 ## Chạy và build
 

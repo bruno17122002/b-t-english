@@ -163,11 +163,11 @@ export class DataService {
   deleteBackup(file: string): void {
     const resolved = path.resolve(file)
     if (path.dirname(resolved) !== path.resolve(this.backupDir) || !resolved.endsWith('.sqlite'))
-      throw new UserError('invalid_backup', 'Chỉ có thể xoá bản sao lưu nằm trong thư mục sao lưu của Lingua Quest.')
+      throw new UserError('invalid_backup', 'Chỉ có thể xoá bản sao lưu nằm trong thư mục sao lưu của B&T English.')
     fs.rmSync(resolved, { force: true })
   }
 
-  /** Checks that a file is a readable Lingua Quest database this version can open. */
+  /** Checks that a file is a readable B&T English database this version can open. */
   async validateBackup(file: string): Promise<{ schemaVersion: number; words: number }> {
     const SQL = await initSqlJs(
       this.wasmDir ? { locateFile: (f: string) => path.join(this.wasmDir as string, f) } : undefined,
@@ -180,7 +180,7 @@ export class DataService {
       throw new UserError('invalid_backup', 'Không tìm thấy hoặc không đọc được file sao lưu.')
     }
     if (bytes.subarray(0, 15).toString('latin1') !== 'SQLite format 3')
-      throw new UserError('invalid_backup', 'File này không phải bản sao lưu Lingua Quest (không phải SQLite).')
+      throw new UserError('invalid_backup', 'File này không phải bản sao lưu B&T English (không phải SQLite).')
     const db = new SQL.Database(bytes)
     try {
       let ok: unknown = null
@@ -193,15 +193,15 @@ export class DataService {
           words = Number(db.exec('SELECT COUNT(*) FROM vocabulary')[0]?.values[0]?.[0] ?? 0)
         }
       } catch {
-        // malformed pages, or a SQLite file without the Lingua Quest tables
-        if (ok === 'ok') throw new UserError('invalid_backup', 'File này không phải bản sao lưu Lingua Quest.')
+        // malformed pages, or a SQLite file without the B&T English tables
+        if (ok === 'ok') throw new UserError('invalid_backup', 'File này không phải bản sao lưu B&T English.')
       }
       if (ok !== 'ok') throw new UserError('invalid_backup', 'File sao lưu bị hỏng (kiểm tra toàn vẹn thất bại).')
-      if (!v) throw new UserError('invalid_backup', 'File này không phải bản sao lưu Lingua Quest.')
+      if (!v) throw new UserError('invalid_backup', 'File này không phải bản sao lưu B&T English.')
       if (v > LATEST_SCHEMA_VERSION)
         throw new UserError(
           'backup_too_new',
-          'Bản sao lưu được tạo bởi phiên bản Lingua Quest mới hơn. Hãy cập nhật ứng dụng rồi thử lại.',
+          'Bản sao lưu được tạo bởi phiên bản B&T English mới hơn. Hãy cập nhật ứng dụng rồi thử lại.',
         )
       return { schemaVersion: v, words }
     } finally {
@@ -252,7 +252,7 @@ export class DataService {
   }
 
   /**
-   * Imports words from a Lingua Quest JSON export or a CSV (first column = word). Existing words are merged.
+   * Imports words from a B&T English JSON export or a CSV (first column = word). Existing words are merged.
    * Hostile files are rejected with a Vietnamese message (binary, wrong JSON shape); fields are capped like
    * the IPC schema; at most IMPORT_MAX_ROWS rows; imported words award no XP; everything runs in one
    * transaction (VocabHub.importMany), so a failure leaves the word bank unchanged.
@@ -274,7 +274,7 @@ export class DataService {
       const vocab =
         file && typeof file === 'object' ? (file.tables as Record<string, unknown> | undefined)?.vocabulary : null
       if (!file || file.format !== 'lingua-quest-export' || !Array.isArray(vocab))
-        throw importError('Đây không phải file xuất dữ liệu của Lingua Quest.')
+        throw importError('Đây không phải file xuất dữ liệu của B&T English.')
       // A newer export may carry extra columns: only the known ones are read, unknown ones are ignored.
       for (const raw of vocab as unknown[]) {
         if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {

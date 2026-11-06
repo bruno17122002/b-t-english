@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- B&T English logo (original artwork): a B and a T sharing one top stroke, underlined by a pen stroke. -->
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="#005FB8"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M54 56 H206"/>
+    <path d="M54 56 V168"/>
+    <path d="M84 56 A26 26 0 0 1 84 108 H54"/>
+    <path d="M54 108 H90 A30 30 0 0 1 90 168 H54"/>
+    <path d="M172 56 V170"/>
+  </g>
+  <path d="M50 204 C100 218 160 216 206 188" fill="none" stroke="#60CDFF" stroke-width="14" stroke-linecap="round"/>
+</svg>

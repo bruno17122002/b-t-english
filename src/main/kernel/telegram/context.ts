@@ -102,7 +102,7 @@ export function todayReply(k: Kernel): { html: string; buttons: TelegramButton[]
       out.push(`${mark} ${escapeHtml(l.title)} <i>(${MODULE_VI[l.module] ?? l.module}, ${l.estimated_minutes}′)</i>`)
     }
   } else {
-    out.push('📚 Chưa có kế hoạch cho hôm nay – mở Lingua Quest → Hành trình để tạo lộ trình.')
+    out.push('📚 Chưa có kế hoạch cho hôm nay – mở B&amp;T English → Hành trình để tạo lộ trình.')
   }
   if (quests.length) {
     out.push('', '🏆 <b>Nhiệm vụ ngày</b>')

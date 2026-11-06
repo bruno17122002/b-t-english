@@ -97,7 +97,7 @@ describe('server bot – linking', () => {
       expect.objectContaining({ user_id: OTHER, chat_id: 888, username: 'lan' }),
     ])
     expect(sb.rows('link_codes')).toHaveLength(0)
-    expect(tg.texts()[0]).toContain('Đã liên kết với Lingua Quest')
+    expect(tg.texts()[0]).toContain('Đã liên kết với B&amp;T English')
     expect(tg.texts()[0]).toContain('/review')
   })
 

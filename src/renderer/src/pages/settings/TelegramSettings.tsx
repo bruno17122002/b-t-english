@@ -119,8 +119,8 @@ export function TelegramSettings() {
       id: 'local',
       title: L('Bot on this computer', 'Bot chạy trên máy này'),
       desc: L(
-        'Your own bot from @BotFather, polled by Lingua Quest. Works only while the app runs; uses your AI keys; can draw pictures.',
-        'Bot riêng tạo bằng @BotFather, do Lingua Quest nhận tin. Chỉ hoạt động khi app đang chạy; dùng key AI của bạn; tạo được ảnh.',
+        'Your own bot from @BotFather, polled by B&T English. Works only while the app runs; uses your AI keys; can draw pictures.',
+        'Bot riêng tạo bằng @BotFather, do B&T English nhận tin. Chỉ hoạt động khi app đang chạy; dùng key AI của bạn; tạo được ảnh.',
       ),
       icon: <Laptop className="size-4" />,
     },
@@ -128,8 +128,8 @@ export function TelegramSettings() {
       id: 'server',
       title: L('Bot on the server (online account)', 'Bot chạy trên server (cần tài khoản online)'),
       desc: L(
-        'The central Lingua Quest bot on Supabase. Works even when the computer is off and sends scheduled reminders; uses the server’s AI with a daily limit.',
-        'Bot Lingua Quest trung tâm trên Supabase. Hoạt động cả khi tắt máy và tự gửi nhắc học theo lịch; dùng AI của server, có hạn mức mỗi ngày.',
+        'The central B&T English bot on Supabase. Works even when the computer is off and sends scheduled reminders; uses the server’s AI with a daily limit.',
+        'Bot B&T English trung tâm trên Supabase. Hoạt động cả khi tắt máy và tự gửi nhắc học theo lịch; dùng AI của server, có hạn mức mỗi ngày.',
       ),
       icon: <Cloud className="size-4" />,
     },
@@ -460,8 +460,8 @@ export function TelegramSettings() {
                 {L('Or send ', 'Hoặc gửi ')}
                 <code className="rounded bg-surface-3 px-1">/start {st.pairingCode}</code>
                 {L(
-                  '. This page updates by itself once the bot receives the code. Lingua Quest must be running.',
-                  '. Trang này tự cập nhật khi bot nhận được mã. Lingua Quest phải đang chạy.',
+                  '. This page updates by itself once the bot receives the code. B&T English must be running.',
+                  '. Trang này tự cập nhật khi bot nhận được mã. B&T English phải đang chạy.',
                 )}
               </p>
             </div>
@@ -547,8 +547,8 @@ export function TelegramSettings() {
           </h3>
           <p className="text-sm text-muted">
             {L(
-              'The bot only works while Lingua Quest is running. Messages sent while the computer is off are answered when the app starts again.',
-              'Bot chỉ hoạt động khi Lingua Quest đang chạy. Tin nhắn gửi lúc máy tắt sẽ được trả lời khi app mở lại.',
+              'The bot only works while B&T English is running. Messages sent while the computer is off are answered when the app starts again.',
+              'Bot chỉ hoạt động khi B&T English đang chạy. Tin nhắn gửi lúc máy tắt sẽ được trả lời khi app mở lại.',
             )}
           </p>
           <div className="mt-2 flex items-center justify-between gap-6 border-b border-line py-4">
@@ -557,7 +557,7 @@ export function TelegramSettings() {
                 {L('Keep running when the window is closed', 'Chạy ngầm khi đóng cửa sổ')}
               </div>
               <div className="mt-0.5 text-xs text-muted">
-                {L('Lingua Quest stays in the system tray.', 'Lingua Quest nằm ở khay hệ thống.')}
+                {L('B&T English stays in the system tray.', 'B&T English nằm ở khay hệ thống.')}
               </div>
             </div>
             <div data-testid="tg-run-in-background">

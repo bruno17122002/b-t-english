@@ -24,7 +24,7 @@ export function SettingsPage() {
     <div data-testid="page-settings">
       <PageHeader
         title={L('Settings', 'Cài đặt')}
-        subtitle={L('Make Lingua Quest yours.', 'Tùy chỉnh Lingua Quest theo cách của bạn.')}
+        subtitle={L('Make B&T English yours.', 'Tùy chỉnh B&T English theo cách của bạn.')}
       />
       <div className="flex gap-8">
         <nav className="w-56 shrink-0 space-y-1" aria-label={L('Settings sections', 'Mục cài đặt')}>

@@ -1,4 +1,4 @@
-"""Text & font health check for Lingua Quest.
+"""Text & font health check for B&T English.
 
 Scans every bundled content file (src/content/**/*.json) and UI source file (src/**/*.ts, *.tsx) for:
   * U+FFFD replacement characters and typical mojibake (UTF-8 decoded as cp1252/latin-1, e.g. "Ã©", "á»", "â€")

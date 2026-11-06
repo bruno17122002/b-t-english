@@ -355,7 +355,7 @@ export function ErrorState({
     return (
       <div role="status" className="flex items-center gap-3 rounded-2xl border border-line bg-surface-2 p-4 text-sm">
         <Spinner />
-        {L('Restarting Lingua Quest…', 'Đang khởi động lại Lingua Quest…')}
+        {L('Restarting B&T English…', 'Đang khởi động lại B&T English…')}
       </div>
     )
   const needsAi = typeof error === 'object' && 'needsAiSettings' in error && (error as ApiError).needsAiSettings

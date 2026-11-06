@@ -1,6 +1,6 @@
 // Level-aware language constraints injected into every learner-facing prompt, so AI output stays
 // comprehensible (i+1) for the learner. Idea inspired by Babblr's per-level prompt templates
-// (AGPL – ideas only, wording and rules written for Lingua Quest).
+// (AGPL – ideas only, wording and rules written for B&T English).
 import type { Cefr } from '@shared/content'
 import type { ResponseLanguage, TutorStyle } from '@shared/types'
 

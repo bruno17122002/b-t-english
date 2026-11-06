@@ -379,7 +379,7 @@ export type RecorderState = 'idle' | 'requesting' | 'recording' | 'processing' |
 
 const MIC_TEXT = {
   denied: {
-    en: 'Lingua Quest may not use the microphone. Open Windows Settings → Privacy & security → Microphone and allow desktop apps.',
+    en: 'B&T English may not use the microphone. Open Windows Settings → Privacy & security → Microphone and allow desktop apps.',
     vi: 'Ứng dụng chưa được phép dùng micro. Mở Windows Settings → Privacy & security → Microphone và bật quyền cho ứng dụng desktop.',
   },
   missing: {

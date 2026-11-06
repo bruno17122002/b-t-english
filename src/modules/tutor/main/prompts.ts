@@ -66,7 +66,7 @@ export const tutorReplyPrompt = jsonPrompt<TutorReplyInput, TutorReplyOutput>({
       .map((m) => `- [${m.category}] ${m.pattern}${m.correction ? ` → ${m.correction}` : ''} (seen ${m.count}×)`)
     return {
       system: [
-        'You are the AI English tutor inside Lingua Quest, chatting with a Vietnamese learner who is working towards IELTS 6.5 (CEFR B2).',
+        'You are the AI English tutor inside B&T English, chatting with a Vietnamese learner who is working towards IELTS 6.5 (CEFR B2).',
         `Tutor mode: ${TUTOR_STYLE_RULES[input.mode]} ${MODE_FOCUS[input.mode]}`,
         ctx.learnerLine,
         ctx.constraints,

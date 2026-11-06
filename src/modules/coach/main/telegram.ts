@@ -160,7 +160,7 @@ export function registerCoachTelegram(kernel: Kernel, svc: CoachService): void {
       try {
         const res = svc.applyPlan(id)
         return {
-          html: `✅ Đã thêm <b>${res.created}</b> bài vào kế hoạch (${res.dates.map(esc).join(', ')}). Mở Lingua Quest → Hành trình để bắt đầu.`,
+          html: `✅ Đã thêm <b>${res.created}</b> bài vào kế hoạch (${res.dates.map(esc).join(', ')}). Mở B&amp;T English → Hành trình để bắt đầu.`,
         }
       } catch (err) {
         return { text: err instanceof Error ? err.message : 'Không áp dụng được kế hoạch.' }

@@ -453,7 +453,7 @@ export function todayReply(d: LearnerData, now: Date): { html: string; buttons: 
       const mark = l.status === 'done' ? '✅' : l.status === 'skipped' ? '⏭' : '⬜'
       out.push(`${mark} ${escapeHtml(l.title)} <i>(${MODULE_VI[l.module] ?? l.module}, ${l.estimated_minutes}′)</i>`)
     }
-  } else out.push('📚 Chưa có kế hoạch cho hôm nay – mở Lingua Quest → Hành trình để tạo lộ trình.')
+  } else out.push('📚 Chưa có kế hoạch cho hôm nay – mở B&amp;T English → Hành trình để tạo lộ trình.')
   if (quests.length) {
     out.push('', '🏆 <b>Nhiệm vụ ngày</b>')
     for (const q of quests)

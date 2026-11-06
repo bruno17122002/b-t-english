@@ -65,7 +65,7 @@ export const tgTutorPrompt = jsonPrompt<TgTutorInput, TgTutorOutput>({
   schema: TgTutorSchema,
   build: (input, ctx) => ({
     system: [
-      'You are the friendly, patient IELTS tutor of the Lingua Quest app, chatting on Telegram with a Vietnamese self-learner whose goal is IELTS 6.5 (CEFR B2).',
+      'You are the friendly, patient IELTS tutor of the B&T English app, chatting on Telegram with a Vietnamese self-learner whose goal is IELTS 6.5 (CEFR B2).',
       ctx.learnerLine,
       ctx.constraints,
       'Explain in Vietnamese (with diacritics); use English for examples, corrected sentences and vocabulary.',

@@ -1,11 +1,11 @@
 # Third-Party Notices
 
-Lingua Quest includes or adapts material from the open-source projects listed below. Each is distributed under
+B&T English includes or adapts material from the open-source projects listed below. Each is distributed under
 the MIT License; the full license text with the original copyright line is reproduced for every project.
 Material converted into content packs lives in `src/content/packs/<pack-id>/`, and each pack carries a `pack.json`
 with its source URL, commit, copyright and attribution.
 
-Original Lingua Quest additions (for example the Vietnamese `viNote` explanations in the Cadence pack) are not part
+Original B&T English additions (for example the Vietnamese `viNote` explanations in the Cadence pack) are not part
 of the upstream projects.
 
 ---
@@ -16,7 +16,7 @@ of the upstream projects.
 - **URL:** https://github.com/ozerozdas/sprigo
 - **Commit:** `b89aba5cd57c89e1ff7be623f7941930c409a8dd`
 - **License:** MIT
-- **What Lingua Quest uses:** the English course syllabus (`courses/en.yml`): CEFR levels A1–C2, units, lesson
+- **What B&T English uses:** the English course syllabus (`courses/en.yml`): CEFR levels A1–C2, units, lesson
   (step) titles and descriptions, vocabulary lists, grammar patterns, activity types and level checkpoints. It is
   converted by `scripts/convert_sprigo_syllabus.py` into `src/content/packs/sprigo-en-syllabus/`. Prompts and
   schemas may be ported later (see `docs/OSS_RESEARCH.md` §3.1).
@@ -53,7 +53,7 @@ SOFTWARE.
 - **URL:** https://github.com/pstepanovum/Cadence
 - **Commit:** `9d94329239892032a343a1d3e64b60b08419d867`
 - **License:** MIT
-- **What Lingua Quest uses:**
+- **What B&T English uses:**
   - Data, converted by `scripts/convert_cadence_pronunciation.py` into `src/content/packs/cadence-pronunciation/`:
     the phoneme catalog (`src/backend/data/phoneme_catalog.json`), practice words with IPA
     (`src/backend/data/practice_targets.json`), the 10 pronunciation modules with their lessons and words
@@ -94,8 +94,8 @@ SOFTWARE.
 - **URL:** https://github.com/highsunday/VocabReader
 - **Commit:** `39de8ec99a56f88c9594a1e2957e199baf311cc0`
 - **License:** MIT
-- **What Lingua Quest uses:** planned port of the vocabulary-review and reading-comprehension prompt
-  specifications (`.agents/skills/*/SKILL.md`) into the Lingua Quest prompt library, and later an EPUB import
+- **What B&T English uses:** planned port of the vocabulary-review and reading-comprehension prompt
+  specifications (`.agents/skills/*/SKILL.md`) into the B&T English prompt library, and later an EPUB import
   feature modelled on its importer (see `docs/OSS_RESEARCH.md` §3.2). This notice is kept so that any ported
   material is covered.
 
@@ -131,7 +131,7 @@ SOFTWARE.
 - **URL:** https://github.com/open-spaced-repetition/ts-fsrs
 - **Version:** 6.0.0 (npm package `ts-fsrs`, dependency `^6.0.0`)
 - **License:** MIT
-- **What Lingua Quest uses:** the FSRS spaced-repetition scheduler, used as a library by `src/core/srs.ts`.
+- **What B&T English uses:** the FSRS spaced-repetition scheduler, used as a library by `src/core/srs.ts`.
 
 ```
 MIT License
@@ -162,15 +162,15 @@ SOFTWARE.
 ## Projects consulted for ideas only
 
 The following projects were reviewed for product and UX ideas. **No code, data, text or media was copied** from
-them, because their licenses do not permit reuse in Lingua Quest. Any related features are independent
-implementations written for Lingua Quest.
+them, because their licenses do not permit reuse in B&T English. Any related features are independent
+implementations written for B&T English.
 
 - **EchoType** (https://github.com/bill-gx114/echotype): no license file, so all rights are reserved by the author.
   Ideas only (three-stage dictation listening, retrying missed sentences, lenient scoring mode).
 - **ThirtyTutors** (https://github.com/wiss84/thirtytutors): PolyForm Noncommercial License 1.0.0, which forbids
   commercial use. Ideas only (real-time voice tutor flow, rolling learner memory, correct-and-repeat drills).
 - **Babblr** (https://github.com/pkuppens/babblr): AGPL-3.0 or a commercial license; copying would require
-  releasing Lingua Quest under the AGPL. Ideas only (CEFR-based tutor constraints, structured error feedback).
+  releasing B&T English under the AGPL. Ideas only (CEFR-based tutor constraints, structured error feedback).
 
 ---
 

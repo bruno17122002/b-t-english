@@ -129,7 +129,7 @@ export const PhonemeEntrySchema = z.object({
   commonErrors: z.array(z.string().min(1)),
   minimalPairs: z.array(z.array(z.string().min(1)).length(2)),
   dialectNote: z.string().min(1).nullable(),
-  // Original Lingua Quest note for Vietnamese learners (not from the upstream source).
+  // Original B&T English note for Vietnamese learners (not from the upstream source).
   viNote: z.string().min(1).nullable(),
 })
 export type PhonemeEntry = z.infer<typeof PhonemeEntrySchema>

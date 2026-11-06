@@ -6,7 +6,7 @@
   "source": "https://github.com/ozerozdas/sprigo",
   "commit": "b89aba5cd57c89e1ff7be623f7941930c409a8dd",
   "copyright": "Copyright (c) 2026 Mehmet Özer Özdaş",
-  "attribution": "Syllabus structure, lesson titles, vocabulary lists and grammar patterns adapted from Sprigo (https://github.com/ozerozdas/sprigo, courses/en.yml), Copyright (c) 2026 Mehmet Özer Özdaş, MIT License. Converted for Lingua Quest.",
+  "attribution": "Syllabus structure, lesson titles, vocabulary lists and grammar patterns adapted from Sprigo (https://github.com/ozerozdas/sprigo, courses/en.yml), Copyright (c) 2026 Mehmet Özer Özdaş, MIT License. Converted for B&T English.",
   "files": [
     "syllabus.json"
   ],

@@ -114,11 +114,11 @@ export function AboutSettings() {
       </Card>
 
       <Card>
-        <h3 className="font-display text-lg font-semibold">Lingua Quest {data.appVersion}</h3>
+        <h3 className="font-display text-lg font-semibold">B&T English {data.appVersion}</h3>
         <p className="mt-2 text-sm text-muted">
           {L(
-            'All lessons, stories, dialogues and the dictionary are original content written for Lingua Quest. Open-source parts are credited below.',
-            'Toàn bộ bài học, phim tương tác, hội thoại và từ điển là nội dung gốc viết riêng cho Lingua Quest. Các phần mã nguồn mở được ghi công bên dưới.',
+            'All lessons, stories, dialogues and the dictionary are original content written for B&T English. Open-source parts are credited below.',
+            'Toàn bộ bài học, phim tương tác, hội thoại và từ điển là nội dung gốc viết riêng cho B&T English. Các phần mã nguồn mở được ghi công bên dưới.',
           )}
         </p>
         <ul className="mt-3 space-y-1 text-sm text-muted">

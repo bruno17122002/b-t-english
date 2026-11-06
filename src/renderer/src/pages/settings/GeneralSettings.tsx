@@ -200,7 +200,7 @@ export function GeneralSettings() {
               aria-label={L('Speech speed', 'Tốc độ đọc')}
               className="w-40 accent-[var(--accent)]"
             />
-            <Button size="sm" onClick={() => speak('Welcome to Lingua Quest. Every day is a new adventure.')}>
+            <Button size="sm" onClick={() => speak('Welcome to B&T English. Every day is a new adventure.')}>
               {L('Test', 'Thử')}
             </Button>
           </div>
@@ -263,8 +263,8 @@ export function GeneralSettings() {
         <Row
           title={L('Keep running when the window is closed', 'Chạy ngầm khi đóng cửa sổ')}
           desc={L(
-            'Lingua Quest stays in the system tray so reminders, reports and the Telegram bot keep working.',
-            'Lingua Quest nằm ở khay hệ thống để nhắc học, báo cáo và bot Telegram vẫn hoạt động.',
+            'B&T English stays in the system tray so reminders, reports and the Telegram bot keep working.',
+            'B&T English nằm ở khay hệ thống để nhắc học, báo cáo và bot Telegram vẫn hoạt động.',
           )}
         >
           <Toggle

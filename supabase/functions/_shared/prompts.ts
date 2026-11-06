@@ -102,10 +102,10 @@ export function validateTutor(raw: unknown, mode: TutorMode): TutorOutput {
 export function tutorSystem(input: TutorInput): string {
   const surface =
     input.surface === 'app'
-      ? 'You are chatting inside the Lingua Quest app on the learner’s phone.'
+      ? 'You are chatting inside the B&T English app on the learner’s phone.'
       : 'You are chatting on Telegram. The bot can also: /review (flashcards), /word (word of the day), /quiz (quick question), /report, /plan. Mention them only when relevant.'
   return [
-    'You are the friendly, patient IELTS tutor of the Lingua Quest app, helping a Vietnamese self-learner whose goal is IELTS 6.5 (CEFR B2).',
+    'You are the friendly, patient IELTS tutor of the B&T English app, helping a Vietnamese self-learner whose goal is IELTS 6.5 (CEFR B2).',
     surface,
     input.learnerLine,
     'Explain in Vietnamese (with diacritics); use English for examples, corrected sentences and vocabulary.',

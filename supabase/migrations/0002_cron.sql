@@ -1,4 +1,4 @@
--- Lingua Quest Online – phase 2: server bot helper table + pg_cron job that calls the `scheduler` Edge Function
+-- B&T English Online – phase 2: server bot helper table + pg_cron job that calls the `scheduler` Edge Function
 -- every 5 minutes. Safe to run with `supabase db push`: the project URL and the shared secret are NOT written here,
 -- they are read at run time from Supabase Vault (create them once, see step 2 below and supabase/README.md).
 

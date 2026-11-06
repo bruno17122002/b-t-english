@@ -89,7 +89,7 @@ export function noAiReply(): TelegramReply {
   return {
     html: [
       '🔑 <b>Chưa có API key AI</b>',
-      'Mở Lingua Quest → Cài đặt → Nhà cung cấp AI và dán key Gemini (miễn phí tại aistudio.google.com) để mình trò chuyện, sửa bài, đọc ảnh và chấm phát âm.',
+      'Mở B&amp;T English → Cài đặt → Nhà cung cấp AI và dán key Gemini (miễn phí tại aistudio.google.com) để mình trò chuyện, sửa bài, đọc ảnh và chấm phát âm.',
       '',
       'Trong lúc chờ, bạn vẫn dùng được: /today, /review và /word (từ điển offline).',
     ].join('\n'),
@@ -99,7 +99,7 @@ export function noAiReply(): TelegramReply {
 export function errorReply(err: unknown): TelegramReply {
   if (err instanceof AiError) {
     return {
-      html: `⚠️ ${esc(err.userMessage)}${err.code === 'no_key' || err.code === 'invalid_key' ? '\n(Cài đặt → Nhà cung cấp AI trong app Lingua Quest)' : ''}`,
+      html: `⚠️ ${esc(err.userMessage)}${err.code === 'no_key' || err.code === 'invalid_key' ? '\n(Cài đặt → Nhà cung cấp AI trong app B&amp;T English)' : ''}`,
     }
   }
   if (err instanceof TelegramApiError) return { html: `⚠️ ${esc(err.userMessage)}` }
@@ -167,8 +167,8 @@ export class BotFeatures {
   help(welcome: boolean): TelegramReply {
     const lines = [
       welcome
-        ? '👋 <b>Chào bạn! Mình là gia sư IELTS của Lingua Quest</b> 🎓'
-        : '🎓 <b>Lingua Quest – gia sư IELTS</b>',
+        ? '👋 <b>Chào bạn! Mình là gia sư IELTS của B&amp;T English</b> 🎓'
+        : '🎓 <b>B&amp;T English – gia sư IELTS</b>',
       '',
       'Cứ nhắn tự nhiên bằng tiếng Việt hoặc tiếng Anh: hỏi ngữ pháp, từ vựng, nhờ sửa câu, chấm bài Writing, luyện Speaking… Mình biết trình độ, lỗi hay gặp và kế hoạch hôm nay của bạn, và nhớ ~20 lượt gần nhất.',
       '📷 Gửi ảnh (bài viết tay, bài tập, biểu đồ Task 1) – mình đọc và chữa.',
@@ -622,7 +622,7 @@ export class BotFeatures {
   async draw(ctx: TelegramContext, request: string, image?: { data: Uint8Array; mimeType: string }): Promise<Replies> {
     const provider = this.host.imageProvider()
     if (provider === 'off')
-      return { html: '🎨 Tính năng tạo ảnh đang tắt. Bật lại trong Lingua Quest → Cài đặt → Telegram.' }
+      return { html: '🎨 Tính năng tạo ảnh đang tắt. Bật lại trong B&amp;T English → Cài đặt → Telegram.' }
     const req = request.trim() || (image ? 'Hãy vẽ lại ảnh này cho rõ ràng, dễ học hơn.' : '')
     if (!req) return { html: 'Gõ /anh kèm mô tả, ví dụ:\n/anh 4 loại trái cây kèm phiên âm' }
     const recent = this.memory

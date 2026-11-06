@@ -1,4 +1,4 @@
-"""Convert the Sprigo English course (courses/en.yml, MIT) into a Lingua Quest content pack.
+"""Convert the Sprigo English course (courses/en.yml, MIT) into a B&T English content pack.
 
 Usage:
     python -I scripts/convert_sprigo_syllabus.py <path/to/sprigo/courses/en.yml> <output dir>
@@ -9,7 +9,7 @@ Writes <output dir>/syllabus.json (array of CEFR levels -> units -> lessons) and
 The conversion is deterministic: re-running on the same source yields byte-identical files
 (pack.json keeps its previous converted_at unless the converted content changed, or --converted-at is given).
 
-Sprigo hierarchy is levels > units > steps > activities. A Sprigo "step" becomes a Lingua Quest "lesson".
+Sprigo hierarchy is levels > units > steps > activities. A Sprigo "step" becomes a B&T English "lesson".
 App-specific fields (course flag, native_name, iso) are dropped. Activity hints (scenario, goal) are kept.
 """
 import argparse
@@ -195,7 +195,7 @@ def main(argv):
         'copyright': copyright_text,
         'attribution': (
             'Syllabus structure, lesson titles, vocabulary lists and grammar patterns adapted from Sprigo '
-            '(' + SOURCE_URL + ', courses/en.yml), ' + copyright_text + ', MIT License. Converted for Lingua Quest.'
+            '(' + SOURCE_URL + ', courses/en.yml), ' + copyright_text + ', MIT License. Converted for B&T English.'
         ),
         'files': ['syllabus.json'],
         'content_sha256': content_hash,

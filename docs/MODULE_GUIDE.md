@@ -1,4 +1,4 @@
-# Hướng dẫn viết module – Lingua Quest (kiến trúc v2)
+# Hướng dẫn viết module – B&T English (kiến trúc v2)
 
 Tài liệu này là "hợp đồng" chung cho mọi module. Code và comment viết bằng tiếng Anh; nhãn giao diện luôn có cả tiếng Anh và tiếng Việt.
 

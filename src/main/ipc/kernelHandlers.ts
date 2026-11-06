@@ -125,7 +125,7 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   })
 
   r.handle('app:testNotification', () => {
-    host.notify('Lingua Quest', 'Thông báo đang hoạt động. Hẹn gặp bạn ở buổi học tiếp theo!')
+    host.notify('B&T English', 'Thông báo đang hoạt động. Hẹn gặp bạn ở buổi học tiếp theo!')
     return null
   })
 
@@ -251,8 +251,8 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
     const chosen =
       file ??
       (await host.openFile({
-        title: 'Chọn bản sao lưu Lingua Quest',
-        filters: [{ name: 'Lingua Quest backup', extensions: ['sqlite'] }],
+        title: 'Chọn bản sao lưu B&T English',
+        filters: [{ name: 'B&T English backup', extensions: ['sqlite'] }],
       }))
     if (!chosen) return null
     await restoreDatabaseFrom(k, host, chosen)
@@ -281,7 +281,7 @@ export function registerKernelHandlers(r: IpcRouter, k: Kernel, host: HostBridge
   r.handle('data:importVocab', async () => {
     const file = await host.openFile({
       title: 'Nhập từ vựng',
-      filters: [{ name: 'Lingua Quest export / CSV', extensions: ['json', 'csv'] }],
+      filters: [{ name: 'B&T English export / CSV', extensions: ['json', 'csv'] }],
     })
     if (!file) return null
     let text: string

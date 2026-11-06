@@ -1,4 +1,4 @@
-// Settings → Telegram, "Bot chạy trên server" mode: the central Lingua Quest bot runs on Supabase (works while the
+// Settings → Telegram, "Bot chạy trên server" mode: the central B&T English bot runs on Supabase (works while the
 // PC is off). Needs the online account; shows the link status (telegram_links), creates a 6-digit link code to send
 // as /start <code>, unlinks, and keeps the AI Coach schedules in sync with the server scheduler.
 import { CalendarClock, CheckCircle2, Copy, ExternalLink, Link2, Link2Off, LogIn, RefreshCw } from 'lucide-react'
@@ -160,8 +160,8 @@ export function TelegramServerPanel() {
         </div>
         <p className="mt-1 text-sm text-muted">
           {L(
-            'The central Lingua Quest bot runs on the server: it answers even when this computer is off, uses the server’s AI (daily limit) and reads your synced data. Reviews done on Telegram come back to the app at the next sync.',
-            'Bot Lingua Quest trung tâm chạy trên server: trả lời cả khi máy tính tắt, dùng AI của server (có hạn mức mỗi ngày) và đọc dữ liệu đã đồng bộ. Kết quả ôn trên Telegram về app ở lần đồng bộ sau.',
+            'The central B&T English bot runs on the server: it answers even when this computer is off, uses the server’s AI (daily limit) and reads your synced data. Reviews done on Telegram come back to the app at the next sync.',
+            'Bot B&T English trung tâm chạy trên server: trả lời cả khi máy tính tắt, dùng AI của server (có hạn mức mỗi ngày) và đọc dữ liệu đã đồng bộ. Kết quả ôn trên Telegram về app ở lần đồng bộ sau.',
           )}
         </p>
         {st.error && (

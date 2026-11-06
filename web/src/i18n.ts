@@ -4,7 +4,7 @@ import { useApp } from './store'
 export type Lang = 'vi' | 'en'
 
 const VI = {
-  appName: 'Lingua Quest',
+  appName: 'B&T English',
   'tab.today': 'Hôm nay',
   'tab.review': 'Ôn thẻ',
   'tab.stats': 'Thống kê',
@@ -146,7 +146,7 @@ const VI = {
 export type MsgKey = keyof typeof VI
 
 const EN: Record<MsgKey, string> = {
-  appName: 'Lingua Quest',
+  appName: 'B&T English',
   'tab.today': 'Today',
   'tab.review': 'Review',
   'tab.stats': 'Stats',

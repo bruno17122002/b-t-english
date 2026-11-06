@@ -480,9 +480,9 @@ export interface AppSettings {
   showVietnameseHints: boolean
   reduceMotion: boolean
   dailyGoalXp: number
-  /** Closing the window keeps Lingua Quest running in the system tray (Telegram bot, reminders, reports). */
+  /** Closing the window keeps B&T English running in the system tray (Telegram bot, reminders, reports). */
   runInBackground: boolean
-  /** Start Lingua Quest hidden in the tray when signing in to Windows. */
+  /** Start B&T English hidden in the tray when signing in to Windows. */
   launchAtLogin: boolean
 }
 

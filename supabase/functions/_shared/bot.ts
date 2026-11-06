@@ -118,17 +118,19 @@ export const COMMANDS: { name: string; en: string; vi: string }[] = [
 ]
 
 export const UNLINKED_HTML = [
-  '🔒 <b>Tài khoản Telegram này chưa được liên kết với Lingua Quest.</b>',
+  '🔒 <b>Tài khoản Telegram này chưa được liên kết với B&amp;T English.</b>',
   '',
   'Cách liên kết:',
-  '1. Mở Lingua Quest trên máy tính → Cài đặt → Tài khoản và đăng nhập tài khoản online.',
+  '1. Mở B&amp;T English trên máy tính → Cài đặt → Tài khoản và đăng nhập tài khoản online.',
   '2. Vào Cài đặt → Telegram → chọn <b>Bot chạy trên server</b> → bấm <b>Tạo mã liên kết</b>.',
   '3. Gửi cho mình <code>/start 123456</code> (thay bằng mã 6 số, hiệu lực 15 phút).',
 ].join('\n')
 
 export function helpHtml(welcome: boolean): string {
   return [
-    welcome ? '👋 <b>Chào bạn! Mình là gia sư IELTS của Lingua Quest</b> 🎓' : '🎓 <b>Lingua Quest – gia sư IELTS</b>',
+    welcome
+      ? '👋 <b>Chào bạn! Mình là gia sư IELTS của B&amp;T English</b> 🎓'
+      : '🎓 <b>B&amp;T English – gia sư IELTS</b>',
     '',
     `Cứ nhắn tự nhiên bằng tiếng Việt hoặc tiếng Anh: hỏi ngữ pháp, từ vựng, nhờ sửa câu, chấm bài Writing, luyện Speaking… Mình biết trình độ, lỗi hay gặp và kế hoạch hôm nay của bạn, và nhớ ~${MEMORY_TURNS} tin gần nhất.`,
     '📷 Gửi ảnh (bài viết tay, bài tập, biểu đồ Task 1) – mình đọc và chữa.',
@@ -305,7 +307,7 @@ export class ServerBot {
         since: recentFails ? (fails?.data.since ?? now.toISOString()) : now.toISOString(),
       })
       return {
-        html: '❌ Mã liên kết không đúng hoặc đã hết hạn (mã chỉ dùng được 15 phút). Tạo mã mới trong Lingua Quest → Cài đặt → Telegram rồi gửi lại <code>/start &lt;mã&gt;</code>.',
+        html: '❌ Mã liên kết không đúng hoặc đã hết hạn (mã chỉ dùng được 15 phút). Tạo mã mới trong B&amp;T English → Cài đặt → Telegram rồi gửi lại <code>/start &lt;mã&gt;</code>.',
       }
     }
     const user = this.d.rest.forUser(found.user_id)
@@ -320,7 +322,7 @@ export class ServerBot {
     if (fails) await this.pending.removeGlobal(failKey)
     this.log('telegram chat linked')
     return {
-      html: `🔗 <b>Đã liên kết với Lingua Quest!</b> Từ giờ mình nhận lệnh và gửi nhắc học cho tài khoản này.\n\n${helpHtml(true)}`,
+      html: `🔗 <b>Đã liên kết với B&amp;T English!</b> Từ giờ mình nhận lệnh và gửi nhắc học cho tài khoản này.\n\n${helpHtml(true)}`,
     }
   }
 
@@ -391,7 +393,7 @@ export class ServerBot {
         if (action === 'plan') return this.planReply(ctx)
         if (action === 'habits') return this.habitsReply(ctx)
         if (action === 'report') return this.reportReply(ctx, parsePeriodArg(id ?? 'day'))
-        if (action === 'apply') return { toast: 'Mở Lingua Quest → AI Coach để áp dụng kế hoạch vào Hành trình.' }
+        if (action === 'apply') return { toast: 'Mở B&T English → AI Coach để áp dụng kế hoạch vào Hành trình.' }
         break
     }
     return { toast: 'Nút này đã hết hạn.' }

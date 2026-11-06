@@ -10,7 +10,7 @@ export function AuthLayout({ title, desc, children }: { title: string; desc: str
       <div className="mb-6 flex items-center gap-3">
         <img src="./icons/icon-192.png" alt="" className="size-12 rounded-xl" />
         <div className="flex-1">
-          <div className="text-lg font-semibold">Lingua Quest</div>
+          <div className="text-lg font-semibold">B&T English</div>
           <div className="text-xs text-faint">Online · IELTS 6.5</div>
         </div>
         <button

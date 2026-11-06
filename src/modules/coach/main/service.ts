@@ -555,7 +555,7 @@ export class CoachService {
         {
           kind: due.kind,
           key: due.key,
-          title: 'Lingua Quest – Chào buổi sáng',
+          title: 'B&T English – Chào buổi sáng',
           body: brief.text,
           route: '/',
           html: `<b>☀️ Chào buổi sáng!</b>\n${esc(brief.text)}`,
@@ -571,7 +571,7 @@ export class CoachService {
         {
           kind: due.kind,
           key: due.key,
-          title: 'Lingua Quest – Nhắc học',
+          title: 'B&T English – Nhắc học',
           body: nudge.text,
           route: nudge.route,
           html: `<b>⏰ Nhắc học</b>\n${esc(nudge.text)}`,
@@ -617,7 +617,7 @@ export class CoachService {
       if (!this.k.settings.get().notificationsEnabled)
         return { ok: false, message: 'Thông báo Windows đang tắt trong Cài đặt chung.' }
       this.k.notify(
-        'Lingua Quest – AI Coach',
+        'B&T English – AI Coach',
         'Đây là thông báo thử. Lịch nhắc học của bạn đã sẵn sàng!',
         '/coach/schedule',
       )

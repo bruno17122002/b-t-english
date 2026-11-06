@@ -1,4 +1,4 @@
-# Kiến trúc Lingua Quest
+# Kiến trúc B&T English
 
 ## Tầng và trách nhiệm
 
@@ -51,7 +51,7 @@ tests/
 
 ## Database (SQLite qua sql.js)
 
-- File: `%APPDATA%/Lingua Quest/data/lingua-quest.sqlite` (+ `.bak` bản trước đó).
+- File: `%APPDATA%/B&T English/data/lingua-quest.sqlite` (+ `.bak` bản trước đó).
 - Ghi atomic: export → ghi file tạm → fsync → rename; giữ một bản `.bak`. Sau mỗi `export()` bật lại `PRAGMA foreign_keys=ON` (sql.js đặt lại pragma khi export).
 - Migrations có version trong bảng `schema_migrations`, chạy trong transaction; trước khi nâng cấp DB cũ tự tạo bản sao `pre-migration-v{n}`.
 - Bảng chính: `user_profile`, `learning_goals`, `skill_levels`, `assessments`, `assessment_answers`, `roadmaps`, `roadmap_weeks`, `lessons`, `lesson_attempts`, `vocabulary`, `review_schedules`, `review_logs`, `writing_submissions`, `speaking_sessions`, `listening_history`, `reading_history`, `reading_highlights`, `stories`, `story_progress`, `xp_events`, `achievements`, `quests`, `daily_stats`, `activity_log`, `tutor_conversations`, `tutor_messages`, `learner_mistakes`, `ai_settings`, `app_settings`, `favorites`, `bookmarks`, `generated_content`.
@@ -104,10 +104,10 @@ AIProvider interface
 
 ### Ý tưởng
 
-Lingua Quest là **một ứng dụng Electron duy nhất** (modular monolith). Mỗi chức năng là một **module độc lập** với manifest riêng. Mọi thứ dùng chung nằm trong **Platform Kernel** ở Main Process. Không có sidecar hay runtime Python, không có server localhost.
+B&T English là **một ứng dụng Electron duy nhất** (modular monolith). Mỗi chức năng là một **module độc lập** với manifest riêng. Mọi thứ dùng chung nằm trong **Platform Kernel** ở Main Process. Không có sidecar hay runtime Python, không có server localhost.
 
 ```
-┌──────────────────────────── Lingua Quest Shell (Renderer) ────────────────────────────┐
+┌──────────────────────────── B&T English Shell (Renderer) ────────────────────────────┐
 │ Điều hướng, theme, i18n, tìm kiếm toàn cục, phím tắt, thông báo, celebration/toast    │
 │ Trang của từng module được nạp lười (lazy) theo route manifest                         │
 └───────────────▲────────────────────────────────────────────────────────────────────────┘
