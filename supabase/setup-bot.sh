@@ -12,6 +12,8 @@ cd "$(dirname "$0")/.."
 NODE20="/c/Users/Admin/AppData/Roaming/nvm/v20.20.0"
 [ -d "$NODE20" ] && export PATH="$NODE20:$PATH"
 SB=(npx --yes supabase@3.0.0)
+# Hosted changes (secrets, deploys, SQL) need an explicit yes; this script is that confirmation.
+export SUPABASE_YES=1
 
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
