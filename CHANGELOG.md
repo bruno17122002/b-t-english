@@ -2,6 +2,28 @@
 
 Định dạng theo [Keep a Changelog](https://keepachangelog.com/), phiên bản theo SemVer.
 
+## [1.5.1] – 2026-11-09
+
+### Sửa lỗi "AI trả lời sai định dạng"
+
+- **Gemini 2.5 Flash:**
+  - Tắt chế độ "suy nghĩ" (thinking), vì phần suy nghĩ ăn hết giới hạn độ dài câu trả lời.
+  - Trước đây các câu trả lời ngắn (quiz, từ của ngày, nhắc học) bị rỗng hoặc cắt giữa JSON.
+  - Bản Pro được cộng thêm giới hạn riêng cho phần suy nghĩ.
+  - JSON bị cắt ở giới hạn token được nhận ra và hỏi lại AI một lần.
+- **AI Coach:**
+  - "Giờ học tốt nhất" trả về dạng `{giờ, lý do}` hoặc quá dài không còn làm hỏng cả báo cáo.
+  - App tự gộp thành một dòng và tự cắt cho vừa.
+- **Server Supabase:** đã deploy cùng bản sửa (bot `@botcheck_english_bot`).
+- **Thêm:** script `supabase/setup-bot.sh` thiết lập bot server trong một lần chạy.
+- **Kiểm thử:** 646 test Vitest đạt.
+- **Bản phát hành:** đã chạy thử bản đóng gói (cửa sổ "B&T English", phiên bản 1.5.1, log không lỗi).
+
+  | File                            | Kích thước       | SHA-256                                                            |
+  | ------------------------------- | ---------------- | ------------------------------------------------------------------ |
+  | `BT-English-Setup-1.5.1.exe`    | 133 201 088 byte | `b8a2c74b12c7d20bd5d263e9d77e72cce8dd34291226e2ddeacd0351746553c5` |
+  | `BT-English-Portable-1.5.1.exe` | 116 343 371 byte | `2763c5214281d7ec2374c8e37ae9821d5cba5603c5ef5847a034f5ffd17bc832` |
+
 ## [1.5.0] – 2026-11-06
 
 ### Đổi tên thành B&T English
