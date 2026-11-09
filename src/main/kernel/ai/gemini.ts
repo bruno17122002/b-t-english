@@ -18,6 +18,18 @@ import { pcmToWav } from './wav'
 const BASE = 'https://generativelanguage.googleapis.com/v1beta'
 export const GEMINI_DEFAULT_MODEL = 'gemini-2.5-flash'
 export const GEMINI_TTS_MODEL = 'gemini-2.5-flash-preview-tts'
+
+/**
+ * Gemini 2.5 models "think" before answering and the thinking tokens count against maxOutputTokens, so a small
+ * budget (a quiz, a nudge, a word card) could end with an empty or half-written JSON answer. Flash models get
+ * thinking switched off; Pro, which cannot switch it off, gets its own thinking budget on top of the output.
+ */
+export function outputConfigFor(model: string, maxOutputTokens: number) {
+  if (/gemini-2\.5-flash/.test(model)) return { maxOutputTokens, thinkingConfig: { thinkingBudget: 0 } }
+  if (/gemini-2\.5-pro/.test(model))
+    return { maxOutputTokens: maxOutputTokens + 1024, thinkingConfig: { thinkingBudget: 1024 } }
+  return { maxOutputTokens }
+}
 export const GEMINI_VOICES = ['Kore', 'Puck', 'Charon', 'Aoede', 'Fenrir', 'Leda'] as const
 
 interface GeminiPart {
@@ -81,7 +93,7 @@ export class GeminiProvider implements AiProvider {
         contents,
         generationConfig: {
           temperature: req.temperature ?? 0.7,
-          maxOutputTokens: req.maxOutputTokens ?? 4096,
+          ...outputConfigFor(this.model, req.maxOutputTokens ?? 4096),
           ...(req.json ? { responseMimeType: 'application/json' } : {}),
         },
       },
@@ -89,6 +101,8 @@ export class GeminiProvider implements AiProvider {
     )
     const text = (data.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? '').join('')
     if (!text.trim()) throw new AiError('bad_response', 'Gemini returned an empty answer')
+    if (req.json && data.candidates?.[0]?.finishReason === 'MAX_TOKENS')
+      throw new AiError('bad_response', 'Gemini stopped at the output limit before the JSON was complete')
     return { text, model: this.model, provider: 'gemini' }
   }
 

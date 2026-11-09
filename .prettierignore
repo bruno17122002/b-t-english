@@ -6,3 +6,4 @@ playwright-report
 src/content/*.json
 package-lock.json
 src/content/packs/**/*.json
+supabase/.temp

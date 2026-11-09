@@ -65,6 +65,18 @@ interface GeminiResponse {
   error?: { message?: string; status?: string }
 }
 
+/**
+ * Gemini 2.5 models "think" before answering and the thinking tokens count against maxOutputTokens, so a small
+ * budget (a quiz, a nudge, a word card) could end with an empty or half-written JSON answer. Flash models get
+ * thinking switched off; Pro, which cannot switch it off, gets its own thinking budget on top of the output.
+ */
+export function outputConfigFor(model: string, maxOutputTokens: number) {
+  if (/gemini-2\.5-flash/.test(model)) return { maxOutputTokens, thinkingConfig: { thinkingBudget: 0 } }
+  if (/gemini-2\.5-pro/.test(model))
+    return { maxOutputTokens: maxOutputTokens + 1024, thinkingConfig: { thinkingBudget: 1024 } }
+  return { maxOutputTokens }
+}
+
 export class Gemini implements AiModel {
   constructor(
     private readonly apiKey: string,
@@ -93,7 +105,7 @@ export class Gemini implements AiModel {
           contents,
           generationConfig: {
             temperature: input.temperature ?? 0.7,
-            maxOutputTokens: input.maxOutputTokens ?? 4096,
+            ...outputConfigFor(this.model, input.maxOutputTokens ?? 4096),
             ...(input.json ? { responseMimeType: 'application/json' } : {}),
           },
         }),
@@ -117,6 +129,8 @@ export class Gemini implements AiModel {
       throw new AiError('safety_blocked')
     const text = (cand.content?.parts ?? []).map((p) => p.text ?? '').join('')
     if (!text.trim()) throw new AiError('bad_response', 'empty answer')
+    if (input.json && cand.finishReason === 'MAX_TOKENS')
+      throw new AiError('bad_response', 'answer cut off (MAX_TOKENS)')
     return text
   }
 }
@@ -190,10 +204,20 @@ export function str(v: unknown, max: number, opts: { required?: string; fallback
 }
 
 export function strList(v: unknown, maxItems: number, maxLen: number): string[] {
-  return (Array.isArray(v) ? v : [])
-    .map((x) => (typeof x === 'string' ? x.trim().slice(0, maxLen) : ''))
-    .filter(Boolean)
-    .slice(0, maxItems)
+  return (
+    (Array.isArray(v) ? v : [])
+      // Models sometimes send { "time": …, "reason": … } instead of a string: flatten it rather than dropping it.
+      .map((x) =>
+        isObj(x)
+          ? Object.values(x)
+              .filter((y) => typeof y === 'string' || typeof y === 'number')
+              .join(' – ')
+          : x,
+      )
+      .map((x) => (typeof x === 'string' ? x.trim().slice(0, maxLen) : ''))
+      .filter(Boolean)
+      .slice(0, maxItems)
+  )
 }
 
 export function objList(v: unknown, maxItems: number): Record<string, unknown>[] {

@@ -16,7 +16,22 @@ const PLAN_MODULES = [
   'cinema',
   'tutor',
 ] as const
-const text = (max: number) => z.string().min(1).max(max)
+/**
+ * Lenient text field: models sometimes answer `{ "time": …, "reason": … }` instead of a string, or run a little
+ * long. Flatten and cut instead of rejecting the whole report.
+ */
+const text = (max: number) =>
+  z
+    .preprocess(
+      (v) =>
+        v && typeof v === 'object' && !Array.isArray(v)
+          ? Object.values(v)
+              .filter((x) => typeof x === 'string' || typeof x === 'number')
+              .join(' – ')
+          : v,
+      z.string().trim().min(1),
+    )
+    .transform((s) => s.slice(0, max))
 
 export const AdviceSchema = z.object({
   headline: text(200),
@@ -122,7 +137,7 @@ export const advicePrompt = jsonPrompt<AdvicePromptInput, CoachAdvice>({
       'Output fields: headline (≤ 15 words), summary (3–4 sentences interpreting the numbers and the changes vs the previous period), ' +
         'strengths[] and concerns[] (habit-based, 1–5 items each), recommendations[] (2–5 items: title, why (cite the data), action (specific, doable today), ' +
         'route (one of /listening /speaking /reading /writing /grammar /vocabulary /vocabulary/review /cinema /tutor /journey /coach/schedule), minutes), ' +
-        'bestStudyTimes[] (time windows with a reason, based on preferredHours), ' +
+        'bestStudyTimes[] (plain strings such as "19:00–21:00 – lý do", based on preferredHours), ' +
         `nextPeriodPlan[] (exactly one entry for each of these dates: ${input.planDates.join(', ')}; ` +
         'fields day, focus, modules (1–3 of listening, speaking, reading, writing, grammar, vocabulary, cinema, tutor; prioritise the weakest skills), ' +
         'activities (1–4 short items), minutes (close to the daily goal)), motivation (1–2 sentences), ieltsOutlook (realistic, 1–3 sentences).',
